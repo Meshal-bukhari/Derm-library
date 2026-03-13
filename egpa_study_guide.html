@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGPA Clinical Features - Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .memory-hook {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .memory-hook h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4em;
+        }
+        
+        .key-numbers {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .phase-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .phase-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .critical {
+            background: #f8d7da;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #721c24;
+        }
+        
+        .percentage {
+            background: #d1ecf1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #0c5460;
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            margin: 30px 0 20px 0;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .fact-card {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #e67e22;
+        }
+        
+        .fact-card h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .mnemonic {
+            background: #e8f5e8;
+            border: 2px dashed #27ae60;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>EGPA Clinical Features</h1>
+            <div class="subtitle">Eosinophilic Granulomatosis with Polyangiitis</div>
+            <div class="subtitle">Dermatology Board Review Guide</div>
+        </div>
+        
+        <div class="content">
+            <!-- Memory Hooks Section -->
+            <div class="memory-hook">
+                <h3>🧠 MASTER MEMORY HOOK - "AEV"</h3>
+                <div class="mnemonic">
+                    <strong>A</strong>sthma (almost ALL patients)<br>
+                    <strong>E</strong>osinophilia (≥1500 or ≥10%)<br>
+                    <strong>V</strong>asculitis (necrotizing)
+                </div>
+                <p><strong>3 Phases Memory:</strong> "APE" → <strong>A</strong>llergic → <strong>P</strong>roliferative (eosinophilic) → <strong>E</strong>xplosive (vasculitic)</p>
+            </div>
+
+            <!-- Key Numbers for Boards -->
+            <div class="key-numbers">
+                <h3>🎯 HIGH-YIELD NUMBERS</h3>
+                <div class="quick-facts">
+                    <div class="fact-card">
+                        <h4>Cutaneous Involvement</h4>
+                        <ul>
+                            <li><span class="percentage">40-75%</span> have skin findings</li>
+                            <li><span class="percentage">~15%</span> present with skin lesions</li>
+                        </ul>
+                    </div>
+                    <div class="fact-card">
+                        <h4>System Involvement</h4>
+                        <ul>
+                            <li><span class="percentage">75%</span> Mononeuritis multiplex</li>
+                            <li><span class="percentage">50%</span> Cardiac involvement</li>
+                            <li><span class="percentage">50%</span> ANCA positive</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Three Phases -->
+            <div class="section-title">🔄 THE THREE PHASES</div>
+            
+            <div class="phase-card">
+                <div style="display: flex; align-items: center;">
+                    <div class="phase-number">1</div>
+                    <h3>Allergic/Prodromal Phase</h3>
+                </div>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Details</th>
+                        <th>Board Pearls</th>
+                    </tr>
+                    <tr>
+                        <td><span class="critical">Asthma</span></td>
+                        <td>Almost ALL patients, often severe</td>
+                        <td>Cornerstone of diagnosis</td>
+                    </tr>
+                    <tr>
+                        <td>Allergic Rhinitis</td>
+                        <td>Exceedingly common</td>
+                        <td>Part of "allergic march"</td>
+                    </tr>
+                    <tr>
+                        <td>Nasal Polyposis</td>
+                        <td>Very common + sinusitis</td>
+                        <td>Can precede vasculitis by years</td>
+                    </tr>
+                    <tr>
+                        <td>Otitis Media</td>
+                        <td>Frequent</td>
+                        <td>Part of upper airway involvement</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="phase-card">
+                <div style="display: flex; align-items: center;">
+                    <div class="phase-number">2</div>
+                    <h3>Eosinophilic Phase</h3>
+                </div>
+                <table>
+                    <tr>
+                        <th>Finding</th>
+                        <th>Criteria/Details</th>
+                        <th>Clinical Significance</th>
+                    </tr>
+                    <tr>
+                        <td><span class="highlight">Peripheral Eosinophilia</span></td>
+                        <td><span class="critical">≥1500 cells/μL OR ≥10%</span></td>
+                        <td>Hallmark finding - MUST know this number!</td>
+                    </tr>
+                    <tr>
+                        <td>Organ Infiltration</td>
+                        <td>Lungs & GI tract especially</td>
+                        <td>Tissue eosinophilia</td>
+                    </tr>
+                    <tr>
+                        <td>Elevated IgE</td>
+                        <td>Frequently found</td>
+                        <td>Supports allergic nature</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="phase-card">
+                <div style="display: flex; align-items: center;">
+                    <div class="phase-number">3</div>
+                    <h3>Vasculitic Phase</h3>
+                </div>
+                <table>
+                    <tr>
+                        <th>System</th>
+                        <th>Manifestations</th>
+                        <th>Board High-Yield</th>
+                    </tr>
+                    <tr>
+                        <td>Constitutional</td>
+                        <td>Fever, malaise, weight loss, arthralgias</td>
+                        <td>Systemic inflammation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="critical">Neurologic</span></td>
+                        <td>Mononeuritis multiplex (<span class="percentage">75%</span>)</td>
+                        <td>Pain, numbness, weakness</td>
+                    </tr>
+                    <tr>
+                        <td><span class="critical">Cardiac</span></td>
+                        <td>Cardiomyopathy, pericarditis (<span class="percentage">50%</span>)</td>
+                        <td>Major cause of death</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Dermatologic Manifestations -->
+            <div class="section-title">🎯 CUTANEOUS MANIFESTATIONS (HIGH-YIELD FOR DERM BOARDS)</div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lesion Type</th>
+                        <th>Description</th>
+                        <th>Frequency/Significance</th>
+                        <th>Board Pearl</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="highlight">Petechiae & Purpura</span></td>
+                        <td>Most common skin finding</td>
+                        <td>Phase 3 (vasculitic)</td>
+                        <td>Small vessel vasculitis</td>
+                    </tr>
+                    <tr>
+                        <td><span class="critical">Churg-Strauss Nodules</span></td>
+                        <td>Papulonecrotic lesions on extensors</td>
+                        <td>Pathognomonic when present</td>
+                        <td><span class="highlight">PNGD on histology!</span></td>
+                    </tr>
+                    <tr>
+                        <td>Subcutaneous Nodules</td>
+                        <td>Painful nodules</td>
+                        <td>Medium vessel involvement</td>
+                        <td>Can ulcerate</td>
+                    </tr>
+                    <tr>
+                        <td>Livedo Racemosa</td>
+                        <td>Broken, irregular pattern</td>
+                        <td>Medium vessel vasculitis</td>
+                        <td>vs. livedo reticularis</td>
+                    </tr>
+                    <tr>
+                        <td>Retiform Purpura</td>
+                        <td>Stellate, angular purpura</td>
+                        <td>Medium vessel occlusion</td>
+                        <td>Poor prognostic sign</td>
+                    </tr>
+                    <tr>
+                        <td>Non-vasculitic "Allergic"</td>
+                        <td>Rash, urticaria, pruritus</td>
+                        <td>More than other AAVs</td>
+                        <td>Nonspecific findings</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Lab & ANCA -->
+            <div class="section-title">🔬 LABORATORY FINDINGS</div>
+            
+            <div class="quick-facts">
+                <div class="fact-card">
+                    <h4>ANCA Pattern</h4>
+                    <ul>
+                        <li>Only <span class="percentage">~50%</span> ANCA positive</li>
+                        <li>When positive: <span class="highlight">p-ANCA/anti-MPO</span></li>
+                        <li><strong>ANCA +</strong> → ↑ neuropathy, glomerulonephritis</li>
+                        <li><strong>ANCA -</strong> → ↑ cardiac involvement</li>
+                    </ul>
+                </div>
+                <div class="fact-card">
+                    <h4>Key Labs</h4>
+                    <ul>
+                        <li><span class="critical">Eosinophilia ≥1500 or ≥10%</span></li>
+                        <li>Elevated serum IgE</li>
+                        <li>ESR/CRP elevated</li>
+                        <li>Check cardiac enzymes if suspected</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quick Comparison -->
+            <div class="section-title">⚡ QUICK COMPARISON: EGPA vs OTHER AAVs</div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>EGPA</th>
+                        <th>GPA/MPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Asthma</td>
+                        <td><span class="highlight">Almost ALL patients</span></td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>Eosinophilia</td>
+                        <td><span class="highlight">Defining feature</span></td>
+                        <td>Absent/minimal</td>
+                    </tr>
+                    <tr>
+                        <td>Renal involvement</td>
+                        <td>Less common</td>
+                        <td><span class="highlight">Very common</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cardiac involvement</td>
+                        <td><span class="highlight">Common (50%)</span></td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>ANCA positivity</td>
+                        <td>~50%</td>
+                        <td>>90%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Final Memory Hook -->
+            <div class="memory-hook">
+                <h3>🎯 BOARD EXAM TAKEAWAYS</h3>
+                <div class="mnemonic">
+                    <strong>EGPA = "ASTHMA + EOSINOPHILS + VASCULITIS"</strong><br>
+                    • If you see asthma + eosinophilia → think EGPA<br>
+                    • Churg-Strauss nodules = PNGD histology<br>
+                    • 50% cardiac involvement (major cause of death)<br>
+                    • Only 50% ANCA positive (p-ANCA/MPO when +)<br>
+                    • Less renal involvement than GPA/MPA
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

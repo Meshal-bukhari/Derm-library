@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutis Laxa: Board Review Interactive Module</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #2ecc71;
+            --warning: #f1c40f;
+            --info: #1abc9c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #2980b9);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background-color: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        main {
+            padding: 30px;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .card-header {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card.ad-type {
+            border-left-color: var(--primary);
+        }
+        
+        .card.ad-type .card-header {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--primary);
+        }
+        
+        .card.ar-type {
+            border-left-color: var(--secondary);
+        }
+        
+        .card.ar-type .card-header {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--secondary);
+        }
+        
+        .card.xlr-type {
+            border-left-color: var(--accent);
+        }
+        
+        .card.xlr-type .card-header {
+            background-color: rgba(243, 156, 18, 0.1);
+            color: var(--accent);
+        }
+        
+        .card.acquired-type {
+            border-left-color: var(--info);
+        }
+        
+        .card.acquired-type .card-header {
+            background-color: rgba(26, 188, 156, 0.1);
+            color: var(--info);
+        }
+        
+        .highlight {
+            background-color: rgba(241, 196, 15, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .key-point {
+            background-color: rgba(46, 204, 113, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success);
+        }
+        
+        .key-point h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+        
+        .mnemonic-box {
+            background-color: rgba(155, 89, 182, 0.1);
+            border: 2px dashed #9b59b6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .mnemonic-box h4 {
+            color: #9b59b6;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .mnemonic-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .mnemonic-item::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #9b59b6;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            height: 200px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--dark);
+            transform: rotateY(180deg);
+            border: 2px solid var(--primary);
+        }
+        
+        .exam-tips {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .exam-tips h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .clinical-pearl {
+            background-color: rgba(26, 188, 156, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--info);
+        }
+        
+        .clinical-pearl h4 {
+            color: var(--info);
+            margin-bottom: 10px;
+        }
+        
+        .genetic-highlight {
+            color: #8e44ad;
+            font-weight: 600;
+        }
+        
+        .symptom-highlight {
+            color: #d35400;
+            font-weight: 600;
+        }
+        
+        .quiz-container {
+            margin: 30px 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: 8px;
+        }
+        
+        .quiz-question p {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .quiz-options {
+            margin-left: 20px;
+        }
+        
+        .quiz-option {
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .quiz-option input {
+            margin-right: 10px;
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .feedback-correct {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #27ae60;
+        }
+        
+        .feedback-incorrect {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #c0392b;
+        }
+        
+        .btn-check {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        
+        .visual-aid {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .differential-box {
+            background-color: rgba(52, 152, 219, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .differential-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .differential-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e9ecef;
+        }
+        
+        .differential-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .differential-item h5 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cutis Laxa & Generalized Elastolysis</h1>
+            <p>Interactive Board Review Module for Saudi Board Exam</p>
+        </header>
+        
+        <nav>
+            <button class="nav-btn active" data-target="overview">Overview</button>
+            <button class="nav-btn" data-target="ad-type">AD Forms</button>
+            <button class="nav-btn" data-target="ar-type">AR Forms</button>
+            <button class="nav-btn" data-target="xlr-type">XLR Form</button>
+            <button class="nav-btn" data-target="acquired">Acquired</button>
+            <button class="nav-btn" data-target="comparison">Comparison</button>
+            <button class="nav-btn" data-target="quiz">Quiz Yourself</button>
+        </nav>
+        
+        <main>
+            <!-- OVERVIEW SECTION -->
+            <section id="overview" class="section active">
+                <h2>Cutis Laxa: Essential Overview</h2>
+                
+                <div class="key-point">
+                    <h4>Definition & Core Concept</h4>
+                    <p>Cutis laxa is a group of rare connective tissue disorders characterized by loose, sagging skin with reduced elasticity due to defects in elastic fiber formation or structural abnormalities.</p>
+                </div>
+                
+                <div class="mnemonic-box">
+                    <h4>Memory Anchor: "L.A.X.A."</h4>
+                    <div class="mnemonic-item"><strong>L</strong>oose skin (clinical hallmark)</div>
+                    <div class="mnemonic-item"><strong>A</strong>utosomal forms (dominant or recessive)</div>
+                    <div class="mnemonic-item"><strong>X</strong>-linked recessive form</div>
+                    <div class="mnemonic-item"><strong>A</strong>cquired variants</div>
+                </div>
+                
+                <h3>Classification at a Glance</h3>
+                <div class="visual-aid">
+                    <svg width="100%" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+                        <!-- Central node -->
+                        <circle cx="400" cy="150" r="50" fill="#3498db" />
+                        <text x="400" y="155" text-anchor="middle" fill="white" font-weight="bold">Cutis Laxa</text>
+                        
+                        <!-- AD Type -->
+                        <circle cx="200" cy="70" r="40" fill="#2ecc71" />
+                        <text x="200" y="75" text-anchor="middle" fill="white" font-weight="bold">AD Type</text>
+                        <path d="M255 95 L 355 130" stroke="#2ecc71" stroke-width="2" fill="none" />
+                        
+                        <!-- AR Type -->
+                        <circle cx="200" cy="230" r="40" fill="#e74c3c" />
+                        <text x="200" y="235" text-anchor="middle" fill="white" font-weight="bold">AR Type</text>
+                        <path d="M255 215 L 355 170" stroke="#e74c3c" stroke-width="2" fill="none" />
+                        
+                        <!-- XLR Type -->
+                        <circle cx="600" cy="70" r="40" fill="#f39c12" />
+                        <text x="600" y="75" text-anchor="middle" fill="white" font-weight="bold">XLR Type</text>
+                        <path d="M545 95 L 445 130" stroke="#f39c12" stroke-width="2" fill="none" />
+                        
+                        <!-- Acquired Type -->
+                        <circle cx="600" cy="230" r="40" fill="#1abc9c" />
+                        <text x="600" y="235" text-anchor="middle" fill="white" font-weight="bold">Acquired</text>
+                        <path d="M545 215 L 445 170" stroke="#1abc9c" stroke-width="2" fill="none" />
+                    </svg>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl: The Universal Finding</h4>
+                    <p>All forms of cutis laxa share the histological finding of <strong>sparse and/or fragmented elastic fibers</strong>, which underlies the clinical presentation of loose, inelastic skin.</p>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>High-Yield Exam Focus</h4>
+                    <p>Board exams frequently test on:</p>
+                    <ul>
+                        <li>Distinguishing genetic variants (AD vs. AR vs. XLR)</li>
+                        <li>Associated internal manifestations (especially severe in AR forms)</li>
+                        <li>Recognizing "hound-dog facies" as a classic presentation</li>
+                        <li>Common causes of acquired cutis laxa</li>
+                        <li>Differential diagnosis from other connective tissue disorders</li>
+                    </ul>
+                </div>
+                
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            What is the most common genetic pattern in cutis laxa?
+                        </div>
+                        <div class="flashcard-back">
+                            <p>Autosomal Recessive (AR) forms are most common. These present early (birth to early childhood) and feature severe internal involvement along with skin manifestations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- AUTOSOMAL DOMINANT SECTION -->
+            <section id="ad-type" class="section">
+                <h2>Autosomal Dominant (AD) Cutis Laxa</h2>
+                
+                <div class="key-point">
+                    <h4>Key Characteristics</h4>
+                    <ul>
+                        <li><strong>Frequency:</strong> Less common than AR forms</li>
+                        <li><strong>Presentation Age:</strong> Early adulthood</li>
+                        <li><strong>Internal Involvement:</strong> Uncommon</li>
+                        <li><strong>Primary Affected Area:</strong> Skin</li>
+                    </ul>
+                </div>
+                
+                <div class="card ad-type">
+                    <div class="card-header">Genetic Mutations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li><span class="genetic-highlight">Elastin gene (ELN)</span> mutations</li>
+                            <li><span class="genetic-highlight">Fibulin 5 (FBLN5)</span> mutations</li>
+                            <li>These mutations lead to dysregulation of elastic fiber network in the skin</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card ad-type">
+                    <div class="card-header">Clinical Manifestations</div>
+                    <div class="card-body">
+                        <h4>Primary Features:</h4>
+                        <ul>
+                            <li>Generalized cutaneous findings</li>
+                            <li>Cardiac valve abnormalities</li>
+                            <li>Aortic dilatation (variable)</li>
+                            <li>Emphysema (uncommon)</li>
+                            <li>Hernias</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>AD Type: Board Exam Focus</h4>
+                    <p>Remember that AD cutis laxa primarily affects the skin with minimal internal involvement. This is in stark contrast to AR forms, which have severe multi-organ manifestations.</p>
+                </div>
+                
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            What are the two main gene mutations in AD cutis laxa?
+                        </div>
+                        <div class="flashcard-back">
+                            <p>The two main gene mutations in AD cutis laxa are:</p>
+                            <p>1. Elastin gene (ELN)</p>
+                            <p>2. Fibulin 5 (FBLN5)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- AUTOSOMAL RECESSIVE SECTION -->
+            <section id="ar-type" class="section">
+                <h2>Autosomal Recessive (AR) Cutis Laxa</h2>
+                
+                <div class="key-point">
+                    <h4>Key Characteristics</h4>
+                    <ul>
+                        <li><strong>Frequency:</strong> Most common form</li>
+                        <li><strong>Presentation Age:</strong> Birth to early childhood</li>
+                        <li><strong>Pattern:</strong> Skin manifestations + severe internal involvement</li>
+                    </ul>
+                </div>
+                
+                <div class="card ar-type">
+                    <div class="card-header">Genetic Mutations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li><span class="genetic-highlight">FBLN5</span></li>
+                            <li><span class="genetic-highlight">EFEMP2/FBLN4</span></li>
+                            <li><span class="genetic-highlight">LTBP4</span></li>
+                            <li><span class="genetic-highlight">ATPase</span></li>
+                            <li><span class="genetic-highlight">ATPGVOA2</span></li>
+                            <li><span class="genetic-highlight">PYCR1</span></li>
+                            <li><span class="genetic-highlight">ALDH18A1</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>ARCL Type I</h3>
+                <div class="card ar-type">
+                    <div class="card-header">ARCL Type I</div>
+                    <div class="card-body">
+                        <h4>Genetic Mutations:</h4>
+                        <ul>
+                            <li>FBLN5</li>
+                            <li>EFEMP2</li>
+                            <li>LTBP4</li>
+                        </ul>
+                        
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li><span class="symptom-highlight">Potentially fatal involvement of lungs</span> (hypoplastic lungs and emphysema)</li>
+                            <li>Cardiovascular abnormalities (aortic tortuosity and aneurysms)</li>
+                            <li>Inguinal/diaphragmatic/umbilical hernias</li>
+                            <li>GI/GU diverticula</li>
+                            <li>Joint laxity, arachnodactyly, and fractures (variable)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>ARCL Type II</h3>
+                <div class="card ar-type">
+                    <div class="card-header">ARCL Type II</div>
+                    <div class="card-body">
+                        <h4>Genetic Mutations:</h4>
+                        <ul>
+                            <li>ATP6V0A2 (Type IIA)</li>
+                            <li>PYRC1 (Type IIB)</li>
+                        </ul>
+                        
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Craniofacial anomalies</li>
+                            <li>Cutaneous features may be primarily acral</li>
+                            <li>Pachygyria (Type IIA)</li>
+                            <li>Absent corpus callosum (Type IIB)</li>
+                            <li>Translucent skin (Type IIB)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>ARCL Type III (De Barsy Syndrome)</h3>
+                <div class="card ar-type">
+                    <div class="card-header">ARCL Type III (De Barsy Syndrome)</div>
+                    <div class="card-body">
+                        <h4>Genetic Mutations:</h4>
+                        <ul>
+                            <li>ALDH18A1 (Type IIIA)</li>
+                            <li>PYRC1 (Type IIIB)</li>
+                        </ul>
+                        
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Developmental delay/dystonia/neurologic deterioration</li>
+                            <li>Progeroid appearance</li>
+                            <li>Athetosis</li>
+                            <li>Corneal clouding/cataracts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mnemonic-box">
+                    <h4>Memory Anchor: "AR-CL 1-2-3"</h4>
+                    <div class="mnemonic-item"><strong>ARCL Type I:</strong> <span class="highlight">L</span>ungs & <span class="highlight">V</span>ascular (Pulmonary & Cardiovascular)</div>
+                    <div class="mnemonic-item"><strong>ARCL Type II:</strong> <span class="highlight">B</span>rain & <span class="highlight">F</span>ace (Craniofacial & Neurological)</div>
+                    <div class="mnemonic-item"><strong>ARCL Type III:</strong> <span class="highlight">D</span>e <span class="highlight">B</span>arsy (Developmental & "Old appearance")</div>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>ARCL: Board Exam Focus</h4>
+                    <p>In board exams, expect cases presenting with multi-system involvement in infants/children. The combination of loose skin and internal organ complications, especially pulmonary/cardiovascular in Type I, should trigger ARCL diagnosis.</p>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl: De Barsy Syndrome</h4>
+                    <p>De Barsy syndrome (ARCL Type III) is characterized by its distinctive progeroid (premature aging) appearance combined with neurological dysfunction, making it a unique presentation among cutis laxa variants.</p>
+                </div>
+            </section>
+            
+            <!-- X-LINKED RECESSIVE SECTION -->
+            <section id="xlr-type" class="section">
+                <h2>X-Linked Recessive (XLR) Cutis Laxa</h2>
+                
+                <div class="key-point">
+                    <h4>Key Characteristics</h4>
+                    <p>XLR cutis laxa is now termed "occipital horn syndrome" (previously called Ehlers-Danlos syndrome [EDS] type IX)</p>
+                </div>
+                
+                <div class="card xlr-type">
+                    <div class="card-header">Genetic Mutations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Mutations in <span class="genetic-highlight">ATPase, Cu(2+)-transporting, alpha polypeptide (ATP7A)</span></li>
+                            <li>Allelic to Menkes disease</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card xlr-type">
+                    <div class="card-header">Clinical Manifestations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Easy bruising and coarse hair (variable)</li>
+                            <li>Long face with high forehead and hooked nose</li>
+                            <li><span class="symptom-highlight">Wedge-shaped occipital calcifications</span> (occipital horns) - pathognomonic</li>
+                            <li>Hip dislocations (due to joint laxity)</li>
+                            <li>Loose, sagging skin with reduced elasticity</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl: Occipital Horns</h4>
+                    <p>The presence of occipital horns (wedge-shaped calcifications in the occipital bone) is pathognomonic for this condition and serves as an important radiological marker for diagnosis.</p>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>XLR Type: Board Exam Focus</h4>
+                    <p>Remember that XLR cutis laxa has been reclassified as "occipital horn syndrome." If you see a question about a male patient with cutis laxa features, coarse hair, and distinctive bone abnormalities, think of this condition.</p>
+                </div>
+                
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            What is the pathognomonic radiological finding in XLR cutis laxa?
+                        </div>
+                        <div class="flashcard-back">
+                            <p>Wedge-shaped occipital calcifications (occipital horns) are the pathognomonic radiological finding in XLR cutis laxa (occipital horn syndrome).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ACQUIRED SECTION -->
+            <section id="acquired" class="section">
+                <h2>Acquired Cutis Laxa</h2>
+                
+                <div class="key-point">
+                    <h4>Key Characteristics</h4>
+                    <ul>
+                        <li><strong>Population:</strong> Primarily adults</li>
+                        <li><strong>Pattern:</strong> Sagging of skin with little associated internal involvement</li>
+                        <li><strong>Distribution:</strong> May be primarily acral; generalized involvement typically begins on the face</li>
+                    </ul>
+                </div>
+                
+                <div class="card acquired-type">
+                    <div class="card-header">Associated Factors</div>
+                    <div class="card-body">
+                        <h4>Medications:</h4>
+                        <ul>
+                            <li>Penicillamine</li>
+                            <li>Isoniazid</li>
+                        </ul>
+                        
+                        <h4>Cutaneous Disorders:</h4>
+                        <ul>
+                            <li>Cutaneous lymphoma</li>
+                            <li>Sweet's syndrome-like eruption</li>
+                            <li>Interstitial granulomatous dermatitis</li>
+                            <li>Cutaneous mastocytosis</li>
+                        </ul>
+                        
+                        <h4>Systemic Diseases:</h4>
+                        <ul>
+                            <li>Rheumatoid arthritis</li>
+                            <li>Sarcoidosis</li>
+                            <li>Systemic lupus erythematosus (SLE)</li>
+                            <li>Infectious disorders</li>
+                        </ul>
+                    </div>
+                </div>
+                
+               
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl: Drug-Induced Cases</h4>
+                    <p>Penicillamine is the most frequently reported medication causing acquired cutis laxa. Always check medication history in adult patients presenting with new-onset skin laxity.</p>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>Acquired Type: Board Exam Focus</h4>
+                    <p>In the exam, distinguish acquired cutis laxa from hereditary forms by: adult onset, preceding inflammatory condition or drug exposure, and distribution pattern (often begins on face or is acral).</p>
+                </div>
+                
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            What medications are associated with acquired cutis laxa?
+                        </div>
+                        <div class="flashcard-back">
+                            <p>The two main medications associated with acquired cutis laxa are:</p>
+                            <p>1. Penicillamine</p>
+                            <p>2. Isoniazid</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- COMPARISON SECTION -->
+            <section id="comparison" class="section">
+                <h2>Comparative Analysis of Cutis Laxa Forms</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>AD Form</th>
+                            <th>AR Form</th>
+                            <th>XLR Form</th>
+                            <th>Acquired</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Frequency</strong></td>
+                            <td>Less common</td>
+                            <td>Most common</td>
+                            <td>Rare</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Age of Onset</strong></td>
+                            <td>Early adulthood</td>
+                            <td>Birth to early childhood</td>
+                            <td>Early childhood</td>
+                            <td>Adult (typically)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Genes</strong></td>
+                            <td>ELN, FBLN5</td>
+                            <td>FBLN5, EFEMP2, LTBP4, etc.</td>
+                            <td>ATP7A</td>
+                            <td>N/A (acquired)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internal Involvement</strong></td>
+                            <td>Uncommon</td>
+                            <td>Severe</td>
+                            <td>Moderate</td>
+                            <td>Minimal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Distinctive Features</strong></td>
+                            <td>Primarily skin</td>
+                            <td>Subtype-specific organ involvement</td>
+                            <td>Occipital horns</td>
+                            <td>Associated with drugs/diseases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Facial Features</strong></td>
+                            <td>Hound-dog facies</td>
+                            <td>Hound-dog facies, craniofacial anomalies</td>
+                            <td>Long face, high forehead, hooked nose</td>
+                            <td>Begins on face typically</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="key-point">
+                    <h4>Universal Clinical Features</h4>
+                    <p>Across all forms of cutis laxa, these features are consistently present:</p>
+                    <ul>
+                        <li>Loose, sagging skin with reduced elasticity and resilience</li>
+                        <li>"Aged" facial appearance (hound-dog facies) with down-slanting palpebral fissures and a long philtrum</li>
+                        <li>Deep voice due to vocal cord laxity</li>
+                        <li>Histology: sparse and/or fragmented elastic fibers</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-box">
+                    <h4>Differential Diagnosis</h4>
+                    
+                    <div class="differential-item">
+                        <h5>Ehlers-Danlos Syndrome (EDS)</h5>
+                        <p>Characterized by joint hypermobility, skin hyperextensibility, and tissue fragility. Unlike cutis laxa, the skin in EDS snaps back after being stretched.</p>
+                    </div>
+                    
+                    <div class="differential-item">
+                        <h5>Marfan Syndrome</h5>
+                        <p>Features tall stature, arachnodactyly, lens dislocation, and aortic dilatation. Skin is not excessively lax as in cutis laxa.</p>
+                    </div>
+                    
+                    <div class="differential-item">
+                        <h5>Pseudoxanthoma Elasticum</h5>
+                        <p>Shows characteristic yellow papules in flexural areas with "plucked chicken skin" appearance. Elastic fiber calcification rather than fragmentation.</p>
+                    </div>
+                    
+                    <div class="differential-item">
+                        <h5>Mid-dermal Elastolysis</h5>
+                        <p>Selective loss of elastic fibers in the mid-dermis, with fine wrinkling rather than pendulous skin folds.</p>
+                    </div>
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>Comparative Board Exam Focus</h4>
+                    <p>Board exams often test on distinguishing features between these forms. Remember key discriminators:</p>
+                    <ul>
+                        <li>Age of onset</li>
+                        <li>Pattern of inheritance</li>
+                        <li>Severity and type of internal organ involvement</li>
+                        <li>Specific clinical markers (e.g., occipital horns in XLR form)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- QUIZ SECTION -->
+            <section id="quiz" class="section">
+                <h2>Self-Assessment Quiz</h2>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question" id="q1">
+                        <p>1. A 2-month-old infant presents with loose, sagging skin, respiratory distress, and cardiovascular abnormalities. Which type of cutis laxa is most likely?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1a" value="a">
+                                <label for="q1a">AD cutis laxa</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1b" value="b">
+                                <label for="q1b">ARCL Type I</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1c" value="c">
+                                <label for="q1c">XLR cutis laxa</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1d" value="d">
+                                <label for="q1d">Acquired cutis laxa</label>
+                            </div>
+                        </div>
+                        <button class="btn-check" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                        <div class="quiz-feedback" id="feedback-q1"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="q2">
+                        <p>2. Which genetic mutation is associated with X-linked recessive cutis laxa?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2a" value="a">
+                                <label for="q2a">FBLN5</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2b" value="b">
+                                <label for="q2b">ELN</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2c" value="c">
+                                <label for="q2c">ATP7A</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2d" value="d">
+                                <label for="q2d">PYCR1</label>
+                            </div>
+                        </div>
+                        <button class="btn-check" onclick="checkAnswer('q2', 'c')">Check Answer</button>
+                        <div class="quiz-feedback" id="feedback-q2"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="q3">
+                        <p>3. Which of the following is the pathognomonic radiological finding in XLR cutis laxa?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3a" value="a">
+                                <label for="q3a">Aortic aneurysm</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3b" value="b">
+                                <label for="q3b">Wedge-shaped occipital calcifications</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3c" value="c">
+                                <label for="q3c">Absent corpus callosum</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3d" value="d">
+                                <label for="q3d">Pachygyria</label>
+                            </div>
+                        </div>
+                        <button class="btn-check" onclick="checkAnswer('q3', 'b')">Check Answer</button>
+                        <div class="quiz-feedback" id="feedback-q3"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="q4">
+                        <p>4. A 45-year-old woman on long-term penicillamine therapy for rheumatoid arthritis develops loose, sagging skin. Which form of cutis laxa is most likely?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4a" value="a">
+                                <label for="q4a">AD cutis laxa</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4b" value="b">
+                                <label for="q4b">ARCL Type II</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4c" value="c">
+                                <label for="q4c">XLR cutis laxa</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4d" value="d">
+                                <label for="q4d">Acquired cutis laxa</label>
+                            </div>
+                        </div>
+                        <button class="btn-check" onclick="checkAnswer('q4', 'd')">Check Answer</button>
+                        <div class="quiz-feedback" id="feedback-q4"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="q5">
+                        <p>5. Which type of cutis laxa is characterized by a progeroid appearance, developmental delay, and corneal clouding?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5a" value="a">
+                                <label for="q5a">AD cutis laxa</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5b" value="b">
+                                <label for="q5b">ARCL Type I</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5c" value="c">
+                                <label for="q5c">ARCL Type III (De Barsy syndrome)</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5d" value="d">
+                                <label for="q5d">XLR cutis laxa</label>
+                            </div>
+                        </div>
+                        <button class="btn-check" onclick="checkAnswer('q5', 'c')">Check Answer</button>
+                        <div class="quiz-feedback" id="feedback-q5"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Interactive Learning Module for Saudi Board Exam Preparation | Cutis Laxa & Generalized Elastolysis</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Navigation functionality
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.section');
+        
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                
+                // Remove active class from all buttons and sections
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and target section
+                button.classList.add('active');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+        
+        // Quiz functionality
+        function checkAnswer(questionId, correctAnswer) {
+            const selectedAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackElement = document.getElementById(`feedback-${questionId}`);
+            
+            if (!selectedAnswer) {
+                feedbackElement.textContent = "Please select an answer.";
+                feedbackElement.className = "quiz-feedback";
+                feedbackElement.style.display = "block";
+                return;
+            }
+            
+            if (selectedAnswer.value === correctAnswer) {
+                feedbackElement.textContent = "Correct! Well done.";
+                feedbackElement.className = "quiz-feedback feedback-correct";
+            } else {
+                feedbackElement.textContent = "Incorrect. Try again.";
+                feedbackElement.className = "quiz-feedback feedback-incorrect";
+            }
+            
+            feedbackElement.style.display = "block";
+        }
+        
+        // Card header toggle functionality
+        const cardHeaders = document.querySelectorAll('.card-header');
+        
+        cardHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

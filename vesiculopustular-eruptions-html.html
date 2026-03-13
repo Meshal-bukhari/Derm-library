@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vesiculopustular Eruptions in Neonates - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --benign-color: #4caf50;
+            --benign-light: #e8f5e9;
+            --infectious-color: #f44336;
+            --infectious-light: #ffebee;
+            --rare-color: #9c27b0;
+            --rare-light: #f3e5f5;
+            --bullous-color: #ff9800;
+            --bullous-light: #fff3e0;
+            --diagnostic-color: #2196f3;
+            --diagnostic-light: #e3f2fd;
+            --border-radius: 8px;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Quick Nav */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .quick-nav button {
+            background-color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .quick-nav button:hover {
+            transform: translateY(-3px);
+        }
+
+        .quick-nav button.benign {
+            border-left: 5px solid var(--benign-color);
+        }
+
+        .quick-nav button.infectious {
+            border-left: 5px solid var(--infectious-color);
+        }
+
+        .quick-nav button.rare {
+            border-left: 5px solid var(--rare-color);
+        }
+
+        .quick-nav button.bullous {
+            border-left: 5px solid var(--bullous-color);
+        }
+
+        .quick-nav button.diagnostic {
+            border-left: 5px solid var(--diagnostic-color);
+        }
+
+        /* Main Content */
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            padding: 15px 20px;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header i {
+            font-size: 1.5rem;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        /* Category Colors */
+        .benign .section-header {
+            background-color: var(--benign-color);
+        }
+
+        .infectious .section-header {
+            background-color: var(--infectious-color);
+        }
+
+        .rare .section-header {
+            background-color: var(--rare-color);
+        }
+
+        .bullous .section-header {
+            background-color: var(--bullous-color);
+        }
+
+        .diagnostic .section-header {
+            background-color: var(--diagnostic-color);
+        }
+
+        /* Condition Cards */
+        .condition-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .condition-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            width: calc(50% - 10px);
+            transition: transform 0.3s;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .condition-card {
+                width: 100%;
+            }
+        }
+
+        .condition-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .condition-card .card-header {
+            padding: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .condition-card .card-content {
+            padding: 0 15px 15px;
+        }
+
+        .condition-card.benign .card-header {
+            background-color: var(--benign-light);
+            color: var(--benign-color);
+            border-left: 5px solid var(--benign-color);
+        }
+
+        .condition-card.infectious .card-header {
+            background-color: var(--infectious-light);
+            color: var(--infectious-color);
+            border-left: 5px solid var(--infectious-color);
+        }
+
+        .condition-card.rare .card-header {
+            background-color: var(--rare-light);
+            color: var(--rare-color);
+            border-left: 5px solid var(--rare-color);
+        }
+
+        .condition-card.bullous .card-header {
+            background-color: var(--bullous-light);
+            color: var(--bullous-color);
+            border-left: 5px solid var(--bullous-color);
+        }
+
+        /* Feature Badge */
+        .feature-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .onset {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .morph {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+
+        .dist {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .cells {
+            background-color: #f3e5f5;
+            color: #8e24aa;
+        }
+
+        .test {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        /* Comparison Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background-color: #f5f5f5;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table td {
+            padding: 10px 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Memory Aids */
+        .memory-aid {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-left: 5px solid #ffd600;
+            position: relative;
+        }
+
+        .memory-aid::before {
+            content: "💡 MEMORY AID";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: #ffd600;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .memory-aid .mnemonic {
+            font-weight: 600;
+            color: #f57f17;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Board Alert */
+        .board-alert {
+            background-color: #f9a825;
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            position: relative;
+            padding-top: 25px;
+        }
+
+        .board-alert::before {
+            content: "⚠️ BOARD EXAM ALERT";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: #e65100;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Flip Cards */
+        .flip-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: calc(33.33% - 14px);
+            height: 200px;
+            perspective: 1000px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .flip-card {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flip-card {
+                width: 100%;
+            }
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .flip-card-front {
+            background-color: white;
+            color: #333;
+        }
+
+        .flip-card-back {
+            background-color: #1a237e;
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .quick-nav, .interactive-elements {
+                display: none;
+            }
+
+            .section, .condition-card {
+                box-shadow: none;
+                page-break-inside: avoid;
+                border: 1px solid #ddd;
+            }
+
+            .section-header {
+                color: black !important;
+                background-color: #f5f5f5 !important;
+            }
+        }
+
+        /* Toggleable sections */
+        .toggleable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .toggle-trigger {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-trigger::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .toggle-trigger.active::after {
+            transform: rotate(180deg);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background-color: #ddd;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-point {
+            position: absolute;
+            left: 50%;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #2196f3;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 12px;
+            color: #2196f3;
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: 45%;
+            margin-right: 30px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 45%;
+            margin-left: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-content {
+                width: calc(100% - 40px);
+                margin-left: 40px !important;
+            }
+
+            .timeline-point {
+                left: 20px;
+            }
+
+            .timeline-date {
+                position: relative;
+                top: -5px;
+                left: 40px !important;
+                right: auto !important;
+                margin: 0 0 10px 0 !important;
+                text-align: left !important;
+            }
+        }
+
+        /* Multi-tab component */
+        .tab-container {
+            margin: 30px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            overflow-x: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+
+        .tab-button.active {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-bottom: 2px solid white;
+            margin-bottom: -1px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* High-yield box */
+        .high-yield {
+            background-color: #ffebee;
+            border-left: 5px solid #d32f2f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            position: relative;
+            padding-top: 25px;
+        }
+
+        .high-yield::before {
+            content: "🔴 HIGH YIELD";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: #d32f2f;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Key differential table */
+        .key-differential {
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .key-differential-header {
+            background-color: #1a237e;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .key-differential-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #ddd;
+        }
+
+        .key-differential-condition {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .key-differential-features {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+        .key-differential-grid > div:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        /* Timeline Navigation */
+        .timeline-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .timeline-nav-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .timeline-nav-item:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .timeline-nav-item.active {
+            background-color: #1a237e;
+            color: white;
+            border-color: #1a237e;
+        }
+
+        /* Feature comparison */
+        .feature-comparison {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .feature-table th {
+            background-color: #1a237e;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .feature-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .feature-table td {
+            padding: 10px 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .feature-table td:first-child {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Interactive quiz styles */
+        .quiz-container {
+            margin: 30px 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quiz-option {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+
+        .quiz-option.correct {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .quiz-feedback.incorrect {
+            background-color: #ffcdd2;
+            color: #c62828;
+            display: block;
+        }
+
+        /* Progress tracker */
+        .progress-container {
+            margin: 20px 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 15px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .progress-stats {
+            color: #666;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        /* Toggle switch for visual cues */
+        .toggle-switch-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin: 0 10px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .toggle-slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Vesiculopustular Eruptions in Neonates</h1>
+            <p>High-Yield Summary for Saudi Board Dermatology Exam</p>
+        </header>
+
+        <div class="timeline-nav">
+            <div class="timeline-nav-item active" data-time="birth">At Birth</div>
+            <div class="timeline-nav-item" data-time="1-2days">1-2 Days</div>
+            <div class="timeline-nav-item" data-time="1week">~1 Week</div>
+            <div class="timeline-nav-item" data-time="2weeks">~2 Weeks</div>
+            <div class="timeline-nav-item" data-time="1month">~1 Month+</div>
+        </div>
+
+        <div class="quick-nav">
+            <button class="benign" data-target="benign-section">Benign Conditions</button>
+            <button class="infectious" data-target="infectious-section">Infectious Conditions</button>
+            <button class="rare" data-target="rare-section">Rare Conditions</button>
+            <button class="bullous" data-target="bullous-section">Bullous/Erosive</button>
+            <button class="diagnostic" data-target="diagnostic-section">Diagnostic Tests</button>
+            <button class="high-yield-btn" data-target="board-section">Exam High-Yield</button>
+        </div>
+
+        <div class="toggle-switch-container">
+            <span>Visual Memory Mode:</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="visual-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+            <span>On</span>
+        </div>
+
+        <div class="section" id="intro-section">
+            <div class="section-header">
+                <i class="fas fa-info-circle"></i>
+                <span>Introduction to Vesiculopustular Eruptions in Neonates</span>
+            </div>
+            <div class="section-content">
+                <p>Vesicles, pustules, bullae, erosions, and ulcerations are common presentations in the newborn period and infancy. Accurate and rapid diagnosis is crucial, as the differential includes <strong>life-threatening infections</strong> alongside <strong>benign, self-limited conditions</strong>.</p>
+                <p>A systematic approach, including bedside tests and appropriate cultures/biopsies, is essential for evaluation and management.</p>
+                
+                <div class="high-yield">
+                    <p>When approaching a neonate with vesiculopustular eruptions:</p>
+                    <ol>
+                        <li>Consider the <strong>timing of onset</strong> (at birth vs. days later)</li>
+                        <li>Evaluate the <strong>morphology and distribution</strong> of lesions</li>
+                        <li>Perform appropriate <strong>bedside tests</strong> (Wright/Giemsa, Gram stain, KOH)</li>
+                        <li>Assess for signs of <strong>systemic illness</strong></li>
+                        <li>Consider both <strong>infectious and non-infectious</strong> causes</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline of Onset -->
+        <div class="section diagnostic">
+            <div class="section-header">
+                <i class="fas fa-clock"></i>
+                <span>Timeline: When Conditions Typically Present</span>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-date">At Birth</div>
+                        <div class="timeline-content">
+                            <h3>Present at Birth</h3>
+                            <ul>
+                                <li><strong>TNPM:</strong> Pustules → collarettes → hyperpigmented macules</li>
+                                <li><strong>Congenital Candidiasis:</strong> Widespread, involves palms/soles</li>
+                                <li><strong>Sucking Blisters:</strong> Solitary blister/erosion on extremity</li>
+                                <li><strong>Intrauterine HSV:</strong> Vesicles, erosions, scars</li>
+                                <li><strong>Congenital Varicella:</strong> Dermatomal erosions, scarring</li>
+                                <li><strong>EB:</strong> Skin fragility with trauma</li>
+                                <li><strong>EI:</strong> Erythroderma with blistering</li>
+                                <li><strong>CEVD:</strong> Widespread erosions in premature infants</li>
+                                <li><strong>IP (Stage 1):</strong> Linear vesicles along Blaschko lines</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-date">24-48 Hours</div>
+                        <div class="timeline-content">
+                            <h3>24-48 Hours After Birth</h3>
+                            <ul>
+                                <li><strong>ETN:</strong> Erythematous macules, papules, pustules (eosinophilic)</li>
+                                <li><strong>Listeria:</strong> Hemorrhagic pustules, petechiae</li>
+                                <li><strong>GBS infection:</strong> Vesicles, bullae, pustules (high sepsis risk)</li>
+                                <li><strong>TMD Eruption:</strong> Vesicles and pustules in Down syndrome</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-date">~1 Week</div>
+                        <div class="timeline-content">
+                            <h3>Around 1 Week</h3>
+                            <ul>
+                                <li><strong>Neonatal Candidiasis:</strong> Diaper area, intertriginous zones, oral thrush</li>
+                                <li><strong>Miliaria Rubra:</strong> Small papules, papulovesicles (heat/occlusion)</li>
+                                <li><strong>Neonatal HSV:</strong> Grouped vesicles on erythematous base (CNS risk)</li>
+                                <li><strong>Staphylococcal infections:</strong> Pustules, bullae, crusting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-date">2-3 Weeks</div>
+                        <div class="timeline-content">
+                            <h3>2-3 Weeks</h3>
+                            <ul>
+                                <li><strong>NCP:</strong> Inflammatory papules and pustules on face (no comedones)</li>
+                                <li><strong>Pseudomonas:</strong> Pustules, hemorrhagic bullae, ecthyma gangrenosum</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-date">~1 Month+</div>
+                        <div class="timeline-content">
+                            <h3>1 Month and Beyond</h3>
+                            <ul>
+                                <li><strong>Scabies:</strong> Papules, nodules, vesicles, burrows (≥3-4wks)</li>
+                                <li><strong>AI:</strong> Intensely pruritic vesicles and pustules on hands/feet</li>
+                                <li><strong>EPF:</strong> Pruritic follicular pustules on scalp (eosinophilic)</li>
+                                <li><strong>IP (later stages):</strong> Verrucous → Hyperpigmented → Hypopigmented</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benign Conditions -->
+        <div class="section benign" id="benign-section">
+            <div class="section-header">
+                <i class="fas fa-check-circle"></i>
+                <span>Common Benign Conditions</span>
+            </div>
+            <div class="section-content">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="etn">ETN</button>
+                        <button class="tab-button" data-tab="tnpm">TNPM</button>
+                        <button class="tab-button" data-tab="miliaria">Miliaria</button>
+                        <button class="tab-button" data-tab="ncp">NCP</button>
+                        <button class="tab-button" data-tab="sucking">Sucking Blisters</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="etn">
+                        <h3>Erythema Toxicum Neonatorum (ETN)</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Erythema Toxicum Neonatorum (ETN)</th>
+                                </tr>
+                                <tr>
+                                    <td>Onset</td>
+                                    <td>Usually 24-48 hours after birth (rarely at birth, can be up to 1-2 weeks)</td>
+                                </tr>
+                                <tr>
+                                    <td>Morphology</td>
+                                    <td>Erythematous macules, small papules (1-2mm), vesicles, pustules, and wheals; often described as "flea bite-like" with a central papule/pustule and surrounding erythematous flare</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell Infiltrate</td>
+                                    <td><strong>Primarily eosinophils</strong> (confirmed by Wright/Giemsa stain of pustule contents)</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Trunk common, also face, proximal limbs, buttocks. <strong>Almost always spares palms and soles</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Epidemiology</td>
+                                    <td>Affects ~50% of full-term neonates (>2500g), rare in premature infants</td>
+                                </tr>
+                                <tr>
+                                    <td>Investigations</td>
+                                    <td>Usually clinical dx. Wright/Giemsa stain confirms eosinophils</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>None required. Reassurance</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember ETN with: <strong>E-T-N</strong></p>
+                            <ul>
+                                <li><strong>E</strong>osinophils in pustules</li>
+                                <li><strong>T</strong>wo days after birth (24-48h onset)</li>
+                                <li><strong>N</strong>ever on palms and soles</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p>ETN must be differentiated from TNPM: remember that ETN shows <strong>eosinophils</strong> on Wright stain, appears <strong>24-48 hours</strong> after birth, has prominent <strong>erythema</strong>, and <strong>spares palms and soles</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tnpm">
+                        <h3>Transient Neonatal Pustular Melanosis (TNPM)</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Transient Neonatal Pustular Melanosis (TNPM)</th>
+                                </tr>
+                                <tr>
+                                    <td>Synonyms</td>
+                                    <td>Transient neonatal pustulosis, Lentigines neonatorum</td>
+                                </tr>
+                                <tr>
+                                    <td>Onset</td>
+                                    <td><strong>Present at birth</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Morphology</td>
+                                    <td>Three stages:
+                                        <ol>
+                                            <li>Superficial vesiculopustules (2-10mm) without significant erythema</li>
+                                            <li>Ruptured pustules leave fine collarettes of scale</li>
+                                            <li>Residual hyperpigmented macules that persist for weeks to months</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cell Infiltrate</td>
+                                    <td><strong>Primarily neutrophils</strong>, occasional eosinophils (Wright/Giemsa stain)</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Forehead, chin, nape of neck, lower back, buttocks, shins common. <strong>Can involve palms and soles</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Epidemiology</td>
+                                    <td>More common in infants with darker skin phototypes (~5% of Black newborns)</td>
+                                </tr>
+                                <tr>
+                                    <td>Investigations</td>
+                                    <td>Usually clinical dx. Wright/Giemsa stain shows neutrophils</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>None required. Reassurance</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember TNPM with: <strong>T-N-P-M</strong></p>
+                            <ul>
+                                <li><strong>T</strong>here at birth (present at birth)</li>
+                                <li><strong>N</strong>eutrophils in pustules</li>
+                                <li><strong>P</strong>alms and soles can be involved</li>
+                                <li><strong>M</strong>elanin hyperpigmentation follows</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p>TNPM is most commonly confused with ETN. Key distinguishing features are <strong>onset at birth</strong> (vs. 24-48h for ETN), <strong>neutrophils</strong> (vs. eosinophils in ETN), <strong>minimal erythema</strong> (vs. prominent in ETN), and <strong>residual hyperpigmentation</strong> (vs. none in ETN).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="miliaria">
+                        <h3>Miliaria</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Miliaria</th>
+                                </tr>
+                                <tr>
+                                    <td>Synonyms</td>
+                                    <td>Heat rash, dew drops (crystallina), prickly heat (rubra)</td>
+                                </tr>
+                                <tr>
+                                    <td>Pathophysiology</td>
+                                    <td>Obstruction of eccrine sweat ducts. Associated with overheating, swaddling, fever, occlusion</td>
+                                </tr>
+                                <tr>
+                                    <td>Variants</td>
+                                    <td>
+                                        <strong>Miliaria Crystallina:</strong> Superficial obstruction (stratum corneum). Onset birth/early infancy. Tiny (1-2mm), clear, fragile, non-inflammatory vesicles ("dew drops")
+                                        <br><br>
+                                        <strong>Miliaria Rubra:</strong> Deeper obstruction (spinous layer). Onset usually ≥1 week. Small erythematous papules, papulovesicles, pustules
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cell Infiltrate</td>
+                                    <td>M. crystallina: minimal inflammation. M. rubra: variable inflammatory cells (not prominent eosinophils)</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Forehead, neck, upper trunk, occluded areas</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>Cooling measures, avoid overheating/occlusion. Resolves spontaneously</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember the types of Miliaria with: <strong>C-R-P</strong></p>
+                            <ul>
+                                <li><strong>C</strong>rystallina: <strong>C</strong>lear vesicles, <strong>C</strong>lear of inflammation</li>
+                                <li><strong>R</strong>ubra: <strong>R</strong>ed papules, <strong>R</strong>eactive inflammation</li>
+                                <li><strong>P</strong>rofunda: rare in infants, <strong>P</strong>rofound (deeper) obstruction</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p>Distinguish Miliaria from ETN/TNPM by <strong>association with overheating</strong>, <strong>lack of specific cell type</strong> on Wright/Giemsa stain, and <strong>improvement with cooling</strong>. Miliaria crystallina appears as clear "dew drops" without inflammation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="ncp">
+                        <h3>Neonatal Cephalic Pustulosis (NCP)</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Neonatal Cephalic Pustulosis (NCP)</th>
+                                </tr>
+                                <tr>
+                                    <td>Synonym</td>
+                                    <td>Historically "Neonatal Acne" (misnomer)</td>
+                                </tr>
+                                <tr>
+                                    <td>Onset</td>
+                                    <td>Typically ~5 days to 3 weeks of life</td>
+                                </tr>
+                                <tr>
+                                    <td>Morphology</td>
+                                    <td>Inflammatory papules and pustules on an erythematous base. <strong>No comedones</strong> (key difference from infantile acne)</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell Infiltrate</td>
+                                    <td>Giemsa stain may show neutrophils and yeast forms (Malassezia spp.)</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Cheeks most common; also forehead, chin, eyelids, less often neck, upper chest, scalp</td>
+                                </tr>
+                                <tr>
+                                    <td>Pathogenesis</td>
+                                    <td>Inflammatory reaction possibly related to Malassezia spp. colonization</td>
+                                </tr>
+                                <tr>
+                                    <td>Course</td>
+                                    <td>Resolves spontaneously over weeks to months (by 3 months). No scarring</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>Usually not necessary. Topical imidazole or low-potency hydrocortisone sometimes used</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="key-differential">
+                            <div class="key-differential-header">NCP vs. Infantile Acne</div>
+                            <div class="key-differential-grid">
+                                <div class="key-differential-condition">NCP</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Onset: 5 days to 3 weeks</li>
+                                        <li>NO comedones</li>
+                                        <li>Possible Malassezia association</li>
+                                        <li>Resolves by 3 months</li>
+                                        <li>No scarring</li>
+                                    </ul>
+                                </div>
+                                <div class="key-differential-condition">Infantile Acne</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Onset: 6 weeks to 1 year</li>
+                                        <li>Comedones present</li>
+                                        <li>Hormonal influence</li>
+                                        <li>Can last 1-2 years</li>
+                                        <li>Potential scarring</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember NCP vs. Infantile Acne with: <strong>COMED</strong></p>
+                            <ul>
+                                <li><strong>CO</strong>medones - absent in NCP, present in infantile acne</li>
+                                <li><strong>M</strong>alassezia - associated with NCP</li>
+                                <li><strong>E</strong>arly onset - NCP (days to weeks), Infantile acne (months)</li>
+                                <li><strong>D</strong>uration - NCP (short), Infantile acne (longer)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="sucking">
+                        <h3>Sucking Blisters</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Sucking Blisters</th>
+                                </tr>
+                                <tr>
+                                    <td>Onset</td>
+                                    <td>Present at birth</td>
+                                </tr>
+                                <tr>
+                                    <td>Morphology</td>
+                                    <td>Intact flaccid bulla or, more commonly, a solitary erosion or ulceration on a non-inflamed base. Linear or round, 5-15mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Pathogenesis</td>
+                                    <td>Vigorous sucking on the affected area in utero</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Radial forearm, wrist, hands, fingers most common; occasionally foot. Unilateral or bilateral</td>
+                                </tr>
+                                <tr>
+                                    <td>Complications</td>
+                                    <td>None; isolated benign finding</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>Supportive care; heals spontaneously in days to weeks</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember Sucking Blisters with: <strong>SUCK</strong></p>
+                            <ul>
+                                <li><strong>S</strong>olitary lesion</li>
+                                <li><strong>U</strong>nilateral (typically)</li>
+                                <li><strong>C</strong>ommon on wrists/hands</li>
+                                <li><strong>K</strong>nown to heal spontaneously</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p>Differentiate sucking blisters from other blistering disorders by their <strong>characteristic location</strong> (distal upper extremity), <strong>solitary nature</strong>, <strong>presence at birth</strong>, and <strong>lack of inflammation</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infectious Conditions -->
+        <div class="section infectious" id="infectious-section">
+            <div class="section-header">
+                <i class="fas fa-virus"></i>
+                <span>Infectious Conditions</span>
+            </div>
+            <div class="section-content">
+                <div class="board-alert">
+                    <p>Infectious vesiculopustular eruptions in neonates often require <strong>immediate intervention</strong> and have <strong>systemic implications</strong>. Always consider HSV, bacterial sepsis, and congenital/neonatal candidiasis in the differential diagnosis of vesicopustular eruptions in neonates.</p>
+                </div>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="candida">Candidiasis</button>
+                        <button class="tab-button" data-tab="bacterial">Bacterial</button>
+                        <button class="tab-button" data-tab="hsv">HSV</button>
+                        <button class="tab-button" data-tab="vzv">Varicella</button>
+                        <button class="tab-button" data-tab="scabies">Scabies</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="candida">
+                        <h3>Cutaneous Candidiasis</h3>
+                        
+                        <div class="key-differential">
+                            <div class="key-differential-header">Congenital vs. Neonatal Candidiasis</div>
+                            <div class="key-differential-grid">
+                                <div class="key-differential-condition">Congenital Candidiasis</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Acquired in utero (ascending infection)</li>
+                                        <li>Onset at birth or first few days (up to day 6)</li>
+                                        <li>Widespread eruption - erythematous papules, vesiculopustules, diffuse erythema, fine scaling</li>
+                                        <li>Palms and soles often involved</li>
+                                        <li>Diaper area and oral mucosa usually spared</li>
+                                        <li>Higher systemic risk, especially if premature</li>
+                                    </ul>
+                                </div>
+                                <div class="key-differential-condition">Neonatal Candidiasis</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Acquired during delivery or postnatally</li>
+                                        <li>Onset ≥1 week of age</li>
+                                        <li>Beefy red patches with satellite papules/pustules</li>
+                                        <li>Distribution: Diaper area, intertriginous zones, face</li>
+                                        <li>Oral thrush often present</li>
+                                        <li>Usually benign in healthy term infants</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="high-yield">
+                            <h4>"Invasive Fungal Dermatitis"</h4>
+                            <p>Seen in very-low-birth-weight (VLBW) premature newborns (often &lt;1000g) with cutaneous candidiasis:</p>
+                            <ul>
+                                <li>Widespread "burn-like" erythema with desquamation and erosions</li>
+                                <li>High risk of systemic dissemination</li>
+                                <li><strong>Treatment:</strong> Systemic antifungal therapy required (parenteral Amphotericin B)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember Candidiasis types with: <strong>C-N-I</strong></p>
+                            <ul>
+                                <li><strong>C</strong>ongenital: <strong>C</strong>ompletely at birth, <strong>C</strong>overs widely, <strong>C</strong>apable of systemic spread</li>
+                                <li><strong>N</strong>eonatal: <strong>N</strong>ow at 1 week+, <strong>N</strong>appies (diaper) affected, <strong>N</strong>ice prognosis</li>
+                                <li><strong>I</strong>nvasive: <strong>I</strong>mmature babies (&lt;1000g), <strong>I</strong>ntense ("burn-like") appearance, <strong>I</strong>V antifungals required</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p><strong>High-yield for the board:</strong> VLBW premature infants (&lt;1000g) with congenital candidiasis require <strong>immediate systemic antifungal therapy</strong> (Amphotericin B) regardless of clinical appearance, as they have high risk of systemic dissemination.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="bacterial">
+                        <h3>Bacterial Infections</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th>Organism</th>
+                                    <th>Onset</th>
+                                    <th>Morphology</th>
+                                    <th>Key Features</th>
+                                    <th>Diagnosis</th>
+                                </tr>
+                                <tr>
+                                    <td>Staphylococcus aureus</td>
+                                    <td>Few days to weeks+</td>
+                                    <td>Pustules, flaccid bullae, erosions with collarettes, crusts</td>
+                                    <td>Favors diaper, periumbilical areas, intertriginous zones</td>
+                                    <td>Gram stain (GPC in clusters), culture</td>
+                                </tr>
+                                <tr>
+                                    <td>Group A Streptococcal (GAS)</td>
+                                    <td>Few days to weeks+</td>
+                                    <td>Pustules, honey-colored crusts, fiery red intertriginous erythema</td>
+                                    <td>Any region, umbilical stump, skin folds</td>
+                                    <td>Gram stain (GPC in chains), rapid antigen, culture</td>
+                                </tr>
+                                <tr>
+                                    <td>Group B Streptococcal (GBS)</td>
+                                    <td>Birth to first few days</td>
+                                    <td>Vesicles, bullae, erosions, pustules, crusts</td>
+                                    <td>Any body region. <strong>High risk of systemic disease</strong></td>
+                                    <td>Gram stain (GPC in chains), culture</td>
+                                </tr>
+                                <tr>
+                                    <td>Listeria monocytogenes</td>
+                                    <td>Birth to first few hours</td>
+                                    <td>Hemorrhagic pustules, petechiae</td>
+                                    <td>Associated with sepsis, respiratory distress; maternal fever history</td>
+                                    <td>Gram stain (Gram+ rods), bacterial culture</td>
+                                </tr>
+                                <tr>
+                                    <td>Pseudomonas aeruginosa</td>
+                                    <td>Days to weeks+</td>
+                                    <td>Pustules, hemorrhagic bullae, necrotic ulcerations (ecthyma gangrenosum)</td>
+                                    <td>Any region, esp. anogenital area</td>
+                                    <td>Gram stain (Gram- rods), culture</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="high-yield">
+                            <h4>Staphylococcal Scalded Skin Syndrome (SSSS)</h4>
+                            <ul>
+                                <li>Exfoliative toxins from S. aureus target desmoglein-1</li>
+                                <li>Tender erythema → flaccid bullae → widespread peeling in sheets</li>
+                                <li>Nikolsky sign positive</li>
+                                <li>Periorificial and intertriginous accentuation</li>
+                                <li>Mucous membranes usually spared (unlike TEN)</li>
+                                <li>Treatment: Systemic anti-staphylococcal antibiotics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember bacterial causes with: <strong>GLSP</strong></p>
+                            <ul>
+                                <li><strong>G</strong>-roup B Strep: <strong>G</strong>eneralized distribution, early onset, high sepsis risk</li>
+                                <li><strong>L</strong>isteria: <strong>L</strong>ike hemorrhagic pustules, <strong>L</strong>ong rods on Gram stain</li>
+                                <li><strong>S</strong>taph: <strong>S</strong>kin erosions with scale collarettes, clusters on Gram stain</li>
+                                <li><strong>P</strong>seudomonas: <strong>P</strong>urple-black necrotic lesions (ecthyma gangrenosum)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p><strong>Critically important:</strong> GBS and Listeria infections in neonates have high risk of sepsis and meningitis. Hemorrhagic pustules, respiratory distress, or temperature instability are red flags warranting immediate systemic antibiotics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="hsv">
+                        <h3>Herpes Simplex Virus (HSV) Infection</h3>
+                        
+                        <div class="key-differential">
+                            <div class="key-differential-header">Neonatal vs. Intrauterine HSV</div>
+                            <div class="key-differential-grid">
+                                <div class="key-differential-condition">Neonatal HSV</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Acquired perinatally</li>
+                                        <li>Onset birth to 2 weeks (usually after 5 days)</li>
+                                        <li>Grouped vesicles or pustules on an erythematous base</li>
+                                        <li>Distribution: Any region, scalp and torso favored</li>
+                                        <li>High risk of CNS and disseminated disease</li>
+                                    </ul>
+                                </div>
+                                <div class="key-differential-condition">Intrauterine HSV</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Acquired in utero</li>
+                                        <li>Onset at birth</li>
+                                        <li>Vesicles, pustules, widespread erosions, scars, areas of aplasia cutis</li>
+                                        <li>Any body region</li>
+                                        <li>Associated with low birth weight, microcephaly, chorioretinitis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="high-yield">
+                            <h4>HSV Diagnosis and Management</h4>
+                            <ul>
+                                <li><strong>Tzanck smear:</strong> Multinucleated giant cells (less sensitive)</li>
+                                <li><strong>PCR:</strong> Most sensitive and preferred method</li>
+                                <li><strong>CSF PCR mandatory</strong> if HSV infection suspected</li>
+                                <li><strong>Treatment:</strong> Systemic antiviral therapy (Acyclovir) required immediately upon suspicion</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember HSV features with: <strong>VESICLE</strong></p>
+                            <ul>
+                                <li><strong>V</strong>esicles clustered in groups</li>
+                                <li><strong>E</strong>rythematous base</li>
+                                <li><strong>S</strong>calp/torso common sites</li>
+                                <li><strong>I</strong>ntrauterine form present at birth</li>
+                                <li><strong>C</strong>SF PCR always needed</li>
+                                <li><strong>L</strong>ife-threatening if untreated</li>
+                                <li><strong>E</strong>mergent Acyclovir required</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p><strong>Critical board point:</strong> Any vesicular eruption in a neonate requires consideration of HSV. <strong>CSF PCR is mandatory</strong> to exclude CNS involvement. Acyclovir should be started immediately upon suspicion, before confirmation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="vzv">
+                        <h3>Varicella-Zoster Virus (VZV) Infections</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Onset</th>
+                                    <th>Morphology</th>
+                                    <th>Distribution</th>
+                                    <th>Cause</th>
+                                </tr>
+                                <tr>
+                                    <td>Neonatal Varicella</td>
+                                    <td>Birth to 2 weeks</td>
+                                    <td>Vesicles on erythematous base ("dew drop on a rose petal")</td>
+                                    <td>Generalized</td>
+                                    <td>Maternal primary varicella 7 days before to 2 days after delivery</td>
+                                </tr>
+                                <tr>
+                                    <td>Herpes Zoster (Shingles)</td>
+                                    <td>Typically ≥2 weeks</td>
+                                    <td>Vesicles on erythematous base</td>
+                                    <td>Dermatomal pattern</td>
+                                    <td>Prior neonatal varicella or maternal infection during pregnancy</td>
+                                </tr>
+                                <tr>
+                                    <td>Congenital Varicella Syndrome</td>
+                                    <td>At birth</td>
+                                    <td>Erosions, ulcers, scarring, aplasia cutis congenita</td>
+                                    <td>Often extremities, may follow dermatomal pattern</td>
+                                    <td>Maternal varicella in 1st or early 2nd trimester</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember VZV types with: <strong>NZC</strong></p>
+                            <ul>
+                                <li><strong>N</strong>eonatal Varicella: Generalized vesicles, high risk if mom infected 7d before to 2d after delivery</li>
+                                <li><strong>Z</strong>oster: <strong>Z</strong>one of dermatome, reactivation of prior infection</li>
+                                <li><strong>C</strong>ongenital Syndrome: <strong>C</strong>icatricial (scarring) lesions, <strong>C</strong>aused by 1st trimester infection</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p>Congenital Varicella Syndrome presents with scarring and limb abnormalities at birth, whereas Neonatal Varicella presents with typical vesicular eruption after birth. The timing of maternal infection is critical (1st trimester vs. peripartum).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="scabies">
+                        <h3>Scabies</h3>
+                        
+                        <div class="feature-comparison">
+                            <table class="feature-table">
+                                <tr>
+                                    <th colspan="2">Scabies</th>
+                                </tr>
+                                <tr>
+                                    <td>Onset</td>
+                                    <td>Typically ≥3-4 weeks of age (incubation period)</td>
+                                </tr>
+                                <tr>
+                                    <td>Morphology</td>
+                                    <td>Papules, nodules (often reddish-brown), crusted areas, vesicles, pustules, burrows (linear or S-shaped). Intense pruritus</td>
+                                </tr>
+                                <tr>
+                                    <td>Distribution</td>
+                                    <td>Any region including head, neck, palms, soles (unlike older children/adults). Favors axillae, groin, wrists</td>
+                                </tr>
+                                <tr>
+                                    <td>Investigations</td>
+                                    <td>Mineral oil preparation (scraping from burrow/papule) to identify mites, eggs, or scybala (feces). Dermoscopy can help visualize burrows/mites</td>
+                                </tr>
+                                <tr>
+                                    <td>Treatment</td>
+                                    <td>Treat infant and all household contacts simultaneously with permethrin 5% cream</td>
+                                </tr>
+                                <tr>
+                                    <td>Complications</td>
+                                    <td>Post-scabetic trigger for Acropustulosis of Infancy (AI)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="key-differential">
+                            <div class="key-differential-header">Scabies vs. Acropustulosis of Infancy (AI)</div>
+                            <div class="key-differential-grid">
+                                <div class="key-differential-condition">Scabies</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Onset: ≥3-4 weeks (incubation period)</li>
+                                        <li>Burrows may be visible</li>
+                                        <li>Mites/eggs/feces on scraping</li>
+                                        <li>Family members often affected</li>
+                                        <li>Responds to permethrin treatment</li>
+                                    </ul>
+                                </div>
+                                <div class="key-differential-condition">Acropustulosis of Infancy</div>
+                                <div class="key-differential-features">
+                                    <ul>
+                                        <li>Onset: Usually 3-6 months (can be earlier)</li>
+                                        <li>Recurring crops of vesicles/pustules</li>
+                                        <li>No mites on scraping</li>
+                                        <li>Often occurs after treated scabies</li>
+                                        <li>Responds to potent topical steroids</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-aid">
+                            <p>Remember Scabies features with: <strong>MITES</strong></p>
+                            <ul>
+                                <li><strong>M</strong>ineral oil prep diagnostic</li>
+                                <li><strong>I</strong>ntense pruritus</li>
+                                <li><strong>T</strong>reat all household contacts</li>
+                                <li><strong>E</strong>verywhere distribution in infants (including head)</li>
+                                <li><strong>S</strong>-shaped burrows pathognomonic</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="board-alert">
+                            <p><strong>Key board point:</strong> Always perform mineral oil scraping to exclude scabies in infants with acral pustules/vesicles. Scabies in infants can affect any body region including head, neck, palms and soles (unlike in adults).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rare Conditions -->
+        <div class="section rare" id="rare-section">
+            <div class="section-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Uncommon/Rare Non-Infectious Conditions</span>
+            </div>
+            <div class="section-content">
+                <div class="condition-cards">
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Acropustulosis of Infancy (AI)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Classic form usually 3-6 months (occasionally birth to weeks). Post-scabetic form follows scabies infestation.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Intensely pruritic vesicles and pustules recurring in crops (lasting 7-14 days, recurring every 3-5 weeks).</p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Neutrophils primarily, +/- eosinophils (smear/biopsy).</p>
+                            <p><span class="feature-badge dist">Distribution</span> Hands and feet (palms, soles, dorsal aspects, lateral digits); occasionally scalp, trunk, proximal extremities.</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical dx, rule out scabies (mineral oil prep essential). Skin biopsy supportive (subcorneal pustule with neutrophils).</p>
+                            <p><strong>Treatment:</strong> Symptomatic: potent topical corticosteroids, oral antihistamines.</p>
+                            <p><strong>Board Alert:</strong> Most important differential is scabies - always perform mineral oil prep to exclude active infestation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Eosinophilic Pustular Folliculitis (EPF)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Mean 6 months (range birth to 14 months).</p>
+                            <p><span class="feature-badge morph">Morphology</span> Recurrent crops of pruritic follicular papules, pustules, vesicles on erythematous base, often evolving to hemorrhagic crusts. Scarring possible.</p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Eosinophils (smear/biopsy). Histology shows dense eosinophilic infiltrate, often centered on hair follicles.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Scalp is the most common site; also face (esp. brows), less often trunk, extremities.</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical suspicion, smear/biopsy confirms eosinophils. Peripheral eosinophilia often present.</p>
+                            <p><strong>Treatment:</strong> Symptomatic: mid-potency topical steroids, topical tacrolimus, oral antihistamines. Oral dapsone/antibiotics for severe cases.</p>
+                            <p><strong>Board Alert:</strong> Can be histologically identical to neonatal AD-HIES rash. Consider HIES if persistent/severe or later systemic features develop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Langerhans Cell Histiocytosis (LCH)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Birth or first few weeks.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Highly variable: crusted papules, vesiculopustules, nodules, erosions, ulcers, petechiae, purpura, atrophy, milia, hemangioma-like lesions. Can be solitary or widespread.</p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Biopsy shows Langerhans cells (large, ovoid, "coffee bean" nuclei) staining positive for S100, CD1a, CD207 (Langerin).</p>
+                            <p><span class="feature-badge dist">Distribution</span> Any site, including palms/soles. Favors flexural sites, scalp.</p>
+                            <p><span class="feature-badge test">Investigations</span> Skin biopsy is diagnostic. Mandatory systemic workup: Full exam, CBC diff, LFTs, Chem panel, Urine osmolality, Abd US, Skeletal survey, CXR.</p>
+                            <p><strong>Course:</strong> Purely cutaneous form often resolves spontaneously ("Congenital Self-Healing Reticulohistiocytosis"), but requires monitoring for potential systemic involvement later.</p>
+                            <p><strong>Board Alert:</strong> All cases require biopsy with IHC (S100/CD1a/CD207) and complete systemic workup, even if clinically skin-limited.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Incontinentia Pigmenti (IP)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Usually within first 2 weeks (vesicular stage).</p>
+                            <p><span class="feature-badge morph">Morphology</span> Follows Lines of Blaschko in 4 stages:
+                                <ol>
+                                    <li>Vesicular: Linear vesicles/bullae on erythematous base</li>
+                                    <li>Verrucous: Hyperkeratotic linear papules/plaques</li>
+                                    <li>Hyperpigmented: Swirled/linear grey-brown macules</li>
+                                    <li>Hypopigmented/Atrophic: Subtle linear streaks</li>
+                                </ol>
+                            </p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Stage 1 Biopsy: Eosinophilic spongiosis, scattered necrotic keratinocytes, dermal eosinophils.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Lesions follow Blaschko lines.</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical dx often possible. Skin biopsy (Stage 1) characteristic. Genetic testing available (IKBKG/NEMO gene). Ophthalmology consult mandatory.</p>
+                            <p><strong>Genetics:</strong> X-linked dominant, usually lethal in males.</p>
+                            <p><strong>Board Alert:</strong> Associated with dental, ocular, and CNS abnormalities. Ophthalmology screening is essential due to risk of blindness from retinal vascular issues.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>AD Hyper-IgE Syndrome (AD-HIES)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Neonatal rash (papulopustular/vesicular) in 70-80%, often at birth or first month (mean 7 days).</p>
+                            <p><span class="feature-badge morph">Morphology</span> Papulopustules, vesicles, often crusted. Biopsy shows eosinophils, intraepidermal vesicles, eosinophilic folliculitis (similar to EPF).</p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Eosinophils, similar to EPF histologically.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Favors face, scalp, neck, shoulders; also axillae, diaper area.</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical suspicion, STAT3 mutation analysis. IgE/Eosinophil count (may be normal early).</p>
+                            <p><strong>Later Features:</strong> "Cold" abscesses, chronic eczematous dermatitis, recurrent pneumonias (pneumatoceles), osteopenia, retained primary teeth.</p>
+                            <p><strong>Board Alert:</strong> Neonatal rash of HIES can be histologically identical to EPF. Consider HIES if persistent/severe or later systemic features develop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Vesiculopustular Eruption of TMD in Down Syndrome</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> First few days to weeks of life.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Vesicles and pustules. Pathergy common (sites of minor trauma, adhesive dressings).</p>
+                            <p><span class="feature-badge cells">Cell Infiltrate</span> Skin biopsy shows spongiotic vesiculopustules with infiltrate containing immature myeloid cells. Peripheral blood also shows leukocytosis with immature myeloid cells.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Starts on face, often spreads to trunk and extremities.</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical context (Down syndrome or features), CBC with diff (leukocytosis, blasts), Skin biopsy. Karyotype if mosaicism suspected.</p>
+                            <p><strong>Association:</strong> Neonates with Trisomy 21 (or mosaicism) who have Transient Myeloproliferative Disorder (congenital leukemoid reaction due to somatic GATA1 mutations).</p>
+                            <p><strong>Board Alert:</strong> Consider in any neonate with unexplained vesiculopustular eruption and leukocytosis, even without obvious Down syndrome phenotype. Increased risk of developing myeloid leukemia in first few years of life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card rare">
+                        <div class="card-header toggle-trigger">
+                            <span>Congenital Erosive and Vesicular Dermatosis (CEVD)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Present at birth.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Widespread erosions, vesicles, crusting, "scalded skin" appearance (up to 75% BSA). Heals over 1-2 months leaving characteristic supple, reticulated scarring.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Generalized, but often relative sparing of face, palms, and soles.</p>
+                            <p><span class="feature-badge test">Investigations</span> Diagnosis of exclusion after ruling out infections (esp. HSV) and genetic blistering disorders. Skin biopsy is non-specific.</p>
+                            <p><strong>Associations:</strong> Almost always occurs in premature infants. Later sequelae can include scarring alopecia, nail hypoplasia, hypohidrosis, neurodevelopmental abnormalities.</p>
+                            <p><strong>Board Alert:</strong> Must exclude intrauterine HSV infection, which can mimic CEVD clinically. Perform HSV PCR. The distinctive pattern of healing with reticulated scarring but relative sparing of face/palms/soles helps differentiate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bullous/Erosive -->
+        <div class="section bullous" id="bullous-section">
+            <div class="section-header">
+                <i class="fas fa-burn"></i>
+                <span>Bullous/Erosive Diseases</span>
+            </div>
+            <div class="section-content">
+                <div class="condition-cards">
+                    <div class="condition-card bullous">
+                        <div class="card-header toggle-trigger">
+                            <span>Staphylococcal Scalded Skin Syndrome (SSSS)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Few days to weeks (rarely congenital).</p>
+                            <p><span class="feature-badge morph">Morphology</span> Tender erythematous patches → fragile, flaccid bullae → widespread superficial erosions and peeling in sheets ("scalded" appearance). Nikolsky sign positive.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Generalized, often with periorificial (mouth, eyes) and intertriginous accentuation. Mucous membranes usually spared (unlike TEN).</p>
+                            <p><span class="feature-badge test">Investigations</span> Clinical diagnosis often. Skin biopsy shows split high in epidermis (granular layer). Bacterial culture positive only from primary site of infection (toxin-mediated).</p>
+                            <p><strong>Pathogenesis:</strong> Exfoliative toxins (ET-A, ET-B) from a localized S. aureus infection target desmoglein-1, causing intraepidermal split at the granular layer.</p>
+                            <p><strong>Treatment:</strong> Systemic anti-staphylococcal antibiotics, supportive care (wound care, fluid management).</p>
+                            <p><strong>Board Alert:</strong> Differentiate from TEN by sparing of mucous membranes and superficial split (granular layer in SSSS vs. subepidermal in TEN).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card bullous">
+                        <div class="card-header toggle-trigger">
+                            <span>Epidermolysis Bullosa (EB)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> Usually at birth or first few days/weeks.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Mechanically induced blisters and erosions due to skin fragility. Severity and associated features (scarring, milia, nail dystrophy, mucosal involvement) depend on the specific type and subtype.</p>
+                            <p><span class="feature-badge dist">Distribution</span> Varies with type; often affects trauma-prone sites (hands, feet, elbows, knees).</p>
+                            <p><span class="feature-badge test">Investigations</span> Skin biopsy for immunofluorescence antigen mapping and/or electron microscopy on an induced blister. Genetic testing confirms subtype and mutation.</p>
+                            <p><strong>Types:</strong> Simplex (intraepidermal), Junctional (lamina lucida), Dystrophic (below lamina densa), Kindler (mixed).</p>
+                            <p><strong>Board Alert:</strong> The level of split on IF mapping or EM is diagnostic for classifying EB type. Specific mutations correlate with phenotypic severity and associated features.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card bullous">
+                        <div class="card-header toggle-trigger">
+                            <span>Epidermolytic Ichthyosis (EI)</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <p><span class="feature-badge onset">Onset</span> At birth.</p>
+                            <p><span class="feature-badge morph">Morphology</span> Generalized erythroderma with blistering and erosions, leading to superficial peeling. Over time, blistering decreases and hyperkeratosis develops (often corrugated/verrucous, esp. in flexures).</p>
+                            <p><span class="feature-badge dist">Distribution</span> Generalized.</p>
+                            <p><span class="feature-badge test">Investigations</span> Skin biopsy shows characteristic epidermolytic hyperkeratosis (vacuolar degeneration of suprabasal keratinocytes, coarse keratohyalin granules). Genetic testing confirms KRT1 or KRT10 mutation.</p>
+                            <p><strong>Genetics:</strong> Autosomal dominant, mutations in KRT1 or KRT10.</p>
+                            <p><strong>Board Alert:</strong> In neonatal period, can be confused with SSSS or congenital candidiasis. The histologic finding of epidermolytic hyperkeratosis is diagnostic.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-card bullous">
+                        <div class="card-header toggle-trigger">
+                            <span>Other Causes of Erosions/Ulcerations</span>
+                        </div>
+                        <div class="card-content toggleable-content">
+                            <ul>
+                                <li><strong>Iatrogenic:</strong> Fetal scalp electrode marks, adhesive tape stripping, pressure sores, irritant dermatitis (e.g., chlorhexidine - geometric erosions)</li>
+                                <li><strong>Aplasia Cutis Congenita (ACC):</strong> Localized absence of skin at birth, typically on scalp vertex. Can be membranous or ulcerated/scarred</li>
+                                <li><strong>Ulcerated Infantile Hemangioma:</strong> Often presents as ulcer before hemangioma proliferates</li>
+                                <li><strong>Neonatal Lupus Erythematosus (NLE):</strong> Can present with erosions/ulcers, often on face, associated with maternal anti-Ro/La antibodies</li>
+                                <li><strong>Pyoderma Gangrenosum (PG):</strong> Rare in neonates, undermined ulcers, often requires workup for underlying disease</li>
+                                <li><strong>Acrodermatitis Enteropathica:</strong> Zinc deficiency, erosive dermatitis in periorificial and acral distribution</li>
+                            </ul>
+                            <p><strong>Board Alert:</strong> Always consider iatrogenic causes, especially in NICU setting. Geometric patterns suggest external causes. Location can be key - ACC typically on scalp, umbilical cord abnormalities with erosions may suggest EB.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagnostic Tests -->
+        <div class="section diagnostic" id="diagnostic-section">
+            <div class="section-header">
+                <i class="fas fa-microscope"></i>
+                <span>Diagnostic Clues and Bedside Tests</span>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    <h3>Algorithm Approach to Vesiculopustular Eruptions</h3>
+                    <p>Start with bedside tests based on primary morphology (vesicle/pustule):</p>
+                    
+                    <div class="algorithm-steps">
+                        <div class="algorithm-step">
+                            <h4>1. Tzanck Smear</h4>
+                            <p>Quick bedside test for viral infections (HSV, VZV). Scrape base of fresh vesicle, stain with Wright-Giemsa or Giemsa stain.</p>
+                            <ul>
+                                <li><strong>Positive:</strong> Multinucleated giant cells (HSV/VZV)</li>
+                                <li><strong>Negative:</strong> Does not rule out viral infection</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <h4>2. KOH Preparation</h4>
+                            <p>For suspected fungal infections (candidiasis, tinea).</p>
+                            <ul>
+                                <li><strong>Positive:</strong> Budding yeast, pseudohyphae (Candida) or hyphae (dermatophytes)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <h4>3. Gram Stain</h4>
+                            <p>For bacterial infections.</p>
+                            <ul>
+                                <li><strong>Gram-positive cocci:</strong> S. aureus, GBS</li>
+                                <li><strong>Gram-negative rods:</strong> Pseudomonas, E. coli</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <h4>4. Mineral Oil Preparation</h4>
+                            <p>For scabies. Scrape burrow or papule, examine under microscope.</p>
+                            <ul>
+                                <li><strong>Positive:</strong> Mites, eggs, or fecal pellets (scybala)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <h4>5. Tzanck Smear vs. KOH vs. Gram Stain</h4>
+                            <table class="feature-table">
+                                <tr>
+                                    <th>Test</th>
+                                    <th>Best For</th>
+                                    <th>Results</th>
+                                </tr>
+                                <tr>
+                                    <td>Tzanck</td>
+                                    <td>Viral infections (HSV, VZV)</td>
+                                    <td>Multinucleated giant cells</td>
+                                </tr>
+                                <tr>
+                                    <td>KOH</td>
+                                    <td>Fungal infections (Candida, tinea)</td>
+                                    <td>Hyphae, pseudohyphae, spores</td>
+                                </tr>
+                                <tr>
+                                    <td>Gram Stain</td>
+                                    <td>Bacterial infections</td>
+                                    <td>Gram-positive/negative organisms</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="board-alert">
+                        <p><strong>Board Tip:</strong> Always perform a Tzanck smear in any neonate with vesiculopustular lesions to rapidly evaluate for HSV, which requires immediate treatment. Negative Tzanck does not rule out HSV - if clinical suspicion is high, start acyclovir and send PCR.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Make all toggleable content always visible */
+        .toggleable-content {
+            display: block !important;
+        }
+        /* Style the headers to look active */
+        .toggle-trigger {
+            cursor: default !important;
+        }
+        .toggle-trigger::after {
+            display: none !important;
+        }
+    </style>
+    <script>
+        // Function to initialize all interactive elements
+        function initializeInteractiveElements() {
+            // Make all toggleable content visible
+            document.querySelectorAll('.toggleable-content').forEach(content => {
+                content.style.display = 'block';
+            });
+            // Add active class to all toggle triggers
+            document.querySelectorAll('.toggle-trigger').forEach(trigger => {
+                trigger.classList.add('active');
+            });
+
+            // Tab functionality
+            const tabContainers = document.querySelectorAll('.tab-container');
+            tabContainers.forEach(container => {
+                const tabButtons = container.querySelectorAll('.tab-button');
+                const tabContents = container.querySelectorAll('.tab-content');
+                
+                // Show first tab content by default if available
+                if (tabButtons.length > 0 && tabContents.length > 0) {
+                    tabButtons[0].classList.add('active');
+                    tabContents[0].style.display = 'block';
+                    
+                    // Hide other tab contents
+                    for (let i = 1; i < tabContents.length; i++) {
+                        tabContents[i].style.display = 'none';
+                    }
+                }
+                
+                tabButtons.forEach(button => {
+                    // Remove any existing event listeners
+                    const newButton = button.cloneNode(true);
+                    button.parentNode.replaceChild(newButton, button);
+                    
+                    newButton.addEventListener('click', () => {
+                        // Get the tab container that this button belongs to
+                        const container = newButton.closest('.tab-container');
+                        if (!container) return;
+                        
+                        // Get all buttons and contents within this container
+                        const allButtons = container.querySelectorAll('.tab-button');
+                        const allContents = container.querySelectorAll('.tab-content');
+                        
+                        // Remove active class from all buttons and hide all contents in this container
+                        allButtons.forEach(btn => btn.classList.remove('active'));
+                        allContents.forEach(content => content.style.display = 'none');
+                        
+                        // Add active class to clicked button
+                        newButton.classList.add('active');
+                        
+                        // Show corresponding tab content
+                        const tabId = newButton.getAttribute('data-tab');
+                        const activeTab = document.getElementById(tabId);
+                        if (activeTab) {
+                            activeTab.style.display = 'block';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Run initialization when DOM is fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeInteractiveElements);
+        } else {
+            initializeInteractiveElements();
+        }
+    </script>
+</body>
+</html>

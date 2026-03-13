@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUVA Phototherapy Flowchart (Compact)</title>
+    <script src="https://kit.fontawesome.com/6a2b82a2f6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcf4f4; /* Slightly different background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 15px;
+        }
+        .flowchart-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .flowchart-title h1 {
+            font-size: 2.2em;
+            color: #b71c1c; /* PUVA Theme Color */
+            margin: 0;
+        }
+        .flowchart-title p {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .flowchart-container, .side-notes-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .node {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 250px;
+            max-width: 320px; /* Slightly wider for more text */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+            position: relative;
+            font-size: 0.9em;
+        }
+        .start-end { background-color: #4527a0; color: white; border-radius: 50px; font-weight: 600; }
+        .process { background-color: #ede7f6; border: 2px solid #b39ddb; color: #4527a0; }
+        .process strong { color: #311b92; }
+        .decision { background-color: #fff8e1; border: 2px solid #ffd54f; color: #ff8f00; transform: rotate(45deg); width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; padding: 0; min-width: auto; }
+        .decision span { transform: rotate(-45deg); font-weight: 600; max-width: 120px; }
+        .contraindication { background-color: #ffebee; border: 2px solid #e57373; color: #c62828; font-weight: 600; }
+        .caution { background-color: #fff3e0; border: 2px solid #ffb74d; color: #e65100; }
+        .risk-assessment { background: #eceff1; border: 2px dashed #78909c; color: #37474f; font-size: 0.85em; }
+        .arrow { width: 2px; background-color: #78909c; height: 25px; position: relative; }
+        .arrow::after { content: ''; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid #78909c; }
+        .decision-paths { display: flex; justify-content: center; position: relative; width: 100%; margin: 70px 0; }
+        .path { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 320px; position: relative; }
+        .path-label { position: absolute; top: -30px; background-color: #fafafa; padding: 2px 8px; border-radius: 4px; border: 1px solid #ccc; font-weight: 600; font-size: 0.8em; color: #333; }
+        .loop-container { border: 2px dashed #795548; border-radius: 12px; padding: 20px; margin: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
+        .loop-label { position: absolute; top: -14px; left: 20px; background-color: #fcf4f4; padding: 0 10px; font-weight: 600; color: #5d4037; }
+        .side-notes-container { margin-top: 40px; width: 100%; max-width: 700px; gap: 15px; }
+        .side-note-card { background-color: #fff; border-radius: 8px; padding: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.07); width: 100%; }
+        .side-note-card h3 { margin: 0 0 10px 0; color: #b71c1c; display: flex; align-items: center; gap: 8px;}
+        .side-note-card ul { margin: 0; padding-left: 20px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <div class="flowchart-title">
+        <h1>PUVA Phototherapy Flowchart</h1>
+        <p>Compact Protocol with Key Risks</p>
+    </div>
+
+    <div class="flowchart-container">
+        <!-- START & PRE-CHECKS -->
+        <div class="node start-end"><i class="fa-solid fa-pills"></i> START PUVA EVALUATION</div>
+        <div class="arrow"></div>
+        <div class="node contraindication"><i class="fa-solid fa-ban"></i> <strong>Absolute Contraindication:</strong><br>Concomitant Cyclosporine Therapy</div>
+        <div class="arrow"></div>
+        <div class="node caution"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Relative Contraindications:</strong><br>Hepatic/Renal Impairment, Age < 12, Pregnancy</div>
+        <div class="arrow"></div>
+
+        <!-- DRUG ADMIN -->
+        <div class="node process">
+            <strong>Administer 8-MOP (0.6-0.8 mg/kg)</strong><br>
+            Wait 1-3 hours before UVA exposure
+        </div>
+        <div class="arrow"></div>
+        
+        <!-- STARTING DOSE DECISION -->
+        <div class="decision"><span>Starting Dose Method?</span></div>
+        <div class="decision-paths">
+            <div class="path">
+                <div class="path-label">European Approach</div>
+                <div class="node process">Determine <strong>MPD</strong><br><span style="color: #c62828;"><i class="fa-solid fa-clock"></i> Read at 72-96 hours!</span></div>
+                <div class="arrow"></div>
+                <div class="node process">Starting Dose = <strong>50-70% of MPD</strong></div>
+            </div>
+            <div class="path">
+                <div class="path-label">US Approach</div>
+                <div class="node process"><strong>Use Skin Phototype Chart (J/cm²)</strong><br>
+                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                        <li>Type I: 0.25-0.5</li>
+                        <li>Type II: 0.5-1.0</li>
+                        <li>Type III: 1.5</li>
+                        <li>Type IV: 2.0</li>
+                        <li>Type V: 2.5</li>
+                        <li>Type VI: 3.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="arrow" style="height: 30px;"></div>
+
+        <!-- TREATMENT LOOP -->
+        <div class="loop-container">
+            <div class="loop-label"><i class="fa-solid fa-sync-alt"></i> TREATMENT CYCLE</div>
+
+            <div class="node process">Administer UVA (2-4x / week) & Assess Skin</div>
+            <div class="arrow"></div>
+            
+            <div class="decision"><span>Skin Reaction?</span></div>
+            <div class="arrow" style="height: 50px;"></div>
+
+            <!-- Dose Ladder -->
+            <div class="node process" style="background-color: #e8f5e9; border-color: #a5d6a7;"><strong>No Erythema:</strong> Increase Dose up to <strong>30%</strong><br><small>(Max 2 increases/week) with at least 72 hours between increases to avoid accumulation of delayed phototoxicity.
+            </small></div>
+            <div class="arrow"></div>
+            <div class="node process" style="background-color: #fffde7; border-color: #fff59d;"><strong>Minimal or Persistent Erythema:</strong><br><strong>MAINTAIN</strong> current dose (No Increase)</div>
+            <div class="arrow"></div>
+            <div class="node contraindication"><strong>Painful Erythema (Overdose):</strong><br>STOP, reduce last dose by 50%, restart with 10% increases</div>
+            <div class="arrow"></div>
+            <div class="node risk-assessment"><i class="fa-solid fa-magnifying-glass-chart"></i> <strong>Cumulative Risk Check:</strong><br>Risk of SCC increases with total sessions.<br>Threshold of concern: <strong>>150 treatments</strong>.</div>
+        </div>
+
+        <!-- EXIT & MAINTENANCE -->
+        <div class="decision"><span>Patient Clear?</span></div>
+        <div class="decision-paths" style="margin: 40px 0;">
+            <div class="path" style="width: auto;"><div class="path-label" style="top:-25px;">No (Continue Loop)</div></div>
+            <div class="path" style="width: auto; margin-left: 150px;"><div class="path-label" style="top:-25px;">Yes (Exit Loop)</div></div>
+        </div>
+        <div class="arrow"></div>
+        <div class="node caution"><strong>Optional Maintenance Phase</strong><br><small>Note: Text questions effectiveness.</small></div>
+        <div class="arrow"></div>
+        <div class="node start-end"><i class="fa-solid fa-flag-checkered"></i> END PROTOCOL</div>
+    </div>
+    
+    <!-- SIDE NOTES / REFERENCE CARDS -->
+    <div class="side-notes-container">
+        <div class="side-note-card">
+            <h3><i class="fa-solid fa-face-frown"></i> Short-Term Side Effects</h3>
+            <ul>
+                <li><strong>Gastrointestinal (Common):</strong> Nausea (30%), Vomiting (10%)</li>
+                <li><strong>Cutaneous:</strong> burn, Pruritus, tingling, "PUVA skin pain"</li>
+                <li><strong>Systemic (from overdose):</strong> Fever, malaise</li>
+            </ul>
+        </div>
+        <div class="side-note-card">
+            <h3><i class="fa-solid fa-biohazard"></i> Long-Term Hazards</h3>
+            <ul>
+                <li><strong>Photocarcinogenesis:</strong> High risk of <strong>SCC</strong> (dose-dependent). Possible Melanoma risk.</li>
+                <li><strong>Photoaging:</strong> Wrinkles, xerosis, "PUVA lentiginosis" (dark spots).</li>
+                <li><strong>Ophthalmologic:</strong> Theoretical cataract risk (mandates UVA-opaque eye protection).</li>
+            </ul>
+        </div>
+        <div class="side-note-card">
+            <h3><i class="fa-solid fa-user-shield"></i> Post-Care for Oral PUVA (Systemic Photosensitivity)</h3>
+            <ul>
+                <li><strong>Mandatory Eye Protection:</strong> UVA-opaque glasses until the evening of the treatment day.</li>
+                <li><strong>Skin Protection:</strong> Implicitly avoid additional, unprotected sun exposure for the remainder of the day.</li>
+            </ul>
+        </div>
+        <div class="side-note-card">
+            <h3><i class="fa-solid fa-user-shield"></i> Post-Care for Bath PUVA (Localized Cutaneous Photosensitivity)</h3>
+            <ul>
+                <li><strong>photosensitivity lasts no more than 2 hours.</strong></li>
+                <li><strong>Implication for Post-Care:</strong> Only need to be cautious about sun exposure for a couple of hours immediately following treatment.</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

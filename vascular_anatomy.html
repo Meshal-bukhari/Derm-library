@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vascular Anatomy of the Face - Saudi Board Exam Prep</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #2ecc71;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --danger: #e74c3c;
+            --ica-color: #ff7979;
+            --eca-color: #7ed6df;
+            --highlight: #f1c40f;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 10px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .lead {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .exam-note {
+            background-color: var(--highlight);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exam-note h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .danger-zone {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 5px solid var(--danger);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .danger-zone h4 {
+            color: var(--danger);
+            margin-top: 0;
+        }
+        
+        .clinical-pearl {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 5px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .clinical-pearl h4 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .img-container {
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .interactive-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .ica-color {
+            background-color: var(--ica-color);
+        }
+        
+        .eca-color {
+            background-color: var(--eca-color);
+        }
+        
+        .danger-color {
+            background-color: var(--danger);
+        }
+        
+        .vessel-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .vessel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vessel-card h3 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .tab-label {
+            padding: 10px 20px;
+            background-color: #ddd;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        
+        .tab-label.active {
+            background-color: white;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 0 5px 5px 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .memory-tip {
+            background-color: rgba(155, 89, 182, 0.1);
+            border-left: 5px solid #9b59b6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .memory-tip h4 {
+            color: #9b59b6;
+            margin-top: 0;
+        }
+        
+        .hotspot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(231, 76, 60, 0.5);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .hotspot:hover {
+            transform: scale(1.5);
+            background-color: rgba(231, 76, 60, 0.8);
+        }
+        
+        .hotspot-info {
+            position: absolute;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            display: none;
+            z-index: 10;
+        }
+        
+        .quiz-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            margin-top: 10px;
+        }
+        
+        .quiz-option {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .quiz-option.correct {
+            background-color: rgba(46, 204, 113, 0.3);
+        }
+        
+        .quiz-option.incorrect {
+            background-color: rgba(231, 76, 60, 0.3);
+        }
+        
+        .quiz-feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .diagram-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .svg-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 80%; /* Adjust based on SVG aspect ratio */
+            position: relative;
+        }
+        
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        /* Special classes for highlighting key vessels */
+        .vessel-highlight {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .highlight-ica {
+            color: var(--ica-color);
+            font-weight: bold;
+        }
+        
+        .highlight-eca {
+            color: var(--eca-color);
+            font-weight: bold;
+        }
+        
+        .anastomosis {
+            color: purple;
+            font-weight: bold;
+        }
+        
+        .risk-area {
+            color: var(--danger);
+            font-weight: bold;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-label {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 2px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Vascular Anatomy of the Face & Head</h1>
+            <p class="lead">Interactive Study Guide for Saudi Board Dermatology Exam</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="exam-note">
+            <h4>🎯 High-Yield Exam Focus</h4>
+            <p>This chapter covers the critical vascular supply of the face and head, with special emphasis on the arterial supply, danger zones for injection procedures, and important anastomoses. Key clinical applications include filler injection safety, surgical flap planning, and wound healing considerations.</p>
+        </div>
+        
+        <section>
+            <h2>Overview of Facial Circulation</h2>
+            <p>The face has an extensive vascular network that originates from two major arterial systems:</p>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color ica-color"></div>
+                    <span><strong>Internal Carotid Artery</strong> (Upper Face)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color eca-color"></div>
+                    <span><strong>External Carotid Artery</strong> (Most of Face)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color danger-color"></div>
+                    <span><strong>High-Risk Injection Areas</strong></span>
+                </div>
+            </div>
+            
+            <div class="img-container">
+                <div class="svg-container">
+                    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Simplified face outline -->
+                        <path d="M400,100 C250,100 200,300 200,400 C200,500 300,550 400,550 C500,550 600,500 600,400 C600,300 550,100 400,100" fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Internal Carotid System (Light Pink) -->
+                        <path d="M350,120 C340,150 330,200 350,250" stroke="#ff7979" stroke-width="4" fill="none"/>
+                        <path d="M450,120 C460,150 470,200 450,250" stroke="#ff7979" stroke-width="4" fill="none"/>
+                        <path d="M350,250 C370,270 430,270 450,250" stroke="#ff7979" stroke-width="4" fill="none"/>
+                        <path d="M400,250 C400,280 400,320 400,350" stroke="#ff7979" stroke-width="4" fill="none"/>
+                        
+                        <!-- External Carotid System (Dark Pink) -->
+                        <path d="M200,400 C250,380 300,370 350,380" stroke="#7ed6df" stroke-width="4" fill="none"/>
+                        <path d="M600,400 C550,380 500,370 450,380" stroke="#7ed6df" stroke-width="4" fill="none"/>
+                        <path d="M350,380 C370,390 430,390 450,380" stroke="#7ed6df" stroke-width="4" fill="none"/>
+                        <path d="M400,380 C400,350 400,350 400,350" stroke="#7ed6df" stroke-width="4" fill="none"/>
+                        
+                        <!-- High Risk Areas (Blue Highlight) -->
+                        <circle cx="350" cy="230" r="20" fill="rgba(231, 76, 60, 0.3)" stroke="#e74c3c" stroke-width="2"/>
+                        <circle cx="450" cy="230" r="20" fill="rgba(231, 76, 60, 0.3)" stroke="#e74c3c" stroke-width="2"/>
+                        <circle cx="400" cy="280" r="15" fill="rgba(231, 76, 60, 0.3)" stroke="#e74c3c" stroke-width="2"/>
+                    </svg>
+                </div>
+                <p><small>Interactive diagram of facial vascular supply. Explore the labeled key structures by hovering over hotspots.</small></p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Internal Carotid Arterial Supply</h2>
+            <div class="vessel-card">
+                <h3>Ophthalmic Artery</h3>
+                <p>The <span class="highlight-ica">internal carotid artery</span> contributes to the vascular supply of the:</p>
+                <ul>
+                    <li>Eyelids</li>
+                    <li>Upper nose and nasal dorsum</li>
+                    <li>Forehead</li>
+                    <li>Scalp</li>
+                </ul>
+                <p>These areas are supplied via sub-branches of the <span class="vessel-highlight">ophthalmic branch</span>.</p>
+                
+                <div class="memory-tip">
+                    <h4>🧠 Memory Aid: "OOSS"</h4>
+                    <p>The ophthalmic artery arises behind the eye and branches into the <strong>O</strong>rbital and <strong>O</strong>cular groups. The ocular group supplies the eye and its muscles. The orbital group includes the <strong>S</strong>upravorbital, <strong>S</strong>upratrochlear, dorsal nasal, and anterior ethmoidal arteries.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Supraorbital Artery</h3>
+                <p>The <span class="vessel-highlight">supraorbital artery</span>:</p>
+                <ul>
+                    <li>Exits the orbit through the <strong>supraorbital foramen</strong></li>
+                    <li>Travels alongside the supraorbital nerve</li>
+                    <li>Perforates the frontalis muscle</li>
+                    <li>Ultimately courses in the subcutaneous tissue of the forehead and scalp</li>
+                </ul>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Supratrochlear Artery</h3>
+                <p>The <span class="vessel-highlight">supratrochlear artery</span>:</p>
+                <ul>
+                    <li>Exits the medial orbit</li>
+                    <li>Courses medial to the supraorbital artery</li>
+                    <li>Supplies the nasal root and low midline forehead</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <h4>💎 Clinical Pearl: Forehead Flap</h4>
+                    <p>This artery serves as the axial blood supply for the midline forehead flap often used to repair nasal defects. The success of this flap depends upon isolation and preservation of the supratrochlear artery.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Anterior Ethmoidal Artery</h3>
+                <p>The <span class="vessel-highlight">anterior ethmoidal artery</span>:</p>
+                <ul>
+                    <li>Exits the nasal passage at the interface of the nasal bone and nasal cartilage</li>
+                    <li>Provides arterial supply to the nasal dorsum</li>
+                </ul>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Dorsal Nasal Artery</h3>
+                <p>The <span class="vessel-highlight">dorsal nasal artery</span>:</p>
+                <ul>
+                    <li>Is a terminal branch of the ophthalmic artery</li>
+                    <li>Supplies the dorsal nose</li>
+                    <li>Crosses the midline over the nasal root</li>
+                    <li>Anastomoses with the contralateral angular artery</li>
+                </ul>
+            </div>
+            
+            <div class="danger-zone">
+                <h4>⚠️ Risk Zone: Blindness with Fillers</h4>
+                <p>Knowledge of the ophthalmic artery and its branches is of <span class="risk-area">particular importance when planning cosmetic filler injection</span>. Because of their proximal connections, the orbital group of vessels represents a potential site for embolus introduction into the central retinal artery that can lead to complications including blindness.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>External Carotid Arterial Supply</h2>
+            <p>While the internal carotid artery contributes to some areas of the scalp and upper face, the <span class="highlight-eca">external carotid artery</span> supplies most of the face.</p>
+            
+            <div class="vessel-card">
+                <h3>Facial Artery</h3>
+                <p>The <span class="vessel-highlight">facial artery</span>:</p>
+                <ul>
+                    <li>Branches off from the external carotid artery</li>
+                    <li>Courses deep to the mandible</li>
+                    <li>Passes through or behind the submandibular salivary gland</li>
+                    <li>Passes over the mandible onto the face</li>
+                    <li>Can be palpated anterior to the masseter muscle</li>
+                    <li>Follows a tortuous diagonal and superior course passing alongside the nose</li>
+                    <li>Terminates at the medial canthus where it anastomoses with the dorsal nasal artery</li>
+                </ul>
+                
+                <div class="memory-tip">
+                    <h4>🧠 Memory Aid: "PRAZ"</h4>
+                    <p>The facial artery is protected along its course by surrounding muscles: <strong>P</strong>latysma and <strong>R</strong>isorius near the mandible, followed by <strong>Z</strong>ygomaticus muscles in the midface, and orbicularis oculi as it approaches the medial canthus.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Labial Arteries</h3>
+                <p>The facial artery gives rise to:</p>
+                <ul>
+                    <li><span class="vessel-highlight">Inferior labial artery</span>: Courses horizontally below the lips</li>
+                    <li><span class="vessel-highlight">Superior labial artery</span>: Courses horizontally above the lips</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <h4>💎 Clinical Pearl: Aging Changes</h4>
+                    <p>These arteries are found deep to the orbicularis oris in the submucosal plane, but can course more superficially into the submucosa of the lip in elderly patients.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Angular Artery</h3>
+                <p>After forming the superior labial branch, the facial artery becomes known as the <span class="vessel-highlight">angular artery</span>.</p>
+                <ul>
+                    <li>Terminates near the medial canthal tendon</li>
+                    <li>Anastomoses with the dorsal nasal branch of the ophthalmic artery</li>
+                </ul>
+                
+                <div class="exam-note">
+                    <h4>🎯 High-Yield Connection</h4>
+                    <p>This anastomosis joins the <span class="anastomosis">internal and external carotid arterial systems</span> - a critical connection to understand for the exam.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Superficial Temporal Artery</h3>
+                <p>The <span class="vessel-highlight">superficial temporal artery</span> and its branches supply the lateral face, scalp, and forehead.</p>
+                <ul>
+                    <li>Arises in the superficial lobe of the parotid gland as the terminal branch of the external carotid artery</li>
+                    <li>Courses superficially to the main facial nerve trunks</li>
+                    <li>Gives off the transverse facial artery before exiting the parotid gland</li>
+                    <li>Exits the parotid and enters the subcutaneous fat in the preauricular crease</li>
+                    <li>Assumes an ascending vertical course over the zygomatic arch</li>
+                    <li>Can be easily palpated just medial to the upper tragus of the ear</li>
+                    <li>Forms the frontal (anterior) and parietal (posterior) arterial branches that originate just above the uppermost attached portion of the ear</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <h4>💎 Clinical Pearl: Surgical Landmark</h4>
+                    <p>The superficial temporal artery runs alongside and superficial to the auriculotemporal nerve within, then above, the SMAS layer of the temple and lateral forehead. It is often visible in aged patients within the subdermal fat above the galea aponeurotica.</p>
+                </div>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Transverse Facial Artery</h3>
+                <p>The <span class="vessel-highlight">transverse facial artery</span>:</p>
+                <ul>
+                    <li>Branches from the superficial temporal artery</li>
+                    <li>Runs parallel to and 2cm below the zygomatic arch</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Venous Drainage</h2>
+            <p>Most of the arteries of the face run anterior to and parallel with their corresponding veins. The veins lack valves and therefore permit two-way flow of venous blood.</p>
+            
+            <div class="vessel-card">
+                <h3>Facial Vein</h3>
+                <ul>
+                    <li>Connects to the deep facial vein as it drains the cheek</li>
+                    <li>Crosses over the submandibular gland (while its corresponding artery passes beneath)</li>
+                    <li>Drains into the internal jugular vein</li>
+                </ul>
+            </div>
+            
+            <div class="vessel-card">
+                <h3>Deep Facial Vein</h3>
+                <ul>
+                    <li>Parallels the internal maxillary artery</li>
+                    <li>Anastomoses with the pterygoid venous plexus medial to the upper mandibular ramus</li>
+                </ul>
+            </div>
+            
+            <div class="danger-zone">
+                <h4>⚠️ Risk Zone: Cavernous Sinus Thrombosis</h4>
+                <p>The facial vein can communicate with the cavernous sinus of the brain via the ophthalmic vein or the pterygoid plexus. The paranasal area and upper lip are the regions drained by this network.</p>
+                <p>This interface may permit skin or wound infections to gain access to the cavernous sinus of the brain from the draining facial or ophthalmic veins, with potentially devastating consequences.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Clinical Applications</h2>
+            
+            <div class="vessel-card">
+                <h3>Wound Healing and Flaps</h3>
+                <p>Arterial blood supply to the face is delivered by a rich subdermal plexus that is fed by larger perforating arteries. Wound healing and flap success depend on maximal blood supply to the area.</p>
+                
+                <div class="clinical-pearl">
+                    <h4>💎 Flap Types - Know the Difference</h4>
+                    <ul>
+                        <li><strong>Axial flaps</strong> (e.g., paramedian forehead flap): Incorporate a named subcutaneous artery (like the supratrochlear artery) into their design</li>
+                        <li><strong>Random pattern flaps</strong>: Maintained by the subdermal arterial plexus and do not rely on a single feeder artery</li>
+                    </ul>
+                </div>
+                
+                <p>The anastomotic vascular network permits facial arteries to be clamped or tied off during surgery without compromising tissue viability. Nearby ipsilateral or contralateral anastomotic arterial branches can often compensate for any loss in local blood supply.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Self-Assessment Quiz</h2>
+            <div class="quiz-container">
+                <div class="quiz-question" id="q1">
+                    <h4>1. Which artery serves as the axial blood supply for the midline forehead flap used to repair nasal defects?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">Superficial temporal artery</div>
+                        <div class="quiz-option" data-correct="false">Dorsal nasal artery</div>
+                        <div class="quiz-option" data-correct="true">Supratrochlear artery</div>
+                        <div class="quiz-option" data-correct="false">Anterior ethmoidal artery</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question" id="q2">
+                    <h4>2. Where is the critical anastomosis between the internal and external carotid arterial systems located?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">At the superficial temporal artery</div>
+                        <div class="quiz-option" data-correct="true">At the medial canthus where the angular artery meets the dorsal nasal artery</div>
+                        <div class="quiz-option" data-correct="false">At the superior labial artery</div>
+                        <div class="quiz-option" data-correct="false">At the supraorbital foramen</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question" id="q3">
+                    <h4>3. What venous structure creates a potential risk for cavernous sinus thrombosis from facial infections?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="true">Communication between facial vein and cavernous sinus via ophthalmic vein</div>
+                        <div class="quiz-option" data-correct="false">Internal jugular vein</div>
+                        <div class="quiz-option" data-correct="false">Superficial temporal vein</div>
+                        <div class="quiz-option" data-correct="false">Retromandibular vein</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question" id="q4">
+                    <h4>4. Which facial arterial branch puts patients at risk for blindness during filler injections?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="true">Branches of the ophthalmic artery connecting to the central retinal artery</div>
+                        <div class="quiz-option" data-correct="false">Superficial temporal artery</div>
+                        <div class="quiz-option" data-correct="false">Superior labial artery</div>
+                        <div class="quiz-option" data-correct="false">Transverse facial artery</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question" id="q5">
+                    <h4>5. Which of the following is TRUE regarding the labial arteries?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-correct="false">They originate directly from the external carotid artery</div>
+                        <div class="quiz-option" data-correct="false">They are located superficially in young patients</div>
+                        <div class="quiz-option" data-correct="true">They can course more superficially in elderly patients</div>
+                        <div class="quiz-option" data-correct="false">They are branches of the internal carotid system</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <button class="btn" id="check-answers">Check Answers</button>
+                <button class="btn hide" id="reset-quiz">Try Again</button>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Key Takeaways for the Saudi Board Exam</h2>
+            <div class="exam-note">
+                <h4>Essential Points to Remember</h4>
+                <ol>
+                    <li>The face has dual blood supply from both internal and external carotid systems</li>
+                    <li>Key danger zones for filler injections related to the ophthalmic artery branches</li>
+                    <li>The supratrochlear artery is crucial for forehead flap viability</li>
+                    <li>Critical anastomosis between internal and external carotid systems occurs at the medial canthus</li>
+                    <li>Venous connections between the face and cavernous sinus create risk for intracranial infection spread</li>
+                    <li>Rich anastomotic networks allow for reliable flap designs and good wound healing</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Saudi Board Dermatology Exam Preparation | Vascular Anatomy Study Guide</p>
+    </footer>
+    
+    <script>
+        // Simple quiz functionality
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const questions = document.querySelectorAll('.quiz-question');
+            let score = 0;
+            
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.quiz-option');
+                let answered = false;
+                
+                options.forEach(option => {
+                    if (option.classList.contains('selected')) {
+                        answered = true;
+                        
+                        if (option.dataset.correct === 'true') {
+                            option.classList.add('correct');
+                            score++;
+                        } else {
+                            option.classList.add('incorrect');
+                        }
+                    } else if (option.dataset.correct === 'true') {
+                        option.classList.add('correct');
+                    }
+                    
+                    option.style.pointerEvents = 'none';
+                });
+                
+                const feedback = question.querySelector('.quiz-feedback');
+                if (answered) {
+                    if (question.querySelector('.selected').dataset.correct === 'true') {
+                        feedback.textContent = 'Correct!';
+                        feedback.style.color = 'green';
+                    } else {
+                        feedback.textContent = 'Incorrect. Review this topic.';
+                        feedback.style.color = 'red';
+                    }
+                } else {
+                    feedback.textContent = 'You did not answer this question.';
+                    feedback.style.color = 'orange';
+                }
+                
+                feedback.style.display = 'block';
+            });
+            
+            this.textContent = `Score: ${score}/${questions.length}`;
+            this.disabled = true;
+            document.getElementById('reset-quiz').classList.remove('hide');
+        });
+        
+        document.getElementById('reset-quiz').addEventListener('click', function() {
+            const questions = document.querySelectorAll('.quiz-question');
+            
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.quiz-option');
+                
+                options.forEach(option => {
+                    option.classList.remove('selected', 'correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+                
+                const feedback = question.querySelector('.quiz-feedback');
+                feedback.style.display = 'none';
+            });
+            
+            document.getElementById('check-answers').textContent = 'Check Answers';
+            document.getElementById('check-answers').disabled = false;
+            this.classList.add('hide');
+        });
+        
+        // Allow selection of quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const parent = this.parentNode;
+                parent.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+        
+        // Add interactive functionality for hotspots if needed
+        // This would be expanded with actual hotspot information
+        
+        // Add tab functionality if tabs are used
+        document.querySelectorAll('.tab-label').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+                
+                document.querySelectorAll('.tab-label').forEach(t => {
+                    t.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+                
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

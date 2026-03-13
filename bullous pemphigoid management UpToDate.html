@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullous Pemphigoid: Board Review & Clinical Pearls</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        header {
+            background-color: #005A9C; /* Deep Blue */
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #005A9C;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #005A9C;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .section-title {
+            color: #005A9C; /* Deep Blue */
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007BFF; /* Lighter Blue */
+        }
+        .subsection-title {
+            color: #007BFF; /* Lighter Blue */
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background-color: #e7f3fe; /* Light Blue */
+            border-left: 5px solid #007BFF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .alert-box {
+            background-color: #fff3cd; /* Light Yellow */
+            border-left: 5px solid #ffc107; /* Yellow */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .critical-alert-box {
+            background-color: #f8d7da; /* Light Red */
+            border-left: 5px solid #dc3545; /* Red */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .pearl-box {
+            background-color: #e6ffed; /* Light Green */
+            border-left: 5px solid #28a745; /* Green */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #005A9C;
+        }
+        .drug-table th, .drug-table td {
+            font-size: 0.9em;
+        }
+        .drug-thiol { color: red; font-weight: bold; }
+        .drug-phenol { color: blue; font-style: italic; }
+        .drug-nonthiol-nonphenol { color: black; }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .image-gallery img {
+            max-width: 250px;
+            max-height: 200px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .image-gallery figcaption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .quick-summary-box {
+            background-color: #f0f8ff; /* AliceBlue */
+            border: 2px dashed #4682b4; /* SteelBlue */
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 6px;
+        }
+        .quick-summary-box h3 {
+            color: #2e8b57; /* SeaGreen */
+            margin-top: 0;
+        }
+        .grade-recommendation {
+            font-weight: bold;
+            color: #800080; /* Purple */
+        }
+        .reference {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bullous Pemphigoid: Board Review & Clinical Pearls</h1>
+            <p>A Comprehensive Guide for Dermatology Residents</p>
+            <p class="reference">Based on UpToDate: "Management and prognosis of bullous pemphigoid" (Literature review current through: Apr 2025. Last updated: Jun 23, 2023)</p>
+        </header>
+
+        <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#pretreatment">Pre-Treatment</a>
+            <a href="#management-approach">Management Approach</a>
+            <a href="#initial-therapy">Initial Therapy</a>
+            <a href="#corticosteroid-sparing">Steroid-Sparing</a>
+            <a href="#refractory-disease">Refractory Disease</a>
+            <a href="#prognosis">Prognosis</a>
+            <a href="#key-tables">Key Tables</a>
+        </nav>
+
+        <section id="introduction" class="section">
+            <h2 class="section-title">🎯 Introduction & Core Concepts</h2>
+            <p><strong>Bullous Pemphigoid (BP)</strong> is an autoimmune cutaneous blistering disease characterized by autoantibody deposition at the epithelial basement membrane zone. It most frequently affects <strong>older adults</strong>.</p>
+            <div class="highlight-box">
+                <strong>Classic Presentation:</strong> Generalized, pruritic, urticarial plaques and tense, subepithelial blisters.
+            </div>
+
+            <div class="image-gallery">
+                <figure>
+                    <img src="https://mededit.ai/examples/bp1.jpg" alt="Tense bullae on skin with eroded blister base">
+                    <figcaption>(picture 1A) Tense bullae, eroded base.</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://mededit.ai/examples/bp2.jpg" alt="Erythematous plaques, bullae, erosions, and crusts">
+                    <figcaption>(picture 1B) Plaques, bullae, erosions, crusts.</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://mededit.ai/examples/bp3.jpg" alt="Tense bullae on urticarial plaques">
+                    <figcaption>(picture 1C) Bullae on urticarial plaques.</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://mededit.ai/examples/bp4.jpg" alt="Tense bullae and erosions in axilla">
+                    <figcaption>(picture 1D) Axillary involvement.</figcaption>
+                </figure>
+            </div>
+            <p class="reference">Images reproduced with permission from: www.visualdx.com. Copyright VisualDx. All rights reserved. (As per source document - placeholder URLs used).</p>
+
+
+            <p><strong>Mainstays of Initial Treatment:</strong></p>
+            <ul>
+                <li>Topical corticosteroids</li>
+                <li>Systemic corticosteroids</li>
+                <li>Doxycycline</li>
+            </ul>
+            <p>Additional immunomodulatory therapies are often added to minimize corticosteroid adverse effects or augment improvement.</p>
+            <p class="pearl-box">
+                📚 <strong>Further Reading (Cross-references from source):</strong>
+                <br>- Epidemiology and pathogenesis of bullous pemphigoid and mucous membrane pemphigoid.
+                <br>- Clinical features and diagnosis of bullous pemphigoid and mucous membrane pemphigoid.
+                <br>- Management of mucous membrane pemphigoid.
+                <br>- Ocular cicatricial pemphigoid.
+            </p>
+        </section>
+
+        <section id="treatment-goals" class="section">
+            <h2 class="section-title">🏆 Treatment Goals</h2>
+            <p>Treatment is generally recommended as BP can cause discomfort, risk of infection, and negatively impact quality of life.</p>
+            <ul>
+                <li>✔️ Decrease blister formation and pruritus</li>
+                <li>✔️ Promote healing of blisters and erosions</li>
+                <li>✔️ Improve quality of life</li>
+            </ul>
+            <div class="highlight-box">
+                These goals are achieved by attenuating autoantibody production and antibody-mediated inflammation while <strong>minimizing drug-induced adverse effects</strong>. Careful skin care and specialist referrals are also key.
+            </div>
+        </section>
+
+        <section id="pretreatment" class="section">
+            <h2 class="section-title">🧐 Pretreatment Assessment: Critical First Steps</h2>
+
+            <div class="subsection-title" id="drug-induced-bp">💊 Identifying Drug-Induced Bullous Pemphigoid</div>
+            <div class="alert-box">
+                <strong>Key Concept:</strong> Drug-induced BP mimics classic BP (clinically, histopathologically, immunopathologically) and can develop months to over a year after drug ingestion. It likely accounts for a small proportion of cases.
+            </div>
+            <p><strong>Strongest Associations:</strong></p>
+            <ul>
+                <li>Gliptins (e.g., Sitagliptin, Linagliptin, Vildagliptin)</li>
+                <li>Programmed cell death protein 1/programmed cell death ligand 1 (PD-1/PD-L1) inhibitors (e.g., Nivolumab, Pembrolizumab)</li>
+                <li>Loop diuretics (e.g., Furosemide)</li>
+                <li>Penicillins</li>
+            </ul>
+            <p>(See <a href="#drug-table">full drug table (Table 1)</a> below for more.)</p>
+
+            <div class="highlight-box">
+                <strong>Patient Evaluation for Drug-Induced BP:</strong>
+                <ul>
+                    <li>Thorough medication history is paramount!</li>
+                    <li><strong>Clues suggesting drug-induced BP (vs. classic BP):</strong>
+                        <ul>
+                            <li>Younger patient age</li>
+                            <li>Bullae on normal-appearing skin</li>
+                            <li>Histopathologic findings: Int<u>ra</u>epidermal vesicles, necrotic keratinocytes, or thrombus formation (Classic BP is subepidermal)</li>
+                        </ul>
+                    </li>
+                    <li>Similar to classic BP, pruritus and eczematous lesions may precede blistering.</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">⚙️ Drug Management in Suspected Drug-Induced BP</div>
+            <ul>
+                <li><strong>Promptly discontinue</strong> suspected drug whenever feasible.</li>
+                <li>Patients typically still require medical therapy (topical/systemic corticosteroids) initially.</li>
+                <li><strong>Prognosis:</strong> Many respond rapidly to drug cessation + medical Rx (remission within 6 weeks, then taper). Some develop a chronic course like classic BP.</li>
+            </ul>
+            <div class="pearl-box">
+                <strong>Gliptin Cessation - A Point of Nuance:</strong>
+                Data is mixed.
+                <ul>
+                    <li>One retrospective study (108 pts): No difference in time to control or relapse rates whether gliptin ceased or continued.</li>
+                    <li>Another retrospective study (40 pts): Higher complete remission at 3 months if gliptin ceased (65% vs 5%).</li>
+                </ul>
+                Further study needed.
+            </div>
+
+            <div class="subsection-title" id="referrals">🤝 Indications for Referral: Multidisciplinary Care</div>
+            <p>Managed by a dermatologist ideally, in conjunction with the primary care clinician.</p>
+            <p>Refer to specialists for known or suspected mucosal involvement:</p>
+            <ul>
+                <li>👁️ <strong>Ophthalmology:</strong> Prompt referral for ocular signs (itching/burning eyes, visual changes).</li>
+                <li>🩺 <strong>Gastroenterology:</strong> For dysphagia (esophageal involvement).</li>
+                <li>🗣️ <strong>Otolaryngology (ENT):</strong> For laryngeal, pharyngeal, or nasal signs (hoarseness, dysphagia, nasal obstruction).</li>
+            </ul>
+        </section>
+
+        <section id="management-approach" class="section">
+            <h2 class="section-title">🗺️ Approach to Management: The Strategic Blueprint</h2>
+            <div class="highlight-box">
+                <strong>Overall Philosophy:</strong> Immunosuppressants and anti-inflammatory meds are mainstays. Treatment may last years.
+                <br>🚨 <strong>CRITICAL POINT:</strong> Much morbidity/mortality stems from <strong>patient comorbidities + treatment adverse effects</strong>, not direct disease effects.
+                <br>➡️ Therefore, treatment should be <strong>conservative</strong> (minimal medication for remission, careful consideration of drug toxicity).
+            </div>
+
+            <div class="subsection-title">1️⃣ Selection of Initial Treatment: Key Choices</div>
+            <p>Typically one of the following as primary therapy:</p>
+            <ol>
+                <li>High-potency topical corticosteroid (e.g., Clobetasol propionate)</li>
+                <li>Oral corticosteroid (e.g., Prednisone or Prednisolone)</li>
+                <li>Doxycycline</li>
+            </ol>
+            <p><strong>Factors influencing choice:</strong> Feasibility, risk of AEs, relative efficacy, patient preference.</p>
+
+            <div class="pearl-box">
+                💡 <strong>Topical Clobetasol Propionate (Twice Daily):</strong>
+                <ul>
+                    <li>Highly effective.</li>
+                    <li><strong>Lower mortality & severe complications</strong> vs. oral prednisone (1 mg/kg/day) in <em>extensive</em> BP. (Jullien et al. trial)</li>
+                    <li><strong>Challenge:</strong> Adherence, especially in older adults or those needing caregiver assistance for extensive application. Often leads to choosing oral options.</li>
+                </ul>
+            </div>
+
+            <p><strong>For patients where topical monotherapy isn't used, choosing between Prednisone and Doxycycline:</strong></p>
+            <ul>
+                <li><strong>Doxycycline:</strong>
+                    <ul>
+                        <li>May be less likely for rapid remission vs. prednisone.</li>
+                        <li><strong>More favorable side effect profile.</strong> ✅</li>
+                        <li>Authors' preference for <strong>milder presentations</strong> (e.g., localized BP, few new bullae/day).
+                            <ul><li>Often add topical corticosteroid to affected areas with doxycycline.</li></ul>
+                        </li>
+                        <li>Alternatives: Tetracycline, Minocycline. Sometimes given with Nicotinamide (active Vitamin B3, anti-inflammatory).</li>
+                    </ul>
+                </li>
+                <li><strong>Prednisone:</strong>
+                    <ul>
+                        <li>Often considered for <strong>extensive disease</strong> (widespread, many new bullae/day).</li>
+                        <li>However, some experts consider a trial of oral doxycycline reasonable even for extensive disease due to its favorable side effect profile.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><em>Limited data: Initial methotrexate may also be effective as primary Rx.</em></p>
+
+            <div class="subsection-title">2️⃣ Incorporation of Corticosteroid-Sparing Therapy</div>
+            <div class="alert-box">
+                <strong>Rationale:</strong> Bullous Pemphigoid is chronic. Systemic corticosteroids have multiple AEs.
+                <br><strong>Goal:</strong> Facilitate corticosteroid tapering.
+            </div>
+            <p><strong>Common Agents:</strong> Doxycycline, Dapsone, Methotrexate, Mycophenolate, Azathioprine.</p>
+            <p><strong>Timing:</strong></p>
+            <ul>
+                <li>Often added to oral corticosteroid regimen <em>after</em> achieving disease control.</li>
+                <li><strong>OR</strong>, started simultaneously with oral corticosteroid (due to delayed onset of effect of sparing agents).</li>
+            </ul>
+            <div class="critical-alert-box">
+                ⚠️ <strong>Immunosuppressive Sparing Agents (Azathioprine, Mycophenolate, Methotrexate):</strong>
+                <ul>
+                    <li>Often reserved for patients with extensive BP.</li>
+                    <li>Decision to add requires careful risk-benefit analysis due to potential serious AEs.</li>
+                    <li>In some older adults, risks of adding these may exceed maintaining low-dose prednisone (e.g., ≤5 mg/day).</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">3️⃣ Refractory Disease: When Standard Tx Fails</div>
+            <p>Options include biologic therapies:</p>
+            <ul>
+                <li>Rituximab</li>
+                <li>Omalizumab</li>
+                <li>Dupilumab</li>
+                <li>Intravenous Immune Globulin (IVIG)</li>
+            </ul>
+            <p><strong>Typically used when:</strong></p>
+            <ul>
+                <li>Failure to respond to standard therapy.</li>
+                <li>Morbidity from systemic corticosteroid therapy occurs.</li>
+                <li>Tapering prednisone to <10 mg/day is not feasible despite corticosteroid-sparing therapies.</li>
+            </ul>
+        </section>
+
+        <section id="assessing-response" class="section">
+            <h2 class="section-title">📊 Assessing Response to Therapy</h2>
+            <p><strong>Primary Method: Clinical Assessment</strong></p>
+            <ul>
+                <li>Presence of BP skin lesions.</li>
+                <li>Occurrence of new lesion development or expansion.</li>
+                <li>Rate of healing of existing lesions.</li>
+                <li>Presence of pruritus.</li>
+                <li>Current medication regimen.</li>
+                <li>For resolved lesions/pruritus: duration of resolution.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Adjunct: Serum Antibody Levels</strong>
+                <ul>
+                    <li><strong>BP180 (BPAG2) antibody levels</strong> usually correlate with clinical activity.</li>
+                    <li>Marked decreases in BP180 and lesser decreases in BP230 (BPAG1) Ab levels detected soon after starting topical steroids.</li>
+                    <li>Limited data: Association between BP180 Ab levels and relapse risk.</li>
+                    <li>(See "Clinical features and diagnosis..." for ELISA details)</li>
+                </ul>
+            </div>
+            <p class="pearl-box">
+                <strong>For Clinical Studies & Specialized Clinics:</strong>
+                <br>- Precise descriptors of response are recommended (e.g., 2012 international expert panel definitions).
+                <br>- <strong>Bullous Pemphigoid Disease Area Index (BPDAI):</strong> Validated score used to quantify response. BPDAI activity score correlates well with BP180 antibody titer.
+            </p>
+
+            <div class="subsection-title">📉 Treatment Tapering and Cessation</div>
+            <p>Guided by clinical assessment. Key milestone:</p>
+            <div class="alert-box">
+                <strong>"End of the consolidation phase" (Supports initiating tapering):</strong>
+                <ul>
+                    <li>No new lesions or pruritic symptoms for <strong>at least two weeks</strong>.</li>
+                    <li>Most (approx. 80%) of established lesions have healed.</li>
+                </ul>
+            </div>
+            <p><strong>Role of Serum BP180 Antibody Levels in Tapering (Adjunctive):</strong></p>
+            <ul>
+                <li>Data for best approach is lacking, but used in practice.</li>
+                <li>Approaches: Awaiting substantial reductions from pre-treatment levels to support tapering; following trends to predict exacerbations.</li>
+                <li><em>Needs more study for informing therapy changes.</em></li>
+            </ul>
+            <p><strong>Tapering Process:</strong></p>
+            <ul>
+                <li>Generally <strong>slowly</strong> (e.g., 5 mg prednisone reduction every 2-4 weeks).</li>
+                <li>Close clinical follow-up.</li>
+                <li>Continue tapering if: 80% lesions healed, <3 lesions healing spontaneously within 1 week, no pruritus.</li>
+                <li>Awaiting completely blister-free skin may prolong treatment and increase AE risk (esp. with oral corticosteroids).</li>
+            </ul>
+
+            <div class="subsection-title">🏁 Discontinuation of Treatment</div>
+            <p>Attempt once patients are in <strong>complete remission</strong> (absence of new/established lesions or pruritus) on <strong>minimal therapy for at least two months.</strong></p>
+            <p><strong>Examples of Minimal Therapy Doses:</strong></p>
+            <ul>
+                <li>Clobetasol propionate: ≤20 g per week</li>
+                <li>Prednisone: ≤0.1 mg/kg per day</li>
+                <li>Azathioprine: ≤0.7 mg/kg per day (normal TPMT)</li>
+                <li>Mycophenolate mofetil: ≤500 mg per day</li>
+                <li>Mycophenolic acid: ≤360 mg per day</li>
+                <li>Methotrexate: ≤5 mg per week</li>
+                <li>Dapsone: ≤50 mg per day</li>
+                <li>Doxycycline: 100 mg twice daily (Note: This is full therapeutic dose in some contexts, but considered minimal for maintenance here)</li>
+            </ul>
+
+            <div class="subsection-title" id="recurrences">🔄 Managing Recurrences During Tapering/Post-Cessation</div>
+            <ul>
+                <li><strong>Mild Disease Activity Recurrence</strong> (e.g., <3 new lesions within one month):
+                    <ul><li>Return to the preceding lowest effective treatment dose.</li></ul>
+                </li>
+                <li><strong>Greater Than Mild Disease Activity Recurrence</strong> (e.g., ≥3 lesions/month not healing in 1 week, extension of lesions, daily pruritus):
+                    <ul>
+                        <li>Return to dose that preceded the <em>last effective</em> treatment dose.</li>
+                        <li>If this fails or patient presented with extensive disease: Return to <em>initial effective</em> dose.</li>
+                        <li>Add a corticosteroid-sparing systemic agent (if not already on one).</li>
+                        <li>Change the corticosteroid-sparing agent (if already on one).</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="treatment-failure" class="section">
+            <h2 class="section-title">⚠️ Determining Treatment Failure</h2>
+            <p><strong>Definition:</strong></p>
+            <ul>
+                <li>Continued development of non-transient lesions.</li>
+                <li>Continued extension of existing lesions.</li>
+                <li>Failure of existing lesions to begin to heal.</li>
+                <li>Continued pruritus despite an adequate course of treatment.</li>
+            </ul>
+            <p class="pearl-box">BP tends to respond quickly to appropriate therapeutic doses, usually <strong>within one month</strong>.</p>
+            <p><strong>Examples of Points After Which Treatment Failure May Be Assumed:</strong></p>
+            <table class="drug-table">
+                <thead>
+                    <tr>
+                        <th>Drug</th>
+                        <th>Criteria for Failure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clobetasol propionate</td>
+                        <td>40 g per day for <strong>four weeks</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Prednisone</td>
+                        <td>0.75 mg/kg per day for <strong>at least three weeks</strong> (with or without other therapies)</td>
+                    </tr>
+                    <tr>
+                        <td>Azathioprine</td>
+                        <td>2.5 mg/kg per day for <strong>four weeks</strong> (normal TPMT)</td>
+                    </tr>
+                    <tr>
+                        <td>Mycophenolate mofetil</td>
+                        <td>40 mg/kg per day for <strong>four weeks</strong> (normal renal function)</td>
+                    </tr>
+                    <tr>
+                        <td>Methotrexate</td>
+                        <td>15 mg per week for <strong>four weeks</strong> (>60 kg, no major renal impairment)</td>
+                    </tr>
+                    <tr>
+                        <td>Dapsone</td>
+                        <td>1.5 mg/kg per day for <strong>four weeks</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tetracyclines</td>
+                        <td>Full therapeutic dosing for <strong>four weeks</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="supportive-care" class="section">
+            <h2 class="section-title">🩹 General Skin & Oral Care</h2>
+            <div class="subsection-title">🧴 General Skin Care</div>
+            <p>Best approach for blistered skin is not established. Authors' experience suggests:</p>
+            <ul>
+                <li>💧 Daily rupturing of tense blisters seems to reduce lateral extension.</li>
+                <li><strong>Instructions for Patients/Caregivers:</strong>
+                    <ol>
+                        <li>Cleanse blisters with alcohol prior to rupturing (sterile needle/blade).</li>
+                        <li>Puncture at most gravitationally dependent area to facilitate drainage.</li>
+                        <li>Leave overlying epithelial layer (blister roof) in place (acts as natural wound dressing).</li>
+                        <li>Cover open erosions with nonstick dressings (reduces pain, infection risk).</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="critical-alert-box">
+                <strong>🚨 Superinfection is a significant concern!</strong> Especially with numerous lesions and systemic immunosuppressants.
+                <br>Educate on warning signs: purulent drainage, worsening redness, or pain for prompt diagnosis/treatment.
+            </div>
+
+            <div class="subsection-title">👄 Oral Involvement</div>
+            <p>Occurs in 10-30% of BP patients (usually oral erosions).</p>
+            <p>Can often be managed with <strong>topical corticosteroid therapy</strong> (similar to mucous membrane pemphigoid).</p>
+            <p class="pearl-box">Authors' experience: Mucous membrane involvement frequently improves during systemic therapy for cutaneous disease.</p>
+        </section>
+
+    </div>
+    <!-- End of first part of the HTML -->
+</body>
+</html>

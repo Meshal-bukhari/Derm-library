@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscles of Facial Expression - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --dark: #1a252f;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 1.2rem 0 0.8rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro-box {
+            background-color: var(--light);
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-container {
+            margin-bottom: 2rem;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .tab {
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light);
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            font-weight: 600;
+        }
+        
+        .tab:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .tab.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 10px 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .clinical-pearl {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 5px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .clinical-pearl h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mnemonic {
+            background-color: rgba(46, 204, 113, 0.1);
+            border: 2px dashed var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .mnemonic h4 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+        
+        .quiz-container {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin: 2rem 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-options {
+            margin-left: 1.5rem;
+        }
+        
+        .quiz-option {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .quiz-feedback {
+            display: none;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 5px solid var(--success);
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 5px solid var(--accent);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        thead {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .branch-temporal {
+            border-left: 5px solid #3498db;
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .branch-zygomatic {
+            border-left: 5px solid #e67e22;
+            background-color: rgba(230, 126, 34, 0.05);
+        }
+        
+        .branch-buccal {
+            border-left: 5px solid #2ecc71;
+            background-color: rgba(46, 204, 113, 0.05);
+        }
+        
+        .branch-mandibular {
+            border-left: 5px solid #9b59b6;
+            background-color: rgba(155, 89, 182, 0.05);
+        }
+        
+        .branch-cervical {
+            border-left: 5px solid #34495e;
+            background-color: rgba(52, 73, 94, 0.05);
+        }
+        
+        .muscle-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .muscle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .muscle-card h3 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .muscle-props {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .muscle-prop {
+            background-color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .prop-innervation {
+            background-color: rgba(52, 152, 219, 0.2);
+        }
+        
+        .prop-function {
+            background-color: rgba(46, 204, 113, 0.2);
+        }
+        
+        .prop-deficit {
+            background-color: rgba(231, 76, 60, 0.2);
+        }
+        
+        .expand-btn {
+            background-color: var(--light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 1rem 0;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .expand-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .expanded-content {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: rgba(236, 240, 241, 0.5);
+            border-radius: 5px;
+        }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .interactive-image {
+            position: relative;
+            margin: 2rem 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .interactive-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hotspot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .hotspot:hover {
+            transform: scale(1.2);
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            border-radius: 5px;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 250px;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .hotspot:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .tooltip p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .flashcard-container {
+            margin: 2rem 0;
+        }
+
+        .flashcard {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 300px;
+            margin: 0 auto;
+            max-width: 600px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .flashcard-front {
+            background-color: var(--secondary);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .flashcard-back {
+            background-color: white;
+            color: var(--primary);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+
+        .flashcard-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .flashcard-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .flashcard-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .smas-diagram {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .highlight {
+            background-color: #ffffcc;
+            padding: 0 3px;
+        }
+
+        .color-legend {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            gap: 1rem;
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                gap: 2px;
+            }
+            
+            .tab {
+                border-radius: 5px;
+                text-align: center;
+            }
+            
+            .tab-content {
+                border-radius: 5px;
+            }
+            
+            .muscle-props {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Muscles of Facial Expression</h1>
+            <p>Comprehensive Study Guide for Saudi Board Exam</p>
+        </header>
+        
+        <div class="intro-box">
+            <p>The muscles of facial expression are a key component of facial anatomy, essential for both functional and aesthetic considerations in surgical and clinical practice. This interactive study guide covers their origin, innervation, functions, and clinical implications.</p>
+            <p><strong>Key Facts:</strong> All muscles of facial expression arise from the second branchial arch, are innervated by the facial nerve (CN VII), and are concentrated in the central facial region. They insert into overlying skin and other local muscle groups and contribute to the relaxed skin tension lines of this region.</p>
+        </div>
+
+        <div class="color-legend">
+            <h3>Facial Nerve Branch Color Code</h3>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #3498db;"></div>
+                    <span>Temporal Branch</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e67e22;"></div>
+                    <span>Zygomatic Branch</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #2ecc71;"></div>
+                    <span>Buccal Branch</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #9b59b6;"></div>
+                    <span>Marginal Mandibular Branch</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #34495e;"></div>
+                    <span>Cervical Branch</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab active" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab" onclick="openTab(event, 'muscles-table')">Muscles Table</button>
+                <button class="tab" onclick="openTab(event, 'muscles-regions')">Muscles by Region</button>
+                <button class="tab" onclick="openTab(event, 'smas-fascia')">SMAS & Fascial Planes</button>
+                <button class="tab" onclick="openTab(event, 'clinical')">Clinical Applications</button>
+                <button class="tab" onclick="openTab(event, 'quiz')">Self-Assessment</button>
+            </div>
+            
+            <div id="overview" class="tab-content active">
+                <h2>Overview of Facial Muscles</h2>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl</h4>
+                    <p>Fluidity of facial movements is orchestrated by the muscles' interaction with the SMAS (superficial musculoaponeurotic system). A surgeon must have detailed knowledge of these muscles and the potential consequences of disrupting their innervation.</p>
+                </div>
+                
+                <p>The muscles of facial expression can be categorized by their innervation from different branches of the facial nerve:</p>
+                
+                <h3>Facial Nerve Branch Distribution</h3>
+                <ul>
+                    <li><strong style="color: #3498db;">Temporal Branch:</strong> Frontalis, Corrugator supercilii, Upper portion of Orbicularis oculi, Auricular (anterior and superior)</li>
+                    <li><strong style="color: #e67e22;">Zygomatic Branch:</strong> Lower portion of Orbicularis oculi, Nasalis (alar portion), Procerus, Levator anguli oris, Zygomaticus major</li>
+                    <li><strong style="color: #2ecc71;">Buccal Branch:</strong> Buccinator, Depressor septi nasi, Nasalis (transverse portion), Zygomaticus minor, Levator labii superioris, Risorius</li>
+                    <li><strong style="color: #9b59b6;">Marginal Mandibular Branch:</strong> Orbicularis oris (with buccal), Depressor anguli oris, Depressor labii inferioris, Mentalis</li>
+                    <li><strong style="color: #34495e;">Cervical Branch:</strong> Platysma (with marginal mandibular)</li>
+                </ul>
+                
+                <div class="mnemonic">
+                    <h4>Mnemonic: "T-Z-B-M-C"</h4>
+                    <p>The 5 branches of facial nerve from superior to inferior:</p>
+                    <p><strong>T</strong>emporal → <strong>Z</strong>ygomatic → <strong>B</strong>uccal → <strong>M</strong>arginal mandibular → <strong>C</strong>ervical</p>
+                </div>
+                
+                <h3>Major Muscle Groups</h3>
+                <ol>
+                    <li><strong>Epicranius (Occipitofrontalis):</strong> Has anterior (frontalis) and posterior regions connected by galea aponeurotica</li>
+                    <li><strong>Periorbital Muscles:</strong> Orbicularis oculi, Corrugator supercilii, Procerus</li>
+                    <li><strong>Nasal Muscles:</strong> Nasalis (alar and transverse portions), Depressor septi nasi</li>
+                    <li><strong>Oral Muscles:</strong> Orbicularis oris, Levator/Depressor groups, Zygomaticus, Buccinator</li>
+                    <li><strong>Platysma:</strong> Covers the neck and extends to the lower face</li>
+                </ol>
+
+                <button class="expand-btn" onclick="toggleContent('clinical-importance')">Clinical Importance ↓</button>
+                <div id="clinical-importance" class="expanded-content">
+                    <p>Understanding the muscles of facial expression is crucial for:</p>
+                    <ul>
+                        <li><strong>Surgical Procedures:</strong> Facial trauma repair, cosmetic surgery, facial reconstruction</li>
+                        <li><strong>Neurological Assessment:</strong> Evaluating facial nerve function in conditions like Bell's palsy</li>
+                        <li><strong>Cosmetic Applications:</strong> Botox injections, fillers, and other aesthetic procedures</li>
+                        <li><strong>Pathological Identification:</strong> Recognizing abnormal facial movements in various disorders</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="muscles-table" class="tab-content">
+                <h2>Comprehensive Muscles of Facial Expression Table</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Muscle</th>
+                            <th>Innervation (Facial Nerve Branch)</th>
+                            <th>Functions</th>
+                            <th>Ipsilateral Complications from Functional Loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Temporal Branch -->
+                        <tr class="branch-temporal">
+                            <td>Frontalis</td>
+                            <td>Temporal</td>
+                            <td>
+                                <ul>
+                                    <li>Raises eyebrows</li>
+                                    <li>Aids in opening eyes widely (with orbicularis oculi)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Flattening of horizontal forehead tension lines</li>
+                                    <li>Inability to raise lowered/"droopy" eyebrow</li>
+                                    <li>May be unable to open eyes widely</li>
+                                    <li>Only 15% of patients have cross-innervation</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-temporal">
+                            <td>Corrugator supercilii</td>
+                            <td>Temporal</td>
+                            <td>
+                                <ul>
+                                    <li>Draws brows medially & downward (scowl expression)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty scowling/furrowing brow</li>
+                                    <li>Rarely occurs due to cross-innervation</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-temporal">
+                            <td>Orbicularis oculi — upper portion</td>
+                            <td>Temporal</td>
+                            <td>
+                                <ul>
+                                    <li>Closes upper eyelids</li>
+                                    <li>Voluntary tight closure (orbital component)</li>
+                                    <li>Gentle eye closure & blinking (palpebral component)</li>
+                                    <li>Aids in tear extraction (palpebral component)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty with eye closure</li>
+                                    <li>Rarely occurs due to cross-innervation</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-temporal">
+                            <td>Auricular — anterior and superior (temporoparietalis)</td>
+                            <td>Temporal</td>
+                            <td>
+                                <ul>
+                                    <li>Draws back temporal skin</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-temporal">
+                            <td>Auricular — posterior</td>
+                            <td>Posterior auricular</td>
+                            <td>
+                                <ul>
+                                    <li>Draws back temporal skin</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+
+                        <!-- Zygomatic Branch -->
+                        <tr class="branch-zygomatic">
+                            <td>Orbicularis oculi — lower portion</td>
+                            <td>Zygomatic</td>
+                            <td>
+                                <ul>
+                                    <li>Closes lower eyelids</li>
+                                    <li>Tight and gentle eye closures — similar to upper portion</li>
+                                    <li>Aids in tear extraction</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty with tight eyelid closure</li>
+                                    <li>Lower eyelid droop</li>
+                                    <li>Complete loss uncommon due to cross-innervation by temporal branch</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-zygomatic">
+                            <td>Nasalis — alar portion</td>
+                            <td>Zygomatic</td>
+                            <td>
+                                <ul>
+                                    <li>Facilitates alar flaring & compression</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-zygomatic">
+                            <td>Procerus</td>
+                            <td>Zygomatic</td>
+                            <td>
+                                <ul>
+                                    <li>Causes foreshortening of the nose & "bunny" lines (with nasalis)</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-zygomatic">
+                            <td>Levator anguli oris</td>
+                            <td>Zygomatic and buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Elevates & retracts mouth angles</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty smiling</li>
+                                    <li>Difficulty with lip seal</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-zygomatic">
+                            <td>Zygomaticus major</td>
+                            <td>Zygomatic and buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Elevates & retracts mouth angles</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty smiling</li>
+                                    <li>Difficulty with lip seal</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Buccal Branch -->
+                        <tr class="branch-buccal">
+                            <td>Buccinator</td>
+                            <td>Buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Pursing of lips</li>
+                                    <li>Apposition of cheeks to teeth & gingivae</li>
+                                    <li>Prevents cheek overextension during high intraoral pressure</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inability to whistle</li>
+                                    <li>Food accumulates between teeth & buccal mucosa with chewing</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-buccal">
+                            <td>Depressor septi nasi</td>
+                            <td>Buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Pulls columella down toward lip</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-buccal">
+                            <td>Nasalis — transverse portion</td>
+                            <td>Buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Facilitates alar flaring & compression</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-buccal">
+                            <td>Zygomaticus minor</td>
+                            <td>Buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Elevates & retracts mouth angles</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>May have an effect on smiling expression</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-buccal">
+                            <td>Levator labii superioris</td>
+                            <td>Buccal</td>
+                            <td>
+                                <ul>
+                                    <li>Elevates upper lip</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="branch-buccal">
+                            <td>Risorius</td>
+                            <td>Buccal and/or marginal mandibular</td>
+                            <td>
+                                <ul>
+                                    <li>Elevates & retracts mouth angles</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Asymmetric "crooked" smile at rest</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Buccal and Marginal Mandibular -->
+                        <tr>
+                            <td>Orbicularis oris</td>
+                            <td>Buccal and marginal mandibular</td>
+                            <td>
+                                <ul>
+                                    <li>Pursing & puckering of lips</li>
+                                    <li>Apposition of corners of the mouth</li>
+                                    <li>Pulls lips against teeth & gingivae</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Difficulty with feeding</li>
+                                    <li>Drooling</li>
+                                    <li>Muffled speech</li>
+                                    <li>Inability to enunciate the letters M, V, F, P, or O</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Marginal Mandibular -->
+                        <tr class="branch-mandibular">
+                            <td>Depressor anguli oris</td>
+                            <td>Marginal mandibular</td>
+                            <td>
+                                <ul>
+                                    <li>Depresses & retracts lip</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inability to smile (normal at rest, but asymmetric when smiling)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-mandibular">
+                            <td>Depressor labii inferioris</td>
+                            <td>Marginal mandibular</td>
+                            <td>
+                                <ul>
+                                    <li>Depresses & retracts lip</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inability to smile (normal at rest, but asymmetric when smiling)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="branch-mandibular">
+                            <td>Mentalis</td>
+                            <td>Marginal mandibular</td>
+                            <td>
+                                <ul>
+                                    <li>Depresses & retracts lip</li>
+                                    <li>Elevates chin</li>
+                                    <li>Protrudes lower lip</li>
+                                    <li>Dimpling of chin</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inability to smile (normal at rest, but asymmetric when smiling)</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Cervical -->
+                        <tr class="branch-cervical">
+                            <td>Platysma</td>
+                            <td>Marginal mandibular and cervical</td>
+                            <td>
+                                <ul>
+                                    <li>Minor role in retracting mouth angles</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl</h4>
+                    <p>Due to a high degree of anastomoses, damage to the zygomatic or buccal branches is often temporary and less debilitating than a similar injury to the temporal branch.</p>
+                </div>
+            </div>
+            
+            <div id="muscles-regions" class="tab-content">
+                <h2>Muscles by Region</h2>
+                
+                <h3>Upper Face/Scalp Region</h3>
+                
+                <div class="muscle-card branch-temporal">
+                    <h3>Epicranius (Occipitofrontalis)</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Temporal Branch</span>
+                        <span class="muscle-prop prop-function">Connected by galea aponeurotica</span>
+                    </div>
+                    <p>The epicranius or occipitofrontalis muscle of the scalp has an anterior and posterior region connected by the galea aponeurotica. Contraction of these muscles allows the skin to slide over the scalp. However, humans no longer have voluntary control of the posterior muscle group, which is innervated by the posterior auricular branch of the facial nerve.</p>
+                    
+                    <div class="clinical-pearl">
+                        <h4>Clinical Pearl</h4>
+                        <p>Midline vertical forehead skin tension lines occur due to variation in distance between the left and right frontalis bellies. Horizontal skin tension lines occur perpendicular to the frontalis contractile orientation.</p>
+                    </div>
+                </div>
+                
+                <div class="muscle-card branch-temporal">
+                    <h3>Frontalis</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Temporal Branch</span>
+                        <span class="muscle-prop prop-function">Raises eyebrows, opens eyes wide</span>
+                        <span class="muscle-prop prop-deficit">Droopy eyebrow, inability to open eyes widely</span>
+                    </div>
+                    <p>The frontalis muscle, a member of the epicranius complex, begins at the anterior hairline and inserts into the forehead and eyebrow skin. It also connects with the procerus, orbicularis oculi, and corrugator supercilii muscles.</p>
+                </div>
+                
+                <div class="muscle-card branch-temporal">
+                    <h3>Periauricular muscles (Temporoparietalis)</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Temporal Branch & Posterior Auricular</span>
+                        <span class="muscle-prop prop-function">Draw back temporal skin</span>
+                    </div>
+                    <p>The small periauricular muscles, also referred to as the temporoparietalis group, arise from the superficial temporalis fascia and the lateral galea. They help draw back the temporal skin and are innervated by the posterior ramus of the temporal branch of the facial nerve.</p>
+                </div>
+                
+                <h3>Periorbital Region</h3>
+                
+                <div class="muscle-card">
+                    <h3>Orbicularis Oculi</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Temporal (upper) & Zygomatic (lower)</span>
+                        <span class="muscle-prop prop-function">Eye closure, blinking, tear extraction</span>
+                        <span class="muscle-prop prop-deficit">Difficulty with eye closure, eyelid droop</span>
+                    </div>
+                    <p>The orbicularis oculi muscle complex is the major group that acts on the eyelid and periorbital skin. It inserts into the medial and lateral canthal tendons and encircles the eye region. Its palpebral portion has a preseptal component overlying the orbital septum and a pretarsal portion overlying the tarsal plate of the eyelid. The orbicularis oculi is intertwined with the procerus, corrugator supercilii, and frontalis muscles and attaches to the superficial temporalis fascia at its lateral border.</p>
+                    
+                    <button class="expand-btn" onclick="toggleContent('orbicularis-portions')">Orbicularis Oculi Portions ↓</button>
+                    <div id="orbicularis-portions" class="expanded-content">
+                        <ul>
+                            <li><strong>Orbital portion:</strong> Surrounds the orbit, responsible for tight closure</li>
+                            <li><strong>Palpebral portion:</strong> Covers the eyelids
+                                <ul>
+                                    <li><strong>Preseptal:</strong> Covers the orbital septum</li>
+                                    <li><strong>Pretarsal:</strong> Overlies the tarsal plate of eyelid</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="muscle-card branch-temporal">
+                    <h3>Corrugator Supercilii</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Temporal Branch</span>
+                        <span class="muscle-prop prop-function">Draws brows medially & downward (scowl)</span>
+                        <span class="muscle-prop prop-deficit">Difficulty scowling/furrowing brow</span>
+                    </div>
+                    <p>The corrugator supercilii muscle is located over the medial upper orbital rim. It contributes to a "scowling" facial expression by drawing the eyebrows medially and downward. It interdigitates with and is covered by the frontalis and orbicularis oculi muscles. The vertical and oblique skin tension lines of the glabella are caused by contraction of this muscle.</p>
+                </div>
+                
+                <h3>Nasal Region</h3>
+                
+                <div class="muscle-card branch-zygomatic">
+                    <h3>Procerus</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Zygomatic Branch</span>
+                        <span class="muscle-prop prop-function">Causes foreshortening of nose & "bunny" lines</span>
+                    </div>
+                    <p>The procerus muscle overlies the nasal bone and attaches to the nasal root skin. It is responsible for "bunny lines", i.e. skin tension lines exaggerated by wrinkling up the nose.</p>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Nasalis</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Zygomatic (alar) & Buccal (transverse)</span>
+                        <span class="muscle-prop prop-function">Alar flaring & compression</span>
+                    </div>
+                    <p>The nasalis muscle has two portions: alar and transverse. The alar portion is innervated by the zygomatic branch, while the transverse portion is innervated by the buccal branch. The nasalis muscle courses across the nasal dorsum and facilitates alar flaring and compression.</p>
+                </div>
+                
+                <div class="muscle-card branch-buccal">
+                    <h3>Depressor Septi Nasi</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Buccal Branch</span>
+                        <span class="muscle-prop prop-function">Pulls columella down toward lip</span>
+                    </div>
+                    <p>The depressor septi nasi muscle, which lies deep to the orbicularis oris, pulls the columella down toward the lip and can form a transverse skin tension line across the philtrum.</p>
+                </div>
+                
+                <h3>Oral Region</h3>
+                
+                <div class="muscle-card">
+                    <h3>Orbicularis Oris</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Buccal & Marginal Mandibular</span>
+                        <span class="muscle-prop prop-function">Pursing of lips, speech articulation</span>
+                        <span class="muscle-prop prop-deficit">Feeding difficulty, drooling, speech problems</span>
+                    </div>
+                    <p>The orbicularis oris muscle is unique in that it has no bony or cartilaginous attachment. It functions as a sphincter for the mouth, essential for pursing and puckering of lips, and plays a critical role in speech articulation, particularly for labial sounds (M, V, F, P, O).</p>
+                    
+                    <div class="clinical-pearl">
+                        <h4>Clinical Pearl</h4>
+                        <p>Damage to the orbicularis oris can result in significant functional deficits including difficulty with feeding, drooling, and muffled speech with poor articulation of labial sounds.</p>
+                    </div>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Zygomaticus Major & Minor</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Zygomatic & Buccal Branches</span>
+                        <span class="muscle-prop prop-function">Main contributors to smile formation</span>
+                        <span class="muscle-prop prop-deficit">Difficulty smiling, lip seal issues</span>
+                    </div>
+                    <p>The zygomaticus major muscle travels from the zygoma downward and diagonally to the upper corner of the mouth, where it contributes to the nasolabial fold. Zygomaticus major and minor muscles are the main contributors to smile formation.</p>
+                </div>
+                
+                <div class="muscle-card branch-buccal">
+                    <h3>Buccinator</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Buccal Branch</span>
+                        <span class="muscle-prop prop-function">Prevents cheek overextension during chewing</span>
+                        <span class="muscle-prop prop-deficit">Food accumulation between teeth & cheek</span>
+                    </div>
+                    <p>The buccinator muscle constitutes a large area of the cheek as it courses from the posterior maxillary area to the upper medial surface of the mandible, where it interdigitates with the orbicularis oris. The facial vascular bundle crosses its surface. The parotid duct and transverse facial artery run parallel to each other as the duct pierces the buccinator to enter the mouth at the second maxillary molar.</p>
+                    
+                    <button class="expand-btn" onclick="toggleContent('buccinator-importance')">Clinical Importance ↓</button>
+                    <div id="buccinator-importance" class="expanded-content">
+                        <p>The buccinator muscle is critically important for:</p>
+                        <ul>
+                            <li>Preventing food accumulation in the vestibule during mastication</li>
+                            <li>Providing resistance to intraoral pressure during blowing</li>
+                            <li>Assisting in speech articulation and whistling</li>
+                            <li>Serving as a surgical landmark, as the parotid duct penetrates it at the level of the second upper molar</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Lip Elevator and Depressor Muscles</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop">Complex network of agonist/antagonist muscles</span>
+                    </div>
+                    <p>An intricate network of interdigitating agonist and antagonist muscle groups contributes to lip movements and oral expression. Lip elevators, depressors, and retractors assist the sphincteric orbicularis oris muscle in lip movement.</p>
+                    
+                    <button class="expand-btn" onclick="toggleContent('lip-muscles')">Lip Muscles Detail ↓</button>
+                    <div id="lip-muscles" class="expanded-content">
+                        <h4>Elevator Muscles:</h4>
+                        <ul>
+                            <li><strong>Levator labii superioris:</strong> Elevates upper lip (Buccal branch)</li>
+                            <li><strong>Levator anguli oris:</strong> Elevates mouth angles (Zygomatic and buccal)</li>
+                            <li><strong>Zygomaticus minor:</strong> Elevates & retracts mouth angles (Buccal)</li>
+                        </ul>
+                        
+                        <h4>Depressor Muscles:</h4>
+                        <ul>
+                            <li><strong>Depressor anguli oris (triangularis):</strong> Depresses & retracts lip (Marginal mandibular)</li>
+                            <li><strong>Depressor labii inferioris (quadratus):</strong> Depresses & retracts lip (Marginal mandibular)</li>
+                            <li><strong>Mentalis:</strong> Depresses & retracts lip, elevates chin, protrudes lower lip (Marginal mandibular)</li>
+                        </ul>
+                        
+                        <p>The mentalis muscle has bellies with variable proximities to each other, and a patient with a chin "dimple" or "cleft chin" has a larger distance between mentalis muscle bellies. This is a normal anatomic variant.</p>
+                    </div>
+                </div>
+                
+                <h3>Lower Face/Neck Region</h3>
+                
+                <div class="muscle-card branch-cervical">
+                    <h3>Platysma</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-innervation">Innervation: Marginal Mandibular & Cervical Branches</span>
+                        <span class="muscle-prop prop-function">Minor role in retracting mouth angles</span>
+                    </div>
+                    <p>The platysma muscle runs from the superficial fascia of the chest across the anterior and lateral neck over the mandible to intercalate with the lower lip depressors and retractors. It is continuous with the superficial fascia or SMAS of the lower face. The platysma muscle provides only a thin protective cover to the anterior facial vascular bundle and mandibular branch of the trigeminal nerve.</p>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl - The Modiolus</h4>
+                    <p>The modiolus platform is formed by the convergence of fibers from the orbicularis oris and lip elevators and depressors. It is located 1 cm lateral to the mouth angle and accounts for cheek "dimples" in some patients. It works in synergy with the perioral muscles to facilitate speech enunciation.</p>
+                </div>
+            </div>
+            
+            <div id="smas-fascia" class="tab-content">
+                <h2>SMAS & Fascial Planes</h2>
+                
+                <div class="intro-box">
+                    <p>The superficial musculoaponeurotic system (SMAS) is a critical anatomical structure in facial surgery. It acts as a unifying infrastructure to the head and neck, creating an anatomic plane for identification and protection of key structures. Knowledge of neurovascular anatomy with respect to the superficial investing fascia promotes effective surgical dissection and closures that minimize functional compromise and maximize cosmesis.</p>
+                </div>
+                
+                <div class="smas-diagram">
+                    <h3>Cross-Sectional Anatomy of Fascial Planes of the Upper Face</h3>
+                    <p>Key layers from superficial to deep:</p>
+                    <ol>
+                        <li><strong>Epidermis</strong></li>
+                        <li><strong>Dermis</strong></li>
+                        <li><strong>Subcutaneous Fat</strong></li>
+                        <li><strong>SMAS (Superficial Musculoaponeurotic System)</strong>
+                            <ul>
+                                <li>Superficial leaflet</li>
+                                <li>Deep leaflet - contains orbicularis oculi muscle</li>
+                            </ul>
+                        </li>
+                        <li><strong>Deep Temporalis Fascia</strong></li>
+                        <li><strong>Temporalis Muscle</strong></li>
+                        <li><strong>Periosteum</strong></li>
+                    </ol>
+                    
+                    <p>Important structures within these planes:</p>
+                    <ul>
+                        <li><strong>Temporal branch of facial nerve</strong> - lies between the SMAS and deep temporalis fascia</li>
+                        <li><strong>Superficial temporal artery</strong> - superficial to the SMAS</li>
+                    </ul>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Surgical Pearl</h4>
+                    <p>Blunt dissection of the scalp SMAS separates the galea aponeurotica from the skull periosteum, the superficial temporalis fascia from the deep temporalis fascia, and the subfrontalis SMAS from the forehead periosteum. This is called the subgaleal plane, and it is the ideal avascular dissection plane for scalp surgery.</p>
+                </div>
+                
+                <h3>Surgical Considerations</h3>
+                <ul>
+                    <li><span class="highlight">Beware of the supraorbital/supratrochlear neurovascular bundles</span> above the eyebrows when dissecting to the deep galea, as these can be damaged as they exit their respective foramina.</li>
+                    <li>In the <span class="highlight">SMAS–parotid fascial plane of the cheek</span>, the buccal and zygomatic branches of the facial nerve are endangered due to thin protective aponeurotic tissue in this area.</li>
+                    <li>The <span class="highlight">superficial temporal vessels and auriculotemporal nerve</span> course within the superficial temporalis fascia above the zygomatic arch, then assume a superficial plane in the subcutaneous fat.</li>
+                </ul>
+                
+                <h3>Ideal Dissection Planes</h3>
+                <p>Surgical undermining and dissection should maximize the horizontal planes provided by the superficial fascial network of the head and neck:</p>
+                <ul>
+                    <li>Undermining in the <span class="highlight">subcutaneous fat</span> of the face below the subdermal plexus minimizes the risk to motor nerves, but remember that sensory branches and blood vessels course through this area.</li>
+                    <li>There is <span class="highlight">sparse subcutaneous fat</span> on the dorsal nose, forehead, upper lip, and eyelid.</li>
+                    <li>With the exception of the forehead where dissection is usually in the <span class="highlight">subgaleal plane</span>, the ideal dissection plane in these regions lies just superficial to the thin investing fascia (SMAS) covering the regional muscles of facial expression.</li>
+                </ul>
+                
+                <div class="mnemonic">
+                    <h4>Mnemonic: "S-F-M-V-N"</h4>
+                    <p>For the layers in scalp (superficial to deep):</p>
+                    <p><strong>S</strong>kin → <strong>F</strong>at → <strong>M</strong>uscle (galea aponeurotica) → <strong>V</strong>essel layer (loose areolar tissue) → <strong>N</strong>ormal periosteum</p>
+                </div>
+            </div>
+            
+            <div id="clinical" class="tab-content">
+                <h2>Clinical Applications</h2>
+                
+                <h3>Facial Nerve Injury Patterns</h3>
+                <p>Understanding the pattern of facial muscle deficits helps in localizing facial nerve injuries:</p>
+                
+                <div class="muscle-card">
+                    <h3>Temporal Branch Injury</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-deficit">Most significant functional impact</span>
+                    </div>
+                    <ul>
+                        <li>Flattening of horizontal forehead tension lines</li>
+                        <li>Inability to raise eyebrow on affected side</li>
+                        <li>May have difficulty with eye closure (though cross-innervation often prevents this)</li>
+                    </ul>
+                    <p><strong>Clinical Note:</strong> Damage to the temporal branch is often more debilitating than damage to other branches due to less cross-innervation.</p>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Zygomatic Branch Injury</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-deficit">Often temporary due to anastomoses</span>
+                    </div>
+                    <ul>
+                        <li>Difficulty with tight eyelid closure</li>
+                        <li>Lower eyelid droop</li>
+                        <li>Complete loss uncommon due to cross-innervation by temporal branch</li>
+                    </ul>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Buccal Branch Injury</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-deficit">Often temporary due to anastomoses</span>
+                    </div>
+                    <ul>
+                        <li>Asymmetric "crooked" smile at rest</li>
+                        <li>Inability to whistle</li>
+                        <li>Food accumulates between teeth & buccal mucosa with chewing</li>
+                    </ul>
+                </div>
+                
+                <div class="muscle-card">
+                    <h3>Marginal Mandibular Branch Injury</h3>
+                    <div class="muscle-props">
+                        <span class="muscle-prop prop-deficit">Affects lower face expression</span>
+                    </div>
+                    <ul>
+                        <li>Inability to smile - normal at rest, but asymmetric expression when smiling</li>
+                        <li>Difficulty with lower lip movement</li>
+                    </ul>
+                </div>
+                
+                <h3>Surgical Relevance of Facial Muscles</h3>
+                
+                <div class="clinical-pearl">
+                    <h4>Surgical Landmarks and High-Risk Zones</h4>
+                    <p>Several anatomical relationships are crucial for surgeons to recognize:</p>
+                    <ul>
+                        <li>The <strong>temporal branch of facial nerve</strong> lies between the SMAS and deep temporalis fascia - vulnerable during forehead and temple procedures</li>
+                        <li><strong>Parotid duct</strong> pierces the buccinator to enter the mouth at the second maxillary molar - important landmark during facial procedures</li>
+                        <li>The <strong>platysma muscle</strong> provides only a thin protective cover to the anterior facial vascular bundle and mandibular branch of the trigeminal nerve - requires careful attention during neck procedures</li>
+                    </ul>
+                </div>
+                
+                <h3>Cosmetic Implications</h3>
+                <ul>
+                    <li><strong>Relaxed Skin Tension Lines:</strong> Understanding the contractile orientation of facial muscles helps predict and account for skin tension lines during procedures</li>
+                    <li><strong>Age-Related Changes:</strong> With aging, support from the SMAS diminishes, leading to characteristic changes in facial appearance</li>
+                    <li><strong>Botulinum Toxin Targets:</strong> Knowledge of specific muscles and their actions guides precise neurotoxin placement for optimal cosmetic results</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <h4>Anatomical Variants</h4>
+                    <p>Important variants to recognize:</p>
+                    <ul>
+                        <li>Midline vertical forehead skin tension lines occur due to variation in distance between the left and right frontalis bellies</li>
+                        <li>The mentalis muscle has bellies with variable proximities to each other - a patient with a chin "dimple" or "cleft chin" has a larger distance between mentalis muscle bellies (normal anatomic variant)</li>
+                        <li>Cheek "dimples" represent the location of the modiolus platform (~1 cm lateral to mouth angle)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="quiz" class="tab-content">
+                <h2>Self-Assessment</h2>
+                
+                <div class="quiz-container">
+                    <h3>Test Your Knowledge</h3>
+                    
+                    <div class="quiz-question">
+                        <p><strong>1. A patient presents with inability to raise their right eyebrow and flattening of right forehead horizontal lines. Which branch of the facial nerve is most likely injured?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(1, 'A')">A. Temporal branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(1, 'B')">B. Zygomatic branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(1, 'C')">C. Buccal branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(1, 'D')">D. Marginal mandibular branch</div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-1"></div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p><strong>2. Which of the following facial muscles is NOT innervated by the buccal branch of the facial nerve?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(2, 'A')">A. Buccinator</div>
+                            <div class="quiz-option" onclick="checkAnswer(2, 'B')">B. Levator labii superioris</div>
+                            <div class="quiz-option" onclick="checkAnswer(2, 'C')">C. Procerus</div>
+                            <div class="quiz-option" onclick="checkAnswer(2, 'D')">D. Nasalis (transverse portion)</div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-2"></div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p><strong>3. A patient has difficulty with tight eyelid closure and has a lower eyelid droop after surgery. Which branch of the facial nerve has most likely been damaged?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(3, 'A')">A. Temporal branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(3, 'B')">B. Zygomatic branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(3, 'C')">C. Buccal branch</div>
+                            <div class="quiz-option" onclick="checkAnswer(3, 'D')">D. Marginal mandibular branch</div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-3"></div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p><strong>4. Which facial muscle is primarily responsible for creating a "scowling" facial expression?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(4, 'A')">A. Frontalis</div>
+                            <div class="quiz-option" onclick="checkAnswer(4, 'B')">B. Procerus</div>
+                            <div class="quiz-option" onclick="checkAnswer(4, 'C')">C. Corrugator supercilii</div>
+                            <div class="quiz-option" onclick="checkAnswer(4, 'D')">D. Orbicularis oculi</div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-4"></div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p><strong>5. A cleft chin or chin "dimple" is anatomically related to which of the following?</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(5, 'A')">A. Increased distance between mentalis muscle bellies</div>
+                            <div class="quiz-option" onclick="checkAnswer(5, 'B')">B. Underdevelopment of the depressor anguli oris</div>
+                            <div class="quiz-option" onclick="checkAnswer(5, 'C')">C. Hypertrophy of the platysma</div>
+                            <div class="quiz-option" onclick="checkAnswer(5, 'D')">D. Abnormal insertion of the orbicularis oris</div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-5"></div>
+                    </div>
+                </div>
+                
+                <h3>Flashcard Review</h3>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard" onclick="flipCard()">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p>Zygomaticus major & minor</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <h4>Zygomaticus major & minor</h4>
+                                <p><strong>Innervation:</strong> Zygomatic & Buccal branches</p>
+                                <p><strong>Function:</strong> Main contributors to smile formation. Zygomaticus major travels from zygoma to upper corner of mouth, contributing to nasolabial fold.</p>
+                                <p><strong>Deficit:</strong> Difficulty smiling, lip seal issues</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-nav">
+                        <button class="flashcard-btn" onclick="prevFlashcard()">Previous</button>
+                        <button class="flashcard-btn" onclick="nextFlashcard()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabContent, tabs;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Expandable content
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+        
+        // Quiz functionality
+        function checkAnswer(questionNum, selectedOption) {
+            var feedback = document.getElementById("feedback-" + questionNum);
+            var isCorrect = false;
+            var explanation = "";
+            
+            switch (questionNum) {
+                case 1:
+                    isCorrect = selectedOption === "A";
+                    explanation = "The temporal branch of the facial nerve innervates the frontalis muscle, which is responsible for raising the eyebrow and creating horizontal forehead lines.";
+                    break;
+                case 2:
+                    isCorrect = selectedOption === "C";
+                    explanation = "The procerus muscle is innervated by the zygomatic branch, not the buccal branch of the facial nerve.";
+                    break;
+                case 3:
+                    isCorrect = selectedOption === "B";
+                    explanation = "The zygomatic branch innervates the lower portion of the orbicularis oculi, which controls lower eyelid closure.";
+                    break;
+                case 4:
+                    isCorrect = selectedOption === "C";
+                    explanation = "The corrugator supercilii muscle draws the eyebrows medially and downward, creating a 'scowling' facial expression.";
+                    break;
+                case 5:
+                    isCorrect = selectedOption === "A";
+                    explanation = "A chin 'dimple' or 'cleft chin' is a normal anatomic variant where there is a larger distance between the mentalis muscle bellies.";
+                    break;
+            }
+            
+            feedback.innerHTML = isCorrect ? 
+                "<strong>Correct!</strong> " + explanation : 
+                "<strong>Incorrect.</strong> " + explanation;
+            
+            feedback.className = "quiz-feedback " + (isCorrect ? "correct" : "incorrect");
+            feedback.style.display = "block";
+        }
+        
+        // Flashcard functionality
+        const flashcards = [
+            {
+                front: "Zygomaticus major & minor",
+                back: "<h4>Zygomaticus major & minor</h4><p><strong>Innervation:</strong> Zygomatic & Buccal branches</p><p><strong>Function:</strong> Main contributors to smile formation. Zygomaticus major travels from zygoma to upper corner of mouth, contributing to nasolabial fold.</p><p><strong>Deficit:</strong> Difficulty smiling, lip seal issues</p>"
+            },
+            {
+                front: "Orbicularis Oculi",
+                back: "<h4>Orbicularis Oculi</h4><p><strong>Innervation:</strong> Temporal (upper) & Zygomatic (lower)</p><p><strong>Function:</strong> Eye closure, blinking, tear extraction</p><p><strong>Deficit:</strong> Difficulty with eye closure, eyelid droop</p><p>Consists of orbital and palpebral portions (preseptal & pretarsal components)</p>"
+            },
+            {
+                front: "Buccinator",
+                back: "<h4>Buccinator</h4><p><strong>Innervation:</strong> Buccal Branch</p><p><strong>Function:</strong> Prevents cheek overextension during chewing, assists in whistling</p><p><strong>Deficit:</strong> Food accumulation between teeth & cheek</p><p>The parotid duct pierces it to enter the mouth at the second maxillary molar.</p>"
+            },
+            {
+                front: "Frontalis",
+                back: "<h4>Frontalis</h4><p><strong>Innervation:</strong> Temporal Branch</p><p><strong>Function:</strong> Raises eyebrows, opens eyes wide</p><p><strong>Deficit:</strong> Droopy eyebrow, inability to open eyes widely</p><p>Part of the epicranius complex, connected to other muscles by the galea aponeurotica.</p>"
+            },
+            {
+                front: "Platysma",
+                back: "<h4>Platysma</h4><p><strong>Innervation:</strong> Marginal Mandibular & Cervical Branches</p><p><strong>Function:</strong> Minor role in retracting mouth angles</p><p>Runs from chest superficial fascia across neck over mandible to intercalate with lower lip muscles. Provides only thin protection to facial vascular bundle.</p>"
+            }
+        ];
+        
+        let currentFlashcard = 0;
+        
+        function flipCard() {
+            document.getElementById('flashcard').classList.toggle('flipped');
+        }
+        
+        function updateFlashcard() {
+            const flashcard = document.getElementById('flashcard');
+            const front = flashcard.querySelector('.flashcard-front');
+            const back = flashcard.querySelector('.flashcard-back');
+            
+            front.innerHTML = `<p>${flashcards[currentFlashcard].front}</p>`;
+            back.innerHTML = flashcards[currentFlashcard].back;
+            
+            // Reset flip state
+            flashcard.classList.remove('flipped');
+        }
+        
+        function nextFlashcard() {
+            currentFlashcard = (currentFlashcard + 1) % flashcards.length;
+            updateFlashcard();
+        }
+        
+        function prevFlashcard() {
+            currentFlashcard = (currentFlashcard - 1 + flashcards.length) % flashcards.length;
+            updateFlashcard();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 94: Foreign Body Reactions - Interactive Study Guide</title>
+  <style>
+    :root {
+      --primary: #2b6cb0;
+      --secondary: #4299e1;
+      --accent: #ed8936;
+      --danger: #e53e3e;
+      --success: #38a169;
+      --light: #f7fafc;
+      --dark: #1a202c;
+      --gray: #718096;
+      --mcq: #9f7aea;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1, h2, h3, h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      border-left: 5px solid var(--secondary);
+      padding-left: 10px;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+    }
+    
+    h4 {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    
+    .card-header {
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 20px;
+      font-weight: bold;
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .mcq-box {
+      background-color: #f8edff;
+      border: 2px solid var(--mcq);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    
+    .mcq-badge {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background-color: var(--mcq);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .clinical-pearl {
+      background-color: #e6f7ff;
+      border-left: 4px solid #0099ff;
+      padding: 15px;
+      margin: 1.5rem 0;
+    }
+    
+    .mnemonic {
+      background-color: #fff8e6;
+      border: 2px dashed var(--accent);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 1.5rem 0;
+    }
+    
+    .mnemonic h4 {
+      color: var(--accent);
+    }
+    
+    .tab-container {
+      margin: 1.5rem 0;
+    }
+    
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--gray);
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #edf2f7;
+      border: 1px solid #e2e8f0;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      margin-right: 5px;
+    }
+    
+    .tab.active {
+      background-color: white;
+      border-bottom: 1px solid white;
+      margin-bottom: -1px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .collapsible {
+      background-color: #edf2f7;
+      color: var(--dark);
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-bottom: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .collapsible:after {
+      content: '+';
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+    
+    .active-collapsible:after {
+      content: '-';
+    }
+    
+    .collapsible-content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: white;
+      border-radius: 0 0 4px 4px;
+    }
+    
+    .active-collapsible {
+      background-color: var(--secondary);
+      color: white;
+      border-radius: 4px 4px 0 0;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    
+    th {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+    
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 1.5rem 0;
+    }
+    
+    .flex-item {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    
+    .quiz-container {
+      margin: 1.5rem 0;
+      background-color: #f9fafb;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    
+    .quiz-question {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    
+    .quiz-options {
+      margin-bottom: 1rem;
+    }
+    
+    .quiz-option {
+      padding: 10px;
+      margin-bottom: 5px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .quiz-option:hover {
+      background-color: #edf2f7;
+    }
+    
+    .quiz-explanation {
+      display: none;
+      padding: 15px;
+      background-color: #e6f7ff;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    
+    .btn {
+      padding: 8px 16px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .flowchart {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .flowchart-item {
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    .flowchart-item:after {
+      content: '↓';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: var(--primary);
+    }
+    
+    .flowchart-item:last-child:after {
+      content: '';
+    }
+    
+    .flowchart-branch {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+    
+    .flowchart-branch-item {
+      flex: 1;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .flowchart-branch-item:before {
+      content: '↓';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      
+      .flex-item {
+        width: 100%;
+      }
+      
+      .tab {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chapter 94: Foreign Body Reactions</h1>
+    <p>A comprehensive interactive study guide for dermatology residents preparing for board examinations.</p>
+    
+    <div class="card">
+      <div class="card-header">Quick Overview</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>Definition:</strong> Inflammatory reaction to material introduced to the skin that is resistant to degradation</li>
+          <li><strong>Key Components:</strong> Routes of entry, Pathogenesis, Clinical presentation, Histopathological findings</li>
+          <li><strong>Diagnostic Approach:</strong> Clinical history, Physical examination, Histopathological examination with special stains and techniques</li>
+          <li><strong>Treatment:</strong> Primarily surgical excision for most foreign body reactions</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h2>Key Concepts</h2>
+    
+    <button class="collapsible">Definition & Routes of Entry</button>
+    <div class="collapsible-content">
+      <h3>Definition</h3>
+      <p>Inflammatory reaction to material introduced to the skin and resistant to degradation</p>
+      
+      <h3>Routes of Entry</h3>
+      <ul>
+        <li><strong>Accidental:</strong> Wood splinters, motor vehicle accidents (MVAs)</li>
+        <li><strong>Surgical procedures:</strong> Sutures, powder from gloves</li>
+        <li><strong>Iatrogenic:</strong> Fillers, paraffin</li>
+        <li><strong>Tattooing:</strong> Both cosmetic and accidental</li>
+        <li><strong>Topical application:</strong> Such as zirconium-containing deodorants</li>
+        <li><strong>Self-inflicted:</strong> As seen in IV drug users</li>
+      </ul>
+    </div>
+    
+    <button class="collapsible">Pathogenesis</button>
+    <div class="collapsible-content">
+      <div class="flowchart">
+        <div class="flowchart-item">Initial neutrophilic response to foreign material</div>
+        <div class="flowchart-item">Neutrophils fail to degrade the foreign material</div>
+        <div class="flowchart-item">Macrophages are recruited to the site</div>
+        <div class="flowchart-item">Macrophages form granulomas to isolate the foreign material</div>
+        <div class="flowchart-item">Development of various reaction patterns (granulomatous, lichenoid, pseudolymphomatous)</div>
+      </div>
+      
+      <div class="clinical-pearl">
+        <p><strong>Clinical Pearl:</strong> The granulomatous pattern is the most common reaction pattern in foreign body reactions. The pathogenesis of other patterns (lichenoid, pseudolymphomatous) is less well understood.</p>
+      </div>
+    </div>
+    
+    <button class="collapsible">Clinical Features</button>
+    <div class="collapsible-content">
+      <p>The clinical presentation of foreign body reactions is <strong>highly variable</strong> and typically follows a biphasic pattern:</p>
+      
+      <h3>Acute Phase</h3>
+      <ul>
+        <li>Predominantly neutrophilic inflammatory response</li>
+        <li>May present with erythema, swelling, and pain</li>
+      </ul>
+      
+      <h3>Chronic Phase</h3>
+      <ul>
+        <li>Follows resolution of the acute phase</li>
+        <li>Most commonly presents as red to brown nodules and plaques, with or without ulceration</li>
+        <li>Other presentations include:
+          <ul>
+            <li>Lichenoid pattern</li>
+            <li>Pseudolymphomatous pattern</li>
+            <li>Pyogenic granuloma-like lesions</li>
+            <li>Chronic sinuses and fistulas</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <button class="collapsible">Pathology</button>
+    <div class="collapsible-content">
+      <p>The histopathological findings depend on the specific foreign body reaction pattern:</p>
+      
+      <h3>Granulomatous Pattern</h3>
+      <ul>
+        <li>Most common pattern</li>
+        <li>Characterized by granulomatous infiltrate surrounding the foreign material</li>
+        <li>Formation of multinucleated giant cells</li>
+        <li>May be visible on routine H&E staining</li>
+        <li>Sometimes requires polarized light microscopy for proper visualization</li>
+      </ul>
+      
+      <h3>Other Patterns</h3>
+      <ul>
+        <li>Lichenoid pattern</li>
+        <li>Pseudolymphomatous pattern</li>
+        <li>Suppurative pattern</li>
+      </ul>
+      
+      <div class="clinical-pearl">
+        <p><strong>Clinical Pearl:</strong> When foreign material is not easily visualized on routine H&E staining, special techniques such as polarized light microscopy, PAS staining, or energy-dispersive X-ray analysis may be necessary for proper identification.</p>
+      </div>
+    </div>
+    
+    <h2>Specific Foreign Bodies</h2>
+    
+    <div class="tab-container">
+      <div class="tabs">
+        <div class="tab active" onclick="openTab(event, 'tab-tattoo')">Tattoo</div>
+        <div class="tab" onclick="openTab(event, 'tab-paraffin')">Paraffin</div>
+        <div class="tab" onclick="openTab(event, 'tab-silicone')">Silicone</div>
+        <div class="tab" onclick="openTab(event, 'tab-silica')">Silica</div>
+        <div class="tab" onclick="openTab(event, 'tab-talc')">Talc</div>
+        <div class="tab" onclick="openTab(event, 'tab-other')">Other Materials</div>
+        <div class="tab" onclick="openTab(event, 'tab-fillers')">Fillers</div>
+      </div>
+      
+      <!-- Tattoo -->
+      <div id="tab-tattoo" class="tab-content active">
+        <h3>Tattoo Foreign Body Reactions</h3>
+        <p><strong>Types:</strong></p>
+        <ul>
+          <li><strong>Accidental tattoos:</strong> Due to deposition of pigment material like asphalt, carbon, or graphite on injured skin</li>
+          <li><strong>Iatrogenic tattoos:</strong> Can occur with hemostatic agents such as ferrous subsulfate (Monsel's solution), aluminum chloride, and silver nitrate</li>
+          <li><strong>Cosmetic tattoos:</strong> Intentional introduction of pigment materials</li>
+        </ul>
+        
+        <div class="mcq-box">
+          <span class="mcq-badge">Asked in Previous Exams</span>
+          <p><strong>The most common pigment to cause foreign body reaction in cosmetic tattoos is red.</strong></p>
+        </div>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Reactions can occur a few weeks after tattooing, or years later</li>
+          <li>Tenderness and erythema vary with the degree of inflammation</li>
+          <li>Photoallergic reactions can occur</li>
+        </ul>
+        
+        <h4>Treatment</h4>
+        <ul>
+          <li><strong>First line:</strong> Intralesional steroids can be used on the inflamed areas</li>
+          <li><strong>Second line:</strong> Surgical excision</li>
+          <li><strong>Caution:</strong> Laser removal of the tattoo can lead to dissemination of the tattoo pigment leading to a generalized allergic reaction</li>
+        </ul>
+      </div>
+      
+      <!-- Paraffin -->
+      <div id="tab-paraffin" class="tab-content">
+        <h3>Paraffin Foreign Body Reactions</h3>
+        <p><strong>Definition:</strong> Paraffin is a mineral oil that has been used for body augmentation</p>
+        
+        <div class="clinical-pearl">
+          <p><strong>Clinical Pearl:</strong> Paraffin use has been banned in many countries but is still used in some regions.</p>
+        </div>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Most commonly injected in the breast, buttocks, and genitalia</li>
+          <li>Penile paraffinomas are referred to as sclerosing lipogranulomas of the penis and can lead to significant deformity</li>
+        </ul>
+        
+        <h4>Pathology</h4>
+        <ul>
+          <li>Characteristic "swiss-cheese" appearance due to the presence of round cavities where the paraffin resided prior to processing</li>
+          <li>Stains positive for fat markers, although less intensely compared to natural fat (helpful in differentiating from silicone)</li>
+        </ul>
+        
+        <h4>Treatment</h4>
+        <ul>
+          <li>Surgical excision is the only treatment option</li>
+        </ul>
+      </div>
+      
+      <!-- Silicone -->
+      <div id="tab-silicone" class="tab-content">
+        <h3>Silicone Foreign Body Reactions</h3>
+        <p><strong>Use:</strong> Tissue augmentation</p>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Takes years to develop</li>
+          <li>Can present with lesions distant from the primary site (e.g., spillage of silicone into the arm in breast implants after rupture)</li>
+        </ul>
+        
+        <h4>Pathology</h4>
+        <ul>
+          <li>Multivacuolation similar to paraffinoma</li>
+          <li>Negative for fat stains (important for differentiating from paraffin)</li>
+        </ul>
+        
+        <h4>Treatment</h4>
+        <ul>
+          <li>Surgical excision</li>
+        </ul>
+      </div>
+      
+      <!-- Silica -->
+      <div id="tab-silica" class="tab-content">
+        <h3>Silica Foreign Body Reactions</h3>
+        <p><strong>Source:</strong> Found in sand, soil, rocks, and glass</p>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Deposition occurs after wounds or penetrating injuries</li>
+          <li>Takes years to develop</li>
+          <li>Papules, nodules, or indurated plaques develop within the scar</li>
+        </ul>
+        
+        <h4>Pathology</h4>
+        <ul>
+          <li>Sarcoidal granulomas</li>
+          <li>Colorless crystals that are birefringent when examined with polarized microscopy</li>
+        </ul>
+        
+        <h4>Treatment</h4>
+        <ul>
+          <li>Surgical excision</li>
+        </ul>
+      </div>
+      
+      <!-- Talc -->
+      <div id="tab-talc" class="tab-content">
+        <h3>Talc Foreign Body Reactions</h3>
+        <p><strong>Use:</strong> Used in antifungal and antibiotic powders</p>
+        
+        <h4>Clinical Significance</h4>
+        <ul>
+          <li>Common cause of foreign body granuloma due to widespread use</li>
+          <li>Contaminates wounds, erosions, umbilical stumps, or intravenous puncture sites</li>
+          <li>Dusting of raw umbilical stumps with antibiotic powders containing talc is reported to be the most frequent cause of umbilical granulomas</li>
+        </ul>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Variable clinical presentation</li>
+          <li>Should be suspected in typical areas (e.g., the umbilicus in infants, inguinal area in patients with a history of intertrigo, injection sites in intravenous drug addicts)</li>
+        </ul>
+        
+        <h4>Pathology</h4>
+        <ul>
+          <li>Sarcoidosis-like</li>
+          
+          <li>needle‑shaped crystals</li>
+
+          <li>"Maltese cross"-like birefringent particles on polarized microscopy</li>
+        </ul>
+        
+        <h4>Treatment</h4>
+        <ul>
+          <li>Surgical excision</li>
+        </ul>
+      </div>
+      
+      <!-- Other Materials -->
+      <div id="tab-other" class="tab-content">
+        <h3>Other Materials Causing Foreign Body Reactions</h3>
+        
+        <div class="flex-container">
+          <div class="flex-item card">
+            <div class="card-header">Zirconium, Beryllium, Aluminum and Zinc</div>
+            <div class="card-body">
+              <p><strong>Features:</strong> Nothing characteristic</p>
+              <p><strong>Treatment:</strong> Surgical excision</p>
+            </div>
+          </div>
+          
+          <div class="flex-item card">
+            <div class="card-header">Starch</div>
+            <div class="card-body">
+              <div class="mcq-box">
+                <span class="mcq-badge">Asked in Previous Exams</span>
+                <p><strong>Pathology:</strong> Ovoid basophilic structures, PAS+ve, "Maltese-cross" birefringent in polarized light</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Keratin</h3>
+        <ul>
+          <li><strong>Sources:</strong> Ruptured epidermoid cyst, pseudofolliculitis, ingrown nails, and sacrococcygeal pilonidal sinus disease</li>
+          <li>Keratin is treated as a foreign body if it is dispersed within the dermis</li>
+          <li>Hair inoculation in the interdigital space in barbers</li>
+          <li>Sinus formation common</li>
+          <li><strong>Treatment:</strong> Surgical excision</li>
+        </ul>
+        
+        <h3>Sutures</h3>
+        <ul>
+          <li><strong>Clinical features:</strong> The incision site may appear inflamed, red, and edematous</li>
+          <li>A fistula may develop, through which the suture material is extruded</li>
+          <li>Inflammation persists until the suture material is totally removed</li>
+          <li><strong>Pathology:</strong> Foreign body, histiocytic, palisading, or a combination</li>
+          <li>Transepidermal elimination of the suture material occurs</li>
+        </ul>
+        
+        <h3>Hair Implants</h3>
+        <ul>
+          <li>Polyamide "hair" fibers are used in androgenetic alopecia (AGA) patients when autologous hair transplantation is not feasible</li>
+          <li>Not approved in the USA</li>
+        </ul>
+        
+        <h3>Mesotherapy</h3>
+        <ul>
+          <li>Involves placement of a pharmacologic substance into the "mesoderm" (dermis and subcutis)</li>
+          <li> FDA‑approved deoxycholic acid (Kybella used to submental fat reduction) -> temporary chemical panniculitis</li>
+          <li>Cutaneous necrosis and atypical mycobacterial infections have been observed as well as granulomatous reactions</li>
+          <li>Application of moisturizers prior to microneedling for facial rejuvenation can lead to granulomatous reactions</li>
+        </ul>
+      </div>
+      
+      <!-- Fillers -->
+      <div id="tab-fillers" class="tab-content">
+        <h3>Injectable Soft Tissue Fillers</h3>
+        
+        <div class="clinical-pearl">
+          <p><strong>Clinical Pearl:</strong> Any material can potentially cause a foreign body reaction, but the incidence varies significantly. Reactions are common with paraffin but rare with hyaluronic acid (HA) filler.</p>
+        </div>
+        
+        <h4>Types of Reactions</h4>
+        <ul>
+          <li><strong>Non-immunological (vascular):</strong> Account for approximately 2/3 of reactions when injected in the glabellar region</li>
+          <li><strong>Immunological (granulomatous):</strong> True foreign body reactions</li>
+        </ul>
+        
+        <h4>Clinical Features</h4>
+        <ul>
+          <li>Typically appear 1-2 years after injection</li>
+          <li>Spontaneous resolution within 1 year in the majority of cases</li>
+          <li>Some cases will have waxing and waning symptoms</li>
+        </ul>
+        
+        <h4>Specific Fillers</h4>
+        
+        <h5>Hyaluronic Acid (HA) Filler</h5>
+        <ul>
+          <li>Most common injectable</li>
+          <li>Foreign body reaction occurs in approximately 0.4% of cases</li>
+          <li>Presents as firm, tender, edematous and erythematous papules; an abscess may form</li>
+          <li><strong>Treatment:</strong> Intralesional steroids or hyaluronidase, or waiting for spontaneous resolution</li>
+        </ul>
+        
+        <h5>Bovine Collagen</h5>
+        <ul>
+          <li>Rarely used now</li>
+          <li>More likely to develop foreign body reaction</li>
+          <li>Needs skin testing before injection</li>
+          <li>Even with negative skin testing, reactions can occur</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h2>Classification Tables</h2>
+    
+    <button class="collapsible">Classification by Origin and Route of Entry</button>
+    <div class="collapsible-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Origin</th>
+            <th>Material</th>
+            <th>Route of Entry</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="5">Non-biologic (inorganic/metallic compounds)</td>
+            <td>Tattoo inks</td>
+            <td>Decoration, Cosmetic, Accidental, Iatrogenic</td>
+          </tr>
+          <tr>
+            <td>Ferrous subsulfate (Monsel's solution)</td>
+            <td>Hemostasis (iatrogenic)</td>
+          </tr>
+          <tr>
+            <td>Paraffin</td>
+            <td>Tissue augmentation, Iatrogenic</td>
+          </tr>
+          <tr>
+            <td>Silicone (polydimethyl siloxane) liquid or gel</td>
+            <td>Tissue augmentation</td>
+          </tr>
+          <tr>
+            <td>Silica</td>
+            <td>Wound contamination, Blast injuries</td>
+          </tr>
+          <tr>
+            <td rowspan="5">Non-biologic (continued)</td>
+            <td>Talc</td>
+            <td>Surgical procedures, Umbilical stump contamination, Intravenous injection of self-prepared drugs</td>
+          </tr>
+          <tr>
+            <td>Zirconium</td>
+            <td>Topical application: antiperspirants, antipruritic medications</td>
+          </tr>
+          <tr>
+            <td>Beryllium</td>
+            <td>Laceration by broken fluorescent lamps (historical), Penetration of intact skin by fine particles (&lt;1 micron)</td>
+          </tr>
+          <tr>
+            <td>Aluminum</td>
+            <td>Subcutaneous injection of aluminum-containing vaccines</td>
+          </tr>
+          <tr>
+            <td>Zinc</td>
+            <td>Subcutaneous injection of insulin-zinc preparations</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Biologic (produced in the skin but normally isolated from body's immune surveillance)</td>
+            <td>Hair keratin</td>
+            <td>Ruptured follicle or cyst, Ingrown hair, Interdigital pilonidal sinus (barber's hair sinus)</td>
+          </tr>
+          <tr>
+            <td>Nail keratin</td>
+            <td>Ingrown nail</td>
+          </tr>
+          <tr>
+            <td rowspan="5">Biologic (produced by other living organisms)</td>
+            <td>Starch</td>
+            <td>Surgical procedures</td>
+          </tr>
+          <tr>
+            <td>Cactus spines</td>
+            <td>Accidental, Occupational</td>
+          </tr>
+          <tr>
+            <td>Jellyfish and corals</td>
+            <td>Accidental, Swimming or diving</td>
+          </tr>
+          <tr>
+            <td>Sea urchin spines</td>
+            <td>Accidental, Swimming or diving</td>
+          </tr>
+          <tr>
+            <td>Silk sutures</td>
+            <td>Surgical procedures</td>
+          </tr>
+          <tr>
+            <td rowspan="5">Miscellaneous</td>
+            <td>Hyaluronic acid, Bovine collagen</td>
+            <td>Tissue augmentation</td>
+          </tr>
+          <tr>
+            <td>Corticosteroids</td>
+            <td>Intralesional injection</td>
+          </tr>
+          <tr>
+            <td>Sutures, primarily absorbable (rarely nylon or polypropylene)</td>
+            <td>Surgical procedures</td>
+          </tr>
+          <tr>
+            <td>Polyamide synthetic "hair" fibers</td>
+            <td>Scalp "hair" restoration</td>
+          </tr>
+          <tr>
+            <td>2-octyl cyanoacrylate</td>
+            <td>Tissue adhesive for small, superficial wounds and lacerations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <button class="collapsible">Clinical Presentations of Foreign Body Reactions</button>
+    <div class="collapsible-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Clinical Presentation</th>
+            <th>Foreign Substance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Erythema, induration, papules, nodules, plaques (with or without ulceration)</td>
+            <td>Tattoo inks, paraffin, silicone, silica, beryllium (local), starch, soft tissue fillers (e.g., hyaluronic acid)</td>
+          </tr>
+          <tr>
+            <td>Sarcoidosis-like granulomatous papules</td>
+            <td>Tattoo inks, talc, zirconium, beryllium (systemic), soft tissue fillers (e.g., hyaluronic acid, bovine collagen)</td>
+          </tr>
+          <tr>
+            <td>Pyogenic granuloma-like lesions</td>
+            <td>Talc, keratin (ingrown nail)</td>
+          </tr>
+          <tr>
+            <td>Pseudofolliculitis barbae, "ingrown" hairs of the pubic region and upper thighs</td>
+            <td>Keratin</td>
+          </tr>
+          <tr>
+            <td>Pruritic lichenoid papules and plaques (often in an irregular linear pattern)</td>
+            <td>Tattoo inks, jellyfish and coral stings</td>
+          </tr>
+          <tr>
+            <td>Abscess</td>
+            <td>Keratin (e.g., pilonidal sinus), zinc, paraffin, soft tissue fillers</td>
+          </tr>
+          <tr>
+            <td>Sinus tract/fistula</td>
+            <td>Suture, keratin (pilonidal sinus, barber's sinus when interdigital)</td>
+          </tr>
+          <tr>
+            <td>Persistent subcutaneous nodules at injection site</td>
+            <td>Aluminum, soft tissue fillers</td>
+          </tr>
+          <tr>
+            <td>Pseudolymphomatous reaction</td>
+            <td>Aluminum, tattoo inks</td>
+          </tr>
+          <tr>
+            <td>Photoallergic eczematous reaction</td>
+            <td>Tattoo ink containing cadmium sulfide (yellow), cadmium selenide (red), or azo dyes (yellow, red)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <button class="collapsible">Clinical and Histopathologic Features</button>
+    <div class="collapsible-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Foreign Body</th>
+            <th>Clinical Presentations</th>
+            <th>Histologic Reaction Patterns</th>
+            <th>Other Distinctive Features</th>
+            <th>Birefringent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tattoo inks</td>
+            <td>Erythema, induration, papules, nodules, Lichenoid papules and plaques, Eczematous dermatitis</td>
+            <td>Foreign body or sarcoidal granuloma, Lichenoid dermatitis, Pseudolymphomatous dermatitis</td>
+            <td>Pigment granules scattered throughout the infiltrate, extra- and intracellular (macrophages)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Silica</td>
+            <td>Nodules, indurated plaques within scar, Disseminated papules (blast injuries), Prolonged incubation period</td>
+            <td>Granulomas (sarcoidal > foreign body)</td>
+            <td>Colorless crystals extra- and intracellular</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Talc</td>
+            <td>Sarcoid-like papules, Thickening and erythema of an old scar, Involvement of intertriginous zones, iv injection sites, Umbilical stumps, Pyogenic granuloma-like</td>
+            <td>Sarcoidal or foreign body granulomas, Pyogenic granuloma-like</td>
+            <td>Needle-shaped or round talc crystals: clear, blue green or yellow-brown</td>
+            <td>✓ ("Maltese cross"-like appearance)</td>
+          </tr>
+          <tr>
+            <td>Zirconium</td>
+            <td>Persistent, soft, brownish papules, Involvement of axillary skin</td>
+            <td>Sarcoidal granulomas</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Beryllium, local skin reaction</td>
+            <td>Nodule, ulcer</td>
+            <td>Caseating granulomas</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Beryllium, systemic</td>
+            <td>Widely scattered papules (<1% of cases)</td>
+            <td>Sarcoidal granulomas</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Aluminum</td>
+            <td>Persistent subcutaneous nodules at injection site, Pseudolymphoma</td>
+            <td>Granulomas with peripheral lymphocytes and eosinophils</td>
+            <td>Basophilic granular material within the cytoplasm of histiocytes</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Zinc</td>
+            <td>Furuncles at injection sites</td>
+            <td>Early: dense neutrophilic infiltrate, Late: granulomas and fibrosis</td>
+            <td>Rhomboidal crystals</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Starch</td>
+            <td>Papules, nodules</td>
+            <td>Foreign body granulomas</td>
+            <td>Ovoid basophilic starch granules, PAS-positive</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Cactus spines</td>
+            <td>Dome-shaped, skin-colored papules with a central black dot</td>
+            <td>Early: neutrophils, Late: sarcoidal or foreign body granulomas</td>
+            <td>Spines, extra- and intracellular (giant cells), PAS-positive</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Jellyfish, corals, sea urchin spines</td>
+            <td>Pruritic lichenoid papules and plaques (onset 2-3 weeks after exposure), Linear, zig-zag and whip-like patterns</td>
+            <td>Lichenoid dermatitis</td>
+            <td>Calcite crystals (sea urchin spines)</td>
+            <td>✓ (sea urchin spines)</td>
+          </tr>
+          <tr>
+            <td>Keratin</td>
+            <td>Pseudofolliculitis/acne keloidalis, Pyogenic granuloma-like lesions, ingrown nails, Pilonidal sinus</td>
+            <td>Foreign body granulomas</td>
+            <td>Other inflammatory cells</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Intralesional corticosteroids</td>
+            <td>Skin-colored to yellow-white papules or nodules at injection site</td>
+            <td>Foreign body granulomas</td>
+            <td>Pale bluish material in H&E-stained sections</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Suture</td>
+            <td>Inflamed, red, edematous wound or papules/nodules forming a fistula</td>
+            <td>Foreign body granulomas</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <button class="collapsible">Histopathologic Features of Injectable Soft Tissue Fillers</button>
+    <div class="collapsible-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Chemical Composition</th>
+            <th>Histopathologic Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3">Resorbable within months</td>
+            <td>Bovine collagen</td>
+            <td>Palisading granulomas with foreign body giant cells and eosinophilic bovine collagen in the center of the granulomas<br>Appearance with polarization differs from human collagen<br>IHC - positive staining with anti-bovine collagen type I antibodies</td>
+          </tr>
+          <tr>
+            <td>Human collagen - bioengineered, cadaveric, autologous</td>
+            <td>Granulomatous reaction<br>Appearance with polarization differs from bovine collagen</td>
+          </tr>
+          <tr>
+            <td>Hyaluronic acid</td>
+            <td>Irregular clusters of basophilic material surrounded by histiocytes and giant cells<br>Alcian blue stain positive</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Resorbable within years</td>
+            <td>Hyaluronic acid plus dextranomer microparticles</td>
+            <td>Suppurative granulomas surround bluish-grey filamentous material and round, bluish, spherical particles</td>
+          </tr>
+          <tr>
+            <td>Poly-L-lactic acid microspheres plus sodium carboxymethylcellulose</td>
+            <td>Foreign body granulomas surround fusiform or oval translucent particles<br>Birefringent under polarized light</td>
+          </tr>
+          <tr>
+            <td>Calcium hydroxylapatite plus carboxymethylcellulose</td>
+            <td>Foreign body granulomas surround bluish, rounded particles</td>
+          </tr>
+          <tr>
+            <td rowspan="8">Permanent</td>
+            <td>Paraffin</td>
+            <td>Foreign body granulomas with "Swiss cheese" appearance<br>Positive fat stains (e.g., oil red O)<br>Detected by IRS</td>
+          </tr>
+          <tr>
+            <td>Silicone oil or silicone gel</td>
+            <td>Foreign body granuloma with a multivacuolated appearance (also referred to as "Swiss cheese")<br>Histiocytes may be foamy<br>Negative fat stains<br>Detected by EDXA & in an X-ray, appears radio-opaque</td>
+          </tr>
+          <tr>
+            <td>Silicone particles (100-600 microns) suspended in polyvinylpyrrolidone</td>
+            <td>Foreign body reaction with translucent, irregular, non-birefringent particles dispersed in a sclerotic stroma</td>
+          </tr>
+          <tr>
+            <td>Polymethylmethacrylate microspheres plus bovine collagen</td>
+            <td>Granulomatous infiltrates around vacuolar structures of homogenous shape and size</td>
+          </tr>
+          <tr>
+            <td>Hydroxyethylmethacrylate/ethylmethacrylate fragments in hyaluronic acid</td>
+            <td>Foreign body granulomas surround polygonal, irregular, translucent pink structures</td>
+          </tr>
+          <tr>
+            <td>Polyacrylamide hydrogel</td>
+            <td>Foreign body granulomas surround basophilic, multi-vacuolated material</td>
+          </tr>
+          <tr>
+            <td>Polyalkylimide gel</td>
+            <td>Basophilic, amorphous, granular material surrounded by inflammatory infiltrates</td>
+          </tr>
+          <tr>
+            <td>Alginates</td>
+            <td>Severe granulomatous reaction<br>Filler material may not be visible or may appear as large, basophilic, oval particles</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <h2>Diagnostic Approach to Foreign Body Reactions</h2>
+    
+    <div class="flowchart">
+      <div class="flowchart-item">
+        <strong>Suspected foreign body reaction:</strong><br>
+        • Granulomatous inflammation<br>
+        • No obvious granules or cavities as often seen with injectable soft tissue fillers
+      </div>
+      
+      <div class="flowchart-branch">
+        <div class="flowchart-branch-item">
+          <div class="flowchart-item">
+            <strong>PAS Stain</strong><br>
+            • Starch<br>
+            • Cactus spines<br>
+            • Wood splinters
+          </div>
+        </div>
+        
+        <div class="flowchart-branch-item">
+          <div class="flowchart-item">
+            <strong>Polarizing Microscopy</strong><br>
+            • Silica<br>
+            • Talc<br>
+            • Zinc<br>
+            • Keratin<br>
+            • Starch<br>
+            • Cactus spines<br>
+            • Wood splinters<br>
+            • Sea urchin spines<br>
+            • Sutures<br>
+            • Arthropod parts
+          </div>
+        </div>
+        
+        <div class="flowchart-branch-item">
+          <div class="flowchart-item">
+            <strong>Energy Dispersive X-ray Analysis</strong><br>
+            • Aluminum<br>
+            • Zirconium<br>
+            • Electron energy loss spectroscopy
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h2>Board Exam Preparation</h2>
+    
+    <div class="quiz-container">
+      <h3>Practice Questions</h3>
+      
+      <div class="quiz-question" id="q1">1. Which of the following is the most common pigment to cause foreign body reactions in cosmetic tattoos?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="checkAnswer('q1', 'a')">A. Yellow</div>
+        <div class="quiz-option" onclick="checkAnswer('q1', 'b')">B. Red</div>
+        <div class="quiz-option" onclick="checkAnswer('q1', 'c')">C. Black</div>
+        <div class="quiz-option" onclick="checkAnswer('q1', 'd')">D. Green</div>
+      </div>
+      <div class="quiz-explanation" id="q1-explanation">
+        <p><strong>Correct Answer: B. Red</strong></p>
+        <p>Red pigment is most commonly associated with foreign body reactions in cosmetic tattoos. This is an important MCQ point from the chapter.</p>
+      </div>
+      
+      <div class="quiz-question" id="q2">2. Which of the following appears as "Maltese cross"-like birefringent particles under polarized microscopy?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="checkAnswer('q2', 'a')">A. Silica</div>
+        <div class="quiz-option" onclick="checkAnswer('q2', 'b')">B. Starch</div>
+        <div class="quiz-option" onclick="checkAnswer('q2', 'c')">C. Keratin</div>
+        <div class="quiz-option" onclick="checkAnswer('q2', 'd')">D. Paraffin</div>
+      </div>
+      <div class="quiz-explanation" id="q2-explanation">
+        <p><strong>Correct Answer: B. Starch</strong></p>
+        <p>Starch appears as ovoid basophilic structures with "Maltese-cross" birefringence in polarized light. This is an important MCQ point from the chapter. Talc also shows Maltese cross-like birefringence under polarized microscopy.</p>
+      </div>
+      
+      <div class="quiz-question" id="q3">3. What is the most common histopathological pattern seen in foreign body reactions?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="checkAnswer('q3', 'a')">A. Lichenoid</div>
+        <div class="quiz-option" onclick="checkAnswer('q3', 'b')">B. Granulomatous</div>
+        <div class="quiz-option" onclick="checkAnswer('q3', 'c')">C. Pseudolymphomatous</div>
+        <div class="quiz-option" onclick="checkAnswer('q3', 'd')">D. Neutrophilic</div>
+      </div>
+      <div class="quiz-explanation" id="q3-explanation">
+        <p><strong>Correct Answer: B. Granulomatous</strong></p>
+        <p>The granulomatous pattern is the most common histopathological pattern seen in foreign body reactions. This pattern is characterized by granulomatous infiltrate surrounding the foreign material with formation of multinucleated giant cells.</p>
+      </div>
+      
+      <div class="quiz-question" id="q4">4. How would you differentiate between paraffin and silicone on histopathology?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="checkAnswer('q4', 'a')">A. Paraffin stains positive for fat markers, silicone does not</div>
+        <div class="quiz-option" onclick="checkAnswer('q4', 'b')">B. Paraffin shows PAS positivity, silicone does not</div>
+        <div class="quiz-option" onclick="checkAnswer('q4', 'c')">C. Paraffin is birefringent, silicone is not</div>
+        <div class="quiz-option" onclick="checkAnswer('q4', 'd')">D. Paraffin shows characteristic black granules, silicone appears colorless</div>
+      </div>
+      <div class="quiz-explanation" id="q4-explanation">
+        <p><strong>Correct Answer: A. Paraffin stains positive for fat markers, silicone does not</strong></p>
+        <p>Both paraffin and silicone can have a similar "Swiss cheese" appearance on histopathology, but paraffin will stain positive for fat markers (although less intensely than natural fat), while silicone will be negative for fat stains.</p>
+      </div>
+      
+      <div class="quiz-question" id="q5">5. Which of the following is the most frequent cause of umbilical granulomas in infants?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" onclick="checkAnswer('q5', 'a')">A. Suture material</div>
+        <div class="quiz-option" onclick="checkAnswer('q5', 'b')">B. Talc from antibiotic powders</div>
+        <div class="quiz-option" onclick="checkAnswer('q5', 'c')">C. Zinc from diaper cream</div>
+        <div class="quiz-option" onclick="checkAnswer('q5', 'd')">D. Silicone from medical devices</div>
+      </div>
+      <div class="quiz-explanation" id="q5-explanation">
+        <p><strong>Correct Answer: B. Talc from antibiotic powders</strong></p>
+        <p>Dusting of raw umbilical stumps with antibiotic powders containing talc was reported to be the most frequent cause of umbilical granulomas in infants.</p>
+      </div>
+    </div>
+    
+    <div class="mnemonic">
+      <h4>Mnemonic: "FOREIGN BODY REACT"</h4>
+      <p><strong>F</strong>inding under microscope (polarization, PAS, etc.)</p>
+      <p><strong>O</strong>rigin of the material (biologic vs. non-biologic)</p>
+      <p><strong>R</strong>oute of entry (accidental, iatrogenic, etc.)</p>
+      <p><strong>E</strong>xamination findings (clinical presentation)</p>
+      <p><strong>I</strong>ncubation period (immediate, weeks, years)</p>
+      <p><strong>G</strong>ranulomatous reaction (most common pattern)</p>
+      <p><strong>N</strong>eutrophils (initial response)</p>
+      <p><strong>B</strong>irefringence (present in silica, talc, starch, etc.)</p>
+      <p><strong>O</strong>bservation for characteristic features (e.g., Swiss cheese for paraffin)</p>
+      <p><strong>D</strong>iagnosis based on clinical + pathological correlation</p>
+      <p><strong>Y</strong>ield from excision (treatment of choice for most)</p>
+      <p><strong>R</strong>ed pigment (most common in tattoo reactions)</p>
+      <p><strong>E</strong>xcision (treatment of choice)</p>
+      <p><strong>A</strong>lcian blue (positive in hyaluronic acid fillers)</p>
+      <p><strong>C</strong>linical pearl: Maltese cross appearance of starch/talc</p>
+      <p><strong>T</strong>reatment options (excision, intralesional steroids)</p>
+    </div>
+    
+    <div class="clinical-pearl">
+      <p><strong>Clinical Pearl for Board Exams:</strong> Always correlate the clinical presentation (site, timing, exposure history) with histopathological findings (special stains, polarization) for accurate diagnosis of foreign body reactions. Remember that red pigment is the most common cause of tattoo reactions, and starch shows the characteristic "Maltese cross" birefringence pattern.</p>
+    </div>
+  </div>
+  
+  <script>
+    // Tab functionality
+    function openTab(evt, tabId) {
+      var i, tabContent, tabLinks;
+      
+      tabContent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].classList.remove("active");
+      }
+      
+      tabLinks = document.getElementsByClassName("tab");
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+      }
+      
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    
+    // Collapsible functionality
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active-collapsible");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+    
+    // Quiz functionality
+    function checkAnswer(questionId, selectedOption) {
+      var explanation = document.getElementById(questionId + "-explanation");
+      explanation.style.display = "block";
+      
+      var options = document.querySelectorAll("#" + questionId + " + .quiz-options .quiz-option");
+      
+      // Reset all options
+      for (var i = 0; i < options.length; i++) {
+        options[i].style.backgroundColor = "";
+        options[i].style.color = "";
+      }
+      
+      // Highlight selected option
+      var selectedElement = document.querySelector("#" + questionId + " + .quiz-options .quiz-option:nth-child(" + (["a", "b", "c", "d"].indexOf(selectedOption) + 1) + ")");
+      
+      if ((questionId === "q1" && selectedOption === "b") || 
+          (questionId === "q2" && selectedOption === "b") || 
+          (questionId === "q3" && selectedOption === "b") || 
+          (questionId === "q4" && selectedOption === "a") || 
+          (questionId === "q5" && selectedOption === "b")) {
+        selectedElement.style.backgroundColor = "#d4edda";
+        selectedElement.style.color = "#155724";
+      } else {
+        selectedElement.style.backgroundColor = "#f8d7da";
+        selectedElement.style.color = "#721c24";
+      }
+    }
+  </script>
+</body>
+</html>

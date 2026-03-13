@@ -1,0 +1,951 @@
+<style>
+  :root {
+    --primary: #4a6da7;
+    --secondary: #a74a6d;
+    --accent: #6da74a;
+    --light: #f5f7fa;
+    --dark: #2c3e50;
+    --warning: #e74c3c;
+    --info: #3498db;
+    --success: #2ecc71;
+    --macular: #b19cd9;
+    --lichen: #85c1e9;
+    --nodular: #f7dc6f;
+    --systemic: #ec7063;
+    --secondary-amyloid: #58d68d;
+  }
+  
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h1, h2, h3, h4 {
+    color: var(--primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 {
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  h2 {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+  }
+  
+  h3 {
+    color: var(--secondary);
+  }
+  
+  .mcq-point {
+    position: relative;
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .mcq-point::before {
+    content: "MCQ";
+    position: absolute;
+    top: -12px;
+    left: -4px;
+    background-color: #ffc107;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .section-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .amyloid-type {
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .amyloid-type h4 {
+    margin-top: 0;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .amyloid-macular h4 {
+    background-color: var(--macular);
+  }
+  
+  .amyloid-lichen h4 {
+    background-color: var(--lichen);
+  }
+  
+  .amyloid-nodular h4 {
+    background-color: var(--nodular);
+  }
+  
+  .amyloid-systemic h4 {
+    background-color: var(--systemic);
+  }
+  
+  .amyloid-secondary h4 {
+    background-color: var(--secondary-amyloid);
+  }
+  
+  .callout {
+    background-color: var(--light);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .warning {
+    background-color: #ffebee;
+    border-left: 4px solid var(--warning);
+  }
+  
+  .info {
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--info);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tr:hover {
+    background-color: #eaf2f8;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    text-align: center;
+  }
+  
+  details {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--light);
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    margin: -10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+  }
+  
+  summary:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  .flow-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .flow-box {
+    background-color: var(--light);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px;
+    width: 80%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .flow-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba(0,0,0,0.1);
+    margin: 5px 0;
+  }
+  
+  .quiz-section {
+    margin-top: 30px;
+  }
+  
+  .question-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .options label {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--light);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .options label:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .answer-reveal {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: var(--light);
+    border-radius: 4px;
+    padding: 0px;
+    margin-top: 10px;
+  }
+  
+  .show-answer-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .show-answer-btn:hover {
+    background-color: #3a5787;
+  }
+  
+  .mnemonic {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .mnemonic h4 {
+    margin-top: 0;
+    color: #856404;
+  }
+  
+  .flash-card {
+    perspective: 1000px;
+    margin: 20px 0;
+    height: 200px;
+  }
+  
+  .flash-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flash-card:hover .flash-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flash-card-front, .flash-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .flash-card-front {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .flash-card-back {
+    background-color: var(--light);
+    color: var(--dark);
+    transform: rotateY(180deg);
+  }
+  
+  @media print {
+    body {
+      background-color: white;
+      color: black;
+      font-size: 12pt;
+    }
+    
+    .section-card, .question-card {
+      box-shadow: none;
+      border: 1px solid #ddd;
+      break-inside: avoid;
+    }
+    
+    .mcq-point {
+      border: 1px solid #ddd;
+      border-left: 4px solid #ffc107;
+      background-color: white;
+      break-inside: avoid;
+    }
+    
+    details {
+      break-inside: avoid;
+    }
+    
+    summary {
+      font-weight: bold;
+    }
+    
+    details[open] summary {
+      margin-bottom: 10px;
+    }
+    
+    .flash-card {
+      break-inside: avoid;
+      height: auto;
+    }
+    
+    .flash-card-inner {
+      transform-style: flat;
+    }
+    
+    .flash-card:hover .flash-card-inner {
+      transform: none;
+    }
+    
+    .flash-card-front, .flash-card-back {
+      position: relative;
+      backface-visibility: visible;
+      color: black;
+      background-color: white;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    table {
+      font-size: 0.8em;
+    }
+    
+    th, td {
+      padding: 8px 10px;
+    }
+    
+    .flow-box {
+      width: 95%;
+    }
+  }
+</style>
+<div class="section-card">
+  <h2>Overview of Amyloidosis</h2>
+  <p>Amyloidosis is a term describing several disorders characterized by abnormal deposition of amyloid, a fibrillar proteinaceous material derived from endogenous protein products.</p>
+  <div class="callout info">
+    <strong>Classification:</strong>
+    <ul>
+      <li><strong>Primary</strong>: Amyloid deposition is the major feature on pathology</li>
+      <li><strong>Secondary</strong>: Amyloid is present with another disease, but not clinically significant</li>
+    </ul>
+  </div>
+  <div class="callout info">
+    <strong>Primary Amyloidosis:</strong>
+    <ul>
+      <li><strong>Cutaneous</strong>: Amyloid deposits near the site of synthesis</li>
+      <li><strong>Systemic</strong>: Amyloid circulates and deposits in distant tissues</li>
+    </ul>
+  </div>
+</div>
+<div class="section-card">
+  <h2>Pathogenesis of Amyloidosis</h2>
+  <div class="mcq-point">
+    <p>The major component of amyloid is <strong>fibril protein</strong></p>
+  </div>
+  <div class="mcq-point">
+    <p>All forms of amyloidosis contain <strong>amyloid P</strong></p>
+  </div>
+  <p>~30 types of amyloid protein have been identified, each associated with specific amyloid diseases:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Amyloid Protein</th>
+        <th>Associated Conditions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Aβ</td>
+        <td>Alzheimer's disease</td>
+      </tr>
+      <tr>
+        <td class="mcq-point">AA</td>
+        <td>Hereditary periodic fever syndromes and secondary systemic amyloidosis</td>
+      </tr>
+      <tr>
+        <td class="mcq-point">Aβ2M</td>
+        <td>Hemodialysis</td>
+      </tr>
+      <tr>
+        <td class="mcq-point">AKer</td>
+        <td>Macular and lichen amyloidosis</td>
+      </tr>
+      <tr>
+        <td class="mcq-point">AL</td>
+        <td>Primary systemic amyloidosis and nodular amyloidosis</td>
+      </tr>
+      <tr>
+        <td class="mcq-point">ATTR</td>
+        <td>
+          1. Familial amyloid polyneuropathy (TTR mutations)<br>
+          2. Familial amyloid cardiomyopathy (TTR mutations)<br>
+          3. Wild-type ATTR amyloidosis/senile systemic amyloidosis/senile cardiac amyloidosis
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Properties of Amyloid</h3>
+  <div class="grid-container">
+    <div class="callout">
+      <h4>Appearance</h4>
+      <p>On H&E: Amorphous, eosinophilic fissured masses</p>
+  <div class="mcq-point">
+    <p>On Congo red: Orange-red color on light microscopy, and green birefringence on polarized light</p>
+  </div>
+  
+  <p>On Thioflavin T: Yellow-green fluorescence(under UV fluorescence microscopy)</p>
+</div>
+
+<div class="callout">
+  <h4>Other Stains</h4>
+  <ul>
+    <li>Crystal violet</li>
+    <li>Methyl violet</li>
+    <li>PAS</li>
+    <li>Sirius red</li>
+    <li>Pagoda red</li>
+    <li>Dylon stain</li>
+  </ul>
+  
+  <div class="mcq-point">
+    <p>AA loses its affinity to Congo red when exposed to potassium permanganate</p>
+  </div>
+  
+  <div class="mcq-point">
+    <p>Pankeratin stain (MNF116 stain)can be used to differentiate AKer from colloid milium</p>
+  </div>
+</div>
+  </div>
+  <div class="mcq-point">
+    <p>To determine the exact type of amyloid protein, <strong>tandem mass spectrometry (MS/MS)</strong> is used</p>
+  </div>
+</div>
+<div class="section-card">
+  <h2>Primary Cutaneous Amyloidosis</h2>
+  <div class="grid-container">
+    <div class="amyloid-type amyloid-macular">
+      <h4>Macular Amyloidosis</h4>
+      <ul>
+        <li><strong>Protein:</strong> AKer (keratinocyte-derived)</li>
+        <li><strong>Clinical:</strong> Hyperpigmented patches in a confluent or rippled pattern</li>
+        <li><strong>Location:</strong> Upper back (scapular area)</li>
+        <li><strong>Symptoms:</strong> Often pruritic, may be asymptomatic</li>
+        <li><strong>Pathology:</strong> Amyloid deposition restricted to upper dermis</li>
+      </ul>
+    </div>
+<div class="amyloid-type amyloid-lichen">
+  <h4>Lichen Amyloidosis</h4>
+  <ul>
+    <li><strong>Protein:</strong> AKer (keratinocyte-derived)</li>
+    <li class="mcq-point"><strong>Frequency:</strong> Most common type of primary cutaneous amyloidosis</li>
+    <li><strong>Clinical:</strong> Discrete firm scaly hyperpigmented or skin-colored papules coalescing into plaques with rippled edge</li>
+    <li><strong>Location:</strong> Shins and extensors</li>
+    <li><strong>Symptoms:</strong> Pruritic</li>
+    <li><strong>Pathology:</strong> Amyloid deposition restricted to upper dermis</li>
+  </ul>
+</div>
+
+<div class="amyloid-type amyloid-nodular">
+  <h4>Nodular Amyloidosis</h4>
+  <ul>
+    <li><strong>Protein:</strong> AL (light chain-derived)</li>
+    <li><strong>Clinical:</strong> Single or multiple waxy nodules or infiltrated plaques</li>
+    <li><strong>Location:</strong> Trunk and extremities</li>
+    <li><strong>Associated with:</strong>
+      <ul>
+        <li>Sjögren syndrome</li>
+        <li>IgG monoclonal gammopathy (40%)</li>
+        <li class="mcq-point">Progression to systemic amyloidosis (7%)</li>
+      </ul>
+    </li>
+    <li><strong>Pathology:</strong> Diffuse deposition involving dermis, subcutis, and blood vessels</li>
+  </ul>
+</div>
+  </div>
+  <div class="mcq-point">
+    <p>Macular and lichen amyloidosis are associated with MENII A (Sipple syndrome) and notalgia paresthetica (RET oncogene)</p>
+  </div>
+  <details>
+    <summary>Variants of Primary Cutaneous Amyloidosis</summary>
+    <ul>
+      <li><strong>Anosacral:</strong> Pigmentation and lichenification, associated with amyloidosis elsewhere</li>
+      <li><strong>Bullous:</strong> Associated with lichen and systemic amyloidosis</li>
+      <li><strong>Dyschromic:</strong> Guttate leukoderma superimposed upon a background of lichen or macular amyloidosis</li>
+      <li><strong>Familial AKer amyloidosis:</strong> OSMRβ and IL-31RA mutations, both encode for IL-31 receptor</li>
+      <li><strong>Biphasic:</strong> Shows features of both lichen and macular amyloidosis, as they likely represent a spectrum</li>
+    </ul>
+  </details>
+  <h3>Differential Diagnosis</h3>
+  <div class="grid-container">
+    <div class="callout">
+      <h4>Macular</h4>
+      <ul>
+        <li>Notalgia paresthetica</li>
+        <li>Pityriasis versicolor</li>
+        <li>Ashy dermatosis</li>
+        <li>Atrophic lichen planus</li>
+      </ul>
+    </div>
+<div class="callout">
+  <h4>Lichen</h4>
+  <ul>
+    <li>Lichen simplex chronicus</li>
+    <li>Hypertrophic lichen planus</li>
+    <li>Pretibial myxedema</li>
+    <li>Prurigo nodularis</li>
+  </ul>
+</div>
+
+<div class="callout">
+  <h4>Nodular</h4>
+  <ul>
+    <li>Primary systemic amyloidosis (must be excluded)</li>
+    <li>Lymphoma cutis</li>
+    <li>Pseudolymphoma</li>
+    <li>Sarcoidosis</li>
+    <li>Granuloma annulare</li>
+  </ul>
+</div>
+  </div>
+  <h3>Treatment</h3>
+  <details>
+    <summary>Treatment of Macular and Lichen Amyloidosis</summary>
+    <p>No specific treatment is curative. The goal is to break the itch cycle.</p>
+    <ul>
+      <li>Avoid chronic friction, scratching, and rubbing</li>
+      <li>Topical steroids, calcineurin inhibitors, and keratolytics</li>
+      <li>Phototherapy, lasers (Er:YAG, CO2)</li>
+      <li>Acitretin</li>
+      <li>Low-dose cyclophosphamide</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Treatment of Nodular Amyloidosis</summary>
+    <p>Local destructive methods</p>
+  </details>
+</div>
+<div class="section-card">
+  <h2>Primary Systemic Amyloidosis</h2>
+  <p>A cutaneous manifestation of underlying plasma cell dyscrasia. Patients usually do not fulfill the criteria for multiple myeloma.</p>
+  <div class="mcq-point">
+    <p>Amyloid is AL protein, derived from light chains of immunoglobulin and associated with IgG lambda monoclonal antibodies</p>
+  </div>
+  <h3>Clinical Features</h3>
+  <div class="grid-container">
+    <div class="callout">
+      <h4>General</h4>
+      <ul>
+        <li>Fatigue, weight loss</li>
+        <li>Paresthesias</li>
+        <li>Dyspnea</li>
+        <li>Syncopal attacks due to orthostatic hypotension</li>
+      </ul>
+    </div>
+<div class="callout">
+  <h4>Mucosal</h4>
+  <ul>
+    <li class="mcq-point">Soft rubbery swellings or infiltration of the mucosa</li>
+    <li class="mcq-point">Macroglossia</li>
+    <li>Associated hemorrhagic component frequently seen</li>
+    <li>Xerostomia from salivary gland infiltration</li>
+  </ul>
+</div>
+
+<div class="callout">
+  <h4>Cutaneous</h4>
+  <ul>
+    <li class="mcq-point">Occurs in 25% of patients</li>
+    <li>Petechiae, purpura, and ecchymoses following minor trauma</li>
+    <li class="mcq-point">"Raccoon eyes" after coughing, Valsalva maneuver, or proctoscopy</li>
+    <li>"Pinch purpura" after pinching or rubbing the skin</li>
+    <li>Waxy, translucent or purpuric papules and nodules</li>
+    <li>Smooth tiny skin-colored papules on head, neck, and anogenital region</li>
+  </ul>
+</div>
+  </div>
+  <details>
+    <summary>Rare Cutaneous Presentations</summary>
+    <ul>
+      <li>Diffuse sclerodermoid appearance</li>
+      <li>Cutis verticis gyrate-like involvement of the scalp</li>
+      <li>Bullous lesions resembling PCT or EBA</li>
+      <li>Nail dystrophy resembling LP</li>
+      <li>Acquired acral cutis laxa</li>
+    </ul>
+  </details>
+  <div class="grid-container">
+    <div class="callout">
+      <h4>Renal</h4>
+      <p class="mcq-point">Proteinuria, hypoalbuminemia, peripheral edema</p>
+    </div>
+<div class="callout">
+  <h4>Cardiac</h4>
+  <p class="mcq-point">Restrictive cardiomyopathy and congestive heart failure</p>
+</div>
+
+<div class="callout">
+  <h4>Neurological</h4>
+  <p>Sensory and autonomic involvement</p>
+</div>
+  </div>
+  <div class="mcq-point">
+    <p>Classic presentation: Macroglossia + carpal tunnel syndrome warrants investigation</p>
+  </div>
+  <h3>Diagnosis</h3>
+  <div class="flow-chart">
+    <div class="flow-box">
+      <p>Patient with suspected systemic amyloidosis</p>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box">
+      <p>Full skin and mucosal examination</p>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box">
+      <p>If specific mucocutaneous lesions ➡️ Biopsy<br>
+      If no specific mucocutaneous lesions ➡️ <span class="mcq-point">Fine needle aspiration of abdominal fat</span></p>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box">
+      <p class="mcq-point">Protein electrophoresis and immunofixation for blood and urine + serum free light chains</p>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box">
+      <p>Bone marrow aspiration and biopsy if labs are abnormal</p>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box">
+      <p class="mcq-point">SAP scintigraphy for locating amyloid deposits and monitoring disease</p>
+    </div>
+  </div>
+  <h3>Pathology</h3>
+  <ul>
+    <li>Amyloid deposits in the dermis and subcutis</li>
+    <li>Often found around sweat glands and within blood vessel walls</li>
+    <li>Rarely, amyloid-producing plasma cells can be found adjacent to the amyloid deposits</li>
+  </ul>
+  <h3>Treatment and Prognosis</h3>
+  <ul>
+    <li>Without treatment, median survival is ~13 months</li>
+    <li class="mcq-point">Cardiac and renal involvement are bad prognostic factors</li>
+    <li class="mcq-point">Treatment is similar to multiple myeloma (melphalan and systemic corticosteroids)</li>
+    <li>High-dose melphalan followed by autologous peripheral blood stem cell transplantation in younger patients with cardiac involvement</li>
+    <li>Newer therapies: lenalidomide, pomalidomide, bortezomib, daratumumab in combination with systemic corticosteroids and melphalan for older patients with cardiac involvement</li>
+  </ul>
+</div>
+<div class="section-card">
+  <h2>Secondary Amyloidosis</h2>
+  <div class="grid-container">
+    <div class="amyloid-type amyloid-secondary">
+      <h4>Secondary Cutaneous Amyloidosis</h4>
+      <ul>
+        <li>Mainly in skin tumors</li>
+        <li>Clinically insignificant</li>
+        <li>Found in:
+          <ul>
+            <li>Dermatofibromas</li>
+            <li>Intradermal melanocytic nevi</li>
+            <li>Seborrheic keratoses</li>
+            <li>Pilomatricomas</li>
+            <li>Trichoepitheliomas</li>
+            <li>Sweat gland tumors</li>
+            <li>Basal cell carcinomas</li>
+            <li>Bowen disease</li>
+            <li>Porokeratosis</li>
+          </ul>
+        </li>
+        <li>Also reported following PUVA therapy</li>
+      </ul>
+    </div>
+<div class="amyloid-type amyloid-secondary">
+  <h4>Secondary Systemic Amyloidosis</h4>
+  <ul>
+    <li>A complication of severe chronic inflammatory diseases</li>
+    <li>Infections or autoimmune disorders</li>
+    <li class="mcq-point">AA protein, which is synthesized by the liver as an acute phase protein</li>
+    <li>Skin involvement is rare</li>
+    <li>Treatment: treat the underlying disease + Eprodisate may slow the loss of renal function</li>
+  </ul>
+</div>
+  </div>
+</div>
+<div class="section-card">
+  <h2>Other Types of Amyloidosis</h2>
+  <h3>Hemodialysis-Associated Amyloidosis</h3>
+  <div class="mcq-point">
+    <p>Decreased excretion of β2-microglobulin</p>
+  </div>
+  <p>Subcutaneous nodules may occur occasionally</p>
+  <h3>Inherited Amyloidoses</h3>
+  <h4>Autoinflammatory Syndromes</h4>
+  <ul>
+    <li class="mcq-point">AA protein in Muckle-Wells syndrome</li>
+    <li class="mcq-point">Colchicine is the treatment of choice in familial Mediterranean fever</li>
+  </ul>
+  <h4>Sipple Syndrome (MEN2A)</h4>
+  <ul>
+    <li>RET, codon 634, autosomal dominant</li>
+    <li>Medullary carcinoma of the thyroid, pheochromocytomas, and hyperparathyroidism</li>
+    <li>Increased serum levels of calcitonin</li>
+    <li>Associated with notalgia paresthetica and AKer amyloidosis <10 years of age</li>
+  </ul>
+  <h4>Hypotrichosis Simplex of the Scalp</h4>
+  <ul>
+    <li>Autosomal dominant</li>
+    <li>Mutations in genes that encode corneodesmosin</li>
+    <li>Normal hair at birth followed by progressive hair loss</li>
+    <li>Deposits of the truncated protein accumulate as amorphous amyloid deposits around hair follicles</li>
+  </ul>
+  <h4>X-Linked Reticulate Pigmentary Disorder (Partington Amyloidosis)</h4>
+  <ul>
+    <li>X-linked disease with mutations in POLA1, on chromosome Xp22</li>
+    <li>Associated with activation of proinflammatory genes and increased type I interferon profile</li>
+    <li>Adult women: linear streaks of hyperpigmentation (skin-limited)</li>
+    <li>Male patients: reticulated mottled brown skin pigmentation + recurrent respiratory infections, corneal dystrophy, and photophobia</li>
+    <li>Amyloid deposits are keratin-positive</li>
+  </ul>
+</div>
+<div class="section-card">
+  <h2>Comparison of Amyloid Types</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Macular</th>
+        <th>Lichen</th>
+        <th>Nodular</th>
+        <th>Systemic (Primary)</th>
+        <th>Systemic (Secondary)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Protein</td>
+        <td>AKer</td>
+        <td>AKer</td>
+        <td>AL</td>
+        <td>AL</td>
+        <td>AA</td>
+      </tr>
+      <tr>
+        <td>Source</td>
+        <td>Keratinocytes</td>
+        <td>Keratinocytes</td>
+        <td>Plasma cells</td>
+        <td>Plasma cells</td>
+        <td>Liver (acute phase)</td>
+      </tr>
+      <tr>
+        <td>Clinical</td>
+        <td>Hyperpigmented patches</td>
+        <td>Firm papules/plaques</td>
+        <td>Waxy nodules</td>
+        <td>Purpura, macroglossia</td>
+        <td>Usually no skin signs</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td>Upper back</td>
+        <td>Shins</td>
+        <td>Trunk, extremities</td>
+        <td>Widespread</td>
+        <td>Internal organs</td>
+      </tr>
+      <tr>
+        <td>Pathology</td>
+        <td>Upper dermis</td>
+        <td>Upper dermis</td>
+        <td>Dermis, subcutis, BVs</td>
+        <td>Dermis, subcutis, BVs</td>
+        <td>Various organs</td>
+      </tr>
+      <tr>
+        <td>Associations</td>
+        <td>MENII-A, notalgia paresthetica</td>
+        <td>MENII-A, notalgia paresthetica</td>
+        <td>Sjögren's, IgG gammopathy</td>
+        <td>Plasma cell dyscrasia</td>
+        <td>Chronic inflammation</td>
+      </tr>
+      <tr>
+        <td>Systemic risk</td>
+        <td>No</td>
+        <td>No</td>
+        <td>7%</td>
+        <td>100%</td>
+        <td>100%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="section-card">
+  <h2>Self-Assessment Quiz</h2>
+  <div class="question-card">
+    <h3>Question 1</h3>
+    <p>A 46-year-old woman develops an asymptomatic, waxy, red-brown, solitary plaque on her right posterior thigh. A punch biopsy demonstrates large globular deposits of amorphous eosinophilic material in the deep dermis, as well as subcutaneous fat and blood vessels with prominent plasma cells. Congo red staining shows apple-green birefringence under polarized light. What is the most likely source of amyloid material?</p>
+<div class="options">
+  <label><input type="radio" name="q1"> A) Amyloid A from hepatocytes</label>
+  <label><input type="radio" name="q1"> B) Amyloid light chains from bone marrow plasma cells</label>
+  <label><input type="radio" name="q1"> C) Amyloid light chains from skin-homing plasma cells</label>
+  <label><input type="radio" name="q1"> D) Gelactin-7 and actin from keratinocytes</label>
+  <label><input type="radio" name="q1"> E) Keratin intermediate filaments from keratinocytes</label>
+</div>
+
+<button class="show-answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+
+<div id="answer1" class="answer-reveal">
+  <p><strong>Answer: C) Amyloid light chains from skin-homing plasma cells</strong></p>
+  <p>Explanation: This is a case of nodular cutaneous amyloidosis, characterized by waxy plaques/nodules with amyloid deposits in the deep dermis, subcutis, and blood vessels. The amyloid in nodular amyloidosis is AL type, derived from immunoglobulin light chains produced by skin-homing plasma cells.</p>
+</div>
+  </div>
+  <div class="question-card">
+    <h3>Question 2</h3>
+    <p>An 82-year-old man presented with a 10-year history of an enlarging, asymptomatic plaque on his left foot. Physical examination found a 7.5- x 6.5-cm, firm, exophytic plantar mass. Incisional biopsy found verrucous epithelium with eosinophilic, hyaline material throughout the dermis with admixed plasma cells. Dermal deposits stained with Congo red exhibited apple-green birefringence under polarized light. In situ hybridization found a 5:1 ratio of λ:κ immunoglobulin light chain. Complete blood count, comprehensive metabolic panel, serum/urine protein electrophoresis, serum immunoglobulin light chains, electrocardiogram, and abdominal fat pad biopsy were unremarkable. What is the diagnosis?</p>
+<div class="options">
+  <label><input type="radio" name="q2"> A) Verrucous carcinoma</label>
+  <label><input type="radio" name="q2"> B) Lichen amyloidosis</label>
+  <label><input type="radio" name="q2"> C) Cutaneous marginal zone lymphoma</label>
+  <label><input type="radio" name="q2"> D) Nodular cutaneous amyloidosis</label>
+  <label><input type="radio" name="q2"> E) Tyloma</label>
+</div>
+
+<button class="show-answer-btn" onclick="toggleAnswer('answer2')">Show Answer</button>
+
+<div id="answer2" class="answer-reveal">
+  <p><strong>Answer: D) Nodular cutaneous amyloidosis</strong></p>
+  <p>Explanation: The exophytic mass with eosinophilic, hyaline material throughout the dermis showing apple-green birefringence with Congo red staining under polarized light is characteristic of nodular amyloidosis. The presence of admixed plasma cells and predominance of λ light chains is consistent with AL amyloid. Importantly, the systemic workup was negative, ruling out systemic amyloidosis.</p>
+</div>
+  </div>
+</div>
+<div class="section-card">
+  <h2>Clinical Pearls and Memory Aids</h2>
+  <div class="mnemonic">
+    <h4>Remember Amyloid Types: "KLAUS"</h4>
+    <ul>
+      <li><strong>K</strong>eratin → AKer → Macular & Lichen cutaneous amyloidosis</li>
+      <li><strong>L</strong>ight chains → AL → Nodular cutaneous & Primary systemic amyloidosis</li>
+      <li><strong>A</strong>cute phase protein → AA → Secondary systemic amyloidosis</li>
+      <li><strong>U</strong>remia (dialysis) → Aβ2M → Hemodialysis-associated amyloidosis</li>
+      <li><strong>S</strong>enile cardiac → ATTR → Senile cardiac amyloidosis</li>
+    </ul>
+  </div>
+  <div class="mnemonic">
+    <h4>Congo Red Properties: "ORPG"</h4>
+    <ul>
+      <li><strong>O</strong>range-Red on light microscopy</li>
+      <li><strong>P</strong>otassium permanganate makes AA lose Congo red affinity</li>
+      <li><strong>G</strong>reen birefringence under polarized light</li>
+    </ul>
+  </div>
+  <div class="mnemonic">
+    <h4>Primary Systemic Clues: "RACCOONS MAP"</h4>
+    <ul>
+      <li><strong>R</strong>accoon eyes (periorbital purpura)</li>
+      <li><strong>A</strong>L protein (light chains)</li>
+      <li><strong>C</strong>arpal tunnel syndrome</li>
+      <li><strong>C</strong>ardiac involvement (bad prognosis)</li>
+      <li><strong>O</strong>rthostatic hypotension</li>
+      <li><strong>O</strong>range-red on Congo red</li>
+      <li><strong>N</strong>odular skin lesions</li>
+      <li><strong>S</strong>AP scintigraphy for monitoring</li>
+      <li><strong>M</strong>acroglossia (classic)</li>
+      <li><strong>A</strong>bdominal fat aspiration (diagnostic)</li>
+      <li><strong>P</strong>urpura with minor trauma</li>
+    </ul>
+  </div>
+</div>
+<script>
+  function toggleAnswer(id) {
+    var x = document.getElementById(id);
+    if (x.style.maxHeight === "0px" || x.style.maxHeight === "") {
+      x.style.maxHeight = x.scrollHeight + "px";
+      x.style.padding = "15px";
+    } else {
+      x.style.maxHeight = "0px";
+      x.style.padding = "0px";
+    }
+  }
+</script>

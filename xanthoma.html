@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanthoma Types: Clinical Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .table-container {
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.001);
+            transition: all 0.3s ease;
+        }
+
+        .xanthoma-type {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .clinical-presentation {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .lipid-abnormality {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .disease-associations {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .special-notes {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .critical {
+            background-color: #ffcdd2;
+            color: #c62828;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .subtype {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            border-left: 3px solid #2196f3;
+        }
+
+        .subtype-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .table-container {
+                padding: 15px;
+            }
+            
+            th, td {
+                padding: 15px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Xanthoma Types: Clinical Summary</h1>
+            <p>Comprehensive guide to xanthoma classification, clinical presentation, and disease associations</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Xanthoma Type</th>
+                        <th style="width: 30%;">Clinical Presentation</th>
+                        <th style="width: 20%;">Key Lipid Abnormality</th>
+                        <th style="width: 30%;">Disease Associations & Special Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="xanthoma-type">1. Eruptive Xanthomas</div>
+                        </td>
+                        <td>
+                            <div class="clinical-presentation">
+                                <strong>Morphology:</strong> Abrupt onset of small (1-5mm) yellow papules with erythematous "inflammatory" halo<br><br>
+                                <strong>Distribution:</strong> Extensor surfaces of extremities, buttocks, hands<br><br>
+                                <strong>Symptoms:</strong> Tender and pruritic<br><br>
+                                <strong>Special Sign:</strong> <span class="highlight">Koebner phenomenon</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lipid-abnormality">
+                                <span class="critical">SEVERE Hypertriglyceridemia</span><br><br>
+                                Triglycerides often > 3000-4000 mg/dl
+                            </div>
+                        </td>
+                        <td>
+                            <div class="disease-associations">
+                                <strong>Primary Associations:</strong><br>
+                                • Frederickson Types I, IV, V<br>
+                                • LPL deficiency<br><br>
+                                <strong>Secondary Causes:</strong><br>
+                                • <span class="highlight">Uncontrolled Diabetes</span><br>
+                                • Obesity, alcohol abuse<br>
+                                • Medications (retinoids, protease inhibitors)<br>
+                            </div>
+                            <div class="special-notes">
+                                <span class="critical">RED FLAG:</span> Risk of acute pancreatitis<br><br>
+                                <strong>Resolution:</strong> Prompt (within weeks) when triglycerides lowered
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="xanthoma-type">2. Tuberous & Tuberoeruptive</div>
+                        </td>
+                        <td>
+                            <div class="clinical-presentation">
+                                <strong>Morphology:</strong> Pink-yellow papules (tuberoeruptive) coalescing into large, firm, non-tender nodules (tuberous)<br><br>
+                                <strong>Distribution:</strong> Pressure areas, especially <span class="highlight">elbows and knees</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lipid-abnormality">
+                                Elevated <span class="highlight">both cholesterol AND triglycerides</span><br><br>
+                                Chylomicron and VLDL remnant accumulation
+                            </div>
+                        </td>
+                        <td>
+                            <div class="disease-associations">
+                                <strong>Most Characteristic:</strong><br>
+                                • <span class="highlight">Dysbetalipoproteinemia</span> (Type III, Broad Beta Disease)<br><br>
+                                <strong>Also seen in:</strong><br>
+                                • Familial Hypercholesterolemia (Type II)
+                            </div>
+                            <div class="special-notes">
+                                <strong>Resolution:</strong> <span class="critical">Slow to regress</span> even with therapy
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="xanthoma-type">3. Tendinous Xanthomas</div>
+                        </td>
+                        <td>
+                            <div class="clinical-presentation">
+                                <strong>Morphology:</strong> Firm, smooth, deep subcutaneous nodules attached to tendons. Normal overlying skin<br><br>
+                                <strong>Distribution:</strong> <span class="highlight">Achilles tendons</span> and extensor tendons of hands, knees, elbows
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lipid-abnormality">
+                                Primarily <span class="highlight">Hypercholesterolemia</span><br><br>
+                                (Elevated LDL)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="disease-associations">
+                                <strong>Most Common:</strong><br>
+                                • <span class="highlight">Familial Hypercholesterolemia</span> (Type II)<br>
+                                • Dysbetalipoproteinemia (Type III)<br><br>
+                                <strong>Rare Normolipemic ("Zebra"):</strong><br>
+                                • <span class="critical">Cerebrotendinous Xanthomatosis</span> (cholestanol)<br>
+                                • <span class="critical">Sitosterolemia</span> (plant sterols)
+                            </div>
+                            <div class="special-notes">
+                                <strong>Resolution:</strong> <span class="critical">Slow to regress</span>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="xanthoma-type">4. Plane Xanthomas</div>
+                            <small style="color: #666; font-style: italic;">Location is key to diagnosis</small>
+                        </td>
+                        <td>
+                            <div class="clinical-presentation">
+                                <strong>General:</strong> Yellow to orange, non-inflammatory macules, patches, or thin plaques<br><br>
+                                
+                                <div class="subtype">
+                                    <div class="subtype-title">Xanthelasma Palpebrarum</div>
+                                    Most common type, on eyelids
+                                </div>
+                                
+                                <div class="subtype">
+                                    <div class="subtype-title">Xanthoma Striatum Palmare</div>
+                                    In palmar creases
+                                </div>
+                                
+                                <div class="subtype">
+                                    <div class="subtype-title">Intertriginous</div>
+                                    Finger web spaces, body folds
+                                </div>
+                                
+                                <div class="subtype">
+                                    <div class="subtype-title">Diffuse</div>
+                                    Large plaques on neck, trunk, flexures
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lipid-abnormality">
+                                <strong>Variable by subtype:</strong><br><br>
+                                • Xanthelasma: Only 50% have hyperlipidemia<br><br>
+                                • Palmar creases: Mixed hyperlipidemia<br><br>
+                                • Intertriginous: Severe hypercholesterolemia<br><br>
+                                • Diffuse: <span class="highlight">NORMOLIPEMIC</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="disease-associations">
+                                <strong>Xanthelasma:</strong> Still warrants lipid workup<br><br>
+                                
+                                <strong>Palmar Creases:</strong> <span class="critical">Nearly diagnostic for Dysbetalipoproteinemia</span> (Type III)<br><br>
+                                
+                                <strong>Intertriginous:</strong> <span class="critical">PATHOGNOMONIC for HOMOZYGOUS Familial Hypercholesterolemia</span><br><br>
+                                
+                                <strong>Diffuse:</strong> <span class="critical">MUST workup for monoclonal gammopathy</span> (plasma cell dyscrasia, lymphoma)
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="xanthoma-type">5. Verruciform Xanthomas</div>
+                        </td>
+                        <td>
+                            <div class="clinical-presentation">
+                                <strong>Morphology:</strong> Asymptomatic, solitary, verrucous (wart-like) or planar plaque<br><br>
+                                <strong>Distribution:</strong> Primarily in the <span class="highlight">mouth</span>, also anogenital and acral sites<br><br>
+                                <strong>Histology:</strong> Foamy macrophages limited to dermal papillae
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lipid-abnormality">
+                                <span class="highlight">NORMOLIPEMIC</span><br><br>
+                                Not associated with systemic lipid disorder
+                            </div>
+                        </td>
+                        <td>
+                            <div class="disease-associations">
+                                <strong>Usually:</strong> Isolated finding<br><br>
+                                <strong>Can be associated with:</strong><br>
+                                • Lymphedema<br>
+                                • Lichen planus<br>
+                                • GVHD<br>
+                                • Other inflammatory conditions<br><br>
+                                <strong>Syndromic:</strong> <span class="highlight">CHILD Syndrome</span> (NSDHL gene mutation)
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

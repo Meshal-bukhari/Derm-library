@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch. 38: Folliculitis & Other Follicular Disorders - Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Slightly different background for this chapter */
+            color: #343a40;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        header {
+            background-color: #4a5568; /* Darker, more serious tone */
+            color: #f7fafc;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header .subtitle {
+            font-size: 1.2em;
+            margin-top: 5px;
+            color: #a0aec0;
+        }
+
+        nav {
+            background-color: #2d3748; /* Even darker for nav */
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #e2e8f0;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #718096;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #2c5282; /* Deep blue */
+            border-bottom: 3px solid #63b3ed; /* Lighter blue accent */
+            padding-bottom: 10px;
+            margin-top: 35px;
+            font-size: 2em;
+        }
+        h3 {
+            color: #2b6cb0; /* Slightly lighter deep blue */
+            margin-top: 30px;
+            font-size: 1.7em;
+            border-left: 4px solid #63b3ed;
+            padding-left: 10px;
+        }
+        h4 {
+            color: #3182ce; /* Medium blue */
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+         h5 {
+            color: #4299e1; /* Lighter medium blue */
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .section-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #4299e1; /* Default accent color */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+        }
+        .folliculitis-specifics { border-left-color: #f56565; /* Red for specific folliculitis forms */ }
+        .keratinization-disorders { border-left-color: #48bb78; /* Green for keratinization */ }
+        .deep-folliculitis { border-left-color: #ed8936; /* Orange for deep forms */ }
+        .eosinophilic-section { border-left-color: #9f7aea; /* Purple for eosinophilic */ }
+        .hs-section { border-left-color: #dd6b20; /* Darker orange for HS */ }
+
+
+        .key-point {
+            background-color: #ebf8ff; /* Light blue */
+            border: 1px dashed #90cdf4;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .key-point strong, .highlight-key, .pathogen-highlight {
+            color: #c53030; /* Dark red for emphasis */
+            font-weight: bold;
+        }
+         .drug-highlight {
+            background-color: #fefcbf; /* Yellow background for drugs */
+            padding: 0px 3px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .clinical-pearl {
+            background-color: #fffaf0; /* Floral white */
+            border: 1px solid #f6ad55; /* Orange border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .clinical-pearl-title {
+            font-weight: bold;
+            color: #dd6b20; /* Dark orange */
+            display: block;
+            margin-bottom: 5px;
+        }
+        .exam-focus {
+            background-color: #fef2f2; /* Very light red */
+            border: 1px solid #f56565; /* Red border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exam-focus-title {
+            font-weight: bold;
+            color: #c53030; /* Dark red */
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question-box {
+            background-color: #f0fff4; /* Mint cream */
+            border: 1px dashed #68d391; /* Green border */
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .question-box p { margin: 5px 0; }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        ul li::before {
+            content: "»"; /* Changed bullet */
+            color: #4299e1; /* Blue accent */
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+        .treatment-list li::before { color: #48bb78; } /* Green for treatments */
+        .risk-factor-list li::before { color: #f56565; } /* Red for risk factors */
+        .symptom-list li::before { color: #ed8936; } /* Orange for symptoms */
+        .histology-list li::before { color: #9f7aea; } /* Purple for histology */
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #cbd5e0; /* Gray border */
+            padding: 10px;
+            text-align: left;
+        }
+        .custom-table th {
+            background-color: #e2e8f0; /* Light gray */
+            color: #2d3748; /* Dark blue-gray */
+            font-weight: bold;
+        }
+        .custom-table tr:nth-child(even) {
+            background-color: #f7fafc; /* Very light gray */
+        }
+        .custom-table .highlight-cell {
+            background-color: #feebc8; /* Light orange for specific highlights in table */
+        }
+        .custom-table .sub-category {
+            font-weight: bold;
+            background-color: #f0f4f8;
+        }
+        .negative-finding {
+            color: #e53e3e; /* Red for negative */
+            font-weight: bold;
+        }
+        .positive-finding {
+            color: #38a169; /* Green for positive */
+            font-weight: bold;
+        }
+        .fig-ref {
+            font-style: italic;
+            color: #718096; /* Medium gray */
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .comparison-item {
+            border: 1px solid #cbd5e0;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f7fafc;
+        }
+        .comparison-item h4 {
+            margin-top: 0;
+            color: #2d3748;
+            border-bottom: 1px solid #a0aec0;
+            padding-bottom: 5px;
+        }
+        .ddx-item {
+            margin-bottom:10px;
+            padding:8px;
+            border-left: 3px solid #a0aec0;
+            background-color: #f8f8f8;
+        }
+        .ddx-item strong { color: #555;}
+
+        .pathogenesis-flow > div {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+        .pathogenesis-flow strong {
+            display: block;
+            color: #2c5282;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 38: Folliculitis and Other Follicular Disorders</h1>
+            <p class="subtitle">High-Yield Board Review for Saudi Board Exam</p>
+        </header>
+
+        <nav>
+            <a href="#intro">Intro</a>
+            <a href="#superficial-folliculitis">Superficial</a>
+            <a href="#less-common-folliculitis">Specific Forms</a>
+            <a href="#eosinophilic-folliculitis">Eosinophilic</a>
+            <a href="#deep-folliculitis">Deep</a>
+            <a href="#keratinization-disorders">Keratinization</a>
+            <a href="#hs">HS</a>
+            <a href="#other-follicular">Other</a>
+        </nav>
+
+        <main>
+            <section id="intro" class="section-card">
+                <h2>Introduction to Follicular Disorders</h2>
+                <p>This chapter covers a range of conditions affecting the hair follicle, categorized broadly into:</p>
+                <ul>
+                    <li><strong>Superficial Folliculitis:</strong> E.g., <span class="pathogen-highlight">Staphylococcus aureus</span> or <span class="pathogen-highlight">Pseudomonas aeruginosa</span> infections. (Aka Impetigo of Bockhart)</li>
+                    <li><strong>Deep Folliculitis:</strong> E.g., Acne keloidalis, Pseudofolliculitis barbae.</li>
+                    <li><strong>Disorders of Follicular Keratinization:</strong> Common feature is prominent keratotic follicular plugs.
+                        <ul>
+                            <li>Reviewed elsewhere: Lichen planopilaris, Pityriasis Rubra Pilaris (PRP), Keratosis Pilaris.</li>
+                            <li>Discussed here: Lichen spinulosus, Erythromelanosis follicularis faciei.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Inflammatory Disorders with Follicular Predilection:</strong> E.g., GVHD, papular eczema, pityriasis rosea (in darkly pigmented skin).</li>
+                    <li><strong>Viral-Associated Trichodysplasia.</strong></li>
+                    <li><strong>Trichostasis Spinulosa.</strong></li>
+                </ul>
+            </section>
+
+            <section id="superficial-folliculitis" class="section-card">
+                <h2>Superficial Folliculitis (Impetigo of Bockhart)</h2>
+                <h3>Clinical Presentation</h3>
+                <ul>
+                    <li>Follicular pustules, often on an erythematous base.</li>
+                    <li>If no pustules: follicular-based erythematous papules or a superimposed collarette of scale serve as clues.</li>
+                    <li><strong>Favored Areas:</strong> Areas with terminal hairs (scalp, beard), upper trunk, buttocks, lower extremities. Also occluded areas.</li>
+                    <li><strong>Predisposing Factor:</strong> Shaving, especially against the direction of hair growth.</li>
+                </ul>
+                <h3>Microbiology & Pathology</h3>
+                <ul>
+                    <li>Bacterial culture of pustular contents: Most commonly <span class="highlight-key">normal flora</span>, followed by <span class="pathogen-highlight">Staphylococcus aureus</span>.</li>
+                    <li class="histology-list"><strong>Pathology:</strong>
+                        <ul>
+                            <li>Perifollicular infiltrate of lymphocytes, neutrophils, and macrophages.</li>
+                            <li>Extension of neutrophils into follicular epithelium and canal, variably forming an abscess.</li>
+                            <li>Late-stage: Follicular rupture and granulomatous response.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clinical-pearl">
+                    <span class="clinical-pearl-title">Clinical Clue for Eosinophilic Folliculitis</span>
+                    <p><span class="positive-finding">Edematous lesions</span> of folliculitis are most suggestive of eosinophilic folliculitis.</p>
+                </div>
+                <h3>Differential Diagnosis</h3>
+                <ul>
+                    <li>In patients confined to bed, folliculitis on the posterior trunk needs to be distinguished from:
+                        <ul>
+                            <li>Grover disease</li>
+                            <li>Miliaria rubra</li>
+                            <li>Cutaneous candidiasis</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Treatment Approach</h3>
+                <ul>
+                    <li>Depends on the particular type of folliculitis, culture results, and severity.</li>
+                    <li>For patients whose cultures fail to demonstrate a pathogenic microbe, treatments are similar to acne.</li>
+                </ul>
+            </section>
+
+            <section id="less-common-folliculitis" class="section-card folliculitis-specifics">
+                <h2>Less Common Specific Forms of Folliculitis</h2>
+                <p>This table summarizes key features. Pay attention to etiology, specific clinical clues, and first-line treatments.</p>
+                <div class="custom-table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Type of Folliculitis</th>
+                            <th>Etiology / Risk Factors</th>
+                            <th>Clinical Features</th>
+                            <th>Therapy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Irritant Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Application of topical medications (e.g., tar preparations), ointments.</li>
+                                    <li>Exacerbated by application opposite hair growth.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Follicular pustules at sites of application/exposure.</li>
+                                    <li>Favors areas with terminal hairs.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Discontinue inciting agent.</li>
+                                    <li>Apply meds in direction of hair growth.</li>
+                                    <li>Topical mid-potency corticosteroid lotion.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gram-Negative Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Due primarily to <span class="pathogen-highlight">Klebsiella</span>, <span class="pathogen-highlight">Escherichia coli</span>, <span class="pathogen-highlight">Enterobacter</span>, <span class="pathogen-highlight">Proteus spp.</span></li>
+                                    <li>Usually in patients with acne vulgaris receiving <span class="highlight-key">long-term antibiotic therapy</span>.</li>
+                                    <li>Adult men with oily skin.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Pustules in facial T-zone and perinasal distribution.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Topical: <span class="drug-highlight">gentamicin</span>, <span class="drug-highlight">benzoyl peroxide</span>.</li>
+                                    <li>Systemic: <span class="drug-highlight">Quinolones (e.g., ciprofloxacin), , ampicillin, or trimethoprim/sulfamethoxazole</span>.</li>
+                                    <li>Severe/recurrent: <span class="drug-highlight">Isotretinoin</span> (0.5-1 mg/kg/day for up to 16 weeks).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hot Tub Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li><span class="pathogen-highlight">Pseudomonas aeruginosa</span> from hot tub/whirlpool use 12-48 hours prior.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Edematous, pink to red follicular papules and pustules, primarily on trunk. <span class="fig-ref">(Fig. 38.4)</span></li>
+                                    <li>Often pruritic; resolves spontaneously in immunocompetent hosts.</li>
+                                    <li>May be serious in immunocompromised.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Generally self-limited; can use antibacterial soap.</li>
+                                    <li>Severe/immunocompromised: <span class="drug-highlight">Ciprofloxacin</span> (500 mg PO BID for 7-14 days).</li>
+                                    <li>Prevention: prevention with adequate chlorine levels (swimming pools 2–4 mg/L, hot tubs 3–5 mg/L, pH 7.2–7.4 and change water q6-8 weeks in hot tubs.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sub-category" colspan="4"><strong>Dermatophyte Folliculitis</strong></td>
+                        </tr>
+                        <tr>
+                            <td><em>Tinea Barbae</em></td>
+                            <td>
+                                <ul>
+                                    <li>Usually <span class="pathogen-highlight">Trichophyton mentagrophytes</span> or <span class="pathogen-highlight">T. verrucosum</span>.</li>
+                                    <li>Classically in male farm workers (zoophilic source).</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inflammatory papules and pustules in beard area (more often than mustache), with crusting.</li>
+                                    <li><span class="positive-finding">Loosened hairs can be removed without pain.</span></li>
+                                </ul>
+                            </td>
+                            <td rowspan="2">
+                                <ul>
+                                    <li>Topical antifungals (may be ineffective alone).</li>
+                                    <li><span class="drug-highlight">Terbinafine</span> (250 mg/day PO for 2-3 weeks).</li>
+                                    <li>Griseofulvin (micronized 500-1000 mg/day or ultramicronized 500-750 mg/day PO for 4-6 weeks).</li>
+                                    <li><span class="drug-highlight">Itraconazole</span> (200 mg PO BID for 1 week/month, for 2 pulses).</li>
+                                    <li>Immunosuppressed may need longer course.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>Majocchi Granuloma</em></td>
+                            <td>
+                                <ul>
+                                    <li>Usually <span class="pathogen-highlight">T. rubrum</span>.</li>
+                                    <li>Characteristically in women who shave their legs.</li>
+                                    <li class="risk-factor-list">Additional risk factors: occlusion, immunosuppression, potent topical corticosteroids.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Follicular pustules and follicular papules or nodules. <span class="fig-ref">(Fig. 38.5A)</span></li>
+                                    <li>Most often on lower legs.</li>
+                                    <li>Pustules at edges of tinea cruris or corporis.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Malassezia (Pityrosporum) Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Typically young adults.</li>
+                                    <li class="risk-factor-list">Aggravating factors: warm weather, occlusion, excessive sebum.</li>
+                                    <li class="risk-factor-list">Association: antibiotic therapy (esp. tetracyclines), iatrogenic immunosuppression (e.g., organ transplant).</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><span class="symptom-list">Pruritic</span> follicular papules and occasionally pustules.</li>
+                                    <li>Location: <span class="highlight-key">Back, chest, shoulders</span>.</li>
+                                    <li>Central white-yellow color often represents compact keratin, not pus.</li>
+                                    <li><span class="positive-finding">KOH prep of follicular contents: abundant yeast forms.</span></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Topical: <span class="drug-highlight">Antifungals (ketoconazole shampoo)</span>, <span class="drug-highlight">selenium sulfide shampoo</span>, 50% propylene glycol in water.</li>
+                                    <li>Systemic: <span class="drug-highlight">Fluconazole</span> (100-200 mg/day for 3 weeks or 200-300 mg once weekly for 1-4 months); <span class="drug-highlight">Itraconazole</span> (200 mg/day for 1-3 weeks).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><strong>Candida Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Primarily in <span class="highlight-key">diabetics</span>.</li>
+                                    <li class="risk-factor-list">Antibiotics, corticosteroids.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><span class="symptom-list">Pruritic satellite pustules</span> surrounding areas of intertriginous candidiasis.</li>
+                                    <li>Facial lesions may mimic tinea barbae or acne rosacea.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Prevent skin-to-skin contact.</li>
+                                    <li>If possible, D/C antibiotics/corticosteroids.</li>
+                                    <li>Mild/moderate: Topical antifungals.</li>
+                                    <li>Recalcitrant/severe: <span class="drug-highlight">Fluconazole</span> (100 mg daily for 1 week then QOD for 1 month).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Herpes Simplex Folliculitis (Herpetic Sycosis)</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Usually men with recurrent localized facial herpes simplex who shave with a blade razor.</li>
+                                    <li>Widespread/unusual presentations in HIV-infected or immunosuppressed.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Rapid development of individual and grouped follicular pustules and vesicles on erythematous base in beard area.</li>
+                                    <li><span class="positive-finding">Tzanck smear or biopsy: multinucleated giant cells.</span></li>
+                                    <li>Positive PCR or DFA.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><span class="drug-highlight">Acyclovir</span> (200 mg PO 5x/day for 5-10 days).</li>
+                                    <li><span class="drug-highlight">Famciclovir</span> (500 mg PO TID for 5-10 days).</li>
+                                    <li><span class="drug-highlight">Valacyclovir</span> (500 mg PO TID for 5-10 days). (Note: Dosing may vary, often 1g BID for valacyclovir in active infection)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Demodex Folliculitis (Demodicosis)</strong></td>
+                            <td>
+                                <ul>
+                                    <li class="risk-factor-list">May be associated with immune suppression.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Erythematous follicular papules and pustules on face (esp. nose) and neck. <span class="fig-ref">(Fig. 38.5B)</span></li>
+                                    <li>May have background diffuse erythema.</li>
+                                    <li><span class="positive-finding">Skin scrapings: numerous Demodex mites.</span> <span class="fig-ref">(Fig. 38.5D)</span></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Topical: <span class="drug-highlight">1% ivermectin cream</span>, <span class="drug-highlight">5% permethrin cream</span>.</li>
+                                    <li>Systemic: Single dose <span class="drug-highlight">ivermectin</span> (200 mcg/kg PO).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Drug-Induced Folliculitis (Acneiform Eruption)</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Most common in acne-prone patients and age groups.</li>
+                                    <li>Common drugs: <span class="drug-highlight">Corticosteroids</span>, <span class="drug-highlight">androgenic hormones</span>, <span class="drug-highlight">EGFR inhibitors</span>, <span class="drug-highlight">MEK inhibitors</span>, <span class="drug-highlight">sirolimus</span>, iodides, bromides, <span class="drug-highlight">lithium</span>, isoniazid, anticonvulsants.</li>
+                                    <li>Develops within 2 weeks of starting; risk often dose/duration proportional.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Acute eruption of <span class="positive-finding">monomorphic</span> erythematous follicular papules and pustules.</li>
+                                    <li>Location: Trunk, shoulders, upper arms. <span class="fig-ref">(Figs 21.19B & 36.13)</span></li>
+                                    <li>EGFRi: Multiple papulopustules face/scalp, sometimes scale-crust. <span class="fig-ref">(Figs 21.19B & 36.15)</span></li>
+                                    <li><span class="negative-finding">Unlike acne vulgaris, comedones are RARELY present</span> (exception: androgens).</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Discontinue offending drug if possible.</li>
+                                    <li>Topical: <span class="drug-highlight">benzoyl peroxide</span>, <span class="drug-highlight">clindamycin</span>, <span class="drug-highlight">erythromycin</span>, <span class="drug-highlight">retinoids</span>.</li>
+                                    <li>Systemic: <span class="drug-highlight">Tetracycline</span>, <span class="drug-highlight">doxycycline</span>, <span class="drug-highlight">minocycline</span>.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Necrotizing Infundibular Crystalline Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Yeasts and Gram-positive bacteria in affected follicles.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Waxy papules favoring forehead, neck, and back.</li>
+                                    <li><span class="positive-finding">Birefringent, filamentous, crystalline deposits</span> within follicular ostia.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Topical or systemic antimycotics.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><strong>Actinic Folliculitis</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Seasonal, follows initial summer sun exposure.</li>
+                                    <li><span class="negative-finding">Sunscreens will not prevent.</span> (Text: "sion ornate;" likely typo, refers to sun exposure).</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Development of follicular pustules on upper trunk and arms <span class="highlight-key">24-30 hours after first sun exposure</span> of summer.</li>
+                                    <li>Lesions <span class="negative-finding">spare the face</span> and are <span class="negative-finding">not pruritic</span>.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Usually self-limited.</li>
+                                    <li>Consider avoiding intense sun exposure initially. If severe, standard folliculitis treatments. (Text: "if severe" implies tx like other folliculitis).</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="fig-ref">Table 38.1 Less common specific forms of folliculitis. (cont'd) EGFR, epidermal growth factor receptor; MEK, mitogen activated protein kinase (MAPK)/extracellular signal regulated (Erk).</p>
+                </div>
+            </section>
+
+            <section id="clinical-approach-superficial" class="section-card">
+                <h2>Clinical Approach to Superficial Folliculitis</h2>
+                <div class="exam-focus">
+                    <span class="exam-focus-title">Diagnostic Strategy</span>
+                    <p>Categorize by etiology. Remember which require specific diagnostic tests like KOH, Tzanck, or biopsy.</p>
+                </div>
+                <h4>Etiological Categories:</h4>
+                <ul>
+                    <li><strong>Bacterial:</strong>
+                        <ul>
+                            <li><span class="pathogen-highlight">Staphylococcus aureus</span> (Common)</li>
+                            <li>Gram-negative bacilli (including <span class="pathogen-highlight">Pseudomonas spp.</span>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fungal:</strong>
+                        <ul>
+                            <li>Dermatophytes*</li>
+                            <li><span class="pathogen-highlight">Malassezia (Pityrosporum) spp.*</span></li>
+                            <li><span class="pathogen-highlight">Candida spp.*,††</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Viral:</strong>
+                        <ul>
+                            <li>Herpesvirus**,† (HSV > VZV)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ectoparasitic:</strong>
+                        <ul>
+                            <li><span class="pathogen-highlight">Demodex spp.*,††</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Non-infectious:</strong>
+                        <ul>
+                            <li>Irritant folliculitis</li>
+                            <li>Drug-induced folliculitis</li>
+                            <li>Eosinophilic pustular folliculitis (Ofuji disease)†</li>
+                            <li>Eosinophilic pustular folliculitis in infancy†</li>
+                            <li>Immunosuppression- (or HIV-) associated Eosinophilic pustular folliculitis†</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="key-point">
+                    * Requires skin scraping and KOH prep/microscopy for diagnosis.<br>
+                    ** Requires skin scraping for Tzanck prep/microscopy, viral culture.<br>
+                    † Often requires biopsy for diagnosis.<br>
+                    †† Need to consider more strongly in immunosuppressed individuals.
+                </p>
+                   <section id="eosinophilic-folliculitis" class="section-card eosinophilic-section">
+                <h2>Eosinophilic Folliculitis</h2>
+                <p>Three major forms have been described. The common thread is eosinophilic inflammation targeting the follicle.</p>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Eosinophilic Pustular Folliculitis (EPF) - Ofuji Disease</h4>
+                        <div class="clinical-pearl">
+                            <span class="clinical-pearl-title">Not to be Confused!</span>
+                            <p>Ofuji disease (EPF) vs. Papuloerythroderma of Ofuji (distinct entity).</p>
+                        </div>
+                        <ul>
+                            <li><strong>Epidemiology:</strong> Rare, MC in <span class="highlight-key">Japan</span>, M:F = 5:1, onset ~30 years.</li>
+                            <li><strong>Clinical Features:</strong>
+                                <ul class="symptom-list">
+                                    <li>Follicular papulopustules, erythematous patches/plaques with <span class="positive-finding">coalescent pustules</span>.</li>
+                                    <li><span class="positive-finding">Central clearing leads to figurate lesions.</span></li>
+                                    <li>Location: Most commonly "acne-prone" areas (face > upper extremities, trunk).</li>
+                                    <li><span class="highlight-key">Digits, palms, and soles may be involved</span> (proving not all lesions are follicular).</li>
+                                    <li><span class="symptom-list">Severe pruritus</span> is frequent.</li>
+                                    <li>Recurrent crops of lesions (involute over 7-10 days, relapse q3-4 weeks).</li>
+                                    <li><span class="negative-finding">No accompanying systemic symptoms.</span></li>
+                                </ul>
+                            </li>
+                            <li><strong>Labs:</strong> Peripheral blood eosinophilia.</li>
+                            <li><strong>Associations:</strong> To date, not associated with systemic disease.</li>
+                            <li><strong>Pathogenesis:</strong> Unknown; ?hypersensitivity to antigenic stimuli (infections, meds), immune dysfunction.</li>
+                            <li class="histology-list"><strong>Histology:</strong> <span class="positive-finding">Eosinophils predominate</span> around and within follicular epithelium. Hallmark: <span class="highlight-key">infundibular eosinophilic pustules</span>.</li>
+                            <li><strong>Treatment:</strong>
+                                <ul class="treatment-list">
+                                    <li>Topical corticosteroids, tacrolimus ointment, oral antihistamines for pruritus.</li>
+                                    <li><strong class="highlight-key">First-line: Oral indomethacin (50 mg/day).</strong></li>
+                                    <li>Second-line: UVB phototherapy, oral minocycline (100 mg BID), oral dapsone (100-200 mg/day for ≥2 weeks), systemic corticosteroids, colchicine (0.6 mg BID).</li>
+                                    <li>Refractory: Cyclosporine.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>Immunosuppression-Associated Eosinophilic Pustular Folliculitis</h4>
+                        <ul>
+                            <li><strong>Clinical Features:</strong>
+                                <ul class="symptom-list">
+                                    <li><span class="symptom-list">Markedly pruritic</span> follicular papules (urticarial and/or pustular).</li>
+                                    <li>Location: Face, scalp, upper trunk.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Setting:</strong> Immunosuppression (HIV infection, allogeneic hematopoietic stem cell transplantation [HSCT]).</li>
+                            <li><strong>HIV Context:</strong> CD4 count usually <span class="highlight-key">≤200 cells/mm³</span>; may be IRIS manifestation.</li>
+                            <li class="histology-list"><strong>Histology:</strong> Spongiosis and exocytosis of eosinophils and lymphocytes into follicular epithelium. (Similar to Ofuji but <span class="negative-finding">no large coalescent pustules or figurate lesions</span>; individual lesions more persistent).</li>
+                            <li><strong>Associations:</strong> HIV, lymphoma, CLL, AML, other myeloproliferative disorders, post-allogeneic HSCT.</li>
+                            <li><strong>Pathogenesis:</strong> <span class="highlight-key">Th2 immune response</span> implicated.
+                                <ul>
+                                    <li>AIDS: Elevated IL-4, IL-5, RANTES (CCL5), eotaxin (CCL11).</li>
+                                    <li>Recent study: Elevated serum CCL17, CCL26 (eotaxin-3), CCL27 in HIV-associated EPF.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Clinical Presentation (Detailed):</strong>
+                                <ul class="symptom-list">
+                                    <li>Chronic, pruritic, follicular papular eruption (face, scalp, upper trunk).</li>
+                                    <li>Papules often slightly edematous; pustules may or may not be present.</li>
+                                    <li>Intense pruritus.</li>
+                                    <li>Some patients may have lymphopenia.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Differential Diagnosis:</strong>
+                                <ul>
+                                    <li class="ddx-item"><strong>Necrotizing eosinophilic folliculitis:</strong> Distinguished by association with atopy, presence of nodules/ulceration, follicular necrosis, and eosinophilic vasculitis histologically.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Treatment:</strong>
+                                <ul class="treatment-list">
+                                    <li>HIV-infected: Treat underlying HIV (ART); rise in CD4 may resolve lesions.</li>
+                                    <li>All patients: Oral/topical antipruritics + topical corticosteroids.</li>
+                                    <li>If inadequate: UVB phototherapy.</li>
+                                    <li>Additional: Topical tacrolimus, topical <span class="drug-highlight">permethrin</span>, oral <span class="drug-highlight">itraconazole</span> (200-400 mg daily), oral <span class="drug-highlight">metronidazole</span> (250 mg TID), oral antibiotics, <span class="drug-highlight">isotretinoin</span> (0.5-1 mg/kg/day x 1-4 weeks, then taper), interferon (ß and γ).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>Eosinophilic Pustular Folliculitis of Infancy</h4>
+                        <ul>
+                            <li><strong>Nature:</strong> Unusual, self-limiting disorder.</li>
+                            <li><strong>Onset:</strong> Typically early infancy. Disease onset <span class="highlight-key">prior to age 14 months in 95%</span> of patients.</li>
+                            <li><strong>Gender:</strong> More common in boys (ratio 4:1).</li>
+                            <li><strong>Clinical Features:</strong>
+                                <ul class="symptom-list">
+                                    <li>Multiple, <span class="symptom-list">pruritic</span>, follicular pustules and vesiculopustules on an erythematous base.</li>
+                                    <li>Location: Primarily <span class="highlight-key">scalp and brow region</span>.</li>
+                                    <li><span class="positive-finding">Secondary crusting is common.</span></li>
+                                    <li>Cyclical course: Recurrences at 1-12 week intervals (characteristic).</li>
+                                </ul>
+                            </li>
+                            <li class="histology-list"><strong>Histology:</strong> Dense perifollicular infiltrate of eosinophils and lymphocytes (may spare sebaceous glands and outer root sheath). Typically, eosinophilic spongiosis and clusters of eosinophils in hair follicle (esp. infundibular region).</li>
+                            <li><strong>Key Differences from Adult EPF:</strong> Primarily involves scalp, frequent secondary crusting, <span class="negative-finding">lack of annular configuration</span>.</li>
+                            <li><strong>Prognosis:</strong> Majority experience resolution by <span class="highlight-key">3 years of age</span>.</li>
+                            <li><strong>Differential Diagnosis:</strong>
+                                <ul class="ddx-item">
+                                    <li>Erythema toxicum neonatorum</li>
+                                    <li>Transient neonatal pustular melanosis</li>
+                                    <li>Acropustulosis of infancy (might be related)</li>
+                                    <li>Scabies</li>
+                                </ul>
+                            </li>
+                            <li><strong>Treatment:</strong> Given self-limited nature, symptomatic relief: topical corticosteroids (CS) and antihistamines for itchiness.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="disseminated-recurrent-infundibulofolliculitis" class="section-card">
+                <h2>Disseminated and Recurrent Infundibulofolliculitis (DRIF)</h2>
+                <ul>
+                    <li><strong>Epidemiology:</strong> Seen primarily in adults with <span class="highlight-key">darkly pigmented skin</span>.</li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Hundreds of uniform, skin-colored papules likened to <span class="positive-finding">"goose bumps"</span>.</li>
+                            <li>Favored sites: Trunk, neck, upper extremities.</li>
+                            <li>May last for months to years; can be pruritic.</li>
+                            <li>Papules are often pierced by a hair.</li>
+                        </ul>
+                    </li>
+                    <li class="histology-list"><strong>Histology:</strong> Mild inflammation of the follicular infundibulum.</li>
+                    <li><strong>Associations:</strong> Although lesions may resemble papular eczema, many patients <span class="negative-finding">do not have a history of atopy</span>.</li>
+                    <li><strong>Differential Diagnosis:</strong>
+                        <ul class="ddx-item">
+                            <li><strong>Papular eczema</strong></li>
+                            <li><strong>Lichen nitidus</strong> (not follicular based)</li>
+                            <li><strong>Folliculitis</strong> (has erythema)</li>
+                            <li>Distinguished from KP, PRP, LPP, phrynoderma by <span class="negative-finding">lack of keratotic plugs or spines</span> within hair follicles.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment:</strong>
+                        <ul class="treatment-list">
+                            <li>Topical corticosteroids (sometimes effective).</li>
+                            <li>Lactic acid preparations (12%) or 20-40% urea.</li>
+                            <li>If topical unsuccessful: PUVA (thrice weekly for 3 weeks, then maintenance).</li>
+                            <li>Vitamin A (50,000 IU BID) and <span class="drug-highlight">isotretinoin</span> (0.5 mg/kg/day for 16 weeks) have been tried.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="keratinization-disorders" class="section-card keratinization-disorders">
+                <h2>Disorders of Follicular Keratinization</h2>
+                <p>Characterized by a prominent plug of keratin within the follicular orifice. (KP, PRP, LPP discussed elsewhere).</p>
+
+                <h3>Erythromelanosis Follicularis Faciei (et Colli)</h3>
+                <ul>
+                    <li><strong>Epidemiology:</strong>
+                        <ul>
+                            <li>Begins during the <span class="highlight-key">second decade of life</span>.</li>
+                            <li>Adults: ?Men. All races and both sexes, but favors people of <span class="highlight-key">Asian ancestry</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Location: Lateral aspect of cheeks, sometimes lateral neck.</li>
+                            <li>Background of <span class="positive-finding">red-brown colored skin</span> (vasodilation + hyperpigmentation).</li>
+                            <li>Numerous pinhead-sized follicular papules within involved areas, appearing <span class="positive-finding">relatively hypopigmented</span>.</li>
+                            <li>May also have keratosis pilaris of upper outer arms (with small rim of erythema around follicular keratotic plug).</li>
+                        </ul>
+                    </li>
+                    <li class="histology-list"><strong>Histology:</strong>
+                        <ul>
+                            <li>Slight follicular hyperkeratosis with increased epidermal pigmentation.</li>
+                            <li>Decreased diameters of hair shafts and outer root sheaths; decreased thickness of inner root sheath.</li>
+                            <li>Adnexa often surrounded by lymphocytic infiltrate.</li>
+                            <li>Increased thickness and compactness of horny layer.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Differential Diagnosis:</strong>
+                        <ul class="ddx-item">
+                            <li><strong>Keratosis pilaris rubra:</strong> Lacks hyperpigmentation, favors children.</li>
+                            <li><strong>Melasma + telangiectatic erythema (photodamage):</strong> Lacks tiny follicular papules.</li>
+                            <li><strong>Poikiloderma of Civatte:</strong> Anterolateral neck, sparing mid-submental. Erythema from multiple interfollicular telangiectasias, sparing immediate perifollicular skin (appears hypopigmented). Can extend to mandibular region.</li>
+                            <li><strong>Keratosis Pilaris Atrophicans Spectrum (less often):</strong>
+                                <ul>
+                                    <li><em>Ulerythema ophryogenes:</em> Erythematous follicular papules, early childhood, favors eyebrows, follicular atrophy, scarring alopecia lateral eyebrows.</li>
+                                    <li><em>Atrophoderma vermiculatum:</em> Affects cheeks, honeycomb scarring or "worm-eaten" appearance.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment (largely anecdotal):</strong>
+                        <ul class="treatment-list">
+                            <li>Topical keratolytics: Urea cream (10-20%), ammonium lactate lotion (6-12%), <span class="drug-highlight">tretinoin</span> cream (0.025-0.1%), <span class="drug-highlight">adapalene</span> (0.1-0.3%), ammonium lactate + <span class="drug-highlight">hydroquinone</span> (4%) cream.</li>
+                            <li>Topical <span class="drug-highlight">tacalcitol</span> ointment (daily for 12 weeks): reduced roughness/scaling, limited effect on erythema.</li>
+                            <li>Peels: Salicylic acid (20-30%), glycolic acid.</li>
+                            <li>Severe: Limited courses of <span class="drug-highlight">isotretinoin</span> (0.1-1 mg/kg/day).</li>
+                            <li>Laser for background erythema/hyperpigmentation (multiple sessions).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Keratosis Pilaris Atrophicans (KPA)</h3>
+                <p>Group of disorders: follicular keratinization + atrophy + scarring alopecia.
+                Treatment (limited efficacy): Keratolytics, topical retinoids, topical/IL corticosteroids, oral antibiotics, phototherapy. Combination therapy may benefit. Anecdotally: oral retinoids, IPL.
+                Later stages: Laser resurfacing, dermabrasion, dermal fillers for atrophic scarring.</p>
+                
+                <div class="exam-focus">
+                    <span class="exam-focus-title">KPA Spectrum - Know the Distinctions!</span>
+                    <p>This table is high-yield for differentiating KPA subtypes based on genetics, onset, distribution, and key features.</p>
+                </div>
+                <div class="custom-table-container">
+                <table class="custom-table">
+                    <caption>Table 38.2 The spectrum of keratosis pilaris atrophicans. AD, autosomal dominant; XR, X-linked recessive; +, mild to moderate; ++, severe.</caption>
+                    <thead>
+                        <tr>
+                            <th>Disorder</th>
+                            <th>Mode of Inheritance</th>
+                            <th>Genetic Locus</th>
+                            <th>Age at Onset</th>
+                            <th>Distribution</th>
+                            <th>Cutaneous Features</th>
+                            <th>Associated KP*</th>
+                            <th>Other Occasional Features and Associations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Keratosis pilaris atrophicans faciei (Ulerythema ophryogenes)</strong></td>
+                            <td>AD</td>
+                            <td>18p11.2</td>
+                            <td>Infancy</td>
+                            <td>Eyebrows (esp. lateral third; <span class="fig-ref">Fig. 38.7</span>) > temples, cheeks, forehead</td>
+                            <td>• Erythematous follicular papules with central keratotic plugs, eventuating in follicular atrophy.<br>• <span class="positive-finding">Scarring alopecia of the lateral eyebrows.</span></td>
+                            <td>+</td>
+                            <td>• Associated with Noonan syndrome, cardio-facio-cutaneous syndrome, woolly hair, Cornelia de Lange syndrome.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Atrophoderma vermiculatum</strong> <span class="fig-ref">(Ch. 99)</span></td>
+                            <td>?AD</td>
+                            <td></td>
+                            <td>Childhood (usually 5-12 years)</td>
+                            <td>Cheeks (<span class="fig-ref">Fig. 99.8</span>) > preauricular area, upper lip</td>
+                            <td>• <span class="positive-finding">Pitted, atrophic depressions in a vermiculate pattern ("worm-eaten" or "honeycomb" appearance).</span>*<br><small>*May be preceded by erythematous follicular papules</small></td>
+                            <td>+</td>
+                            <td>• Associated with ipsilateral congenital cataract; Loeys-Dietz, Rombo, and Nicolau-Balus syndromes <span class="fig-ref">(see Ch. 99)</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Keratosis follicularis spinulosa decalvans, X-linked (KFSDX)</strong></td>
+                            <td>XR</td>
+                            <td>Xp22.12; mutations in <span class="highlight-key">MBTPS2</span>#</td>
+                            <td>Childhood (inflammation often remits at puberty)</td>
+                            <td>Face, scalp, limbs, trunk</td>
+                            <td>• Erythematous follicular papules with central keratotic plugs, eventuating in follicular atrophy.<br>• <span class="positive-finding">Scarring alopecia of scalp, eyebrows, eyelashes.</span></td>
+                            <td>++</td>
+                            <td>• Variable facial erythema, nail dystrophy, palmoplantar keratoderma.<br>• <span class="highlight-key">Keratitis, blepharitis, photophobia.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Keratosis follicularis spinulosa decalvans (folliculitis spinulosa decalvans - AD form)</strong></td>
+                            <td>AD</td>
+                            <td></td>
+                            <td>Puberty (onset or worsening)</td>
+                            <td>Scalp</td>
+                            <td>• Follicular pustules.<br>• Features of KFSDX.</td>
+                            <td>++</td>
+                            <td>• Variable facial erythema and nail dystrophy.<br>• Blepharitis, conjunctivitis, keratitis, photophobia.</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="8"><em>*Associated keratosis pilaris (KP) on the extremities and trunk (which does not typically eventuate in atrophy).<br>#Protein product (membrane-bound transcription factor peptidase, site 2) is an intramembrane zinc metalloprotease required for cleavage of sterol regulatory element-binding proteins (SREBPs) and is essential for cholesterol homeostasis and the endoplasmic reticulum stress response; mutations in MBTPS2 also underlie IFAP syndrome (Ichthyosis Follicularis, Alopecia, Photophobia - see Table 38.3).</em></td></tr>
+                    </tfoot>
+                </table>
+                </div>
+            </section>
+
+            <section id="lichen-spinulosus" class="section-card keratinization-disorders">
+                <h3>Lichen Spinulosus (LS)</h3>
+                <ul>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Clusters of multiple follicular papules, each with a <span class="positive-finding">keratotic spine</span>.</li>
+                            <li>Texture likened to a <span class="highlight-key">"nutmeg grater"</span>.</li>
+                            <li>Usually asymptomatic, arises suddenly, enlarges over a week.</li>
+                            <li>Appears most often in children and adolescents. Average onset 16 years.</li>
+                            <li>Favors: Neck, extensor arms, abdomen, buttocks. Distribution may be symmetric.</li>
+                            <li>Face usually spared, as are hands and feet.</li>
+                            <li>Can persist indefinitely.</li>
+                            <li>Idiopathic LS: asymptomatic, though some pruritic with faint surrounding erythema.</li>
+                            <li>Spinulosis of the face (tiny follicular keratotic spicules of cheeks) may be a manifestation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Etiology:</strong> Unknown. Most patients <span class="negative-finding">do not have associated systemic abnormalities</span>.</li>
+                    <li><strong>Associations (reported, some possibly coincidental):</strong>
+                        <ul>
+                            <li>LS-like lesions in HIV infection.
+                                <ul><li>HIV-associated follicular syndrome / Type VI PRP: HIV infection, PRP, nodulocystic acne, follicular spines (including LS).</li></ul>
+                            </li>
+                            <li>Seborrheic dermatitis, drug reaction (<span class="drug-highlight">omeprazole</span>), Hodgkin disease, Crohn disease, syphilis, id reaction to fungal infections.</li>
+                        </ul>
+                    </li>
+                    <li class="histology-list"><strong>Pathology:</strong> Similar to Keratosis Pilaris.</li>
+                    <li><strong>Differential Diagnosis (Key Distinctions):</strong>
+                        <p>See table below for specific DDx details.</p>
+                        <ul class="ddx-item">
+                            <li>Phrynoderma</li>
+                            <li>Keratosis circumscripta</li>
+                            <li>Follicular ichthyosis</li>
+                            <li>Juvenile pityriasis rubra pilaris</li>
+                            <li><strong>Facial Spines DDx:</strong> HIV-associated follicular syndrome, viral-associated trichodysplasia, demodicosis, follicular mucinosis, multiple myeloma.</li>
+                            <li><strong>Widespread follicular plugging (drug-induced):</strong> <span class="drug-highlight">BRAF inhibitors</span>, systemic <span class="drug-highlight">lithium</span> therapy.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment:</strong>
+                        <ul class="treatment-list">
+                            <li>Topical: 12% lactic acid, 20%-40% urea, 6% salicylic acid (improve texture).</li>
+                            <li>Anecdotal: <span class="drug-highlight">Tacalcitol</span> cream or <span class="drug-highlight">tretinoin</span> gel + hydroactive adhesive (e.g., Bioré®).</li>
+                            <li>Peels: Glycolic acid, salicylic acid.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Differential Diagnosis of Lichen Spinulosus</h4>
+                <div class="custom-table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Disorder</th>
+                            <th>Key Differentiating Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Keratosis circumscripta</strong> (psoriasis circumscripta with palmoplantar keratosis)</td>
+                            <td>• Onset usually 3-5 years, primarily in Africans.<br>• Well-circumscribed lesions of grouped folliculocentric papules, +/- palmoplantar hyperkeratosis.<br>• Favors elbows, knees, neck, hips, sacrum, posterior axillary folds.<br>• Some consider a psoriasis variant (histology similar to plaque psoriasis).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Follicular ichthyosis</strong></td>
+                            <td>• Onset early childhood.<br>• Keratotic papules with follicular plugging and prominent follicular ostia.<br>• Favors head/neck, may involve extensor extremities (fingers, elbows, knees).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ichthyosis follicularis with atrichia and photophobia (IFAP) syndrome</strong> <span class="fig-ref">(Ch. 57)</span></td>
+                            <td>• X-linked recessive (allelic with KFSDX - see Table 38.2).<br>• Female carriers: variable linear streaks (follicular keratoses, scale, and/or hypotrichosis).<br>• Follicular ichthyosis with widespread non-inflammatory follicular keratoses + psoriasiform plaques, nail dystrophy.<br>• Generalized congenital non-scarring alopecia and <span class="highlight-key">photophobia</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hereditary mucoepithelial dysplasia</strong> (similar to IFAP)</td>
+                            <td>• Autosomal dominant.<br>• Widespread follicular keratoses and non-scarring alopecia.<br>• Severe keratitis, erythema of oral mucosa (paucity of desmosomes, dyskeratotic cells histologically), psoriasiform perineal plaques.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Juvenile pityriasis rubra pilaris (PRP)</strong> <span class="fig-ref">(Ch. 9)</span></td>
+                            <td>• Especially type IV (circumscribed), lesions favor elbows and knees.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Keratosis pilaris (KP)</strong> <span class="fig-ref">(Ch. 12)</span></td>
+                            <td>• Perifollicular erythema + follicular plugging.<br>• Favors upper outer arms, thighs; <span class="negative-finding">lacks discrete clusters</span> like LS.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lichen planopilaris (LPP)</strong> <span class="fig-ref">(Ch. 11)</span></td>
+                            <td>• Follicular keratotic plugs surrounded by a <span class="positive-finding">narrow violaceous rim</span>.<br>• Scarring alopecia of scalp most common; follicular lesions may be disseminated.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Folliculotropic mycosis fungoides (FMF)</strong> <span class="fig-ref">(Ch. 120)</span></td>
+                            <td>• Acneiform lesions, occasionally includes comedones (<span class="fig-ref">Figs 36.16B,C</span>); may be clustered.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phrynoderma</strong> (Vitamin A deficiency; <span class="fig-ref">Ch. 51</span>)</td>
+                            <td>• Follicular papules with central keratotic plug favor extensor extremities, buttocks.<br>• Generalized xerosis, sparse fragile hair, <span class="highlight-key">night blindness, xerophthalmia</span>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </section>
+
+            <section id="phrynoderma" class="section-card keratinization-disorders">
+                <h3>Phrynoderma ("Toad Skin")</h3>
+                <ul>
+                    <li><strong>Epidemiology:</strong>
+                        <ul>
+                            <li>Primarily in Asia and Africa.</li>
+                            <li>Rare in high-income countries, except in: intestinal malabsorption, anorexia nervosa, fad diets.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Etiology:</strong> Most often associated with <span class="highlight-key">Vitamin A deficiency</span>. Some patients may have deficiencies in other vitamins and/or proven malnutrition.</li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Follicular papules of various sizes with <span class="positive-finding">conical keratotic plugs</span>.</li>
+                            <li>Favors <span class="highlight-key">extensor surfaces of extremities</span>, may spread.</li>
+                            <li>Face is last site involved; hands and feet spared.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Diagnosis:</strong>
+                        <ul>
+                            <li>Associated systemic findings (e.g., ocular, CNS).</li>
+                            <li>Histologic features.</li>
+                            <li>Measurement of serum vitamin A levels.</li>
+                        </ul>
+                    </li>
+                </ul>
+                       <section id="deep-folliculitis" class="section-card deep-folliculitis">
+                <h2>Deep Folliculitis</h2>
+                <p>Characterized by firm, tender, erythematous papules or nodules, up to 2 cm. <span class="exam-focus-title">Critical Patient Advice:</span> Deep lesions should <span class="negative-finding">NEVER be manipulated (squeezed)</span> by the patient due to risk of bacteremia or seeding (endocarditis, brain abscess, osteomyelitis).</p>
+                <p>Major forms include: Furuncles, Sycosis (barbae, lupoid, mycotic), Pseudofolliculitis barbae, Acne keloidalis, Hidradenitis suppurativa.</p>
+
+                <h3>Forms of Sycosis</h3>
+                <p class="key-point">Sycosis is defined as chronic inflammation of hair follicles, especially of the beard.</p>
+                <div class="custom-table-container">
+                <table class="custom-table">
+                    <caption>Table 38.4 Forms of sycosis.</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Characteristics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sycosis Barbae</strong></td>
+                            <td>
+                                • Bacterial folliculitis of beard and/or mustache areas, usually caused by <span class="pathogen-highlight">Staphylococcus aureus</span>.<br>
+                                • Deep-seated, edematous, perifollicular papules and pustules; may coalesce to form plaques studded with pustules and crusts. <span class="fig-ref">(Fig. 38.3B)</span><br>
+                                • Subacute to chronic course with frequent relapses.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lupoid Sycosis</strong></td>
+                            <td>
+                                • <span class="positive-finding">Scarring</span> form of deep folliculitis, typically affecting beard area.<br>
+                                • May be caused by <span class="pathogen-highlight">S. aureus</span> (though cultures often fail to reveal pathogenic organisms).<br>
+                                • <span class="positive-finding">Peripheral extension</span> of perifollicular papules and pustules with <span class="positive-finding">central atrophic scarring/cicatricial alopecia</span>.<br>
+                                • Granulomatous inflammation can lead to an appearance reminiscent of lupus vulgaris.<br>
+                                • Chronic course, refractory to treatment.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mycotic Sycosis</strong></td>
+                            <td>
+                                • Dermatophyte folliculitis of the beard area (most often chin), usually <span class="pathogen-highlight">zoophilic organisms</span> (e.g., T. mentagrophytes, T. verrucosum).<br>
+                                • Inflammatory perifollicular papules and pustules coalesce to form nodules and plaques.<br>
+                                • Purulent discharge from patulous follicles, crusting.<br>
+                                • <span class="positive-finding">Loose hairs can be painlessly removed.</span> <span class="fig-ref">(Fig. 38.9)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Herpetic Sycosis</strong></td>
+                            <td>• See Table 38.1 (Herpes Simplex Folliculitis section above).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h3>Pseudofolliculitis Barbae (PFB)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Common chronic disorder, most often in beard area of men who shave.</li>
+                    <li><strong>Other Affected:</strong> Women who shave (especially groin). Mustache area <span class="negative-finding">not typically affected</span>.</li>
+                    <li><strong>Epidemiology:</strong> Favors those of <span class="highlight-key">African descent</span> with darkly pigmented skin and <span class="highlight-key">tightly curled hair</span>.</li>
+                    <li><strong>Etiology:</strong> Tightly curled hairs curving back into the skin after shaving.
+                        <ul>
+                            <li><span class="highlight-key">Intrafollicular penetration:</span> Hair fails to exit follicle, pierces follicular wall.</li>
+                            <li><span class="highlight-key">Transfollicular penetration:</span> Hair exits follicle, then re-enters skin.</li>
+                            <li>Inflammatory response to hair keratin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genetic Risk Factor:</strong> SNP in <span class="highlight-key">K6hf (KRT75)</span> hair follicle companion layer-specific keratin.</li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Range from inflammatory papules and pustules to firm papules and keloidal scars.</li>
+                            <li>Chronic lesions: Hair may create grooves in skin (anterior neck, submandibular areas prone).</li>
+                            <li>Once grooves form, shaving becomes extremely difficult.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment Goal:</strong> Only reliable cure is to <span class="highlight-key">stop shaving</span>. Shaving techniques can be optimized, laser therapy can significantly reduce severity.</li>
+                </ul>
+
+                <div class="pathogenesis-flow section-card">
+                    <h4>Pathogenesis of Pseudofolliculitis Barbae</h4>
+                    <div><strong>1. Curved Hair, Curved Follicle:</strong> Predisposition due to hair morphology.</div>
+                    <div><strong>2. Hair Re-entry:</strong>
+                        <ul>
+                            <li><strong>Transfollicular:</strong> Hair exits and curves back into the epidermis.</li>
+                            <li><strong>Intrafollicular:</strong> Hair pierces the follicular wall before exiting.</li>
+                        </ul>
+                    </div>
+                    <div><strong>3. Inflammatory Response:</strong> Foreign body reaction to hair keratin entering the dermis.</div>
+                </div>
+
+                <div class="section-card">
+                    <h4>Advice on Shaving Methods for Patients with PFB</h4>
+                    <h5>Important Points:</h5>
+                    <ul>
+                        <li><span class="negative-finding">Do not</span> pull the skin taut.</li>
+                        <li><span class="negative-finding">Do not</span> shave against the grain/direction of hair growth.</li>
+                        <li>Use a sharp razor each time, preferably multi-blade.</li>
+                        <li>Take short strokes (with the grain) and do not shave over same areas more than twice.</li>
+                    </ul>
+                    <h5>Method:</h5>
+                    <ol>
+                        <li>Remove pre-existing hairs with electric clippers, leaving ~1-2 mm stubble.</li>
+                        <li>Wash area with non-abrasive acne soap and rough washcloth; gentle massaging with soft toothbrush in areas with "ingrown hairs".</li>
+                        <li>Rinse, then compress face with warm tap water for several minutes.</li>
+                        <li>Apply shaving cream, massage lather (do not let dry).</li>
+                        <li>Use sharp blade, shave <span class="highlight-key">with the grain</span> using short even strokes with minimal tension (no more than twice over one area). In hard-to-shave areas, may need to shave against the grain (use caution).</li>
+                        <li>After shaving, rinse, apply soothing aftershave. If burning/itching, topical corticosteroid cream/lotion (1-2.5% hydrocortisone) can be alternative.</li>
+                    </ol>
+                </div>
+
+                <div class="section-card">
+                    <h4>Therapeutic Approach to Pseudofolliculitis Barbae</h4>
+                    <ul class="treatment-list">
+                        <li><strong>Shaving:</strong>
+                            <ul>
+                                <li>Mild-moderate: Continue daily shaving, follow guidelines (Table 38.5 in source).</li>
+                                <li>Severe: Discontinue shaving until inflammation clears and ingrown hairs released. Trim beard to min 0.5 cm with scissors/clippers.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Compresses and Release of Ingrown Hairs:</strong>
+                            <ul>
+                                <li>Warm tap water, saline, or Burow's solution compresses (10 min TID) to soothe, remove crusts, reduce drainage, soften epidermis.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Topical Therapy:</strong>
+                            <ul>
+                                <li>Low-potency topical corticosteroid lotion and/or topical <span class="drug-highlight">clindamycin</span> after compresses and freeing embedded hairs.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Secondary Bacterial Infection:</strong>
+                            <ul>
+                                <li>Appropriate systemic antibiotic based on cultures.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Recalcitrant Disease:</strong>
+                            <ul>
+                                <li><span class="drug-highlight">Prednisone</span> (45-60 mg) or equivalent QAM for 7-10 days may be necessary.</li>
+                                <li>Topical <span class="drug-highlight">eflornithine cream</span> BID may be helpful*. (Slows rate of excessive hair growth. Injectable eflornithine treats African sleeping sickness).</li>
+                                <li><span class="highlight-key">Laser hair removal</span> (appropriate laser for skin color) for permanent hair reduction <span class="fig-ref">(see Ch. 137)</span>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="fig-ref">*Based upon case series.</p>
+                </div>
+            </section>
+
+            <section id="acne-keloidalis" class="section-card deep-folliculitis">
+                <h3>Acne Keloidalis (Nuchae)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Begins as chronic folliculitis of posterior neck and occipital scalp. Over time, <span class="positive-finding">keloidal papules and plaques</span> develop.</li>
+                    <li><span class="negative-finding">Comedones are NOT present</span> (contrast to acne vulgaris).</li>
+                    <li>+/- alopecia.</li>
+                    <li>+/- subcutaneous abscesses with draining sinuses.</li>
+                    <li><strong>Epidemiology:</strong> Vast majority are <span class="highlight-key">young men of African descent</span> (M:F ratio 20:1).</li>
+                    <li><strong>Pathogenesis Theories:</strong>
+                        <ul>
+                            <li>Shaving/cutting short, tightly curled hairs that curve back and penetrate skin.</li>
+                            <li>Constant irritation from shirt collars, chronic low-grade folliculitis.</li>
+                            <li>Increased mast cell density → rubbing → predisposes to folliculitis.</li>
+                        </ul>
+                    </li>
+                    <li class="histology-list"><strong>Pathology:</strong>
+                        <ul>
+                            <li>Inflammation begins in upper 1/3 of hair follicle.</li>
+                            <li>Initial infiltrate: Neutrophils and lymphocytes OR predominantly plasma cells (varies).</li>
+                            <li><span class="negative-finding">Sebaceous glands markedly diminished or absent</span> in all stages.</li>
+                            <li>Advanced lesions: Disrupted hair follicles, fragments of naked hair shafts surrounded by granulomatous inflammation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment:</strong> (Refer to eTable 38.1 for full options)
+                        <ul class="treatment-list">
+                            <li><strong>Prevention (First Line):</strong>
+                                <ul>
+                                    <li>Avoid head-dress/gear causing mechanical irritation to posterior hairline.</li>
+                                    <li>Do not edge posterior hairline with razor.</li>
+                                    <li>Avoid shirts/sweaters irritating posterior scalp/neck.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Mild/Non-inflamed:</strong> Twice-daily <span class="drug-highlight">tretinoin gel</span> + mid- to high-potency <span class="drug-highlight">corticosteroid gel</span>.</li>
+                            <li><strong>Inflamed/Pustules:</strong> Topical or systemic antibiotics (as for acne vulgaris).</li>
+                            <li><strong>Keloidal Papules:</strong>
+                                <ul>
+                                    <li>Intralesional <span class="drug-highlight">triamcinolone acetonide</span> (5-20 mg/ml).</li>
+                                    <li>If persistent: Punch excision (hair transplant trephine punch) below follicle level, then primary closure or second intention healing.
+                                        <ul><li>Anesthesia mix: 50:50 2% lidocaine (with epinephrine) + triamcinolone (40 mg/ml) to prevent recurrence.</li></ul>
+                                    </li>
+                                    <li>Post-suture removal (1 week): Inject excision sites with triamcinolone (40 mg/ml), repeat 3 more times at 3-week intervals.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Plaques 1.0-1.5 cm vertical diameter:</strong> Excision with primary closure.</li>
+                            <li><strong>Plaques >1.5 cm vertical diameter:</strong>
+                                <ul>
+                                    <li><span class="negative-finding">Do NOT close primarily</span> (scar usually spreads).</li>
+                                    <li>Excise to fascia/deep subcutaneous tissue, include posterior hairline in ellipse, <span class="highlight-key">heal by second intention</span> (8-12 weeks).</li>
+                                    <li><span class="negative-finding">Do NOT inject corticosteroids</span> (may prevent wound contracture).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Postoperative:</strong> Daily topical <span class="drug-highlight">imiquimod</span> (starting immediately, for 6-8 weeks) may prevent recurrence (some claim).</li>
+                            <li><strong>Other options:</strong>
+                                <ul>
+                                    <li>Radiation therapy post-excision (controversial).</li>
+                                    <li>CO2 laser excision + post-op triamcinolone injections (10-40 mg/ml) q3 weeks x4.</li>
+                                    <li>Nd:YAG and diode lasers.</li>
+                                    <li>UVB therapy.</li>
+                                    <li>Cryotherapy (freeze 30-40 seconds).</li>
+                                    <li><span class="drug-highlight">Isotretinoin</span> for recalcitrant inflammatory cases.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="custom-table-container">
+                <table class="custom-table">
+                    <caption>eTable 38.1 Therapeutic options for acne keloidalis.</caption>
+                    <thead>
+                        <tr>
+                            <th>Presentation</th>
+                            <th>Treatment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Non-inflamed papules and plaques</td>
+                            <td>Mixture of tretinoin gel and potent corticosteroid gel twice daily</td>
+                        </tr>
+                        <tr>
+                            <td>Inflamed lesions with pustules</td>
+                            <td>Bacterial culture and appropriate systemic antibiotic or a course of oral isotretinoin</td>
+                        </tr>
+                        <tr>
+                            <td>Small papules</td>
+                            <td>Punch excision to a depth below the level of the hair follicles followed by either primary closure or second intention healing<br>Laser hair removal for permanent hair reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Plaques ≤1.5 cm in vertical diameter</td>
+                            <td>Excise and close primarily</td>
+                        </tr>
+                        <tr>
+                            <td>Larger plaques and nodules (>1.5 cm in vertical diameter)</td>
+                            <td>Excise with horizontal ellipse<br>Extend excision below posterior hairline and include fascia or deep subcutaneous tissue<br>Allow to heal by second intention<br><span class="negative-finding">Do not inject corticosteroids into postoperative site</span><br>Laser excision and cryosurgery are sometimes successful</td>
+                        </tr>
+                        <tr>
+                            <td>Postoperative care</td>
+                            <td>Topical imiquimod daily for 6 weeks (or every other day for 8 weeks if irritation)</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Tretinoin-corticosteroid gel mixture, intermittent intralesional corticosteroids and/or oral or topical antibiotics (when needed)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </section>
+
+            <section id="follicular-occlusion-tetrad" class="section-card">
+                <h2>Follicular Occlusion Tetrad</h2>
+                <div class="exam-focus">
+                    <span class="exam-focus-title">Know the Tetrad!</span>
+                    <p>This is a frequently tested association.</p>
+                </div>
+                <ul>
+                    <li>Acne conglobata</li>
+                    <li>Hidradenitis suppurativa</li>
+                    <li>Dissecting cellulitis of the scalp</li>
+                    <li>Pilonidal sinus</li>
+                </ul>
+                <p>Proposed unique pathologic event: <span class="highlight-key">Follicular hyperkeratinization</span>.</p>
+                        <section id="hs" class="section-card hs-section">
+                <h2>Hidradenitis Suppurativa (HS)</h2>
+                <h3>Introduction</h3>
+                <ul>
+                    <li>Cutaneous disorder targeting <span class="highlight-key">apocrine gland-bearing skin sites</span> (axillae, anogenital region primarily).</li>
+                    <li>Chronic condition: Recurrent "boils," draining sinus tracts, subsequent scarring.</li>
+                </ul>
+                <h3>Epidemiology</h3>
+                <ul>
+                    <li>Starts at or soon after puberty.</li>
+                    <li>Gender: <span class="highlight-key">Women affected 3x more often than men</span>.</li>
+                    <li>Race: <span class="highlight-key">Black > Whites</span>.</li>
+                </ul>
+                <h3>Pathogenesis</h3>
+                <div class="clinical-pearl">
+                    <span class="clinical-pearl-title">Shift in Understanding</span>
+                    <p>HS is now considered an inflammatory disorder originating from the <span class="highlight-key">hair follicle (infundibulum)</span>, not primarily the apocrine gland.</p>
+                </div>
+                <ul>
+                    <li>Initial event: <span class="highlight-key">Poral occlusion of pilosebaceous units</span> within intertriginous zones (axillary, anogenital, inframammary).</li>
+                    <li>Secondary inflammation of apocrine glands.</li>
+                    <li>Sequence: Occlusion → Inflammation → Follicle Rupture.</li>
+                    <li>Rupture releases contents (keratin, bacteria) into dermis → vigorous chemotactic response, sterile abscess formation.</li>
+                    <li>Epithelial strands (possibly from ruptured follicular epithelia) form sinus tracts.</li>
+                    <li>Androgens: Most patients have normal androgen profiles; apocrine glands (unlike sebaceous) are <span class="negative-finding">not androgen-sensitive</span>.</li>
+                    <li><strong>Exacerbating Factors:</strong> <span class="highlight-key">Smoking</span>, <span class="drug-highlight">lithium</span>.</li>
+                    <li><strong>Genetics:</strong> Familial form with AD inheritance.
+                        <ul>
+                            <li>Mutations in genes of <span class="highlight-key">γ-secretase complex</span>: <span class="highlight-key">NCSTN, PSEN1, PSENEN</span>.</li>
+                            <li>?Role for Notch cell signaling pathway.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Immune Dysregulation:</strong>
+                        <ul>
+                            <li>Overproduction of <span class="highlight-key">IL-1β</span> and <span class="highlight-key">TNF-α</span>.</li>
+                            <li>Increased serum IL-2 (correlates with disease activity).</li>
+                            <li>Increased expression of IL-12, IL-17, IL-23 within lesional skin.</li>
+                            <li>High copy numbers of beta-defensin cluster.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Clinical Features</h3>
+                <ul>
+                    <li><strong>Initial:</strong> Inflammatory nodules and sterile abscesses in axillae, groin, perianal, and/or inframammary areas. May be very tender and painful.</li>
+                    <li><strong>Over time:</strong> Sinus tracts (double-ended pseudocomedones), hypertrophic scars.</li>
+                    <li>Chronic drainage (serous exudate, blood, pus) → frustration, embarrassment, self-consciousness, depression (especially if malodorous).</li>
+                </ul>
+                <div class="exam-focus">
+                    <span class="exam-focus-title">Complications & Associations of HS - High Yield!</span>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <h3>Disorders Associated with Hidradenitis Suppurativa</h3>
+                <div class="hs-associated-disorders">
+                    <h4>Autoimmune/inflammatory disorders</h4>
+                    <ul>
+                        <li>Metabolic syndrome</li>
+                        <li>Crohn disease</li>
+                        <li>Ulcerative colitis</li>
+                        <li>SAPHO syndrome</li>
+                        <li>Pyoderma gangrenosum</li>
+                        <li>Behçet's disease</li>
+                        <li>Spondylarthropathy</li>
+                        <li>Acne conglobata alone or in the setting of the follicular occlusion triad*</li>
+                        <li>Psoriasis</li>
+                        <li>PAPASH syndrome</li>
+                        <li>PASH syndrome</li>
+                    </ul>
+                    <h4>Genetic disorders</h4>
+                    <ul>
+                        <li>Pachyonychia congenita</li>
+                        <li>Dowling-Degos disease</li>
+                        <li>KID syndrome</li>
+                        <li>Down syndrome</li>
+                    </ul>
+                    <h4>Mental health conditions</h4>
+                    <ul>
+                        <li>Depression</li>
+                        <li>Anxiety</li>
+                    </ul>
+                    <h4>Cardiovascular and metabolic disorders</h4>
+                    <ul>
+                        <li>Metabolic syndrome</li>
+                        <li>Myocardial infarction</li>
+                        <li>Cerebrovascular accident</li>
+                        <li>Type 2 diabetes</li>
+                    </ul>
+                    <h4>Other</h4>
+                    <ul>
+                        <li>Anemia</li>
+                        <li>Polycystic ovary syndrome</li>
+                        <li>Cutaneous squamous cell carcinoma (perianal in longstanding disease)</li>
+                    </ul>
+                </div>
+                <h3 class="histology-list">Pathology</h3>
+                <ul>
+                    <li>Heavy mixed inflammatory cell infiltrate in lower dermis, often extending into subcutis.</li>
+                    <li>Abscesses in active cases, may connect to skin via sinus tract.</li>
+                    <li>Sinus tracts contain inflammatory cells and keratinous debris.</li>
+                    <li>Granulation tissue with inflammatory and occasional foreign body giant cells (up to 25% of biopsies).</li>
+                    <li>Chronic disease: Extensive fibrosis, destruction of pilosebaceous follicles and sweat glands.</li>
+                </ul>
+                <h3>Differential Diagnosis</h3>
+                <ul>
+                    <li class="ddx-item">Furunculosis</li>
+                    <li class="ddx-item">Crohn disease (especially perianal)</li>
+                    <li class="ddx-item">Granuloma inguinale</li>
+                    <li class="ddx-item">Mycetoma</li>
+                    <li class="ddx-item">Tuberculosis (e.g., scrofuloderma)</li>
+                </ul>
+
+                <h3>Hidradenitis Suppurativa - Grading Systems and Therapeutic Ladder</h3>
+                <p class="fig-ref">(Based on Table 38.7)</p>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Hurley Staging System</h4>
+                        <ul>
+                            <li><strong>Stage I:</strong> One or more abscesses with <span class="negative-finding">NO sinus tract or scar formation</span>.</li>
+                            <li><strong>Stage II:</strong> One or more widely separated recurrent abscesses, with <span class="positive-finding">sinus tract and scar formation</span>.</li>
+                            <li><strong>Stage III:</strong> Multiple interconnected sinus tracts and abscesses throughout an affected region; <span class="positive-finding">more extensive scarring</span>.</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>Sartorius Grading System (Example Elements)</h4>
+                        <ul>
+                            <li>Anatomical regions involved (axilla, groin, gluteal, other): 3 points/region.</li>
+                            <li>Number and scores of lesions: Nodules=1, Abscesses=2 (Revuz modification), Fistulae=4 (Revuz modification, original was 6).</li>
+                            <li>Longest distance between two relevant lesions in each region (<5cm=2, 5-10cm=4, >10cm=8 - Revuz).</li>
+                            <li>Are all lesions clearly separated by normal skin? Yes=0 / No (Hurley III like)=6 (Revuz).</li>
+                            <li class="key-point">Note: Original text Sartorius details differ slightly from common/Revuz versions. Focus on Hurley for general staging. Sartorius and HiSCR are more for clinical trials/detailed assessment.</li>
+                        </ul>
+                        <p><strong>Other Grading Systems:</strong> HiSCR (Hidradenitis Suppurativa Clinical Response), Physician's Global Assessment Scale, refined Hurley (I & II subdivided into A,B,C).</p>
+                    </div>
+                </div>
+
+                <h4>Therapeutic Ladder</h4>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Indication / Stage</th>
+                            <th>Therapeutic Interventions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>General Measures</strong> (All Stages)</td>
+                            <td>
+                                • If obese/overweight: Weight reduction.<br>
+                                • Reduce friction/moisture: Loose undergarments, absorbent powders, topical aluminum chloride.<br>
+                                • Antiseptic soaps.<br>
+                                • <span class="highlight-key">Smoking cessation.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hurley Stage I</strong></td>
+                            <td>
+                                • Intralesional <span class="drug-highlight">triamcinolone</span> (5 mg/ml) into early inflammatory lesions.<br>
+                                • Topical <span class="drug-highlight">clindamycin</span>.<br>
+                                • Eradication of S. aureus carriage (topical <span class="drug-highlight">mupirocin</span> in nose, axillae, umbilicus, perianal).<br>
+                                • Oral antibiotics (tailored to cultures from pustular discharge/abscess).<br>
+                                • Oral antibiotic therapy (anti-inflammatory effect):
+                                    <ul>
+                                        <li><span class="drug-highlight">Rifampin + Clindamycin</span> (combination is key)</li>
+                                        <li>Tetracycline, Doxycycline, Minocycline</li>
+                                        <li>Dapsone</li>
+                                        <li>Trimethoprim-sulfamethoxazole</li>
+                                    </ul>
+                                • Oral anti-androgen therapy (e.g., <span class="drug-highlight">finasteride</span>, spironolactone).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hurley Stage II</strong> <span class="fig-ref">(Fig. 38.15A)</span></td>
+                            <td>
+                                • Oral antibiotic therapy (see Stage I).<br>
+                                • <span class="drug-highlight">Acitretin</span>.<br>
+                                • Systemic immunosuppressive agents:
+                                    <ul>
+                                        <li><span class="drug-highlight">Adalimumab</span> (FDA-approved: 160mg Day 1 or 80mg Day 1&2, then 80mg Day 15, then 40mg Day 29 and weekly thereafter)</li>
+                                        <li><span class="drug-highlight">Infliximab</span></li>
+                                        <li><span class="drug-highlight">Cyclosporine</span></li>
+                                    </ul>
+                                • <strong>Surgical treatments:</strong>
+                                    <ul>
+                                        <li>Limited local excisions with second intention healing.</li>
+                                        <li>CO2 laser ablation with second intention healing.</li>
+                                        <li>Nd:YAG laser treatments (at least 3-4 monthly sessions).</li>
+                                        <li><span class="negative-finding">Incision and drainage is discouraged</span> (high recurrence rate)†.</li>
+                                    </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hurley Stage III</strong> <span class="fig-ref">(Fig. 38.15B)</span></td>
+                            <td>
+                                • Medical treatments outlined for Stages I and II.<br>
+                                • <strong>Surgical treatments†:</strong>
+                                    <ul>
+                                        <li><span class="highlight-key">Early wide surgical excision</span> of involved areas.</li>
+                                        <li>CO2 laser ablation with second intention healing.</li>
+                                    </ul>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><strong>Additional Therapies (Reported Helpful)</strong></td>
+                            <td>
+                                • <span class="drug-highlight">Anakinra</span> (IL-1 receptor antagonist)<br>
+                                • <span class="drug-highlight">Ustekinumab</span> (IL-12/23 inhibitor)<br>
+                                • <span class="drug-highlight">Metformin</span><br>
+                                • Zinc gluconate<br>
+                                • Topical resorcinol<br>
+                                • Botulinum toxin A<br>
+                                • Photodynamic therapy<br>
+                                • Cryotherapy
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Intralesional Corticosteroid (ILK) Injection Technique</strong></td>
+                            <td>
+                                • Inflammatory nodules: Inject directly inside lesion.<br>
+                                • Abscesses: Inject beneath base of lesion in area of panniculitis.<br>
+                                • Fistulous tracts: One or more injections along base of tract.
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="2"><em>†Incision and drainage is discouraged given high rate of recurrence. Wide excision is preferred for advanced disease.</em></td></tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section id="other-follicular" class="section-card">
+                <h2>Other Follicular Disorders</h2>
+                <h3>Trichostasis Spinulosa</h3>
+                <ul>
+                    <li><strong>Description:</strong> Common, often underdiagnosed, unknown etiology.</li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Asymptomatic <span class="positive-finding">comedo-like lesions</span> containing keratin and <span class="highlight-key">multiple vellus hairs</span>.</li>
+                            <li>Location: Primarily <span class="highlight-key">nose</span>, also trunk (esp. interscapular region).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dermoscopy:</strong> <span class="positive-finding">Multiple vellus hairs emerge from common follicular opening</span>.</li>
+                    <li class="histology-list"><strong>Histology:</strong> Follicular hyperkeratosis, multiple vellus hairs enveloped by a keratotic sheath within a dilated hair follicle.</li>
+                    <li><strong>Treatment (for cosmetic appearance, options limited):</strong> Keratolytics, depilatories, topical <span class="drug-highlight">tretinoin</span>, lasers.</li>
+                </ul>
+
+                <h3>Viral-Associated Trichodysplasia</h3>
+                <ul>
+                    <li><strong>History:</strong> First described 1995 in organ transplant recipients (original association with <span class="drug-highlight">cyclosporine</span> due to drug-induced immunosuppression).</li>
+                    <li><strong>Etiology:</strong> <span class="pathogen-highlight">Trichodysplasia spinulosa-associated polyomavirus (TSPyV)</span>.</li>
+                    <li><strong>Clinical Features:</strong>
+                        <ul class="symptom-list">
+                            <li>Skin-colored to pink follicular papules and <span class="positive-finding">follicular spines</span>.</li>
+                            <li>Location: Favors <span class="highlight-key">central face</span>.</li>
+                            <li>May be accompanied by <span class="positive-finding">loss of eyebrows and eyelashes</span>.</li>
+                            <li>Extrafacial lesions with associated alopecia may also develop.</li>
+                        </ul>
+                    </li>
+                    <li class="histology-list"><strong>Histology:</strong> Enlarged and distended anagen-type follicles with high number of inner root sheath cells containing <span class="positive-finding">excessive amounts of trichohyaline granules</span>.</li>
+                    <li><strong>Diagnosis:</strong> Spicules identified by surface microscopy or light microscopy (spicule pull-test).</li>
+                    <li><strong>Treatment:</strong>
+                        <ul class="treatment-list">
+                            <li>If immunosuppressive therapy cannot be reduced:
+                                <ul>
+                                    <li>Topical <span class="drug-highlight">cidofovir</span> or <span class="drug-highlight">tazarotene gel</span>.</li>
+                                    <li>Oral <span class="drug-highlight">valganciclovir</span> (900 mg once or twice daily).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+        <footer>
+            <p>End of Chapter 38 Summary: Folliculitis and Other Follicular Disorders. Review regularly for maximum retention!</p>
+        </footer>
+    </div>
+</body>
+</html>

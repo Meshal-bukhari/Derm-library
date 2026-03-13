@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurocutaneous Disorders - Saudi Dermatology Board Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            padding: 25px;
+            display: block;
+        }
+
+        .section-content.hidden {
+            display: none;
+        }
+
+        .high-yield {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(255,107,107,0.3);
+        }
+
+        .key-fact {
+            background: linear-gradient(135deg, #26de81 0%, #20bf6b 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 4px solid #0abde3;
+        }
+
+        .diagnostic-criteria {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border: 2px solid #48cae4;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .criteria-list {
+            list-style: none;
+            counter-reset: criteria-counter;
+        }
+
+        .criteria-list li {
+            counter-increment: criteria-counter;
+            margin: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .criteria-list li::before {
+            content: counter(criteria-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ff6b6b;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .percentage {
+            background: #ffd93d;
+            color: #2c3e50;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .gene-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .clinical-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .clinical-table th {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .clinical-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .clinical-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .clinical-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .age-timeline {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .timeline-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 6px;
+            border-left: 3px solid #ff6b6b;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border: 2px solid #ff6b6b;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .classification-item {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .mechanism-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px dashed #48cae4;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .exam-tip {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #ffd89b;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #3498db;
+        }
+
+        .management-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .referral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .referral-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .clinical-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Neurocutaneous Disorders</h1>
+            <div class="subtitle">Saudi Dermatology Board Review - Part 4: Genodermatoses</div>
+            <div style="margin-top: 10px; font-size: 0.9em;">Abdullah Nasser Al-Omair | July 2022</div>
+        </div>
+
+        <!-- NEUROFIBROMATOSIS SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🧬 NEUROFIBROMATOSIS TYPE 1 (NF1)</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="high-yield">
+                    🎯 HIGH-YIELD BOARD FACT: NF1 has complete penetrance with 8 different types
+                </div>
+
+                <div class="key-fact">
+                    <strong>Genetics & Inheritance:</strong>
+                    <div class="gene-info">
+                        <div>• <span class="percentage">50%</span> sporadic mutation</div>
+                        <div>• <span class="percentage">50%</span> Autosomal dominant mutation (from the mother more severe)</div>
+                        <div>• <strong>Chromosome 17 q11.2</strong> (long arm) encodes neurofibromin (tumor suppressor protein)</div>
+                        <div>• NF negative regulates RAS pathway</div>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h4>🔬 Pathophysiology:</h4>
+                    <p>Malignant transformation of neurofibroma secondary to second mutation, most commonly in p53</p>
+                    <p><strong>RAS activates:</strong> stem cell factor (SCF)/c-kit signaling, mammalian (mechanistic) target of rapamycin (mTOR), and mitogen-activated protein kinase (MAPK) pathways</p>
+                </div>
+
+                <div class="diagnostic-criteria">
+                    <h3>📋 DIAGNOSTIC CRITERIA FOR NF1</h3>
+                    
+                    <h4>A. For individuals WITHOUT a parent diagnosed with NF1 (need 2 or more):</h4>
+                    <ul class="criteria-list">
+                        <li><strong>6 or more café-au-lait macules</strong> over 5 mm in greatest diameter in prepubertal individuals and over 15 mm in greatest diameter in postpubertal individuals</li>
+                        <li><strong>Freckling</strong> in the axillary or inguinal region</li>
+                        <li><strong>2 or more neurofibromas</strong> of any type or 1 plexiform neurofibroma</li>
+                        <li><strong>Optic pathway glioma</strong></li>
+                        <li><strong>2 or more iris Lisch nodules</strong> identified by slit lamp examination or 2 or more choroidal abnormalities (CAs) – defined as bright, patchy nodules imaged by optical coherence tomography (OCT)/near-infrared reflectance (NIR) imaging</li>
+                        <li><strong>A distinctive osseous lesion</strong> such as sphenoid dysplasia, anterolateral bowing of the tibia, or pseudarthrosis of a long bone</li>
+                        <li><strong>A heterozygous pathogenic neurofibromin 1 (NF1) variant</strong> with a variant allele fraction of 50% in apparently normal tissue such as white blood cells</li>
+                    </ul>
+
+                    <h4>B. Child of affected parent (need 1 or more):</h4>
+                    <p>A child of a parent who meets the diagnostic criteria specified in A merits a diagnosis of NF1 if 1 or more of the criteria in A are present</p>
+                </div>
+
+                <div class="classification-grid">
+                    <h3 style="grid-column: 1/-1; text-align: center; margin-bottom: 20px;">RICCARDI'S CLASSIFICATION OF NEUROFIBROMATOSIS</h3>
+                    
+                    <div class="classification-item">
+                        <strong>NF1</strong><br>von Recklinghausen disease
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF2</strong><br>Acoustic schwannoma
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF3*</strong><br>Mixed (central and peripheral neurofibromas)
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF4*</strong><br>Variant
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF5*,†</strong><br>Segmental café-au-lait macules, neurofibromas, or both, affecting one or more dermatomes
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF6*,‡</strong><br>Café-au-lait macules only
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF7*</strong><br>Late onset
+                    </div>
+                    <div class="classification-item">
+                        <strong>NF-NOS</strong><br>Not otherwise specified
+                    </div>
+                </div>
+
+                <div class="exam-tip">
+                    <strong>🎯 BOARD TIP:</strong> *Primarily of historical/conceptual interest. †Now referred to as mosaic (segmental) NF1. ‡Includes Legius (NF1-like) syndrome.
+                </div>
+
+                <div class="mechanism-box">
+                    <h3>🔬 ROLE OF THE TUMOR MICROENVIRONMENT IN NEUROFIBROMA FORMATION</h3>
+                    <p>NF1 nullizygous (NF1-/-) Schwann cells oversecrete stem cell factor (SCF), which binds the Kit receptor on NF1 heterozygous (NF1+/-) mast cells. This leads to mast cell recruitment and their activation to produce growth factors that stimulate neurofibroma development. Inhibition of KIT signaling by imatinib mesylate can block neurofibroma formation and progression.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CUTANEOUS FEATURES SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🎨 CUTANEOUS FEATURES OF NF1</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Neurofibromas</h4>
+                        <div class="percentage">60-90%</div>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Café-au-lait macules</h4>
+                        <div class="percentage">>90%</div>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Axillary/inguinal freckling</h4>
+                        <div class="percentage">~80%</div>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Plexiform neurofibroma</h4>
+                        <div class="percentage">25%</div>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Nevus anemicus</h4>
+                        <div class="percentage">30-50%</div>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Juvenile xanthogranuloma</h4>
+                        <div class="percentage">15-35% in first 3 years</div>
+                    </div>
+                </div>
+
+                <div class="age-timeline">
+                    <h3>⏰ AGE-BASED DEVELOPMENT TIMELINE</h3>
+                    
+                    <div class="timeline-item">
+                        <strong>Birth/First Year:</strong>
+                        <ul>
+                            <li><strong>CALMs:</strong> Most common cutaneous lesion and 2nd to be visible after plexiform NF (not in scalp/palm and soles) - tend to fade later in life</li>
+                            <li><strong>Origin:</strong> Birth or first year of life, noticeable during the first year of life, <span class="percentage">97% visible at 6 years of age</span></li>
+                            <li><strong>Criteria:</strong> 6 lesions size 5mm before puberty, and 1.5 cm after puberty</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>4-6 Years:</strong>
+                        <ul>
+                            <li><strong>Freckling:</strong> 1-2 mm pigmented macule on fold area (axilla most common, groin, neck) - Crowe's sign</li>
+                            <li><strong>Origin:</strong> Start at 4-6 years, <span class="percentage">80% visible at 6 years of age</span></li>
+                            <li><strong>Criteria:</strong> Bilateral involvement</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Around Puberty:</strong>
+                        <ul>
+                            <li><strong>Neurofibroma:</strong> Plexiform neurofibroma first cutaneous lesion to develop at birth in <span class="percentage">25% of all patients</span> (become apparent 4-5 years)</li>
+                            <li><strong>Origin:</strong> Become apparent at 4-6 years, clinically visible around puberty, plexiform neurofibroma (congenital origin)</li>
+                            <li><strong>Criteria:</strong> 2 neurofibromas or 1 plexiform neurofibroma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    ⚠️ BOARD ALERT: NF: 200- to 500-fold greater risk of developing JML (incidence 1/2000–1/5000), 20 more-fold if they present with JXG
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NEUROFIBROMA TYPES SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🔬 NEUROFIBROMA TYPES & CHARACTERISTICS</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="key-fact">
+                    <strong>Definition:</strong> Benign proliferation of Schwann cells + other nerve components (fibroblasts, perineurial cells, intermediate cells, and axons)
+                </div>
+
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Frequency</th>
+                            <th>Characteristics</th>
+                            <th>Complications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cutaneous</strong></td>
+                            <td><span class="percentage">60-80%</span></td>
+                            <td>Solitary, slow-growing skin-colored to pink papule with soft or rubbery feel ± pedunculated, <strong>buttonhole sign:</strong> (invagination with compression by finger)</td>
+                            <td>Cosmetic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subcutaneous</strong></td>
+                            <td><span class="percentage">20%</span></td>
+                            <td>Arise from dorsal root ganglia, grow through neural foramina, compress spinal cord creating a "dumbbell" appearance. If arise in the neck may feel like a "beaded necklace" & confused with lymph node.</td>
+                            <td>Spinal cord compression</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blue-red macules</strong></td>
+                            <td>Variable</td>
+                            <td>Due to thick-walled blood vessels as well as neurofibromatous tissue in the papillary dermis</td>
+                            <td>Cosmetic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pseudo-atrophic macules</strong></td>
+                            <td>Variable</td>
+                            <td>Due to replacement of collagen in the reticular dermis with NF tissue</td>
+                            <td>Cosmetic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plexiform neurofibromas ("bag of worms")</strong></td>
+                            <td><span class="percentage">25%</span></td>
+                            <td><strong>Pathognomonic for NF1</strong> - two types: cutaneous or visceral</td>
+                            <td>Risk of malignant nerve sheath tumor <span class="percentage">3-15%</span> and risk of local compression (neurological defect, blindness)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning">
+                    🚨 PLEXIFORM NEUROFIBROMA MONITORING: Look for rise in growth, pain, neurological finding → do CT. Visceral cause compression (bowel, spinal cord..)
+                </div>
+
+                <div class="key-fact">
+                    <strong>Immunohistochemical stain:</strong> S100+ and neurofilaments<br>
+                    <strong>Histopathology:</strong> Cutaneous neurofibroma proliferation in dermis consisting of spindle cells with wavy nuclei, pale 'bubblegum' stroma or fibromyxoid stroma, and mast cells
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EXTRACUTANEOUS INVOLVEMENT SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🏥 EXTRACUTANEOUS INVOLVEMENT IN NF1</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="feature-grid">
+                    <div class="feature-card" style="border-top-color: #e74c3c;">
+                        <h4>1. OCULAR</h4>
+                        <div><strong>Lisch nodules:</strong> asymptomatic tan-colored hamartomas of the iris</div>
+                        <div><strong>Origin:</strong> start at 3 years, <span class="percentage">90% visible at 20 years</span></div>
+                        <div><strong>Criteria:</strong> Two lesions or two other choroidal abnormality</div>
+                        <br>
+                        <div><strong>Optic glioma:</strong></div>
+                        <div><strong>Origin:</strong> <span class="percentage">15%</span> (<span class="percentage">40% risk of precocious puberty</span>) - first 6 years of life</div>
+                        <div><strong>Criteria:</strong> Major</div>
+                        <div>papilledema, strabismus, or defects in color vision</div>
+                        <br>
+                        <div><strong>Other:</strong> Hypertelorism, glaucoma</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #9b59b6;">
+                        <h4>2. CNS</h4>
+                        <div>• Unidentified bright objects (UBOs) <span class="percentage">60%</span></div>
+                        <div>• Seizure <span class="percentage">5%</span></div>
+                        <div>• Microcephaly</div>
+                        <div>• Low IQ (10-5 point less)</div>
+                        <div>• CNS tumor: particularly low-grade astrocytomas, brainstem gliomas, and high-grade gliomas</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #e67e22;">
+                        <h4>3. CVS</h4>
+                        <div>HTN (mainly essential, but can be from pheochromocytoma or renal vascular stenosis)</div>
+                        <div>Pulmonary stenosis (Watson syndrome)</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #1abc9c;">
+                        <h4>4. VASCULOPATHY</h4>
+                        <div>stroke, claudication</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #f39c12;">
+                        <h4>5. SKELETAL</h4>
+                        <div><strong>Sphenoid wing dysplasia:</strong> first extracutaneous lesion to develop (may present as pulsating exophthalmos)</div>
+                        <div>Scoliosis, bony overgrowth or deformity, risk of fracture, bony overgrowth, thinning of the long bone, absent patella</div>
+                        <div><strong>Criteria:</strong> distinctive osseous lesion</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #2ecc71;">
+                        <h4>6. ENDOCRINE</h4>
+                        <div>Signs of Precocious puberty (if with Optic glioma)</div>
+                    </div>
+                </div>
+
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="text-align: center; font-size: 1.2em;">DETAILED EXTRACUTANEOUS MANIFESTATIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #e8f5e8;">
+                            <td><strong>OCULAR</strong></td>
+                            <td>
+                                • Lisch nodules (<span class="percentage">~90% by 20 years of age</span>)<br>
+                                • Choroidal nodules (<span class="percentage">>80% of adults</span>)<br>
+                                • Neovascular glaucoma, retinal vasoproliferative tumors
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td rowspan="4"><strong>SKELETAL</strong></td>
+                            <td><strong>Cranial</strong></td>
+                            <td>
+                                • Macrocephaly (<span class="percentage">20-50%</span>)<br>
+                                • Hypertelorism (<span class="percentage">25%</span>)<br>
+                                • Sphenoid wing dysplasia (<span class="percentage"><5%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>Spinal</strong></td>
+                            <td>
+                                • Scoliosis (<span class="percentage">5-10%</span>)<br>
+                                • Spina bifida
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>Limbs</strong></td>
+                            <td>
+                                • Dysplasia of long bone cortex (<span class="percentage">5%</span>), pseudarthrosis (<span class="percentage">2%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>Other</strong></td>
+                            <td>
+                                • Generalized osteopenia (<span class="percentage">~50%</span>), osteoporosis (<span class="percentage">~20%</span>)<br>
+                                • Short stature (<span class="percentage">~30% <3rd percentile</span>)<br>
+                                • Pectus deformity (<span class="percentage">30-50%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #ffebee;">
+                            <td><strong>TUMORS</strong></td>
+                            <td colspan="2">
+                                • Optic glioma (<span class="percentage">10-15%</span>) (with or without precocious puberty)<br>
+                                • Malignant peripheral nerve sheath tumors (<span class="percentage">3-15%</span>)<br>
+                                • Pheochromocytoma (<span class="percentage">~1%</span>)<br>
+                                • Juvenile myelomonocytic leukemia<br>
+                                • CNS tumors other than optic gliomas (<span class="percentage">~5%</span>)<br>
+                                • Rhabdomyosarcoma, especially of the genitourinary tract<br>
+                                • Duodenal carcinoid<br>
+                                • Somatostatinoma Wilms tumor<br>
+                                • Parathyroid adenoma<br>
+                                • Gastrointestinal stromal tumors (GIST)<br>
+                                • Breast cancer (<span class="percentage">~5-fold increased risk in women <50 years of age</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #e3f2fd;">
+                            <td><strong>NEUROLOGIC</strong></td>
+                            <td colspan="2">
+                                • Unidentified bright objects (UBO) on MRI (<span class="percentage">50-75%</span>)<br>
+                                • Learning difficulties (<span class="percentage">30–50%</span>)<br>
+                                • Seizures (<span class="percentage">~5%</span>)<br>
+                                • Intellectual impairment (severe in <span class="percentage"><5%</span>)<br>
+                                • Aqueductal stenosis and hydrocephalus (<span class="percentage">~2%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #f3e5f5;">
+                            <td><strong>CARDIOVASCULAR</strong></td>
+                            <td colspan="2">
+                                • Hypertension (<span class="percentage">~30%</span>): essential > renal artery stenosis or pheochromocytoma<br>
+                                • Pulmonic stenosis (<span class="percentage">~1%</span>)<br>
+                                • Renal artery stenosis (<span class="percentage">~2%</span>)<br>
+                                • Cerebrovascular anomalies (<span class="percentage">2-5%</span>), including vascular stenoses and aneurysms
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <!-- MANAGEMENT APPROACH SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">📋 NF1 MANAGEMENT APPROACH</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="management-section">
+                    <h3>🏥 FIRST VISIT PROTOCOL</h3>
+                    
+                    <h4>1. EXAMINATION:</h4>
+                    <div class="referral-grid">
+                        <div class="referral-item">Dermatological (cutaneous and nail)</div>
+                        <div class="referral-item">Orthopedic signs</div>
+                        <div class="referral-item">Vital signs</div>
+                        <div class="referral-item">Growth chart</div>
+                        <div class="referral-item">Head circumference</div>
+                        <div class="referral-item">Blood pressure</div>
+                    </div>
+
+                    <h4>2. INVESTIGATION:</h4>
+                    <ul>
+                        <li><strong>Biopsy:</strong> if the diagnosis isn't clear, and for malignant peripheral sheath tumor</li>
+                        <li><strong>Basic labs</strong></li>
+                        <li><strong>FSH and LH</strong></li>
+                        <li><strong>Genetic testing</strong></li>
+                        <li><strong>24 hours collection free catecholamines</strong></li>
+                    </ul>
+
+                    <h4>3. IMAGING:</h4>
+                    <div class="warning">No need apart if there are local signs. Routine for optic/CNS/spinal cord/internal for plexiform neurofibroma (not recommended)</div>
+
+                    <h4>4. TREATMENT:</h4>
+                    <ul>
+                        <li><strong>Educational discussion:</strong> The natural history of the condition, possible medical complication & Neurodevelopmental sequelae, psychosocial considerations, and genetic counseling should also be provided</li>
+                        <li><strong>Family counseling:</strong> examination for first degree relative for dermatological sign, Lisch iris nodule and genetic testing</li>
+                    </ul>
+
+                    <h4>6. REFERRALS:</h4>
+                    <div style="margin: 15px 0;">
+                        <strong>MUST:</strong>
+                        <div class="referral-grid">
+                            <div class="referral-item">Ophthalmology</div>
+                            <div class="referral-item">Neurology</div>
+                            <div class="referral-item">Orthopedic</div>
+                            <div class="referral-item">Pediatric</div>
+                            <div class="referral-item">Genetics</div>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>BASED ON CONDITION:</strong>
+                        <div class="referral-grid">
+                            <div class="referral-item">Cardiology</div>
+                            <div class="referral-item">Endocrine</div>
+                            <div class="referral-item">HematoOncology</div>
+                            <div class="referral-item">Psychiatry</div>
+                            <div class="referral-item">Maxillofacial surgery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-fact">
+                    <h3>💊 CUTANEOUS TREATMENT</h3>
+                    
+                    <h4>NEUROFIBROMA:</h4>
+                    <ul>
+                        <li>Removal only for cosmetics or complications (compression effect)</li>
+                        <li><strong>Single</strong> → surgical, <strong>Multiple</strong> → CO₂ laser</li>
+                        <li><strong>Itching:</strong> antihistamine (ketotifen) for symptomatic relief</li>
+                    </ul>
+
+                    <h4>PLEXIFORM NEUROFIBROMA:</h4>
+                    <ul>
+                        <li>✅ Imatinib, sirolimus, PEG interferon-α-2b; and photodynamic therapy are under investigations</li>
+                        <li>✅ Avoid surgical → high recurrence</li>
+                        <li>✅ <strong>Selumetinib MEK1/2 inhibitor</strong> new treatment FDA approved 25mg BID (GI side effect, and increase CPK) → risk of rhabdomyolysis</li>
+                        <li>✅ <strong>Surveillance for malignant peripheral sheath tumor:</strong> Look for rise in growth, pain, neurological finding → do CT</li>
+                    </ul>
+
+                    <h4>CALM:</h4>
+                    <ul>
+                        <li>Laser partially effective and recurrence is high. Nd:YAG, ruby, or pulsed dye laser</li>
+                        <li><strong>Simple surgical excision is the treatment of choice</strong></li>
+                    </ul>
+
+                    <h4>✅ FOLLOW UP:</h4>
+                    <ul>
+                        <li>✅ Annual eye exam. Biannul if less than 8 years</li>
+                        <li>✅ Annual exam for orthopedic signs</li>
+                        <li>✅ BP in each visit</li>
+                        <li>✅ Growth chart</li>
+                    </ul>
+                </div>
+
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="text-align: center; font-size: 1.2em;">EVALUATION AND MANAGEMENT OF NF1 PATIENTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #e8f5e8;">
+                            <td style="width: 50%;"><strong>At time of diagnosis and annually during childhood and adolescence (unless otherwise indicated)</strong></td>
+                            <td>
+                                <strong>Dermatologic examination</strong> (especially if a plexiform neurofibroma [PNF] is present)<br>
+                                • Surgical consultation if painful or disfiguring neurofibromas<br>
+                                • PET-CT if rapid growth, increased firmness, or persistent pain within an established PNF or the development of a new neurologic deficit*<br><br>
+                                
+                                <strong>Ophthalmologic examination</strong> with visual assessment (prior to age 8 years)<br>
+                                • Orbital/brain MRI if signs/symptoms of optic glioma<br><br>
+                                
+                                <strong>Evaluation for scoliosis and tibial bowing</strong><br>
+                                • Referral to orthopedics if scoliosis develops<br><br>
+                                
+                                <strong>Neurologic examination, developmental/behavioral evaluation</strong>, and (in young children) measurement of head circumference<br>
+                                • Orbital/brain and/or spinal MRI if neurologic signs/symptoms develop† EEG if there sign of seizure<br>
+                                • Comprehensive developmental assessment prior to starting school and if problems arise<br><br>
+                                
+                                <strong>Cardiac assessment and measurement of blood pressure</strong><br>
+                                • Referral to cardiology if murmur is detected<br>
+                                • Renal arteriography and 24-hour urine collection for catecholamines and metanephrines if hypertension develops<br><br>
+                                
+                                <strong>Assessment for pubertal development</strong><br>
+                                • Orbital/brain MRI and referral to endocrinology if precocious puberty develops
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>Minimum annual evaluation for adults with uncomplicated disease</strong></td>
+                            <td>
+                                <strong>Dermatologic evaluation</strong> if PNF is present<br>
+                                • PET-CT for indications described above<br><br>
+                                
+                                <strong>Neurologic examination</strong> (especially if a PNF is present)<br>
+                                • MRI and/or other studies as indicated if neurologic signs/symptoms develop<br><br>
+                                
+                                <strong>Measurement of blood pressure</strong><br>
+                                • Evaluation as described above if hypertension develops<br><br>
+                                
+                                <strong>Screening for breast cancer</strong> with clinical examination + mammography MRI (beginning at age 30 years) MCQ<br>
+                                In women, screening for breast cancer with clinical examination + mammography + MRI (beginning by age 40 years)
+                            </td>
+                        </tr>
+                        <tr style="background: #f3e5f5;">
+                            <td><strong>Potentially affected family members</strong></td>
+                            <td>
+                                Dermatologic examination for cutaneous manifestations of NF1<br>
+                                Ophthalmologic examination for Lisch nodules<br>
+                                Consider genetic testing if a mutation has been identified in the proband
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning">
+                    *Immediate assessment is required for any of these findings.<br>
+                    †The role of neuroimaging in asymptomatic patients is controversial.
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CALM APPROACH FLOWCHART -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🌊 APPROACH TO YOUNG CHILD WITH ≥6 CAFÉ-AU-LAIT MACULES</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="diagnostic-criteria" style="background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%); color: white;">
+                    <h3 style="color: white; text-align: center;">📊 DIAGNOSTIC FLOWCHART</h3>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <div style="background: #ff6b6b; padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 15px;">
+                            <strong>START: Six or more café-au-lait macules (>5 mm)</strong>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 1:</strong> CALMs localized to ≥1 segment(s) of body?
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                            <div style="width: 45%; background: #26de81; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>YES → Mosaic NF1*</strong>
+                            </div>
+                            <div style="width: 45%; background: #3498db; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>NO → Continue to Step 2</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 2:</strong><br>
+                            • Sphenoid or tibial dysplasia?<br>
+                            • Plexiform neurofibroma?<br>
+                            • Intertriginous "freckling" (lentigines)?<br>
+                            • Lisch nodules? (assess via slit-lamp exam in patients >2 years of age)<br>
+                            • Optic gliomas? (use of neuroimaging in asymptomatic individuals is controversial)
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                            <div style="width: 45%; background: #26de81; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>YES → NF1*</strong>
+                            </div>
+                            <div style="width: 45%; background: #3498db; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>NO → Continue to Step 3</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 3:</strong> Consider genetic testing (>95% sensitive)
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                            <div style="width: 45%; background: #26de81; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>YES → NF1 mutation?</strong>
+                            </div>
+                            <div style="width: 45%; background: #3498db; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>NO → Continue to Step 4</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 4:</strong><br>
+                            • Annual physical examination<br>
+                            • Annual eye examination until age 20 years
+                        </div>
+                        
+                        <div style="text-align: center; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 5:</strong><br>
+                            • Emergence of intertriginous "freckling" (lentigines)?<br>
+                            • Neurofibromas?<br>
+                            • Lisch nodules? (generally develop by age 20 years)
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                            <div style="width: 45%; background: #26de81; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>YES → NF1*</strong>
+                            </div>
+                            <div style="width: 45%; background: #3498db; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>NO → Continue to Step 6</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                            <strong>Step 6:</strong> Signs of other conditions associated with multiple CALMs
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                            <div style="width: 45%; background: #e67e22; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>YES → Other disorders associated with CALM, including Legius syndrome</strong>
+                            </div>
+                            <div style="width: 45%; background: #95a5a6; padding: 10px; border-radius: 6px; text-align: center;">
+                                <strong>NO → Nondiagnostic CALMs</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-tip">
+                    🎯 <strong>BOARD NOTE:</strong> *Patients with Legius syndrome can also have six or more CALMs plus intertriginous freckling
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DISORDERS ASSOCIATED WITH MULTIPLE CALMS -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">📚 DISORDERS ASSOCIATED WITH MULTIPLE CAFÉ-AU-LAIT MACULES</button>
+            </div>
+            <div class="section-content">
+                
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Disorder</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #e8f5e8;">
+                            <td colspan="2" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; text-align: center; font-weight: bold;">NEUROFIBROMATOSIS AND RELATED DISORDERS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neurofibromatosis 1 (NF1)</strong></td>
+                            <td>AD; six or more CALMs in >90% of patients; mutations in NF1 gene; see text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neurofibromatosis 2</strong></td>
+                            <td>AD; six or more CALMs in minority of patients; mutations in NF2 gene; see Table 61.6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mosaic (segmental) NF1 (formerly neurofibromatosis 5)</strong></td>
+                            <td>Neurofibromas alone or CALMS + "freckling" in a block-like or other mosaic pattern; due to a postzygotic NF1 mutation, which may involve the gonads in some patients</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legius (NF1-like) syndrome</strong></td>
+                            <td>AD; six or more CALMs in >80% and intertriginous "freckling" in ~50% of patients; lack neurofibromas, Lisch nodules, optic gliomas, and typical osseous lesions of NF1; macrocephaly and learning disabilities are common; lipomas, hypopigmented macules, and vascular anomalies in minority; loss-of-function mutations in SPRED1 gene, the protein product of which inhibits MAPK signaling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Watson syndrome</strong></td>
+                            <td>AD; short stature; pulmonic stenosis; ID; may also have Lisch nodules, axillary/inguinal freckling, and neurofibromas; allelic with NF1; <span class="percentage">60/100*</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jaffe-Campanacci syndrome</strong></td>
+                            <td>Disseminated non-ossifying fibromas of long and jaw bones; hypogonadism or cryptorchidism; D; giant cell granulomas (jaws); usually due to NF1 mutation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Noonan syndrome</strong></td>
+                            <td>AD; short stature; pterygium colli; characteristic facies; cardiac defects, esp. pulmonic valve stenosis; skeletal and testicular abnormalities; keratosis pilaris atrophicans; lymphedema; melanocytic nevi; activating mutations in PTPN11 (allelic with LEOPARD syndrome) > SOS1, RAF1, RIT1 > KRAS, NRAS, MAP2K1, CBL, SHOC2 (with loose anagen hair), and rarely other genes; patients with an NF1-Noonan overlap phenotype have mutations in NF1 gene</td>
+                        </tr>
+                        
+                        <tr style="background: #fff3e0;">
+                            <td colspan="2" style="background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%); color: white; text-align: center; font-weight: bold;">OTHER GENETIC SYNDROMES</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cardio-facio-cutaneous syndrome</strong></td>
+                            <td>AD; short stature; characteristic facies; low-set ears; cardiac defects; ID; sparse curly hair; dry skin to generalized ichthyosiform eruption; activating mutations in MAPK pathway genes BRAF > MEK1, MEK2 > KRAS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constitutional mismatch repair deficiency syndrome</strong></td>
+                            <td>AR; multiple CALMs, axillary freckling, neurofibromas and/or CNS gliomas (features similar to NF1) as well as hypopigmented macules, hematologic malignancies, and colorectal carcinoma; patients have mutations in both copies of a DNA mismatch repair gene, e.g. MLH1, MSH2, MSH6, PMS2; hereditary non-polyposis colorectal cancer (HNPCC) syndrome can occur in heterozygotes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>McCune-Albright syndrome</strong></td>
+                            <td>Not inherited; presumably lethal unless in mosaic state; polyostotic fibrous dysplasia; hyperfunction of endocrine glands, esp. gonads (e.g. precocious puberty); CALMs usually appear during infancy and can overlie bony changes; CALMs classically end at midline, but so can larger CALMs of NF; CALMs may follow lines of Blaschko; activating mutations in the GNAS1 gene that encodes Gsα; <span class="percentage">35/100*</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuberous sclerosis complex (TSC)</strong></td>
+                            <td>AD; ID; seizures; hypopigmented macules; angiofibromas; fibrous plaques; mutations in TSC1 and TSC2 genes; see text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Westerhof syndrome</strong></td>
+                            <td>AD; congenital hypo- and hyperpigmented macules; ID; growth retardation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Piebaldism</strong></td>
+                            <td>AD; CALMs in involved as well as uninvolved skin; mutations in KIT proto-oncogene</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Familial progressive hyper- and hypopigmentation</strong></td>
+                            <td>AD; CALMs of variable sizes admixed and overlapping with lentigines and hypopigmented macules and patches; activating mutations in KITLG gene</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mukamel syndrome</strong></td>
+                            <td>AR; premature graying (infancy); lentigines; depigmented macules; ID; spastic paraparesis, microcephaly, scoliosis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Noonan syndrome with multiple lentigines (LEOPARD syndrome)</strong></td>
+                            <td>AD; darker "café noir" macules; Lentigines, ECG abnormalities, Ocular hypertelorism, Pulmonic stenosis, Abnormal genitalia, Retardation of growth, Deafness syndrome; mutations in PTPN11; <span class="percentage">38/100*</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carney complex (NAME and LAMB syndromes)</strong></td>
+                            <td>AD; darker "café-noir" macules, lentigines, blue nevi; cutaneous and atrial myxomas; endocrine neoplasia of adrenal glands, pituitary gland, and/or testes; mutations in PRKAR1A</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partial unilateral lentiginosis</strong></td>
+                            <td>Agminated lentigines; debatable if associated neurologic or psychiatric problems; unilateral axillary freckling and Lisch nodules have been described (such patients likely have mosaic NF1)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bannayan-Riley-Ruvalcaba syndrome‡</strong></td>
+                            <td>AD; penile lentigines; vascular malformations; lipomas; intestinal hamartomas; macrocephaly; mutations in PTEN gene; ≤10% of patients have CALMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cowden syndrome‡</strong></td>
+                            <td>AD; multiple tricholemmomas; cobblestoning of oral mucosa; palmoplantar keratoses; sclerotic fibromas, hamartomas and carcinoma of breast, thyroid, colon; mutations in PTEN gene; ≤10% of patients have CALMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gastrocutaneous syndrome‡</strong></td>
+                            <td>AD; multiple lentigines; peptic ulcer/hiatal hernia; hypertelorism; myopia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ataxia-telangiectasia</strong></td>
+                            <td>AR; telangiectasias of conjunctivae, head/neck, and acral sites; premature canities; cerebellar ataxia; abnormal DNA repair; lymphomas and leukemias; immunodeficiency; sinopulmonary infections; mutations in ATM gene; <span class="percentage">20/100*</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bloom syndrome</strong></td>
+                            <td>AR; telangiectatic erythema of face; photosensitivity; growth retardation; increased sister chromatid exchanges; malignancies; hypogonadism; mutations in BLM gene that encodes the RecQ protein-like-3 DNA helicase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fanconi anemia</strong></td>
+                            <td>AR; generalized hyperpigmentation, esp. flexural ± guttate "hypopigmented" macules; pancytopenia; skeletal malformations, e.g. aplasia radii; chromosomal fragility and malignancies, e.g. acute myelogenous leukemia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chromosomal anomalies/mosaicism</strong></td>
+                            <td>In particular, ring chromosomes (7, 11, 12, 15, 17); rearrangements of 7 and 14; ring 7 also associated with vascular lesions (hemangiomas and capillary malformations) and congenital melanocytic nevi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extensive epidermal and sebaceous nevi</strong></td>
+                            <td>Mosaic; "syndrome" includes seizures, ID, musculoskeletal and ocular abnormalities; hypophosphatemic vitamin D-resistant rickets; see Table 62.7 for genes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple endocrine neoplasia 1</strong></td>
+                            <td>AD; tumors of the pituitary, parathyroid, and pancreatic islet cells; multiple facial angiofibromas, collagenomas, gingival papules, confetti-like hypomelanotic macules, lipomas; MEN1 gene</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple endocrine neoplasia 2B</strong></td>
+                            <td>AD; mucosal neuromas; marfanoid habitus; medullary thyroid carcinoma; intestinal ganglioneuromatosis; pheochromocytoma; mutations in RET proto-oncogene</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Johnson-McMillin syndrome</strong></td>
+                            <td>Probable AD; alopecia; anosmia; deafness; hypogonadism; microtia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tricho-hepato-enteric syndrome</strong></td>
+                            <td>AR; CALM and lentigines on hips and legs; diffuse pigmentary dilution (skin & hair), woolly hair; dysmorphic facies with hypertelorism; intractable diarrhea, liver disease; immune deficiency; mutations in TTC37 or SKIV2L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tay syndrome§</strong></td>
+                            <td>?AR; growth retardation; ID; triangular face; cirrhosis; trident hands; premature canities; vitiligo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Russell-Silver syndrome</strong></td>
+                            <td>Growth retardation; triangular face; clinodactyly 5th finger; hemihypertrophy; epigenetic changes on chromosome 15p13 or maternal uniparental disomy of chromosome 7; <span class="percentage">45/100*</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="exam-tip">
+                    <strong>🎯 BOARD NOTES:</strong><br>
+                    *Estimates of prevalence of CALMs<br>
+                    †To date, observed in a single family<br>
+                    ‡Overlapping conditions collectively referred to as PTEN hamartoma tumor syndrome<br>
+                    §Single case reports of multiple CALMs in association with X-linked hypohidrotic ectodermal dysplasia, woolly hair, and osteoma cutis
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NEUROFIBROMATOSIS TYPE 2 SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🧠 NEUROFIBROMATOSIS TYPE 2 (NF2) - Bilateral Acoustic NF</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="gene-info">
+                    <strong>Genetics:</strong> Chromosome 22 q12.2 encodes merlin/schwannomin
+                </div>
+
+                <div class="diagnostic-criteria">
+                    <h3>📋 MANCHESTER CLINICAL DIAGNOSTIC CRITERIA FOR NF-2</h3>
+                    <p><strong>A patient has the clinical diagnosis of NF-2 if one of the following criteria is present:</strong></p>
+                    
+                    <ul class="criteria-list">
+                        <li><strong>A.</strong> Bilateral vestibular schwannomas</li>
+                        <li><strong>B.</strong> First degree family relative with NF-2 and unilateral vestibular schwannomas or any two: meningioma, schwannoma, glioma, neurofibroma, or posterior subcapsular lenticular opacities</li>
+                        <li><strong>C.</strong> Unilateral vestibular schwannoma and any two: meningioma, schwannoma, glioma, neurofibroma, or posterior subcapsular lenticular opacities</li>
+                        <li><strong>D.</strong> Multiple meningiomas (two or more) and unilateral vestibular schwannoma and any two: schwannoma, glioma, neurofibroma, cataract</li>
+                    </ul>
+
+                    <div class="exam-tip">
+                        🎯 <strong>BOARD NOTE:</strong> "Any two" refers to two individual tumors or cataract.
+                    </div>
+                </div>
+
+                <div class="key-fact">
+                    <h3>🔑 KEY FEATURES OF NEUROFIBROMATOSIS 2</h3>
+                    <ul>
+                        <li>• Autosomal dominant transmission; affects approximately <strong>1 in 40,000</strong> individuals</li>
+                        <li>• Approximately <strong>half of the cases</strong> are due to de novo mutations rather than inherited germline mutations (similar to NF1)</li>
+                        <li>• <strong>Bilateral vestibular schwannomas, meningiomas and spinal tumors</strong></li>
+                        <li>• <strong>Two-thirds</strong> of patients develop cutaneous schwannomas, and approximately <strong>50%</strong> develop café-au-lait macules (CALMs), but fewer in number compared to NF1*</li>
+                        <li>• <strong>No Lisch nodules or mental retardation/learning disabilities</strong></li>
+                        <li>• NF2 gene is located on chromosome 22q12 and encodes a cytoskeleton-associated protein of ~600 amino acids named <strong>merlin/neurofibromin 2</strong>, which is structurally related to the ERM (ezrin-radixin-moesin) protein family of membrane-cytoskeleton linkers</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    🎯 <strong>BOARD FACT:</strong> *In two large series of patients with NF2 (n = 161), only two individuals had more than five CALMs of the required size to meet NF1 criteria and over half of those with any CALMs had only one (41 of 72).
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LEGIUS SYNDROME SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🧬 LEGIUS SYNDROME (NF1-like Syndrome)</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="gene-info">
+                    <strong>Genetics:</strong> AD SPRED-1 mutation (suppression of RAS/MAP kinase) NF-like syndrome
+                </div>
+
+                <div class="key-fact">
+                    <h3>🔑 KEY FEATURES:</h3>
+                    <ul>
+                        <li>Symptoms similar except <strong>absence of tumor growth</strong> (no Lisch nodules, neurofibromas, CNS tumors)</li>
+                        <li><strong>Mainly CALM + freckling</strong></li>
+                    </ul>
+                </div>
+
+                <div class="mechanism-box">
+                    <h3>🔗 NF1 + NOONAN SYNDROME:</h3>
+                    <p>NF1 + Noonan syndrome: hypertelorism, ptosis, downslanted palpebral fissures, low set webbed neck, <span class="percentage">50% CVD</span></p>
+                    <p>Noonan mutation in PTPN4, some LEOPARD</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TUBEROUS SCLEROSIS SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🧩 TUBEROUS SCLEROSIS COMPLEX (TSC)</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="high-yield">
+                    🎯 HIGH-YIELD BOARD FACTS: TSC - Know the developmental timeline and mTOR pathway!
+                </div>
+
+                <div class="key-fact">
+                    <strong>Genetics & Inheritance:</strong>
+                    <div class="gene-info">
+                        <div>• <span class="percentage">75%</span> spontaneous mutation</div>
+                        <div>• Autosomal dominant mutation</div>
+                        <div>• <strong>Hamartin:</strong> chromosome 9 q34 (TSC1)</div>
+                        <div>• <strong>Tuberin:</strong> chromosome 16 p13 (TSC2) (most common and severe)</div>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h4>🔬 mTOR Pathway:</h4>
+                    <p><strong>Tuberin inhibits the cell growth and proliferation that result from mTOR signaling</strong></p>
+                    <p>TSC1 and TSC2 are located on chromosomes 9q34 and 16p13, respectively. The TSC1 product, hamartin, interacts with the TSC2 product, tuberin, and negatively regulates signaling by the small GTPases Rab and Rheb. Like Ras, the activity of Rab and Rheb is dependent upon bound GTP, and tuberin (like neurofibromin) accelerates hydrolysis of GTP to GDP in order to turn off Rab and Rheb. Rapamycin (sirolimus) and its analogs (e.g. everolimus) form a complex with the FK506-binding protein-12 (FKBP12), and together they bind to and inhibit mTOR.</p>
+                </div>
+
+                <div class="age-timeline">
+                    <h3>⏰ DEVELOPMENTAL TIMELINE (Board High-Yield)</h3>
+                    
+                    <div class="timeline-item">
+                        <strong>24-26 weeks (First to develop):</strong> Cardiac rhabdomyoma → resolve by 3 years
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <strong>Most common finding:</strong> Dental pits
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <strong>First cutaneous lesion (few months of life):</strong> Hypopigmentation
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <strong>Most common cause of death:</strong> Seizure
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <strong>2nd most common cause of death:</strong> Renal pathology
+                    </div>
+                </div>
+
+                <div class="diagnostic-criteria">
+                    <h3>📋 2012 REVISED DIAGNOSTIC CRITERIA FOR TSC</h3>
+                    
+                    <table class="clinical-table">
+                        <thead>
+                            <tr>
+                                <th style="background: #e74c3c;">Major Features</th>
+                                <th style="background: #f39c12;">Minor Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    • Hypomelanotic macules (≥3, diameter ≥5 mm)<br>
+                                    • Facial angiofibromas (≥3) or fibrous cephalic plaque<br>
+                                    • Ungual fibromas (≥2)<br>
+                                    • Shagreen patch<br>
+                                    • Multiple retinal hamartomas<br>
+                                    • Cortical dysplasias (including tubers and cerebral white matter radial migration lines)<br>
+                                    • Subependymal nodules<br>
+                                    • Subependymal giant cell astrocytoma<br>
+                                    • Cardiac rhabdomyoma<br>
+                                    • Lymphangioleiomyomatosis<br>
+                                    • Angiomyolipomas (≥2; renal > other organs, e.g. liver)
+                                </td>
+                                <td>
+                                    • "Confetti" skin lesions<br>
+                                    • Dental enamel pits (≥3)<br>
+                                    • Intraoral fibromas (≥2)<br>
+                                    • Retinal achromic patch<br>
+                                    • Multiple renal cysts<br>
+                                    • Non-renal hamartomas
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="key-fact" style="margin-top: 15px;">
+                        <h4>🎯 DIAGNOSTIC CONCLUSIONS:</h4>
+                        <ul>
+                            <li><strong>Definite clinical diagnosis:</strong> Either two major features* or one major feature plus ≥2 minor features</li>
+                            <li><strong>Possible clinical diagnosis:</strong> Either one major feature or ≥2 minor features</li>
+                            <li><strong>Definite genetic diagnosis:</strong> Identification of a pathogenic mutation in either TSC1 or TSC2 in DNA from the blood or normal tissue</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            *With the exception of lymphangioleiomyomatosis + angiomyolipomas.<br>
+                            Genetic testing is recommended when the diagnosis of TSC is suspected but cannot be clinically confirmed, as well as to assist in genetic counseling and family planning; 10–25% of patients with TSC have no pathogenic mutation identified by conventional genetic testing, so a normal result does not exclude TSC unless a known pathogenic mutation in an affected family member has been ruled out.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TSC CUTANEOUS FEATURES SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🎨 TSC CUTANEOUS FEATURES</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="feature-grid">
+                    <div class="feature-card" style="border-top-color: #3498db;">
+                        <h4>Hypomelanotic Macules</h4>
+                        <div class="percentage">90-100%</div>
+                        <div><strong>First few months</strong></div>
+                        <div><strong>Types:</strong></div>
+                        <ul style="margin-top: 10px; font-size: 0.9em;">
+                            <li><strong>Polygonal-shaped macules or "Thumbprint"</strong> - Most Common</li>
+                            <li><strong>"Ash Leaf Spot"</strong> - Most Characteristic</li>
+                            <li><strong>"Confetti" macules</strong> - The Most Specific (especially on extremities, <5% of affected infants)</li>
+                            <li>Poliosis occasionally in infants</li>
+                            <li>Nevus Depigmentosus 1-4%</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #e74c3c;">
+                        <h4>Facial Angiofibromas</h4>
+                        <div class="percentage">~80%</div>
+                        <div><strong>2 years of life</strong></div>
+                        <div>Two stage: erythema and telangiectasia → papulo-nodule</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #f39c12;">
+                        <h4>Shagreen Patch</h4>
+                        <div class="percentage">40-50%</div>
+                        <div><strong>2 years of life</strong></div>
+                        <div>Most common in lumbosacral</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #9b59b6;">
+                        <h4>Ungual Fibromas</h4>
+                        <div class="percentage">30-60%</div>
+                        <div><strong>Start late in childhood around 6 years</strong></div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #27ae60;">
+                        <h4>CALMs</h4>
+                        <div>First few months</div>
+                        <div>Not specific and usually less than 6</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #e67e22;">
+                        <h4>Other Features</h4>
+                        <div>• Molluscum pendulum</div>
+                        <div>• Fibrous plaque of forehead (~20%)</div>
+                    </div>
+                </div>
+
+                <div class="mechanism-box">
+                    <h3>🔍 Multiple Facial Angiofibromas Can Be Seen In:</h3>
+                    <ul>
+                        <li><strong>MEN type 1</strong> (facial angiofibromas, collagenomas, gingival papules, confetti-like hypomelanotic macules and CALMs)</li>
+                        <li><strong>Birt-Hogg-Dubé syndrome</strong></li>
+                    </ul>
+                </div>
+
+                <div class="diagnostic-criteria">
+                    <h3>🎯 DIFFERENTIAL DIAGNOSIS OF SHAGREEN PATCH</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <h4 style="color: #e74c3c;">Most Likely:</h4>
+                            <ul>
+                                <li>Familial cutaneous collagenoma</li>
+                                <li>Eruptive collagenomas</li>
+                                <li>Dermatofibrosis lenticularis disseminata (in Buschke-Ollendorf syndrome)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #f39c12;">Consider:</h4>
+                            <ul>
+                                <li>Multiple endocrine neoplasia type 1 collagenomas</li>
+                                <li>Sclerotic fibroma (Cowden syndrome)</li>
+                                <li>Isolated connective tissue nevus</li>
+                                <li>Juvenile elastoma</li>
+                                <li>Nevus elasticus</li>
+                                <li>Nevus mucinosis (Hunter syndrome)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-tip">
+                    <h3>🎯 DDX of Angiofibromas (ExamQ):</h3>
+                    <div class="referral-grid">
+                        <div class="referral-item">Acne vulgaris</div>
+                        <div class="referral-item">Rosacea</div>
+                        <div class="referral-item">Syringomas</div>
+                        <div class="referral-item">Fibrous papules</div>
+                        <div class="referral-item">Dermal melanocytic nevi</div>
+                        <div class="referral-item">Trichoepitheliomas</div>
+                        <div class="referral-item">Tricholemmomas</div>
+                        <div class="referral-item">Fibrofolliculomas/ trichodiscomas</div>
+                        <div class="referral-item">MEN-1 angiofibromas</div>
+                        <div class="referral-item">Birt-Hogg-Dubé angiofibromas</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TSC EXTRACUTANEOUS INVOLVEMENT SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <button class="toggle-btn">🏥 TSC EXTRACUTANEOUS INVOLVEMENT</button>
+            </div>
+            <div class="section-content">
+                
+                <div class="feature-grid">
+                    <div class="feature-card" style="border-top-color: #3498db;">
+                        <h4>1. OCULAR</h4>
+                        <div><strong>Most ocular lesions do not cause visual loss</strong></div>
+                        <br>
+                        <div><strong>Most common morphologic type of hamartoma:</strong></div>
+                        <div>The Flat Translucent lesion <span class="percentage">(70%)</span> followed by</div>
+                        <div>The Multinodular "Mulberry" lesion <span class="percentage">(55%)</span> and</div>
+                        <div>The Transitional-Type lesion <span class="percentage">(9%)</span></div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #e74c3c;">
+                        <h4>2. CNS</h4>
+                        <div><strong>First to develop:</strong> infantile spasm</div>
+                        <div><strong>Most common:</strong> cortical tubers</div>
+                        <div>Cause autism (IMP)</div>
+                        <div><strong>Treatment:</strong> mTOR inhibitor rapamycin resulted in improved cognitive function, seizure and risk of astrocytoma</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #f39c12;">
+                        <h4>3. CVS</h4>
+                        <div><strong>Cardiac rhabdomyoma:</strong> (congenital lesion) subsided by age of 3 → WPW persist</div>
+                    </div>
+
+                    <div class="feature-card" style="border-top-color: #27ae60;">
+                        <h4>4. GI</h4>
+                        <div>Hamartomatous polyps</div>
+                    </div>
+                </div>
+
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="text-align: center; font-size: 1.2em;">DETAILED EXTRACUTANEOUS MANIFESTATIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #e8f5e8;">
+                            <td><strong>OCULAR</strong></td>
+                            <td>
+                                • Retinal hamartomas (<span class="percentage">~40%</span>)<br>
+                                • Achromatic retinal patches (<span class="percentage">~40%</span>)<br>
+                                • Retinal astrocytoma
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>SKELETAL</strong></td>
+                            <td>
+                                • Cystic areas of bone rarefaction, especially phalanges
+                            </td>
+                        </tr>
+                        <tr style="background: #e3f2fd;">
+                            <td><strong>DENTAL</strong></td>
+                            <td>
+                                • Pitted enamel (<span class="percentage">>90%</span>)<br>
+                                • Gingival fibromas (up to <span class="percentage">70%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #f3e5f5;">
+                            <td><strong>PULMONARY</strong></td>
+                            <td>
+                                • Lymphangioleiomyomatosis (<span class="percentage">≥30–40% of women</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #ffebee;">
+                            <td><strong>RENAL</strong></td>
+                            <td>
+                                • Multiple bilateral angiomyolipomas (<span class="percentage">75–90%</span>)<br>
+                                • Cysts<br>
+                                • Carcinoma
+                            </td>
+                        </tr>
+                        <tr style="background: #e8f5e8;">
+                            <td><strong>ENDOCRINE</strong></td>
+                            <td>
+                                • Precocious puberty<br>
+                                • Hypothyroidism
+                            </td>
+                        </tr>
+                        <tr style="background: #fff3e0;">
+                            <td><strong>NEUROLOGIC</strong></td>
+                            <td>
+                                • Cortical tubers (<span class="percentage">>90%</span>)<br>
+                                • Subependymal nodules* (<span class="percentage">>80%</span>)<br>
+                                • Subependymal giant cell astrocytoma† (<span class="percentage">5–15%</span>)<br>
+                                • Seizures (<span class="percentage">70–95%</span>), including infantile spasms (<span class="percentage">~60%</span>)<br>
+                                • Intellectual impairment (<span class="percentage">>50%</span>)
+                            </td>
+                        </tr>
+                        <tr style="background: #e3f2fd;">
+                            <td><strong>CARDIOVASCULAR</strong></td>
+                            <td>
+                                • Myocardial rhabdomyoma‡ (<span class="percentage">80% of infants</span>)<br>
+                                • Wolff-Parkinson-White syndrome
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="exam-tip">
+                    <strong>🎯 BOARD NOTES:</strong><br>
+                    *Nearly all patients by puberty<br>
+                    †Also known as subependymal giant cell tumor<br>
+                    ‡Increasingly difficult to distinguish from normal myocardium after the first few years of life
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isHidden = content.classList.contains('hidden');
+            
+            if (isHidden) {
+                content.classList.remove('hidden');
+                header.classList.remove('collapsed');
+            } else {
+                content.classList.add('hidden');
+                header.classList.add('collapsed');
+            }
+        }
+
+        // Auto-expand first section
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.querySelector('.section-content');
+            if (firstSection) {
+                firstSection.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occupational Dermatoses - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c6aa0;
+            --secondary: #2ecc71;
+            --alert: #e74c3c;
+            --warning: #f39c12;
+            --dark: #34495e;
+            --light: #ecf0f1;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--dark);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), #1a4971);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 0;
+            box-shadow: var(--box-shadow);
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 8px;
+            margin-top: 1.8em;
+        }
+        
+        h3 {
+            color: var(--primary);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-top: 1.5em;
+        }
+        
+        h4 {
+            color: var(--dark);
+            text-transform: uppercase;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        /* Memory boxes */
+        .memory-box {
+            border: 2px solid var(--primary);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(44, 106, 160, 0.08);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .memory-box h4 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .alert-box {
+            border: 2px solid var(--alert);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(231, 76, 60, 0.08);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .warning-box {
+            border: 2px solid var(--warning);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(243, 156, 18, 0.08);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .treatment-box {
+            border: 2px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            background-color: rgba(46, 204, 113, 0.08);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .board-exam {
+            background-color: #ffebee;
+            border: 2px solid #d32f2f;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Highlight */
+        mark {
+            background-color: #fff176;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .highlight-primary {
+            background-color: rgba(44, 106, 160, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .highlight-secondary {
+            background-color: rgba(46, 204, 113, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .highlight-warning {
+            background-color: rgba(243, 156, 18, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        /* Flex layout */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .flex-item {
+            flex: 1 1 300px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background-color: white;
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Interactive elements */
+        details {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background-color: white;
+            box-shadow: var(--box-shadow);
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary);
+            padding: 5px;
+        }
+        
+        summary:hover {
+            background-color: rgba(44, 106, 160, 0.08);
+            border-radius: 4px;
+        }
+        
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 1em;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .checklist {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+        
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .warning-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .warning-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+        
+        .warning-list li:before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+        }
+        
+        .causes-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .causes-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+        
+        .causes-list li:before {
+            content: '🔍';
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+        
+        /* Navigation */
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc li ul {
+            padding-left: 20px;
+        }
+        
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Recall section */
+        .recall {
+            margin: 15px 0;
+            border-left: 4px solid var(--warning);
+            padding-left: 15px;
+            background-color: rgba(243, 156, 18, 0.08);
+            padding: 10px 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .recall h4 {
+            color: var(--warning);
+            margin-top: 0;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 11pt;
+                background: white;
+                color: black;
+            }
+            
+            .memory-box, .alert-box, .warning-box, .treatment-box, .board-exam {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                background-color: white !important;
+                box-shadow: none;
+            }
+            
+            h1 {
+                background: white;
+                color: black;
+                box-shadow: none;
+            }
+            
+            details {
+                page-break-inside: avoid;
+            }
+            
+            .toc {
+                display: none;
+            }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .flex-item {
+                flex: 1 1 100%;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OCCUPATIONAL DERMATOSES</h1>
+        <p style="text-align: center; margin-top: 10px; font-style: italic;">Saudi Board Dermatology Exam Intensive Study Guide</p>
+    </header>
+    
+    <div class="toc">
+        <h3>Quick Navigation</h3>
+        <ul>
+            <li><a href="#general-concepts">General Concepts</a></li>
+            <li><a href="#epidemiology">Epidemiology</a></li>
+            <li><a href="#contact-dermatitis">Contact Dermatitis</a>
+                <ul>
+                    <li><a href="#irritant-contact-dermatitis">Irritant Contact Dermatitis</a></li>
+                    <li><a href="#allergic-contact-dermatitis">Allergic Contact Dermatitis</a></li>
+                    <li><a href="#chemical-burns">Chemical Burns</a></li>
+                    <li><a href="#prevention-treatment">Prevention and Treatment</a></li>
+                </ul>
+            </li>
+            <li><a href="#fiberglass-dermatitis">Fiberglass Dermatitis</a></li>
+            <li><a href="#contact-urticaria">Contact Urticaria</a></li>
+            <li><a href="#skin-cancer">Occupational Skin Cancer</a></li>
+            <li><a href="#occupational-acne">Occupational Acne</a></li>
+            <li><a href="#vibration-white-finger">Vibration White Finger</a></li>
+            <li><a href="#occupational-infections">Occupational Infections</a></li>
+            <li><a href="#must-memorize">Must-Memorize Points</a></li>
+            <li><a href="#exam-traps">Common Exam Traps</a></li>
+        </ul>
+    </div>
+    
+    <section id="general-concepts">
+        <h2>🔬 GENERAL CONCEPTS</h2>
+        
+        <div class="memory-box">
+            <h4>Definition & Classification</h4>
+            <p><mark>Definition</mark>: Skin conditions that develop as a direct result of workplace exposures</p>
+            
+            <p><strong>Classification of hazardous exposures:</strong></p>
+            <ul>
+                <li><span class="highlight-primary">Mechanical</span>: Friction, pressure, vibration, mechanical disruption</li>
+                <li><span class="highlight-warning">Chemical</span>: Elements and chemical compounds (organic, inorganic, proteins)</li>
+                <li><span class="highlight-secondary">Physical</span>: Heat, cold, radiation (UV and ionizing)</li>
+                <li><span class="highlight-primary">Biological</span>: Organisms including viruses, bacteria, fungi, and parasites</li>
+            </ul>
+        </div>
+        
+        <div class="recall">
+            <h4>💡 Recall This</h4>
+            <details>
+                <summary>What are the four major categories of occupational exposures?</summary>
+                <p>Mechanical, Chemical, Physical, and Biological exposures</p>
+            </details>
+        </div>
+    </section>
+    
+    <section id="epidemiology">
+        <h2>📊 EPIDEMIOLOGY</h2>
+        
+        <div class="memory-box">
+            <ul>
+                <li><span class="highlight-primary">Second most common</span> physical illness due to occupation (23%), after musculoskeletal disorders (45%)</li>
+                <li>Annual cost in US estimated at <mark>$1.2 billion</mark> (2010)</li>
+                <li>Average cost per claim: US$3550 with 24 days of disability per case</li>
+                <li>German estimate of hand eczema: €9000 per case with annual cost of €2128</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="contact-dermatitis">
+        <h2>🧴 CONTACT DERMATITIS</h2>
+        
+        <div class="memory-box">
+            <h4>General Features</h4>
+            <ul>
+                <li><mark>Most common occupational skin disease</mark>, predominantly affecting hands</li>
+                <li>Population prevalence of hand dermatitis ~0.5%, rising to 10% in industrial workforces</li>
+                <li>Over half of affected individuals change jobs; many miss work for a month or more</li>
+            </ul>
+        </div>
+        
+        <div class="flex-container">
+            <div class="flex-item" id="irritant-contact-dermatitis">
+                <h3>Irritant Contact Dermatitis</h3>
+                
+                <h4>Pathogenesis</h4>
+                <p>Cumulative damage from repeated exposure to weak irritants</p>
+                
+                <h4>Risk Factors</h4>
+                <ul>
+                    <li>Previous atopic dermatitis</li>
+                    <li>Filaggrin gene mutations</li>
+                </ul>
+                
+                <h4>Most Common Causes (%) <span class="tag">High Yield</span></h4>
+                <ul class="causes-list">
+                    <li><strong>Soaps</strong> (22%)</li>
+                    <li><strong>Wet work</strong> (20%)</li>
+                    <li><strong>Petroleum products</strong> (9%)</li>
+                    <li><strong>Solvents</strong> (8%)</li>
+                    <li><strong>Cutting oils/coolants</strong> (8%)</li>
+                </ul>
+            </div>
+            
+            <div class="flex-item" id="allergic-contact-dermatitis">
+                <h3>Allergic Contact Dermatitis</h3>
+                
+                <h4>Most Common Causes (%) <span class="tag">High Yield</span></h4>
+                <ul class="causes-list">
+                    <li><strong>Rubber</strong> (23.4%)</li>
+                    <li><strong>Nickel</strong> (18.2%)</li>
+                    <li><strong>Epoxy resins</strong> (15.6%)</li>
+                    <li><strong>Aromatic amines</strong> (8.6%)</li>
+                    <li><strong>Chromate</strong> (8.1%)</li>
+                    <li><strong>Fragrances/cosmetics</strong> (8%)</li>
+                    <li><strong>Preservatives</strong> (7.3%)</li>
+                </ul>
+                
+                <p><span class="highlight-warning">Recent increase</span>: Allergic contact dermatitis due to methacrylates in nail technicians</p>
+            </div>
+        </div>
+        
+        <h3>Clinical Features</h3>
+        <ul>
+            <li>Morphologically indistinguishable from endogenous eczema</li>
+            <li>Primary site usually hands, with potential spread to adjacent areas</li>
+            <li>Airborne allergens may produce distinct exposure pattern</li>
+            <li><mark>Improvement during periods away from work</mark> suggests occupational cause</li>
+            <li>With chronicity, work-exacerbation relationship becomes less clear</li>
+        </ul>
+        
+        <div class="recall">
+            <h4>💡 Recall This</h4>
+            <details>
+                <summary>How can you distinguish irritant vs. allergic contact dermatitis clinically?</summary>
+                <p>You can't! They are morphologically indistinguishable. Diagnosis depends on patch testing and history pattern.</p>
+            </details>
+        </div>
+        
+        <h3>Diagnosis</h3>
+        <ul class="checklist">
+            <li>Thorough dermatologic and occupational history</li>
+            <li>Material safety data sheets (MSDS) provide guidance on handled materials</li>
+            <li>Patch testing essential for diagnosis (including work materials)</li>
+            <li>Workplace visit may be valuable for uncertain cases</li>
+        </ul>
+        
+        <div id="chemical-burns">
+            <h3>Chemical Burns</h3>
+            
+            <div class="alert-box">
+                <h4>Key Features</h4>
+                <p><mark>Definition</mark>: Acute irritant reaction with irreversible skin injury and cell death</p>
+                <p><strong>Presentation</strong>: Initial burning/stinging, progressing to erythema, blisters, erosions, ulceration</p>
+            </div>
+            
+            <h4>Common Causes</h4>
+            <ul>
+                <li><strong>Strong acids</strong>: Sulfuric, nitric, hydrochloric, chromic. Most coagulate skin proteins and as a result form a barrier that impedes further penetration. Hydrofluoric acid differs in that it causes a liquefactive necrosis</li>
+                <li><strong>Hydrofluoric acid</strong>: <mark>Causes liquefactive necrosis with progressive penetration</mark></li>
+                <li><strong>Strong alkalis</strong>: Sodium/calcium/potassium hydroxides, wet cement</li>
+                <li><strong>Organic/inorganic chemicals</strong>: Dichromates, arsenates, phenolic compounds</li>
+                <li><strong>Solvents/gases</strong>: Acrylonitrile, ethylene oxide, carbon disulfide, mustine</li>
+            </ul>
+            
+            <div class="warning-box">
+                <p><span class="icon">⚠️</span> <strong>Key point for exam</strong>: Chemical burns from <mark>alkalis generally more severe than acids</mark> (except HF) due to saponification of lipids allowing deeper penetration</p>
+            </div>
+        </div>
+        
+        <div id="prevention-treatment">
+            <h3>Prevention and Treatment</h3>
+            
+            <div class="memory-box">
+                <h4>Hierarchy of Prevention</h4>
+                <ol>
+                    <li><strong>Primary</strong>: Avoid disease onset through engineering measures, chemical substitution, workforce education</li>
+                    <li><strong>Secondary</strong>: Early detection through health surveillance</li>
+                    <li><strong>Tertiary</strong>: Treatment of active disease through medical management</li>
+                </ol>
+            </div>
+            
+            <div class="treatment-box">
+                <h4>Treatment Approaches</h4>
+                
+                <p><strong>Workplace measures</strong>:</p>
+                <ul class="checklist">
+                    <li>PPE, proper skin care (emollients), avoiding rings</li>
+                    <li>Hand protection: Appropriate gloves for shortest time necessary, cotton liner for prolonged wear</li>
+                </ul>
+                
+                <p><strong>Medical treatment</strong>:</p>
+                <ul class="checklist">
+                    <li>Standard contact dermatitis therapy plus avoidance of cause</li>
+                </ul>
+                
+                <p><strong>Chemical burns</strong>:</p>
+                <ul class="checklist">
+                    <li>Irrigation with large volumes of water</li>
+                    <li>Specific antidotes (e.g., <mark>calcium gluconate gel for HF</mark>)</li>
+                    <li>Monitor for systemic toxicity</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Prognosis</h3>
+        <ul>
+            <li>Poor in 10% of cases ("persistent post-occupational dermatitis")</li>
+            <li>Worse if contact allergy to chemicals present in both work and home environments</li>
+            <li>Changing occupation associated with better prognosis</li>
+        </ul>
+    </section>
+    
+    <section id="fiberglass-dermatitis">
+        <h2>🧶 FIBERGLASS DERMATITIS</h2>
+        
+        <div class="memory-box">
+            <ul>
+                <li><strong>Mechanism</strong>: Direct penetration of fibers >3.5 microns in diameter</li>
+                <li><strong>Presentation</strong>: Pruritus, tingling, erythematous papules (often follicular)</li>
+                <li><strong>Distribution</strong>: Exposed areas (airborne) or forearms (surface contamination)</li>
+                <li><strong>Diagnosis</strong>: Clinical findings plus tape stripping to detect fibers</li>
+                <li><strong>Course</strong>: <mark>Resolves rapidly after exposure cessation</mark>; "hardening" occurs with continued exposure</li>
+            </ul>
+        </div>
+        
+        <div class="recall">
+            <h4>💡 Recall This</h4>
+            <details>
+                <summary>What is the key diagnostic finding in fiberglass dermatitis?</summary>
+                <p>Detecting fibers by tape stripping, plus rapid resolution after exposure cessation</p>
+            </details>
+        </div>
+    </section>
+    
+    <section id="contact-urticaria">
+        <h2>🌵 CONTACT URTICARIA</h2>
+        
+        <div class="memory-box">
+            <h4>General Features</h4>
+            <ul>
+                <li>Reaction occurring <mark>within 60 minutes</mark> of exposure, resolving within 24 hours</li>
+                <li>Can range from localized wheal-and-flare to systemic anaphylaxis</li>
+                <li><strong>Classifications</strong>:
+                    <ul>
+                        <li>Non-immunologic/irritant</li>
+                        <li>Immunologic (IgE-mediated)</li>
+                        <li>Uncertain mechanism</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h3>Occupational Causes</h3>
+        <ul>
+            <li>Plant/animal proteins (food handlers, agricultural, veterinary workers)</li>
+            <li>Natural rubber latex (healthcare workers)</li>
+            <li>Low-molecular-weight chemicals in industrial settings</li>
+            <li>Highest risks in bakers, nurses, restaurant workers</li>
+        </ul>
+        
+        <div class="memory-box">
+            <h4>Latex Contact Urticaria <span class="tag">High Yield</span></h4>
+            <ul>
+                <li>Emerged as significant problem with universal precautions in 1980s</li>
+                <li>Prevalence: 3-16% among healthcare workers</li>
+                <li><strong>Risk factors</strong>: Female gender, atopy, frequent glove exposure</li>
+                <li>Problems mainly from dipped products (gloves, balloons, condoms)</li>
+                <li>Can cause airborne symptoms when absorbed onto starch particles</li>
+                <li><mark>Cross-reactivity with foods</mark>: Banana, avocado, kiwi, chestnuts ("latex-fruit syndrome")</li>
+            </ul>
+        </div>
+        
+        <h3>Diagnosis of Contact Urticaria</h3>
+        <ul class="checklist">
+            <li>Detailed history and examination</li>
+            <li>Skin prick testing (with cautious graded exposure for unknowns)</li>
+            <li>For latex: specific IgE blood test (not sensitive), prick test with commercial extracts</li>
+            <li>"Usage test" wearing suspect glove on moistened hand</li>
+        </ul>
+        
+        <div class="warning-box">
+            <p><span class="icon">⚠️</span> <strong>Exam Alert</strong>: Latex allergy diagnostic limitations - Specific IgE blood tests are not sensitive; negative results don't rule out latex allergy</p>
+        </div>
+        
+        <h3>Protein Contact Dermatitis</h3>
+        <ul>
+            <li>Eczematous reaction to protein-containing materials</li>
+            <li>Mixed mechanism (both IgE and delayed-type hypersensitivity)</li>
+            <li>Clinical picture: Chronic eczema with episodic exacerbations after contact</li>
+        </ul>
+        
+        <div class="treatment-box">
+            <h4>Treatment</h4>
+            <ul class="checklist">
+                <li>Avoidance of causative agent</li>
+                <li>Improved occupational hygiene and PPE</li>
+                <li>For acute episodes: Antihistamines, epinephrine (for severe reactions)</li>
+                <li>For latex prevention: Powder-free, low-protein gloves or non-latex alternatives</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="skin-cancer">
+        <h2>🔬 OCCUPATIONAL SKIN CANCER</h2>
+        
+        <div class="memory-box">
+            <h4>General Features</h4>
+            <ul>
+                <li><1% of all skin cancers</li>
+                <li>Most common tumor: <mark>Squamous cell carcinoma (SCC)</mark></li>
+            </ul>
+        </div>
+        
+        <h3>Risk Factors and High-Risk Occupations</h3>
+        <ul>
+            <li>UV radiation (outdoor workers): OR 1.77 for SCC, OR 1.43 for BCC</li>
+            <li>Polycyclic hydrocarbons (tar, pitch, oil products workers)</li>
+            <li>Arsenic exposure (glass production, smelting, pesticide production)</li>
+            <li>Ionizing radiation (radiologists, dentists, X-ray technicians)</li>
+        </ul>
+        
+        <h3>Clinical Features</h3>
+        <ul>
+            <li>Earlier age of onset than spontaneous tumors</li>
+            <li>Long latency period between exposure and tumor appearance</li>
+            <li>For polycyclic hydrocarbons: Progression from erythema → folliculitis → poikiloderma → keratotic papillomas (tar warts) → SCC</li>
+        </ul>
+    </section>
+    
+    <section id="occupational-acne">
+        <h2>🧫 OCCUPATIONAL ACNE</h2>
+        
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Oil Acne</h3>
+                <ul>
+                    <li><mark>Most common form</mark> of occupational acne</li>
+                    <li><strong>Mechanism</strong>: Reactive hyperkeratosis → follicular occlusion</li>
+                    <li><strong>Causes</strong>: Cutting oils, tars, crude petroleum oils</li>
+                    <li><strong>Sites</strong>: Usual acne sites plus unusual locations (arms, abdomen)</li>
+                </ul>
+            </div>
+            
+            <div class="flex-item">
+                <h3>Acne Mechanica</h3>
+                <ul>
+                    <li>Inflammatory acne exacerbated by friction</li>
+                    <li><strong>Sites</strong>: Localized to pressure areas (back in drivers, chin with helmet straps)</li>
+                </ul>
+            </div>
+            
+            <div class="flex-item">
+                <h3>Chloracne <span class="tag">High Yield</span></h3>
+                <ul>
+                    <li>Severe acne from halogenated hydrocarbons</li>
+                    <li><strong>Notable cause</strong>: 2,3,7,8-tetrachlorodibenzo-p-dioxin (TCDD)</li>
+                    <li><strong>Presentation</strong>: <mark>Predominantly open comedones, malar crescent and retroauricular areas</mark></li>
+                    <li><strong>Progressive features</strong>: Numerous cysts, thickened/hyperpigmented skin, permanent scarring</li>
+                    <li><strong>Associated features</strong>: Conjunctivitis, altered liver function, neurologic symptoms</li>
+                    <li><strong>Course</strong>: <mark>Persistent for years despite cessation of exposure</mark></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="recall">
+            <h4>💡 Recall This</h4>
+            <details>
+                <summary>How to differentiate chloracne from acne vulgaris?</summary>
+                <p>Chloracne shows predominantly open comedones (vs. closed in acne vulgaris) and has characteristic distribution in malar crescent and retroauricular areas. Also persists for years after exposure ends.</p>
+            </details>
+        </div>
+        
+        <div class="treatment-box">
+            <h4>Treatment</h4>
+            <ul class="checklist">
+                <li>Avoidance of causative agent</li>
+                <li>Standard acne therapy (often with limited success in chloracne)</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="vibration-white-finger">
+        <h2>👋 VIBRATION WHITE FINGER</h2>
+        
+        <div class="memory-box">
+            <h4>General Features</h4>
+            <ul>
+                <li>Part of hand-arm vibration syndrome</li>
+                <li>Associated with vibrations between <mark>30-300 Hz</mark></li>
+                <li>Up to 50% of exposed workforce affected</li>
+            </ul>
+        </div>
+        
+        <h3>Pathogenesis</h3>
+        <ul>
+            <li>Sympathetic nervous system hyperactivity</li>
+            <li>Vibration-induced endothelial damage</li>
+            <li>Altered α-adrenoceptors and impaired nitric oxide release</li>
+            <li>Risk increased by smoking</li>
+        </ul>
+        
+        <h3>Clinical Features</h3>
+        <ul>
+            <li>White patch of skin in response to cold exposure</li>
+            <li>Well-demarcated from surrounding areas</li>
+            <li>Reduced sensation and dexterity</li>
+            <li>Progressive stages: Fingertip involvement → whole digit → trophic changes/ulceration</li>
+            <li><mark>Asymmetric distribution (thumbs usually spared)</mark></li>
+        </ul>
+        
+        <div class="warning-box">
+            <h4>Distinguishing from Raynaud's Disease</h4>
+            <table>
+                <tr>
+                    <th>Vibration White Finger</th>
+                    <th>Raynaud's Disease</th>
+                </tr>
+                <tr>
+                    <td>Asymmetric distribution</td>
+                    <td>Symmetric distribution</td>
+                </tr>
+                <tr>
+                    <td>Occupational history present</td>
+                    <td>No occupational correlation</td>
+                </tr>
+                <tr>
+                    <td>Thumbs usually spared</td>
+                    <td>All digits affected</td>
+                </tr>
+                <tr>
+                    <td>Improves with cessation of exposure</td>
+                    <td>Persists regardless of activities</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Diagnosis and Treatment</h3>
+        <ul>
+            <li>Clinical diagnosis; can use temperature and blood pressure measurements</li>
+            <li>Differentiate from Raynaud disease (symmetrical) and hypothenar hammer syndrome</li>
+            <li>Treatment: Avoidance of vibration exposure</li>
+            <li>Topical nitroglycerine ointment or calcium channel blockers for symptom control</li>
+        </ul>
+    </section>
+    
+    <section id="occupational-infections">
+        <h2>🦠 OCCUPATIONAL INFECTIONS</h2>
+        
+        <ul>
+            <li>Multiple infectious conditions associated with specific occupations</li>
+            <li>Common in animal handlers, healthcare workers, food processors</li>
+            <li>Increased risk with wet work and rough physical conditions</li>
+            <li>Common pathogens: Staphylococcus aureus, Streptococcus, HPV (butcher's warts)</li>
+            <li>Environmental factors: Increased humidity may promote fungal infections</li>
+        </ul>
+    </section>
+    
+    <section id="must-memorize">
+        <h2>📝 MUST-MEMORIZE POINTS FOR SAUDI BOARD</h2>
+        
+        <div class="board-exam">
+            <ol>
+                <li><strong>Most common causes of occupational allergic contact dermatitis (in order):</strong> Rubber (23.4%), nickel (18.2%), epoxy resins (15.6%), aromatic amines (8.6%)</li>
+                <li><strong>Most common causes of occupational irritant contact dermatitis (in order):</strong> Soaps (22%), wet work (20%), petroleum products (9%), solvents (8%), cutting oils/coolants (8%)</li>
+                <li><strong>Hydrofluoric acid burns:</strong> Unique penetrating injury with progressive damage, requires calcium gluconate gel treatment (2.5%)</li>
+                <li><strong>Latex cross-reactivity with foods:</strong> Banana, avocado, chestnuts, kiwi (the "latex-fruit syndrome")</li>
+                <li><strong>Chloracne diagnostic features:</strong> Predominance of open comedones, concentration over malar crescent and behind ears, persistent for years after exposure</li>
+                <li><strong>Vibration white finger:</strong> Associated with 30-300 Hz vibration, asymmetric distribution (thumbs usually spared), improves with cessation of exposure</li>
+                <li><strong>Primary prevention hierarchy:</strong> Engineering controls → chemical substitution → PPE → workforce education</li>
+                <li><strong>Chemical burns from alkalis:</strong> Generally more severe than acids (except HF) due to saponification of lipids allowing deeper penetration</li>
+            </ol>
+        </div>
+        
+        <div class="recall">
+            <h4>💡 Recall This</h4>
+            <details>
+                <summary>What are the top 3 causes of occupational allergic contact dermatitis?</summary>
+                <p>1. Rubber (23.4%)<br>2. Nickel (18.2%)<br>3. Epoxy resins (15.6%)</p>
+            </details>
+            <details>
+                <summary>What are the top 3 causes of occupational irritant contact dermatitis?</summary>
+                <p>1. Soaps (22%)<br>2. Wet work (20%)<br>3. Petroleum products (9%)</p>
+            </details>
+        </div>
+    </section>
+    
+    <section id="exam-traps">
+        <h2>⚠️ COMMON CONFUSION TRAPS IN THE EXAM</h2>
+        
+        <div class="board-exam">
+            <ul class="warning-list">
+                <li><strong>Differentiating irritant vs. allergic contact dermatitis:</strong> Both look identical morphologically; diagnosis depends on patch testing and history pattern</li>
+                <li><strong>Wet cement hazards:</strong> Often tested as both a chemical burn (alkaline) AND a source of allergic contact dermatitis from chromate</li>
+                <li><strong>Latex allergy diagnostic limitations:</strong> Specific IgE blood tests are not sensitive; negative results don't rule out latex allergy</li>
+                <li><strong>Distinguishing vibration white finger from Raynaud's disease:</strong> 
+                    <ul>
+                        <li>Vibration white finger: Asymmetric, occupational history, thumbs usually spared</li>
+                        <li>Raynaud's disease: Symmetric, no occupational correlation, all digits affected</li>
+                    </ul>
+                </li>
+                <li><strong>Chloracne vs. acne vulgaris:</strong> Chloracne shows predominantly open comedones (vs. closed in acne vulgaris) and characteristic distribution (retroauricular)</li>
+                <li><strong>PPE as both solution and problem:</strong> Examiners may test the concept that PPE can itself cause occupational dermatitis (e.g., glove allergies)</li>
+                <li><strong>Exposure cessation effects:</strong> Fiberglass dermatitis resolves quickly after cessation of exposure, while chloracne can persist for years despite no further exposure</li>
+                <li><strong>Persistent post-occupational dermatitis:</strong> Frequently tested concept - around 10% of cases persist despite removal from exposure</li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer>
+        <p><strong>Study Tip:</strong> Review this page at least 3 times before your exam. Focus on the highlighted elements, board exam points, and common confusion traps.</p>
+        <p>Create flashcards from the "Recall This" sections and review them daily for optimal retention.</p>
+        <p>Good luck on your Saudi Board Dermatology Exam!</p>
+    </footer>
+    
+    <script>
+        // Enable print functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure all details are expanded when printing
+            window.addEventListener('beforeprint', function() {
+                document.querySelectorAll('details').forEach(function(detail) {
+                    detail.setAttribute('open', true);
+                });
+            });
+            
+            // Return to previous state after printing
+            window.addEventListener('afterprint', function() {
+                document.querySelectorAll('details').forEach(function(detail) {
+                    detail.removeAttribute('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

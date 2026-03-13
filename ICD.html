@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irritant Contact Dermatitis - Board Exam Study Guide</title>
+    <style>
+        :root {
+            --primary: #3d5a80;
+            --secondary: #ee6c4d;
+            --light: #e0fbfc;
+            --dark: #293241;
+            --accent: #98c1d9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            margin-top: 1.5em;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .key-points {
+            background-color: var(--light);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .mnemonic {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .highlight {
+            background-color: #ffffcc;
+            padding: 3px;
+        }
+        
+        .compare-table td:first-child {
+            font-weight: bold;
+            background-color: var(--accent);
+        }
+        
+        .toggle-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .toggle-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        .toggle-btn:hover {
+            background-color: #2a3f5a;
+        }
+        
+        .quiz-container {
+            margin: 30px 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        
+        .algorithm {
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .algorithm h3 {
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: var(--light);
+            border-radius: 5px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .flowchart-box {
+            padding: 15px;
+            margin: 10px;
+            min-width: 200px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .start-box {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .process-box {
+            background-color: var(--accent);
+        }
+        
+        .decision-box {
+            background-color: var(--light);
+            border: 2px solid var(--primary);
+        }
+        
+        .end-box {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid var(--dark);
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .flex-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Irritant Contact Dermatitis (ICD)</h1>
+        <p>Comprehensive Board Review Guide</p>
+    </header>
+
+    <div class="container">
+        <div class="card key-points">
+            <h2>High-Yield Key Points</h2>
+            <ul>
+                <li>ICD is a <strong>non-immunologic</strong> inflammatory reaction, unlike allergic contact dermatitis (ACD)</li>
+                <li>ICD is the <strong>most common form</strong> of occupational skin disease (70-80%)</li>
+                <li>Most ICD is caused by <strong>cumulative exposure</strong> to weak irritants (e.g., soap and water)</li>
+                <li>Patients often complain of <strong>burning and stinging</strong> rather than pruritus (helpful for differentiating from ACD)</li>
+                <li>Common irritants: soaps, detergents, solvents, acids, alkalis, wet work</li>
+                <li>Avoidance of causative irritants is <strong>primary treatment</strong></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Definition & Pathogenesis</h2>
+            <p><strong>Definition:</strong> Irritant contact dermatitis (ICD) is a localized, non-immunologically initiated, cutaneous inflammatory reaction resulting from direct cytotoxic effects of chemicals or physical agents on the skin.</p>
+            
+            <h3>Mechanism of Action</h3>
+            <ul>
+                <li>Activation of innate immune system without prior sensitization</li>
+                <li>Direct cytotoxic effect on keratinocytes</li>
+                <li>Damaged keratinocytes release mediators (TNF, IL-1α, IL-1β, IL-6, IL-8)</li>
+                <li>Cytokine release → leukocyte recruitment → inflammation</li>
+                <li>Pattern recognition receptors (PRRs) including Toll-like receptors may be activated</li>
+            </ul>
+            
+            <div class="mnemonic">
+                <h4>Mnemonic: "DIRECT DAMAGE"</h4>
+                <ul>
+                    <li><strong>D</strong>irect cytotoxicity (no prior sensitization)</li>
+                    <li><strong>I</strong>nnate immune activation</li>
+                    <li><strong>R</strong>eactive oxygen species</li>
+                    <li><strong>E</strong>pidermal barrier disruption</li>
+                    <li><strong>C</strong>ytokines release (TNF, IL-1α)</li>
+                    <li><strong>T</strong>ranscutaneous water loss increased</li>
+                    <li><strong>D</strong>enaturated proteins</li>
+                    <li><strong>A</strong>dhesion molecules upregulated (ICAM-1)</li>
+                    <li><strong>M</strong>embrane lipid disruption</li>
+                    <li><strong>A</strong>cute or chronic changes (depending on exposure)</li>
+                    <li><strong>G</strong>radual onset with repeated exposure (cumulative)</li>
+                    <li><strong>E</strong>nvironmental factors influence severity</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Epidemiology & Risk Factors</h2>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Epidemiology</h3>
+                    <ul>
+                        <li>70-80% of all occupational skin disorders</li>
+                        <li>9-10% of patch-tested patients with contact dermatitis</li>
+                        <li>When hands are affected, ICD predominates over ACD</li>
+                        <li>Hands are the most common site affected . Face is the second most common site</li>
+                        <li>Female sex (higher prevalence in women)</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>Risk Factors</h3>
+                    <ul>
+                        <li><strong>Host factors:</strong>
+                            <ul>
+                                <li>Atopic dermatitis (13.5× greater risk)</li>
+                                <li>Age extremes (infants and elderly)</li>
+                                <li>Genetic predisposition</li>
+                                <li>Reduced filaggrin in epidermis</li>
+                            </ul>
+                        </li>
+                        <li><strong>Environmental factors:</strong>
+                            <ul>
+                                <li>"Wet work" (immersion >2 hours/day or handwashing >20 times/day)</li>
+                                <li>Low humidity and cold temperatures</li>
+                                <li>Occlusion</li>
+                                <li>High-risk occupations (healthcare, manufacturing)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Clinical Features & Types of ICD</h2>
+            
+            <div class="algorithm">
+                <h3>Types of Irritant Contact Dermatitis</h3>
+                
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Acute ICD:</strong> Rapid onset (minutes to hours), "decrescendo" phenomenon, burning/stinging, sharply demarcated borders, erythema, edema, bullae, necrosis. Caused by potent irritants.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Acute Delayed ICD:</strong> Delayed response (8-24 hours), burning > pruritus, no previous exposure needed. Caused by anthralin, benzalkonium chloride, ethylene oxide.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Irritant Reaction ICD:</strong> Subclinical form with scaling, redness, vesicles in individuals with wet chemical exposure. Often begins under jewelry.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Cumulative ICD:</strong> Result of multiple sub-threshold insults without sufficient recovery time. Less sharply demarcated, xerosis, lichenification, hyperkeratosis. Most common form.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Traumatic ICD:</strong> Follows acute skin trauma. Persistent redness, infiltration, scale, fissuring. Lasts weeks to months.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Pustular/Acneiform ICD:</strong> "Sterile" pustules from metals, oils, tars, greases. Often in patients with atopic or seborrheic dermatitis.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">7</span>
+                    <strong>Non-erythematous ICD:</strong> Subclinical form with barrier dysfunction without visible inflammation.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">8</span>
+                    <strong>Subjective/Sensory ICD:</strong> Stinging/burning with no visible signs. Caused by propylene glycol(can be found in cosmetics , topical medications and emollients >30% concentration is irritant), hydroxy acids, ethanol.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">9</span>
+                    <strong>Airborne ICD:</strong> Affects face and periorbital regions. From dusts, fibers, fragrances, solvents. Upper eyelids, philtrum and submental involvement.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">10</span>
+                    <strong>Frictional ICD:</strong> From repeated low-grade trauma. Shows hyperkeratosis, lichenification. Often on dominant hand.
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">11</span>
+                    <strong>Asteatotic Dermatitis:</strong> Dry winter skin with ichthyosiform scale and cracked skin ("eczema craquelé").
+                </div>
+            </div>
+            
+            <div class="mnemonic">
+                <h4>Mnemonic: "ACID STANDS PAF"</h4>
+                <p>Types of ICD:</p>
+                <ul>
+                    <li><strong>A</strong>cute ICD (immediate, potent irritants)</li>
+                    <li><strong>C</strong>umulative ICD (most common form)</li>
+                    <li><strong>I</strong>rritant reaction ICD (subclinical)</li>
+                    <li><strong>D</strong>elayed ICD (8-24h after exposure)</li>
+                    <li><strong>S</strong>ensory/Subjective ICD (no visible signs)</li>
+                    <li><strong>T</strong>raumatic ICD (after skin injury)</li>
+                    <li><strong>A</strong>irborne ICD (face, periorbital)</li>
+                    <li><strong>N</strong>on-erythematous ICD (barrier dysfunction only)</li>
+                    <li><strong>D</strong>ry/Asteatotic dermatitis (winter)</li>
+                    <li><strong>S</strong>teroid-aggravated (granuloma gluteale)</li>
+                    <li><strong>P</strong>ustular/acneiform ICD</li>
+                    <li><strong>A</strong>ngular cheilitis (perioral)</li>
+                    <li><strong>F</strong>rictional ICD (repeated trauma)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Mechanisms of Toxicity by Irritant Type</h2>
+            
+            <table>
+                <tr>
+                    <th>Irritant</th>
+                    <th>Mechanisms of Toxicity</th>
+                </tr>
+                <tr>
+                    <td>Detergents</td>
+                    <td>Barrier disruption, protein denaturation, membrane toxicity</td>
+                </tr>
+                <tr>
+                    <td>Acids</td>
+                    <td>Protein denaturation, cytotoxicity</td>
+                </tr>
+                <tr>
+                    <td>Alcohols</td>
+                    <td>Protein denaturation</td>
+                </tr>
+                <tr>
+                    <td>Alkalis</td>
+                    <td>Barrier lipid denaturation, cytotoxicity through cellular swelling</td>
+                </tr>
+                <tr>
+                    <td>Oils</td>
+                    <td>Disorganization of barrier lipids</td>
+                </tr>
+                <tr>
+                    <td>Organic solvents</td>
+                    <td>Solubilization of membrane lipids, membrane toxicity</td>
+                </tr>
+                <tr>
+                    <td>Oxidants</td>
+                    <td>Cytotoxicity</td>
+                </tr>
+                <tr>
+                    <td>Reducing agents</td>
+                    <td>Keratolysis</td>
+                </tr>
+                <tr>
+                    <td>Water</td>
+                    <td>If barrier is disrupted, cytotoxicity through swelling of viable epidermal cells</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Major Irritant Chemicals</h2>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>1-Inorganic Acids</h3>
+                    <ul>
+                        <li><strong>Hydrofluoric acid:</strong> Extremely cytotoxic cause the most severe chemical burn, penetrates intact skin deeply , <span style="background-color: yellow;">bind tissue calcium</span> and affect nerves even leat to systemic toxcity , delayed pain, neutralized with calcium gluconate </li>
+                        <li><strong>Chromic acid:</strong> "Chrome holes" ulcerations, nasal septal perforation</li>
+                        <li><strong>Sulfuric acid:</strong> Severe burns</li>
+                        <li><strong>Hydrochloric acid:</strong> Erythema, vesication, necrosis</li>
+                        <li><strong>Nitric acid:</strong> Yellow discoloration</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>2-Alkalis</h3>
+                    <ul>
+                        <li><strong>Cement:</strong> <span style="background-color: yellow;">Calcium hydroxide</span> liberation, high alkalinity (pH 12-14), <span style="background-color: yellow;">necrotic changes appear 8-12h after exposure</span></li>
+                        <li><strong>Sodium/potassium hydroxide:</strong> Like other strong alkalis, they disrupt barrier lipids and denature proteins. They cause <span style="background-color: yellow;">fatty acid saponification</span>, which facilitates deeper penetration into the skin. They cause severe and painful damage, often worse than most acids (except hydrofluoric acid) </li>
+                        <li><strong>Calcium oxide (quicklime):</strong> Releases heat with water contact-> ulceration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>3-Solvents</h3>
+                    <ul>
+                        <li><strong>Mechanism:</strong> Dissolve intercellular lipid barrier</li>
+                        <li><strong>Irritancy order:</strong> aromatic > aliphatic > chlorinated > turpentine > alcohols > esters > ketones</li>
+                        <li><strong>Examples:</strong> benzene (Petechia and purpura), toluene, chlorinated hydrocarbons, petroleum derivatives</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>4-Detergents/Cleansers</h3>
+                    <ul>
+                        <li><strong>Mechanism:</strong> Lower surface tension, damage stratum corneum, bind to keratin</li>
+                        <li><strong>Irritancy order:</strong> anionic (most) > non-ionic > amphoteric (least)</li>
+                        <li><strong>Examples:</strong> sodium lauryl sulfate (anionic), cocamide DEA (non-ionic)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>5-Other Common Irritants</h3>
+                    <ul>
+                        <li><strong>Water:</strong> Osmolarity, pH, hardness, temperature, occlusion</li>
+                        <li><strong>Alcohol/glycols:</strong> <span style="background-color: yellow;">Protein denaturation, extraction of lipids</span></li>
+                        <li><strong>Disinfectants:</strong> Aldehydes, phenolics, quaternary ammonium compounds</li>
+                        <li><strong>Metal salts:</strong> Arsenic, beryllium(ulcerated Granulomatous , sarcoidal like), cobalt, copper, mercury, selenium sulfide (skin irritation and conjunctivitis), thimerosal ( can be found in vaccine, common cause of ACD and ICD)</li>
+                        <li><strong>Bodily fluids:</strong> Urine, feces, saliva</li>
+                        <li><strong>Plant irritants:</strong> <u>Bromelain</u> (pineapple), <u>capsaicin</u> (<span style="background-color: yellow;">Hot peppers – affect nerves, not skin. Neutralized with acetic acid (vinegar) or antacids</span>. Best home remedy:
+Wash with soap
+1 hr immersion in vegetable oil), <u>isothiocyanates</u> (mustard), <u>calcium oxalate</u> (found in plant families Amaryllidacea/Lilaceae such as Daffodil (Narcissus spp.), hyacinth, and tulip bulbs). <span style="background-color: yellow;">Calcium oxalate in Daffodil is the most common cause of ICD in florists, referred to as "daffodil itch".</span></li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>6-Special Clinical Entities</h3>
+                    <ul>
+                        <li><strong>Diaper dermatitis:</strong> Glazed erythema on convex surfaces, spared folds</li>
+                        <li><strong>Granuloma gluteale infantum:</strong> Papules and nodules from chronic irritation</li>
+                        <li><strong>Jacquet erosive dermatitis:</strong> Punched-out erosions and ulcerations</li>
+                        <li><strong>Perioral ICD:</strong> From lip licking, especially in children</li>
+                        <li><strong>Periurethral ICD:</strong> In patients with bladder-drained pancreatic allografts or foscarnet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2 style="color: var(--secondary);">Clinical Features based on Irritant/Toxic Etiology</h2>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3 style="color: var(--secondary);">1. Tissue Destruction (Ulcerations)</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Visual Association: "Acid Rain Burns"</h4>
+                        <p>Imagine acid rain falling on different surfaces, creating distinctive burn patterns for each type:</p>
+                        <ul>
+                            <li><strong>Chromic</strong> - Chrome-colored burns</li>
+                            <li><strong>Hydrofluoric</strong> - Mnemonic imagine Blue-green flame (flouric = fluorescent).
+                                <ul>
+                                    <li>Pain Out of Proportion to Exam: Due to deep tissue penetration and nerve toxicity.</li>
+                                    <li>Hypocalcemia/Hypomagnesemia: From F⁻ binding Ca²⁺/Mg²⁺ → cardiac arrhythmias.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Nitric</strong> - Yellow stains</li>
+                            <li><strong>Hydrochloric</strong> - Steaming holes. Cause White escher</li>
+                            <li><strong>Phosphoric</strong> - Glowing white burns</li>
+                            <li><strong>Sulfuric</strong> - Black charred tissue. black / brown escher</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="memory-technique">
+                        <h4>Chunking: Alkalis by Use</h4>
+                        <p><strong>Household Cleaners:</strong> Sodium/potassium hydroxide, Ammonium hydroxide</p>
+                        <p><strong>Construction Materials:</strong> Calcium oxide, Calcium hydroxide, and cement</p>
+                        <p><strong>Industrial Compounds:</strong> Sodium metasilicate, Sodium silicate, Potassium cyanide, Trisodium phosphate, Sodium/potassium carbonate</p>
+                    </div>
+                    
+                    <p><strong>Other Caustic Agents:</strong></p>
+                    <ul>
+                        <li><strong>Salts:</strong> Arsenic trioxide, Dichromates</li>
+                        <li><strong>Solvents:</strong> Acrylonitrile, Carbon bisulfide</li>
+                        <li><strong>Gases:</strong> Ethylene oxide, Acrylonitrile</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3 style="color: var(--secondary);">2. Follicular Reactions</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Story Method: "The Mechanic's Curse"</h4>
+                        <p>A mechanic worked with <strong>oils and greases</strong> daily. One day, he repaired a road with <strong>tar and asphalt</strong>. Later, he cleaned equipment with <strong>chlorinated naphthalenes</strong> and handled <strong>polyhalogenated biphenyls</strong> without gloves. At home, he used an <strong>arsenic trioxide</strong> solution for his garden and installed <strong>glass fiber</strong> insulation. Each exposure left distinctive follicular eruptions on his skin.</p>
+                    <h4>Fiberglass Dermatitis</h4>
+                    
+                    <ul>
+                        <li>Injury via skin penetration → pruritus/tingling → pink papules with follicular accentuation + paronychia</li>
+                        <li><strong>Prevention:</strong> <span style="background-color: yellow;">Talcum powder</span> </li>
+                        <li><strong>Diagnosis:</strong> <span style="background-color: yellow;">Confirmed by detecting fibers using tape in 20% KOH</span> </li>
+                    </ul>
+                    </div>
+                    
+                    <h3 style="color: var(--secondary);">3. Sweat Gland Effects (Miliaria)</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Acronym: "OCULAR"</h4>
+                        <ul>
+                            <li><strong>O</strong>cclusive clothing</li>
+                            <li><strong>C</strong>limate (overheating)</li>
+                            <li><strong>U</strong>ltraviolet/infrared radiation</li>
+                            <li><strong>L</strong>ayers of adhesive tape</li>
+                            <li><strong>A</strong>luminum chloride</li>
+                            <li><strong>R</strong>estricted sweat evaporation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3 style="color: var(--secondary);">4. Pigmentary Changes</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Method of Loci: imagine "Pigment Museum" has two wings</h4>
+                        <p><strong>Hyperpigmentation Wing:</strong></p>
+                        <ul>
+                            <li><strong>Sunlight Room(Phytophotodermatitis):</strong> Psoralens, Tar, Asphalt, Psoralen-containing plants"furocoumarins". +Light (<strong>UVA;
+                                320–400nm</strong>) → erythema +/− blistering (24–72 hrs postcontact) followed by hyperpigmentation (1 to 2 weeks later). <u>Berloque dermatitis:</u> pigmentation of neck/trunk/arms from cologne application containing bergamot oil (bergapten = 5-methoxypsoralens; a furocoumarin).
+                            
+                                </li>
+                            <li><strong>Metals Gallery:</strong> Arsenic, Silver, Gold, Bismuth, Mercury</li>
+                            <li><strong>Radiation Chamber:</strong> UV, Infrared, Microwave, Ionizing</li>
+                        </ul>
+                        
+                        <p><strong>Hypopigmentation Wing:</strong></p>
+                        <ul>
+                            <li><strong>Phenolic Compounds Display:</strong> p-Tert-amylphenol, p-Cresol, p-Tert-butylphenol, 3-Hydroxyanisole. Systemic absorption is possible and can lead to glomerulonephritis and arrhythmias. <strong>Management:</strong> Phenol is neutralized by 65% ethyl or isopropyl alcohol.</li>
+                            <li><strong>Hydroquinones Exhibit:</strong> HQ, Butylated hydroxyanisole, Monobenzyl ether of HQ, Monomethyl ether of HQ</li>
+                            <li><strong>Catechols Collection:</strong> 1-Tert-butyl-3,4-catechol, 1-Isopropyl-3,4-catechol, p-Tert-catechol, 4-Hydroxypropriophenone</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex-item">
+                    <h3 style="color: var(--secondary);">5. Hair Effects (Alopecia)</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Rhyme Association:</h4>
+                        <p>"Borax and chloroprene, make your hair no longer seen."</p>
+                    </div>
+                    
+                    <h3 style="color: var(--secondary);">6. Immediate Reactions (Urticaria)</h3>
+                    
+                    <div class="memory-technique">
+                        <h4>Categorization & Visualization:</h4>
+                        
+                        <p><strong>Biological irritants:</strong> "Ocean Creatures and Garden Threats"</p>
+                        <ul>
+                            <li><strong>Water:</strong> Corals, Jellyfish, Sea anemones, Seaweed</li>
+                            <li><strong>Land:</strong> Arthropods, Caterpillars, Moths, Stinging nettles (Urticaceae family: <i>Urtica e.g dioica</i>/<i>urens</i>/<i>pilulifera</i> worldwide, <i>Laportea e.g canadensis</i> "Wood nettle" in NE USA, <i>Dendrocnide e.g gigas</i>/<i>moroides</i>/<i>photinophylla</i> deadly stinging trees in eastern Australian rainforests)</li>
+                        </ul>
+                        
+                        <p><strong>Chemical irritants:</strong></p>
+                        <ul>
+                            <li><strong>Natural:</strong> Balsam of Peru (Myroxylon pereirae)</li>
+                            <li><strong>Cosmetics:</strong> Sorbic acid</li>
+                            <li><strong>Drugs:</strong> Ethanol, Benzocaine, Camphor, Capsaicin, Chloroform, Iodine</li>
+                            <li><strong>Foods:</strong> Cayenne pepper, Fish, Mustard, Thyme</li>
+                            <li><strong>Fragrances:</strong> Cinnamon oil, Cinnamic acid/aldehyde, Benzaldehyde</li>
+                            <li><strong>Metals:</strong> Cobalt</li>
+                            <li><strong>Preservatives:</strong> Benzoic acid</li>
+                            <li><strong>Textiles:</strong> Blue dyes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Comparison: ICD vs. Allergic Contact Dermatitis</h2>
+            
+            <table class="compare-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Irritant Contact Dermatitis</th>
+                    <th>Allergic Contact Dermatitis</th>
+                </tr>
+                <tr>
+                    <td>Pathogenesis</td>
+                    <td>Non-immunologic, direct cytotoxic effect</td>
+                    <td>Type IV delayed hypersensitivity reaction</td>
+                </tr>
+                <tr>
+                    <td>Prior exposure</td>
+                    <td>Not required</td>
+                    <td>Sensitization phase required</td>
+                </tr>
+                <tr>
+                    <td>Affected population</td>
+                    <td>Most exposed individuals (dose-dependent)</td>
+                    <td>Only sensitized individuals</td>
+                </tr>
+                <tr>
+                    <td>Symptoms</td>
+                    <td>Burning, stinging, pain</td>
+                    <td>Pruritus predominates</td>
+                </tr>
+                <tr>
+                    <td>Onset after exposure</td>
+                    <td>Minutes to hours (or cumulative). Except delayed acute ICD</td>
+                    <td>24-72 hours, Up to 96 hours in some allergens </td>
+                </tr>
+                <tr>
+                    <td>Borders</td>
+                    <td>Often sharply demarcated (acute); less distinct (chronic)</td>
+                    <td>May spread beyond contact area</td>
+                </tr>
+                <tr>
+                    <td>Diagnosis</td>
+                    <td>Clinical (diagnosis of exclusion)</td>
+                    <td>Patch testing positive</td>
+                </tr>
+                <tr>
+                    <td>Concentration dependence</td>
+                    <td>Dose-dependent response</td>
+                    <td>Not strictly dose-dependent</td>
+                </tr>
+                <tr>
+                    <td>"Hardening" phenomenon</td>
+                    <td>May occur with repeated exposure</td>
+                    <td>Rarely occurs</td>
+                </tr>
+            </table>
+        </div>
+
+        
+
+        <div class="card">
+            <h2>High-Risk Occupations</h2>
+            
+            <table>
+                <tr>
+                    <th>Occupation</th>
+                    <th>Common Irritants</th>
+                </tr>
+                <tr>
+                    <td>Healthcare workers</td>
+                    <td>Disinfectants, detergents, frequent handwashing, gloves</td>
+                </tr>
+                <tr>
+                    <td>Hairdressers</td>
+                    <td>Permanent wave solutions, shampoos, bleaching agents, wet work</td>
+                </tr>
+                <tr>
+                    <td>Food handlers/cooks</td>
+                    <td>Detergents, vegetable juices, wet work</td>
+                </tr>
+                <tr>
+                    <td>Cleaners</td>
+                    <td>Detergents, solvents, wet work</td>
+                </tr>
+                <tr>
+                    <td>Construction workers</td>
+                    <td>Cement, solvents, oils</td>
+                </tr>
+                <tr>
+                    <td>Mechanics</td>
+                    <td>Oils, greases, gasoline, diesel fuel, solvents</td>
+                </tr>
+                <tr>
+                    <td>Metal workers</td>
+                    <td>Cutting oils, solvents, hand cleansers</td>
+                </tr>
+                <tr>
+                    <td>Agriculture workers</td>
+                    <td>Fertilizers, pesticides, plants, disinfectants</td>
+                </tr>
+                <tr>
+                    <td>Florists/gardeners</td>
+                    <td>Manure, fertilizers, pesticides, wet work</td>
+                </tr>
+                <tr>
+                    <td>Painters</td>
+                    <td>Solvents, thinners, adhesives, hand cleansers</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Diagnosis & Assessment</h2>
+            
+            <div class="flowchart">
+                <div class="flowchart-box start-box">Patient with suspected contact dermatitis</div>
+                <div class="arrow-down"></div>
+                <div class="flowchart-box process-box">Detailed history: occupational exposures, home products, timing of onset, symptoms</div>
+                <div class="arrow-down"></div>
+                <div class="flowchart-box process-box">Physical examination: location, morphology, distribution</div>
+                <div class="arrow-down"></div>
+                <div class="flowchart-box decision-box">Burning/stinging vs. pruritus?<br>Sharply demarcated vs. diffuse?<br>Direct correlation with exposure?</div>
+                <div class="arrow-down"></div>
+                <div class="flowchart-box process-box">Exclude ACD by patch testing</div>
+                <div class="arrow-down"></div>
+                <div class="flowchart-box end-box">Diagnosis: Irritant Contact Dermatitis</div>
+            </div>
+
+            <h3>Patch Test Interpretation in ICD</h3>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h4>False Positives</h4>
+                    <ul>
+                        <li>Common with strong irritants (e.g., formaldehyde, propylene glycol)</li>
+                        <li><strong>Clues to identify irritant reactions:</strong>
+                            <ul>
+                                <li>"Decrescendo phenomenon": Irritant reactions peak early and fade</li>
+                                <li>Non-specific erythema without papules/vesicles</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h4>ICD Mimics</h4>
+                    <ul>
+                        <li><strong>Sodium lauryl sulfate (SLS):</strong> Used as a positive irritant control</li>
+                        <li><strong>Metals (e.g., cobalt):</strong> Can cause both ICD and ACD</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>When to Suspect ICD Despite Positive Patch Test</h3>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h4>Exposure History > Test Results</h4>
+                    <ul>
+                        <li>Patient reports burning pain (not itch) with a product, but patch test is positive for an ingredient</li>
+                        <li>May indicate coexisting ICD + ACD</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h4>Repeated Open Application Test (ROAT)</h4>
+                    <ul>
+                        <li>If patch test is equivocal, apply suspect product to forearm twice daily for 7 days</li>
+                        <li><strong>ICD:</strong> Burning/redness within days</li>
+                        <li><strong>ACD:</strong> Pruritic rash after 48+ hours</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Assessment Tools</h3>
+            <ul>
+                <li><strong>Hand Eczema Severity Index (HECSI):</strong> Evaluates hand eczema based on clinical signs and locations</li>
+                <li><strong>Modified Total Lesion Symptom Score (mTLSS):</strong> Grades erythema, scaling, lichenification, vesiculation, edema, fissures, and pruritus/pain</li>
+                <li><strong>Transepidermal Water Loss (TEWL):</strong> Objective measure of barrier function</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Treatment & Prevention</h2>
+            
+            <h3>Primary Treatment Principles</h3>
+            <ol>
+                <li><strong>Avoidance of causative irritants</strong> (most important step)</li>
+                <li><strong>Barrier restoration:</strong> Moisturizers, emollients, barrier creams</li>
+                <li><strong>Inflammation control:</strong> Topical corticosteroids</li>
+                <li><strong>Prevention strategies:</strong> Protective equipment, education</li>
+            </ol>
+            
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>Specific Treatments</h3>
+                    <ul>
+                        <li><strong>Acute ICD:</strong> Remove irritant, gentle cleansing, mid-to-high potency topical corticosteroids</li>
+                        <li><strong>Chronic ICD:</strong> Emollients, barrier repair, mid-potency topical corticosteroids</li>
+                        <li><strong>Severe/Recalcitrant:</strong> Consider NB-UVB, PUVA, systemic therapy (retinoids, immunomodulators)</li>
+                        <li><strong>Special scenarios:</strong>
+                            <ul>
+                                <li>Hydrofluoric acid burns: Calcium gluconate gel/injection</li>
+                                <li>Diaper dermatitis: Barrier creams, gentle cleansing, brief topical steroids</li>
+                                <li>Granuloma gluteale: Remove irritant, antifungals if superinfected</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>Prevention Strategies</h3>
+                    <ul>
+                        <li><strong>Technical avoidance:</strong> Eliminate/substitute irritants when possible</li>
+                        <li><strong>Engineering controls:</strong> Closed systems, automation, ventilation</li>
+                        <li><strong>Personal protective equipment:</strong>
+                            <ul>
+                                <li>Appropriate gloves (material selection matters)</li>
+                                <li>Protective clothing</li>
+                                <li>Proper removal techniques to avoid contamination</li>
+                            </ul>
+                        </li>
+                        <li><strong>Barrier creams:</strong> Applied before exposure</li>
+                        <li><strong>Skin care regimen:</strong> Gentle cleansers, regular moisturization</li>
+                        <li><strong>Education:</strong> "Eczema schools," workplace training programs</li>
+                        <li><strong>Regular monitoring</strong> of early signs of irritation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mnemonic">
+                <h4>Mnemonic: "BARRIERS"</h4>
+                <p>Prevention strategies:</p>
+                <ul>
+                    <li><strong>B</strong>arrier creams before exposure</li>
+                    <li><strong>A</strong>void irritants when possible</li>
+                    <li><strong>R</strong>estore skin barrier with emollients</li>
+                    <li><strong>R</strong>educe wet work exposure time</li>
+                    <li><strong>I</strong>dentify early signs of irritation</li>
+                    <li><strong>E</strong>ducation about skin protection</li>
+                    <li><strong>R</strong>ight protective equipment (gloves, clothing)</li>
+                    <li><strong>S</strong>ubstitute safer products when available</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Prognosis & "Hardening" Phenomenon</h2>
+            
+            <h3>Prognosis Factors</h3>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h4>Poor Prognosis</h4>
+                    <ul>
+                        <li>History of atopic dermatitis</li>
+                        <li>Female sex</li>
+                        <li>Concurrent allergic contact dermatitis</li>
+                        <li>Delayed diagnosis and treatment</li>
+                        <li>Continued exposure to irritants</li>
+                        <li>Poor compliance with preventive measures</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item">
+                    <h4>Good Prognosis</h4>
+                    <ul>
+                        <li>Early diagnosis and treatment</li>
+                        <li>Effective avoidance of irritants</li>
+                        <li>Patient education and compliance</li>
+                        <li>"Hardening" phenomenon</li>
+                        <li>Non-atopic individuals</li>
+                        <li>Less severe initial presentation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>"Hardening" Phenomenon</h3>
+            <p>Spontaneous resolution despite continued exposure occurs in many individuals through:</p>
+            <ul>
+                <li><strong>Physical barrier improvement:</strong> Thicker stratum corneum and stratum granulosum, increased ceramide 1</li>
+                <li><strong>Vascular changes:</strong> Faster removal of irritants</li>
+                <li><strong>Immunologic alterations:</strong> Increased IL-1Ra to IL-1α ratio (anti-inflammatory)</li>
+                <li><strong>Systemic hyporeactive state:</strong> After repeated low-dose exposure</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Quick Review Quiz</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p><strong>1. Which of the following is the most common type of irritant contact dermatitis?</strong></p>
+                    <button class="toggle-btn" onclick="toggleContent('q1')">Show Answer</button>
+                    <div id="q1" class="toggle-content">
+                        <p><strong>Answer:</strong> Cumulative ICD from repeated exposure to weak irritants like soaps and water.</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>2. What is the primary pathologic mechanism in ICD?</strong></p>
+                    <button class="toggle-btn" onclick="toggleContent('q2')">Show Answer</button>
+                    <div id="q2" class="toggle-content">
+                        <p><strong>Answer:</strong> Direct cytotoxic effect on keratinocytes with activation of the innate immune system (not requiring prior sensitization).</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>3. Which symptom helps distinguish ICD from allergic contact dermatitis?</strong></p>
+                    <button class="toggle-btn" onclick="toggleContent('q3')">Show Answer</button>
+                    <div id="q3" class="toggle-content">
+                        <p><strong>Answer:</strong> Burning and stinging (rather than pruritus, which is more characteristic of ACD).</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>4. What is the "decrescendo phenomenon" in acute ICD?</strong></p>
+                    <button class="toggle-btn" onclick="toggleContent('q4')">Show Answer</button>
+                    <div id="q4" class="toggle-content">
+                        <p><strong>Answer:</strong> The acute reaction peaks quickly (within minutes to hours) and then begins to heal.</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>5. Which factor is most strongly associated with increased risk of occupational ICD?</strong></p>
+                    <button class="toggle-btn" onclick="toggleContent('q5')">Show Answer</button>
+                    <div id="q5" class="toggle-content">
+                        <p><strong>Answer:</strong> History of atopic dermatitis (13.5× greater risk).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

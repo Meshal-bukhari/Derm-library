@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemphigus Management - Saudi Board Review</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "🎯";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            right: -50px;
+            top: -50px;
+            transform: rotate(-15deg);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-tab:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .nav-tab.active {
+            color: #667eea;
+            background: white;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: -3px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pearl-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(250, 177, 160, 0.3);
+        }
+        
+        .pearl-box::before {
+            content: "💡";
+            position: absolute;
+            font-size: 40px;
+            right: 20px;
+            top: 20px;
+            opacity: 0.5;
+        }
+        
+        .pearl-box h3 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+        }
+        
+        .warning-box::before {
+            content: "⚠️";
+            position: absolute;
+            font-size: 60px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.3;
+        }
+        
+        .memory-anchor {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+        }
+        
+        .memory-anchor::before {
+            content: "🧠";
+            position: absolute;
+            font-size: 100px;
+            left: -30px;
+            top: -30px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+        
+        .memory-anchor h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .drug-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .drug-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .drug-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .dose-highlight {
+            background: #e3f2fd;
+            padding: 15px;
+            border-left: 5px solid #2196f3;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        .monitoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .monitoring-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .monitoring-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .monitoring-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .algorithm-box {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 206, 201, 0.3);
+        }
+        
+        .algorithm-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .algorithm-step {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .algorithm-step:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.02);
+        }
+        
+        .quick-ref {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .quick-ref h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .quiz-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(232, 67, 147, 0.3);
+        }
+        
+        .quiz-question {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-question:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(10px);
+        }
+        
+        .answer {
+            display: none;
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, #ffeaa7 60%);
+            padding: 2px 5px;
+            font-weight: 600;
+        }
+        
+        .critical {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .success {
+            background: #00b894;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .info {
+            background: #0984e3;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .collapsible {
+            background: #f8f9fa;
+            color: #495057;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .collapsible:hover {
+            background: #e9ecef;
+        }
+        
+        .collapsible.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .collapsible:after {
+            content: '➕';
+            float: right;
+            font-size: 1.2em;
+        }
+        
+        .collapsible.active:after {
+            content: '➖';
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 18px;
+        }
+        
+        .collapsible-content.show {
+            max-height: 2000px;
+            padding: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 PEMPHIGUS MANAGEMENT</h1>
+            <p>Master Guide for Saudi Board Dermatology Exam</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">Overview & Pathophysiology</button>
+            <button class="nav-tab" onclick="showTab('diagnosis')">Diagnosis & Assessment</button>
+            <button class="nav-tab" onclick="showTab('treatment')">Treatment Algorithm</button>
+            <button class="nav-tab" onclick="showTab('medications')">Medications & Dosing</button>
+            <button class="nav-tab" onclick="showTab('monitoring')">Monitoring & Complications</button>
+            <button class="nav-tab" onclick="showTab('pearls')">Clinical Pearls & Board Tips</button>
+        </div>
+        
+        <div class="content">
+            <!-- Overview & Pathophysiology Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="memory-anchor">
+                    <h3>🧠 MEMORY ANCHOR</h3>
+                    <p style="font-size: 1.3em;">Pemphigus = "FIRE" on the skin<br>
+                    <strong>F</strong>laccid bullae • <strong>I</strong>ntraepithelial split • <strong>R</strong>ituximab is gold standard • <strong>E</strong>rosions predominate</p>
+                </div>
+                
+                <div class="pearl-box">
+                    <h3>⚡ KEY CONCEPT</h3>
+                    <p><strong>Pemphigus Vulgaris vs Foliaceus:</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>✅ <strong>Vulgaris:</strong> <span class="highlight">Mucosal + Cutaneous</span> (Dsg3 ± Dsg1)</li>
+                        <li>✅ <strong>Foliaceus:</strong> <span class="highlight">Cutaneous ONLY</span> (Dsg1 only)</li>
+                        <li>✅ <strong>Remember:</strong> "3" in Dsg3 = "E" (Eating affected in vulgaris)</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h3>⚠️ MORTALITY ALERT</h3>
+                    <p>Pre-steroid era: <strong>70-100% mortality</strong> in 1-5 years<br>
+                    Current mortality: <strong>5-10%</strong> (mostly from treatment complications)</p>
+                </div>
+                
+                <button class="collapsible">Pathophysiology Deep Dive</button>
+                <div class="collapsible-content">
+                    <div class="drug-card">
+                        <h4>Autoimmune Mechanism</h4>
+                        <p>• <strong>Target:</strong> Desmoglein proteins (cell adhesion molecules)</p>
+                        <p>• <strong>Result:</strong> Acantholysis (loss of keratinocyte adhesion)</p>
+                        <p>• <strong>Location:</strong> Intraepithelial blistering</p>
+                        <div class="dose-highlight">
+                            <strong>Board Tip:</strong> Nikolsky sign = Lateral pressure causes blister extension
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Clinical Presentations</button>
+                <div class="collapsible-content">
+                    <div class="quick-ref">
+                        <h4>🔍 Pemphigus Vulgaris</h4>
+                        <p>• <span class="critical">Oral involvement in ~90%</span></p>
+                        <p>• Often starts in mouth before skin</p>
+                        <p>• Flaccid bullae → erosions</p>
+                        <p>• Positive Nikolsky sign</p>
+                    </div>
+                    
+                    <div class="quick-ref">
+                        <h4>🔍 Pemphigus Foliaceus</h4>
+                        <p>• <span class="success">NO mucosal involvement</span></p>
+                        <p>• Superficial blisters (subcorneal)</p>
+                        <p>• "Corn flake" scale-crust</p>
+                        <p>• Face/scalp/trunk distribution</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diagnosis & Assessment Tab -->
+            <div id="diagnosis" class="tab-content">
+                <div class="algorithm-box">
+                    <h3>📋 DIAGNOSTIC APPROACH</h3>
+                    <div class="algorithm-step">
+                        <strong>Step 1:</strong> Clinical Suspicion<br>
+                        Flaccid bullae + Erosions + Nikolsky sign
+                    </div>
+                    <div class="algorithm-step">
+                        <strong>Step 2:</strong> Biopsy for DIF<br>
+                        Perilesional skin → "Fishnet" IgG pattern
+                    </div>
+                    <div class="algorithm-step">
+                        <strong>Step 3:</strong> ELISA Testing<br>
+                        Anti-Dsg1 & Anti-Dsg3 antibodies
+                    </div>
+                </div>
+                
+                <div class="pearl-box">
+                    <h3>🎯 Disease Severity Classification</h3>
+                    <p><strong>Mild Pemphigus:</strong></p>
+                    <ul>
+                        <li>• <5% BSA involvement</li>
+                        <li>• No/limited oral lesions</li>
+                        <li>• No impaired food intake</li>
+                    </ul>
+                    <p><strong>Moderate-Severe Pemphigus:</strong></p>
+                    <ul>
+                        <li>• ≥5% BSA involvement</li>
+                        <li>• Multiple mucosal sites</li>
+                        <li>• Weight loss/dysphagia</li>
+                        <li>• Significant pain</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-anchor">
+                    <h3>🧠 ELISA INTERPRETATION</h3>
+                    <p><strong>Dsg1+ / Dsg3-</strong> = Foliaceus (Skin only)<br>
+                    <strong>Dsg1- / Dsg3+</strong> = Mucosal vulgaris<br>
+                    <strong>Dsg1+ / Dsg3+</strong> = Mucocutaneous vulgaris</p>
+                </div>
+                
+                <button class="collapsible">Response Assessment Criteria</button>
+                <div class="collapsible-content">
+                    <div class="monitoring-table">
+                        <table>
+                            <tr>
+                                <th>Response Type</th>
+                                <th>Definition</th>
+                                <th>Clinical Significance</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Disease Control</strong></td>
+                                <td>No new lesions + healing begins</td>
+                                <td>Can start tapering after 2 weeks</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Complete Remission ON therapy</strong></td>
+                                <td>No lesions while on treatment</td>
+                                <td>Continue current regimen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Complete Remission OFF therapy</strong></td>
+                                <td>No lesions ≥2 months after stopping</td>
+                                <td>Ultimate treatment goal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Relapse</strong></td>
+                                <td>≥3 new lesions/month not healing in 1 week</td>
+                                <td>Requires treatment escalation</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Treatment Algorithm Tab -->
+            <div id="treatment" class="tab-content">
+                <div class="algorithm-box">
+                    <h3>🚀 FIRST-LINE TREATMENT ALGORITHM</h3>
+                    <div class="algorithm-step">
+                        <span class="success">PREFERRED:</span> Rituximab + Prednisone<br>
+                        <em>Superior efficacy & steroid-sparing</em>
+                    </div>
+                    <div class="algorithm-step">
+                        <span class="info">ALTERNATIVE:</span> Prednisone + MMF/AZA<br>
+                        <em>When rituximab not feasible</em>
+                    </div>
+                    <div class="algorithm-step">
+                        <span class="highlight">MILD DISEASE ONLY:</span> Rituximab + Topical steroids<br>
+                        <em>Limited data, reserve for selected cases</em>
+                    </div>
+                </div>
+                
+                <div class="pearl-box">
+                    <h3>💊 Initial Prednisone Dosing</h3>
+                    <p>• <strong>Mild:</strong> 0.5-1 mg/kg/day</p>
+                    <p>• <strong>Moderate-Severe:</strong> 1-1.5 mg/kg/day</p>
+                    <p class="critical">⚡ With Rituximab: Use LOWER doses (0.5-1 mg/kg)</p>
+                </div>
+                
+                <button class="collapsible">Tapering Protocol</button>
+                <div class="collapsible-content">
+                    <div class="dose-highlight">
+                        <h4>Prednisone Tapering Schedule</h4>
+                        <p><strong>Prerequisites:</strong> Disease control × 2 weeks + 80% healing</p>
+                        <ol>
+                            <li>1 mg/kg → 0.75 mg/kg (after 7 days no new lesions)</li>
+                            <li>0.75 mg/kg → 0.5 mg/kg (after 7 days no new lesions)</li>
+                            <li>0.5 mg/kg → 30 mg/day (after 14 days + 7 days no new lesions)</li>
+                            <li>Then: 30→25→20→15→10→7.5→5→2.5→0 mg</li>
+                            <li>Each reduction: Wait ≥14 days + 7 days lesion-free</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Relapse Management</button>
+                <div class="collapsible-content">
+                    <div class="warning-box">
+                        <h3>Relapse Definition</h3>
+                        <p>≥3 new lesions/month not healing in 1 week<br>OR extension of established lesions</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>If on Rituximab + Prednisone:</h4>
+                        <p>• Relapse >4-6 months post-rituximab → Repeat rituximab cycle</p>
+                        <p>• Relapse <4-6 months → ↑ prednisone to previous effective dose</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>If on Prednisone ± MMF/AZA:</h4>
+                        <p>• Add rituximab if feasible</p>
+                        <p>• Otherwise: ↑ prednisone + switch immunosuppressant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Medications & Dosing Tab -->
+            <div id="medications" class="tab-content">
+                <div class="memory-anchor">
+                    <h3>💊 MEDICATION HIERARCHY</h3>
+                    <p style="font-size: 1.2em;">
+                    <strong>1st:</strong> Rituximab + Prednisone<br>
+                    <strong>2nd:</strong> Prednisone + AZA/MMF<br>
+                    <strong>3rd:</strong> Dapsone (foliaceus)<br>
+                    <strong>Refractory:</strong> IVIG, Cyclophosphamide</p>
+                </div>
+                
+                <div class="drug-card">
+                    <h4>🎯 RITUXIMAB</h4>
+                    <div class="dose-highlight">
+                        <strong>Initial:</strong> 1000 mg IV × 2 doses (2 weeks apart)<br>
+                        <strong>Premedication:</strong> Methylprednisolone 100 mg IV<br>
+                        <strong>Maintenance:</strong> 500 mg at month 12, then q6 months
+                    </div>
+                    <div class="warning-box" style="margin-top: 15px;">
+                        <p><strong>⚠️ Major Risks:</strong></p>
+                        <p>• Infusion reactions</p>
+                        <p>• Infections (including PML)</p>
+                        <p>• Delayed effect (8-12 weeks)</p>
+                    </div>
+                </div>
+                
+                <div class="drug-card">
+                    <h4>💊 AZATHIOPRINE</h4>
+                    <div class="critical">MUST CHECK TPMT BEFORE STARTING</div>
+                    <div class="dose-highlight">
+                        <strong>Normal TPMT:</strong> Start 1 mg/kg → 2.5 mg/kg/day<br>
+                        <strong>Intermediate TPMT:</strong> Max 0.5-1.5 mg/kg/day<br>
+                        <strong>Absent TPMT:</strong> CONTRAINDICATED
+                    </div>
+                    <p><strong>Monitoring:</strong> CBC q2 weeks × 3 months, then q2-3 months</p>
+                </div>
+                
+                <div class="drug-card">
+                    <h4>💊 MYCOPHENOLATE MOFETIL</h4>
+                    <div class="dose-highlight">
+                        <strong>Adult dose:</strong> 1g BID (2g/day total)<br>
+                        <strong>Alternative:</strong> Mycophenolate sodium 720mg BID
+                    </div>
+                    <p><strong>Advantages:</strong> Easier dosing, better GI tolerance</p>
+                    <p><strong>Monitoring:</strong> CBC q2 weeks × 2-3 months, then monthly × 1 year</p>
+                </div>
+                
+                <button class="collapsible">Other Medications</button>
+                <div class="collapsible-content">
+                    <div class="drug-card">
+                        <h4>DAPSONE</h4>
+                        <p>• <span class="success">Best for: Pemphigus foliaceus</span></p>
+                        <p>• Dose: 50-200 mg/day (max 1.5 mg/kg)</p>
+                        <p>• <span class="critical">Check G6PD before starting</span></p>
+                        <p>• Monitor: Hemolysis, methemoglobinemia</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>METHOTREXATE</h4>
+                        <p>• Dose: 10-25 mg/week</p>
+                        <p>• Limited evidence</p>
+                        <p>• 70% able to stop prednisone in one study</p>
+                    </div>
+                    
+                    <div class="drug-card">
+                        <h4>TETRACYCLINE + NICOTINAMIDE</h4>
+                        <p>• Tetracycline 500mg QID + Nicotinamide 500mg TID</p>
+                        <p>• Alternative: Doxycycline 100mg BID</p>
+                        <p>• Weak evidence, well-tolerated</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monitoring & Complications Tab -->
+            <div id="monitoring" class="tab-content">
+                <div class="warning-box">
+                    <h3>🚨 CRITICAL MONITORING POINTS</h3>
+                    <p>• Disease activity: Weekly initially, then monthly</p>
+                    <p>• ELISA titers: Correlate with disease (not perfect)</p>
+                    <p>• Drug toxicity: See specific schedules below</p>
+                    <p>• Infection surveillance: Continuous</p>
+                </div>
+                
+                <div class="monitoring-table">
+                    <h3>📊 Laboratory Monitoring Schedule</h3>
+                    <table>
+                        <tr>
+                            <th>Medication</th>
+                            <th>Baseline</th>
+                            <th>Initial Period</th>
+                            <th>Maintenance</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Prednisone</strong></td>
+                            <td>Glucose, BP, BMD</td>
+                            <td>Glucose monthly</td>
+                            <td>Q3-6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Azathioprine</strong></td>
+                            <td>TPMT, CBC, LFTs</td>
+                            <td>CBC q2 weeks × 3 mo</td>
+                            <td>CBC q2-3 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MMF</strong></td>
+                            <td>CBC, Renal, LFTs</td>
+                            <td>CBC q2 weeks × 3 mo</td>
+                            <td>CBC q3 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dapsone</strong></td>
+                            <td>G6PD, CBC, LFTs</td>
+                            <td>CBC weekly × 1 mo</td>
+                            <td>CBC monthly</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <button class="collapsible">Complication Management</button>
+                <div class="collapsible-content">
+                    <div class="pearl-box">
+                        <h3>Infection Prevention & Management</h3>
+                        <p>• <strong>HSV prophylaxis:</strong> Consider after first episode</p>
+                        <p>• <strong>Candida:</strong> Nystatin S&S for all on steroids</p>
+                        <p>• <strong>PCP:</strong> Consider if high-dose steroids >1 month</p>
+                        <p>• <strong>Warning signs:</strong> Teach patient about infection symptoms</p>
+                    </div>
+                    
+                    <div class="dose-highlight">
+                        <h4>Non-healing Lesions DDx:</h4>
+                        <p>1. Secondary infection (especially HSV)</p>
+                        <p>2. Inadequate treatment</p>
+                        <p>3. Drug-induced pemphigus</p>
+                        <p>4. Misdiagnosis</p>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Supportive Care Essentials</button>
+                <div class="collapsible-content">
+                    <div class="quick-ref">
+                        <h4>🩹 Wound Care</h4>
+                        <p>• Drain large blisters (leave roof intact)</p>
+                        <p>• Antibiotic ointment to erosions</p>
+                        <p>• High-potency topical steroids for persistent lesions</p>
+                        <p>• Consider intralesional triamcinolone (20mg/mL)</p>
+                    </div>
+                    
+                    <div class="quick-ref">
+                        <h4>👄 Oral Care</h4>
+                        <p>• Avoid spicy/hot/abrasive foods</p>
+                        <p>• Viscous lidocaine 2% PRN</p>
+                        <p>• Dexamethasone mouthwash TID</p>
+                        <p>• Soft toothbrush + bland toothpaste</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clinical Pearls & Board Tips Tab -->
+            <div id="pearls" class="tab-content">
+                <div class="memory-anchor">
+                    <h3>🎯 TOP 10 BOARD PEARLS</h3>
+                    <ol style="font-size: 1.1em; line-height: 2;">
+                        <li><span class="highlight">Rituximab + low-dose prednisone > high-dose prednisone alone</span></li>
+                        <li><span class="highlight">Always check TPMT before azathioprine</span></li>
+                        <li><span class="highlight">Foliaceus = superficial = better prognosis</span></li>
+                        <li><span class="highlight">90% pemphigus vulgaris has oral involvement</span></li>
+                        <li><span class="highlight">ELISA correlates with activity (not 100%)</span></li>
+                        <li><span class="highlight">Most mortality from treatment complications</span></li>
+                        <li><span class="highlight">HSV can prevent healing - always consider</span></li>
+                        <li><span class="highlight">Dapsone works best for foliaceus</span></li>
+                        <li><span class="highlight">Wait 2 weeks control + 80% healing before tapering</span></li>
+                        <li><span class="highlight">Relapse = ≥3 new lesions/month</span></li>
+                    </ol>
+                </div>
+                
+                <div class="quiz-section">
+                    <h3>🧠 BOARD-STYLE QUESTIONS</h3>
+                    
+                    <div class="quiz-question" onclick="toggleAnswer(this)">
+                        <p><strong>Q1:</strong> A 45-year-old with newly diagnosed severe pemphigus vulgaris. Best initial treatment?</p>
+                        <div class="answer">
+                            <strong>A:</strong> Rituximab 1000mg × 2 doses + Prednisone 1mg/kg/day<br>
+                            <em>Key: Rituximab allows lower steroid doses with better outcomes</em>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" onclick="toggleAnswer(this)">
+                        <p><strong>Q2:</strong> Patient on azathioprine develops pancytopenia. Most likely cause?</p>
+                        <div class="answer">
+                            <strong>A:</strong> Low/absent TPMT activity<br>
+                            <em>Key: Always check TPMT before starting azathioprine</em>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" onclick="toggleAnswer(this)">
+                        <p><strong>Q3:</strong> Pemphigus foliaceus patient failing prednisone. Next best add-on?</p>
+                        <div class="answer">
+                            <strong>A:</strong> Dapsone (after checking G6PD)<br>
+                            <em>Key: Dapsone particularly effective for foliaceus</em>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question" onclick="toggleAnswer(this)">
+                        <p><strong>Q4:</strong> When to start tapering prednisone in pemphigus?</p>
+                        <div class="answer">
+                            <strong>A:</strong> After 2 weeks of disease control + 80% healing<br>
+                            <em>Key: Must meet BOTH criteria before tapering</em>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pearl-box">
+                    <h3>⚡ LAST-MINUTE REVIEW</h3>
+                    <p><strong>Rituximab doses:</strong> 1000mg day 1 & 15 → 500mg at month 12</p>
+                    <p><strong>Prednisone:</strong> Mild 0.5mg/kg, Severe 1-1.5mg/kg</p>
+                    <p><strong>Complete remission off therapy:</strong> No lesions ≥2 months after stopping</p>
+                    <p><strong>Relapse definition:</strong> ≥3 new lesions/month</p>
+                    <p><strong>TPMT testing:</strong> MANDATORY before azathioprine</p>
+                </div>
+                
+                <div class="warning-box">
+                    <h3>🚫 COMMON MISTAKES TO AVOID</h3>
+                    <p>❌ Starting azathioprine without TPMT testing</p>
+                    <p>❌ Tapering steroids too quickly</p>
+                    <p>❌ Missing HSV superinfection in non-healing lesions</p>
+                    <p>❌ Forgetting Candida prophylaxis in oral pemphigus</p>
+                    <p>❌ Using rituximab alone in moderate-severe disease</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Collapsible functionality
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('show');
+            });
+        });
+        
+        // Quiz answer toggle
+        function toggleAnswer(element) {
+            const answer = element.querySelector('.answer');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

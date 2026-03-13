@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiofaciocutaneous Syndrome - Board Exam Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .fact-card {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .fact-card.genetics { background: #3498db; }
+        .fact-card.prevalence { background: #e67e22; }
+        .fact-card.inheritance { background: #9b59b6; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .card-icon.head { background: #e74c3c; }
+        .card-icon.skin { background: #f39c12; }
+        .card-icon.heart { background: #e91e63; }
+        .card-icon.neuro { background: #9c27b0; }
+        .card-icon.diff { background: #2196f3; }
+        .card-icon.test { background: #4caf50; }
+        
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            background: #f8f9fa;
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .feature-list li:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .high-yield {
+            background: #fff3cd !important;
+            border-left-color: #ffc107 !important;
+            position: relative;
+        }
+        
+        .high-yield::after {
+            content: "⭐ HIGH YIELD";
+            position: absolute;
+            top: -5px;
+            right: 10px;
+            background: #ffc107;
+            color: #212529;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        
+        .board-pearl {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .board-pearl::before {
+            content: "💎 BOARD PEARL";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #28a745;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .differential-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .differential-table th {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .differential-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .differential-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .gene-highlight {
+            background: #e8f5e8;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .quiz-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #007bff;
+        }
+        
+        .quiz-options {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .quiz-options li {
+            background: white;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        
+        .answer {
+            display: none;
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        
+        .show-answer-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .show-answer-btn:hover {
+            background: #0056b3;
+        }
+        
+        .mnemonic-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .mnemonic-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .pathway-visual {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .pathway-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .pathway-step {
+            background: #3498db;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .pathway-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3498db;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .pathway-steps {
+                flex-direction: column;
+            }
+            
+            .pathway-step:not(:last-child)::after {
+                content: "↓";
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+        }
+        
+        .collapsible {
+            cursor: pointer;
+            padding: 15px;
+            background: #f1f3f4;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 4px solid #4285f4;
+        }
+        
+        .collapsible:hover {
+            background: #e8eaf6;
+        }
+        
+        .collapsible::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4285f4;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible.active::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .collapsible-content {
+            display: none;
+            padding: 15px;
+            background: white;
+            border-radius: 0 0 10px 10px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        
+        .memory-anchor {
+            background: #fff9c4;
+            border: 2px solid #ffeb3b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .memory-anchor::before {
+            content: "🧠 MEMORY ANCHOR";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #ffeb3b;
+            color: #333;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Cardiofaciocutaneous Syndrome (CFC)</h1>
+            <p class="subtitle">Interactive Study Guide for Saudi Board Dermatology Exam</p>
+            
+            <div class="quick-facts">
+                <div class="fact-card genetics">
+                    <div>RAS/MAPK Pathway</div>
+                    <small>BRAF, MEK1, MEK2, KRAS</small>
+                </div>
+                <div class="fact-card inheritance">
+                    <div>Autosomal Dominant</div>
+                    <small>De novo mutations</small>
+                </div>
+                <div class="fact-card prevalence">
+                    <div>Rare Syndrome</div>
+                    <small>Prevalence unknown</small>
+                </div>
+            </div>
+            
+            <div class="memory-anchor">
+                <strong>Memory Hook:</strong> CFC = <strong>C</strong>ardiac + <strong>F</strong>acial + <strong>C</strong>utaneous features in the RAS pathway
+            </div>
+        </div>
+
+        <!-- Pathway Visual -->
+        <div class="pathway-visual">
+            <h3 style="margin-bottom: 20px; color: #2c3e50;">RAS/MAPK Pathway in CFC</h3>
+            <div class="pathway-steps">
+                <div class="pathway-step">RAS Activation</div>
+                <div class="pathway-step">BRAF/MEK1/MEK2</div>
+                <div class="pathway-step">Cell Proliferation</div>
+                <div class="pathway-step">CFC Phenotype</div>
+            </div>
+            <p style="margin-top: 15px; color: #666;">Gain-of-function mutations → dysregulated cell differentiation, proliferation, and apoptosis</p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Craniofacial Features -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon head">👤</div>
+                    <h3>Craniofacial Features</h3>
+                </div>
+                
+                <div class="board-pearl">
+                    Remember the "Big Head, Small Features" pattern for boards
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="high-yield">Relative macrocephaly</li>
+                    <li class="high-yield">Prominent forehead</li>
+                    <li>Bitemporal constriction</li>
+                    <li class="high-yield">Hypertelorism</li>
+                    <li class="high-yield">Downslanting palpebral fissures</li>
+                    <li>Epicanthal folds</li>
+                    <li class="high-yield">Depressed nasal bridge</li>
+                    <li class="high-yield">Bulbous tip of the nose</li>
+                    <li>Posteriorly angulated ears with prominent helices</li>
+                    <li>Coarse facial features</li>
+                    <li>Wide mouth</li>
+                    <li>High-arched palate</li>
+                    <li>Bifid uvula</li>
+                </ul>
+            </div>
+
+            <!-- Cutaneous Features -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon skin">🔬</div>
+                    <h3>Cutaneous Features</h3>
+                </div>
+                
+                <div class="mnemonic-box">
+                    <h4>Skin Mnemonic: "HUNK-EX"</h4>
+                    <p><strong>H</strong>yperpigmentation, <strong>U</strong>lerythema ophryogenes, <strong>N</strong>evi, <strong>K</strong>eratosis pilaris, <strong>E</strong>czema, <strong>X</strong>erosis</p>
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="high-yield">Xerosis</li>
+                    <li class="high-yield">Eczema</li>
+                    <li class="high-yield">Keratosis pilaris</li>
+                    <li class="high-yield">Ulerythema ophryogenes</li>
+                    <li class="high-yield">Numerous acquired melanocytic nevi</li>
+                    <li>Hemangiomas</li>
+                    <li>Lymphedema</li>
+                    <li>Widespread hyperpigmentation</li>
+                    <li>Hyperhidrosis</li>
+                    <li>Acanthosis nigricans</li>
+                </ul>
+                
+                <div class="board-pearl">
+                    Ulerythema ophryogenes (keratosis pilaris of eyebrows) is highly characteristic!
+                </div>
+            </div>
+
+            <!-- Hair Features -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon skin">💇</div>
+                    <h3>Hair Features</h3>
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="high-yield">Sparse, curly, friable hair</li>
+                    <li class="high-yield">Sparse or absent eyebrows</li>
+                    <li class="high-yield">Poor hair growth</li>
+                    <li class="high-yield">Associated with ulerythema ophryogenes</li>
+                </ul>
+                
+                <div class="memory-anchor">
+                    <strong>Hair Triad:</strong> Sparse + Curly + Friable = Think CFC
+                </div>
+            </div>
+
+            <!-- Cardiac Features -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon heart">❤️</div>
+                    <h3>Cardiac Features</h3>
+                </div>
+                
+                <ul class="feature-list">
+                    <li class="high-yield">Pulmonic stenosis</li>
+                    <li class="high-yield">Atrial septal defect</li>
+                    <li class="high-yield">Ventricular septal defect</li>
+                    <li class="high-yield">Hypertrophic cardiomyopathy</li>
+                </ul>
+                
+                <div class="board-pearl">
+                    ECG and electrophysiologic studies recommended at diagnosis
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Features -->
+        <div class="card" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon neuro">🧠</div>
+                <h3>Additional System Involvement</h3>
+            </div>
+            
+            <div class="content-grid">
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Growth & Development</h4>
+                    <ul class="feature-list">
+                        <li class="high-yield">Short stature</li>
+                        <li class="high-yield">Failure to thrive</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Neurologic</h4>
+                    <ul class="feature-list">
+                        <li class="high-yield">Moderate to severe neurocognitive delay</li>
+                        <li>Seizures</li>
+                        <li>Hypotonia with motor delay</li>
+                        <li>Hydrocephalus</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Ophthalmologic</h4>
+                    <ul class="feature-list">
+                        <li>Ptosis</li>
+                        <li>Strabismus</li>
+                        <li>Cataracts</li>
+                        <li>Optic nerve atrophy</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Genitourinary</h4>
+                    <ul class="feature-list">
+                        <li>Cryptorchidism</li>
+                        <li>Renal cysts</li>
+                        <li>Hydronephrosis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Differential Diagnosis -->
+        <div class="card" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon diff">⚖️</div>
+                <h3>Differential Diagnosis - RASopathies</h3>
+            </div>
+            
+            <div class="board-pearl">
+                CFC shares overlapping features with other RASopathies - know the distinguishing features!
+            </div>
+            
+            <table class="differential-table">
+                <thead>
+                    <tr>
+                        <th>Syndrome</th>
+                        <th>Key Distinguishing Features</th>
+                        <th>Gene</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CFC Syndrome</strong></td>
+                        <td>Ulerythema ophryogenes, sparse curly hair, keratosis pilaris</td>
+                        <td><span class="gene-highlight">BRAF, MEK1, MEK2, KRAS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Noonan Syndrome</strong></td>
+                        <td>More frequent easy bleeding and bruising, fewer cutaneous features</td>
+                        <td><span class="gene-highlight">PTPN11</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Costello Syndrome</strong></td>
+                        <td>Papillomata (face/perianal), multifocal atrial tachycardia, ulnar deviation</td>
+                        <td><span class="gene-highlight">HRAS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Noonan with Multiple Lentigines</strong></td>
+                        <td>Multiple skin lentigines, frequent sensorineural deafness, cardiac conduction abnormalities</td>
+                        <td><span class="gene-highlight">PTPN11</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Diagnostic Testing -->
+        <div class="card" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon test">🧪</div>
+                <h3>Diagnostic Testing</h3>
+            </div>
+            
+            <div class="collapsible">
+                <strong>Genetic Testing Protocol</strong>
+            </div>
+            <div class="collapsible-content">
+                <div class="pathway-visual">
+                    <div class="pathway-steps">
+                        <div class="pathway-step">Multigene RAS/MAPK Panel</div>
+                        <div class="pathway-step">80% Detection Rate</div>
+                    </div>
+                    <p style="margin-top: 15px;">If panel unavailable: Sequential testing of (1) BRAF, (2) MEK1 and MEK2, (3) KRAS</p>
+                </div>
+                
+                <div class="board-pearl">
+                    If gene testing negative → consider high-resolution chromosome microarray
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <strong>Additional Testing at Diagnosis</strong>
+            </div>
+            <div class="collapsible-content">
+                <ul class="feature-list">
+                    <li class="high-yield">ECG and electrophysiologic studies</li>
+                    <li>Comprehensive cardiac evaluation</li>
+                    <li>Neurologic assessment</li>
+                    <li>Ophthalmologic examination</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Management -->
+        <div class="card" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon neuro">👥</div>
+                <h3>Management</h3>
+            </div>
+            
+            <div class="board-pearl">
+                No specific therapy for CFC - multidisciplinary approach is key
+            </div>
+            
+            <div class="content-grid">
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Required Specialists</h4>
+                    <ul class="feature-list">
+                        <li>Genetics</li>
+                        <li>Cardiology</li>
+                        <li>Neurology</li>
+                        <li>Gastroenterology</li>
+                        <li>Endocrinology</li>
+                        <li>Orthopedics</li>
+                        <li>Ophthalmology</li>
+                        <li>Nephrology</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">Additional Support</h4>
+                    <ul class="feature-list">
+                        <li>Nutritionist</li>
+                        <li>Behavioral therapist</li>
+                        <li>Speech therapy</li>
+                        <li>Physical therapy</li>
+                        <li>Occupational therapy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Board Review Quiz -->
+        <div class="quiz-section">
+            <h3 style="color: #2c3e50; margin-bottom: 20px;">🎯 Board Review Questions</h3>
+            
+            <div class="quiz-question">
+                <strong>Question 1:</strong> A 6-month-old infant presents with sparse, curly hair, absent eyebrows, keratosis pilaris, and distinctive facial features including macrocephaly and hypertelorism. Which gene mutation is MOST likely responsible?
+                
+                <ul class="quiz-options">
+                    <li onclick="selectAnswer(this, false)">A) PTPN11</li>
+                    <li onclick="selectAnswer(this, true)">B) BRAF</li>
+                    <li onclick="selectAnswer(this, false)">C) HRAS</li>
+                    <li onclick="selectAnswer(this, false)">D) NF1</li>
+                </ul>
+                
+                <button class="show-answer-btn" onclick="showAnswer(1)">Show Answer & Explanation</button>
+                <div id="answer1" class="answer">
+                    <strong>Correct Answer: B) BRAF</strong><br>
+                    The combination of sparse, curly, friable hair with ulerythema ophryogenes (keratosis pilaris of eyebrows), distinctive facial features, and cutaneous findings is classic for CFC syndrome. BRAF mutations are the most common cause of CFC (along with MEK1, MEK2). PTPN11 causes Noonan syndrome, HRAS causes Costello syndrome.
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <strong>Question 2:</strong> What is the key distinguishing cutaneous feature that helps differentiate CFC from other RASopathies?
+                
+                <ul class="quiz-options">
+                    <li onclick="selectAnswer(this, false)">A) Café-au-lait macules</li>
+                    <li onclick="selectAnswer(this, true)">B) Ulerythema ophryogenes</li>
+                    <li onclick="selectAnswer(this, false)">C) Multiple lentigines</li>
+                    <li onclick="selectAnswer(this, false)">D) Papillomata</li>
+                </ul>
+                
+                <button class="show-answer-btn" onclick="showAnswer(2)">Show Answer & Explanation</button>
+                <div id="answer2" class="answer">
+                    <strong>Correct Answer: B) Ulerythema ophryogenes</strong><br>
+                    Ulerythema ophryogenes (keratosis pilaris affecting the eyebrows) is highly characteristic of CFC syndrome and helps distinguish it from other RASopathies. Multiple lentigines are seen in Noonan syndrome with multiple lentigines, and papillomata are characteristic of Costello syndrome.
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <strong>Question 3:</strong> A patient with suspected CFC syndrome needs genetic testing. What is the recommended first-line approach?
+                
+                <ul class="quiz-options">
+                    <li onclick="selectAnswer(this, false)">A) BRAF gene sequencing only</li>
+                    <li onclick="selectAnswer(this, true)">B) Multigene RAS/MAPK pathway panel</li>
+                    <li onclick="selectAnswer(this, false)">C) Chromosome microarray</li>
+                    <li onclick="selectAnswer(this, false)">D) PTPN11 gene sequencing</li>
+                </ul>
+                
+                <button class="show-answer-btn" onclick="showAnswer(3)">Show Answer & Explanation</button>
+                <div id="answer3" class="answer">
+                    <strong>Correct Answer: B) Multigene RAS/MAPK pathway panel</strong><br>
+                    The multigene RAS/MAPK pathway panel is recommended as first-line testing with approximately 80% mutation detection rate. If panel testing is unavailable, sequential testing of BRAF, then MEK1/MEK2, then KRAS should be performed.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Collapsible functionality
+        document.querySelectorAll('.collapsible').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        // Quiz functionality
+        function selectAnswer(element, isCorrect) {
+            // Remove previous selections
+            element.parentNode.querySelectorAll('li').forEach(li => {
+                li.style.backgroundColor = '';
+                li.style.borderColor = '';
+            });
+            
+            // Highlight selected answer
+            if (isCorrect) {
+                element.style.backgroundColor = '#d4edda';
+                element.style.borderColor = '#28a745';
+            } else {
+                element.style.backgroundColor = '#f8d7da';
+                element.style.borderColor = '#dc3545';
+            }
+        }
+
+        function showAnswer(questionNumber) {
+            const answer = document.getElementById(`answer${questionNumber}`);
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Add hover effects and animations
+        document.querySelectorAll('.feature-list li').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Memory anchor interactions
+        document.querySelectorAll('.memory-anchor').forEach(anchor => {
+            anchor.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'fadeInUp 0.6s ease-out';
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>

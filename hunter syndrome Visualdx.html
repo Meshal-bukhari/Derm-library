@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Syndrome (MPS II) - Board Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --mnemonic: #9b59b6;
+            --pearl: #f39c12;
+            --diagnostic: #2ecc71;
+            --treatment: #1abc9c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .quick-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .fact-card {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .fact-card h3 {
+            margin-top: 0;
+            color: var(--secondary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 5px;
+        }
+        
+        .clinical-features {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 8px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .feature-item {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.03);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            color: var(--secondary);
+        }
+        
+        .mnemonic-box {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: var(--primary);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mnemonic-box::before {
+            content: "MNEMONIC";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.3);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .mnemonic-title {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            padding-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .mnemonic-letter {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+        
+        .diagnostic-approach {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .diagnostic-flow {
+            background: linear-gradient(to right, var(--diagnostic), #6dd5ed);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            position: relative;
+        }
+        
+        .diagnostic-step {
+            background: white;
+            color: var(--primary);
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .diagnostic-step:hover {
+            transform: translateX(5px);
+        }
+        
+        .diagnostic-step:not(:last-child)::after {
+            content: "↓";
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .differential-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .differential-table th {
+            background: linear-gradient(to right, var(--secondary), #4facfe);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .differential-table tr:nth-child(even) {
+            background-color: var(--light);
+        }
+        
+        .differential-table tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .differential-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .pearl-box {
+            background-color: var(--pearl);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pearl-box::before {
+            content: "💎 BOARD PEARL";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--primary);
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .treatment-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .treatment-option {
+            border-left: 5px solid var(--treatment);
+            padding: 5px 0 5px 20px;
+            margin: 20px 0;
+            background-color: rgba(26, 188, 156, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .treatment-option h4 {
+            margin-top: 10px;
+            color: var(--treatment);
+            font-size: 1.2rem;
+        }
+        
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .management-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .management-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .management-card h4 {
+            margin-top: 0;
+            color: var(--secondary);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+        
+        .special-considerations {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .quiz-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .quiz-question {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .quiz-option {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .answer-explanation {
+            display: none;
+            background: white;
+            color: var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .flashcard-container {
+            perspective: 1000px;
+            margin: 30px 0;
+        }
+        
+        .flashcard {
+            background-color: white;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        
+        .flashcard-front {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--primary);
+            transform: rotateY(180deg);
+            overflow: auto;
+        }
+        
+        .key-points {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .key-points h3 {
+            color: var(--accent);
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .key-points ul {
+            columns: 2;
+            column-gap: 30px;
+        }
+        
+        .key-points li {
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 3rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid, .management-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .key-points ul {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hunter Syndrome (MPS II)</h1>
+            <p class="subtitle">Mucopolysaccharidosis Type II - High-Yield Board Review</p>
+        </header>
+        
+        <section class="quick-facts">
+            <div class="fact-card">
+                <h3>Definition</h3>
+                <p>X-linked recessive lysosomal storage disease caused by deficiency in iduronate-2-sulfatase, leading to accumulation of heparan sulfate and dermatan sulfate in various organs.</p>
+            </div>
+            
+            <div class="fact-card">
+                <h3>Epidemiology</h3>
+                <p>Rare disorder (1 in 170,000 live births). Higher incidence in Ashkenazi and Sephardic Jewish populations. Predominantly affects males but can occur in females (skewed X chromosome inactivation).</p>
+            </div>
+            
+            <div class="fact-card">
+                <h3>Onset & Prognosis</h3>
+                <p>Severe form: Symptoms typically onset between 2-4 years. Average life expectancy 10-15 years.<br>
+                Attenuated form: Minimal neurologic symptoms, often normal intelligence.</p>
+            </div>
+        </section>
+        
+        <section class="clinical-features">
+            <h2>Clinical Manifestations</h2>
+            <div class="mnemonic-box">
+                <h3 class="mnemonic-title">Mnemonic: "HUNTER"</h3>
+                <p><span class="mnemonic-letter">H</span>eavy facial features (coarse, distinctive)<br>
+                <span class="mnemonic-letter">U</span>nderdeveloped mental capacity (in severe form)<br>
+                <span class="mnemonic-letter">N</span>odular skin lesions (ivory-white papules)<br>
+                <span class="mnemonic-letter">T</span>horacic & cardiac concerns (valvular heart disease, obstructive airway)<br>
+                <span class="mnemonic-letter">E</span>ar infections (recurrent) & hearing loss<br>
+                <span class="mnemonic-letter">R</span>estricted joint mobility & skeletal deformities</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">👤</span>
+                    <span>Coarse facial features</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🧠</span>
+                    <span>Intellectual disability</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📏</span>
+                    <span>Short stature</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">👂</span>
+                    <span>Hearing loss</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">👁️</span>
+                    <span>Vision changes</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🦴</span>
+                    <span>Skeletal deformities</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔄</span>
+                    <span>Joint stiffness</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤲</span>
+                    <span>Carpal tunnel syndrome</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔍</span>
+                    <span>Developmental delay</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🫁</span>
+                    <span>Hepatosplenomegaly</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🦠</span>
+                    <span>Recurrent ear infections</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💭</span>
+                    <span>Hypertrichosis</span>
+                </div>
+            </div>
+            
+            <div class="pearl-box">
+                <p>Look specifically for distinctive facial features: broad nose, prominent supraorbital ridges, thick lips, enlarged and protruding tongue, large head circumference.</p>
+            </div>
+            
+            <h3>Distinctive Skin Findings</h3>
+            <p>Ivory-white papules that often coalesce - a key dermatologic feature to recognize on Board exams.</p>
+            
+            <h3>Radiologic Findings</h3>
+            <p>Dysostosis multiplex: abnormally thick bones, irregular epiphyseal ossification of joints in the upper limbs, abnormal rib shape.</p>
+        </section>
+        
+        <div class="diagnostic-approach">
+            <h2>Diagnostic Approach</h2>
+            
+            <div class="pearl-box">
+                <p>Think of lysosomal storage disorders such as Hunter syndrome in a child with coarse facial features and developmental delay.</p>
+            </div>
+            
+            <div class="pearl-box">
+                <p>In cases highly suspicious for an MPS, a normal urine glycosaminoglycan (GAG) analysis does not rule out the diagnosis due to the potential for false negatives.</p>
+            </div>
+            
+            <h3>Diagnostic Workflow</h3>
+            <div class="diagnostic-flow">
+                <div class="diagnostic-step">
+                    <strong>Screening:</strong> Urine GAG measurement (excess urinary dermatan sulfate and heparan sulfate)
+                </div>
+                <div class="diagnostic-step">
+                    <strong>Confirmation:</strong> Absent or low iduronate-2-sulfatase activity in serum, leukocytes, or cultured fibroblasts
+                </div>
+                <div class="diagnostic-step">
+                    <strong>Genetic Testing:</strong> IDS gene analysis to identify affected males and carrier females
+                </div>
+                <div class="diagnostic-step">
+                    <strong>Prenatal Testing:</strong> If available, using enzyme activity assays or molecular analysis
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <h2>Differential Diagnosis</h2>
+            <table class="differential-table">
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Key Distinguishing Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MPS I or MPS VII</td>
+                        <td>Similar to Hunter syndrome, these patients excrete dermatan sulfate and heparan sulfate in urine. See Hurler syndrome (MPS I-H).</td>
+                    </tr>
+                    <tr>
+                        <td>MPS III-VI</td>
+                        <td>Urinary GAG composition can help distinguish these from Hunter syndrome. See Maroteaux-Lamy syndrome (MPS VI).</td>
+                    </tr>
+                    <tr>
+                        <td>Multiple sulfatase deficiency</td>
+                        <td>Multiple enzyme deficiencies affecting several pathways</td>
+                    </tr>
+                    <tr>
+                        <td>Mucolipidosis type II</td>
+                        <td>Similar physical features but different enzyme deficiency</td>
+                    </tr>
+                    <tr>
+                        <td>Mucolipidosis type III</td>
+                        <td>Similar physical features but different enzyme deficiency</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="treatment-section">
+            <h2>Management & Treatment</h2>
+            
+            <div class="pearl-box">
+                <p>Due to the multisystem nature of the disease, management of Hunter syndrome involves a multidisciplinary approach.</p>
+            </div>
+            
+            <h3>Multidisciplinary Management</h3>
+            <div class="management-grid">
+                <div class="management-card">
+                    <h4>Cardiology</h4>
+                    <p>Routine echocardiograms to monitor for valvular heart disease</p>
+                </div>
+                <div class="management-card">
+                    <h4>Pulmonology</h4>
+                    <p>Routine pulmonary function testing</p>
+                </div>
+                <div class="management-card">
+                    <h4>Sleep Medicine</h4>
+                    <p>Sleep study if obstructive sleep apnea is suspected</p>
+                </div>
+                <div class="management-card">
+                    <h4>Otolaryngology (ENT)</h4>
+                    <p>Hearing evaluations</p>
+                </div>
+                <div class="management-card">
+                    <h4>Ophthalmology</h4>
+                    <p>Routine eye examinations</p>
+                </div>
+                <div class="management-card">
+                    <h4>Neurology</h4>
+                    <ul>
+                        <li>Developmental assessments</li>
+                        <li>Consider nerve conduction studies for carpal tunnel syndrome</li>
+                        <li>Consider head or cervical MRI if hydrocephalus or spinal cord compression is suspected</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Treatment Options</h3>
+            <div class="treatment-option">
+                <h4>Enzyme Replacement Therapy (ERT)</h4>
+                <p>Mainstay of treatment in Hunter syndrome:</p>
+                <ul>
+                    <li><strong>Drug:</strong> Idursulfase</li>
+                    <li><strong>Dosing:</strong> Weekly infusions at 0.5 mg/kg over 3 hours</li>
+                    <li><strong>Benefits:</strong> Improved 6-minute walking distance and forced vital capacity (FVC)</li>
+                    <li><strong>Limitations:</strong> Does not cross blood-brain barrier; doesn't affect cognition or behavior</li>
+                    <li><strong>Adverse Effects:</strong> Primarily infusion-related reactions</li>
+                </ul>
+            </div>
+            
+            <div class="treatment-option">
+                <h4>Hematopoietic Stem Cell Transplantation</h4>
+                <p>Has been used to increase enzyme activity, but its use is controversial given the potential for morbidity and mortality.</p>
+            </div>
+            
+            <div class="treatment-option">
+                <h4>Research & Future Directions</h4>
+                <p>Recent studies focusing on treatment mechanisms for central nervous system manifestations of the disease.</p>
+            </div>
+            
+            <div class="special-considerations">
+                <h4>⚠️ Special Considerations During Procedures</h4>
+                <p>Special care needs to be taken with sedation in these patients:</p>
+                <ul>
+                    <li>Endotracheal intubation can be difficult secondary to the anatomy of the mouth and throat</li>
+                    <li>Neck hyperextension should be minimized due to atlantoaxial instability</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="flashcard-container">
+            <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                <div class="flashcard-front">
+                    What is the enzyme deficiency in Hunter syndrome?
+                </div>
+                <div class="flashcard-back">
+                    <p><strong>Iduronate-2-sulfatase</strong></p>
+                    <p>This leads to accumulation of heparan sulfate and dermatan sulfate in various organs.</p>
+                    <p><small>* Click card to flip back</small></p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="quiz-section">
+            <h2>High-Yield Board Questions</h2>
+            
+            <div class="quiz-question">
+                <p><strong>Question 1:</strong> Which enzyme deficiency is responsible for Hunter syndrome?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('q1')">A. Alpha-L-iduronidase</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q1')">B. Iduronate-2-sulfatase</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q1')">C. N-acetylgalactosamine-6-sulfatase</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q1')">D. Beta-glucuronidase</div>
+                </div>
+                <div id="answer-q1" class="answer-explanation">
+                    <p><strong>Correct Answer: B. Iduronate-2-sulfatase</strong></p>
+                    <p>Hunter syndrome (MPS II) is caused by a deficiency in iduronate-2-sulfatase. Alpha-L-iduronidase deficiency causes MPS I (Hurler syndrome), N-acetylgalactosamine-6-sulfatase deficiency causes MPS IVA (Morquio A syndrome), and beta-glucuronidase deficiency causes MPS VII (Sly syndrome).</p>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Question 2:</strong> Which compounds accumulate in Hunter syndrome?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('q2')">A. Heparan sulfate and dermatan sulfate</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q2')">B. Keratan sulfate and chondroitin sulfate</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q2')">C. Sphingomyelin and cholesterol</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q2')">D. Gangliosides and ceramides</div>
+                </div>
+                <div id="answer-q2" class="answer-explanation">
+                    <p><strong>Correct Answer: A. Heparan sulfate and dermatan sulfate</strong></p>
+                    <p>In Hunter syndrome, the deficiency in iduronate-2-sulfatase leads to an accumulation of heparan sulfate and dermatan sulfate in various organs.</p>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Question 3:</strong> What is a key dermatologic finding in Hunter syndrome?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('q3')">A. Cafe-au-lait macules</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q3')">B. Ivory-white papules that often coalesce</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q3')">C. Angiofibromas on the face</div>
+                    <div class="quiz-option" onclick="toggleAnswer('q3')">D. Telangiectasias</div>
+                </div>
+                <div id="answer-q3" class="answer-explanation">
+                    <p><strong>Correct Answer: B. Ivory-white papules that often coalesce</strong></p>
+                    <p>Distinctive skin findings in Hunter syndrome include ivory-white papules that often coalesce, which is a key dermatologic feature to recognize.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="key-points">
+            <h3>High-Yield Points for Board Exam</h3>
+            <ul>
+                <li>Hunter syndrome is an X-linked recessive lysosomal storage disease caused by iduronate-2-sulfatase deficiency</li>
+                <li>Primarily affects males but can occur in females due to skewed X chromosome inactivation</li>
+                <li>Coarse facial features, developmental delay, and multisystem involvement are hallmark features</li>
+                <li>Distinctive skin finding: ivory-white papules that often coalesce</li>
+                <li>Diagnostic confirmation requires enzyme activity testing</li>
+                <li>Urinary GAGs include dermatan sulfate and heparan sulfate</li>
+                <li>Enzyme replacement therapy (ERT) with idursulfase is the mainstay of treatment</li>
+                <li>ERT does not cross the blood-brain barrier and doesn't affect CNS symptoms</li>
+                <li>Special care is needed during sedation procedures due to difficult airway anatomy</li>
+                <li>X-ray shows dysostosis multiplex: abnormally thick bones, irregular epiphyseal ossification</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>Saudi Board Dermatology Exam Review Resource</p>
+            <p><small>Content based on medical literature as of 2023</small></p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById('answer-' + id);
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

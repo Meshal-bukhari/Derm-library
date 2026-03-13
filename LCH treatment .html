@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCH Treatment - Quick Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            background-color: white;
+            color: black;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+        }
+        
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+        
+        .header {
+            background: #000;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            padding: 12px;
+        }
+        
+        .severity-header {
+            background: #333;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            width: 25%;
+        }
+        
+        .treatment-cell {
+            padding: 12px;
+            border: 1px solid #000;
+            vertical-align: top;
+        }
+        
+        .first-line {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .systemic {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .targeted {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .intensive {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .key-point {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .mutation-box {
+            background: #f5f5f5;
+            border: 2px dashed #666;
+            padding: 8px;
+            margin: 5px 0;
+            font-style: italic;
+        }
+        
+        ul {
+            margin: 5px 0 10px 0;
+            padding-left: 18px;
+        }
+        
+        li {
+            margin: 2px 0;
+            line-height: 1.3;
+        }
+        
+        .treatment-level {
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 8px;
+        }
+        
+        .note {
+            background: #fffde7;
+            border-left: 3px solid #fbc02d;
+            padding: 6px;
+            margin: 8px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <table class="main-table">
+        <tr>
+            <td colspan="2" class="header">
+                LANGERHANS CELL HISTIOCYTOSIS (LCH) - Stratified Treatment Approaches
+            </td>
+        </tr>
+        
+        <!-- ASYMPTOMATIC/MILD -->
+        <tr>
+            <td class="severity-header">
+                ASYMPTOMATIC<br/>
+                VERY MILD<br/>
+                DISEASE
+            </td>
+            <td class="treatment-cell">
+                <div class="treatment-level">🎯 EXPECTANT MANAGEMENT</div>
+                <ul>
+                    <li><span class="key-point">Some patients may not require specific treatment</span></li>
+                    <li><strong>Candidates:</strong>
+                        <ul>
+                            <li>Single-lesion eosinophilic granuloma</li>
+                            <li>Very limited, asymptomatic congenital self-healing LCH</li>
+                        </ul>
+                    </li>
+                    <li><span class="key-point">⚠️ Still requires monitoring</span></li>
+                </ul>
+            </td>
+        </tr>
+        
+        <!-- SINGLE-SYSTEM SKIN -->
+        <tr>
+            <td class="severity-header">
+                MILD<br/>
+                SINGLE-SYSTEM<br/>
+                SKIN DISEASE
+            </td>
+            <td class="treatment-cell first-line">
+                <div class="treatment-level">🥇 SKIN-DIRECTED THERAPIES (First-Line)</div>
+                
+                <strong>Topical Agents:</strong>
+                <ul>
+                    <li>Topical corticosteroids</li>
+                    <li>Topical antimicrobials (if secondarily infected)</li>
+                    <li><span class="key-point">Mechlorethamine (topical nitrogen mustard)</span></li>
+                    <li>Imiquimod</li>
+                </ul>
+                
+                <strong>Phototherapy:</strong>
+                <ul>
+                    <li>Narrowband UVB (NBUVB)</li>
+                    <li>PUVA (Psoralen + UVA)</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <!-- EXTENSIVE CUTANEOUS -->
+        <tr>
+            <td class="severity-header">
+                EXTENSIVE<br/>
+                CUTANEOUS<br/>
+                DISEASE
+            </td>
+            <td class="treatment-cell systemic">
+                <div class="treatment-level">🥈 SYSTEMIC IMMUNOMODULATORS</div>
+                
+                <div class="note">
+                    <strong>Indications:</strong> Widespread skin disease OR refractory to topical therapies
+                </div>
+                
+                <ul>
+                    <li>Thalidomide</li>
+                    <li>Azathioprine</li>
+                    <li>Methotrexate</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <!-- SYSTEMIC DISEASE -->
+        <tr>
+            <td class="severity-header">
+                SYSTEMIC<br/>
+                DISEASE<br/>
+                (Multisystem/<br/>High-Risk)
+            </td>
+            <td class="treatment-cell systemic">
+                <div class="treatment-level">💊 SYSTEMIC CHEMOTHERAPY</div>
+                
+                <div class="note">
+                    <strong>Used for:</strong> Letterer-Siwe, multifocal Hand-Schüller-Christian disease
+                </div>
+                
+                <ul>
+                    <li><span class="key-point">Vinblastine</span></li>
+                    <li><span class="key-point">Systemic Corticosteroids</span></li>
+                    <li>Cladribine</li>
+                    <li>Interferon alfa-2a</li>
+                </ul>
+            </td>
+        </tr>
+        
+        <!-- TARGETED THERAPY -->
+        <tr>
+            <td class="severity-header">
+                TARGETED<br/>
+                THERAPY<br/>
+                (Modern Revolution)
+            </td>
+            <td class="treatment-cell targeted">
+                <div class="treatment-level">🎯 MUTATION-DIRECTED THERAPY</div>
+                
+                <div class="note">
+                    <span class="key-point">"Revolutionized treatment strategies"</span> - especially for aggressive/resistant disease
+                </div>
+                
+                <div class="mutation-box">
+                    <strong>BRAF V600E Mutation (Most Common):</strong><br/>
+                    → Selective BRAF Inhibitors (e.g., <strong>Vemurafenib</strong>)
+                </div>
+                
+                <div class="mutation-box">
+                    <strong>BRAF + Other MAPK Pathway Mutations:</strong><br/>
+                    → MEK Inhibitors (e.g., <strong>Cobimetinib</strong>)<br/>
+                    <em>Includes MAP2K1/MEK1 mutations</em>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- REFRACTORY/RELAPSED -->
+        <tr>
+            <td class="severity-header">
+                REFRACTORY<br/>
+                RELAPSED<br/>
+                DISEASE
+            </td>
+            <td class="treatment-cell intensive">
+                <div class="treatment-level">🔄 SALVAGE THERAPIES</div>
+                
+                <div class="note">
+                    <strong>For patients not responding to initial chemotherapy</strong>
+                </div>
+                
+                <strong>Second-Line Chemotherapy:</strong>
+                <ul>
+                    <li>Cladribine</li>
+                    <li>Cytarabine</li>
+                </ul>
+                
+                <strong>Intensive Option:</strong>
+                <ul>
+                    <li><span class="key-point">Autologous Hematopoietic Stem Cell Transplant (HSCT)</span></li>
+                </ul>
+            </td>
+        </tr>
+        
+        <!-- QUICK REFERENCE -->
+        <tr>
+            <td colspan="2" style="background: #f8f9fa; padding: 15px; border-top: 3px solid #000;">
+                <div style="text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+                    🔑 QUICK REFERENCE - TREATMENT HIERARCHY
+                </div>
+                
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                    <div style="margin: 5px;">
+                        <strong>Mild:</strong> Topicals → Phototherapy
+                    </div>
+                    <div style="margin: 5px;">
+                        <strong>Extensive:</strong> Systemic immunomodulators
+                    </div>
+                    <div style="margin: 5px;">
+                        <strong>Systemic:</strong> Vinblastine + Steroids
+                    </div>
+                    <div style="margin: 5px;">
+                        <strong>Targeted:</strong> BRAF/MEK inhibitors
+                    </div>
+                    <div style="margin: 5px;">
+                        <strong>Refractory:</strong> Salvage chemo → HSCT
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

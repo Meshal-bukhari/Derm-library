@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 69: Alopecia - Saudi Board Exam Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            min-width: 150px;
+        }
+
+        .nav-tab:hover {
+            background: #f8f9fa;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #ff6b6b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '💡';
+            font-size: 1.5em;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid #4ecdc4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .clinical-pearl::before {
+            content: '⭐';
+            font-size: 1.5em;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .mcq-focus {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-left: 3px solid #ff6b6b;
+            padding: 2px 8px;
+            margin: 0 4px;
+            border-radius: 6px;
+            display: inline-block;
+            font-size: 0.85em;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .mcq-focus::before {
+            content: '📝';
+            font-size: 0.7em;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .pathophysiology {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            border-left: 5px solid #8e44ad;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .treatment-box {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .diagnosis-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            border-left: 5px solid #e91e63;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .collapsible {
+            background: #f8f9fa;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background: #e9ecef;
+        }
+
+        .collapsible.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .collapsible-content.active {
+            max-height: 1000px;
+            padding: 20px;
+        }
+
+        .drug-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .drug-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .drug-item:hover {
+            transform: scale(1.05);
+        }
+
+        .percentage-stat {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 5px;
+            font-weight: bold;
+            color: #8e44ad;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .key-number {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 2s ease;
+        }
+
+        .interactive-diagram {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .hair-cycle {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .cycle-phase {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            width: 200px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cycle-phase:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .hair-cycle {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .drug-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chapter 69: Alopecia</h1>
+            <p>Comprehensive Saudi Board Exam Preparation</p>
+        </div>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="overview">Overview</div>
+            <div class="nav-tab" data-tab="non-scarring">Non-Scarring</div>
+            <div class="nav-tab" data-tab="scarring">Scarring</div>
+            <div class="nav-tab" data-tab="hair-shaft">Hair Shaft</div>
+            <div class="nav-tab" data-tab="diagnosis">Diagnosis</div>
+            <div class="nav-tab" data-tab="treatment">Treatment</div>
+        </div>
+
+        <div id="overview" class="tab-content active">
+            <div class="section">
+                <div class="section-title">Chapter Organization</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Non-scarring alopecias will be discussed first</strong>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Scarring alopecias will be discussed second</strong>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Finally, hair shaft abnormalities will be discussed</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Normal Hair Cycle - Foundation Knowledge</div>
+                <div class="interactive-diagram">
+                    <div class="hair-cycle">
+                        <div class="cycle-phase">
+                            <h3>Anagen</h3>
+                            <div class="percentage-stat">~90%</div>
+                            <p>Growth phase</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Catagen</h3>
+                            <div class="percentage-stat">~<1%</div>
+                            <p>Transition phase</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Telogen</h3>
+                            <div class="percentage-stat">~10%</div>
+                            <p>Rest phase (3 months)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Compared to other areas of the body, percentage of anagen is higher and telogen is lower in the scalp, and this is why scalp hair grows longer <strong>(MCQ)</strong>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Normal Hair Facts:</strong>
+                    <ul>
+                        <li>~100,000 hair follicles are present in normal scalp</li>
+                        <li>Normally, 50-200 hairs are shed daily</li>
+                        <li>Telogen phase typically lasts 3 months</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="non-scarring" class="tab-content">
+            <div class="section">
+                <div class="section-title">Androgenic Alopecia (AGA)</div>
+                
+                <div class="highlight-box">
+                    <strong>Key Fact:</strong> Most common cause of hair loss
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Epidemiology:</strong>
+                    <ul>
+                        <li><span class="percentage-stat">80%</span> of Caucasian men show evidence by age 70</li>
+                        <li><span class="percentage-stat">~50%</span> of women show evidence by age 70</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">🧬 Pathogenesis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="pathophysiology">
+                        <h4>Genetic Predisposition:</h4>
+                        <ul>
+                            <li>Strong genetic predisposition</li>
+                            <li>Multiple loci identified:
+                                <ul>
+                                    <li><strong>Males:</strong> androgen receptor</li>
+                                    <li><strong>Females:</strong> estrogen receptor and aromatase</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>In Men → DHT Expression:</h4>
+                        <ul>
+                            <li>Testosterone is converted to DHT by enzyme 5-α-reductase</li>
+                            <li><strong>Three types of 5-α-reductase exist:</strong>
+                                <ul>
+                                    <li><strong>Type I:</strong> sebaceous glands and liver</li>
+                                    <li><strong>Type II:</strong> scalp, beard, and chest hair follicles, liver and prostate</li>
+                                    <li><strong>Type III:</strong> epidermis and dermis, unknown function</li>
+                                </ul>
+                            </li>
+                            <li>Increased 5-α-reductase activity in balding areas compared non-balding areas</li>
+                        </ul>
+
+                        <h4>In Women:</h4>
+                        <ul>
+                            <li>Similar pathogenesis probably</li>
+                            <li>Aromatase may play a more significant role compared to male AGA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Male Pattern Hair Loss (MPHL):</h4>
+                        <ul>
+                            <li>Symmetric progressive hair loss over the bitemporal, frontal, and vertex</li>
+                            <li><strong>Graded by the Hamilton-Norwood scale</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>Women with MPHL should be graded by the HN classification as well</li>
+                        </ul>
+
+                        <h4>Female Pattern Hair Loss (FPHL):</h4>
+                        <ul>
+                            <li>Diffuse central thinning of the crown with preservation of the frontal hairline</li>
+                            <li><strong>"Christmas tree" pattern</strong></li>
+                            <li><strong>Graded by the Ludwing or Sinclair scales</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+
+                        <h4>Trichoscopy:</h4>
+                        <ul>
+                            <li><strong>Diversity of hair thickness (>20% diversity is characteristic)</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li><strong>Peripilar sign:</strong> brown halo around hair follicles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Pathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li>One or two terminal hairs per hair follicle (normally 3-5)</li>
+                        <li>Looks similar to sebaceous hyperplasia, sebaceous glands without hair</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <h4>FDA-Approved Treatments:</h4>
+                        <div class="drug-list">
+                            <div class="drug-item">Topical minoxidil. 2% and 5% are FDA approved for both genders </div>
+                            <div class="drug-item">Low-level laser</div>
+                            <div class="drug-item">Finasteride: 1mg/d approved for men only not approved for women</div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <strong>Important:</strong> Continued treatment indefinitely is paramount
+                        </div>
+
+                        <h4>Finasteride Side Effects:</h4>
+                        <ul>
+                            <li>Decreased ejaculate fluid</li>
+                            <li>Loss of libido</li>
+                            <li>Erectile dysfunction</li>
+                            <li>PSA abnormalities</li>
+                            <li>Decreased risk of low grade prostate cancer, but increased rate of high grade cancers</li>
+                        </ul>
+
+                        <h4>Other Options:</h4>
+                        <ul>
+                            <li><strong>Dutasteride:</strong> blocks both DHT I and II, more potent compared to finasteride</li>
+                            <li><strong>Hair transplant</strong></li>
+                            <li><strong>For women:</strong> anti-androgens but contraception is very important</li>
+                        </ul>
+
+                        <div class="clinical-pearl">
+                            For further information about anti-androgens, see chapter 70
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Telogen Effluvium</div>
+
+                <div class="highlight-box">
+                    <strong>Key Fact:</strong> TE is the most common cause of hair loss caused by medication
+                </div>
+
+                <button class="collapsible">🧬 Pathogenesis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="pathophysiology">
+                        <ul>
+                            <li>A trigger leads to abrupt shift of anagen phase to telogen phase</li>
+                            <li>These may be medication, malnutrition, or medical illness</li>
+                            <li>The duration of TE will depend on the underlying cause</li>
+                            <li><strong>Hair loss occurs ~3 months after the offending agent</strong></li>
+                            <li><strong>Most drugs associated with hair loss cause TE, except chemotherapy (AE)</strong></li>
+                            <li>When no underlying cause is identified for >6 months, patient is labeled as chronic TE</li>
+                            <li>Chronic TE mainly occurs in women 30-60 years of age, and it's a diagnosis of exclusion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Thinning of hair involves the whole scalp</li>
+                            <li>May also be evident on other hairy areas like the pubic area and axilla</li>
+                            <li><strong>Hair pull test will be positive</strong></li>
+                            <li><strong>Hair pluck test and trichogram will show a percentage of TE to be >20% (diagnostic)</strong></li>
+                            <li>Eventually hair is expected to fully grow</li>
+                            <li>In women with chronic TE, the prognosis is also excellent</li>
+                            <li>Complete balding is not expected</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Workup - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="clinical-pearl">
+                        <h4>In patients with no identifiable cause:</h4>
+                        <ul>
+                            <li>CBC, chemistry, ESR, ferritin</li>
+                            <li><strong>Ferritin level should be above 40 ng/dL</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <strong>Correct the underlying cause</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Alopecia Areata</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li>Non-scarring autoimmune disease</li>
+                        <li><strong>Prevalence 1-2%</strong></li>
+                        <li><strong>1/5 patients report family history of alopecia areata</strong></li>
+                        <li><strong>Most common cause of hair loss in children</strong></li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">🧬 Pathogenesis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="pathophysiology">
+                        <p>Genetically susceptible individuals → exposed to a trigger (stress, vaccine, viral infection) → loss of immune tolerance → lymphocytic destruction of the hair follicle</p>
+                        
+                        <div class="clinical-pearl">
+                            Immune mediated hypothesis is supported by the association of alopecia areata with other autoimmune disease, and response to immunosuppressives
+                        </div>
+                    </div>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Round or oval patches of non-scarring alopecia</li>
+                            <li><strong>Exclamation point hair:</strong> distal portion is thicker than the proximal portion, characteristic</li>
+                            <li>Non-pigmented hairs may be spared, and regrowth may initially be non-pigmented</li>
+                            <li>Other variants include totalis, universalis, ophiasis, sisapho, and perinevoid</li>
+                            <li><strong>Nail pitting most common nail finding (regular)</strong></li>
+                            <li>Trachyonychia ,Brittle nails
+
+                                ,Onycholysis
+                                
+                               , Koilonychia and
+                                
+                                Onychomadesis</li>
+                            <li><span class="percentage-stat">5%</span> of patients develop totalis</li>
+                            <li><span class="percentage-stat">1%</span> of patients develop universalis</li>
+                        </ul>
+
+                        <h4>Bad Prognostic Factors:</h4>
+                        <ul>
+                            <li>Atopy</li>
+                            <li>Universalis, totalis, or ophiasis pattern</li>
+                            <li>Younger age at presentation</li>
+                            <li>Long-standing alopecia areata leads to follicular dropout, which can become irreversible. Prognosis worsens after 5 years, and hair loss may become irreversible if it continues beyond 10 years.</li>
+                            <li>Nail changes</li>
+                            <li>Family history</li>
+                            <li>History of other autoimmune disease</li>
+                            <li>HLA-DQ7 and DR4</li>
+                        </ul>
+
+                        <h4>Trichoscopy:</h4>
+                        <ul>
+                            <li><strong>Yellow dot most common</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>Micro exclamation hair</li>
+                            <li>Black dots</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Pathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li><strong>Peribulbar lymphocytic infiltrate (swarm of bees)</strong></li>
+                        <li>Nanogen hair on horizontal section: small atrophic hair that shows features of anagen, catagen and telogen</li>
+                        <li><strong>Eosinophils may be seen</strong> <span class="mcq-focus">(MCQ)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            <div class="section">
+                <div class="section-title">Trichotillomania</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li>Self-induced plucking or breakage of hair</li>
+                        <li>Associated with psychological stress and personality disorders</li>
+                        <li>More common in female children</li>
+                        <li>One of the OCDs, however, many of the patients do not meet the DSM-5 criteria</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Patchy or full alopecia of the scalp</li>
+                            <li>Other hair bearing areas can be involved</li>
+                            <li>Bizarre shape, irregular border, erosions, hair of different length</li>
+                            <li><strong>Window test:</strong> hair is shaved, and re-evaluated if the hairs are the same length or not</li>
+                            <li>Many patients swallow their hair → trichobezoar - Rapunzel syndrome</li>
+                            <li><strong>Friar tuck sign</strong></li>
+                        </ul>
+
+                        <h4>Trichoscopy:</h4>
+                        <ul>
+                            <li>Hook hairs</li>
+                            <li>Coiled hairs</li>
+                            <li>The v-sign (two hairs broken at the same level in one follicle)</li>
+                            <li>Hair powder</li>
+                            <li>Flame hairs (semi-transparent, wavy, cone-shaped hair residues)</li>
+                            <li>Trichoptilosis (split ends)</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Histopathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li>Disrupted follicular anatomy</li>
+                        <li>Pigment cast and trichomalacia</li>
+                        <li>Minimal inflammation</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <ul>
+                            <li>Psychotherapy</li>
+                            <li><strong>Clomipramine (TCA) is first line</strong></li>
+                            <li><strong>N-acetylcysteine supplement can be used</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>SSRIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="section">
+                <div class="section-title">Other Non-cicatricial Alopecias</div>
+
+                <button class="collapsible">🛏️ Pressure-induced Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Seen mostly in patients with history of long admission or surgery</li>
+                            <li>Due to decreased blood flow to the hair follicle</li>
+                            <li>Roughly oval patch at the site of greatest pressure</li>
+                            <li>Most commonly upper occiput</li>
+                            <li><strong>Halo scalp ring</strong> is a variant of pressure induced alopecia in which the cervix pressures the scalp during labor (discussed in earlier chapters)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">📐 Temporal Triangular Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>At birth or during the first decade of life</li>
+                            <li>Can happen outside the temporal area</li>
+                            <li>Numerous vellus hairs seen on trichoscopy</li>
+                            <li>Persists for life</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🏔️ Lipedematous Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Boggy scalp associated with hair loss</li>
+                            <li>Mainly seen in women with dark skin type</li>
+                            <li>Doubling of the scalp thickness, due to increased subcutaneous fat</li>
+                            <li>When not associated with alopecia, called lipedematous scalp</li>
+                            <li><strong>Surgery is the only treatment option</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔴 Psoriasis and TNF-α Inhibitor-induced Psoriasiform Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Alopecia in psoriasis is more common than we think</li>
+                            <li>Typically the alopecia is localized</li>
+                            <li>A specific finding is hair loss in tufts as thick psoriatic plaques are shed from the scalp</li>
+                            <li>Typically non-scarring, but rarely can be scarring</li>
+                            <li>Infliximab and adalimumab can lead to psoriasiform alopecia</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🧬 Congenital Atrichia with Papules - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Inability to grow hair after neonatal physiological shedding</li>
+                            <li>Follicular cysts and milia-like lesions appear on the skin later in life (with papules)</li>
+                            <li><strong>Mutation in the hairless gene</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li><strong>Associated with Vitamin D-dependent rickets</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scarring" class="tab-content">
+            <div class="section">
+                <div class="section-title">Cicatricial Alopecia Overview</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li>Can be primary or secondary</li>
+                        <li><strong>Primary cicatricial alopecia:</strong> hair follicle is the primary target of immune insult</li>
+                        <li><strong>Secondary cicatricial alopecia:</strong> hair follicle is an innocent bystander, such as burns, trauma, neoplastic conditions, or scarring diseases (morphea, cicatricial pemphigoid)</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Biopsy Technique:</strong> When taking a biopsy for a cicatricial alopecia, both horizontal and vertical sections should be examined. This can be done by two 4mm punch biopsies extending to the fat, or by the HoVert technique.
+                </div>
+
+                <div class="diagnosis-box">
+                    <h4>Primary Alopecias Classification:</h4>
+                    <ul>
+                        <li><strong>Lymphocytic:</strong> DLE, LPP, and CCCA</li>
+                        <li><strong>Neutrophilic:</strong> dissecting cellulitis, folliculitis decalvans</li>
+                        <li><strong>Mixed:</strong> acne keloidalis, erosive pustular dermatosis</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <ul>
+                        <li>Folliculitis decalvans is controversial because it is poorly defined</li>
+                        <li>Bolognia classifies folliculitis decalvans as a variant of CCCA with severe pustules</li>
+                        <li>The same applies for pseudopelade and pseudopelade of Brocq, which represent any end-stage scarring alopecia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Central Centrifugal Cicatricial Alopecia (CCCA)</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>AKA hot comb alopecia</strong></li>
+                        <li>Chronic and progressive disease, with eventual burn out</li>
+                        <li><strong>Most common scarring alopecia in black patients</strong></li>
+                        <li>Majority are women</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">🧬 Pathogenesis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="pathophysiology">
+                        <ul>
+                            <li>Premature desquamation of the inner root sheath</li>
+                            <li>In addition to chronic use of hair cosmetic products (hot comb alopecia)</li>
+                            <li>These two lead to inflammation, primarily lymphocytic, which leads to destruction of the hair follicle and subsequent scarring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Begins on the vertex or the crown area</li>
+                            <li>Expands symmetrically and centrifugally</li>
+                            <li>Symptoms may be minimal or absent</li>
+                            <li>A few isolated hairs showing polytrichia may be present (<strong>"doll hair appearance"</strong>)</li>
+                            <li>Pustules and crusting can occur rarely</li>
+                            <li>Pustules are most likely due to secondary bacterial infection, and a short course of antibiotics can eliminate these pustules</li>
+                            <li>Folliculitis decalvans may be a variant of CCCA with prominent pustules and staph infection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Pathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li>Premature desquamation of the inner root sheath</li>
+                        <li>Onion skin-like fibrosis of affected follicles</li>
+                        <li>In pustular lesions ("folliculitis decalvans"): neutrophils</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <h4>Standard Treatment:</h4>
+                        <ul>
+                            <li><strong>Oral tetracyclines (doxy or mino) + Potent topical steroids</strong> is usually enough to halt progression of the disease</li>
+                            <li>Prolonged treatment for years is usually needed</li>
+                        </ul>
+
+                        <h4>For "Folliculitis Decalvans":</h4>
+                        <ul>
+                            <li>10-week regimen of oral rifampin and clindamycin (300 BID for both), followed by oral tetra + TCS</li>
+                        </ul>
+
+                        <h4>Other Options:</h4>
+                        <ul>
+                            <li>Nd:YAG laser</li>
+                            <li>Photodynamic therapy</li>
+                            <li>TNF-α inhibitors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Lichen Planopilaris and Frontal Fibrosing Alopecia</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>Most common cicatricial alopecia</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        <li>F > M</li>
+                        <li>Caucasians > others</li>
+                        <li>Less than 30% of patients have LP elsewhere</li>
+                        <li>Etiology unknown, but probably the same as lichen planus</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Classic LPP:</h4>
+                        <ul>
+                            <li>Several scattered patches of alopecia with associated perifollicular erythema, follicular spines (hair casts), and scarring</li>
+                            <li>Pruritus and tenderness are often present</li>
+                        </ul>
+
+                        <h4>Variants:</h4>
+                        <h5>Frontal Fibrosing Alopecia (FFA):</h5>
+                        <ul>
+                            <li>Most patients are elderly women</li>
+                            <li>Associated with leave-on cosmetics and sunscreens use</li>
+                            <li>Progressive hair loss of the anterior hairlines and eyebrows</li>
+                            <li><strong>Lonely hair sign</strong></li>
+                        </ul>
+
+                        <h5>Graham-Little Syndrome:</h5>
+                        <ul>
+                            <li>Scarring alopecia of the scalp</li>
+                            <li>Non-scarring alopecia of the axilla and pubic area</li>
+                            <li>Keratosis pilaris-like papules</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Pathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li>Band-like infiltrate at the interface between follicular epithelium and the dermis</li>
+                        <li>Vacuolar alterations, Colloid or Civatte bodies</li>
+                        <li><strong>Inflammation affects the upper portion of the follicle (infundibulum and isthmus)</strong> <span class="mcq-focus">(MCQ)</span></li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <ul>
+                            <li>Intralesional steroids</li>
+                            <li>Hydroxychloroquine</li>
+                            <li>Pioglitazone hydrochloride (a PPAR-γ agonist)</li>
+                            <li>Cyclosporine, isotretinoin, MTX, MMF</li>
+                            <li><strong>Finasteride/dutasteride and Griseofulvin for FFA</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Discoid Lupus Erythematosus</div>
+
+                <div class="highlight-box">
+                    <ul>
+                        <li>Can be the sole cutaneous manifestation lupus</li>
+                        <li>5-10% develop SLE in localized DLE, 15-28% in generalized DLE</li>
+                        <li>F > M</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">👨‍⚕️ Clinical Features - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Resembles DLE lesions elsewhere</li>
+                            <li>Erythema, epidermal atrophy, follicular plugging, and alopecia</li>
+                            <li>Central hypopigmentation and peripheral hyperpigmentation are commonly seen in dark-skinned individuals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Pathology - Click to Expand</button>
+                <div class="collapsible-content">
+                    <ul>
+                        <li>Vacuolar interface alteration of the epidermis and follicular epithelium</li>
+                        <li>The interface change in follicles is usually vacuolar rather than lichenoid</li>
+                        <li>Periadnexal lymphocytic infiltrate</li>
+                        <li>Increased dermal mucin</li>
+                        <li>Granular deposits of IgG and C3 (less commonly IgM or IgA) at the dermal-epidermal junction</li>
+                    </ul>
+                </div>
+
+                <button class="collapsible">💊 Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="treatment-box">
+                        <ul>
+                            <li>Hydroxychloroquine and steroids (topical, intralesional, and systemic)</li>
+                            <li>MMF, retinoids, thalidomide, AZA, MTX, CSA, TNF-α all can be used, but anecdotal evidence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Other Scarring Alopecias</div>
+
+                <button class="collapsible">⚫ Acne Keloidalis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Demographics:</h4>
+                        <ul>
+                            <li>Young black males</li>
+                            <li>10 times more common in blacks than in whites</li>
+                        </ul>
+
+                        <h4>Pathogenesis:</h4>
+                        <ul>
+                            <li>"Mechanical folliculitis" from haircuts and clothing may play a role</li>
+                            <li>Frequently associated with CCCA, suggesting a common or related pathogenesis</li>
+                            <li>Bacterial role is minimal, as demonstrated by pathology</li>
+                        </ul>
+
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Begins as small, smooth, firm papules with a few pustules</li>
+                            <li>Posterior neck and occipital scalp</li>
+                            <li>Papules resolve with small areas of alopecia</li>
+                            <li>Papules coalesce and form firm, hairless, keloid-like protuberant plaques</li>
+                        </ul>
+
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li>Non-specific folliculitis with scarring</li>
+                        </ul>
+
+                        <h4>Treatment:</h4>
+                        <ul>
+                            <li>Early treatment is important</li>
+                            <li>Doxycycline + potent steroids is first line</li>
+                            <li>Laser hair removal</li>
+                            <li><strong>Nd:YAG</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>Surgery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Dissecting Cellulitis of the Scalp - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Background:</h4>
+                        <ul>
+                            <li>Part of the follicular occlusion tetrad</li>
+                            <li>Young adult black men</li>
+                            <li>Mainly a disease of follicular hyperkeratosis, but secondary infections can occur</li>
+                        </ul>
+
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Multiple firm nodules</li>
+                            <li>Mid/posterior vertex and upper occiput</li>
+                            <li>Nodules rapidly develop into interconnecting, boggy, fluctuant sinuses that produce pus</li>
+                            <li>Foul smelling, occasionally painful</li>
+                        </ul>
+
+                        <h4>Trichoscopy:</h4>
+                        <ul>
+                            <li>Yellow structureless areas</li>
+                            <li>Yellow dots</li>
+                            <li>Dystrophic hair</li>
+                        </ul>
+
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li>Lymphocytes predominate initially but is then replaced by neutrophils</li>
+                            <li>Vascular proliferation and granulation tissue</li>
+                            <li>Sinus tracts</li>
+                        </ul>
+
+                        <h4>Treatment:</h4>
+                        <ul>
+                            <li>Isotretinoin, but relapses are common</li>
+                            <li>TNF-α inhibitors</li>
+                            <li>Intralesional corticosteroids, oral antibiotics</li>
+                            <li>Oral zinc sulphate</li>
+                            <li>Laser hair removal, photodynamic therapy, radiation therapy</li>
+                            <li>Surgical approaches ranging from incision and drainage to excision with grafting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🏷️ Other Cicatricial Alopecias - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Brocq's Alopecia (Pseudopelade of Broca):</h4>
+                        <ul>
+                            <li>This term should be abandoned</li>
+                            <li>It's a pattern of end-stage cicatricial alopecia</li>
+                            <li>Can be due to DLE, LPP, CCCA, or other cicatricial alopecia</li>
+                        </ul>
+
+                        <h4>"Folliculitis Decalvans":</h4>
+                        <ul>
+                            <li>Highly inflammatory forms of cicatricial alopecia</li>
+                            <li>Inflammatory, follicular papules and pustules dominate the clinical picture</li>
+                            <li>Staphylococcus aureus can be grown from pustular or crusted lesions often, but not always</li>
+                        </ul>
+
+                        <h4>"Tufted Folliculitis":</h4>
+                        <ul>
+                            <li>Describes tufting of hair</li>
+                            <li>It's a pattern of hair loss or a sign rather than a diagnosis</li>
+                            <li>Common in CCCA, but can also be seen acne keloidalis, dissecting cellulitis, pemphigus, thermal burns, and inflammatory tinea capitis</li>
+                        </ul>
+
+                        <h4>Tractional Alopecia:</h4>
+                        <ul>
+                            <li>Biphasic alopecia, meaning that it starts as nonscarring, then turns to scarring with chronicity</li>
+                            <li>African-American women</li>
+                            <li><strong>"Fringe sign"</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hair-shaft" class="tab-content">
+            <div class="section">
+                <div class="section-title">Hair Shaft Abnormalities</div>
+
+                <button class="collapsible">💨 Bubble Hair - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Seen in women</li>
+                            <li>Caused by traumatic hair care techniques involving heat</li>
+                            <li>Localized areas of fragile uneven hair</li>
+                            <li>The involved hair is straighter and stiffer than normal</li>
+                            <li>By light microscopy, the hair shafts contain large, irregularly spaced "bubbles"</li>
+                            <li>Trimming the damaged hair resolves the issue</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">📿 Monilethrix - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Genetics:</h4>
+                        <ul>
+                            <li>Autosomal dominant</li>
+                            <li><strong>KRT86 (most often) and KRT81/KRT83</strong></li>
+                            <li><strong>Autosomal recessive form → DSG4</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Normal appearing hair at birth</li>
+                            <li>Short, fragile, brittle hair within a few months</li>
+                            <li><strong>"Beaded hair"</strong></li>
+                            <li>Perifollicular erythema and follicular hyperkeratosis are common</li>
+                            <li>Nail involvement and other hairy areas</li>
+                            <li>Cataract, abnormal teeth, and keratosis pilaris</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🌪️ Pili Torti - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Description:</h4>
+                        <ul>
+                            <li>Flattening of the shaft and twisting of the hair shaft on its own axis</li>
+                            <li>Associated with ectodermal abnormalities (keratosis pilaris, nail dystrophies, dental abnormalities)</li>
+                            <li>Hair sparse or abnormal since birth, or develop later in life</li>
+                            <li>Light microscopic examination reveals grouped twists of flattened hair</li>
+                        </ul>
+
+                        <h4>Associations:</h4>
+                        <ul>
+                            <li><strong>Associated with Björnstad syndrome</strong> <span class="mcq-focus">(MCQ)</span>
+                                <ul>
+                                    <li>Autosomal recessive, BCS1L mutation</li>
+                                    <li>Pili torti + SNHL</li>
+                                </ul>
+                            </li>
+                            <li>Also associated with Menkes disease, Bazex-Dupre-Christol, and many others</li>
+                            <li><strong>Acquired twisting of the hair may be associated with retinoids and anorexia</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🎋 Trichorrhexis Invaginata - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li><strong>AKA bamboo hair</strong></li>
+                            <li><strong>Associated with Netherton syndrome</strong></li>
+                            <li>Intussusceptions of the distal shaft ("ball") into the proximal shaft ("socket")</li>
+                            <li><strong>The eyebrow hairs best location for testing</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🖌️ Trichorrhexis Nodosa - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li><strong>The most common hair shaft abnormality</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>Splayed paint brush appearance</li>
+                            <li><strong>Associated with argininosuccinic aciduria</strong> <span class="mcq-focus">(MCQ)</span>
+                                <ul>
+                                    <li>ASL gene - defective ammonia clearance</li>
+                                    <li><strong>Treated by arginine supplement + protein avoidance</strong> <span class="mcq-focus">(MCQ)</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🌈 Trichothiodystrophy - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Discussed earlier in details in Chapter 57</li>
+                            <li>AR - NER pathway mutation</li>
+                            <li>Alternating light and dark bands under polarizing light</li>
+                            <li>Low sulfur content of hair</li>
+                            <li><strong>"PIBIDS"</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">📊 Other Hair Shaft Abnormalities - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Acquired Progressive Kinking of the Hair:</h4>
+                        <ul>
+                            <li><strong>Retinoids and HIV</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+
+                        <h4>Loose Anagen Hair Syndrome:</h4>
+                        <ul>
+                            <li><strong>KRT75 mutation plays a role</strong> <span class="mcq-focus">(MCQ)</span></li>
+                            <li>Anagen hair can be easily and painlessly pulled from the scalp</li>
+                            <li>Microscopic examination reveals a ruffled proximal cuticle, absent root sheath, and bent matrix</li>
+                            <li>Improves with aging</li>
+                        </ul>
+
+                        <h4>Pili Annulate:</h4>
+                        <ul>
+                            <li>Bright and dark bands under reflected light</li>
+                            <li><strong>Autosomal dominant</strong> <span class="mcq-focus">(MCQ)</span> do not confuse it with trichothiodystrophy (AR)</li>
+                            <li>Light microscopy: air-filled cavities are seen as dark regions</li>
+                        </ul>
+
+                        <h4>Pili Bifurcate:</h4>
+                        <ul>
+                            <li>Bifurcation of the hair fiber at multiple irregular intervals along the shaft</li>
+                        </ul>
+
+                        <h4>Pili Multigemini:</h4>
+                        <ul>
+                            <li>Multiple hair shafts arising from one papilla</li>
+                        </ul>
+
+                        <h4>Uncombable Hair:</h4>
+                        <ul>
+                            <li>AKA Spun-glass hair</li>
+                            <li>AKA pili trianguli et canaliculi</li>
+                            <li>Hair is stiff and difficult to comb</li>
+                            <li>Abnormal keratinization of the internal root sheath is postulated to be the cause</li>
+                            <li>A triangular shape on cross-section and a longitudinal groove that is best seen by scanning electron microscopy</li>
+                            <li><strong>PADI3 mutation, autosomal recessive</strong> <span class="mcq-focus">(MCQ)</span></li>
+                        </ul>
+
+                        <h4>Woolly Hair:</h4>
+                        <ul>
+                            <li>Associated with Naxos and Carvajal syndromes (discussed in PPK chapter)</li>
+                            <li>Also associated with Noonan syndrome and cardio-facio-cutaneous syndrome</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="diagnosis" class="tab-content">
+            <div class="section">
+                <div class="section-title">Clinical Assessment of Alopecia</div>
+
+                <div class="clinical-pearl">
+                    The clinical history should be directed toward establishing the diagnosis, detecting precipitating factors where relevant, identifying associated comorbidities, and obtaining information pertinent to the proposed treatment.
+                </div>
+
+                <button class="collapsible">🔍 Establishing the Diagnosis and Detecting Precipitating Factors - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Determine if patient has increased hair shedding (suggestive of telogen effluvium) or a reduction in hair density with visible balding or both; the latter is suggestive of patterned hair loss</li>
+                            
+                            <li><strong>If increased hair shedding, is the hair "coming out by the roots"?</strong>
+                                <ul>
+                                    <li>(suggestive of telogen effluvium) vs breaking near the scalp? (suggestive of acute alopecia areata, anagen effluvium) vs breaking near the ends?</li>
+                                </ul>
+                            </li>
+                            
+                            <li><strong>If increased hair shedding and hair "coming out by the roots":</strong>
+                                <ul>
+                                    <li>Duration <3 months suggests acute telogen effluvium</li>
+                                    <li>>6 months is diagnostic of chronic telogen effluvium</li>
+                                    <li>Recurrent episodes of acute telogen effluvium without a clear trigger is a common prodrome to female pattern hair loss</li>
+                                </ul>
+                            </li>
+                            
+                            <li><strong>In patients with acute telogen effluvium:</strong> search for triggers such as high fever, surgery, or serious illness that occurred 2-3 months prior to onset</li>
+                            
+                            <li><strong>In patients with chronic telogen effluvium:</strong> consider hypo- or hyperthyroidism, drugs, chronic illnesses, exposures (e.g. thallium), and rarely diffuse alopecia areata</li>
+                            
+                            <li><strong>If visible balding, determine if congenital or acquired and then if:</strong>
+                                <ul>
+                                    <li><strong>Patchy:</strong> (suggestive of alopecia areata, tinea capitis, lichen planus)</li>
+                                    <li><strong>Diffuse:</strong> (suggestive of acute or postpartum telogen effluvium, anagen effluvium, diffuse alopecia areata)</li>
+                                    <li><strong>Patterned:</strong> (suggestive of androgenetic alopecia, frontal fibrosing alopecia, central centrifugal cicatricial alopecia)</li>
+                                </ul>
+                            </li>
+                            
+                            <li><strong>Determine if any associated symptoms such as pain, burning, pruritus, or dandruff as:</strong>
+                                <ul>
+                                    <li>Trichodynia may accompany telogen effluvium or female pattern hair loss with excessive shedding</li>
+                                    <li>Localized pain can indicate pustules</li>
+                                    <li>Diffuse pain and pruritus may accompany a cicatricial alopecia</li>
+                                    <li>There may be altered or crawling sensations in patients with trichotillomania</li>
+                                    <li>Dandruff can be a feature of seborrheic dermatitis, psoriasis, or tinea capitis</li>
+                                </ul>
+                            </li>
+                            
+                            <li>A positive family history may point to common disorders such as alopecia areata or androgenetic alopecia or rare hair shaft abnormalities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🏥 Identifying Associated Comorbidities - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Organ-specific autoimmune diseases in patients with alopecia areata</li>
+                            <li>Hyperandrogenism (e.g. hirsutism, acne, irregular menses) and metabolic syndrome in women with androgenetic alopecia</li>
+                            <li>Personal or family history of ischemic heart disease and prostate cancer in men with androgenetic alopecia</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">📋 Information Pertinent to Proposed Treatment - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Review previous treatments including duration and if used correctly</li>
+                            <li>Determine expectations (e.g. halting progression, preventing relapse, hair regrowth)</li>
+                            <li>Determine commitment to repeated or long-term therapies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Clinical Approach to Scalp Alopecia</div>
+
+                <div class="interactive-diagram">
+                    <h3>Organized by Pattern and Location</h3>
+                    
+                    <button class="collapsible">🌐 Majority of Scalp (Diffuse) - Click to Expand</button>
+                    <div class="collapsible-content">
+                        <div class="diagnosis-box">
+                            <h4>Common:</h4>
+                            <ul>
+                                <li>Telogen effluvium</li>
+                                <li>Anagen effluvium</li>
+                            </ul>
+                            
+                            <h4>Less Common:</h4>
+                            <ul>
+                                <li>Lichen planopilaris, diffuse</li>
+                                <li>Alopecia areata, diffuse</li>
+                                <li>Female pattern hair loss</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="collapsible">📏 Patterned Hair Loss - Click to Expand</button>
+                    <div class="collapsible-content">
+                        <div class="diagnosis-box">
+                            <h4>Female Pattern Hair Loss:</h4>
+                            <ul>
+                                <li>Female pattern hair loss (Christmas tree pattern)</li>
+                                <li>Widened part line(s)</li>
+                                <li>Traction alopecia</li>
+                            </ul>
+                            
+                            <h4>Frontal / Temporal:</h4>
+                            <h5>Common:</h5>
+                            <ul>
+                                <li>Male pattern hair loss (bitemporal)</li>
+                                <li>Traction alopecia*</li>
+                            </ul>
+                            <h5>Less Common:</h5>
+                            <ul>
+                                <li>Frontal fibrosing alopecia</li>
+                            </ul>
+                            
+                            <h4>Hyperandrogenism in Women:</h4>
+                            
+                            <h4>Vertex / Midline:</h4>
+                            <ul>
+                                <li>Male pattern hair loss</li>
+                                <li>Female pattern hair loss</li>
+                                <li>Central centrifugal cicatricial alopecia (primarily women of African descent)</li>
+                            </ul>
+                            
+                            <h4>Posterolateral:</h4>
+                            <ul>
+                                <li>Alopecia areata (ophiasis)</li>
+                            </ul>
+                            
+                            <h4>Occipital:</h4>
+                            <ul>
+                                <li>Pressure (postoperative) alopecia</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="collapsible">⭕ Circumscribed and Non-scarring - Click to Expand</button>
+                    <div class="collapsible-content">
+                        <div class="diagnosis-box">
+                            <ul>
+                                <li>Alopecia areata (limited patch)</li>
+                                <li>Tinea capitis*</li>
+                                <li>Trichotillomania</li>
+                                <li>Secondary syphilis</li>
+                                <li>Pressure (postoperative) alopecia</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="collapsible">🔴 Circumscribed and Scarring - Click to Expand</button>
+                    <div class="collapsible-content">
+                        <div class="diagnosis-box">
+                            <h4>Inflammatory:</h4>
+                            <ul>
+                                <li>Central centrifugal cicatricial alopecia</li>
+                                <li>Lichen planopilaris (LPP)</li>
+                                <li>Frontal fibrosing alopecia</li>
+                                <li>Discoid lupus erythematosus (DLE)</li>
+                                <li>Folliculitis decalvans</li>
+                                <li>Dissecting cellulitis</li>
+                                <li>Acne keloidalis</li>
+                            </ul>
+                            
+                            <h4>Non-inflammatory:</h4>
+                            <ul>
+                                <li>Brocq's alopecia (non-inflammatory end-stage of LPP > DLE or folliculitis decalvans)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clinical-pearl">
+                        *if chronic or severe, can become scarring
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Bedside Diagnostic Tests</div>
+
+                <div class="interactive-diagram">
+                    <div class="hair-cycle">
+                        <div class="cycle-phase">
+                            <h3>Gentle Hair Pull Test</h3>
+                            <p>"Tug" test</p>
+                            <p>Hair not washed for 24 hours</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Unit Area Trichogram</h3>
+                            <p>Plucking of hairs within defined area (e.g. 60 mm²)</p>
+                            <p>Determine ratio of anagen:telogen hairs</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Hair Card Test</h3>
+                            <p>Assessment for hair shaft fragility</p>
+                            <p>Assessment of hair ends (e.g. broken vs tapered), diameters, and growth</p>
+                        </div>
+                    </div>
+
+                    <div class="hair-cycle">
+                        <div class="cycle-phase">
+                            <h3>Trichoscopy</h3>
+                            <p>Visualization of hair shafts, follicular openings, and interfollicular skin (10x)</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Computerized Trichometric Analysis</h3>
+                            <p>In addition to trichoscopy (50x), measures and records density/cm² and average hair shaft diameters</p>
+                        </div>
+                    </div>
+
+                    <div class="clinical-pearl">
+                        Additional investigations include fungal culture, Wood's lamp examination, scalp biopsy, hair shaft analysis, and blood tests.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Causes of Telogen Effluvium</div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Specific Causes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Physiologic</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Shedding of the newborn (physiologic)</li>
+                                    <li>Postpartum (physiologic)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Idiopathic</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Chronic telogen effluvium? (no attributable cause or illness)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Medical Conditions</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Postfebrile (extremely high fevers, e.g. malaria)</li>
+                                    <li>Severe infection</li>
+                                    <li>Severe chronic illness (e.g. HIV disease, systemic lupus erythematosus)</li>
+                                    <li>Severe, prolonged psychological stress</li>
+                                    <li>Postsurgical (implies major surgical procedure)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Endocrine</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Hypothyroidism and other endocrinopathies (e.g. hyperparathyroidism, hyperthyroidism)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nutritional</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Crash or liquid protein diets; starvation/malnutrition</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Drugs</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Discontinuation of oral contraceptives</li>
+                                    <li>Retinoids (acitretin, isotretinoin) and vitamin A excess</li>
+                                    <li>Anticoagulants (especially heparin)</li>
+                                    <li>Antithyroid (propylthiouracil, methimazole)</li>
+                                    <li>Anticonvulsants (e.g. phenytoin, valproic acid, carbamazepine)</li>
+                                    <li>Heavy metals</li>
+                                    <li>β-blockers (e.g. propranolol)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clinical-pearl">
+                    For a complete list of associated drugs, see ref. 32.
+                </div>
+            </div>
+        </div>
+
+        <div id="treatment" class="tab-content">
+            <div class="section">
+                <div class="section-title">Treatment Options for Alopecia Areata</div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Treatment Category</th>
+                            <th>Specific Options</th>
+                            <th>Evidence Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>First-line Topical</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Topical and intralesional corticosteroids</li>
+                                    <li>Topical immunotherapy (e.g. squaric acid dibutyl ester, diphencyprone)</li>
+                                </ul>
+                            </td>
+                            <td><span class="percentage-stat">(1)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Second-line Topical</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Topical irritants (e.g. anthralin, tazarotene, azelaic acid)</li>
+                                    <li>Topical minoxidil</li>
+                                    <li>Topical or oral photochemotherapy (PUVA)</li>
+                                </ul>
+                            </td>
+                            <td><span class="percentage-stat">(2)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Systemic Options</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Systemic corticosteroids, pulsed dosing* (especially if rapidly progressive)</li>
+                                    <li>Systemic JAK/STAT pathway inhibitors: tofacitinib (2), ruxolitinib (3)</li>
+                                    <li>Systemic corticosteroids, chronic</li>
+                                    <li>Systemic cyclosporine</li>
+                                </ul>
+                            </td>
+                            <td><span class="percentage-stat">(2-3)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Light Therapy</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Excimer laser</li>
+                                </ul>
+                            </td>
+                            <td><span class="percentage-stat">(3)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clinical-pearl">
+                    *e.g. oral prednisolone 300 mg (5 mg/kg for children) monthly for a minimum of three doses.
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Evidence Key:</strong>
+                    <ul>
+                        <li><strong>(1)</strong> prospective controlled trial</li>
+                        <li><strong>(2)</strong> retrospective study or large case series</li>
+                        <li><strong>(3)</strong> small case series or individual case reports</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    To date, topical JAK/STAT inhibitors have had a low response rate.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Topical Immunotherapy for Alopecia Areata</div>
+
+                <div class="treatment-box">
+                    <h4>Treatment Protocol for Diphencyprone (DPCP) or Squaric Acid Dibutyl Ester (SADBE)*</h4>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Week 1:</strong> Sensitize with a 2% solution in acetone applied to a 4x4 cm area on one side of the scalp
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Week 2 (or 3 if severe reaction):</strong> Apply 0.001% solution to all affected areas on the same side of the scalp
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Weekly thereafter:</strong> DPCP or SADBE is applied to the same side of the scalp
+                            <ul>
+                                <li>The concentration is titrated according to the severity of the reaction the previous week</li>
+                                <li>Goal: maintaining a low-grade, tolerable degree of erythema, scaling, and pruritus for 24-36 hours after application</li>
+                                <li>Concentrations are increased incrementally as follows: 0.001%, 0.01%, 0.025%, 0.05%, 0.1%, 0.25%, 0.5%, 1%, 2%</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Once hair growth is established:</strong> The other side is also treated
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Response timeline:</strong> Initial responses are usually seen after 12 weeks, and therapy is discontinued if there is no response by 24 weeks
+                        </div>
+                    </div>
+
+                    <h4>Additional Information:</h4>
+                    <ul>
+                        <li>Acetone solutions should be applied using a generous amount of cotton at the end of a wooden stick†</li>
+                        <li><strong>Following application:</strong>
+                            <ul>
+                                <li>The sensitizer is left on the scalp for 48 hours, then washed off</li>
+                                <li>Patients should avoid touching the scalp for 6 hours</li>
+                                <li>The scalp should be protected from light to avoid degradation</li>
+                            </ul>
+                        </li>
+                        <li>SADBE must be refrigerated</li>
+                        <li>Frequency of treatment can be decreased in the presence of full regrowth</li>
+                    </ul>
+
+                    <h4>Side Effects:</h4>
+                    <ul>
+                        <li>Lymphadenopathy</li>
+                        <li>Severe or widespread eczematous reactions</li>
+                        <li>Postinflammatory pigment alterations (particularly in patients with darkly pigmented skin)</li>
+                    </ul>
+
+                    <h4>Contraindications:</h4>
+                    <ul>
+                        <li>Pregnancy (although teratogenicity has not been established)</li>
+                        <li>Malignancies and blood dyscrasias</li>
+                    </ul>
+
+                    <div class="clinical-pearl">
+                        *Both not FDA-approved.
+                        †Application by medical personnel is recommended.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Primary Cicatricial Alopecia Classification</div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Group</th>
+                            <th>Type</th>
+                            <th>Specific Conditions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="8"><strong>Group 1</strong></td>
+                            <td rowspan="8"><strong>Lymphocytic</strong></td>
+                            <td>Discoid lesions of lupus erythematosus (see Ch. 41)</td>
+                        </tr>
+                        <tr>
+                            <td>Lichen planopilaris (LPP; see Ch. 11)
+                                <ul>
+                                    <li>Classic LPP</li>
+                                    <li>Frontal fibrosing alopecia</li>
+                                    <li>Graham Little syndrome</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Classic pseudopelade (Brocq's alopecia is the authors' preferred term)</td>
+                        </tr>
+                        <tr>
+                            <td>Central centrifugal cicatricial alopecia</td>
+                        </tr>
+                        <tr>
+                            <td>Alopecia mucinosa (see Ch. 46)</td>
+                        </tr>
+                        <tr>
+                            <td>Keratosis follicularis spinulosa decalvans (see Ch. 38)</td>
+                        </tr>
+                        <tr>
+                            <td>Graft-versus-host disease</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>Group 2</strong></td>
+                            <td rowspan="2"><strong>Neutrophilic</strong></td>
+                            <td>Folliculitis decalvans</td>
+                        </tr>
+                        <tr>
+                            <td>Dissecting cellulitis</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><strong>Group 3</strong></td>
+                            <td rowspan="3"><strong>Mixed</strong></td>
+                            <td>Acne keloidalis (see Ch. 38)</td>
+                        </tr>
+                        <tr>
+                            <td>Acne necrotica</td>
+                        </tr>
+                        <tr>
+                            <td>Erosive pustular dermatosis (see Ch. 87)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>Group 4</strong></td>
+                            <td rowspan="2"><strong>Nonspecific</strong></td>
+                            <td>Cicatricial pemphigoid (see Ch. 30)</td>
+                        </tr>
+                        <tr>
+                            <td>Busulfan-induced alopecia</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clinical-pearl">
+                    Adapted from ref. 73.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Histologic Features of Various Forms of Alopecia</div>
+
+                <button class="collapsible">🔬 Male and Female Pattern Hair Loss (Androgenetic Alopecia) - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Normal total number of follicles and no significant inflammation</li>
+                            <li>Increased number and percentage of vellus hairs</li>
+                            <li>Numerous fibrous "streamers"</li>
+                            <li>Slightly increased telogen count</li>
+                            <li>Uninvolved scalp (e.g. occiput) appears normal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Telogen Effluvium - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Normal total number of hairs</li>
+                            <li>Normal number of terminal (large) hairs</li>
+                            <li>Increase in the telogen count to >20% (>15% is suggestive); telogen count seldom exceeds 50%; >80% is inconsistent with telogen effluvium</li>
+                            <li>Absence of inflammation and scarring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Trichotillomania - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Follicles are normal size</li>
+                            <li>Total number of hairs (both terminal and vellus) is normal</li>
+                            <li>Incomplete, disrupted follicular anatomy</li>
+                            <li>Increased number of terminal catagen and/or telogen hairs</li>
+                            <li>Trichomalacia and pigment casts</li>
+                            <li>No significant inflammation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Alopecia Areata - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Early, Progressive Disease ("Acute" and "Subacute"):</h4>
+                        <ul>
+                            <li>Normal total number of hairs</li>
+                            <li>Peribulbar mononuclear cell infiltrate (with occasional eosinophils), predominantly affecting terminal anagen and catagen hair bulbs</li>
+                            <li>Occasional exocytosis of inflammatory cells into bulbar epithelium</li>
+                            <li>Degenerative changes of hair matrix</li>
+                            <li>Increased number of terminal catagen and telogen hairs</li>
+                            <li>Increased number of miniaturized hairs</li>
+                            <li>Trichomalacia and marked narrowing of hair shafts</li>
+                        </ul>
+
+                        <h4>Longstanding and Stable Disease ("Chronic"):</h4>
+                        <ul>
+                            <li>Majority of hairs in catagen or telogen phases</li>
+                            <li>Numerous miniaturized, "arrested", rapidly cycling hairs, referred to as nanogen hairs</li>
+                            <li>Mild peribulbar mononuclear cell infiltrate around those nanogen hairs possessing anagen-like or catagen-like bulbs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Central Centrifugal Cicatricial Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Premature desquamation of the inner root sheath</li>
+                            <li>Eccentric epithelial atrophy (thinning) with hair shafts in close proximity to the dermis</li>
+                            <li>Concentric lamellar fibroplasia (onion skin-like fibrosis) of affected follicles</li>
+                            <li>Variably dense lymphocytic perifollicular inflammation, primarily at the level of the upper isthmus and lower infundibulum</li>
+                            <li>Occasional fusion of infundibula (polytrichia)</li>
+                            <li>In advanced lesions, total destruction of the follicular epithelium with retained hair shaft fragments and granulomatous inflammation</li>
+                            <li>In pustular lesions ("folliculitis decalvans"), intrafollicular and perifollicular infiltrates rich in neutrophils and lymphocytes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Lichen Planopilaris - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Band-like mononuclear cell infiltrate obscuring the interface between follicular epithelium and dermis; vacuolar alteration at the interface and hypergranulosis within affected infundibula is typical</li>
+                            <li>Colloid or Civatte bodies are occasionally found as part of the interface alteration</li>
+                            <li>Inflammation affects the upper portion of the follicle (infundibulum and isthmus) most severely</li>
+                            <li>Occasionally, epidermal changes of lichen planus are found</li>
+                            <li>Over time, perifollicular fibrosis becomes prominent and the lymphocytic infiltrate seems to "back away" from the follicle</li>
+                            <li>An artifactual cleft between epithelium and stroma is often found, with epithelium "floating" within the cleft (Max-Joseph spaces)</li>
+                            <li>Grouped globular immunofluorescence (usually IgM) adjacent to the follicular epithelium is the characteristic pattern</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Discoid Lesions of Lupus Erythematosus - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Vacuolar interface alteration of the epidermis and follicular epithelium; epidermis may be spared</li>
+                            <li>The interface change in follicles is usually vacuolar rather than lichenoid (less inflammation)</li>
+                            <li>Chronic inflammation (often including plasma cells) of the eccrine sweat glands and arrector pili is sometimes present</li>
+                            <li>Increased dermal mucin is often present</li>
+                            <li>Granular deposits of IgG and C3 (less commonly IgM or IgA) at the dermal-epidermal junction and/or the junction of the follicular epithelium and dermis are typical</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Acne Keloidalis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Perifollicular, chronic inflammation (lymphocytic and plasmacytic), most intense at the level of the isthmus and lower infundibulum</li>
+                            <li>Lamellar fibroplasia, most marked at the level of the isthmus</li>
+                            <li>Loss of sebaceous glands</li>
+                            <li>Total follicular destruction in advanced disease</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Dissecting Cellulitis of the Scalp - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Moderately dense, perifollicular lymphocytic inflammation affecting the lower half of the dermis and extending down into the subcutaneous fat</li>
+                            <li>Numerous intact and seemingly undamaged follicles with intact sebaceous glands surrounded by an infiltrate of acute and chronic inflammation (early disease)</li>
+                            <li>Increased percentage of catagen/telogen hairs</li>
+                            <li>Initially, lymphocytes dominate the infiltrate, but eventually neutrophils become more numerous, especially in longstanding, fluctuant lesions</li>
+                            <li>Vascular proliferation accompanies the infiltrate as the disease evolves, and the deep dermis and subcutaneous fat begin to exhibit the histologic findings of granulation tissue</li>
+                            <li>Eventually, chronic abscesses become lined with squamous epithelium derived from the overlying epidermis, and true sinus tracts are formed</li>
+                            <li>When inflammation subsides, there is dense fibrosis of the dermis and the superficial fat with loss of follicles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔬 Other Histologic Patterns - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Postoperative (Pressure-induced) Alopecia:</h4>
+                        <ul>
+                            <li>Early stage includes vascular thrombosis and inflammation within the dermis and superficial fat</li>
+                            <li>Necrosis of the epidermis and eccrine coils when severe</li>
+                            <li>In conjunction with alopecia, synchronized conversion of most or all of the terminal hair follicles to the catagen/telogen phase (without hair miniaturization)</li>
+                            <li>Pigment casts, incontinont pigment within collapsed root sheaths, and trichomalacia (but not distorted follicular anatomy)</li>
+                        </ul>
+
+                        <h4>Psoriasiform Alopecia:</h4>
+                        <ul>
+                            <li>Psoriasiform epidermal changes may or may not be present</li>
+                            <li>Marked increase in percentage of catagen/telogen hairs, associated with hair miniaturization</li>
+                            <li>Occasional miniaturized follicle showing peribulbar chronic inflammation; plasma cells rare or absent</li>
+                            <li>Marked diminution in number of sebaceous glands</li>
+                        </ul>
+
+                        <h4>TNF-α Inhibitor-induced Psoriasiform Alopecia:</h4>
+                        <ul>
+                            <li>Psoriasiform dermatitis often present</li>
+                            <li>Increase in catagen/telogen hairs and miniaturization of hairs, similar to alopecia areata</li>
+                            <li>Some peribulbar and superficial perivascular inflammation present, often with several eosinophils and plasma cells in the infiltrate</li>
+                        </ul>
+
+                        <h4>"End-stage" Cicatricial Alopecia:</h4>
+                        <ul>
+                            <li>A decreased total number of hairs, especially terminal hairs</li>
+                            <li>Loss of the sebaceous glands in zones of follicular loss</li>
+                            <li>Residual, "naked" hair shafts surrounded by mild, granulomatous inflammation</li>
+                            <li>Follicular streamers (stelae) without overlying follicles</li>
+                            <li>Cylindrical columns of connective tissue representing the sites of former follicles</li>
+                        </ul>
+
+                        <h4>Traction Alopecia (End-stage):</h4>
+                        <ul>
+                            <li>The total number of terminal hairs is markedly reduced</li>
+                            <li>Distinct columns of connective tissue replace some follicles, leaving obvious "blank spaces"</li>
+                            <li>The sebaceous glands associated with the remaining hair follicles are still intact and sebaceous glands often persist in follicular units that seem to have lost all of their hair-producing epithelium</li>
+                            <li>No significant perifollicular inflammation</li>
+                            <li>Rarely, retained "naked" hair shafts are seen in otherwise typical cases of end-stage traction alopecia; the significance of the finding is unclear</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    Trichomalacia is characterized by pleated or twisted hair shafts within follicular infundibula.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5α-Reductase Isozyme Activity in Adult Human Tissues</div>
+
+                <div class="interactive-diagram">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Type I 5α-Reductase</th>
+                                <th>Type II 5α-Reductase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>Scalp hair follicles</li>
+                                        <li>Sebaceous glands</li>
+                                        <li>Liver</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Scalp hair follicles</li>
+                                        <li>Beard hair follicles</li>
+                                        <li>Chest hair follicles</li>
+                                        <li>Liver</li>
+                                        <li>Prostate</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="clinical-pearl">
+                        <strong>Type III 5α-reductase</strong> is found throughout the epidermis and dermis, but its functional role has not yet been elucidated.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">The Sinclair Scale for Female Pattern Hair Loss</div>
+
+                <div class="interactive-diagram">
+                    <div class="hair-cycle">
+                        <div class="cycle-phase">
+                            <h3>Stage 1</h3>
+                            <p>Normal</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Stage 2</h3>
+                            <p>Widening of the central part line</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Stage 3</h3>
+                            <p>Widening of the part line with translucency of the hairs at its border</p>
+                        </div>
+                    </div>
+                    <div class="hair-cycle">
+                        <div class="cycle-phase">
+                            <h3>Stage 4</h3>
+                            <p>Development of a bald area anteriorly along the part line</p>
+                        </div>
+                        <div class="cycle-phase">
+                            <h3>Stage 5</h3>
+                            <p>Advanced hair loss</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Localization of Androgen-Metabolizing Enzymes in Normal Hair Follicle</div>
+
+                <div class="diagnosis-box">
+                    <h4>Inner Root Sheath:</h4>
+                    <ul>
+                        <li>Aromatase</li>
+                        <li>5α-reductase (types I and II)</li>
+                    </ul>
+
+                    <h4>Outer Root Sheath:</h4>
+                    <ul>
+                        <li>Aromatase</li>
+                        <li>17β-HSD</li>
+                        <li>5α-reductase (types I and II)</li>
+                    </ul>
+
+                    <h4>Dermal Papilla:</h4>
+                    <ul>
+                        <li>Aromatase</li>
+                        <li>17β-HSD</li>
+                        <li>5α-reductase (type II)</li>
+                    </ul>
+
+                    <h4>Sebaceous Gland:</h4>
+                    <ul>
+                        <li>Aromatase</li>
+                        <li>5α-reductase (type I)</li>
+                    </ul>
+
+                    <h4>Sebaceous Duct:</h4>
+                    <ul>
+                        <li>5α-reductase (type II)</li>
+                    </ul>
+
+                    <div class="clinical-pearl">
+                        HSD = hydroxysteroid dehydrogenase
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Trichoscopy Findings</div>
+
+                <button class="collapsible">🔍 Androgenetic Alopecia (AGA) - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Anisotrichosis:A diversity of hair shaft diameters affects >20% of the hairs</li>
+                            <li>Brown halos around hair shafts (peripilar sign) is a subtle clue</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Telogen Effluvium - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>The hair shafts are of equal diameter (unlike AGA)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Alopecia Areata (AA) - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                          <ol style="list-style: lower-roman">
+                            <li>Exclamation Point Hairs
+                              <ul>
+                                <li>Appearance: Broken short hairs, thinner at the base (proximal) and thicker at the tip (distal)</li>
+                                <li>Significance: Pathognomonic. Indicates acute arrest of mitosis in hair matrix → weakened shaft → fracture</li>
+                                <li>Histology: Marked narrowing of hair shaft</li>
+                              </ul>
+                            </li>
+                            <li>Black Dots
+                              <ul>
+                                <li>Appearance: Dark, broken hair remnants within follicular openings</li>
+                                <li>Significance: Represent exclamation point hairs broken at scalp level → sign of high disease activity</li>
+                                <li>Differential: Trichotillomania, tinea capitis, anagen effluvium</li>
+                              </ul>
+                            </li>
+                            <li>Tapered Hairs
+                              <ul>
+                                <li>Appearance: Long exclamation point hairs, not yet broken</li>
+                                <li>Significance: Indicates moderate disease activity</li>
+                              </ul>
+                            </li>
+                            <li>Broken Hairs
+                              <ul>
+                                <li>Appearance: Fractured shafts at varying lengths</li>
+                                <li>Significance: Non-specific, but suggests fragility and active disease when seen with AA</li>
+                                <li>AAPS: Negative prognostic marker</li>
+                              </ul>
+                            </li>
+
+                            <div class="section-subtitle">II. Signs of Chronic / Long-Standing Disease</div>
+
+                            <li>Yellow Dots
+                              <ul>
+                                <li>Appearance: Small, round, yellow-orange dots across alopecic patches (subtle in children)</li>
+                                <li>Significance: Empty follicles filled with keratin/sebum → chronic/inactive AA</li>
+                                <li>Histology: Dilated follicular infundibula</li>
+                                <li>Differential: Also seen in androgenetic alopecia</li>
+                              </ul>
+                            </li>
+
+                            <div class="section-subtitle">III. Signs of Hair Regrowth (Positive Prognostic)</div>
+
+                            <li>Upright Regrowing Hairs
+                              <ul>
+                                <li>Appearance: Short, non-tapered, straight-growing hairs</li>
+                                <li>Significance: Most reliable indicator of healthy regrowth</li>
+                              </ul>
+                            </li>
+                            <li>Pigtail (Circle) Hairs
+                              <ul>
+                                <li>Appearance: Short, fine, curled regrowing hairs on scalp surface</li>
+                                <li>Significance: Definite sign of regrowth → recovery phase</li>
+                              </ul>
+                            </li>
+                        </ol>   
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Trichotillomania - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Broken Hairs of Varying Length</li>
+
+                            <li>Flame Hairs: Semi-transparent, wavy, and cone-shaped hair residues from fractured shafts</li>
+                            <li>V-Sign: A classic finding where two hairs, emerging from the same follicular unit, are broken off at the same level</li>
+                            <li>Coiled Hairs: Broken hairs that recoil and bunch up into a small spiral on the scalp surface</li>
+                            <li>Tulip Hairs: Short hairs with dark, frayed distal ends that resemble a closed tulip flower</li>
+                            <li>Hook Hairs: Hairs that are bent or hooked near the scalp surface</li>
+                            <li>Trichoptilosis: The medical term for split ends, visible on trichoscopy</li>
+                            <li>Hair Powder: A subtle finding of small, whitish, keratinous debris from fractured hairs</li>
+                         
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Tinea Capitis - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Comma hairs are a clue to the diagnosis</li>
+                            <li>Zigzag hairs can also be seen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Temporal Triangular Alopecia - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Vellus-like, depigmented hair shafts</li>
+                            <li>No yellow dots or dystrophic hairs as are seen in AA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Discoid Lupus Erythematosus (DLE) - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <li>Follicular red dots are a characteristic sign</li>
+                        </ul>
+
+                        <h4>I. Features of Lupus-Related Alopecia (Active Phase)</h4>
+                        <ul>
+                            <li>Thick Arborizing Vessels
+                                <ul>
+                                    <li>Appearance: Prominent, tortuous, tree-like branching vessels (interfollicular)</li>
+                                    <li>Significance: Diagnostic clue for lupus alopecia (DLE & SLE); reflects vascular inflammation and dilatation</li>
+                                </ul>
+                            </li>
+                            <li>Large Yellow Dots
+                                <ul>
+                                    <li>Appearance: Enlarged yellow follicular dots</li>
+                                    <li>Significance: Dilated follicles plugged with keratin/scale (follicular plugs)</li>
+                                </ul>
+                            </li>
+                            <li>Fine Scaling
+                                <ul>
+                                    <li>Appearance: Delicate surface scale</li>
+                                    <li>Significance: Non-specific indicator of inflammation/abnormal keratinization</li>
+                                </ul>
+                            </li>
+                            <li>Scattered Dark-Brown to Bluish Discoloration
+                                <ul>
+                                    <li>Appearance: Patchy pigment changes (brown/blue)</li>
+                                    <li>Significance: Seen in darker phototypes; due to pigment incontinence from interface dermatitis</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>II. Features of Late-Stage / Chronic Cicatricial Alopecia</h4>
+                        <ul>
+                            <li>Milky-Red or White Areas with No Follicular Openings
+                                <ul>
+                                    <li>Appearance: Smooth, structureless white (fibrosis) or reddish areas, lacking follicular ostia</li>
+                                    <li>Significance: Indicates scarring and irreversible follicular destruction</li>
+                                </ul>
+                            </li>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Lichen Planopilaris - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <ul>
+                            <h4>I. Features of Active LPP</h4>
+                            <ul>
+                                <li>Perifollicular Scaling
+                                    <ul>
+                                        <li>Appearance: Tubular scales forming a sleeve around the hair shaft, extending 2–3 mm above scalp.</li>
+                                        <li>Significance: Most specific sign of active LPP; reflects infundibulo-isthmic inflammation and hyperkeratosis.</li>
+                                    </ul>
+                                </li>
+                                <li>Perifollicular Erythema
+                                    <ul>
+                                        <li>Appearance: Redness centered around follicular openings.</li>
+                                        <li>Significance: Direct indicator of lymphocytic inflammation targeting hair follicles.</li>
+                                    </ul>
+                                </li>
+                                <li>Hair Casts
+                                    <ul>
+                                        <li>Appearance: Movable, whitish, cylindrical sheaths around hair shafts.</li>
+                                        <li>Significance: Sign of abnormal keratinization; overlaps with perifollicular scaling.</li>
+                                    </ul>
+                                </li>
+                                <li>Elongated Linear Blood Vessels
+                                    <ul>
+                                        <li>Appearance: Thin, stretched-out vessels.</li>
+                                        <li>Significance: Characteristic vascular pattern of LPP; helps differentiate from other alopecias.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h4>II. Features of Late-Stage (Scarring) LPP</h4>
+                            <ul>
+                                <li>Milky-Red Areas with No Follicular Openings
+                                    <ul>
+                                        <li>Appearance: Smooth, shiny white-to-pink patches lacking follicular dots.</li>
+                                        <li>Significance: End-stage fibrosis → irreversible hair loss and scarring.</li>
+                                    </ul>
+                                </li>
+                                <li>"Lonely Hairs"
+                                    <ul>
+                                        <li>Appearance: Isolated surviving hairs in areas of scarring.</li>
+                                        <li>Significance: Classic sign of burnt-out LPP and FFA; indicates patchy progression and permanent follicular damage.</li>
+                                    </ul>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible">🔍 Hair Shaft Abnormalities - Click to Expand</button>
+                <div class="collapsible-content">
+                    <div class="diagnosis-box">
+                        <h4>Structural Hair Shaft Abnormalities:</h4>
+                        <ul>
+                            <li>
+                                <strong>Bubble Hair</strong>
+                                <ul>
+                                    <li>Cause: Heat on wet hair</li>
+                                    <li>Defect: Gas bubbles within shaft → fracture</li>
+                                    <li>Type: Acquired</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Monilethrix ("Beaded Hair")</strong>
+                                <ul>
+                                    <li>Appearance: Regular elliptical beads with constrictions</li>
+                                    <li>Defect: Fractures at internodes</li>
+                                    <li>Type: Inherited</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pili Torti</strong>
+                                <ul>
+                                    <li>Appearance: Flattened, twisted hairs (180°)</li>
+                                    <li>Effect: Spangled sheen</li>
+                                    <li>Type: Can be inherited or acquired</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Trichorrhexis Invaginata ("Bamboo Hair")</strong>
+                                <ul>
+                                    <li>Appearance: Ball-and-socket telescoping shaft</li>
+                                    <li>Association: Pathognomonic for Netherton syndrome</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Trichorrhexis Nodosa</strong>
+                                <ul>
+                                    <li>Appearance: Frayed, brush-like broken ends</li>
+                                    <li>Cause: Trauma</li>
+                                    <li>Note: Most common hair shaft defect</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Trichoschisis</strong>
+                                <ul>
+                                    <li>Appearance: Clean transverse shaft fracture</li>
+                                    <li>Association: Trichothiodystrophy (sulfur-deficient hair)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Trichothiodystrophy</strong>
+                                <ul>
+                                    <li>Appearance: Brittle hair with "tiger tail" under polarized light</li>
+                                    <li>Defect: Sulfur deficiency</li>
+                                    <li>Type: Inherited disorder</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pili Annulati ("Ringed Hair")</strong>
+                                <ul>
+                                    <li>Appearance: Alternating light/dark bands</li>
+                                    <li>Cause: Air-filled cortex cavities</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pili Bifurcati</strong>
+                                <ul>
+                                    <li>Appearance: Single hair bifurcates and re-fuses along shaft</li>
+                                    <li>Rarity: Very rare</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pili Multigemini</strong>
+                                <ul>
+                                    <li>Appearance: Multiple hair shafts from one papilla</li>
+                                    <li>Structure: Shared outer root sheath</li>
+                                </ul>
+                            </li>
+                       
+
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Microscopic Features of Anagen and Telogen Hairs</div>
+
+                <div class="diagnosis-box">
+                    <h4>Telogen Hair:</h4>
+                    <ul>
+                        <li>Telogen shaft showing a club-shaped bulb</li>
+                    </ul>
+
+                    <h4>Anagen Hair:</h4>
+                    <ul>
+                        <li>Anagen shaft with attached root sheaths</li>
+                        <li>Demonstrating a pigmented and distorted bulb</li>
+                        <li>Components: M (matrix), I (inner root sheath), O (outer root sheath)</li>
+                    </ul>
+
+                    <h4>Loose Anagen Hair:</h4>
+                    <ul>
+                        <li>Ruffled cuticle of loose anagen hair</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Quick Reference Summary</div>
+
+                <div class="highlight-box">
+                    <h4>High-Yield MCQ Facts:</h4>
+                    <ul>
+                        <li><strong>Grading:</strong> Hamilton-Norwood scale (male), Ludwing/Sinclair scales (female)</li>
+                        <li><strong>Trichoscopy AGA:</strong> >20% diversity of hair thickness</li>
+                        <li><strong>Ferritin level:</strong> should be above 40 ng/dL</li>
+                        <li><strong>Alopecia areata:</strong> Yellow dot most common trichoscopy finding</li>
+                        <li><strong>Eosinophils:</strong> may be seen in alopecia areata</li>
+                        <li><strong>LPP inflammation:</strong> affects upper portion of follicle (infundibulum and isthmus)</li>
+                        <li><strong>Most common cicatricial alopecia:</strong> LPP</li>
+                        <li><strong>Trichotillomania:</strong> N-acetylcysteine supplement can be used</li>
+                        <li><strong>Congenital atrichia:</strong> mutation in hairless gene + Vitamin D-dependent rickets</li>
+                        <li><strong>Hair shaft abnormalities genetics:</strong> Multiple specific genes mentioned</li>
+                        <li><strong>Scalp hair growth:</strong> Higher anagen %, lower telogen % vs other body areas</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <h4>Treatment Pearls:</h4>
+                    <ul>
+                        <li><strong>Finasteride/dutasteride and Griseofulvin for FFA</strong></li>
+                        <li><strong>Nd:YAG laser for acne keloidalis</strong></li>
+                        <li><strong>Most drugs causing hair loss → TE (except chemotherapy → AE)</strong></li>
+                        <li><strong>Clomipramine first line for trichotillomania</strong></li>
+                        <li><strong>CCCA: Oral tetracyclines + potent topical steroids</strong></li>
+                    </ul>
+                </div>
+
+                <div class="mcq-focus">
+                    <h4>Exam Strategy Tips:</h4>
+                    <ul>
+                        <li>Focus on distinguishing features between different alopecias</li>
+                        <li>Remember genetic patterns and specific mutations</li>
+                        <li>Know trichoscopy findings for each condition</li>
+                        <li>Understand pathophysiology of androgenic alopecia</li>
+                        <li>Master the classification of cicatricial alopecias</li>
+                        <li>Remember treatment protocols and first-line therapies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Collapsible functionality
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        // Progress bars animation
+        function animateProgressBars() {
+            document.querySelectorAll('.progress-fill').forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500);
+            });
+        }
+
+        // Animate on page load
+        window.addEventListener('load', animateProgressBars);
+
+        // Interactive hover effects for key statistics
+        document.querySelectorAll('.percentage-stat').forEach(stat => {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Add scroll-to-top functionality
+        function addScrollToTop() {
+            const scrollBtn = document.createElement('button');
+            scrollBtn.innerHTML = '↑';
+            scrollBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            `;
+            
+            document.body.appendChild(scrollBtn);
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.style.opacity = '1';
+                } else {
+                    scrollBtn.style.opacity = '0';
+                }
+            });
+            
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        addScrollToTop();
+
+        // Enhanced search functionality
+        function addSearchFunctionality() {
+            const searchBox = document.createElement('input');
+            searchBox.type = 'text';
+            searchBox.placeholder = 'Search content...';
+            searchBox.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px;
+                border: 2px solid #667eea;
+                border-radius: 25px;
+                font-size: 14px;
+                z-index: 1000;
+                background: white;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            `;
+            
+            document.body.appendChild(searchBox);
+            
+            searchBox.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const allText = document.querySelectorAll('p, li, h1, h2, h3, h4, h5, td');
+                
+                allText.forEach(element => {
+                    if (searchTerm && element.textContent.toLowerCase().includes(searchTerm)) {
+                        element.style.backgroundColor = '#ffeb3b';
+                        element.style.padding = '2px';
+                        element.style.borderRadius = '3px';
+                    } else {
+                        element.style.backgroundColor = '';
+                        element.style.padding = '';
+                        element.style.borderRadius = '';
+                    }
+                });
+            });
+        }
+
+        addSearchFunctionality();
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Tab navigation with number keys
+            if (e.ctrlKey && e.key >= '1' && e.key <= '6') {
+                e.preventDefault();
+                const tabIndex = parseInt(e.key) - 1;
+                const tabs = document.querySelectorAll('.nav-tab');
+                if (tabs[tabIndex]) {
+                    tabs[tabIndex].click();
+                }
+            }
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+
+        });
+    </script>
+</body>
+</html>

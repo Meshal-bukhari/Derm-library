@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galli-Galli Disease - Saudi Dermatology Board Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border-left: 5px solid transparent;
+            padding-left: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            border-left-color: #3498db;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .synopsis .section-icon { background: #e74c3c; }
+        .lookfor .section-icon { background: #f39c12; }
+        .pearls .section-icon { background: #27ae60; }
+        .differential .section-icon { background: #8e44ad; }
+        .tests .section-icon { background: #2980b9; }
+        .management .section-icon { background: #d35400; }
+        .therapy .section-icon { background: #34495e; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #f1c40f;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            border-left: 5px solid #17a2b8;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+        }
+
+        .clinical-pearl::before {
+            content: '⭐';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #17a2b8;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .key-term {
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .genetics-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border: 2px dashed #e17055;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .differential-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .diff-item {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .diff-item:hover {
+            border-color: #8e44ad;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(142, 68, 173, 0.2);
+        }
+
+        .diff-item h4 {
+            color: #8e44ad;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .year-highlight {
+            background: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .location-tag {
+            background: #27ae60;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .symptom-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .symptom-list li {
+            background: #f8f9fa;
+            margin: 5px 0;
+            padding: 10px 15px;
+            border-left: 4px solid #28a745;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .age-range {
+            background: linear-gradient(90deg, #ff7675, #fdcb6e);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .progressive-badge {
+            background: #dc3545;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .inheritance-pattern {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .histology-box {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            border: 2px solid #e84393;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .treatment-note {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .success-case {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .contributors {
+            background: #f1f3f4;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .differential-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Galli-Galli Disease</h1>
+            <div class="subtitle">Complete Study Guide for Saudi Dermatology Board Exam</div>
+        </div>
+
+        <div class="content">
+            <div class="contributors">
+                <strong>Contributors:</strong> Carolyn Ziemer MD, Donna A. Culton MD, PhD, Whitney A. High MD, JD, MEng
+            </div>
+
+            <div class="section synopsis">
+                <div class="section-title">
+                    <div class="section-icon">S</div>
+                    Synopsis
+                </div>
+                
+                <p>Galli-Galli disease (GGD) is a rare <span class="key-term">autosomal dominant genodermatosis</span> that falls under the broader category of <span class="key-term">reticulate pigmented disorders of the skin</span>. GGD is thought to be an allelic variant of <span class="key-term">Dowling-Degos disease (DDD)</span>, the latter a pigmentary disorder characterized by progressive hyperpigmentation of flexural skin.</p>
+
+                <div class="highlight-box">
+                    <strong>Distinguishing Feature:</strong> The distinguishing feature of GGD is the presence of <span class="key-term">suprabasal acantholysis</span> histologically, and as such it has also been described as <span class="key-term">"acantholytic Dowling-Degos disease"</span> in the literature.
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Historical Context:</strong> In <span class="year-highlight">1982</span>, Bardach et al described the first cases of disease occurring in two brothers named Galli. The brothers presented with a reticulated hyperpigmented eruption affecting the skin folds. Biopsy demonstrated proliferation of rete ridges and basal layer hyperpigmentation as seen in DDD, but also <span class="key-term">focal suprabasal acantholysis</span>.
+                </div>
+
+                <p>Initially, GGD was favored to be a distinct clinical entity from DDD due to the unique and consistent feature of acantholysis; however, subsequent research supports a common etiology for DDD and GGD, as both have been found to share the same genetic defect.</p>
+
+                <div class="genetics-box">
+                    <h3>🧬 Genetic Mechanism</h3>
+                    <p><strong>Frameshift or nonsense <span class="key-term">KRT5 gene mutations</span></strong> lead to haploinsufficiency of <span class="key-term">keratin 5</span>, a protein that plays an important role in:</p>
+                    <ul style="list-style: none; padding: 10px 0;">
+                        <li>• Cell-cell adhesion</li>
+                        <li>• Epidermal differentiation</li>
+                        <li>• Melanosome uptake</li>
+                    </ul>
+                    <p><em>The mechanism by which specific KRT5 mutations seen in DDD and GGD cause skin disease or correlate with variable histological subtypes is not yet elucidated.</em></p>
+                </div>
+            </div>
+
+            <div class="section lookfor">
+                <div class="section-title">
+                    <div class="section-icon">👁</div>
+                    Look For
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Primary Clinical Features:</strong>
+                    <p><span class="key-term">Reticulated hyperpigmentation</span> in the flexural areas, including:</p>
+                    <div style="margin: 15px 0;">
+                        <span class="location-tag">Neck</span>
+                        <span class="location-tag">Axilla</span>
+                        <span class="location-tag">Inframammary</span>
+                        <span class="location-tag">Inguinal regions</span>
+                    </div>
+                    <p>Lesions are often <span class="key-term">pruritic</span>.</p>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Initial Presentation:</strong> Initial presentation may include a <span class="key-term">papular</span>, <span class="key-term">papulosquamous</span>, or <span class="key-term">papulovesicular eruption</span>, which precedes pigmentary changes.
+                </div>
+
+                <div class="age-range">
+                    Age at presentation ranges widely from teenage years up to the seventh decade of life
+                </div>
+
+                <p>Disease is <span class="key-term">progressive</span> without spontaneous remission. <span class="progressive-badge">No Remission</span></p>
+
+                <h3 style="color: #f39c12; margin: 25px 0 15px 0;">🔄 Variant Manifestations</h3>
+                
+                <ul class="symptom-list">
+                    <li><strong>DDD-like features:</strong> Comedo-like lesions and pitted perioral scars typically seen in DDD</li>
+                    <li><strong>Grover-like presentations:</strong> Erythematous, keratotic papules concentrated on the trunk</li>
+                    <li><strong>Lentigo-like variant:</strong> Lentigo-like macules with pruritic erythematous papules of the trunk and extremities</li>
+                </ul>
+            </div>
+
+            <div class="section pearls">
+                <div class="section-title">
+                    <div class="section-icon">💎</div>
+                    Diagnostic Pearls
+                </div>
+
+                <div class="inheritance-pattern">
+                    🧬 Inheritance may be autosomal dominant or sporadic. Ask about family members with a similar condition.
+                </div>
+
+                <div class="histology-box">
+                    <h3>🔬 Histological Hallmark</h3>
+                    <p>The hallmark histological finding of <span class="key-term">focal suprabasal acantholysis</span> separates GGD from other reticulate pigmented disorders of the skin.</p>
+                </div>
+            </div>
+
+            <div class="section differential">
+                <div class="section-title">
+                    <div class="section-icon">🔍</div>
+                    Differential Diagnosis & Pitfalls
+                </div>
+
+                <p><em>To perform a comparison, select diagnoses from the classic differential</em></p>
+
+                <div class="clinical-pearl">
+                    Other reticulate pigmented disorders of the skin may be difficult to distinguish clinically, but the finding of <span class="key-term">suprabasal acantholysis</span> on biopsy is exclusive to GGD.
+                </div>
+
+                <div class="differential-grid">
+                    <div class="diff-item">
+                        <h4>🔹 Dowling-Degos disease (DDD)</h4>
+                        <p>GGD is an acantholytic variant of DDD. Clinically, DDD may show comedo-like lesions and pitted perioral acneiform scars not typically seen in GGD.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Reticulate acropigmentation of Kitamura</h4>
+                        <p>Presents with acral hyperpigmented atrophic macules / pits or palmar fissures.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Reticulate acropigmentation of Dohi (dyschromatosis symmetrica hereditaria)</h4>
+                        <p>Presents with acral hyper- and hypopigmented macules on the dorsal hands and feet.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Haber syndrome</h4>
+                        <p>Verruciform papular lesions of trunk and roseate facial erythema, often presenting in childhood.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Darier disease</h4>
+                        <p>Earlier onset, seborrheic distribution, characterized by crusted yellow-brown papules rather than lentigo-like macules; nail changes and mucous membrane involvement. On biopsy, dyskeratosis seen in Darier disease and not GGD.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Hailey-Hailey disease</h4>
+                        <p>Erosions in skin folds, dilapidated brick wall histology.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Grover disease</h4>
+                        <p>Very pruritic keratotic papules on trunk; acantholysis and dyskeratosis seen on biopsy, no elongation of rete ridges as in GGD.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Epidermolysis bullosa with mottled pigmentation</h4>
+                        <p>Also caused by keratin 5 mutation; has additional features of palmoplantar hyperkeratosis, bullous lesions.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Pemphigus vulgaris</h4>
+                        <p>Cutaneous and mucosal involvement, plus Nikolsky, plus immunofluorescence.</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Confluent and reticulated papillomatosis</h4>
+                        <p>(Gougerot-Carteaud syndrome)</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Granular parakeratosis</h4>
+                        <p></p>
+                    </div>
+
+                    <div class="diff-item">
+                        <h4>🔹 Acanthosis nigricans</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section tests">
+                <div class="section-title">
+                    <div class="section-icon">🧪</div>
+                    Best Tests
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🔬 Skin Biopsy - Primary Diagnostic Tool</h3>
+                    <p>Skin biopsy is useful in differentiating GGD from other reticulate pigmented disorders of the skin. Histopathological examination of lesional skin will show:</p>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>Elongation of the rete ridges and basal layer hyperpigmentation as seen in DDD</li>
+                        <li><strong>Hallmark feature:</strong> <span class="key-term">pronounced focal suprabasal acantholysis</span></li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Immunofluorescence:</strong> Immunofluorescence studies should also be performed to rule out an unusual variant of pemphigus vulgaris.
+                </div>
+
+                <div class="genetics-box">
+                    <h3>🧬 Genetic Testing</h3>
+                    <p>Larger academic centers may offer genetic testing for specific <span class="key-term">keratin 5 frameshift mutations</span> observed in some, but not all, patients with GGD.</p>
+                    <p><strong>Important:</strong> Genetic testing is not necessary for diagnosis, but may be helpful for clinically challenging cases.</p>
+                </div>
+            </div>
+
+            <div class="section management">
+                <div class="section-title">
+                    <div class="section-icon">⚕️</div>
+                    Management Pearls
+                </div>
+
+                <div class="inheritance-pattern">
+                    Galli-Galli disease can be autosomal dominant or sporadic. As such, genetics referral may be considered to discuss the implications of this inheritance pattern for the patient and family members.
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Extracutaneous Manifestations:</strong> There are no known extracutaneous manifestations of GGD which would compel additional workup.
+                </div>
+
+                <div class="highlight-box">
+                    <h3>⚠️ Malignancy Surveillance</h3>
+                    <p>An increased incidence of <span class="key-term">squamous cell carcinomas</span> and <span class="key-term">keratoacanthomas</span> has been reported in patients with DDD. This association has not yet been described in the small number of cases of GGD; however, as GGD is a variant of DDD, <strong>regular screening skin examinations would be prudent</strong> for these patients.</p>
+                </div>
+            </div>
+
+            <div class="section therapy">
+                <div class="section-title">
+                    <div class="section-icon">💊</div>
+                    Therapy
+                </div>
+
+                <div class="treatment-note">
+                    <h3>⚠️ Treatment Reality</h3>
+                    <p><strong>There is no best treatment for GGD.</strong> Case reports of attempted therapies include:</p>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>Topical steroids</li>
+                        <li>Topical retinoids</li>
+                        <li>UVB phototherapy</li>
+                    </ul>
+                    <p><strong>Result:</strong> All without significant improvement.</p>
+                </div>
+
+                <div class="success-case">
+                    <h3>✅ Success Case Report</h3>
+                    <p>There is a single case report of a patient successfully treated with <span class="key-term">erbium:YAG laser</span> resulting in remittance of lesions through the follow-up interval of <strong>12 months</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive hover effects for better engagement
+        document.querySelectorAll('.diff-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.backgroundColor = this.style.backgroundColor === 'rgb(248, 249, 250)' ? 'white' : '#f8f9fa';
+            });
+        });
+
+        // Add click-to-highlight functionality for key terms
+        document.querySelectorAll('.key-term').forEach(term => {
+            term.addEventListener('click', function() {
+                this.style.backgroundColor = this.style.backgroundColor === 'rgb(231, 76, 60)' ? '#3498db' : '#e74c3c';
+            });
+        });
+    </script>
+</body>
+</html>

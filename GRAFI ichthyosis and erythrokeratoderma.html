@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ichthyoses & Erythrokeratodermas: Board Exam Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --highlight: #e74c3c;
+            --light: #ecf0f1;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #1abc9c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 20px 0 10px;
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .intro-box {
+            background-color: var(--light);
+            border-left: 5px solid var(--secondary);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .pearl-box {
+            background-color: #fff8e1;
+            border: 1px solid #ffecb3;
+            border-left: 5px solid var(--warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+            position: relative;
+        }
+        
+        .pearl-box::before {
+            content: "⭐ BOARD PEARL";
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background-color: var(--warning);
+            color: white;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .definition-box {
+            background-color: #e8f4fd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #d1e8ff;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 10px 15px;
+            background: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .collapsible {
+            background-color: var(--light);
+            color: var(--primary);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 2px;
+            position: relative;
+        }
+        
+        .collapsible::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .active-collapse::after {
+            content: "−";
+        }
+        
+        .collapse-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        th {
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .card {
+            width: 48%;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .card-body {
+            padding: 15px;
+        }
+        
+        .highlight {
+            background-color: #ffff88;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .mnemonic-box {
+            background-color: #e8f4e8;
+            border: 1px solid #d1e7dd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .mnemonic-title {
+            font-weight: bold;
+            color: var(--success);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .comparison-table th:first-child {
+            background-color: var(--primary);
+        }
+        
+        .comparison-table th {
+            text-align: center;
+        }
+        
+        .quiz-container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .quiz-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .quiz-options {
+            list-style-type: none;
+        }
+        
+        .quiz-options li {
+            margin-bottom: 8px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .quiz-options li:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .quiz-answer {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #d1e7dd;
+            border-radius: 5px;
+            border-left: 5px solid var(--success);
+        }
+        
+        .flowchart {
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .icon-text {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .icon-text i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .high-yield {
+            border-left: 5px solid var(--highlight);
+            padding-left: 15px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .toggle-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .flashcard {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 15px 0;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .flashcard-front {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .flashcard-back {
+            background-color: var(--secondary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+            
+            .tab-btn {
+                flex: 1 0 auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ichthyoses & Erythrokeratodermas</h1>
+        <p>High-Yield Board Review for Saudi Board Exam</p>
+    </header>
+    
+    <div class="container">
+        <div class="intro-box">
+            <h2>Quick Definition & Core Concepts</h2>
+            <p><strong>Ichthyoses and erythrokeratodermas</strong> are disorders of cornification in which abnormal differentiation and desquamation of the epidermis result in a defective cutaneous barrier.</p>
+            <ul>
+                <li><strong>Ichthyoses:</strong> Characterized by scaling of the skin in a widespread distribution (from Greek "ichthy" meaning fish)</li>
+                <li><strong>Erythrokeratodermas:</strong> Feature discrete areas of erythema and hyperkeratosis, usually without substantial scale</li>
+            </ul>
+        </div>
+        
+        <div class="pearl-box">
+            <p>Most important diagnostic factors: (1) determine timing of onset (birth vs. later), (2) assess for multisystem involvement, and (3) evaluate the quality/distribution of scale, presence of erythroderma, blistering, and adnexal abnormalities.</p>
+        </div>
+        
+        <h2>Diagnostic Approach to Ichthyosis</h2>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'history')">History & Physical</button>
+                <button class="tab-btn" onclick="openTab(event, 'labs')">Laboratory Evaluation</button>
+                <button class="tab-btn" onclick="openTab(event, 'genetic')">Genetic Testing</button>
+                <button class="tab-btn" onclick="openTab(event, 'histology')">Histopathology</button>
+            </div>
+            
+            <div id="history" class="tab-content active">
+                <h3>Key History Elements</h3>
+                <ul>
+                    <li><strong>Prenatal/birth history:</strong> Prenatal diagnoses (e.g., heart defects), prolonged labor (suggestive of steroid sulfatase deficiency), prematurity (characteristic of harlequin ichthyosis)</li>
+                    <li><strong>Consanguinity:</strong> Makes autosomal recessive ichthyosis more likely</li>
+                    <li><strong>Family history:</strong> Epidermal nevi, ichthyosis, or erythrokeratoderma</li>
+                </ul>
+                
+                <h3>Physical Examination Findings</h3>
+                <ul>
+                    <li><strong>Types of skin findings:</strong> Collodion membrane, bullae/erosions, erythroderma, peeling, diffuse scaling, circumscribed areas of erythema/hyperkeratosis</li>
+                    <li><strong>Distribution patterns:</strong> Generalized, unilateral, following lines of Blaschko, regional</li>
+                    <li><strong>Adnexal evaluation:</strong> Scalp hair, eyebrows, eyelashes (including trichoscopy); nails; mucous membranes</li>
+                    <li><strong>Systemic findings:</strong> Microcephaly, dysmorphic facies, asymmetry, contractures, hepatosplenomegaly</li>
+                </ul>
+            </div>
+            
+            <div id="labs" class="tab-content">
+                <h3>Basic Laboratory Evaluation</h3>
+                <ul>
+                    <li>Complete blood count</li>
+                    <li>Electrolytes</li>
+                    <li>Hepatic panel</li>
+                    <li>Immunoglobulin levels (including IgE)</li>
+                    <li>Peripheral blood smear to evaluate for vacuoles in leukocytes (suggests neutral lipid storage disease or multiple sulfatase deficiency)</li>
+                </ul>
+                
+                <h3>Additional Assessments</h3>
+                <ul>
+                    <li>Hearing screen (auditory brainstem response or oto-acoustic emission test)</li>
+                    <li>Ophthalmologic examination</li>
+                    <li>X-rays to evaluate epiphyses (especially if ichthyosiform lesions are unilateral or in a mosaic distribution pattern)</li>
+                </ul>
+            </div>
+            
+            <div id="genetic" class="tab-content">
+                <h3>Genetic Testing Approach</h3>
+                <p><strong>Preferred approach:</strong> A multigene panel is preferable over single gene testing if the diagnosis is not evident based on clinical and laboratory findings</p>
+                
+                <h3>Alternative Testing Methods</h3>
+                <ul>
+                    <li>FISH and microarray are alternatives if suspect steroid sulfatase deficiency</li>
+                    <li>Following resolution of collodion membrane (if present), immunohistochemical staining of skin biopsy for transglutaminase-1, LEKTI, or filaggrin</li>
+                </ul>
+            </div>
+            
+            <div id="histology" class="tab-content">
+                <h3>Histopathologic Evaluation</h3>
+                <ul>
+                    <li><strong>Timing:</strong> Consider skin biopsy particularly if bullae/erosions present (to assess for epidermolysis)</li>
+                    <li><strong>Ichthyosis vulgaris:</strong> Look for diminished granular layer (more evident in severe forms)</li>
+                    <li><strong>Characteristic histopathologic features:</strong> Can help recognize specific disorders, such as epidermolytic ichthyosis and ichthyosis hystrix Curth-Macklin</li>
+                </ul>
+                
+                <h3>Special Stains & Processing</h3>
+                <ul>
+                    <li><strong>Lipid assessment:</strong> Lipid antibodies (e.g., adipophilin) or stains (e.g., oil red O, Sudan III) to detect cytoplasmic lipid droplets in paraffin-embedded or fresh frozen skin sections for neutral lipid storage disease</li>
+                    <li><strong>Cell cultures:</strong> Fibroblast or keratinocyte cultures of skin biopsy specimen to measure FALDH activity or check for elevated free fatty alcohols if suspect Sjögren-Larsson syndrome</li>
+                    <li><strong>Electron microscopy:</strong> Using ruthenium tetroxide fixation to assess for abnormalities in the epidermal lipid system</li>
+                </ul>
+            </div>
+        </div>
+        
+        <button class="collapsible">Cutaneous Manifestations</button>
+        <div class="collapse-content">
+            <h3>Hair Abnormalities</h3>
+            <ul>
+                <li><strong>"Tiger tail" hair:</strong> Trichothiodystrophy (pathognomonic)</li>
+                <li><strong>Trichorrhexis invaginata:</strong> Netherton syndrome (pathognomonic)</li>
+                <li><strong>Hypotrichosis:</strong> Multiple conditions including KID syndrome, Netherton syndrome, trichothiodystrophy and many other</li>
+                <li><strong>Trichorrhexis nodosa:</strong> Netherton syndrome, Trichothiodystrophy</li>
+            </ul>
+            
+            <h3>Approach to Neonate/Infant with Signs of Ichthyosis and Diagnostic Clues</h3>
+            
+            <h4>Extracutaneous Findings</h4>
+            <table>
+                <tr>
+                    <th>Finding</th>
+                    <th>Associated Conditions</th>
+                </tr>
+                <tr>
+                    <td>Intellectual disability</td>
+                    <td>Collodion baby, Neutral lipid storage disease, Trichothiodystrophy, Arthrogryposis-renal dysfunction-cholestasis, CEDNIK syndrome, CHIME syndrome, Ichthyosis, intellectual disability, and spastic quadriplegia, MEDNIK syndrome, Multiple sulfatase deficiency, Refsum disease, Rhizomelic chondrodysplasia punctata</td>
+                </tr>
+                <tr>
+                    <td>Microcephaly</td>
+                    <td>Trichothiodystrophy, CHIME syndrome, MEDNIK syndrome</td>
+                </tr>
+                <tr>
+                    <td>Ataxia</td>
+                    <td>(Neutral lipid storage disease), CHIME syndrome, Erythrokeratoderma with ataxia, Refsum disease</td>
+                </tr>
+                <tr>
+                    <td>Di-/tetraplegia</td>
+                    <td><span class="highlight">Sjögren-Larsson syndrome</span>, Ichthyosis, intellectual disability, and spastic quadriplegia, Rhizomelic chondrodysplasia punctata</td>
+                </tr>
+                <tr>
+                    <td>Keratitis</td>
+                    <td>KID syndrome, Hereditary mucoepithelial dysplasia, IFAP syndrome</td>
+                </tr>
+                <tr>
+                    <td>Perifoveal glistening white dots</td>
+                    <td><span class="highlight">Sjögren-Larsson syndrome</span></td>
+                </tr>
+                <tr>
+                    <td>Retinitis pigmentosa</td>
+                    <td><span class="highlight">Refsum disease</span></td>
+                </tr>
+                <tr>
+                    <td>Cataracts</td>
+                    <td>Conradi-Hünermann-Happle syndrome, Neutral lipid storage disease, Trichothiodystrophy, CHIME syndrome, Refsum disease, Rhizomelic chondrodysplasia punctata</td>
+                </tr>
+                <tr>
+                    <td>Corneal opacities</td>
+                    <td><span class="highlight">Steroid sulfatase deficiency (X-linked recessive ichthyosis)</span>, Ichthyosis-hypotrichosis syndrome</td>
+                </tr>
+                <tr>
+                    <td>Coloboma</td>
+                    <td>CEDNIK syndrome, CHIME syndrome</td>
+                </tr>
+                <tr>
+                    <td>Anosmia</td>
+                    <td>Refsum disease, Steroid sulfatase deficiency contiguous gene syndrome</td>
+                </tr>
+                <tr>
+                    <td>Hearing impairment</td>
+                    <td>CHILD syndrome, KID syndrome, Neutral lipid storage disease, Arthrogryposis-renal dysfunction-cholestasis, CEDNIK syndrome, CHIME syndrome, MEDNIK syndrome, Refsum disease</td>
+                </tr>
+                <tr>
+                    <td>Neonatal respiratory distress</td>
+                    <td>KID syndrome, Ichthyosis prematurity syndrome</td>
+                </tr>
+                <tr>
+                    <td>Cardiac defects</td>
+                    <td>Arthrogryposis-renal dysfunction-cholestasis, CHIME syndrome, CHIME syndrome</td>
+                </tr>
+                <tr>
+                    <td>Hepatomegaly/liver dysfunction</td>
+                    <td>Neutral lipid storage disease, Arthrogryposis-renal dysfunction-cholestasis, Gaucher disease, Neonatal ichthyosis-sclerosing cholangitis syndrome</td>
+                </tr>
+                <tr>
+                    <td>Chronic diarrhea</td>
+                    <td>MEDNIK syndrome</td>
+                </tr>
+                <tr>
+                    <td>Vomiting</td>
+                    <td>CHIME syndrome</td>
+                </tr>
+                <tr>
+                    <td>Elevated IgE</td>
+                    <td><span class="highlight">Netherton syndrome</span>, Generalized (inflammatory) peeling skin syndrome</td>
+                </tr>
+                <tr>
+                    <td>Neonatal hypernatremic dehydration</td>
+                    <td>Collodion baby, Harlequin ichthyosis, (KID syndrome), Netherton syndrome</td>
+                </tr>
+                <tr>
+                    <td>WBC vacuoles</td>
+                    <td><span class="highlight">Neutral lipid storage disease</span>, Neonatal ichthyosis-sclerosing cholangitis syndrome</td>
+                </tr>
+                <tr>
+                    <td>Bleeding diathesis</td>
+                    <td>(Erythrokeratoderma variabilis, progressive symmetric erythrokeratoderma†), (Harlequin ichthyosis†), Arthrogryposis-renal dysfunction-cholestasis, CHIME syndrome</td>
+                </tr>
+                <tr>
+                    <td>Neuropathy</td>
+                    <td>CEDNIK syndrome, MEDNIK syndrome, <span class="highlight">Refsum disease</span></td>
+                </tr>
+                <tr>
+                    <td>Renal dysfunction</td>
+                    <td>(Neutral lipid storage disease), Arthrogryposis-renal dysfunction-cholestasis, Nephrosis with ichthyosis and adrenal insufficiency</td>
+                </tr>
+                <tr>
+                    <td>Myopathy</td>
+                    <td>Neutral lipid storage disease</td>
+                </tr>
+                <tr>
+                    <td>Joint contractures</td>
+                    <td>Arthrogryposis-renal dysfunction-cholestasis, Gaucher disease, KLICK syndrome</td>
+                </tr>
+                <tr>
+                    <td>Stippled epiphyses</td>
+                    <td><span class="highlight">CHILD syndrome, Conradi-Hünermann-Happle syndrome, Rhizomelic chondrodysplasia punctata</span></td>
+                </tr>
+                <tr>
+                    <td>Hypogonadism/cryptorchidism</td>
+                    <td><span class="highlight">Steroid sulfatase deficiency (X-linked recessive ichthyosis)</span>, Trichothiodystrophy, Multiple sulfatase deficiency, Steroid sulfatase deficiency contiguous gene syndrome</td>
+                </tr>
+            </table>
+            
+            <h4>Cutaneous Findings</h4>
+            <table>
+                <tr>
+                    <th>Finding</th>
+                    <th>Associated Conditions</th>
+                </tr>
+                <tr>
+                    <td>"Tiger tail" hair</td>
+                    <td><span class="highlight">Trichothiodystrophy</span></td>
+                </tr>
+                <tr>
+                    <td>Trichorrhexis invaginata</td>
+                    <td><span class="highlight">Netherton syndrome</span></td>
+                </tr>
+                <tr>
+                    <td>Trichorrhexis nodosa</td>
+                    <td>Netherton syndrome, Trichothiodystrophy</td>
+                </tr>
+                <tr>
+                    <td>Pili torti</td>
+                    <td>Arthrogryposis-renal dysfunction-cholestasis</td>
+                </tr>
+                <tr>
+                    <td>Hypotrichosis</td>
+                    <td>KID syndrome, Netherton syndrome, Trichothiodystrophy, Arthrogryposis-renal dysfunction-cholestasis, Ichthyosis-hypotrichosis syndrome, IFAP syndrome, Neonatal ichthyosis-sclerosing cholangitis syndrome</td>
+                </tr>
+                <tr>
+                    <td>Photosensitivity</td>
+                    <td><span class="highlight">Trichothiodystrophy</span></td>
+                </tr>
+                <tr>
+                    <td>Erythroderma</td>
+                    <td>Conradi-Hünermann-Happle syndrome, Epidermolytic ichthyosis (or nevus), Harlequin ichthyosis, KID syndrome, Lamellar ichthyosis-CIE spectrum, Netherton syndrome, Neutral lipid storage disease, Sjögren-Larsson syndrome, Trichothiodystrophy, Generalized (inflammatory) peeling skin syndrome, Ichthyosis with confetti</td>
+                </tr>
+                <tr>
+                    <td>Following Blaschko's lines/mosaic</td>
+                    <td><span class="highlight">CHILD syndrome, Conradi-Hünermann-Happle syndrome, Epidermolytic ichthyosis (or nevus)**, IFAP syndrome**</span></td>
+                </tr>
+                <tr>
+                    <td>Atopy or itch</td>
+                    <td>Ichthyosis vulgaris, Netherton syndrome, Sjögren-Larsson syndrome, Generalized (inflammatory) peeling skin syndrome, Ichthyosis prematurity syndrome</td>
+                </tr>
+                <tr>
+                    <td>Hystrix-like hyperkeratosis</td>
+                    <td><span class="highlight">Epidermolytic ichthyosis (or nevus), KID syndrome, Ichthyosis hystrix Curth-Macklin</span></td>
+                </tr>
+                <tr>
+                    <td>Peeling skin</td>
+                    <td>Netherton syndrome, Superficial epidermolytic ichthyosis, Autosomal recessive exfoliative ichthyosis, Generalized (inflammatory) peeling skin syndrome</td>
+                </tr>
+                <tr>
+                    <td>Discrete erythematous, hyperkeratotic plaques</td>
+                    <td>CHILD syndrome, Erythrokeratoderma variabilis, progressive symmetric erythrokeratoderma, KID syndrome, Erythrokeratoderma with ataxia, Hereditary mucoepithelial dysplasia, IFAP syndrome, MEDNIK syndrome</td>
+                </tr>
+                <tr>
+                    <td>Bullae/blisters</td>
+                    <td><span class="highlight">Epidermolytic ichthyosis (or nevus), Superficial epidermolytic ichthyosis</span></td>
+                </tr>
+                <tr>
+                    <td>Hyperlinear palms/soles*</td>
+                    <td><span class="highlight">Ichthyosis vulgaris</span>, Lamellar ichthyosis-CIE spectrum§, Refsum disease</td>
+                </tr>
+                <tr>
+                    <td>Increased infections</td>
+                    <td>KID syndrome, Netherton syndrome, Trichothiodystrophy, Generalized (inflammatory) peeling skin syndrome, IFAP syndrome, Refsum disease</td>
+                </tr>
+                <tr>
+                    <td>"Islands" of normal skin (↑ with age)</td>
+                    <td><span class="highlight">Ichthyosis with confetti</span></td>
+                </tr>
+                <tr>
+                    <td>Risk of SCC</td>
+                    <td>KID syndrome, (Lamellar ichthyosis-CIE spectrum), <span class="highlight">Netherton syndrome</span>, (Ichthyosis with confetti)</td>
+                </tr>
+            </table>
+            
+            <h4>Common and Classic Ichthyoses (1-15)</h4>
+            <ol>
+                <li>CHILD syndrome</li>
+                <li>Collodion baby</li>
+                <li>Conradi-Hünermann-Happle syndrome</li>
+                <li>Epidermolytic ichthyosis (or nevus)</li>
+                <li>Erythrokeratoderma variabilis, progressive symmetric erythrokeratoderma</li>
+                <li>Harlequin ichthyosis</li>
+                <li>Ichthyosis vulgaris</li>
+                <li>KID syndrome</li>
+                <li>Lamellar ichthyosis-CIE spectrum</li>
+                <li>Netherton syndrome</li>
+                <li>Neutral lipid storage disease</li>
+                <li>Sjögren-Larsson syndrome</li>
+                <li>Steroid sulfatase deficiency (X-linked recessive ichthyosis)</li>
+                <li>Superficial epidermolytic ichthyosis</li>
+                <li>Trichothiodystrophy</li>
+            </ol>
+            
+            <h4>Rare Ichthyoses (16-38)</h4>
+            <ol start="16">
+                <li>Arthrogryposis-renal dysfunction-cholestasis</li>
+                <li>Autosomal recessive exfoliative ichthyosis</li>
+                <li>CEDNIK syndrome</li>
+                <li>CHIME syndrome</li>
+                <li>Congenital disorders of glycosylation</li>
+                <li>Erythrokeratoderma with ataxia</li>
+                <li>Gaucher disease</li>
+                <li>Generalized (inflammatory) peeling skin syndrome</li>
+                <li>Hereditary mucoepithelial dysplasia</li>
+                <li>Ichthyosis-hypotrichosis syndrome</li>
+                <li>Ichthyosis hystrix Curth-Macklin</li>
+                <li>Ichthyosis, intellectual disability, and spastic quadriplegia</li>
+                <li>Ichthyosis prematurity syndrome</li>
+                <li>Ichthyosis with confetti</li>
+                <li>IFAP syndrome</li>
+                <li>KLICK syndrome</li>
+                <li>MEDNIK syndrome</li>
+                <li>Multiple sulfatase deficiency</li>
+                <li>Neonatal ichthyosis-sclerosing cholangitis syndrome</li>
+                <li>Nephrosis with ichthyosis and adrenal insufficiency</li>
+                <li>Refsum disease</li>
+                <li>Rhizomelic chondrodysplasia punctata</li>
+                <li>Steroid sulfatase deficiency contiguous gene syndrome</li>
+            </ol>
+            
+            <h4>Special Notes</h4>
+            <ul>
+                <li>* Palmoplantar keratoderma can also occur in other forms of ichthyosis</li>
+                <li>† Also in erythrokeratoderma-cardiomyopathy syndrome</li>
+                <li>‡ Thrombocytopenia can occur in patients with biallelic PNPLA1 or CERS3 mutations</li>
+                <li>§ Especially if due to CYP4F22, PNPLA1, or CERS3 mutations</li>
+                <li>** Mosaic form or female "carriers"</li>
+                <li>Parentheses indicate occasional features.</li>
+            </ul>
+            
+            <h3>Skin Pattern & Distribution</h3>
+            <ul>
+                <li><strong>Erythroderma:</strong> Multiple conditions including Netherton syndrome, CIE</li>
+                <li><strong>Following Blaschko's lines/mosaic:</strong> CHILD syndrome, epidermolytic ichthyosis</li>
+                <li><strong>Peeling skin:</strong> Netherton syndrome, Peeling skin syndrome</li>
+                <li><strong>Hystrix-like hyperkeratosis:</strong> Epidermolytic ichthyosis, Ichthyosis hystrix</li>
+                <li><strong>Discrete erythematous hyperkeratotic plaques:</strong> Erythrokeratodermas</li>
+            </ul>
+            
+            <h3>Special Features</h3>
+            <ul>
+                <li><strong>Bullae/blisters:</strong> Epidermolytic ichthyosis, Superficial epidermolytic ichthyosis</li>
+                <li><strong>Hyperlinear palms/soles:</strong> Ichthyosis vulgaris (characteristic)</li>
+                <li><strong>"Islands" of normal skin (↑ with age):</strong> Ichthyosis with confetti (distinctive)</li>
+                <li><strong>Risk of SCC:</strong> KID syndrome, Netherton syndrome</li>
+            </ul>
+        </div>
+        
+        <h2>Common Ichthyoses You MUST Know</h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">Ichthyosis Vulgaris</div>
+                <div class="card-body">
+                    <p><strong>Gene:</strong> FLG (Filaggrin)</p>
+                    <p><strong>Inheritance:</strong> Autosomal semi-dominant</p>
+                    <p><strong>Incidence:</strong> 1:100-1:1750 (Most common disorder of cornification)</p>
+                    <p><strong>Onset:</strong> Infancy/childhood</p>
+                    <p><strong>Key features:</strong> Fine, adherent scales on extremities and trunk with sparing of flexures; larger scales on lower legs; hyperlinear palms/soles, furrowed heels</p>
+                    <p><strong>Associated:</strong> Keratosis pilaris, atopic dermatitis (25-50% of patients)</p>
+                    <p><strong>Diagnosis:</strong> Clinical; histology shows diminished/absent stratum granulosum</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Steroid Sulfatase Deficiency (X-linked recessive ichthyosis)</div>
+                <div class="card-body">
+                    <p><strong>Gene:</strong> STS (deleted in ~90% of patients)</p>
+                    <p><strong>Inheritance:</strong> X-linked recessive</p>
+                    <p><strong>Incidence:</strong> 1:2000-1:9500 boys</p>
+                    <p><strong>Onset:</strong> Infancy</p>
+                    <p><strong>Key features:</strong> Fine to large, dark, adherent scales of extremities, trunk, neck, and lateral face; <span class="highlight">sparing of skin folds</span></p>
+                    <p><strong>Associated:</strong> Corneal opacities; cryptorchidism → risk of testicular cancer; female carriers may have prolonged labor</p>
+                    <p><strong>Diagnosis:</strong> FISH or microarray to identify gene deletion; increased plasma cholesterol sulfate</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Lamellar Ichthyosis/CIE Spectrum</div>
+                <div class="card-body">
+                    <p><strong>Genes:</strong> TGM1, ABCA12, CYP4F22, and others (11 genes total)</p>
+                    <p><strong>Inheritance:</strong> Autosomal recessive</p>
+                    <p><strong>Incidence:</strong> LI: 1:200,000-1:300,000; CIE: 1:100,000-1:200,000</p>
+                    <p><strong>Onset:</strong> Birth (frequently collodion membrane)</p>
+                    <p><strong>LI features:</strong> Large, thick plate-like brown scales; absent or mild erythroderma</p>
+                    <p><strong>CIE features:</strong> Fine, white scales; erythroderma</p>
+                    <p><strong>Associated:</strong> Heat intolerance; scarring alopecia (variable)</p>
+                    <p><strong>Diagnosis:</strong> Clinical; transglutaminase-1 immunostaining; genetic testing</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Harlequin Ichthyosis</div>
+                <div class="card-body">
+                    <p><strong>Gene:</strong> ABCA12</p>
+                    <p><strong>Inheritance:</strong> Autosomal recessive</p>
+                    <p><strong>Onset:</strong> Birth</p>
+                    <p><strong>Key features:</strong> Very thick, yellow-brown plates of scale that tightly encase the neonate; large, deep, bright red fissures</p>
+                    <p><strong>Associated:</strong> Premature delivery; often neonatal death due to sepsis or respiratory insufficiency; extreme ectropion, eclabium, and ear deformities</p>
+                    <p><strong>Outcome:</strong> Survivors develop severe CIE-like phenotype</p>
+                    <p><strong>Diagnosis:</strong> Clinical appearance is diagnostic</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Other Important Forms</h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">Epidermolytic Ichthyosis</div>
+                <div class="card-body">
+                    <p><strong>Genes:</strong> KRT1, KRT10</p>
+                    <p><strong>Inheritance:</strong> Autosomal dominant (rarely recessive)</p>
+                    <p><strong>Onset:</strong> Birth</p>
+                    <p><strong>Key features:</strong> At birth: erythroderma, blistering, erosions. Later: hyperkeratosis with cobblestone appearance, ridging of the flexures</p>
+                    <p><strong>Associated:</strong> Frequent skin infections, malodor, gait abnormalities</p>
+                    <p><strong>Diagnosis:</strong> Clinical; <span class="highlight">histopathology shows epidermolysis, hyperkeratosis, acanthosis, and vacuolization</span></p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Netherton Syndrome</div>
+                <div class="card-body">
+                    <p><strong>Gene:</strong> SPINK5 (serine protease inhibitor)</p>
+                    <p><strong>Inheritance:</strong> Autosomal recessive</p>
+                    <p><strong>Onset:</strong> Birth/infancy</p>
+                    <p><strong>Key features:</strong> Congenital erythroderma and peeling; two phenotypes: ichthyosis linearis circumflexa and CIE-like; pruritus</p>
+                    <p><strong>Associated:</strong> <span class="highlight">Trichorrhexis invaginata (bamboo hair - pathognomonic)</span>; highly elevated serum IgE; failure to thrive; recurrent infections; food allergies</p>
+                    <p><strong>Diagnosis:</strong> Clinical; trichoscopy; hair shaft analysis</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Sjögren-Larsson Syndrome</div>
+                <div class="card-body">
+                    <p><strong>Gene:</strong> ALDH3A2 (Fatty Aldehyde Dehydrogenase)</p>
+                    <p><strong>Inheritance:</strong> Autosomal recessive</p>
+                    <p><strong>Onset:</strong> Birth</p>
+                    <p><strong>Key features:</strong> Fine to plate-like scaling or non-scaling hyperkeratosis; favors abdomen, neck, flexures; lichenification; pruritus</p>
+                    <p><strong>Associated:</strong> <span class="highlight">Spastic di- and tetraplegia; perifoveal glistening white dots (pathognomonic); intellectual disability</span></p>
+                    <p><strong>Diagnosis:</strong> FALDH activity assay in cultured fibroblasts; genetic testing</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Erythrokeratodermas</div>
+                <div class="card-body">
+                    <p><strong>Genes:</strong> GJB3, GJB4, LOR and others</p>
+                    <p><strong>Inheritance:</strong> Usually autosomal dominant</p>
+                    <p><strong>Onset:</strong> Infancy/childhood</p>
+                    <p><strong>Key features:</strong> Well-demarcated, red hyperkeratotic plaques (vs. ichthyosis with more diffuse scaling)</p>
+                    <p><strong>Types:</strong>
+                        <ul>
+                            <li><strong>Erythrokeratoderma variabilis:</strong> Migratory, figurate erythematous plaques + fixed hyperkeratotic plaques</li>
+                            <li><strong>Progressive symmetric erythrokeratoderma:</strong> Fixed, symmetric plaques over knees, elbows, extremities</li>
+                        </ul>
+                    </p>
+                    <p><strong>Associated:</strong> Palmoplantar keratoderma common</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2>The Collodion Baby</h2>
+        
+        <div class="pearl-box">
+            <p>Collodion baby is not a specific diagnosis but a phenotype at birth shared by several congenital ichthyoses. About 10% of collodion babies have a milder "self-healing" phenotype called self-improving collodion ichthyosis.</p>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'collodion-clinical')">Clinical Features</button>
+                <button class="tab-btn" onclick="openTab(event, 'collodion-differential')">Differential Diagnosis</button>
+                <button class="tab-btn" onclick="openTab(event, 'collodion-management')">Management</button>
+            </div>
+            
+            <div id="collodion-clinical" class="tab-content active">
+                <h3>Clinical Presentation</h3>
+                <ul>
+                    <li>Often born prematurely with increased perinatal morbidity and mortality</li>
+                    <li>Covered with a taut, shiny, transparent membrane (thickened stratum corneum) resembling plastic wrap</li>
+                    <li>May have ectropion, eclabium, and hypoplasia of nasal and auricular cartilage</li>
+                    <li>Sucking and pulmonary ventilation may be impaired (dehydration, malnutrition, hypoxia, pneumonia)</li>
+                    <li>After birth, membrane dries, cracks, and breaks → fissures → water loss → electrolyte imbalance</li>
+                    <li>Fissures allow entry of microorganisms → infection → potential sepsis</li>
+                    <li>Circular bands of hardened skin can lead to vascular constriction and distal edema</li>
+                </ul>
+                
+                <h3>Clinical Course</h3>
+                <ul>
+                    <li>Within 2-4 weeks, membrane peels off in sheets and transition to underlying disease phenotype</li>
+                    <li>Most commonly evolves into congenital ichthyosiform erythroderma or lamellar ichthyosis</li>
+                    <li>In self-improving collodion ichthyosis (10% of cases): desquamation leaves normal skin or minimal findings (xerosis, fine scaling, palmar hyperlinearity, mild PPK, red cheeks, hypohidrosis)</li>
+                </ul>
+            </div>
+            
+            <div id="collodion-differential" class="tab-content">
+                <h3>Differential Diagnosis of Collodion Baby</h3>
+                <table>
+                    <tr>
+                        <th>Disorder</th>
+                        <th>Frequency</th>
+                    </tr>
+                    <tr>
+                        <td>Congenital ichthyosiform erythroderma</td>
+                        <td>Most common</td>
+                    </tr>
+                    <tr>
+                        <td>Lamellar ichthyosis</td>
+                        <td>Common</td>
+                    </tr>
+                    <tr>
+                        <td>Trichothiodystrophy</td>
+                        <td>Fairly common</td>
+                    </tr>
+                    <tr>
+                        <td>Self-improving collodion ichthyosis</td>
+                        <td>10% of cases</td>
+                    </tr>
+                    <tr>
+                        <td>Sjögren-Larsson syndrome</td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>Infantile Gaucher disease</td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>Ichthyosis with intellectual disability and spastic quadriplegia</td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>Neutral lipid storage disease</td>
+                        <td>Very rare</td>
+                    </tr>
+                    <tr>
+                        <td>Ectodermal dysplasias</td>
+                        <td>Very rare</td>
+                    </tr>
+                    <tr>
+                        <td>Conradi-Hünermann-Happle syndrome</td>
+                        <td>Very rare</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="collodion-management" class="tab-content">
+                <h3>Management of Collodion Baby</h3>
+                <div class="high-yield">
+                    <p>Major risks: thermoinstability, hypernatremic dehydration, skin infections, sepsis, and pneumonia due to restricted ventilation and aspiration of amniotic fluid containing scales.</p>
+                </div>
+                
+                <h3>Key Management Principles</h3>
+                <ul>
+                    <li>Place in controlled environment (humidified incubator)</li>
+                    <li>Carefully monitor fluid and electrolyte balance</li>
+                    <li>Facilitate gradual desquamation with wet compresses and light emollients to increase skin elasticity and pliability</li>
+                    <li><span class="highlight">DO NOT manually remove the collodion membrane or use topical keratolytic agents</span> (increased risk of infections and percutaneous absorption)</li>
+                    <li>Watch for signs of infection and treat promptly</li>
+                    <li>Support nutrition and hydration</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Acquired Ichthyosis</h2>
+        
+        <div class="pearl-box">
+            <p>Always consider underlying diseases when ichthyosis presents later in life. The most concerning cause is malignancy, particularly lymphoma.</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th colspan="2">Differential Diagnosis of Acquired Ichthyosis</th>
+            </tr>
+            <tr>
+                <td><strong>Malignancy</strong></td>
+                <td>Hodgkin's disease, Non-Hodgkin's lymphoma, Multiple myeloma, Cutaneous T-cell lymphoma, Leiomyosarcoma, Kaposi's sarcoma, Carcinomas</td>
+            </tr>
+            <tr>
+                <td><strong>Autoimmune/Inflammatory</strong></td>
+                <td>Systemic lupus erythematosus, Dermatomyositis, Eosinophilic fasciitis, Graft-versus-host disease, Sarcoidosis</td>
+            </tr>
+            <tr>
+                <td><strong>Metabolic/Endocrine</strong></td>
+                <td>Chronic hepatic dysfunction, Chronic renal failure, Hypothyroidism, Hyperparathyroidism, Hypopituitarism</td>
+            </tr>
+            <tr>
+                <td><strong>Nutritional</strong></td>
+                <td>Malnutrition, Malabsorption, Celiac disease, Pancreatic insufficiency, Essential fatty-acid deficiency</td>
+            </tr>
+            <tr>
+                <td><strong>Infectious</strong></td>
+                <td>AIDS, HTLV-I, HTLV-II, Leprosy</td>
+            </tr>
+            <tr>
+                <td><strong>Neurologic</strong></td>
+                <td>Sympathectomy</td>
+            </tr>
+            <tr>
+                <td><strong>Medications</strong></td>
+                <td>Cimetidine, Clofazimine, Hydroxyurea, Cholesterol-lowering agents (Nicotinic acid, HMG-CoA reductase inhibitors, Triparanol)</td>
+            </tr>
+        </table>
+        
+        <h2>High-Yield Comparisons</h2>
+        
+        <table class="comparison-table">
+            <tr>
+                <th>Feature</th>
+                <th>Ichthyosis Vulgaris</th>
+                <th>X-Linked Ichthyosis</th>
+                <th>Lamellar Ichthyosis</th>
+                <th>CIE</th>
+            </tr>
+            <tr>
+                <td><strong>Inheritance</strong></td>
+                <td>AD semi-dominant</td>
+                <td>X-linked recessive</td>
+                <td>AR</td>
+                <td>AR</td>
+            </tr>
+            <tr>
+                <td><strong>Gene</strong></td>
+                <td>FLG</td>
+                <td>STS</td>
+                <td>TGM1 (mainly)</td>
+                <td>Multiple genes</td>
+            </tr>
+            <tr>
+                <td><strong>Scale Type</strong></td>
+                <td>Fine, white/gray</td>
+                <td>Large, dark, adherent</td>
+                <td>Large, plate-like, brown</td>
+                <td>Fine, white</td>
+            </tr>
+            <tr>
+                <td><strong>Distribution</strong></td>
+                <td>Extensor surfaces, <span class="highlight">spares flexures</span></td>
+                <td>Generalized, <span class="highlight">spares folds</span></td>
+                <td>Generalized</td>
+                <td>Generalized</td>
+            </tr>
+            <tr>
+                <td><strong>Erythroderma</strong></td>
+                <td>No</td>
+                <td>No</td>
+                <td>Minimal/absent</td>
+                <td><span class="highlight">Yes</span></td>
+            </tr>
+            <tr>
+                <td><strong>Special features</strong></td>
+                <td>Hyperlinear palms/soles, atopy</td>
+                <td>Corneal opacities, cryptorchidism</td>
+                <td>Collodion baby, ectropion</td>
+                <td>Collodion baby, heat intolerance</td>
+            </tr>
+            <tr>
+                <td><strong>Histology</strong></td>
+                <td><span class="highlight">Diminished/absent granular layer</span></td>
+                <td>Normal-compact stratum corneum</td>
+                <td>Hyperkeratosis, normal granular layer</td>
+                <td>Parakeratosis, acanthosis</td>
+            </tr>
+        </table>
+        
+        <div class="mnemonic-box">
+            <span class="mnemonic-title">🧠 MEMORIZE: Syndromic Ichthyoses with Neurological Involvement</span>
+            <p><strong>S</strong>jögren-Larsson syndrome - Spastic diplegia, white dots in retina</p>
+            <p><strong>T</strong>richothiodystrophy - Tiger tail hair, intellectual disability</p>
+            <p><strong>R</strong>efsum disease - Retinitis pigmentosa, peripheral neuropathy</p>
+            <p><strong>I</strong>chthyosis with spastic quadriplegia and intellectual disability</p>
+            <p><strong>N</strong>etherton syndrome (can have neurological development delay)</p>
+            <p><strong>G</strong>aucher disease with ichthyosis</p>
+        </div>
+        
+        <h2>Interactive Quiz</h2>
+        
+        <div class="quiz-container">
+            <div class="quiz-question">1. A 5-month-old presents with erythroderma, peeling skin, and severe pruritus. Trichoscopy reveals bamboo-like hair shafts. What is the most likely diagnosis?</div>
+            <ul class="quiz-options">
+                <li onclick="showAnswer('q1', 'Netherton syndrome')">A. Netherton syndrome</li>
+                <li onclick="showAnswer('q1', 'Netherton syndrome')">B. Lamellar ichthyosis</li>
+                <li onclick="showAnswer('q1', 'Netherton syndrome')">C. Sjögren-Larsson syndrome</li>
+                <li onclick="showAnswer('q1', 'Netherton syndrome')">D. Congenital ichthyosiform erythroderma</li>
+            </ul>
+            <div id="q1" class="quiz-answer">
+                <p><strong>Correct Answer: A. Netherton syndrome</strong></p>
+                <p>The combination of erythroderma, peeling skin, pruritus, and trichorrhexis invaginata (bamboo hair) is classic for Netherton syndrome. This autosomal recessive condition is caused by mutations in SPINK5 gene encoding a serine protease inhibitor.</p>
+            </div>
+        </div>
+        
+        <div class="quiz-container">
+            <div class="quiz-question">2. A newborn presents as a collodion baby. After membrane shedding, the infant develops large, plate-like dark scales without significant erythema. The most likely diagnosis is:</div>
+            <ul class="quiz-options">
+                <li onclick="showAnswer('q2', 'Lamellar ichthyosis')">A. Harlequin ichthyosis</li>
+                <li onclick="showAnswer('q2', 'Lamellar ichthyosis')">B. Congenital ichthyosiform erythroderma</li>
+                <li onclick="showAnswer('q2', 'Lamellar ichthyosis')">C. Lamellar ichthyosis</li>
+                <li onclick="showAnswer('q2', 'Lamellar ichthyosis')">D. Netherton syndrome</li>
+            </ul>
+            <div id="q2" class="quiz-answer">
+                <p><strong>Correct Answer: C. Lamellar ichthyosis</strong></p>
+                <p>Large, plate-like dark scales without significant erythema following collodion baby presentation is classic for lamellar ichthyosis. In contrast, CIE would present with fine white scales and erythroderma, while Netherton syndrome would have characteristic hair shaft abnormalities.</p>
+            </div>
+        </div>
+        
+        <div class="quiz-container">
+            <div class="quiz-question">3. A 3-year-old boy presents with dark scales on the trunk, neck, and extremities with sparing of the skin folds. His mother reports a prolonged labor. What is the most likely diagnosis?</div>
+            <ul class="quiz-options">
+                <li onclick="showAnswer('q3', 'X-linked ichthyosis (steroid sulfatase deficiency)')">A. Ichthyosis vulgaris</li>
+                <li onclick="showAnswer('q3', 'X-linked ichthyosis (steroid sulfatase deficiency)')">B. X-linked ichthyosis (steroid sulfatase deficiency)</li>
+                <li onclick="showAnswer('q3', 'X-linked ichthyosis (steroid sulfatase deficiency)')">C. Lamellar ichthyosis</li>
+                <li onclick="showAnswer('q3', 'X-linked ichthyosis (steroid sulfatase deficiency)')">D. Epidermolytic ichthyosis</li>
+            </ul>
+            <div id="q3" class="quiz-answer">
+                <p><strong>Correct Answer: B. X-linked ichthyosis (steroid sulfatase deficiency)</strong></p>
+                <p>X-linked ichthyosis affects males and presents with dark, adherent scales with sparing of the skin folds. The history of prolonged labor is a clue, as female carriers often experience prolonged labor when carrying affected boys due to inadequate cervical dilatation from placental steroid sulfatase deficiency.</p>
+            </div>
+        </div>
+        
+        <h2>Flashcards - Hover to Reveal Answers</h2>
+        
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h3>What gene mutation is responsible for ichthyosis vulgaris?</h3>
+                </div>
+                <div class="flashcard-back">
+                    <p>Filaggrin (FLG) gene mutations are responsible for ichthyosis vulgaris. These mutations lead to reduced or absent filaggrin protein, resulting in diminished stratum granulosum on histology.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h3>What are the pathognomonic findings in Sjögren-Larsson syndrome?</h3>
+                </div>
+                <div class="flashcard-back">
+                    <p>Perifoveal glistening white dots in the retina are pathognomonic for Sjögren-Larsson syndrome. This is accompanied by the clinical triad of ichthyosis, spastic di/tetraplegia, and intellectual disability.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <h3>What distinguishes erythrokeratodermas from ichthyoses?</h3>
+                </div>
+                <div class="flashcard-back">
+                    <p>Erythrokeratodermas feature discrete areas of erythema and hyperkeratosis, usually without substantial scale, while ichthyoses are characterized by scaling of the skin in a widespread distribution.</p>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+                }
+                tablinks = document.getElementsByClassName("tab-btn");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).className += " active";
+                evt.currentTarget.className += " active";
+            }
+            
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active-collapse");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+            
+            function showAnswer(id, correctAnswer) {
+                document.getElementById(id).style.display = "block";
+            }
+        </script>
+    </div>
+</body>
+</html>

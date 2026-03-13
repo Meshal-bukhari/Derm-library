@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheumatologic & Autoinflammatory Diseases</title>
+    <style>
+        :root {
+            --primary: #3d5a80;
+            --secondary: #98c1d9;
+            --accent: #ee6c4d;
+            --light: #e0fbfc;
+            --dark: #293241;
+            --warning: #ffd166;
+            --success: #06d6a0;
+            --mcq: #f25c54;
+            --mcq-bg: #ffeeee;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3, h4 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.3em;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        
+        .card-header {
+            background-color: var(--light);
+            padding: 10px;
+            margin: -15px -15px 15px -15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mcq {
+            background-color: var(--mcq-bg);
+            border-left: 4px solid var(--mcq);
+            padding: 10px 15px;
+            margin: 15px 0;
+            position: relative;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mcq::before {
+            content: "🎯 EXAM FOCUS";
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--mcq);
+        }
+        
+        .disease-name {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+        
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .tab-label {
+            padding: 10px 15px;
+            background-color: var(--light);
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+        
+        .tab-label.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 0 8px 8px 8px;
+            margin-top: -1px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        details {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        summary {
+            padding: 10px 15px;
+            background-color: var(--light);
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        details div {
+            padding: 15px;
+        }
+        
+        .mnemonic {
+            background-color: #ffe8d6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #cb997e;
+        }
+        
+        .mnemonic h4 {
+            color: #6b705c;
+            margin-bottom: 10px;
+        }
+        
+        .diagnostic-criteria {
+            background-color: #e6f7ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #1890ff;
+        }
+        
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quick-link {
+            padding: 8px 12px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-link:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .toggle-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .toggle-header {
+            padding: 10px 15px;
+            background-color: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .toggle-content {
+            display: none;
+            padding: 15px;
+        }
+        
+        .toggle-content.show {
+            display: block;
+        }
+        
+        .flex-feature {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .feature-box {
+            flex: 1;
+            min-width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .sticky-note {
+            background-color: #fff9c4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            margin: 15px 0;
+        }
+        
+        .callout {
+            border-left: 4px solid var(--success);
+            background-color: #f0fff4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-label {
+                flex: 1 0 auto;
+                text-align: center;
+            }
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                color: black;
+                background-color: white;
+            }
+            
+            header {
+                background-color: white;
+                color: black;
+                box-shadow: none;
+                padding-bottom: 0;
+            }
+            
+            h1 {
+                color: black;
+            }
+            
+            .mcq {
+                border: 1px solid #ddd;
+                border-left: 2px solid black;
+                background-color: white;
+            }
+            
+            .mcq::before {
+                color: black;
+            }
+            
+            .card, .container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .quick-nav, .toggle-header button {
+                display: none;
+            }
+            
+            .toggle-content {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chapter 45: Other Rheumatologic Disorders and Autoinflammatory Diseases</h1>
+        <div class="quick-nav">
+            <a href="#overview" class="quick-link">Overview</a>
+            <a href="#still-disease" class="quick-link">Still Disease</a>
+            <a href="#adult-still" class="quick-link">Adult-Onset Still</a>
+            <a href="#polychondritis" class="quick-link">Relapsing Polychondritis</a>
+            <a href="#sjogren" class="quick-link">Sjögren Syndrome</a>
+            <a href="#mctd" class="quick-link">MCTD</a>
+            <a href="#ra" class="quick-link">RA Manifestations</a>
+            <a href="#autoinflammatory" class="quick-link">Autoinflammatory</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="container">
+            <h2>Overview of Disorders</h2>
+            <div class="card">
+                <p>This chapter focuses on two groups of disorders:</p>
+                <div class="flex-feature">
+                    <div class="feature-box">
+                        <div class="feature-title">Autoinflammatory Disorders</div>
+                        <ul>
+                            <li>Due to abnormalities in the <strong>innate immune system</strong></li>
+                            <li>Includes Still disease and inherited inflammatory syndromes</li>
+                            <li>Characterized by recurrent fevers and inflammation flares</li>
+                            <li>Often involves the skin, joints, eyes, and serosae</li>
+                            <li>Features sterile neutrophilic inflammation</li>
+                            <li>Often due to overexpression of IL-1</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">Autoimmune Disorders</div>
+                        <ul>
+                            <li>Due to abnormalities in the <strong>adaptive immunity</strong></li>
+                            <li>Involves antibody production</li>
+                            <li>Examples include Sjögren syndrome and mixed connective tissue disease</li>
+                            <li>Often involves specific antibodies against self-antigens</li>
+                            <li>May have overlapping features with other connective tissue diseases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="still-disease" class="container">
+            <h2>Systemic-Onset Juvenile Idiopathic Arthritis (Still Disease)</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>One of 7 types of juvenile idiopathic arthritis (JIA)</li>
+                    <li>Most common rheumatological disorder in children</li>
+                    <li>Equal sex ratio (F:M is 1:1) unlike other types that have female predominance</li>
+                    <li>Possible LACC1 mutation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathogenesis</div>
+                <ul>
+                    <li>Activation of the innate immune system</li>
+                    <li>Upregulation of IL-1 plays a critical role (due to inflammasome activation)</li>
+                    <li>IL-1 → expression of leukocyte adhesion molecules by endothelial cells → perivascular infiltrate of neutrophils and monocytes</li>
+                    <li>Activated neutrophils and macrophages produce TNF-α, IL-1, and IL-6</li>
+                    <li>IL-1 expression → fever</li>
+                    <li>IL-6 → reduced osteoblast and increased osteoblast activity, and increase CRP</li>
+                </ul>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Lab Findings</div>
+                <ul>
+                    <li>Leukocytosis, granulocytosis, thrombocytosis</li>
+                    <li>Elevated LFTs</li>
+                    <li>Polyclonal gammopathies</li>
+                    <li>Elevated ESR/CRP and ferritin</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Clinical Features</div>
+                <ul>
+                    <li><strong>Fever:</strong> Daily fevers occurring in late afternoon or early evening (characteristic feature)</li>
+                    <li><strong>Arthritis:</strong> Polyarticular arthritis, most commonly involving knees, ankles, hips, followed by small joints of hands</li>
+                    <li><strong>Skin:</strong> 
+                        <ul>
+                            <li>Exanthem present in up to 90%, accompanies fever spikes ("Resident's rash")</li>
+                            <li>Begins prior to arthritis onset in 25% of patients</li>
+                            <li>Transient, salmon-colored, non-pruritic</li>
+                            <li>Predilection for axillae and waist</li>
+                            <li>Linear lesions secondary to Koebner phenomenon are common</li>
+                            <li>Other features: periorbital edema/erythema, persistent linear plaques</li>
+                            <li>If exposed to MTX → may develop rheumatoid nodule-like lesions</li>
+                        </ul>
+                    </li>
+                    <li><strong>Systemic:</strong> Lymphadenopathy, hepatosplenomegaly, serositis</li>
+                </ul>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Complications</div>
+                <ul>
+                    <li>Up to 10% develop macrophage activation syndrome (MAS)
+                        <ul>
+                            <li>Characterized by fever, cytopenias, liver dysfunction, coagulopathy, hypofibrinogenemia, hypertriglyceridemia, and very high serum ferritin</li>
+                            <li>Increased serum IL-18 levels and depressed NK cell cytolytic function</li>
+                            <li>Treatment: high-dose systemic steroids</li>
+                        </ul>
+                    </li>
+                    <li>Other complications: hepatitis, pericarditis, and rarely secondary amyloidosis</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathology</div>
+                <p>"Neutrophilic urticarial dermatosis"</p>
+                <ul>
+                    <li>A reaction pattern seen in all autoinflammatory disorders</li>
+                    <li>Perivascular + interstitial dermal mixed infiltrate, primarily neutrophilic</li>
+                    <li>Dyskeratosis in the upper layers of the epidermis may be seen</li>
+                </ul>
+            </div>
+            
+            <div class="diagnostic-criteria">
+                <h4>Diagnostic Criteria for Still Disease</h4>
+                <ol>
+                    <li>High episodic fevers (>38.9°C) daily for ≥ 2 weeks and documented to be quotidian for ≥ 3 days
+                        <ul>
+                            <li>Classically arise in late afternoon to early evening</li>
+                        </ul>
+                    </li>
+                    <li>Plus one of the following features:
+                        <ul>
+                            <li>Transient evanescent, salmon pink, blanching eruption (90%): typically arises in late afternoon/evening (corresponds with fever spikes); with generalized distribution (favors axilla and waist); Koebnerization with linear lesions</li>
+                            <li>Generalized lymphadenopathy</li>
+                            <li>Hepatomegaly/splenomegaly</li>
+                            <li>Serositis (pericarditis, pleuritis, and peritonitis)</li>
+                        </ul>
+                    </li>
+                    <li>Symmetric polyarthritis > oligoarthritis; erosive in 20% - Knees, ankles, hips > small joints</li>
+                </ol>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Treatment</div>
+                <ul>
+                    <li>Spontaneous resolution in ~40-50%</li>
+                    <li>The rest will have a chronic course and require treatment</li>
+                    <li>Symptoms lasting >6 months → poor prognosis</li>
+                    <li>Mild symptoms: NSAIDs</li>
+                    <li>Moderate-severe symptoms: steroids + MTX</li>
+                    <li class="mcq">MAS → high dose systemic steroids</li>
+                    <li>Others: thalidomide, tocilizumab (IL-6 inhibitor), anakinra (IL-1 inhibitor)</li>
+                    <li>HSCT if recalcitrant</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="adult-still" class="container">
+            <h2>Adult-Onset Still Disease</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>Can be a severe debilitating systemic illness that is often difficult to diagnose</li>
+                    <li>The vast majority of patients have an exanthem - helpful in diagnosis</li>
+                    <li>Affects young adults</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathogenesis</div>
+                <ul>
+                    <li>Unclear but overlaps with Still disease</li>
+                    <li>Linked to several HLAs</li>
+                    <li>May be triggered by viral or bacterial infections</li>
+                    <li>Serum levels of IL-2, IL-6, IL-18, TNF-α, and IFN-γ are elevated</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Clinical Features</div>
+                <ul>
+                    <li>Preceded by sore throat and constitutional symptoms</li>
+                    <li>Spiking fevers in the later afternoon or early evening</li>
+                    <li><strong>Skin:</strong> 
+                        <ul>
+                            <li>Eruption occurs in accordance with the fever</li>
+                            <li>Macular eruption with characteristic salmon-pink color</li>
+                            <li>Favors sites of pressure + can exhibit the Koebner phenomenon</li>
+                            <li>Trunk is most commonly involved</li>
+                            <li>Violaceous to reddish-brown, scaly, persistent papules and plaques in Taiwanese patients</li>
+                            <li>Eyelid edema and flagellate erythema are rare findings</li>
+                        </ul>
+                    </li>
+                    <li><strong>Joints:</strong> 
+                        <ul>
+                            <li>Arthritis (65-100%)</li>
+                            <li>Symmetrically involving the knees, wrists and ankles, associated with fever spikes</li>
+                            <li class="mcq">A distinctive feature is carpal ankylosis → minimal pain but a limited range of motion in the carpal joints</li>
+                        </ul>
+                    </li>
+                    <li><strong>Other:</strong> Hepatomegaly, rarely splenomegaly</li>
+                    <li><strong>Internal Organs:</strong> Involvement is rare (lung, heart, kidneys)</li>
+                </ul>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Laboratory Findings</div>
+                <ul>
+                    <li>Similar to Still disease</li>
+                    <li>Ferritin correlates with disease activity</li>
+                    <li>High ferritin is also associated with chronic pattern of disease, recurrent flares, and poor prognosis</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Complications</div>
+                <p>Macrophage activation syndrome (15%)</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Treatment</div>
+                <ul>
+                    <li>High dose aspirin and NSAIDs</li>
+                    <li>Systemic corticosteroids in acute setting</li>
+                    <li>MTX is the most commonly used steroid-sparing agent</li>
+                    <li>Biologics (anakinra, tocilizumab) + Rituximab are third line</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="polychondritis" class="container">
+            <h2>Relapsing Polychondritis</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>Autoimmune disease primarily affecting cartilage</li>
+                    <li class="mcq">Men and women are equally affected</li>
+                    <li>Most common in Caucasians</li>
+                    <li>Age: 20-60 years</li>
+                    <li class="mcq">Relapsing polychondritis + Behçet disease = MAGIC syndrome (mouth and genital ulcers, inflamed cartilages)</li>
+                    <li>Associated with other autoimmune disorders (30% of cases) + myelodysplasia</li>
+                    <li class="mcq">Presence of cutaneous small vessel vasculitis (CSSV) and aphthous ulcers → higher risk of having myelodysplasia</li>
+                </ul>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Pathogenesis</div>
+                <ul>
+                    <li>HLA-DR4 association</li>
+                    <li>HLA-DR6 is protective against internal organ involvement</li>
+                    <li>Immunologic reaction against type 2 collagen</li>
+                    <li>Antibodies are identified in 30%-50% of cases</li>
+                    <li>Antibodies against type IX and XI collagen as well</li>
+                    <li>Type II collagen is found in cartilage → any cartilaginous structure may be affected</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Clinical Features</div>
+                <ul>
+                    <li><strong>Ears:</strong>
+                        <ul>
+                            <li>Most prominent: erythema, swelling, and pain of the cartilaginous portion of the auricle</li>
+                            <li>Spares the earlobe</li>
+                            <li>Chronic inflammation → cartilage destruction → deformity</li>
+                            <li>90% of patients have auricular involvement</li>
+                            <li class="mcq">When it involves the external auditory meatus → conductive hearing loss</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nose:</strong>
+                        <ul>
+                            <li>Nasal cartilage involvement → saddle nose deformity, pain, stuffiness, crusting, rhinorrhea, epistaxis, and compromise of olfaction</li>
+                        </ul>
+                    </li>
+                    <li class="mcq"><strong>Respiratory Tract:</strong>
+                        <ul>
+                            <li>Most serious complication</li>
+                            <li>Symptoms: cough, hoarseness, choking, dyspnea, wheezing, airway obstruction or collapse, flail chest, secondary pulmonary infections</li>
+                            <li>Pneumonia is #1 cause of mortality</li>
+                        </ul>
+                    </li>
+                    <li><strong>Joints:</strong>
+                        <ul>
+                            <li>Common</li>
+                            <li>Episodic, migratory, asymmetric, non-erosive oligo- or polyarticular arthritis can affect any joint</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eyes:</strong>
+                        <ul>
+                            <li>Conjunctivitis, scleritis, corneal ulcerations, uveitis, or optic neuritis</li>
+                        </ul>
+                    </li>
+                    <li><strong>Skin:</strong>
+                        <ul>
+                            <li>Reactive cutaneous features: vasculitis, aphthous ulcers, erythema elevatum diutinum, Sweet's syndrome, erythema nodosum</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathology</div>
+                <ul>
+                    <li><strong>Early:</strong> Cartilaginous neutrophilic infiltrate</li>
+                    <li><strong>Late:</strong> Lymphoplasmacytic infiltrates with replacement of cartilage by granulation tissue and fibrosis</li>
+                </ul>
+            </div>
+            
+            <div class="diagnostic-criteria">
+                <h4>Diagnostic Criteria for Relapsing Polychondritis</h4>
+                <p>Diagnosis is based on:</p>
+                <ul>
+                    <li>Histologically confirmed chondritis in two of the following:
+                        <ul>
+                            <li>Auricular cartilage</li>
+                            <li>Nasal cartilage</li>
+                            <li>Laryngotracheal cartilage</li>
+                        </ul>
+                    </li>
+                    <li>OR one of them plus two or more of the following:
+                        <ul>
+                            <li>Ocular inflammation</li>
+                            <li>Vestibular dysfunction</li>
+                            <li>Hearing loss</li>
+                            <li>Seronegative inflammatory arthritis</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Investigations</div>
+                <ul>
+                    <li>↑ESR/CRP, mild leukocytosis</li>
+                    <li>Normochromic/normocytic anemia (associated with worse prognosis)</li>
+                    <li>↑Cr/BUN and microscopic hematuria</li>
+                    <li>PET scan needs to be done prior to initiation of therapy</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Treatment</div>
+                <ul>
+                    <li>Prednisone (0.5-1 mg/kg/day, or higher if systemic involvement)</li>
+                    <li class="mcq">Dapsone, colchicine, and NSAIDs can be used as adjunctive therapy</li>
+                    <li>Other immunosuppressives (MTX most effective) and biologics can be used</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sjogren" class="container">
+            <h2>Sjögren Syndrome</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li class="mcq">Also known as sicca syndrome</li>
+                    <li>Autoimmune disorder that affects secretory glands (lacrimal and salivary glands in particular)</li>
+                    <li>Second most common autoimmune connective tissue disease after rheumatoid arthritis</li>
+                    <li>Mucocutaneous manifestations may be the first sign of the disease</li>
+                    <li>Can be primary or secondary to other autoimmune CTDs (SLE, RA, SSc)</li>
+                    <li>Demographics: Females 30-40s, F:M is 9:1</li>
+                    <li>Males have a better prognosis (usually the opposite in autoimmune CTDs)</li>
+                    <li>20x increased risk of Non-Hodgkin's lymphoma (B-cell)</li>
+                    <li>Most common lymphoma is extranodal marginal zone B-cell lymphoma in the salivary gland</li>
+                    <li>Increased risk of neonatal lupus in pregnant women (especially if positive serologies)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathogenesis</div>
+                <div class="flex-feature">
+                    <div class="feature-box">
+                        <div class="feature-title">Genetics</div>
+                        <ul>
+                            <li>Germline abnormality of TNFAIP3 → ↑risk of antigen-driven B-cell lymphomas</li>
+                            <li>Increased expression of Bcl-2 → ↑risk of marginal zone B-cell lymphoma</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-title">Triggers</div>
+                        <ul>
+                            <li>EBV, coxsackievirus, HTLV-1, and HCV are possible triggers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="feature-title">Immune Response</div>
+                    <ul>
+                        <li>Anti-Ro/SSA, Anti-La/SSB are associated with:
+                            <ul>
+                                <li>↑risk of subacute cutaneous lupus erythematosus (SCLE)</li>
+                                <li>↑risk of vasculitis</li>
+                                <li>↑risk of extraglandular disease</li>
+                                <li>↓age of onset</li>
+                            </ul>
+                        </li>
+                        <li>Anti-Fodrin → most sensitive and specific antibody</li>
+                        <li>↑TLR function, ↑Th17, ↑costimulatory molecules (CD40-CD40L)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Clinical Features</div>
+                <ul>
+                    <li>Most common cutaneous feature is xerosis</li>
+                    <li>Most important cutaneous feature is vasculitis → associated with systemic involvement, positive serologies, high ESR, high mortality, and risk of lymphoma</li>
+                    <li>Most prominent feature is mucosal xerosis (occurs after >50% of the gland is destroyed)
+                        <ul>
+                            <li><strong>Xerostomia:</strong> Difficulty swallowing, oral thrush, dental caries, transient gland enlargement</li>
+                            <li>If gland enlargement is persistent → need to rule out lymphoma</li>
+                            <li>Tests: salivary gland scintigraphy, sialometry, parotid sialography, or salivary gland biopsy</li>
+                            <li><strong>Xerophthalmia:</strong> Keratoconjunctivitis sicca, photophobia, foreign body sensation</li>
+                            <li>Tests: Schirmer test (tear production), Rose Bengal dye (corneal integrity)</li>
+                        </ul>
+                    </li>
+                    <li>Other cutaneous features: purpura, urticarial vasculitis, SCLE, annular erythemas, erythema nodosum, amyloidosis, Raynaud's, Waldenstrom's hypergammaglobulinemic purpura</li>
+                    <li>Internal organs: lungs, kidneys, bone marrow, neurological involvement, and arthritis (common)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Diagnosis</div>
+                <ul>
+                    <li>Skin biopsies are non-specific and depend on the particular manifestation</li>
+                    <li>Minor salivary gland biopsy is one of the criteria for diagnosis: presence of one or more foci (50 or more lymphocytes)</li>
+                </ul>
+                
+                <div class="diagnostic-criteria">
+                    <h4>ACR/EULAR 2016 Classification Criteria for Primary Sjögren's Syndrome</h4>
+                    <p>Score ≥4 required for classification when the weight from the five criteria items below are summed:</p>
+                    <ul>
+                        <li>Labial salivary gland with focal lymphocytic sialadenitis and focus score of ≥1 foci/4 mm²: <strong>3 points</strong></li>
+                        <li>Anti-SSA/Ro-positive: <strong>3 points</strong></li>
+                        <li>Ocular staining score ≥5 (or van Bijsterveld score ≥4) in at least one eye: <strong>1 point</strong></li>
+                        <li>Schirmer's test ≤5 mm/5 min in at least one eye: <strong>1 point</strong></li>
+                        <li>Unstimulated whole saliva flow rate ≤0.1 mL/min: <strong>1 point</strong></li>
+                    </ul>
+                    <p><em>Note: Applies to patients with symptoms of ocular or oral dryness and without exclusion criteria (head/neck radiation, HCV, AIDS, sarcoidosis, amyloidosis, GVHD, IgG4-related disease)</em></p>
+                </div>
+            </div>
+            
+            <div class="mcq">
+                <div class="feature-title">Prognosis</div>
+                <p>Bad prognostic factors:</p>
+                <ul>
+                    <li>Hypocomplementemia</li>
+                    <li>Cryoglobulinemia</li>
+                    <li>Vasculitis</li>
+                    <li>Parotid enlargement</li>
+                    <li>Lymphoproliferative diseases</li>
+                </ul>
+            </div>
+            
+            <details>
+                <summary>Patient Instructions for Xerostomia Management</summary>
+                <div>
+                    <h4>General Measures</h4>
+                    <ul>
+                        <li>Avoid smoking cigarettes, cigars</li>
+                        <li>Reduce intake of salty, spicy and acidic foods</li>
+                        <li>Limit carbohydrate intake, including sugars</li>
+                        <li>Avoid acidic (low pH) drinks</li>
+                        <li>Reduce alcohol and caffeine consumption</li>
+                        <li>Avoid excessive sipping</li>
+                        <li>Avoid OTC antihistamines and decongestants</li>
+                        <li>Use sodium bicarbonate mouth rinse twice daily</li>
+                        <li>Use a humidifier in bedroom overnight</li>
+                    </ul>
+                    
+                    <h4>Saliva Substitutes (Oral Moisturizers)</h4>
+                    <ul>
+                        <li><strong>Spray:</strong> Use prior to speaking and during the day to assist in talking (e.g. Biotene® Moisturizing Mouth Spray)</li>
+                        <li><strong>Solution:</strong> Use prior to eating to assist in swallowing (e.g. Salivart® Oral Moisturizer)</li>
+                        <li><strong>Gel:</strong> Use at bedtime (e.g. Biotene® Oral Balance Gel)</li>
+                        <li><strong>Lozenges:</strong> Use overnight (e.g. Xylimelts®)</li>
+                    </ul>
+                    
+                    <h4>Saliva Stimulants - Sialagogues</h4>
+                    <ul>
+                        <li><strong>Local:</strong> Sugar-free, acid-free gum or candy that contains xylitol; dried fruit slices</li>
+                        <li><strong>Systemic:</strong> Pilocarpine (Salagen®) 5 mg three times daily or Cevimeline (Evoxac®) 30 mg three times daily</li>
+                    </ul>
+                    
+                    <h4>Dental Care</h4>
+                    <ul>
+                        <li>Avoid toothpastes with detergents, whiteners, or flavorings</li>
+                        <li>Avoid commercial mouthwashes with alcohol or peroxide</li>
+                        <li>Professional dental cleaning 3-4 times per year</li>
+                        <li>Use topical fluorides and remineralizing agents</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <div class="card">
+                <div class="card-header">Treatment</div>
+                <ul>
+                    <li>Symptomatic treatment: emollients, eye drops, saliva substitutes</li>
+                    <li>If systemic involvement/vasculitis → systemic therapy:
+                        <ul>
+                            <li>Systemic corticosteroids</li>
+                            <li>Hydroxychloroquine</li>
+                            <li>Steroid-sparing immunosuppressants (methotrexate, azathioprine, mycophenolate mofetil)</li>
+                            <li>Rituximab in resistant cases</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="mctd" class="container">
+            <h2>Mixed Connective Tissue Disease</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>Strong female predominance (9:1)</li>
+                    <li>Associated with HLA-DR4</li>
+                    <li class="mcq">Anti-U1RNP (high titers) antibodies thought to play pathogenic role</li>
+                    <li class="mcq">The function of U1RNP is to splice pre-mRNA into mRNA</li>
+                    <li>Anti-hnRNP-A2 have been described</li>
+                    <li>May be associated with EBV and cytomegalovirus infection → molecular mimicry</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Clinical Features</div>
+                <ul>
+                    <li>Overlapping features of two or more of the following:
+                        <ul>
+                            <li>SLE</li>
+                            <li>DM/PM</li>
+                            <li>SSc</li>
+                            <li>RA</li>
+                        </ul>
+                    </li>
+                    <li>Raynaud's phenomenon is the earliest and most common sign</li>
+                    <li class="mcq">Pulmonary artery hypertension is the most common cause of mortality</li>
+                    <li>Lacks anti-dsDNA, Smith antibodies, and hypocomplementemia - helps to differentiate from SLE</li>
+                    <li>High titer of U1RNP antibody → hallmark</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Diagnosis & Treatment</div>
+                <p>Pathology and treatment depend on the clinical entity and manifestations present.</p>
+            </div>
+        </section>
+
+        <section id="ra" class="container">
+            <h2>Extra-Articular Manifestations of Rheumatoid Arthritis</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>RA affects ~2% of the population</li>
+                    <li>F:M is 2-3:1</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Pathogenesis</div>
+                <ul>
+                    <li>A trigger in predisposed individuals leads to an immune response</li>
+                    <li><strong>Trigger:</strong> EBV and E. coli infections → ?molecular mimicry</li>
+                    <li><strong>Genetics:</strong> HLA-DR1 and -DR4, PTPN22 gene (also seen in SLE, Graves, and T1DM)</li>
+                    <li><strong>Immune response:</strong> Interplay between the innate and adaptive immunity, antibodies that target citrullinated proteins, increased TNF-α and IL-6</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Cutaneous Manifestations</div>
+                <ul>
+                    <li><strong>Rheumatoid Nodules:</strong>
+                        <ul>
+                            <li>20% of RA patients</li>
+                            <li>Associated with high titer of RF</li>
+                            <li>Firm semi-mobile papulonodules on pressure areas/extensors</li>
+                            <li>May also occur in visceral organs</li>
+                            <li class="mcq">Accelerated rheumatoid nodulosis: sudden appearance of multiple RNs following treatment with MTX, rapid tapering of steroids, or TNF-α inhibitors</li>
+                        </ul>
+                    </li>
+                    <li class="mcq"><strong>Rheumatoid Vasculitis:</strong>
+                        <ul>
+                            <li>Late complication of RA</li>
+                            <li>Affects any vessel</li>
+                            <li>Cutaneous features depend on the size of involved vessels</li>
+                            <li>Associated with neuropathy, scleritis, alveolitis, carditis, intestinal ulcers, and proteinuria</li>
+                            <li>Bad prognosis (mortality ~40%)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bywaters Lesions:</strong>
+                        <ul>
+                            <li>Nailfold thromboses and purpuric papules on the distal digits</li>
+                            <li>LCV on histopathology but not associated with systemic vasculitis</li>
+                        </ul>
+                    </li>
+                    <li class="mcq"><strong>Felty Syndrome:</strong>
+                        <ul>
+                            <li>Rare but severe (occurs in seropositive patients)</li>
+                            <li>Triad of neutropenia, splenomegaly, and RA</li>
+                            <li>Therapy-resistant leg ulcers (pretibial) → "PG-like"</li>
+                            <li>Increased risk of systemic infections</li>
+                            <li>Increased risk of lymphoma and leukemia</li>
+                            <li>Treatment with G-CSF or splenectomy</li>
+                        </ul>
+                    </li>
+                    <li><strong>Neutrophilic Dermatoses:</strong>
+                        <ul>
+                            <li>PG, Sweet syndrome, and rheumatoid neutrophilic dermatitis are the primary disorders, but any neutrophilic dermatosis can occur</li>
+                            <li>Rheumatoid neutrophilic dermatitis resembles Sweet syndrome clinically and histologically, but no tenderness + no fever + seropositive for RF</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="callout">
+                <p>When evaluating a patient with suspected rheumatoid vasculitis and negative/inconclusive cutaneous histologic findings, consider:</p>
+                <ul>
+                    <li>Nerve conduction studies/electromyography (to detect mononeuritis multiplex)</li>
+                    <li>Sural nerve biopsy</li>
+                    <li>Muscle biopsy</li>
+                    <li>Angiogram (if strong suspicion remains)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Laboratory Findings</div>
+                <ul>
+                    <li>RF (sensitivity 80%, specificity 85%)</li>
+                    <li>Anti-CCP (sensitivity 70%, specificity 95%)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Treatment</div>
+                <ul>
+                    <li>Articular disease: NSAIDs, low-dose systemic corticosteroids, disease-modifying antirheumatic drugs</li>
+                    <li>Rheumatoid vasculitis of medium/large vessels: aggressive therapy with systemic steroids + cyclophosphamide ± plasmapheresis</li>
+                    <li>Others: AZA, MMF, TNF-α inhibitors, Rituximab, cyclosporine</li>
+                </ul>
+            </div>
+            
+            <div class="sticky-note">
+                <h4>Board Exam Question</h4>
+                <p>Which of the following cutaneous manifestations of rheumatoid arthritis warrants peripheral nerve study work-up to rule out neuropathy?</p>
+                <ol type="A">
+                    <li>Non-healing lower extremity ulcers of Felty Syndrome</li>
+                    <li><em><strong>Palpable purpura associated with rheumatoid vasculitis</strong></em></li>
+                    <li>Nailfold thromboses of Bywater's lesions</li>
+                    <li>Tender truncal plaques of Sweet's Syndrome</li>
+                    <li>Lower extremity ulceration associated with pyoderma gangrenosum</li>
+                </ol>
+            </div>
+            
+            <div class="mcq">
+                <p>An evaluation of a patient with palisaded necrotizing granuloma and suspected rheumatologic disorder should consider:</p>
+                <ul>
+                    <li>Basophilic vs. Eosinophilic collagen degeneration</li>
+                    <li>Neutrophil vs. Eosinophil dominant infiltrate</li>
+                    <li>ANCA status and Rheumatoid factor</li>
+                    <li>If ANCA+, determine C-ANCA vs. P-ANCA pattern</li>
+                </ul>
+                <p>Key differential diagnoses include: Granulomatosis with polyangiitis, Rheumatoid nodule, Palisaded neutrophilic and granulomatous dermatitis, and Rheumatic fever nodule.</p>
+            </div>
+        </section>
+
+        <section id="autoinflammatory" class="container">
+            <h2>Autoinflammatory Disorders</h2>
+            
+            <div class="card">
+                <div class="card-header">Overview</div>
+                <ul>
+                    <li>Group of diseases due to aberrant activation of the innate immune system</li>
+                    <li>Some degree of autoimmunity or immune deficiency can be seen</li>
+                    <li>Characterized by recurrent fevers and flares of multi-organ inflammation</li>
+                    <li>Frequently involves the skin, joints, eyes, and serosae</li>
+                    <li>Features sterile neutrophilic inflammation</li>
+                    <li>Most are likely due to overexpression of IL-1, whether due to increased activation or decreased inhibition</li>
+                    <li>Improvement on anakinra, rilonacept, and canakinumab (Anti-IL-1) supports this theory</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Cutaneous Manifestations</div>
+                <p>The range of cutaneous findings in inherited autoinflammatory diseases includes:</p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Cutaneous/Histologic Features</th>
+                        <th>Autoinflammatory Disease(s)</th>
+                        <th>Similar Sporadic/Complex Disorders</th>
+                    </tr>
+                    <tr>
+                        <td>Evanescent maculopapular/urticarial eruption with neutrophilic infiltrate (neutrophilic urticarial dermatosis)</td>
+                        <td>Cryopyrin-associated periodic fever syndrome (CAPS): MWS, FCAS, NOMID/CINCA</td>
+                        <td>Schnitzler syndrome, Adult-onset Still disease, Systemic-onset juvenile idiopathic arthritis</td>
+                    </tr>
+                    <tr>
+                        <td>Ulcerations with sterile neutrophilic infiltrate (pyoderma gangrenosum)</td>
+                        <td>PAPA syndrome, PASH, PAPASH</td>
+                        <td>Idiopathic PG or PG with associated disorders (e.g., ulcerative colitis)</td>
+                    </tr>
+                    <tr>
+                        <td>Sterile pustules</td>
+                        <td>DIRA, DITRA, PAPA syndrome, CAMPS</td>
+                        <td>Generalized pustular psoriasis, Impetigo herpetiformis, SAPHO syndrome, Acne fulminans</td>
+                    </tr>
+                    <tr>
+                        <td>Edematous plaques with neutrophilic infiltrate</td>
+                        <td>Majeed syndrome</td>
+                        <td>Sweet syndrome (idiopathic or with associated disorders)</td>
+                    </tr>
+                    <tr>
+                        <td>Livedo racemosa with nodules</td>
+                        <td>ADA2 deficiency</td>
+                        <td>Sneddon syndrome, Sporadic polyarteritis nodosa</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Hereditary Periodic Fever Syndromes</div>
+                
+                <div class="tabs">
+                    <div class="tab-label active" onclick="showTab('tab1')">FMF</div>
+                    <div class="tab-label" onclick="showTab('tab2')">HIDS</div>
+                    <div class="tab-label" onclick="showTab('tab3')">TRAPS</div>
+                    <div class="tab-label" onclick="showTab('tab4')">CAPS</div>
+                </div>
+                
+                <div id="tab1" class="tab-content active">
+                    <h4>Familial Mediterranean Fever (FMF)</h4>
+                    <ul>
+                        <li><strong>Ethnicity:</strong> Sephardic Jewish, Arab, Turkish, Italian, Armenian</li>
+                        <li><strong>Inheritance:</strong> AR</li>
+                        <li><strong>Gene/Protein:</strong> MEFV / Pyrin (16p13.3)</li>
+                        <li><strong>Attack Length:</strong> 1-3 days</li>
+                        <li><strong>Skin:</strong> Erysipeloid erythema and edema (favors lower leg, foot)</li>
+                        <li><strong>Abdomen:</strong> Peritonitis > pleuritis > pericarditis</li>
+                        <li><strong>Joints:</strong> Monoarthritis > exercise-induced myalgia</li>
+                        <li><strong>Treatment:</strong> Colchicine prophylaxis, NSAIDs</li>
+                    </ul>
+                </div>
+                
+                <div id="tab2" class="tab-content">
+                    <h4>Hyperimmunoglobulinemia D Syndrome (HIDS)</h4>
+                    <ul>
+                        <li><strong>Ethnicity:</strong> Predominantly Dutch, northern European</li>
+                        <li><strong>Inheritance:</strong> AR</li>
+                        <li><strong>Gene/Protein:</strong> MVK / Mevalonate kinase (12q24)</li>
+                        <li><strong>Attack Length:</strong> 3-7 days</li>
+                        <li><strong>Skin:</strong> Erythematous macules and edematous papules, may become purpuric; occasional oral and vaginal ulcers (widespread)</li>
+                        <li><strong>Abdomen:</strong> Abdominal pain, but rarely serositis</li>
+                        <li><strong>Joints:</strong> Arthralgia > oligoarticular arthritis > myalgia</li>
+                        <li><strong>Lab:</strong> High serum IgD and IgA; mevalonate in urine during attacks</li>
+                        <li><strong>Treatment:</strong> Corticosteroids for acute attacks, anakinra, TNF inhibitors, simvastatin</li>
+                    </ul>
+                </div>
+                
+                <div id="tab3" class="tab-content">
+                    <h4>TNF Receptor-Associated Periodic Syndrome (TRAPS)</h4>
+                    <ul>
+                        <li><strong>Ethnicity:</strong> Any ethnic group</li>
+                        <li><strong>Inheritance:</strong> AD</li>
+                        <li><strong>Gene/Protein:</strong> TNFRSF1A / TNF receptor-1A (12p13)</li>
+                        <li><strong>Attack Length:</strong> Often >7 days</li>
+                        <li><strong>Skin:</strong> Erythematous patches and edematous plaques (often annular or serpiginous); later ecchymotic</li>
+                        <li><strong>Distribution:</strong> Migrate distally on extremities with underlying myalgia</li>
+                        <li><strong>Abdomen:</strong> Peritonitis > pleuritis, pericarditis</li>
+                        <li><strong>Joints:</strong> Migratory myalgia > arthralgia > monoarthritis</li>
+                        <li><strong>Treatment:</strong> Corticosteroids, TNF inhibitors (e.g., etanercept)</li>
+                    </ul>
+                </div>
+                
+                <div id="tab4" class="tab-content">
+                    <h4>Cryopyrin-Associated Periodic Syndromes (CAPS)</h4>
+                    <p>Includes: Muckle-Wells Syndrome (MWS), Familial Cold Autoinflammatory Syndrome (FCAS), and NOMID/CINCA</p>
+                    <ul>
+                        <li><strong>Ethnicity:</strong> Any ethnic group</li>
+                        <li><strong>Inheritance:</strong> AD</li>
+                        <li><strong>Gene/Protein:</strong> NLRP3 (CIAS1) / Cryopyrin (1q44)</li>
+                        <li><strong>Attack Length:</strong> 
+                            <ul>
+                                <li>MWS: 1-2 days</li>
+                                <li>FCAS: Minutes-3 days</li>
+                                <li>NOMID: Continuous + flares</li>
+                            </ul>
+                        </li>
+                        <li><strong>Skin:</strong> Urticarial papules and plaques (widespread)</li>
+                        <li><strong>FCAS-specific:</strong> Cold-induced urticarial papules and plaques</li>
+                        <li class="mcq">Negative ice-cube test (only with acquired cold urticaria)</li>
+                        <li><strong>Treatment:</strong> IL-1/IL-1R antagonists (rilonacept, canakinumab, anakinra)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Other Autoinflammatory Disorders</div>
+                <div class="grid">
+                    <div class="feature-box">
+                        <div class="feature-title">DIRA (Deficiency of IL-1 Receptor Antagonist)</div>
+                        <ul>
+                            <li><strong>Gene/Protein:</strong> IL-1 receptor antagonist (IL1RN)</li>
+                            <li><strong>Inheritance:</strong> AR</li>
+                            <li><strong>Age of Onset:</strong> Neonatal</li>
+                            <li><strong>Features:</strong> Pustules within areas of erythema (similar to pustular psoriasis), sterile osteolytic bone lesions</li>
+                            <li><strong>Treatment:</strong> IL-1 antagonists (often dramatic response)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <div class="feature-title">PAPA Syndrome</div>
+                        <ul>
+                            <li><strong>Gene/Protein:</strong> PSTPIP1</li>
+                            <li><strong>Inheritance:</strong> AD</li>
+                            <li><strong>Age of Onset:</strong> Childhood</li>
+                            <li><strong>Features:</strong> Pyoderma gangrenosum, pathergy, severe acne, recurrent painful sterile arthritis</li>
+                            <li><strong>Treatment:</strong> TNF inhibitors, IL-1 antagonists, corticosteroids</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <div class="feature-title">Blau Syndrome</div>
+                        <ul>
+                            <li><strong>Gene/Protein:</strong> NOD2/CARD15</li>
+                            <li><strong>Inheritance:</strong> AD</li>
+                            <li><strong>Age of Onset:</strong> Childhood</li>
+                            <li><strong>Features:</strong> Numerous tiny papules, granulomatous infiltrate in dermis, uveitis, early-onset symmetric granulomatous polyarticular arthritis</li>
+                            <li><strong>Treatment:</strong> Corticosteroids, TNF inhibitors, MTX, CSA, IL-1 antagonists</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <div class="feature-title">SAVI</div>
+                        <ul>
+                            <li><strong>Gene/Protein:</strong> TMEM173</li>
+                            <li><strong>Inheritance:</strong> AD</li>
+                            <li><strong>Age of Onset:</strong> Early infancy</li>
+                            <li><strong>Features:</strong> Acral infarcts/ulcerations/gangrene, bone resorption with loss of digits, violaceous plaques, nasal septum perforation, interstitial lung disease</li>
+                            <li><strong>Treatment:</strong> JAK inhibitors (minimal response to corticosteroids, DMARDs)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab labels
+            const tabLabels = document.querySelectorAll('.tab-label');
+            tabLabels.forEach(label => {
+                label.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to the clicked tab label
+            event.target.classList.add('active');
+        }
+        
+        // Toggle functionality for collapsible content
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleHeaders = document.querySelectorAll('.toggle-header');
+            
+            toggleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

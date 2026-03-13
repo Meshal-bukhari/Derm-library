@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vesiculopustular Eruptions in Neonates - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --warning: #f39c12;
+            --success: #2ecc71;
+            --neutral: #ecf0f1;
+            --light-accent: #fadbd8;
+            --light-warning: #fef5e7;
+            --light-success: #eafaf1;
+            --light-secondary: #ebf5fb;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(to right, var(--light-secondary), var(--light-accent));
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: var(--primary);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 8px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            background-color: var(--light-secondary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .condition-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .condition-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .condition-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        
+        .badge {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .badge-common {
+            background-color: var(--success);
+        }
+        
+        .badge-uncommon {
+            background-color: var(--warning);
+        }
+        
+        .badge-rare {
+            background-color: var(--accent);
+        }
+        
+        .key-features {
+            background-color: var(--light-success);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--success);
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            margin-left: 10px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .info-box {
+            background-color: var(--neutral);
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid var(--secondary);
+        }
+        
+        .info-box h4 {
+            margin-top: 0;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        details {
+            background-color: var(--light-secondary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        summary:focus {
+            outline: none;
+        }
+        
+        .recall-box {
+            margin: 10px 0;
+            padding: 15px;
+            border: 2px dashed var(--warning);
+            border-radius: 8px;
+            background-color: var(--light-warning);
+        }
+        
+        .versus-box {
+            background-color: var(--light-accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .versus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .versus-table th, .versus-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .versus-table th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .versus-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .warning-box {
+            background-color: var(--light-accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .diagnostic-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--warning);
+        }
+        
+        .exam-alert {
+            background-color: var(--light-warning);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid var(--warning);
+            position: relative;
+        }
+        
+        .exam-alert h2 {
+            color: var(--warning);
+            border-bottom-color: var(--warning);
+        }
+        
+        .exam-alert:before {
+            content: "⚠️";
+            font-size: 2rem;
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--warning);
+        }
+        
+        .conclusion {
+            background-color: var(--light-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid var(--secondary);
+        }
+        
+        @media print {
+            body {
+                font-size: 12pt;
+                color: black;
+            }
+            
+            .condition-card, .diagnostic-card, .versus-box, .exam-alert, .conclusion {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .condition-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .badge {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔬 Vesiculopustular Eruptions in Neonates</h1>
+        <p>Comprehensive Study Guide for Saudi Board Certification Exam</p>
+    </header>
+    
+    <section class="intro">
+        <p>Accurate diagnosis of vesiculopustular eruptions in newborns is crucial as some conditions represent potentially life-threatening infections while others are benign and self-limited. This guide presents a systematic approach to evaluation and management, focusing on high-yield information for the Saudi Board Exam.</p>
+        <p>💡 <strong>Quick Guide:</strong> Determine cell type (eosinophils vs. neutrophils), timing of onset (at birth vs. after), distribution pattern, and associated features to narrow your differential diagnosis.</p>
+    </section>
+    
+    <h2>📋 Systematic Diagnostic Approach</h2>
+    
+    <div class="diagnostic-card">
+        <h3>🔍 Essential Bedside Tests</h3>
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>👉 Wright/Giemsa Stain</h4>
+                <ul>
+                    <li><strong>Eosinophils:</strong> ETN, incontinentia pigmenti, eosinophilic pustular folliculitis</li>
+                    <li><strong>Neutrophils:</strong> Bacterial infection, TNPM</li>
+                    <li><strong>Large histiocytes with reniform nuclei:</strong> Langerhans cell histiocytosis</li>
+                    <li><strong>Immature myeloid cells + Down syndrome:</strong> Transient myeloproliferative disorder</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🔬 Gram Stain</h4>
+                <ul>
+                    <li><strong>Gram+ cocci in clusters:</strong> Staphylococcal infection</li>
+                    <li><strong>Gram+ cocci in chains:</strong> Streptococcal infection</li>
+                    <li><strong>Gram- rods:</strong> Pseudomonas, other gram-negative bacteria</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🧫 KOH Preparation</h4>
+                <ul>
+                    <li><strong>Budding yeast, pseudohyphae:</strong> Candidiasis</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🔬 Tzanck Smear</h4>
+                <ul>
+                    <li><strong>Multinucleated giant cells:</strong> HSV/varicella</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Mineral Oil/Dermoscopy</h4>
+                <ul>
+                    <li><strong>Mites, eggs, feces:</strong> Scabies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <h2>🔴 Common Causes</h2>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Erythema Toxicum Neonatorum (ETN)</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Vesiculopustular eruption with eosinophilic infiltrate</li>
+                <li>Affects ~50% of full-term neonates (>2500g); rare in premature infants</li>
+                <li>Self-limited condition resolving spontaneously over few days</li>
+                <li>Almost always spares palms and soles</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Typically 24-48 hours after birth; rarely present at birth; may develop as late as 1-2 weeks</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Erythematous macules, wheals, papules, vesicles, pustules (1-2mm); characteristic central papule with surrounding erythematous flare resembling flea bite</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Trunk, face, buttocks, proximal extremities; <mark>almost always spares palms and soles</mark></p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Cell Infiltrate</h4>
+                <p><strong>Eosinophilic</strong> (key diagnostic feature)</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Wright/Giemsa stain of pustular contents shows numerous eosinophils</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>None required; reassurance</p>
+            </div>
+        </div>
+        
+        <details>
+            <summary>💡 Recall This: Differentiating ETN from other pustular eruptions</summary>
+            <div class="recall-box">
+                <p><strong>ETN vs. TNPM:</strong> ETN has onset 24-48h after birth with eosinophilic infiltrate, while TNPM is present at birth with neutrophilic infiltrate.</p>
+                <p><strong>ETN vs. Miliaria:</strong> Miliaria lacks prominent erythematous flare and eosinophilic infiltrate; concentrated on forehead/upper torso.</p>
+                <p><strong>ETN vs. HSV:</strong> HSV has grouped vesicles that progress to hemorrhagic crusting; Tzanck smear positive.</p>
+            </div>
+        </details>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Transient Neonatal Pustular Melanosis (TNPM)</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Develops in ~5% of newborns with darkly pigmented skin</li>
+                <li>Superficial pustules without erythema that rupture</li>
+                <li>Resolves with collarette of scale and hyperpigmentation lasting months</li>
+                <li>Sterile subcorneal neutrophilic infiltrate</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p><mark>Virtually always present at birth</mark></p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Three phases: (1) superficial vesiculopustules (2-10mm), (2) collarettes of scale, (3) hyperpigmented macules</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Chin, forehead, neck, lower back, buttocks, shins; may involve face, trunk, palms, soles</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Cell Infiltrate</h4>
+                <p><strong>Primarily neutrophils</strong>, occasionally eosinophils</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Wright stain shows neutrophils and cellular debris</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>None required; reassurance</p>
+            </div>
+        </div>
+        
+        <details>
+            <summary>💡 Recall This: Three phases of TNPM</summary>
+            <div class="recall-box">
+                <ol>
+                    <li><strong>Pustular phase:</strong> At birth, fragile vesiculopustules (may be wiped away during first bath)</li>
+                    <li><strong>Collarette phase:</strong> Hyperpigmented macules with fine collarettes of scale</li>
+                    <li><strong>Pigmented phase:</strong> Residual brown macules persisting for several months</li>
+                </ol>
+                <p><em>Note: Sometimes only brown macules are noted at birth (pustular phase occurred in utero)</em></p>
+            </div>
+        </details>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Miliaria</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Due to obstruction of eccrine sweat ducts</li>
+                <li>Associated with overheating, over-swaddling, or fever</li>
+                <li>Two main types: miliaria crystallina and miliaria rubra</li>
+                <li>Spontaneous resolution with cooling</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing & Types</h4>
+                <p><strong>Miliaria crystallina:</strong> Sometimes present at birth<br>
+                <strong>Miliaria rubra:</strong> Usually after first week of life</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p><strong>Crystallina:</strong> Clear, small, flaccid vesicles ("dew drops"); no erythema<br>
+                <strong>Rubra:</strong> Erythematous papules, papulovesicles, pustules</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Forehead, neck, upper trunk; occluded areas</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Pathophysiology</h4>
+                <p><strong>Crystallina:</strong> Obstruction within stratum corneum<br>
+                <strong>Rubra:</strong> Deeper obstruction in spinous layer</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Clinical; Wright stain shows variable inflammatory cells but not prominent eosinophils</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Cooling, avoid overheating and excessive swaddling</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Neonatal Cephalic Pustulosis</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Non-comedonal inflammatory pustular eruption</li>
+                <li>Commonly affects cheeks, forehead, chin</li>
+                <li>Malassezia spp. implicated in pathogenesis</li>
+                <li>Spontaneous resolution over weeks to months</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>First 2-3 weeks of life; resolves by 3 months</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Papulopustules on erythematous base</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Cheeks, forehead, chin, eyelids; less commonly neck, upper chest, scalp</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Pathogenesis</h4>
+                <p>Inflammatory reaction to Malassezia spp. (controversial)</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Giemsa-stained smear shows yeast forms, neutrophils</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Usually unnecessary; topical imidazole or hydrocortisone if needed</p>
+            </div>
+        </div>
+        
+        <div class="versus-box">
+            <h4>⚔️ Neonatal Cephalic Pustulosis vs. Infantile Acne</h4>
+            <table class="versus-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Neonatal Cephalic Pustulosis</th>
+                    <th>Infantile Acne</th>
+                </tr>
+                <tr>
+                    <td>Epidemiology</td>
+                    <td>Common (20-50% of term infants); Male:female = 1:1</td>
+                    <td>Uncommon; Males > females</td>
+                </tr>
+                <tr>
+                    <td>Pathogenesis</td>
+                    <td>Inflammatory reaction to Malassezia spp.</td>
+                    <td>Androgen production</td>
+                </tr>
+                <tr>
+                    <td>Age of onset</td>
+                    <td>~5 days to 3 weeks</td>
+                    <td>~6 weeks to 1 year</td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td>Weeks to 3 months</td>
+                    <td>6 to 18 months</td>
+                </tr>
+                <tr>
+                    <td>Morphology</td>
+                    <td>Papules and pustules on erythematous base; <mark>NO comedones</mark></td>
+                    <td>Open and closed comedones, papules, pustules, occasionally nodules</td>
+                </tr>
+                <tr>
+                    <td>Scarring</td>
+                    <td>None</td>
+                    <td>Occasionally</td>
+                </tr>
+                <tr>
+                    <td>Treatment</td>
+                    <td>Usually unnecessary</td>
+                    <td>Often necessary (topical retinoids, antibiotics, etc.)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Cutaneous Candidiasis</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Three types: neonatal, congenital, and invasive fungal dermatitis</li>
+                <li>Neonatal: acquired during delivery or postnatally</li>
+                <li>Congenital: acquired in utero</li>
+                <li>Invasive fungal dermatitis: in very-low-birth-weight premature newborns</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p><strong>Neonatal:</strong> After first week of life<br>
+                <strong>Congenital:</strong> At birth or up to day 6<br>
+                <strong>Invasive:</strong> Birth to 2 weeks (very-low-birth-weight infants)</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p><strong>Neonatal:</strong> Pink-red patches with satellite papules/pustules<br>
+                <strong>Congenital:</strong> Erythematous papules, vesiculopustules, diffuse erythema, fine scaling<br>
+                <strong>Invasive:</strong> "Burn-like" erythema with desquamation and erosions</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p><strong>Neonatal:</strong> Diaper area, intertriginous sites, face; oral thrush often present<br>
+                <strong>Congenital:</strong> Face, trunk, extremities, palms/soles; diaper area and oral mucosa usually spared<br>
+                <strong>Invasive:</strong> Widespread, maceration in intertriginous areas</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>KOH preparation: budding yeast and pseudohyphae</p>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ Risk Factors</h4>
+                <p><strong>Congenital:</strong> Foreign body in uterus/cervix, premature delivery, maternal vaginal candidiasis<br>
+                <strong>Invasive:</strong> Very-low-birth-weight (<1000g), vaginal delivery, systemic corticosteroids, parenteral nutrition, prolonged hyperglycemia</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p><strong>Neonatal:</strong> Topical antifungals<br>
+                <strong>Congenital:</strong> Topical therapy if no systemic signs; parenteral antifungals if high-risk (<27 weeks, <1000g)<br>
+                <strong>Invasive:</strong> Parenteral antifungals (amphotericin B for >14 days)</p>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h4>⚠️ High-Risk Alert</h4>
+            <p>Premature infants (<27 weeks, <1000g) with congenital candidiasis have ~66% risk of disseminated disease. Need parenteral antifungals even if localized.</p>
+            <p>Signs warranting systemic therapy: "burn-like" presentation, respiratory distress, elevated WBC with left shift.</p>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Sucking Blisters</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Caused by vigorous sucking of the affected region in utero</li>
+                <li>Common on radial forearm, wrist, hands, fingers</li>
+                <li>Presents as flaccid bulla on non-inflamed base</li>
+                <li>Usually isolated finding that resolves spontaneously</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Epidemiology</h4>
+                <p>Found in 1 of every 250 newborns</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Flaccid bullae on non-inflamed base; rupture easily leading to linear or round erosions</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Radial forearm, wrist, hand, fingers; 5-15mm diameter; may be unilateral or bilateral</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Clinical: non-inflammatory, often solitary lesion in typical location</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>No treatment needed; resolves in days to weeks</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Exogenous Causes of Erosions</h3>
+            <span class="badge badge-common">Common</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Multiple causes: friction, iatrogenic injury, procedures</li>
+                <li>Neonatal skin is more susceptible to erosions and ulcerations</li>
+                <li>Typical location and known exposure assist in diagnosis</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Common Types</h4>
+                <ul>
+                    <li><strong>Diaper area erosions:</strong> Common in first 2 weeks</li>
+                    <li><strong>Fetal scalp electrode:</strong> Scalp erosions/ulcers</li>
+                    <li><strong>Pulse oximetry probes:</strong> Blisters or erosions</li>
+                    <li><strong>Adhesive removal:</strong> May lead to anetoderma</li>
+                    <li><strong>Chlorhexidine dressings:</strong> Geometric erosions</li>
+                    <li><strong>"Heel sticks":</strong> Potential for calcinosis cutis</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Clues to Diagnosis</h4>
+                <p>Location correlates with causative agent; history of procedures or exposure</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Prevention where possible; gentle wound care</p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>🟠 Uncommon and Rare Causes</h2>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Acropustulosis of Infancy</h3>
+            <span class="badge badge-uncommon">Uncommon</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Classic form and postscabetic variant</li>
+                <li>Pruritic acral vesiculopustular eruption</li>
+                <li>Recurs in crops every 3-4 weeks</li>
+                <li>Decreases in frequency and severity over time</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p><strong>Classic form:</strong> Usually 3-6 months, occasionally earlier<br>
+                <strong>Demographics:</strong> More common in Black infants and boys</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Pruritic vesiculopustules; crops lasting 7-14 days</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Palms, soles, dorsal hands/feet, fingers/toes, wrists, ankles; occasionally scalp, trunk</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Cell Infiltrate</h4>
+                <p>Predominantly neutrophils, occasional eosinophils</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p><mark>Must exclude scabies</mark> (mineral oil examination, dermoscopy)</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Potent topical corticosteroids, oral antihistamines; resolves by age 3 years</p>
+            </div>
+        </div>
+        
+        <details>
+            <summary>💡 Recall This: Distinguishing Acropustulosis from Scabies</summary>
+            <div class="recall-box">
+                <p><strong>Acropustulosis:</strong> Recurrent crops, no linear burrows, no family members affected, negative scrapings, neutrophilic infiltrate</p>
+                <p><strong>Scabies:</strong> Linear burrows (pathognomonic), genital/widespread lesions, family members often affected, mites/eggs/feces on microscopy</p>
+            </div>
+        </details>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Eosinophilic Pustular Folliculitis of Infancy</h3>
+            <span class="badge badge-uncommon">Uncommon</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Recurrent pruritic crops of follicular vesiculopustules</li>
+                <li>Primarily involves scalp, also face, rarely trunk/extremities</li>
+                <li>Waxing and waning course for months to years</li>
+                <li>Spontaneous resolution usually by 3 years of age</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Mean age 6 months (before 15 months); 2:1 male predominance</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Recurrent papules, pustules, vesicles on erythematous base; evolve into hemorrhagic crusts</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Primarily scalp, also face (brow region); trunk/extremities less common</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Laboratory</h4>
+                <p>Pustule smear shows eosinophils; peripheral blood eosinophilia often present</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Histopathology</h4>
+                <p>Dense eosinophilic infiltrate, not always follicular (term "eosinophilic pustulosis" may be preferred)</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Mid-potency topical corticosteroids, tacrolimus, antihistamines; severe cases: dapsone</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Congenital and Neonatal Langerhans Cell Histiocytosis</h3>
+            <span class="badge badge-uncommon">Uncommon</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Crusted papules, vesiculopustules, erosions, nodules</li>
+                <li>May be limited to skin or have extracutaneous involvement</li>
+                <li>Cutaneous infiltrates of S100+/CD1a+ Langerhans cells</li>
+                <li>Requires systemic evaluation regardless of skin findings</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Present at birth or develops in neonatal period</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Crusted papules, pustules, vesicles, nodules, erosions, ulcerations; hemangioma-like papules, petechiae, purpura may also be seen</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Can affect any site including palms/soles; often widespread but can be solitary</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Diagnosis</h4>
+                <p>Skin biopsy: S100+/CD1a+/CD207+ Langerhans cells with "coffee bean" nuclei</p>
+            </div>
+            <div class="info-box">
+                <h4>🧬 Genetics</h4>
+                <p>BRAF V600E mutations or RAS-MAP-kinase pathway mutations</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Full systemic evaluation (cannot distinguish cutaneous from multisystem disease based on skin alone); purely cutaneous disease often resolves spontaneously but follow-up needed as relapses possible</p>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h4>⚠️ Systemic Evaluation Required</h4>
+            <p>For all cases of congenital/neonatal LCH, perform:</p>
+            <ul>
+                <li>Complete physical examination</li>
+                <li>Chemistry panel including liver function tests</li>
+                <li>CBC with differential</li>
+                <li>Urine osmolality</li>
+                <li>Abdominal ultrasound</li>
+                <li>Skeletal survey</li>
+                <li>Chest X-ray</li>
+                <li>Consider bone marrow aspiration/biopsy</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Incontinentia Pigmenti</h3>
+            <span class="badge badge-uncommon">Uncommon</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>X-linked dominant multisystem disease (IKBKG/NEMO mutations)</li>
+                <li>Usually lethal in male fetuses unless X chromosome aneuploidy or mosaicism</li>
+                <li>Cutaneous lesions follow lines of Blaschko</li>
+                <li>Four phases: vesicular, verrucous, hyperpigmented, and hypopigmented/atrophic</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Presents within first 2 weeks in 90% of patients</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p><strong>Stage 1 (Vesicular):</strong> Linear/whorled vesicles<br>
+                <strong>Stage 2 (Verrucous):</strong> Hyperkeratotic linear plaques<br>
+                <strong>Stage 3 (Hyperpigmented):</strong> Whorled grayish-brown pigmentation<br>
+                <strong>Stage 4 (Hypopigmented):</strong> Atrophic, hypopigmented thin streaks</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p><strong>Stage 1:</strong> Extremities and scalp, less commonly trunk; face usually spared<br>
+                <strong>Stage 3:</strong> Most common on trunk<br>
+                <strong>Stage 4:</strong> Favors calves</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Laboratory</h4>
+                <p>Leukocytosis and eosinophilia during vesicular stage</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Histopathology</h4>
+                <p><strong>Stage 1:</strong> Eosinophilic spongiosis with necrotic keratinocytes</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Ophthalmologic, neurodevelopmental, and dental evaluations</p>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h4>⚠️ Extracutaneous Manifestations</h4>
+            <p>Monitor for:</p>
+            <ol>
+                <li><strong>Dental abnormalities:</strong> Hypodontia, conical teeth</li>
+                <li><strong>CNS involvement:</strong> Seizures, developmental delay, spastic paralysis</li>
+                <li><strong>Ocular disease:</strong> Retinal vascular abnormalities (risk of blindness)</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Autosomal Dominant Hyper-IgE Syndrome</h3>
+            <span class="badge badge-uncommon">Uncommon</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Primary immunodeficiency due to STAT3 mutations</li>
+                <li>Neonatal papulopustular eruption on face, scalp, neck, axillae, diaper area</li>
+                <li>Serum IgE may not be elevated in neonatal period</li>
+                <li>Later features: "cold" abscesses, eczema, recurrent infections, pneumatoceles</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>70-80% present at birth or first month (mean 7 days)</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Papulopustular or vesicular eruption</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Head, shoulders, axillae, diaper area</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Laboratory</h4>
+                <p>Eventually high IgE (>2000 IU/ml) and eosinophilia, but may not be elevated in neonates</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Histopathology</h4>
+                <p>Intrapidermal vesicles with eosinophils, perivascular eosinophils, eosinophilic folliculitis</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Multidisciplinary approach for immunodeficiency</p>
+            </div>
+        </div>
+        
+        <details>
+            <summary>💡 Recall This: Later manifestations of AD-HIES</summary>
+            <div class="recall-box">
+                <ul>
+                    <li>"Cold" abscesses (lack of warmth, tenderness despite purulence)</li>
+                    <li>Chronic eczematous dermatitis</li>
+                    <li>Recurrent pneumonias with pneumatocele formation</li>
+                    <li>Osteopenia</li>
+                    <li>Retention of deciduous teeth</li>
+                </ul>
+                <p><strong>Note:</strong> Do not confuse with DOCK8 deficiency, which shares some features but does not present with neonatal vesiculopustular eruption</p>
+            </div>
+        </details>
+    </div>
+    
+    <h2>🔴 Very Rare Disorders</h2>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Neonatal Behçet Disease</h3>
+            <span class="badge badge-rare">Rare</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Affects infants born to mothers with active Behçet disease</li>
+                <li>Due to placental transfer of maternal pathogenic antibodies</li>
+                <li>Resolves by 2-3 months of age</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Develops during first week of life</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Oral/genital ulcers, vesiculopustular, purpuric, and necrotic skin lesions</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Hands/feet, sites of trauma (pathergy)</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Differential</h4>
+                <p>Distinguish from neonatal HSV and monogenic autoinflammatory diseases</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Vesiculopustular Eruption in Down Syndrome</h3>
+            <span class="badge badge-rare">Rare</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Associated with transient myeloproliferative disorder (leukemoid reaction)</li>
+                <li>Due to somatic GATA1 mutations in trisomy 21 or mosaicism</li>
+                <li>Increased risk of myeloid leukemia</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>First days to weeks of life (rarely beyond 1 month)</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Vesicles and pustules; predilection for trauma sites</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Face initially, then trunk/extremities; favor sites of minor trauma or adhesive dressings</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Pathology</h4>
+                <p>Spongiotic vesiculopustules with immature myeloid cells</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Clinical Pearl</h4>
+                <p>Consider in any neonate with pustular eruption and leukocytosis, even without obvious Down syndrome features (may be mosaic)</p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Oncology follow-up due to increased risk of myeloid leukemia</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="condition-card">
+        <div class="condition-header">
+            <h3 class="condition-title">Congenital Erosive and Vesicular Dermatosis</h3>
+            <span class="badge badge-rare">Rare</span>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Features</h4>
+            <ul class="feature-list">
+                <li>Usually affects premature infants</li>
+                <li>Widespread erosions, vesicles, "scalded skin" appearance</li>
+                <li>Characteristic supple reticulated scarring</li>
+                <li>Unknown cause, must exclude HSV</li>
+            </ul>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⏱️ Timing</h4>
+                <p>Present at birth</p>
+            </div>
+            <div class="info-box">
+                <h4>👁️ Morphology</h4>
+                <p>Widespread erosions, vesicles, crusting, "scalded skin"; heals with supple reticulated scars</p>
+            </div>
+            <div class="info-box">
+                <h4>🎯 Distribution</h4>
+                <p>Generalized with relative sparing of face, palms/soles</p>
+            </div>
+            <div class="info-box">
+                <h4>🧫 Histopathology</h4>
+                <p>Epidermal necrosis, subepidermal vesiculation, or eroded epidermis with neutrophilic/mixed infiltrate</p>
+            </div>
+            <div class="info-box">
+                <h4>🔍 Differential</h4>
+                <p><mark>Must exclude HSV (PCR testing)</mark></p>
+            </div>
+            <div class="info-box">
+                <h4>💊 Management</h4>
+                <p>Supportive care; monitor for neurologic defects</p>
+            </div>
+        </div>
+        
+        <details>
+            <summary>💡 Recall This: Later findings in CEVD</summary>
+            <div class="recall-box">
+                <ul>
+                    <li>Scarring alopecia of scalp and eyelashes</li>
+                    <li>Scarring of tongue</li>
+                    <li>Absent or hypoplastic nails</li>
+                    <li>Heat intolerance with hypohidrosis</li>
+                    <li>Neurodevelopmental abnormalities, brain atrophy</li>
+                    <li>Hemiparesis</li>
+                    <li>Sensorineural hearing loss</li>
+                    <li>Retinal scars</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+    
+    <h2>🩺 When to Suspect Systemic Disease or Immunodeficiency</h2>
+    
+    <div class="diagnostic-card">
+        <h3>High-Risk Clinical Scenarios</h3>
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⚠️ Congenital Candidiasis in Premature Infants</h4>
+                <ul>
+                    <li><27 weeks, <1000g: 66% risk of disseminated infection</li>
+                    <li>Requires parenteral antifungals after cultures</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ HSV Infection</h4>
+                <ul>
+                    <li>Grouped vesicles, positive Tzanck/PCR</li>
+                    <li>Risk of meningitis/encephalitis</li>
+                    <li>Begin empiric treatment if suspected</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ Langerhans Cell Histiocytosis</h4>
+                <ul>
+                    <li>Cannot distinguish cutaneous from multisystem disease based on skin alone</li>
+                    <li>Full systemic evaluation required</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ Down Syndrome with Vesiculopustular Eruption</h4>
+                <ul>
+                    <li>May indicate transient myeloproliferative disorder</li>
+                    <li>Increased risk of myeloid leukemia</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ "Burn-like" Erosions in Very-Low-Birth-Weight Infants</h4>
+                <ul>
+                    <li>High risk of invasive fungal infection</li>
+                    <li>Consider systemic antifungals</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚠️ Recurrent or Severe Infections</h4>
+                <ul>
+                    <li>Consider hyper-IgE syndrome, other immunodeficiencies</li>
+                    <li>Investigate for underlying disorders</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section class="exam-alert">
+        <h2>⚠️ Common Confusion Traps in the Exam</h2>
+        
+        <div class="versus-box">
+            <h3>ETN vs. TNPM vs. Neonatal Herpes</h3>
+            <table class="versus-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>ETN</th>
+                    <th>TNPM</th>
+                    <th>Neonatal HSV</th>
+                </tr>
+                <tr>
+                    <td>Timing</td>
+                    <td>24-48h after birth</td>
+                    <td>Present at birth</td>
+                    <td>Birth to 2 weeks (usually after 5 days)</td>
+                </tr>
+                <tr>
+                    <td>Cell type</td>
+                    <td>Eosinophils</td>
+                    <td>Neutrophils</td>
+                    <td>Multinucleated giant cells</td>
+                </tr>
+                <tr>
+                    <td>Morphology</td>
+                    <td>Papule with erythematous flare</td>
+                    <td>Pustules without erythema; hyperpigmentation</td>
+                    <td>Grouped vesicles → hemorrhagic crusting</td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>Self-limited, resolves in days</td>
+                    <td>Pustules transient, hyperpigmentation lasts months</td>
+                    <td>Progressive without treatment</td>
+                </tr>
+                <tr>
+                    <td>Diagnosis</td>
+                    <td>Wright/Giemsa stain</td>
+                    <td>Wright stain</td>
+                    <td>Tzanck, PCR, viral culture</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="versus-box">
+            <h3>Neonatal vs. Congenital vs. Invasive Fungal Candidiasis</h3>
+            <table class="versus-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Neonatal Candidiasis</th>
+                    <th>Congenital Candidiasis</th>
+                    <th>Invasive Fungal Dermatitis</th>
+                </tr>
+                <tr>
+                    <td>Timing</td>
+                    <td>After first week</td>
+                    <td>At birth or up to day 6</td>
+                    <td>Birth to 2 weeks</td>
+                </tr>
+                <tr>
+                    <td>Distribution</td>
+                    <td>Diaper area, intertriginous zones, face</td>
+                    <td>Widespread, often palms/soles</td>
+                    <td>Widespread "burn-like" appearance</td>
+                </tr>
+                <tr>
+                    <td>Risk factors</td>
+                    <td>Normal delivery process</td>
+                    <td>Foreign body in uterus, premature delivery</td>
+                    <td>Very-low-birth-weight (<1000g)</td>
+                </tr>
+                <tr>
+                    <td>Treatment</td>
+                    <td>Topical antifungals</td>
+                    <td>Topical or systemic based on risk</td>
+                    <td>Parenteral antifungals required</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Other Tricky Differentials</h3>
+        <ul>
+            <li><strong>Acropustulosis vs. Scabies:</strong> Both pruritic and acral, but scabies has burrows and family history.</li>
+            <li><strong>LCH:</strong> Cannot distinguish cutaneous from multisystem disease based on skin findings alone.</li>
+            <li><strong>Hyper-IgE syndrome:</strong> Neonatal vesiculopustular eruption may precede elevated IgE or other manifestations.</li>
+            <li><strong>Congenital erosive vesicular dermatosis vs. HSV:</strong> Similar presentation, must exclude HSV with PCR.</li>
+            <li><strong>Neonatal cephalic pustulosis vs. infantile acne:</strong> Distinguished by timing, presence of comedones, and duration.</li>
+            <li><strong>Electrode marks, adhesive injuries:</strong> Can mimic pathological processes; history is key.</li>
+            <li><strong>Incontinentia pigmenti:</strong> Don't miss the extracutaneous manifestations requiring evaluation.</li>
+        </ul>
+    </section>
+    
+    <div class="conclusion">
+        <h2>🎯 Must-Memorize for the Saudi Board</h2>
+        <ul>
+            <li>ETN: 24-48h onset, eosinophilic infiltrate, spares palms/soles, 50% of term infants</li>
+            <li>TNPM: Present at birth, neutrophilic infiltrate, resolves with hyperpigmentation</li>
+            <li>Miliaria crystallina vs. rubra: Superficial "dew drops" vs. inflammatory papulopustules</li>
+            <li>Neonatal cephalic pustulosis: 2-3 weeks onset, NO comedones, Malassezia-associated</li>
+            <li>Congenital candidiasis: High-risk if <27 weeks, <1000g (needs systemic treatment)</li>
+            <li>Invasive fungal dermatitis: "Burn-like" appearance in very-low-birth-weight infants</li>
+            <li>Sucking blisters: Radial forearm/wrist/hand, non-inflammatory, self-limiting</li>
+            <li>Acropustulosis of infancy: Recurrent pruritic vesiculopustules on palms/soles</li>
+            <li>LCH: S100+/CD1a+/CD207+ cells, full systemic workup needed regardless of extent</li>
+            <li>Incontinentia pigmenti 4 stages: Vesicular→verrucous→hyperpigmented→hypopigmented</li>
+            <li>Diagnostic algorithm: First determine cell type, then timing, distribution, and associated features</li>
+        </ul>
+        <p>📚 Continue reviewing with spaced repetition and active recall techniques. Good luck on your exam! 🍀</p>
+    </div>
+</body>
+</html>

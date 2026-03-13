@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFSD Board Review - Master This in One Read!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #dc2626;
+            --success: #059669;
+            --warning: #d97706;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --card: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🎯';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 100px;
+            opacity: 0.1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .memory-trigger {
+            background: var(--accent);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        
+        .card-icon {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .differential-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .differential-card:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+        
+        .differential-card.active {
+            background: #eff6ff;
+            border-color: var(--primary);
+        }
+        
+        .pearl {
+            background: #fdf2f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .mnemonic {
+            background: #ecfdf5;
+            border: 2px dashed var(--success);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .quiz-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .quiz-button:hover {
+            background: var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .reveal-box {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .reveal-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .reveal-box.active .reveal-content {
+            display: block;
+        }
+        
+        .check-icon {
+            color: var(--success);
+            margin-right: 8px;
+        }
+        
+        .diagnostic-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .flow-step {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 10px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .flow-arrow {
+            font-size: 24px;
+            color: var(--primary);
+            margin: 0 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                margin-bottom: 30px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: 20px !important;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>KFSD: The Scarring Trio Board Review</h1>
+            <div class="hero-subtitle">Master This Rare Cicatricial Alopecia in 5 Minutes!</div>
+        </div>
+        
+        <div class="memory-trigger">
+            🧠 MEMORY BLAST: "K-FS-D = Kids + Follicular Scarring → Decalvans (hair loss)"
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🧬</div>
+                    <h2>Genetics & Inheritance</h2>
+                </div>
+                <ul>
+                    <li>🔹 <span class="highlight">X-linked dominant</span> (most common)</li>
+                    <li>🔹 Autosomal dominant</li>
+                    <li>🔹 Sporadic cases</li>
+                </ul>
+                <div class="pearl">
+                    💡 BOARD PEARL: Girls in X-linked cases have milder presentation!
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">👶</div>
+                    <h2>Age & Demographics</h2>
+                </div>
+                <ul>
+                    <li>🔹 Starts: <span class="highlight">Early childhood</span></li>
+                    <li>🔹 Progression: Face → Trunk → Extremities</li>
+                    <li>🔹 Pustular variant: Around puberty</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mnemonic">
+            🎯 HIGH-YIELD TRIAD: "S-E-C" <br>
+            <strong>S</strong>carring alopecia + <strong>E</strong>yelash/eyebrow loss + <strong>C</strong>orneal dystrophy (boys)
+        </div>
+        
+        <h2 style="margin: 30px 0 20px; text-align: center;">Disease Progression Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Stage 1: Face</h3>
+                <p>Begins with keratosis pilaris on face</p>
+                <p>Fine follicular papules</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Stage 2: Spread</h3>
+                <p>Progresses to trunk & extremities</p>
+                <p>Follicular plugging increases</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Stage 3: Hair Loss</h3>
+                <p>Cicatricial alopecia develops</p>
+                <p>Scalp, eyebrows, eyelashes affected</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Stage 4: Complications</h3>
+                <p>Corneal dystrophy (boys)</p>
+                <p>Photophobia develops</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🔍</div>
+                <h2>Diagnostic Criteria - Click to Reveal!</h2>
+            </div>
+            <div class="reveal-box" onclick="this.classList.toggle('active')">
+                <strong>Click here to see the diagnostic features...</strong>
+                <div class="reveal-content">
+                    <ul>
+                        <li><span class="check-icon">✓</span> <strong>Diffuse scarring alopecia</strong> (scalp, eyebrows, eyelashes)</li>
+                        <li><span class="check-icon">✓</span> <strong>Follicular papules</strong> with marked plugging</li>
+                        <li><span class="check-icon">✓</span> <strong>Hyperkeratosis</strong> of palms/soles (especially heels)</li>
+                        <li><span class="check-icon">✓</span> <strong>Atrophic changes</strong> on dorsum of fingers (puberty)</li>
+                        <li><span class="check-icon">✓</span> <strong>High cuticle lines</strong> on nails</li>
+                        <li><span class="check-icon">✓</span> <strong>Telangiectasias</strong> on cheeks/brows (late finding)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🔬</div>
+                <h2>Histopathology Quick-Hit</h2>
+            </div>
+            <div class="diagnostic-flow">
+                <div class="flow-step">Acanthosis</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Hyperkeratosis over follicle</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Polytrichia</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Lymphocytic infiltrate</div>
+            </div>
+            <div class="pearl">
+                💡 BOARD PEARL: Inflammation targets upper isthmus & infundibulum!
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">⚡</div>
+                <h2>High-Yield Differentials</h2>
+            </div>
+            <div id="differentials">
+                <div class="differential-card" onclick="toggleDifferential(this)">
+                    <strong>Keratosis pilaris atrophicans faciei</strong>
+                    <div class="reveal-content">
+                        • Also called ulerythema ophryogenes<br>
+                        • Similar but limited to face<br>
+                        • No widespread scarring alopecia
+                    </div>
+                </div>
+                <div class="differential-card" onclick="toggleDifferential(this)">
+                    <strong>Lichen planopilaris</strong>
+                    <div class="reveal-content">
+                        • Adult onset<br>
+                        • Violaceous papules<br>
+                        • Perifollicular scale
+                    </div>
+                </div>
+                <div class="differential-card" onclick="toggleDifferential(this)">
+                    <strong>Graham-Little syndrome</strong>
+                    <div class="reveal-content">
+                        • Triad: Scalp alopecia + follicular KP + non-scarring axillary/pubic alopecia<br>
+                        • Adult onset
+                    </div>
+                </div>
+                <div class="differential-card" onclick="toggleDifferential(this)">
+                    <strong>KID syndrome</strong>
+                    <div class="reveal-content">
+                        • Keratitis + Ichthyosis + Deafness<br>
+                        • Palmoplantar keratoderma<br>
+                        • Hearing loss is key differentiator
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">💊</div>
+                <h2>Treatment Strategy</h2>
+            </div>
+            <div class="mnemonic">
+                🎯 REMEMBER: "EVADE" - NO CURE!<br>
+                <strong>E</strong>mollients + <strong>V</strong>itamin A + <strong>A</strong>ntibiotics + <strong>D</strong>apsone + <strong>E</strong>arly intervention
+            </div>
+            <ul style="margin-top: 15px;">
+                <li>🔹 Topical/systemic retinoids</li>
+                <li>🔹 Keratolytics for hyperkeratosis</li>
+                <li>🔹 Antibiotics for pustular eruptions</li>
+                <li>🔹 Topical steroids for inflammation</li>
+                <li>🔹 Consider laser hair removal</li>
+            </ul>
+        </div>
+        
+        <div class="card" style="background: #fef3c7;">
+            <div class="card-header">
+                <div class="card-icon">🎯</div>
+                <h2>Board-Style Quick Quiz</h2>
+            </div>
+            <button class="quiz-button" onclick="showQuiz(1)">Test Your Knowledge!</button>
+            <div id="quiz1" class="hidden">
+                <p><strong>Q: A 7-year-old boy presents with progressive hair loss, photophobia, and follicular papules on his face. What's the most likely diagnosis?</strong></p>
+                <p style="margin-top: 15px; color: var(--success);"><strong>A: KFSD</strong> - The triad of scarring alopecia + corneal involvement + childhood onset = KFSD!</p>
+            </div>
+        </div>
+        
+        <div class="memory-trigger" style="background: var(--success);">
+            🏆 FINAL BOARD TIP: When you see scarring alopecia + childhood onset + eye involvement = Think KFSD!
+        </div>
+    </div>
+    
+    <script>
+        function toggleDifferential(element) {
+            const allCards = document.querySelectorAll('.differential-card');
+            allCards.forEach(card => {
+                if (card !== element) {
+                    card.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
+        }
+        
+        function showQuiz(num) {
+            const quiz = document.getElementById('quiz' + num);
+            quiz.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

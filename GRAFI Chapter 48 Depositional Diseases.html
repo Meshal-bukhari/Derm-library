@@ -1,0 +1,739 @@
+<style>
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #34495e;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --mcq-bg: #ffe8e8;
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: 'Roboto', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--primary);
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--primary);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  color: var(--dark);
+  text-align: center;
+  font-size: 2.2em;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--secondary);
+}
+
+h2 {
+  color: var(--secondary);
+  font-size: 1.8em;
+  border-left: 5px solid var(--secondary);
+  padding-left: 15px;
+}
+
+.mcq {
+  background-color: var(--mcq-bg);
+  border-left: 4px solid var(--accent);
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 4px;
+  position: relative;
+}
+
+.mcq::before {
+  content: "❗ MCQ";
+  font-weight: bold;
+  color: var(--accent);
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: white;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.8em;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95em;
+}
+
+.comparison-table th {
+  background-color: var(--secondary);
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+.comparison-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+details {
+  background-color: var(--light);
+  margin: 10px 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+summary {
+  padding: 12px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+details[open] summary {
+  border-bottom: 1px solid #ddd;
+}
+
+.details-content {
+  padding: 15px;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.highlight {
+  background-color: #fffde7;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.clinical-stages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.stage-card {
+  flex: 1;
+  min-width: 240px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+.stage-card h4 {
+  margin-top: 0;
+  color: var(--secondary);
+  border-bottom: 2px solid var(--light);
+  padding-bottom: 5px;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .container {
+    box-shadow: none;
+    margin-bottom: 15px;
+  }
+  
+  .mcq {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-left: 3px solid #333;
+  }
+  
+  .mcq::before {
+    background: #eee;
+    color: #333;
+  }
+  
+  details {
+    page-break-inside: avoid;
+  }
+  
+  details[open] {
+    border: 1px solid #ddd;
+  }
+  
+  summary {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .stage-card {
+    min-width: 100%;
+  }
+}
+</style>
+<div class="container">
+  <nav>
+    <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0;">
+      <li><a href="#gout" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Gout</a></li>
+      <li><a href="#pseudogout" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Pseudogout</a></li>
+      <li><a href="#lipoid-proteinosis" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Lipoid Proteinosis</a></li>
+      <li><a href="#colloid-millium" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Colloid Millium</a></li>
+      <li><a href="#mucopolysaccharidoses" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Mucopolysaccharidoses</a></li>
+      <li><a href="#histology-table" style="padding: 8px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 4px;">Histology Table</a></li>
+    </ul>
+  </nav>
+</div>
+<section id="gout" class="container">
+  <h2>Gout</h2>
+  <details>
+    <summary>Definition & Epidemiology</summary>
+    <div class="details-content">
+      <p>Gout is a metabolic disease in which needle-like crystals of monosodium urate (ionized form of uric acid) are deposited in tissue.</p>
+      <ul>
+        <li>Most common form of crystal-induced arthritis</li>
+        <li>Typically affects men in their 40s-50s</li>
+        <li>Male to female ratio is 9:1</li>
+        <li><strong>Risk factors:</strong> Obesity, alcohol consumption, renal disease, and diuretic use</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Pathogenesis</summary>
+    <div class="details-content">
+      <ul>
+        <li>Uric acid is the end product of purine catabolism</li>
+        <li>When body fluids become supersaturated with uric acid, crystallization occurs</li>
+        <li>Urate crystals activate the NLRP3 (cryopyrin) inflammasome</li>
+        <li>This leads to production of IL-1, triggering inflammation</li>
+        <li>When neutrophils phagocytose urate crystals, it leads to neutrophil leakage of lysosomes → vicious cycle of inflammation</li>
+      </ul>
+    </div>
+  </details>
+  <h3>Clinical Features: The Four Stages</h3>
+  <div class="clinical-stages">
+    <div class="stage-card">
+      <h4>Stage 1: Asymptomatic Hyperuricemia</h4>
+      <p>High uric acid levels without symptoms</p>
+    </div>
+<div class="stage-card">
+  <h4>Stage 2: Acute Gouty Arthritis</h4>
+  <ul>
+    <li>Severe sudden joint pain</li>
+    <li>Tenderness, erythema, warmth, and swelling</li>
+    <li>Most commonly affects the big toe (podagra)</li>
+    <li>May be polyarticular</li>
+    <li>Fever and systemic symptoms may occur</li>
+    <li>As swelling subsides, violaceous hue + desquamation appear</li>
+  </ul>
+</div>
+
+<div class="stage-card">
+  <h4>Stage 3: Intercritical Gout</h4>
+  <p>Intervals between attacks</p>
+  <p>Progressively shorter duration with time</p>
+</div>
+
+<div class="stage-card">
+  <h4>Stage 4: Chronic Tophaceous Gout</h4>
+  <ul>
+    <li>Monosodium urate deposits known as "tophi"</li>
+    <li>Appears ~10 years after onset of gout</li>
+    <li>Less than 10% of patients develop tophi</li>
+    <li>Firm dermal or subcutaneous papules/nodules</li>
+    <li>Skin-colored, erythematous, or yellow-white</li>
+    <li>May have smooth or multilobulated contours</li>
+    <li>Surface may ulcerate and drain fluid or chalky material</li>
+    <li>Common locations: skin overlying joints and ear helix</li>
+  </ul>
+</div>
+  </div>
+  <details>
+    <summary>Extracutaneous Manifestations</summary>
+    <div class="details-content">
+      <ul>
+        <li>Uric acid nephrolithiasis - acute renal failure</li>
+        <li>Most commonly seen in the setting of tumor lysis syndrome</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Diagnosis</summary>
+    <div class="details-content">
+      <ul>
+        <li>Typically made during an acute attack of arthritis</li>
+        <li>Joint fluid aspiration → urate crystals</li>
+        <li class="mcq">When examined by polarized light microscopy, urate crystals exhibit <strong>negative birefringence</strong> (change color from yellow to blue)</li>
+        <li>24hr urine collection - detect risk of nephrolithiasis</li>
+        <li>X-ray → "punched-out" erosions with sclerotic "overhanging" margins, but no osteophytes</li>
+      </ul>
+  <h4>Histopathology</h4>
+  <ul>
+    <li class="mcq">Biopsy specimen needs to be placed in an <strong>ethanol-based fixative (Carnoy's fluid)</strong></li>
+    <li>Deposits of amorphous material within the dermis and subcutis</li>
+    <li>These deposits contain needle-like clefts (which represent dissolved urate crystals)</li>
+    <li>Surrounded by granulomatous inflammation</li>
+    <li>Secondary calcification or ossification can be seen</li>
+    <li class="mcq">Upon staining with <strong>20% silver nitrate solution</strong>, the crystals appear <strong>black</strong></li>
+    <li>De Galantha stain → brown-black</li>
+  </ul>
+</div>
+  </details>
+  <details>
+    <summary>Treatment</summary>
+    <div class="details-content">
+      <p><strong>For acute gout:</strong></p>
+      <ul>
+        <li>NSAIDs (indomethacin 50 mg TID) or colchicine</li>
+        <li>Intra-articular or systemic steroids</li>
+      </ul>
+  <p><strong>For chronic gout:</strong></p>
+  <ul>
+    <li class="mcq">Allopurinol and febuxostat</li>
+    <li>Protein and alcohol avoidance</li>
+    <li>IL-1 blockers</li>
+  </ul>
+  
+  <p><strong>In tumor lysis syndrome:</strong></p>
+  <ul>
+    <li>IV rasburicase</li>
+  </ul>
+  
+  <p><strong>Goal:</strong> Maintenance of serum uric acid ≤6 mg/dl</p>
+</div>
+  </details>
+</section>
+<section id="pseudogout" class="container">
+  <h2>Pseudogout</h2>
+  <ul>
+    <li>Clinically indistinguishable from gout</li>
+    <li>Caused by deposition of calcium pyrophosphate (CPPD) crystals</li>
+    <li>Associated with osteoarthritis (most common), hyperparathyroidism, and hemochromatosis</li>
+    <li class="mcq">On polarized microscopy, exhibits <strong>positive birefringence</strong> (in contrast to gout's negative birefringence)</li>
+  </ul>
+</section>
+<section id="lipoid-proteinosis" class="container">
+  <h2>Lipoid Proteinosis</h2>
+  <div class="mcq">
+    <p><strong>Inheritance:</strong> Autosomal recessive</p>
+    <p><strong>Mutation:</strong> ECM-1 (extracellular matrix protein 1)</p>
+  </div>
+  <p>Deposition of hyaline-like material in the skin, larynx, oral mucosa, and CNS</p>
+  <p>In CNS involvement, sickle-shaped/bean-shaped calcification within the amygdalae is seen on imaging</p>
+  <details>
+    <summary>Clinical Features</summary>
+    <div class="details-content">
+      <div class="mcq">
+        <ul>
+          <li>The <strong>first clinical finding</strong> is a <strong>weak cry</strong></li>
+          <li>The <strong>most common finding</strong> is <strong>hoarseness</strong></li>
+        </ul>
+      </div>
+  <p>Cutaneous lesions appear within the first 2 years of life, in stages:</p>
+  
+  <h4>First Stage</h4>
+  <ul>
+    <li>Vesicles and hemorrhagic crusts on the skin of the face and extremities</li>
+    <li>Resolves with icepick-like scars</li>
+  </ul>
+  
+  <h4>Second Stage</h4>
+  <ul>
+    <li>The skin becomes diffusely thickened and develops a yellow hue</li>
+    <li>Papules, plaques, and nodules may appear anywhere</li>
+    <li class="mcq">Involvement of the <strong>eyelid margin</strong> is highly testable</li>
+    <li>Verrucous lesions may develop on the elbows, knees, and hands</li>
+    <li>Alopecia of the eyebrows and eyelashes</li>
+    <li>Corneal ulcers may occur due to infiltration of the eyelids</li>
+    <li>Tongue involvement leads to macroglossia</li>
+    <li>Involvement of the frenulum leads to restricted motion of the tongue → inability to protrude the tongue</li>
+    <li>Recurrent parotitis can occur due to occlusion of the salivary duct</li>
+  </ul>
+  
+  <h4>Other Manifestations</h4>
+  <ul>
+    <li>Dental → tooth hyperplasia or aplasia, typically lose their teeth at an early stage</li>
+    <li>Neurologic manifestations include seizures, learning disability, amygdala dysfunction, and intracerebral hemorrhage</li>
+  </ul>
+</div>
+  </details>
+  <details>
+    <summary>Pathology</summary>
+    <div class="details-content">
+      <ul>
+        <li>Amorphous, eosinophilic mostly acellular hyaline material vertically oriented in the papillary dermis</li>
+        <li>The hyaline surrounds the adnexal structures and contains collagen (type II and IV) and laminin</li>
+        <li>PAS-positive and diastase-resistant</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Treatment</summary>
+    <div class="details-content">
+      <ul>
+        <li>No curative treatment available</li>
+        <li>Steroids have some beneficial effects</li>
+        <li>Plastic surgery and dermabrasion have been successfully performed</li>
+        <li>Acitretin, D-penicillamine, and dimethyl sulfoxide (DMSO) have shown limited benefits in some reports</li>
+      </ul>
+    </div>
+  </details>
+</section>
+<section id="colloid-millium" class="container">
+  <h2>Colloid Millium</h2>
+  <details>
+    <summary>Types & Etiology</summary>
+    <div class="details-content">
+      <p><strong>Four subtypes:</strong> adult, juvenile, pigmented, and nodular</p>
+      <ul>
+        <li>Adult colloid milium is the most common type</li>
+        <li>Occurs in middle-aged whites with significant sun exposure</li>
+        <li>May be associated with petrochemicals exposure</li>
+        <li>Juvenile type develops before puberty, and AD/AR forms exist</li>
+        <li>Pigmented type is associated with topical hydroquinone or phenols</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Pathogenesis</summary>
+    <div class="details-content">
+      <ul>
+        <li>Exact mechanism unknown</li>
+        <li>Sun exposure plays a role in adult type</li>
+        <li>Photo-induced damage to elastic fibers is the theory, with colloid being the final product of degenerated elastin</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Clinical Features</summary>
+    <div class="details-content">
+      <ul>
+        <li>Multiple, dome-shaped translucent to yellow or yellow-brown papules</li>
+        <li>Found on chronically sun-exposed sites</li>
+        <li>Face (especially periorbital), ears, posterolateral neck, and the dorsal hands</li>
+        <li>With minor trauma, lesions can become hemorrhagic</li>
+        <li>In pigmented type, grouped gray-brown papules are present on the face</li>
+        <li>In nodular type, skin-colored to yellowish nodules or plaques develop, often on the face</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Pathology</summary>
+    <div class="details-content">
+      <ul>
+        <li>Nodules composed of homogeneous eosinophilic colloid material in the papillary dermis</li>
+        <li>Clefts and fissures within the nodules</li>
+        <li>Grenz zone is often present, as well as solar elastosis</li>
+        <li>Positive for crystal violet, Congo red and thioflavin T (amyloidosis-like)</li>
+        <li class="mcq">In adult type, <strong>negative pan-cytokeratin stain</strong> is helpful in distinguishing from amyloidosis (positive in juvenile type)</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Treatment</summary>
+    <div class="details-content">
+      <p>Local destructive methods are the primary treatment approach</p>
+    </div>
+  </details>
+</section>
+<section id="mucopolysaccharidoses" class="container">
+  <h2>Mucopolysaccharidoses (MPS)</h2>
+  <p>A group of inherited disorders characterized by deficiencies of enzymes involved in the catabolism of glycosaminoglycans (GAGs).</p>
+  <details>
+    <summary>General Features</summary>
+    <div class="details-content">
+      <ul>
+        <li>Most are autosomal recessive</li>
+        <li>Excessive amounts of GAG (mainly Dermatan sulfate & Heparan sulfate) are found in different tissues</li>
+        <li>Leads to coarse facies, intellectual disability, hepatosplenomegaly, skeletal abnormalities, and corneal clouding</li>
+        <li>Cutaneous features are typically non-specific</li>
+        <li class="mcq">Hunter syndrome (XLR, IDS) has characteristic <strong>pebbled ivory-colored plaques between the scapulae</strong></li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Diagnosis & Treatment</summary>
+    <div class="details-content">
+      <h4>Diagnostic Tests</h4>
+      <ul>
+        <li>Examination of urine, peripheral leukocytes, and dermal fibroblasts for excessive GAGs</li>
+      </ul>
+  <h4>Treatment</h4>
+  <ul>
+    <li>Supportive care</li>
+    <li>Enzyme replacement therapy</li>
+    <li>Hematopoietic stem cell transplantation (HSCT)</li>
+  </ul>
+</div>
+  </details>
+  <details>
+    
+    <summary>MPS Types and Features</summary>
+    <div class="details-content">
+      <table class="comparison-table">
+        <tr>
+          <th>Disorder</th>
+          <th>Enzyme Deficiency</th>
+          <th>Stored Material</th>
+          <th>Inheritance</th>
+          <th>Neurologic</th>
+        </tr>
+        <tr>
+          <td>MPS I H, Hurler</td>
+          <td>α-L-Iduronidase</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+          <td>AR</td>
+          <td>Intellectual disability</td>
+        </tr>
+        <tr>
+          <td>MPS I H/S, Hurler/Scheie</td>
+          <td>α-L-Iduronidase</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+          <td>AR</td>
+          <td>Mild intellectual disability</td>
+        </tr>
+        <tr>
+          <td>MPS I S, Scheie</td>
+          <td>α-L-Iduronidase</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+          <td>AR</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>MPS II, Hunter</td>
+          <td>Iduronate 2-sulfatase</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+          <td>X-linked recessive</td>
+          <td>Intellectual disability, less in mild form</td>
+        </tr>
+        <tr>
+          <td>MPS III A-D, Sanfilippo A-D</td>
+          <td>Various (A: Heparan-N-sulfatase, etc.)</td>
+          <td>Heparan sulfate</td>
+          <td>AR</td>
+          <td>Severe intellectual disability</td>
+        </tr>
+        <tr>
+          <td>MPS IV A, Morquio A</td>
+          <td>N-acetylgalactosamine-6-sulfatase</td>
+          <td>Keratan sulfate, Chondroitin-6-sulfate</td>
+          <td>AR</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>MPS VI, Maroteaux-Lamy</td>
+          <td>Arylsulfatase B</td>
+          <td>Dermatan sulfate</td>
+          <td>AR</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>MPS VII, Sly</td>
+          <td>β-Glucuronidase</td>
+          <td>Dermatan sulfate, Heparan sulfate, Chondroitin-4 and -6 sulfate</td>
+          <td>AR</td>
+          <td>Intellectual disability, absent in some adults</td>
+        </tr>
+      </table>
+    </div>
+  </details>
+  <details>
+    <summary>Hurler vs Hunter Syndrome Comparison</summary>
+    <div class="details-content">
+      <table class="comparison-table">
+        <tr>
+          <th>Feature</th>
+          <th>Hurler Syndrome (MPS I H)</th>
+          <th>Hunter Syndrome (MPS II)</th>
+        </tr>
+        <tr>
+          <td>Neurologic</td>
+          <td>Intellectual disability</td>
+          <td>Intellectual disability, less severe in mild form</td>
+        </tr>
+        <tr>
+          <td>Liver/Spleen Enlargement</td>
+          <td>+++</td>
+          <td>++ to +++</td>
+        </tr>
+        <tr>
+          <td>Skeletal Disease</td>
+          <td>++++</td>
+          <td>++ to ++++</td>
+        </tr>
+        <tr>
+          <td>Ophthalmologic</td>
+          <td>Corneal clouding</td>
+          <td>Retinal degeneration, no corneal clouding</td>
+        </tr>
+        <tr>
+          <td>Hematologic</td>
+          <td>Vacuolated lymphocytes</td>
+          <td>Granulated lymphocytes</td>
+        </tr>
+        <tr>
+          <td>Other Features</td>
+          <td>Coarse facies, cardiovascular involvement, respiratory compromise, joint stiffness, dermal melanocytosis*</td>
+          <td>Coarse facies, cardiovascular involvement, joint stiffness, distinctive pebbly skin lesions, dermal melanocytosis*</td>
+        </tr>
+        <tr>
+          <td>Inheritance</td>
+          <td>Autosomal recessive</td>
+          <td>X-linked recessive</td>
+        </tr>
+        <tr>
+          <td>Enzyme Deficiency</td>
+          <td>α-L-Iduronidase</td>
+          <td>Iduronate 2-sulfatase</td>
+        </tr>
+        <tr>
+          <td>Stored Material</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+          <td>Dermatan sulfate, Heparan sulfate</td>
+        </tr>
+        <tr>
+          <td>Distinctive Skin Finding</td>
+          <td>None specific</td>
+          <td>Characteristic pebbled ivory-colored plaques between the scapulae</td>
+        </tr>
+      </table>
+      <p style="font-style: italic; margin-top: 10px;">*Note: Dermal melanocytosis is present in both conditions</p>
+    </div>
+  </details>
+</section>
+<section id="histology-table" class="container">
+  <h2>Histologic Features of Disorders with Dermal Deposits</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>Disease</th>
+      <th>Microscopic findings</th>
+      <th>Histochemical stains</th>
+      <th>Special processing</th>
+    </tr>
+    <tr>
+      <td>Gout</td>
+      <td>Dermal deposits of amorphous material with needle-like clefts surrounded by giant cells</td>
+      <td>20% silver nitrate solution: urate crystals appear black and the surrounding tissue yellow<br>De Galantha stain: crystals brown-black</td>
+      <td class="mcq">Best fixative to preserve crystals: <strong>ethanol-based (Carnoy's fluid)</strong></td>
+    </tr>
+    <tr>
+      <td>Lipoid proteinosis</td>
+      <td>Masses of amorphous or laminated hyalin-like material. Vertically oriented in the papillary dermis. Also surrounds capillaries and appendages</td>
+      <td>Contains type IV collagen and laminin<br>PAS-positive and diastase-resistant<br>Alcian blue, hyaluronidase-sensitive<br>Sudan III (+/-)<br>Congo red (usually -)</td>
+      <td>Direct immunofluorescence with anti-ECM1 antibodies to assess protein expression</td>
+    </tr>
+    <tr>
+      <td>Colloid milium (adult form)</td>
+      <td>Nodules of amorphous eosinophilic material in the upper dermis<br>Artifactual clefts<br>Solar elastosis<br>Grenz Zone</td>
+      <td>Stains similarly to amyloid (but not all cases)<br>Congo red<br>Thioflavin T<br>Crystal violet<br>PAS negative<br>Pan-cytokeratin negative</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mucopolysaccharidoses</td>
+      <td>Granules within fibroblasts<br>Large vacuolated cells in sweat glands and the external root sheath of hair follicles (gargoyle cells)</td>
+      <td>Granules within fibroblasts:<br>Metachromasia with toluidine blue and Giemsa<br>Alcian blue<br>Colloidal iron</td>
+      <td>Fixation in absolute alcohol better than in formalin (consider when clinical diagnosis not supported by histologic findings)</td>
+    </tr>
+    <tr>
+      <td>Porphyrias, in particular EPP</td>
+      <td>Perivascular rim of delicate eosinophilic fibrillar material.<br>In chronic lesions, also dense homogeneous deposits</td>
+      <td class="mcq">PAS-positive and diastase-resistant</td>
+      <td>Immunohistochemistry for BMZ components (type IV collagen)</td>
+    </tr>
+    <tr>
+      <td>Calcinosis cutis</td>
+      <td>Irregular masses of deeply basophilic material<br>Variable granulomatous inflammation</td>
+      <td>von Kossa<br>Alizarin red (more specific)</td>
+      <td>May fracture microtome blade<br>May need decalcification solution first</td>
+    </tr>
+  </table>
+</section>
+<section class="container">
+  <h2>High-Yield MCQ Points</h2>
+  <details>
+    <summary>Click to Review All MCQ Points</summary>
+    <div class="details-content">
+      <h3>Gout</h3>
+      <ul>
+        <li>Urate crystals exhibit <strong>negative birefringence</strong> (vs. positive in pseudogout)</li>
+        <li>Biopsy specimen needs to be placed in an <strong>ethanol-based fixative (Carnoy's fluid)</strong></li>
+        <li>Urate crystals stain <strong>black</strong> with 20% silver nitrate solution</li>
+        <li>Treatment of chronic gout: <strong>allopurinol and febuxostat</strong></li>
+      </ul>
+  <h3>Lipoid Proteinosis</h3>
+  <ul>
+    <li><strong>Autosomal recessive</strong> inheritance</li>
+    <li><strong>ECM-1 mutation</strong></li>
+    <li>First clinical finding: <strong>weak cry</strong></li>
+    <li>Most common finding: <strong>hoarseness</strong></li>
+    <li>Involvement of the <strong>eyelid margin</strong> is highly testable</li>
+  </ul>
+  
+  <h3>Colloid Millium</h3>
+  <ul>
+    <li>In adult type, <strong>negative pan-cytokeratin stain</strong> helps distinguish from amyloidosis (positive in juvenile type)</li>
+  </ul>
+  
+  <h3>Mucopolysaccharidoses</h3>
+  <ul>
+    <li>Hunter syndrome (XLR, IDS): characteristic <strong>pebbled ivory-colored plaques between the scapulae</strong></li>
+  </ul>
+  
+  <h3>Histologic Features</h3>
+  <ul>
+    <li>Gout: Best fixative is <strong>ethanol-based (Carnoy's fluid)</strong></li>
+    <li>Porphyrias (EPP): <strong>PAS-positive and diastase-resistant</strong></li>
+  </ul>
+</div>
+  </details>
+  <div style="text-align: center; margin-top: 30px;">
+    <p style="font-style: italic; color: var(--dark);">Created for dermatology board exam preparation</p>
+  </div>
+</section>
+<script>
+  // Simple script to enable interaction with details elements
+  document.addEventListener('DOMContentLoaded', function() {
+    const details = document.querySelectorAll('details');
+    
+    details.forEach(detail => {
+      detail.addEventListener('toggle', function() {
+        if (this.open) {
+          // Close other open details elements (optional - uncomment to enable)
+          // details.forEach(d => {
+          //   if (d !== this && d.open) d.open = false;
+          // });
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mucinoses - Interactive Board Review</title>
+  <style>
+    :root {
+      --primary: #1a5276;
+      --secondary: #f7f9fc;
+      --accent: #2ecc71;
+      --mcq-bg: #fff4dd;
+      --mcq-border: #f39c12;
+      --highlight: #e8f8f5;
+      --card-bg: white;
+      --text: #333;
+      --light-text: #666;
+      --mnemonic: #e8daef;
+      --table-header: #eaf2f8;
+      --animation-speed: 0.3s;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--secondary);
+      padding-bottom: 40px;
+    }
+    
+    header {
+      background: linear-gradient(to right, var(--primary), #2980b9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      font-style: italic;
+      font-weight: 300;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+      margin: 30px 0 20px;
+    }
+    
+    h3 {
+      color: var(--primary);
+      margin: 25px 0 15px;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .mcq-point {
+      background-color: var(--mcq-bg);
+      border-left: 4px solid var(--mcq-border);
+      padding: 12px 15px;
+      margin: 15px 0;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .mcq-point::before {
+      content: "❗️ MCQ";
+      font-weight: bold;
+      color: var(--mcq-border);
+      display: inline-block;
+      margin-right: 8px;
+    }
+    
+    .highlight-box {
+      background-color: var(--highlight);
+      border-radius: 6px;
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid var(--accent);
+    }
+    
+    .mnemonic {
+      background-color: var(--mnemonic);
+      border-radius: 6px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    details {
+      background: white;
+      border-radius: 6px;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+    }
+    
+    summary {
+      padding: 12px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #f8f9fa;
+      border-radius: 6px 6px 0 0;
+      outline: none;
+    }
+    
+    details[open] summary {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    details div {
+      padding: 15px;
+    }
+    
+    ul, ol {
+      padding-left: 25px;
+      margin: 10px 0;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    th {
+      background-color: var(--table-header);
+      text-align: left;
+      padding: 12px;
+    }
+    
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .flash-card {
+      cursor: pointer;
+      position: relative;
+      perspective: 1000px;
+      height: 200px;
+      margin: 20px 0;
+    }
+    
+    .flash-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .flash-card.flipped .flash-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flash-card-front, .flash-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .flash-card-front {
+      background-color: var(--primary);
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .flash-card-back {
+      background-color: white;
+      transform: rotateY(180deg);
+      overflow-y: auto;
+    }
+    
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted #888;
+      cursor: help;
+    }
+    
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .toggle-container {
+      display: flex;
+      margin: 15px 0;
+    }
+    
+    .toggle-btn {
+      background: #f1f1f1;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      flex: 1;
+      transition: all var(--animation-speed);
+    }
+    
+    .toggle-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .toggle-content {
+      display: none;
+      padding: 15px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0 0 6px 6px;
+    }
+    
+    .toggle-content.active {
+      display: block;
+    }
+    
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .icon {
+      margin-right: 6px;
+    }
+    
+    mark {
+      background-color: #ffe066;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+    
+    .quick-nav {
+      position: sticky;
+      top: 0;
+      background: var(--primary);
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      z-index: 100;
+    }
+    
+    .quick-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    
+    .quick-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .container {
+        padding: 10px;
+      }
+      
+      .mcq-point::before {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .quick-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .quick-nav a {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MUCINOSES</h1>
+    <p class="subtitle">Interactive Saudi Board Exam Review</p>
+  </header>
+  
+  <div class="quick-nav">
+    <a href="#overview">Overview</a>
+    <a href="#classification">Classification</a>
+    <a href="#inflammatory">Inflammatory Types</a>
+    <a href="#stains">Staining Techniques</a>
+    <a href="#comparisons">Comparisons</a>
+    <a href="#leonine">Leonine Facies</a>
+  </div>
+  
+  <div class="container">
+    <section id="overview">
+      <h2>Overview of Mucinoses</h2>
+      
+      <div class="card">
+        <h3>Core Concepts</h3>
+        <p><strong>Mucinoses</strong> are disorders characterized by abnormal mucin accumulation in the skin.</p>
+        
+        <div class="highlight-box">
+          <h4>What is Mucin?</h4>
+          <ul>
+            <li>Dermal extracellular matrix component</li>
+            <li>Produced by fibroblasts</li>
+            <li>Jelly-like acid glycosaminoglycans (GAGs)</li>
+            <li class="mcq-point"><mark>Hyaluronic acid</mark> is the most important component:
+              <ul>
+                <li>Never sulfated</li>
+                <li>No core protein</li>
+                <li>Not packaged in Golgi</li>
+                <li>High in fetal skin</li>
+              </ul>
+            </li>
+            <li>Mucin absorbs 1000x its weight in water → maintains dermal salt & water balance</li>
+          </ul>
+        </div>
+        
+        <h3>Histologic Features</h3>
+        <ul>
+          <li>Appears as bluish material between collagen bundles or empty spaces in dermis</li>
+          <li class="mcq-point">Special stains: <mark>Colloidal iron, Alcian blue, Toluidine blue</mark> (CAT); PAS negative</li>
+          <li>Fixation: Absolute alcohol better than normal saline for mucin detection</li>
+        </ul>
+        
+        <div class="mnemonic">
+          <p>✨ Mnemonic: "<strong>CAT</strong>" Stains for Mucin ✨</p>
+          <p><strong>C</strong>olloidal iron (blue)</p>
+          <p><strong>A</strong>lcian blue</p>
+          <p><strong>T</strong>oluidine blue (red/purple)</p>
+          <p>Remember: PAS is negative for mucin!</p>
+        </div>
+        
+        <h3>Pathophysiology & Factors</h3>
+        <ul>
+          <li>Stimulators: Serum immunoglobulins, TNF-α, TGF-β</li>
+          <li class="mcq-point"><mark>IL-1 especially important in tumid lupus</mark></li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="classification">
+      <h2>Classification of Mucinoses</h2>
+      
+      <div class="card">
+        <div class="toggle-container">
+          <button class="toggle-btn active" onclick="toggleContent(event, 'primary')">Primary Mucinoses</button>
+          <button class="toggle-btn" onclick="toggleContent(event, 'secondary')">Secondary Mucinoses</button>
+        </div>
+        
+        <div id="primary" class="toggle-content active">
+          <p><strong>Primary Mucinoses:</strong> Mucin deposition is the main feature</p>
+          <ol>
+            <li><strong>Inflammatory/Degenerative:</strong>
+              <ul>
+                <li><em>Dermal:</em> Scleromyxedema, Lichen myxedematosus, Self-healing cutaneous mucinosis, Scleredema, Localized/Generalized myxedema, Reticular erythematous mucinosis, Papulonodular mucinosis, Cutaneous focal mucinosis, Digital mucous cyst</li>
+                <li><em>Follicular:</em> Follicular mucinosis (Pinkus), Urticaria-like follicular mucinosis</li>
+              </ul>
+            </li>
+            <li><strong>Hamartomatous/Neoplastic:</strong> Mucinous nevus, (Angio)myxoma</li>
+          </ol>
+        </div>
+        
+        <div id="secondary" class="toggle-content">
+          <p><strong>Secondary Mucinoses:</strong> Mucin is an additional feature in another disorder</p>
+          <ul>
+            <li><strong>Epithelial mucinosis:</strong> BCC, rarely SCC, KA, verruca, seborrheic keratosis, MF</li>
+            <li><strong>Dermal mucinosis:</strong> Granuloma annulare, LE, dermatomyositis > scleroderma, mesenchymal tumors (e.g., myxosarcoma, DFSP), neural tumors (neurofibroma)</li>
+            <li><strong>Follicular mucinosis:</strong> Mycosis fungoides, eczematous dermatoses, rare: LE, insect bites, imatinib, familial reticuloendotheliosis</li>
+          </ul>
+          
+          <div class="mnemonic">
+            <p>✨ Mnemonic: "LDS" for Secondary Dermal Mucinosis ✨</p>
+            <p><strong>L</strong>upus erythematosus</p>
+            <p><strong>D</strong>ermatomyositis</p>
+            <p><strong>S</strong>cleroderma</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="inflammatory">
+      <h2>Inflammatory/Degenerative Dermal Mucinoses</h2>
+      
+      <div class="card">
+        <h3>Scleromyxedema</h3>
+        <p><em>AKA papular mucinosis, Arndt-Gottron syndrome</em></p>
+        
+        <ul>
+          <li>Idiopathic, ↑ mucin + sclerosis ("scler-myx")</li>
+          <li class="mcq-point">Nearly all patients have <mark>IgG lambda monoclonal gammopathy</mark></li>
+          <li>Middle-aged adults, both sexes affected</li>
+        </ul>
+        
+        <details>
+          <summary>Clinical Features</summary>
+          <div>
+            <ul>
+              <li>Numerous 2–3 mm firm waxy papules in linear, symmetric arrays</li>
+              <li>Shiny, indurated skin; head/neck, upper trunk, hands, forearms, thighs</li>
+              <li class="mcq-point">Deep farrowing (especially glabella); "Shar-Pei sign" (back); "Doughnut sign" (PIP)</li>
+              <li>Severe face involvement → leonine facies</li>
+              <li>Mucous membranes and scalp typically spared (vs amyloidosis)</li>
+            </ul>
+          </div>
+        </details>
+        
+        <details>
+          <summary>Systemic Features & Complications</summary>
+          <div>
+            <ul>
+              <li>IgG lambda monoclonal gammopathy, <10% progress to myeloma</li>
+              <li class="mcq-point"><strong>Dermato-neuro syndrome:</strong> sudden worsening, flu-like symptoms, fever, encephalopathy → can progress to coma</li>
+            </ul>
+          </div>
+        </details>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <p><strong>Pathology:</strong></p>
+            <ul>
+              <li>↑ mucin, ↑ collagen, irregular fibroblasts (hallmarks)</li>
+              <li>DDx: Systemic sclerosis, scleredema (look for linear infiltrative papules)</li>
+            </ul>
+            
+            <p><strong>Treatment:</strong></p>
+            <ul>
+              <li class="mcq-point">Rule out thyroid disease</li>
+              <li>Rule out systemic involvement & dermato-neuro syndrome</li>
+              <li class="mcq-point"><mark>IVIG = first line</mark></li>
+              <li>Thalidomide/systemic steroids (2nd line, can combine with IVIG)</li>
+              <li>Autologous HSCT (3rd line)</li>
+              <li>Other options: bortezomib+dexamethasone (post-transplant), PUVA, UVA1, retinoids, cyclosporine, electron beam, plasmapheresis, ECP (variable results)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      
+      <div class="card">
+        <h3>Lichen Myxedematosus (Localized Variants)</h3>
+        <ul>
+          <li>Small, firm, waxy papules, limited locations (upper/lower extremities, trunk)</li>
+          <li>Skin only; not associated with sclerosis, paraproteinemia, thyroid, or systemic involvement</li>
+          <li class="mcq-point">May be associated with: HIV, HCV, toxic oil syndrome, L-tryptophan-associated myalgia-eosinophilia</li>
+        </ul>
+        
+        <details>
+          <summary>Clinical Subtypes</summary>
+          <div>
+            <ul>
+              <li class="mcq-point"><strong>Discrete papular:</strong> 2–5 mm symmetric papules, no face/sclerosis/systemic involvement</li>
+              <li><strong>Acral persistent papular:</strong> dorsal hands/extensor forearms, females</li>
+              <li><strong>Cutaneous mucinosis of infancy:</strong> neck, elbows, trunk; not self-healing</li>
+              <li><strong>Pure nodular:</strong> nodular > papular</li>
+              <li>In HIV patients: discrete papular > acral persistent</li>
+            </ul>
+          </div>
+        </details>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <ul>
+              <li><strong>Pathology:</strong> Mucin in dermis, minimal/absent fibrosis, variable fibroblasts</li>
+              <li><strong>Treatment:</strong> No treatment needed in many cases; wait-and-see approach; spontaneous resolution possible</li>
+              <li>TCS/TCI may help; in HIV, oral isotretinoin may be effective</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      
+      <div class="card">
+        <h3>Self-Healing Cutaneous Mucinosis</h3>
+        <ul>
+          <li>Age: 1–15 years</li>
+          <li class="mcq-point"><mark>Periarticular and periorbital subcutaneous nodules</mark></li>
+          <li class="mcq-point"><mark>Mild systemic symptoms: fever, arthralgia</mark></li>
+          <li>No paraproteinemia, bone marrow, or thyroid dysfunction</li>
+          <li>Self-resolves within 1–8 months</li>
+        </ul>
+        
+        <div class="highlight-box">
+          <strong>Recall anchor:</strong> <br>
+          <em>IgG lambda</em> is associated with scleromyxedema & systemic amyloidosis<br>
+          <em>IgG kappa</em> is associated with necrobiotic xanthogranuloma & scleredema (Type II)
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>Scleredema</h3>
+        <ul>
+          <li>Symmetrical, diffuse induration of upper body (thickened dermis, mucin deposition)</li>
+          <li>Pathogenesis: Unknown; glycosylation of collagen, microvascular damage may contribute</li>
+        </ul>
+        
+        <div class="highlight-box">
+          <h4>Types of Scleredema</h4>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Association</th>
+              <th>Location</th>
+              <th>Demographics</th>
+              <th>Frequency</th>
+            </tr>
+            <tr>
+              <td class="mcq-point">Type 1</td>
+              <td>Streptococcal URTI</td>
+              <td>Cervicofacial skin</td>
+              <td>Children/middle-aged women</td>
+              <td>55%</td>
+            </tr>
+            <tr>
+              <td class="mcq-point">Type 2</td>
+              <td>IgG kappa monoclonal gammopathy</td>
+              <td>Cervicofacial skin</td>
+              <td>Women</td>
+              <td>25%</td>
+            </tr>
+            <tr>
+              <td class="mcq-point">Type 3</td>
+              <td>Diabetes mellitus</td>
+              <td>Upper back</td>
+              <td>Men</td>
+              <td>20%</td>
+            </tr>
+          </table>
+          <p>All types: severe skin hardening/thickening ("board-like"), rare systemic involvement</p>
+          <p>Type I resolves spontaneously; Types II & III are chronic</p>
+        </div>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <p><strong>Pathology:</strong></p>
+            <ul>
+              <li>Thickened reticular dermis</li>
+              <li>Large collagen bundles separated by mucin</li>
+              <li>Fenestration of dermis, normal fibroblast number, decreased elastin</li>
+            </ul>
+            
+            <p><strong>Treatment:</strong></p>
+            <ul>
+              <li class="mcq-point"><mark>UVA1 and PUVA are first-line</mark></li>
+              <li>Treat plasma dyscrasia (type II: bortezomib)</li>
+              <li>Strict glycemic control (type III)</li>
+              <li>Physical therapy for disability</li>
+              <li>Steroids/steroid-sparing agents (variable results)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      
+      <div class="card">
+        <h3>Localized (Pretibial) Myxedema</h3>
+        <ul>
+          <li>Cutaneous induration of shins due to mucin deposition</li>
+          <li>Associated with hyperthyroidism (Graves disease); goiter, exophthalmos, acropachy</li>
+          <li>1–5% of Graves patients; can appear post-treatment even if hypothyroid</li>
+          <li>Unknown serum factor (not TSH Ig) incites fibroblasts</li>
+        </ul>
+        
+        <details>
+          <summary>Clinical Features & Diagnosis</summary>
+          <div>
+            <p><strong>Clinical:</strong></p>
+            <ul>
+              <li>Erythematous/violaceous waxy indurated plaques/nodules</li>
+              <li>Peau d'orange appearance, non-pitting edema → elephantiasis</li>
+              <li>Anterolateral lower legs/feet</li>
+            </ul>
+            
+            <p><strong>Differential Diagnosis:</strong></p>
+            <ul>
+              <li>Pruritic dermatoses, lichen simplex chronicus</li>
+              <li>Hypertrophic lichen planus, lichen amyloidosis</li>
+              <li>Lymphedema/lipedema</li>
+            </ul>
+          </div>
+        </details>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <p><strong>Pathology:</strong></p>
+            <ul>
+              <li>Large mucin deposits, thickened collagen</li>
+              <li>Subepidermal grenz zone, stellate fibroblasts</li>
+              <li>Perivascular/periadnexal lymphocytes, mast cells</li>
+            </ul>
+            
+            <p><strong>Treatment:</strong></p>
+            <ul>
+              <li class="mcq-point"><mark>Treatment of underlying thyroid dysfunction does NOT change skin lesion course</mark></li>
+              <li>Screen for thyroid dysfunction</li>
+              <li>Intralesional/topical steroids under occlusion = first line</li>
+              <li>Compression stockings for lymphedema</li>
+              <li>Severe cases: IVIg, rituximab, plasmapheresis, octreotide</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      
+      <div class="card">
+        <h3>Generalized Myxedema</h3>
+        <ul>
+          <li>Severe primary hypothyroidism (not secondary)</li>
+          <li>Decreased mucin degradation</li>
+        </ul>
+        
+        <div class="flash-card" onclick="this.classList.toggle('flipped')">
+          <div class="flash-card-inner">
+            <div class="flash-card-front">
+              <p>Age-Specific Clinical Features of Generalized Myxedema</p>
+              <p>(Click to reveal)</p>
+            </div>
+            <div class="flash-card-back">
+              <h4>Age-Specific Presentations:</h4>
+              <ul>
+                <li><strong>Congenital (cretinism):</strong> dwarfism, mental retardation, somnolence, constipation, poor feeding, periorbital/tongue/lip/genital puffiness, dry/cold/pale skin, brittle nails</li>
+                <li><strong>Congenital (cretinism):</strong> dwarfism, mental retardation, somnolence, constipation, poor feeding, periorbital/tongue/lip/genital puffiness, dry/cold/pale skin, brittle nails</li>
+                <li><strong>Congenital (cretinism):</strong> dwarfism, mental retardation, somnolence, constipation, poor feeding, periorbital/tongue/lip/genital puffiness, dry/cold/pale skin, brittle nails</li>
+                <li><strong>Congenital (cretinism):</strong> dwarfism, mental retardation, somnolence, constipation, poor feeding, periorbital/tongue/lip/genital puffiness, dry/cold/pale skin, brittle nails</li>
+                <li><strong>Congenital (cretinism):</strong> dwarfism, mental retardation, somnolence, constipation, poor feeding, periorbital/tongue/lip/genital puffiness, dry/cold/pale skin, brittle nails</li>
+                <li class="mcq-point"><mark>Clavicular pad is diagnostic</mark></li>
+                <li class="mcq-point"><mark>Associated with maternal povidone iodine use</mark></li>
+                <li><strong>Adolescent:</strong> short stature, delayed development/maturity, hypertrichosis (shoulders/upper back)</li>
+                <li><strong>Adult:</strong> MC, women 40–60, sluggishness, weight gain, cold intolerance, puffy eyelids/lips/tongue/hands, hoarse/slurred speech, pale/waxy/dry skin</li>
+                <li class="mcq-point">Acquired ichthyosis (no sweating), yellow palms/soles (carotenoderma)</li>
+                <li>Diffuse non-scarring alopecia, lateral eyebrow loss, purpura, blue fingertips, delayed healing, xanthomas, myxedema coma (if untreated)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <p><strong>Pathology:</strong></p>
+            <ul>
+              <li>Perivascular/perifollicular mucin</li>
+              <li>Normal fibroblasts</li>
+              <li>Decreased elastin</li>
+            </ul>
+            
+            <p><strong>Treatment:</strong></p>
+            <ul>
+              <li>Thyroxine replacement</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      
+      <div class="card">
+        <h3>Reticular Erythematous Mucinosis</h3>
+        <ul>
+          <li>Overlap with tumid lupus, Jessner's lymphocytic infiltration</li>
+          <li class="mcq-point">Middle-aged women, exacerbated by heat, OCPs, pregnancy, radiation</li>
+          <li>Sun exposure as trigger is controversial</li>
+          <li class="mcq-point"><mark>Fibroblasts stimulated by IL-1</mark></li>
+          <li>Not associated with systemic disorders</li>
+        </ul>
+        
+        <details>
+          <summary>Clinical Features & Diagnosis</summary>
+          <div>
+            <p><strong>Clinical:</strong></p>
+            <ul>
+              <li>Reticulated/annular erythematous papules/plaques</li>
+              <li>Smooth surface</li>
+              <li>Upper chest/back</li>
+            </ul>
+            
+            <p><strong>Differential Diagnosis:</strong></p>
+            <ul>
+              <li>Jessner's lymphocytic infiltration (no mucin)</li>
+              <li>Tumid LE (DIF may help differentiate)</li>
+            </ul>
+          </div>
+        </details>
+        
+        <details>
+          <summary>Pathology & Treatment</summary>
+          <div>
+            <p><strong>Pathology:</strong></p>
+            <ul>
+              <li>Interstitial mucin (upper dermis)</li>
+              <li>Perivascular/periadnexal lymphocytes</li>
+              <li>DIF negative (rarely IgM/IgA/C3 at DEJ)</li>
+            </ul>
+            
+            <p><strong>Treatment:</strong></p>
+            <ul>
+              <li class="mcq-point"><mark>Hydroxychloroquine/chloroquine clears in 1–2 months</mark></li>
+              <li>TCS/TCI, antihistamines, tetracycline, cyclosporine</li>
+              <li>UVB, pulsed dye laser (variable results)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+    
+    <section id="stains">
+      <h2>Histologic Stains for Mucin</h2>
+      
+      <div class="card">
+        <div class="mcq-point">
+          <p><mark>PAS stains positive in basement membrane, fungi, glycogen; negative in acidic mucopolysaccharides (HA)</mark></p>
+        </div>
+        <div class="mcq-point">
+          <p><mark>Colloidal iron stains blue</mark></p>
+        </div>
+        
+        <table>
+          <tr>
+            <th>Stain</th>
+            <th>Target</th>
+            <th>Result</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Colloidal iron</td>
+            <td>Acid MPS (sulfated/nonsulfated)</td>
+            <td>Blue</td>
+            <td>May add hyaluronidase to distinguish types</td>
+          </tr>
+          <tr>
+            <td>Alcian blue pH 2.5</td>
+            <td>Nonsulfated acid MPS (hyaluronic acid)</td>
+            <td>Blue</td>
+            <td>Mnemonic: "HIGH-luronic acid stains at HIGH pH"</td>
+          </tr>
+          <tr>
+            <td>Alcian blue pH 0.5</td>
+            <td>Sulfated acid MPS</td>
+            <td>Blue</td>
+            <td>Hyaluronic acid does NOT stain at pH 0.5</td>
+          </tr>
+          <tr>
+            <td>PAS</td>
+            <td>Neutral MPS (BMZ, fungi, glycogen)</td>
+            <td>Pink</td>
+            <td>Does NOT stain acid MPS (hyaluronic acid)</td>
+          </tr>
+          <tr>
+            <td>Toluidine blue</td>
+            <td>Acid MPS</td>
+            <td>Red-purple</td>
+            <td>Metachromatic; rarely used for mucin</td>
+          </tr>
+          <tr>
+            <td>Mucicarmine</td>
+            <td>Epithelial mucin</td>
+            <td>Pink-red</td>
+            <td>Not good for dermal mucins</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    
+    <section id="comparisons">
+      <h2>Diagnostic Criteria & Comparisons</h2>
+      
+      <div class="card">
+        <h3>Scleromyxedema vs Localized Lichen Myxedematosus</h3>
+        
+        <table>
+          <tr>
+            <th>Feature</th>
+            <th>Scleromyxedema</th>
+            <th>Localized Lichen Myxedematosus</th>
+          </tr>
+          <tr>
+            <td>Clinical</td>
+            <td>Generalized papular eruption, sclerodermoid features</td>
+            <td>Papular/nodular eruption, plaques by papule confluence</td>
+          </tr>
+          <tr>
+            <td>Microscopy</td>
+            <td>Mucin, fibroblast proliferation, fibrosis (triad)</td>
+            <td>Mucin, variable fibroblast proliferation</td>
+          </tr>
+          <tr>
+            <td>Monoclonal gammopathy</td>
+            <td>Present (IgG lambda)</td>
+            <td>Absent</td>
+          </tr>
+          <tr>
+            <td>Thyroid disorder</td>
+            <td>Absent</td>
+            <td>Absent</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    
+    <section id="leonine">
+      <h2>Leonine Facies – Associated Dermatologic Diseases</h2>
+      
+      <div class="card">
+        <div class="highlight-box">
+          <h4>Disorders Associated with Leonine Facies</h4>
+          <ul>
+            <li>Scleromyxedema</li>
+            <li>Lepromatous leprosy</li>
+            <li>Leishmaniasis</li>
+            <li>Cutaneous lymphoma (T-cell, rarely B-cell)</li>
+            <li>Actinic reticuloid (chronic actinic dermatitis)</li>
+            <li>Leukemia cutis</li>
+            <li>Systemic amyloidosis</li>
+            <li>Lipoid proteinosis</li>
+            <li>Mastocytosis (nodular)</li>
+            <li>Sarcoidosis</li>
+            <li>Multicentric reticulohistiocytosis</li>
+            <li>Progressive nodular histiocytosis</li>
+            <li>Pachydermoperiostosis</li>
+          </ul>
+        </div>
+        
+        <div class="mnemonic">
+          <p>✨ Mnemonic for Leonine Facies: "SLICK LAMP" ✨</p>
+          <p><strong>S</strong>cleromyxedema</p>
+          <p><strong>L</strong>eprosy (lepromatous)</p>
+          <p><strong>I</strong>nfections (leishmaniasis)</p>
+          <p><strong>C</strong>utaneous lymphoma</p>
+          <p><strong>K</strong>utaneous leukemias (leukemia cutis)</p>
+          <p><strong>L</strong>ipid disorders (lipoid proteinosis)</p>
+          <p><strong>A</strong>myloidosis (systemic)</p>
+          <p><strong>M</strong>astocytosis (nodular)</p>
+          <p><strong>P</strong>rogressive histiocytic disorders</p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="card" style="margin-top: 40px;">
+      <h3>Quick Review: MCQ High-Yield Points</h3>
+      <ol>
+        <li><mark>Hyaluronic acid</mark> - never sulfated, no core protein, not in Golgi</li>
+        <li>Mucin stains: <mark>Colloidal iron, Alcian blue, Toluidine blue</mark> (CAT)</li>
+        <li><mark>IL-1</mark> especially important in tumid lupus and REM</li>
+        <li>Scleromyxedema: <mark>IgG lambda monoclonal gammopathy</mark></li>
+        <li>Scleredema Type 2: IgG kappa monoclonal gammopathy</li>
+        <li>Localized myxedema: treatment of thyroid dysfunction does NOT affect skin</li>
+        <li>Generalized myxedema: <mark>clavicular pad is diagnostic</mark></li>
+        <li>REM: <mark>hydroxychloroquine clears in 1-2 months</mark></li>
+        <li>Scleromyxedema therapy: <mark>IVIG first line</mark></li>
+        <li>Scleredema therapy: <mark>UVA1 and PUVA first line</mark></li>
+      </ol>
+    </div>
+  </div>
+  
+  <script>
+    function toggleContent(event, contentId) {
+      // Reset all buttons
+      const buttons = document.querySelectorAll('.toggle-btn');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+      
+      // Reset all content divs
+      const contents = document.querySelectorAll('.toggle-content');
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Set active state
+      event.target.classList.add('active');
+      document.getElementById(contentId).classList.add('active');
+    }
+  </script>
+</body>
+</html>

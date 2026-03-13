@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderate to Severe Acne Management - Saudi Board Exam Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .header .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .quick-nav {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-item {
+            background: #f8f9ff;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            padding: 20px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .section-header:hover {
+            background: #f8f9ff;
+        }
+
+        .section-header h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .section-content {
+            padding: 0 30px 30px;
+            display: none;
+        }
+
+        .section.active .section-content {
+            display: block;
+        }
+
+        .high-yield {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6348;
+        }
+
+        .drug-box {
+            background: #f1f3f4;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .drug-box h4 {
+            color: #2E7D32;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .dosage {
+            background: #E8F5E8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #1B5E20;
+        }
+
+        .contraindication {
+            background: #FFEBEE;
+            border: 2px solid #F44336;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #C62828;
+            font-weight: bold;
+        }
+
+        .algorithm {
+            background: #f8f9ff;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .decision-node {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            max-width: 300px;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #667eea;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+
+        .memory-aid {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #667eea;
+            font-size: 1.5em;
+            cursor: pointer;
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .active .toggle-btn {
+            transform: rotate(180deg);
+        }
+
+        .isotretinoin {
+            border-color: #FF5722;
+        }
+
+        .isotretinoin h4 {
+            color: #D84315;
+        }
+
+        .antibiotics {
+            border-color: #2196F3;
+        }
+
+        .antibiotics h4 {
+            color: #1565C0;
+        }
+
+        .hormonal {
+            border-color: #E91E63;
+        }
+
+        .hormonal h4 {
+            color: #AD1457;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Moderate to Severe Acne Management</h1>
+            <p class="subtitle">Saudi Board Dermatology Exam Preparation</p>
+        </div>
+
+        <div class="quick-nav">
+            <h3>📚 Quick Navigation</h3>
+            <div class="nav-grid">
+                <div class="nav-item" onclick="scrollToSection('definition')">Definition & Criteria</div>
+                <div class="nav-item" onclick="scrollToSection('approach')">General Approach</div>
+                <div class="nav-item" onclick="scrollToSection('isotretinoin')">Oral Isotretinoin</div>
+                <div class="nav-item" onclick="scrollToSection('antibiotics')">Oral Antibiotics</div>
+                <div class="nav-item" onclick="scrollToSection('hormonal')">Hormonal Therapies</div>
+                <div class="nav-item" onclick="scrollToSection('variants')">Severe Variants</div>
+            </div>
+        </div>
+
+        <div class="section active" id="definition">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>🎯 Definition of Moderate to Severe Acne</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: No universally accepted grading system exists!
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Know the 4 key features that define moderate to severe acne - they love testing this classification!
+                </div>
+
+                <h3>🔍 Key Features (Remember: "VLMS")</h3>
+                <div class="algorithm">
+                    <div class="decision-tree">
+                        <div class="decision-node">V - Visually prominent acne (many comedones, papules, pustules)</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">L - Large papules/nodules (>5mm diameter)</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">M - Multiple body areas involved</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">S - Scarring present</div>
+                    </div>
+                </div>
+
+                <div class="memory-aid">
+                    <strong>🧠 Memory Aid:</strong> "Very Large, Multiple Scars" = VLMS for moderate-severe acne criteria
+                </div>
+
+                <div class="warning">
+                    ⚠️ CRITICAL: Consider psychological burden! Even "mild-appearing" acne with significant psychological distress should be treated as moderate-severe.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="approach">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>🎯 General Approach & Systemic Therapy Selection</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: Systemic therapy is used to optimize and simplify treatment!
+                </div>
+
+                <h3>📊 When to Use Systemic Therapy</h3>
+                <div class="algorithm">
+                    <h4>🚨 Strong Indications for Early Systemic Therapy:</h4>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>Nodular lesions</strong></li>
+                        <li><strong>Extensive skin involvement</strong></li>
+                        <li><strong>Existing scarring</strong></li>
+                        <li><strong>Psychological disturbance</strong></li>
+                    </ul>
+                </div>
+
+                <h3>💊 Primary Systemic Therapies</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Therapy</th>
+                            <th>Best For</th>
+                            <th>Key Advantage</th>
+                            <th>Major Limitation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oral Isotretinoin</strong></td>
+                            <td>All lesion types</td>
+                            <td>Only drug that can permanently alter course</td>
+                            <td>Teratogenicity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oral Antibiotics</strong></td>
+                            <td>Papulopustular/Nodular</td>
+                            <td>Well tolerated</td>
+                            <td>Resistance development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oral Contraceptives</strong></td>
+                            <td>All lesion types (females)</td>
+                            <td>Contraceptive benefit</td>
+                            <td>Thrombosis risk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spironolactone</strong></td>
+                            <td>All lesion types (females)</td>
+                            <td>Well tolerated</td>
+                            <td>Hyperkalemia risk</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Oral isotretinoin is typically given as MONOTHERAPY, while all other systemic therapies are combined with topical therapy!
+                </div>
+
+                <h3>🎯 Patient Selection Factors</h3>
+                <div class="memory-aid">
+                    <strong>Remember "SPRAVP":</strong>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>S</strong>everity of lesions</li>
+                        <li><strong>P</strong>regnancy status</li>
+                        <li><strong>R</strong>isk factors for adverse effects</li>
+                        <li><strong>A</strong>ge and sex</li>
+                        <li><strong>V</strong>alues and preferences</li>
+                        <li><strong>P</strong>atient clinical manifestations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="isotretinoin">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>🔥 Oral Isotretinoin - The Gold Standard</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: Only acne medication that combats ALL 4 factors in acne pathogenesis!
+                </div>
+
+                <div class="drug-box isotretinoin">
+                    <h4>🎯 Mechanism of Action</h4>
+                    <div class="memory-aid">
+                        <strong>Remember "SIFIC":</strong>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>S</strong>ebum production inhibition</li>
+                            <li><strong>I</strong>nflammation reduction</li>
+                            <li><strong>F</strong>ollicular hyperkeratinization inhibition</li>
+                            <li><strong>I</strong>nhibits C. acnes proliferation</li>
+                            <li><strong>C</strong>omedogenesis inhibition</li>
+                        </ul>
+                    </div>
+
+                    <div class="dosage">
+                        <strong>📊 Standard Dosing:</strong><br>
+                        • Start: 0.5 mg/kg/day<br>
+                        • Target: 1 mg/kg/day<br>
+                        • Total cumulative: 120-150 mg/kg over ~20 weeks
+                    </div>
+
+                    <div class="contraindication">
+                        ⚠️ ABSOLUTE CONTRAINDICATIONS:<br>
+                        • Pregnancy (Category X)<br>
+                        • Inability to comply with pregnancy prevention<br>
+                        • Hypersensitivity to isotretinoin
+                    </div>
+                </div>
+
+                <h3>🚨 REMS Program (iPLEDGE)</h3>
+                <div class="warning">
+                    <strong>Board Fact:</strong> In the US, isotretinoin requires participation in a Risk Evaluation and Mitigation Strategy (REMS) program due to teratogenicity!
+                </div>
+
+                <h3>📋 Common Adverse Effects</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Common Effects</th>
+                            <th>Monitoring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mucocutaneous</strong></td>
+                            <td>Dry skin, lips, eyes, nosebleeds</td>
+                            <td>Clinical assessment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ocular</strong></td>
+                            <td>Dry eyes, night vision changes</td>
+                            <td>Ophthalmologic evaluation if symptoms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hepatic</strong></td>
+                            <td>Elevated transaminases</td>
+                            <td>Baseline and monthly LFTs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lipid</strong></td>
+                            <td>Hyperlipidemia (especially triglycerides)</td>
+                            <td>Baseline and monthly lipid panel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Musculoskeletal</strong></td>
+                            <td>Myalgias, arthralgias</td>
+                            <td>Clinical assessment</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Patients with severe acne are at risk for isotretinoin-induced acne flares! May need glucocorticoid pre-treatment.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="antibiotics">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>💊 Oral Antibiotics</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: Tetracyclines are first-line! Always combine with benzoyl peroxide to prevent resistance!
+                </div>
+
+                <div class="warning">
+                    🚨 CRITICAL: Limit treatment to 3-4 months maximum! Always use with topical benzoyl peroxide!
+                </div>
+
+                <h3>🥇 First-Line: Tetracyclines</h3>
+                
+                <div class="drug-box antibiotics">
+                    <h4>Doxycycline</h4>
+                    <div class="dosage">
+                        <strong>Standard Dosing:</strong><br>
+                        • 50-100 mg twice daily OR 100 mg once daily<br>
+                        • Delayed release: 100 mg q12h × 1 day, then 100 mg daily<br>
+                        <strong>Subantimicrobial:</strong><br>
+                        • 40 mg daily (delayed release) OR 20 mg twice daily
+                    </div>
+                    <div class="contraindication">
+                        ⚠️ Contraindications: Pregnancy, children <8 years
+                    </div>
+                    <p><strong>Side Effects:</strong> Photosensitivity, GI distress, esophagitis, pseudotumor cerebri</p>
+                </div>
+
+                <div class="drug-box antibiotics">
+                    <h4>Minocycline</h4>
+                    <div class="dosage">
+                        <strong>Standard Dosing:</strong><br>
+                        • 50-100 mg daily or twice daily<br>
+                        • Extended release: 1 mg/kg/day (max 135 mg/day)
+                    </div>
+                    <div class="contraindication">
+                        ⚠️ Contraindications: Pregnancy, children <8 years
+                    </div>
+                    <p><strong>Unique Side Effects:</strong> Vestibular effects (headache, dizziness, vertigo), skin discoloration, lupus-like syndrome</p>
+                    <div class="warning">
+                        Not typically first-line due to greater toxicity concerns!
+                    </div>
+                </div>
+
+                <div class="drug-box antibiotics">
+                    <h4>Sarecycline</h4>
+                    <div class="dosage">
+                        <strong>Weight-based Dosing (once daily):</strong><br>
+                        • 33-54 kg: 60 mg<br>
+                        • 55-84 kg: 100 mg<br>
+                        • 85-136 kg: 150 mg
+                    </div>
+                    <div class="contraindication">
+                        ⚠️ Contraindications: Pregnancy, children <8 years
+                    </div>
+                    <p><strong>Advantage:</strong> Narrower spectrum = less C. acnes resistance and gut microbiome disruption</p>
+                </div>
+
+                <h3>🔄 Alternative Antibiotics</h3>
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Alternative antibiotics are reserved for tetracycline failures or contraindications. We rarely use them - prefer to switch to non-antibiotic therapies!
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Antibiotic</th>
+                            <th>Dose</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Azithromycin</strong></td>
+                            <td>500 mg 1-3x/week</td>
+                            <td>Pulse therapy; concern for resistance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Erythromycin</strong></td>
+                            <td>500 mg twice daily</td>
+                            <td>High C. acnes resistance; GI side effects</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TMP-SMX</strong></td>
+                            <td>160/800 mg 1-2x daily</td>
+                            <td>Risk of SJS/TEN</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cephalexin</strong></td>
+                            <td>500 mg twice daily</td>
+                            <td>Limited data</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>⚠️ Antibiotic Resistance</h3>
+                <div class="memory-aid">
+                    <strong>🧠 Key Statistics to Remember:</strong><br>
+                    • C. acnes resistance increased from 20% (1978) to 62% (1996)<br>
+                    • Most common with erythromycin<br>
+                    • Minocycline resistance is rare but emerging
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="hormonal">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>🌸 Oral Hormonal Therapies (Females Only)</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: Goal is to inhibit acne through reducing androgen action on pilosebaceous units!
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Both females with hyperandrogenism AND normal androgen levels can benefit from hormonal treatment!
+                </div>
+
+                <h3>🎯 Appropriate Candidates</h3>
+                <div class="algorithm">
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>Postmenarchal females</strong> with moderate-severe acne</li>
+                        <li>Females with acne-related hyperandrogenism</li>
+                        <li>Females with normal serum androgens</li>
+                        <li>Consider for milder acne if contraception also desired</li>
+                    </ul>
+                </div>
+
+                <h3>💊 Oral Contraceptives</h3>
+                <div class="drug-box hormonal">
+                    <h4>🔬 Mechanism of Action</h4>
+                    <div class="memory-aid">
+                        <strong>Remember "ESIS":</strong>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>E</strong>strogen-mediated sebum suppression</li>
+                            <li><strong>S</strong>HBG increase (reduces free androgens)</li>
+                            <li><strong>I</strong>nhibition of gonadal androgen production</li>
+                            <li><strong>S</strong>ebaceous gland opposition to androgens</li>
+                        </ul>
+                    </div>
+
+                    <div class="dosage">
+                        <strong>📊 FDA-Approved for Acne:</strong><br>
+                        • Ethinyl estradiol 20/30/35 mcg + norethindrone 1 mg<br>
+                        • Ethinyl estradiol 35 mcg + norgestimate 180/215/250 mcg<br>
+                        • Ethinyl estradiol 20 mcg + drospirenone 3 mg
+                    </div>
+
+                    <div class="warning">
+                        ⚠️ IMPORTANT: All low-dose combination OCs are estrogen-dominant and have overall antiandrogenic effect, regardless of progestin!
+                    </div>
+                </div>
+
+                <h3>🌟 Antiandrogenic Progestins</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Progestin</th>
+                            <th>Formulation</th>
+                            <th>Key Studies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Drospirenone</strong></td>
+                            <td>EE 20 or 30 mcg + DRSP 3 mg</td>
+                            <td>OR 3.41 for clear/almost clear skin vs placebo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dienogest</strong></td>
+                            <td>EE 30 mcg + dienogest 2 mg</td>
+                            <td>55% vs 39% lesion reduction vs placebo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cyproterone acetate*</strong></td>
+                            <td>EE 35 mcg + CPA 2 mg</td>
+                            <td>Superior to placebo for lesion reduction</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.9em; color: #666;">*Not available in United States</p>
+
+                <h3>📊 OCs vs Antibiotics Efficacy</h3>
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Meta-analysis shows similar efficacy at 6 months (OCs 55% vs antibiotics 53% lesion reduction), but antibiotics work faster (48% vs 37% at 3 months)!
+                </div>
+
+                <div class="contraindication">
+                    ⚠️ MAJOR CONTRAINDICATIONS:<br>
+                    • History of thromboembolism<br>
+                    • Thrombophilic disorders<br>
+                    • Pregnancy<br>
+                    • Certain cardiovascular conditions
+                </div>
+
+                <h3>💊 Spironolactone</h3>
+                <div class="drug-box hormonal">
+                    <h4>🔬 Mechanism of Action</h4>
+                    <div class="memory-aid">
+                        <strong>Remember "BISHR":</strong>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>B</strong>locks androgen receptors</li>
+                            <li><strong>I</strong>nhibits androgen biosynthesis</li>
+                            <li><strong>S</strong>HBG increase</li>
+                            <li><strong>H</strong>alts androstenedione → testosterone conversion</li>
+                            <li><strong>R</strong>educes 5α-reductase activity</li>
+                        </ul>
+                    </div>
+
+                    <div class="dosage">
+                        <strong>📊 Standard Dosing:</strong><br>
+                        • Start: 25-50 mg daily<br>
+                        • Target: 50-100 mg daily (single or divided dose)<br>
+                        • Higher doses (up to 200 mg) used but limited benefit
+                    </div>
+
+                    <div class="clinical-pearl">
+                        <strong>📋 Board Exam Pearl:</strong> Results in 30-50% reduction in sebum excretion! Response typically seen in 3-5 months.
+                    </div>
+                </div>
+
+                <h3>📈 Key Spironolactone Studies</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Study</th>
+                            <th>Population</th>
+                            <th>Results</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SAFA Trial</strong></td>
+                            <td>410 adult females</td>
+                            <td>19% vs 6% treatment success at 12 weeks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FASCE Trial</strong></td>
+                            <td>133 adult females</td>
+                            <td>Spironolactone superior to doxycycline at 6 months</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retrospective (395 pts)</strong></td>
+                            <td>Ages ≥21 years</td>
+                            <td>66% had ≥90% improvement</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>⚠️ Hyperkalemia Risk</h3>
+                <div class="warning">
+                    🚨 CRITICAL BOARD FACT: Risk of hyperkalemia is LOW in young, healthy women! No routine monitoring needed <45 years if healthy.
+                </div>
+
+                <div class="algorithm">
+                    <h4>📋 Monitoring Recommendations:</h4>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>No monitoring:</strong> Healthy women <45 years</li>
+                        <li><strong>Periodic monitoring:</strong> Women >45 years</li>
+                        <li><strong>Regular monitoring:</strong> Cardiac disease, renal disease, multiple comorbidities</li>
+                        <li><strong>Baseline + follow-up:</strong> Patients on hyperkalemia-risk medications</li>
+                    </ul>
+                </div>
+
+                <div class="contraindication">
+                    ⚠️ PREGNANCY CONCERNS:<br>
+                    • Risk of male fetus feminization<br>
+                    • Advise pregnancy avoidance<br>
+                    • Discontinue immediately if pregnancy occurs<br>
+                    • Often combined with OCs for contraception
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="variants">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>🔥 Severe Acne Variants</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ HIGH-YIELD: Acne fulminans and acne conglobata require special management approaches!
+                </div>
+
+                <h3>🚨 Acne Fulminans</h3>
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Rare, severe form with ABRUPT development of large inflammatory nodules + friable plaques with erosions, ulcers, and hemorrhagic crusts ± systemic symptoms!
+                </div>
+
+                <div class="algorithm">
+                    <h4>🎯 Clinical Features:</h4>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li>Large inflammatory nodules</li>
+                        <li>Friable plaques with erosions</li>
+                        <li>Ulcers and hemorrhagic crusts</li>
+                        <li>±Systemic symptoms (fever, malaise, bone pain, arthralgia)</li>
+                        <li>±Erythema nodosum, leukocytosis</li>
+                    </ul>
+                </div>
+
+                <div class="drug-box isotretinoin">
+                    <h4>💊 Treatment Protocol</h4>
+                    <div class="memory-aid">
+                        <strong>🧠 Remember Treatment Steps:</strong>
+                        <ol style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>Discontinue isotretinoin</strong> if drug-induced</li>
+                            <li><strong>Start oral corticosteroids</strong> (prednisone 0.5-1 mg/kg/day)</li>
+                            <li><strong>Wait before isotretinoin:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>4 weeks if systemic symptoms</li>
+                                    <li>2 weeks if no systemic symptoms</li>
+                                </ul>
+                            </li>
+                            <li><strong>Start low-dose isotretinoin</strong> (0.1 mg/kg/day)</li>
+                            <li><strong>Continue steroids</strong> for ≥4 weeks</li>
+                            <li><strong>Gradually increase isotretinoin</strong> and taper steroids over 4-8 weeks</li>
+                        </ol>
+                    </div>
+
+                    <div class="warning">
+                        ⚠️ TARGET: Cumulative isotretinoin dose 120-150 mg/kg (may need higher for refractory cases)
+                    </div>
+                </div>
+
+                <h3>⚡ Alternative Treatments for Acne Fulminans</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Treatment</th>
+                            <th>Use</th>
+                            <th>Evidence Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oral steroids + tetracyclines</strong></td>
+                            <td>Alternative to isotretinoin</td>
+                            <td>Not as effective; not first-line</td>
+                        </tr>
+                        <tr>
+                            <td><strong>High-potency topical steroids</strong></td>
+                            <td>Adjunctive</td>
+                            <td>Case reports</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cyclosporine</strong></td>
+                            <td>Refractory cases</td>
+                            <td>Case reports</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dapsone</strong></td>
+                            <td>Alternative</td>
+                            <td>Case reports</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anti-TNF biologics</strong></td>
+                            <td>Investigational</td>
+                            <td>Case reports</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🔗 Acne Conglobata</h3>
+                <div class="clinical-pearl">
+                    <strong>📋 Board Exam Pearl:</strong> Severe nodular acne with drainage, sinus tracts, and severe scarring!
+                </div>
+
+                <div class="drug-box isotretinoin">
+                    <h4>💊 Treatment of Choice: Oral Isotretinoin</h4>
+                    <div class="warning">
+                        ⚠️ RISK: Patients may experience severe flares at isotretinoin start!
+                    </div>
+                    
+                    <div class="dosage">
+                        <strong>📊 Modified Protocol:</strong><br>
+                        • Low initial doses (≤0.5 mg/kg/day)<br>
+                        • ±Systemic glucocorticoids before/during therapy<br>
+                        • Gradual dose escalation as tolerated
+                    </div>
+                </div>
+
+                <h3>🧬 Emerging Therapies</h3>
+                <div class="memory-aid">
+                    <strong>🧠 TNF-Alpha Inhibitors in Case Reports:</strong>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Etanercept</strong> - Case reports of improvement</li>
+                        <li><strong>Adalimumab</strong> - Documented benefit</li>
+                        <li><strong>Infliximab + isotretinoin</strong> - Combination therapy</li>
+                    </ul>
+                    <p style="color: #666; font-size: 0.9em;">*Further study needed before routine recommendation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="summary">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>📋 Summary & Board Recommendations</h2>
+                <button class="toggle-btn">▼</button>
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    ⚡ ULTRA HIGH-YIELD: Master these key recommendations for board success!
+                </div>
+
+                <h3>🎯 Grade 2C Recommendations (Remember These!)</h3>
+                <div class="algorithm">
+                    <div class="decision-tree">
+                        <div class="decision-node">Early systemic therapy for nodular lesions, extensive involvement, or scarring</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">Oral isotretinoin for severe, extensive, nodular acne</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">Tetracyclines over other antibiotics</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">OCs over spironolactone if contraception desired</div>
+                        <div class="arrow">⬇️</div>
+                        <div class="decision-node">No routine K+ monitoring in healthy women <45 years on spironolactone</div>
+                    </div>
+                </div>
+
+                <h3>🚨 Critical Board Points</h3>
+                <div class="memory-aid">
+                    <strong>🧠 Must-Know Facts:</strong>
+                    <ul style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>Isotretinoin</strong> - Only drug that permanently alters acne course</li>
+                        <li><strong>Antibiotics</strong> - Always limit to 3-4 months + benzoyl peroxide</li>
+                        <li><strong>Pregnancy</strong> - Avoid isotretinoin, tetracyclines, spironolactone, OCs</li>
+                        <li><strong>Resistance</strong> - C. acnes resistance: 20% (1978) → 62% (1996)</li>
+                        <li><strong>Monitoring</strong> - No routine K+ monitoring for spironolactone in healthy young women</li>
+                    </ul>
+                </div>
+
+                <h3>📊 Quick Reference Drug Table</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Drug Class</th>
+                            <th>First-Line Agent</th>
+                            <th>Standard Dose</th>
+                            <th>Key Contraindication</th>
+                            <th>Monitoring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Retinoid</strong></td>
+                            <td>Isotretinoin</td>
+                            <td>0.5-1 mg/kg/day</td>
+                            <td>Pregnancy</td>
+                            <td>LFTs, lipids, pregnancy test</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antibiotic</strong></td>
+                            <td>Doxycycline</td>
+                            <td>100 mg BID</td>
+                            <td>Pregnancy, age <8</td>
+                            <td>Clinical assessment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hormonal</strong></td>
+                            <td>Combined OCs</td>
+                            <td>Per contraceptive dosing</td>
+                            <td>Thromboembolism history</td>
+                            <td>Clinical assessment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antiandrogen</strong></td>
+                            <td>Spironolactone</td>
+                            <td>50-100 mg daily</td>
+                            <td>Pregnancy</td>
+                            <td>K+ if >45 or comorbidities</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🎓 Final Exam Tips</h3>
+                <div class="clinical-pearl">
+                    <strong>📋 Board Success Strategy:</strong>
+                    <ol style="margin: 15px 0; padding-left: 20px;">
+                        <li><strong>Memorize the 4 criteria</strong> for moderate-severe acne (VLMS)</li>
+                        <li><strong>Know isotretinoin</strong> is the only permanent cure</li>
+                        <li><strong>Remember resistance prevention</strong> - always benzoyl peroxide with antibiotics</li>
+                        <li><strong>Understand pregnancy contraindications</strong> for all major therapies</li>
+                        <li><strong>Recognize acne fulminans</strong> and its steroid pre-treatment protocol</li>
+                        <li><strong>Know spironolactone monitoring</strong> - no routine K+ in young healthy women</li>
+                    </ol>
+                </div>
+
+                <div class="warning">
+                    🏆 SUCCESS TIP: Focus on the "why" behind treatments - understand pathophysiology and you'll never forget the clinical applications!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const section = header.parentElement;
+            const allSections = document.querySelectorAll('.section');
+            
+            // Close all sections
+            allSections.forEach(s => s.classList.remove('active'));
+            
+            // Open clicked section
+            section.classList.add('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+            section.classList.add('active');
+        }
+
+        // Initialize with first section open
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.section').classList.add('active');
+        });
+    </script>
+</body>
+</html>

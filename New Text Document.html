@@ -1,0 +1,2142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dermatology Board Review</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --primary-color: #005a9c;
+            --border-color: #dee2e6;
+            --correct-color: #28a745;
+            --review-color: #fd7e14;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background-color: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+            border: 1px solid var(--border-color);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        #progress-tracker {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        #restart-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        #restart-btn:hover {
+            background-color: #c82333;
+        }
+
+        .page-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .section-title {
+            color: #343a40;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-left: 5px solid var(--review-color);
+            padding-left: 10px;
+        }
+
+        .qa-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            box-shadow: var(--shadow);
+            transition: border-color 0.3s ease;
+        }
+
+        .qa-item.correct {
+            border-left-color: var(--correct-color);
+        }
+
+        .qa-item.review {
+            border-left-color: var(--review-color);
+        }
+
+        .question {
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .question::after {
+            content: ' (Click to reveal)';
+            font-size: 0.8em;
+            color: #6c757d;
+            font-weight: normal;
+        }
+        
+        .answer-revealed .question::after {
+            content: '';
+        }
+
+        .answer {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .controls {
+            display: none;
+            margin-top: 15px;
+            text-align: right;
+        }
+        
+        .answer-revealed .controls {
+            display: block;
+        }
+
+        .controls button {
+            border: none;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.1s;
+        }
+
+        .controls button:active {
+            transform: scale(0.95);
+        }
+
+        .btn-correct {
+            background-color: var(--correct-color);
+            color: white;
+        }
+
+        .btn-review {
+            background-color: var(--review-color);
+            color: white;
+        }
+
+        .instructions {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .instructions p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Derm Review</h1>
+            <div id="progress-tracker">Progress: 0/0</div>
+            <button id="restart-btn">Restart</button>
+        </div>
+
+        <div class="instructions">
+            <p><strong>How to use:</strong> Click on a question to reveal the answer. Then, mark if you knew it ("Got it!") or need to study it more ("Review"). Your progress is saved automatically.</p>
+        </div>
+
+        <div id="qa-container">
+            <!-- Content will be dynamically generated by parsing the text file -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rawText = `
+--- START OF FILE ParsedResult (2).txt ---
+
+
+****** Result for Image/Page 1 ******
+MCQs Notes, quick review	
+General derm	
+• AD pathogenesis: TLR-2, others: FcER1A, Beta Defencin 1	
+• PRP prognosis: remit in few years [3yrs]	
+• Macular/Lichen amyloid stains: RCN102, MNF116, LP34	
+• Prevention of food allergy: peanuts at 4-6 months	
+• HES: increased vit B12& tryptase. Cause fo death: cardiac. Gene: FIP1L1-PDGFRA, CR4.	
+Mucosal ulcers → aggressive	
+• Drug induced hyperhidrosis: Donepezil	
+• Pancreatic panniculitis next step: imaging (CT abdomen)	
+• Calciphylaxis next step: X-ray/bone scintigraphy (tech 99)/CT no contast. Gold standard:	
+Skin biopsy. Drug-induce: prednis/warfarin. Stain: Von kossa>ali Z.	
+• Saches in clothes, shoes, furnitures. ACD due to: Dimethyl fumurate	
+• Adherent diabetic blood sugar monitoring ACD: isobornyl acrylate	
+• Colophony ACD: hydrocolloid dressing	
+• Stining nettle; plants causing non-immun contact urticaria: Urtica dioica	
+• Hydroa vacciniform: EBV	
+• Major component of Amyloid deposit: amyloid fibril. (macul. amyloid type of amyl: Keratin)	
+• AGEP MC culprit: Penicillin > CCB (diltiazem) > BB	
+• Woking on juice bare, linear vesicles (phytophotoder.) cause? Lime juice (family name:	
+Rutaceae; lime, lemon, grapefruit, orange	
+Apiaceae (umbr) MC cerely, others: parsley	
+Moraceae: Fig tree	
+• Phytophotoderm: fucocoumarins. 320-400nm	
+• Review ICD plant, ACD plants, rubber allergens	
+• Acquired partial lipoatrophy [Barraquer Simon syndrome]: Low C3 (urine analysis for	
+glomerulonephritis)	
+• PCT next step for evaluating the etiology: Ferritin level. Assoc w: Hep C	
+• Turkish, TMP:SMX, B55, FDE	
+• Gout picture on Rx (they mean allopurinol), population at risk of drug eruption: Korean?	
+• Scleremyxedema: IgG lambda, 1s line: IVIG, dermato neural synd: admit pts	
+• NXG: low CH50, Rx: chlorambucil, melphan, cycloph, syst CS	
+• Bolognia new edition:	
+• IVIG → HCQ → IL steroid	
+If severe recalcitrant/Multiple myeloma: (anti MM): Lenalidomide,	
+bortezomib, carfilzomib, Daratumumab and Dexamethasone	
+HNB2025	
+
+****** Result for Image/Page 2 ******
+• REM: increased IL-1 (sun protect., HCQ, spontan resol. 15 years)	
+• Yellow-orange skin occur in 10% of diabetic patient (carotenemia)	
+• Erythroderma pathology PRP, what to order? Triglyceride (to start iso/acitretin)	
+Drug induced groover: Dabrafenib (BRAF). Flare in: winter	
+Actinic reticuloid; Mimiker: CTCL. Allergen: Lactone. If atopic best Rx: MTX. RX option: PUVA	
+Chronic mucocut. cadidiasis (pustules) Rx: Fluconazole	
+• Hand eczema: 9-cis retinoin acid → alitretinoin 30mg. FDA → Delgo. Cream >=18, Pan JAK	
+No insurance → MTX (cheap)	
+• Chronic ulcer came with dermatitis causes: Neomycin, lanolin, bacitracin	
+• Penile ulcer: foscarnet. Scrotal: All Trans retinoin acid	
+• Notalgia paresth/Macu/lichen amylo next step: Calcitonin (MEN2A) med th / parath / pheo	
+• Hypochromatic vitiligo, distribution: Seborrheic	
+• TEN mortality predictor: low bicar <20 (metabolic acidosis)	
+• MC drug SJS/TEN: allopurinol. Another Q; Sulfasalazine	
+• Erythromelalgia with high PLT, Rx: aspirin/hydroxyurea. Channel defect: sodium	
+• Stills disease asso w high IL-1 → systemic onsent juvenile: Evanescent transient	
+exanthem, anemia, High PLT/WBC, High ferr >4000, -ve RF/ANA. Adult onsent →	
+Violaceous to reddish-brown, scaly, persistent papules and plaques, +carpal ankylosis	
+• Review other auto inflammatory syndromes (p. 114 on MCQs file)	
+• Hyperhidrosis, stain in pathology: CEA. Others: EMA, keratin, GCDFP-15 (apo>ecc)	
+• ANA-ve (SLE), non bacterial endocarditis: Libman Sacks endocarditis (ass w SLE, APLS,	
+malignancies)	
+• Pruritus causing vitamins: Excess → Vit A, B3, cadmium, lead. Low: Vit D	
+• Classic LP: Arabs. Actinic LP: Arabs/Indians. Papuloeryth of Ofuji: Japan (Asians)	
+• Solar urticaria → longer wavelength. PMLE: biphasic response to single wavelength	
+• Xanthoma dissim. (Montgomry), next: SPEP > eye exam. Normal lipids, DI (vassopessin)	
+• Wet wipes use, allergen: Methylisothiazolinone (MIT)/Methylchloroisothiazolinone (CMIT)	
+Rubber allergy eg. Diaper, shoes: Mercaptobenzothiozole	
+• Silver sulfadiazine SEs: reversible leukopenia (incr w Cimetidine), porphyria flare,	
+irritation, localized argyria (irreversible blue gray discoloration)	
+• LL tender nodule on Rx (potassium iodide) developed hypothy; mechanism? Wolff chaikoff	
+• psorlasis vuLgaris: inc involocrin, dec loricin, incr K6/16.	
+• Lamellar icth: incr profil, incr granular layer	
+• Ichthyosis vulgaris: dec. profil, dec KHG	
+• AD: MC posterior subcaps cataract, Most specific: anterior	
+• Venous ulcer: four layers dressing?	
+• Painful/dry wound, best dressing: hydrogel	
+• Post UVB, what increases? TNF-a, IL-6, Nitric oxide	
+• Upper > lower eyelid and lip swelling + goitre, dx: Ascher syndrome	
+• Congenital hypothyroid cause: maternal exposure to povidine-iodine	
+HNB2025	
+
+****** Result for Image/Page 3 ******
+• Bone involvement in Histiocy MC: cranium, in Mastocytosis: Spine, in SAPHO:	
+clavicle/chest wall. In acne fulminant: sternoclavicular.	
+• Granuloma annulare stain: GL-L1	
+• Sarcoidosis stain: CD68	
+• +ve HCV with Mixed cryogl (2/3) next step: RF+ve	
+• Pso on IL-17, +ve IGRA, next step: hx and examination	
+• SubQ nodules chest/arms {sweet? Acne fulminans?}, asso? IBD	
+• Diffuse pigmentation, accentuated palmar creases {Addison}; next step: serum cortisol	
+then ACTH to confirm	
+• Young healthy athlete male, came with nodules on feet/tibia, dx? Surfer nodule [due to	
+minor repetitive trauma]	
+• Elderly male, nursing home, general itch, rx? ECP (MF)[correct] vs Ivermectin (scabies)	
+Blistering	
+0 LABD, Hb 7, Rx: sulfapyridine > antibiotic (dicloxacillin, tetra >gyrs, erythrom, TMP:SMX). Drug	
+induced: vanco> ACEl (capto), Penicillins, cephalon, NSAID. Spont remission: 10-15%. Course	
+of CBDC: 2-4 years, Drug induced: 2-6 weeks, 50% persist. Starting dose of dapsone in	
+children: 0.5 mg/kg, optimal: 1-2mg/kg	
+• Course of non b. Impetigo: 2 weeks (chin lesion), bullous: 6 weeks	
+• Bullous impetigo cause: local exfoliatoxin A (chromos), B (plasmid) cleave Dsg1 EC3,4.	
+• MRSA: SCCmec → mecA → РBP2а	
+• Comatose pt, eccrine gland necrosis, Rx: frequent position change	
+IBD pt acral blisters [EBA], target location? COL7 [sublamina densa], MC ass: crohn, HLADR4	
+P. foliaceous: gen. pig esophagus/ human skin [Desg 1]	
+epidermolysis bullosa simplex migratory circinate: KRT 5	
+friction blister split: sub GRANULAR	
+DH avoid? Wheat, rye, barely	
+P. gestationis target? BPAG2 NC16A. Spare: MM. Risk of blister in baby: 10% and mortality:	
+15-35%. Recurrence: 50%, skipping: 5-8%. 75% flare at labor. DIF: linear C3 (100%) Highest	
+risk blood group: Group A	
+• Ocular MMP Rx: cyclophosphamide. Ocular lesions only: a6b4	
+• Newborn with blister (b. impetigo), cause: toxin mediated (against dsg1 ECD3,4)	
+• PNP spare? SCALP. Next step: PFT > CT chest. Cause of death: Bronch. Obliterans. Screen	
+for occult malignancy (1/3 of pts): CT CAP, SPEP, LDH, periph blood, flow cytometry	
+• IP refer to: ophtha	
+• PV on 20 predo, fever & leukocytosis (?infectino), safest/best option: IVIG (ritux and predo not	
+safe with infections)	
+• Dapsone: early side effect: anemia. Neuro SE: Distal motor.	
+• Vs Thalidomide : Prox Motor & distal sensory	
+• Acral blisters at birth with GRANULATION tissue {JEB}, asso w: Dental enemal pits	
+HNB2025	
+
+****** Result for Image/Page 4 ******
+• Urticarial itch elderly pt, DIF -ve (pephegoid incipiens), next step: ELISA (most specific and	
+correlate with disease activity)	
+MM pemphigoid best DIF site: mucosal of normal appearing skin.	
+Hailey hailey pregnant lady: NELTREXONE (TLR and calcium metabolism), other non pregnant	
+options: Alitre >iso/acit, Botox, Zinc oxide paste on folds	
+Drug induced BB with +ve rechallenge: furosemide & spironolactone	
+• LP pemphigpodes DIF: BPAG2 on BM and roof	
+• PV to fetus: transient (6 months passing abs)	
+Hemiplegia with Subepid blister (coma blister), DIF: -ve (0% +Ve). Histo: Subepid blister +	
+necrosis of eccrine glands	
+LABD: -ve ELISA	
+DH: -ve IIF	
+• РСТ: -ve IIF.	
+• FDA approved in DEB, JEB:	
+• FDA approved in erythropoietic protoporphyria: afamelanotide. Non: carot, choles,	
+Rheumatology	
+• Scleroderma what incr? same as Morphea (trapped glands, hylaized collag)	
+Increase Profibrotic cytokines: TGF-b, CTCGF, PDGF	
+• CXCL4 levels (High level indicate pulmonary progression)	
+• Th2-predominant (IL-4 & IL-13)	
+• Schinzler rx? IL-1 [anakinral, next step: SPEP	
+1. Recurrent non-pruritic wheals, intermittent fever, bone and joint pain, sensory motor	
+neuropathy, hyper IgM gammopathy = schnitzler $, next? Spep, rx? IL 1 anakinra	
+2. Fever, urticaria, arthritis ( poly) , lymphadenopathy, hyperferritinemia ,leukocytosis,	
+aniema = adult onset still disease, risk of ? HLH/MAS 15% vs juvenile 5%, rx? IL 1 and 6, for	
+HLH IV> cs 3. Episodic angioedema with eos, weight gain and fever + high eos = gleich	
+syndrome, rx? IL5	
+4. Recurrent urticaria, deafness, myalgia, arthralgia = muckle-wells syndrome, association	
+? Amyloidosis AA, Mx? CIAS, Rx? IL1	
+5. Leukocytoclastic vasculitis with diffuse interstitial neutrophils, dif: perivascular and	
+basement membrane zone ig and c3 deposition = urticarial vasculitis, next? Complement	
+level	
+• Persistent urticaria >6 months (urticarial vasculitits), next step: complement. MC extracut:	
+joint	
+Lupus tumidus: -ve ANA	
+• Jessner: lympho, CD8, less mucin, -ve DIF	
+Neonatal lupus, next step: ECG (death 20%). Review topic	
+HNB2025	
+
+****** Result for Image/Page 5 ******
+• Levido reticular + neuro dx? Sneddon syndrome. Rx: warfarin INR 2-3	
+• Review Drugs induced lupus (p. 167 on MCQ file)	
+• Pt with IgA vasculitis, next step: CT chest (solid organ tumor: lung) (review p. 170 MCQ file)	
+• Eosinophilic fascitis (shulman) rx: syst steroid 1-2mg/kg taper 6-24 mo	
+• Dx: fascial bx + MRI	
+• a/w eosinophilia, hypergamma, ESR. Pancytopenia (r/o BM abnormlaities)	
+• normal complement and ANA	
+Linear atrophic sclerotic pla. Over joint (linear morphea) asso/Rx? Eosinophilia + MTX.	
+• Poor prognostic factor in morphea: Male, Child, Linear, generalized, positive	
+serology, eosinophilia, Unresponsive Tx	
+• Other asso: ssDNA, anti histone	
+• post transplant with Eosinophilic fascitis-like GVHD rx? JAK inh + Bruton Tyk inh	
+• lupus + mental illness, what med caused cardiac arrest? HCQ (HCQ+SSRI) → cardiac	
+complications	
+• calcinosis cutis: creST→ diSTal, DM → proxiMal	
+• review DM antibodies and associations	
+• sjogren most specific ab: alpha Fodrin	
+• systemic sclesosis cause of mortality: Pulmonary. Poor prognostic factors: Black, Male,	
+Older age at diagnosis, Internal involvement at diagnosis (Esp. Lungs), Skin fibrosis of trunk	
+, High ESR.	
+• Scleroderma with pulmo rx? MMF, FDA approved (ninetadinib, tocilizumab)	
+• DM cause of death: pulmo > malignancy > cardiac	
+• RA with leg ulcer, neutropenia, splenomegally [felty], risk of: lymphoma, leukemia. Rx?	
+G-CSF / splenectomy	
+• Review risk of SLE in different lupus variants: DLE → 10-20% (loca 5-15%, gene 15-25%)	
+• Rheum nod rx: ILS > sugery (recurrence). Drug induced? MTX, TNF-a, CS tapering	
+• Effective in CCLE (DLE): anifrolumab > belimumab / rituximab	
+• Asthma, pupura (churge struass) rx? Cycloph +steroid (severe)/mepoliz (mild)	
+• Wegenr rx? Rituximab (FDA)> Cyclophasphamide. What to order? C-ANCA anti s. proteise	
+3 (granular cytoplasmic staining) → highly specific	
+RA + lesions on elbow, path: LCV + palisaded granuloma with basophilic degenration	
+dx? Palisaded neutrophilic granulomatous dermatitis (asso w Wegener (+C-ANCA)	
+• HSP: adult vs children. To reduce Gl/arthritis → steroids, reduce skin → dapso./colchicine.	
+Rapidly progre glumerulon → IVIG	
+• Vs. DRESS; steroid reduce cardiac pulmonary	
+• Lumbar hemangioma; next? ECG (to start propranolol)	
+• Review propranolol (MC SE: sleep dist), atenolol, nadalol (P. 187 MCQ file)	
+• Pathology of GOUT, Rx for prophylaxis?	
+• Allopurinol, febuxostat (chronic and for prophylactic for gout)	
+• Fixation: ethanol-based fixative, such as Carnoy's fluid.	
+HNB2025	
+
+****** Result for Image/Page 6 ******
+• Special stains: 20% silver nitrate (appear black), the De Galantha stain we*	
+(appear brown/black)	
+• Relapsing polych next stap: PET scan	
+The most common causes of death are pneumonia, systemic vasculitis, airway	
+collapse and renal	
+•A comprehensive evaluation for systemic involvement, including a PET scan, should	
+be performed prior to initiation of therapy.	
+• Review path (look for cartilage) p. 197 MCQ file)	
+• Rx: prednisolone, dapsone, colchicine, indometh, MTX, AZA, CsA, cycloph	
+• Neonatal lupus refer to? Ortho (chondro dys punctata)	
+•  L Riga fede syndrome (neonate with mouth plaug with path heavy of eosinophils and	
+CD30+), refer to? Neurologist (a/w cerebral palsy)	
+• levamisole-induced vasculitis/vasculopathy: a/w neutropenia/lymphopenia, APLS, P-	
+ANCA. Stop → resolve. Can induce Pyoderma gang.	
+Behcet cause of death? Pulmo. Poor prognosis: neuro	
+• Raynaud's treated (CCB), SE? edema, AGEP, gigval hyperplasia	
+Best predictor for secondary Raynaud phenomenon is abnormal capillaroscopy	
+(they brought >10 attachks per day suggesting 2ry)	
+Raynaud phenomenon and hand edema (the most common and early and	
+persistent sign)	
+• 2ndry: asymmetrical exceed to MCP vs Primary: symmetrical not exceed MCP	
+• PAN MC cause of death: HTN and renal failure (no lung, no glumerulonephritis.) a/w P-	
+ANCA (not all), leukocytosis and anemia.	
+• RA pt; what indicate nerve biopsy? Palbable purpura	
+• EED: ass HIV. Have ocular and joint	
+• Pathology; rx: dapsone	
+• Bil. Dorsal hands plaques; pathology findings? (Look at p. 199)	
+• Erythema elevatum diutinum (EED) > Late: perivascular storiform fibrosis	
+("onion skin fibrosis")	
+• → Intracellular lipidosis, previously termed "extracellular cholesterolosis",	
+is a classic finding in late-stage lesions	
+Scleroderma with Rayn + ulcers; rx to prevent ulcer? Bosentan (endoth rec antago)	
+Painful lesion on foot and ankle scenario with no clinical photo or pathology pictures,, Path	
+report: Hyalinization with fibroid thrombosis of Blood vessels What is true ? (2022)	
+A. Stroke	
+B. Response to anticoagulant	
+Answer: B (need double check)	
+→ Case of livedoid vasculopathy, not clear choices but B is true and	
+• Kimura disease (a/w painless swelling, glumerulonephr, nephrotic, hight eosi,|gE)? |gG4	
+• Highest risk of SCLE to SLE: papulosq, leukopenia, ANA/dsDNA, loc Acute lup.	
+HNB2025	
+
+****** Result for Image/Page 7 ******
+• Patient with lupus what is the Highest site for positive predictive value of non-lesional lupus	
+band test? (2024)	
+A. Buttocks	
+B. Chest	
+C. Back	
+D. Face	
+Answer: Most sensitive is D, most specific is A	
+Nail, Oral, Hair	
+• Post partum Telogen effluvium (Tel hair 20-50%) a/w: delayed anagen relase	
+• (less than 20%: androgenic alopecia)	
+• (more than 50%: in AA, trichotillomania, traction alopecia)	
+• Trichotillomania; dermoscopy, pathology, Rx: behvioral, clomipramine, n-acetyl, neltrexone	
+• Dermosc of follicular plug, dx: DLE.	
+• Path → follic plug + BM thick. + mucin + peri isthmus lymph infiltr	
+• Path; peribulbar lymph infilt; (AA);dermo finding? Yellow dots (black, exclamation)	
+AA photo; assoc with? Pinck scaly plaqu on antecubital (Atopic derm). AA MC association?	
+Vitiligo. Clinical/path, type of calles? Lympho > eosino. Familial AA (ULBP3) a/w:	
+thrombocytopenia. 1st cell: CD8	
+• Netherton: tric. Invaginata (specific), sample from EYEBROW, defect in CORTEX	
+• Path of eosinophilic follic, next step: HIV testing	
+• Black dot on the toe, dx? Tungiasis. Rx: surgical / ivermectin + tetanus proph. Complications?	
+Gangrene, tetanus, amputation	
+• CCCA on steroid, what to add? Minocycline. Ass w? PADI3 mut. Path: onion like premature	
+desquam. Of the ORS.	
+• Path of LPP, what agent works on peroxisome proliferator-activated receptors (PPARs)?	
+Pioglitazone (SEs: bladder cancer, wt gain, hepatotox., CHF, bone frac in women)	
+• LPP 3 patches photo, rx? Severe > 10% → HCQ. <10% → top/ILS	
+• Pathology dx? LPP (lichenoid infilt around infund + vacualar changes)	
+• PPAR-y antagonists (e.g., pioglitazone) esp if patient is DIABETIC	
+• FFA; no classic LP, Dutast/finasteride if menapausal, a/w early menapause women	
+• Rapidly progressive FFA → oral steroid	
+• Path of zoon balanitis (lichenoid inf + plasma cells + lozenge shape kcs) cure/rx? Circumcsion	
+(others: Tacro, potent steroid, CO2, vaginal estrogen for women)	
+• Hocky stick with ruffled prox cutilce trichoscopy [loos asangen]: young blod haur girl who	
+never got a hair cut with painless pull of hair.	
+• Asso with IRS defect and proximal cuticle ruffles.	
+• Ass w Noonan	
+• No interevention is needed.	
+• Hypoplastic nail + triagnular lunula [Nail patella, HOOD, AD/LIMX1B], next step: Urine	
+analysis then Pelvic x-ray	
+HNB2025	
+
+****** Result for Image/Page 8 ******
+• a/w hypoplastic patella, nephropathy, posterior iliac horn, glucoma and Lester iris	
+(hyperpig papillary margin.	
+• Yellow nail: 20 nails, absent lunular and cuticle. a/w penicillamine	
+• a/w brochiectasis, effusion, lyphedema, chronic pulmo infe, sinusitis	
+• rx not effective: Vit E, itraconazole, fluconazole	
+• Fordyce; rx: reassurance. Location: upper vermilion lips and buccal mucosa	
+• Open comedones/vellus hair on the nose (Trichostasis spinolusa), rx: Long Pul Alex, others:	
+short pulse alex, pulse Diode	
+• Acne keloidalis/pseudofollic barbe rx: Long pulsed ND-YAG 1064, stop shaving	
+• Pic of Trachyonychia (sand pepper), a/w: hypergranulosis (LP), tass w:AA, Ecz, Ps	
+• Drug induced? Lichenoid medications: HCTZ, B- blockers, ACE inhibitors,	
+Antimalarials Gold salts (could triggernitrogen reaction), TNF-a inhibitors, NSAIDs,	
+Penicillamine, Quinacrine (appear shorter time 4-6weeks)	
+• Average latency period of 12 months	
+• Delayed resolution takes 4 months (gold up 2 years)	
+• Darier; giant cells in nail bed. Type of mut: Missense mut (MC and severe)	
+• Acute paronychia presentation, what increase risk of infectino spread? Reduced/absent SubQ	
+fat between nail and bone	
+• Green nail rx: Topical sodium hypochlorite 2%, others: cipro, gentam. Which is not a rx?	
+Avoidance of bleach	
+• Review pili torti and assoiations	
+• Pt with deafness and photo showing twisted hair (pili torti), dx? Bjornstad. Jule es	
+Mol? AR, gene? BCS1L. If ass w hypogonadism, dx? Cradnell.	
+• Ambrass (chrom. 8, might have gingiv hyperplasia) vs zemmer man syndrome on p. 227 MCQ	
+file.	
+• Acquired hypertrichosis lanuginose: Malignant Down → MC: lung ca, others: breast, colon.	
+• Review congenital hypertrichosis table P. 228 MCQ file.	
+• Case of genenralized hypertichosis with no internal involv, similar thx (resolved),dx?	
+Generalzied hypertrichosis lanugonosa	
+• Brown nails, cause? Scopulariopsis brevicaulis	
+• Longitudinal melanonychia (lateral nail black discoloration): Scytalidium	
+• Black nails: proteus mirabilis	
+• White nails: Acremonium, aspergillus, fusarium	
+• Myxoid cyst path, a/w: OA, longit groove. Rx: scleroth, cryo, ILS (recurr), Methyl. Blue	
+• Path verruciform xanthoma, locations? Oral>scrotal. A/w GVHD, PV, CHILD, DLE, E. bulousa,	
+Lich scle., lymphedema.	
+• oral contact derm allergens irritant vs allergic (flavoring, dental, anesth) p237	
+• Median rhomb glossitis, rx: top/oral antifungal. a/w candida, DM, HIV.	
+• Darier path, MC oral location: hard palate. Other dis same area: melanoma, SLE.	
+• Necrotizing ulcerative gingivitis asso oraganisms: p.241 MCQ file	
+• Suture on. Mucusal surface: vicryl	
+• (1) 5-0 silk (2) 5-0 polyester or 5-0/6-0 polyglactin 910 (vicryl)	
+HNB2025	
+
+****** Result for Image/Page 9 ******
+• P. 243 oral pathology (white spong vs verruciform xanth vs SCC)	
+• Doxorubicin induced melanonychia and sticky skin	
+• Cytarabine induced eccrine neutrophilic hidradenitis and (toxic erythema of cchemo) Ara C	
+• Drug induced Longitudinal melanonychia: zidovudine, antimalarials, minocycline, gold,	
+doxorubicin	
+• Chromonychia of the proximal half. Whatis the cause? Cyclophosphamide or vincristine	
+(Both)	
+• HLA association p. 242 (oral ulcerative LP w Hep C: HLA DR6) Hep C (atrophic ulcer. and erosive)	
+SCC→1-2% MC oral LP: reticular, BIL buccal. Plauq → smok.	
+• Koilonychia → Bleach	
+Infectinos	
+• Review Dr Nadya for ticks on my notes	
+• FDA for molloscum: Berdazimer topical gel (nitic oxide releasing releasing)	
+• Genital warts, rx MoA? Inhibit microtubule's function [podophyllotoxin]	
+Lyme: Salp 15, warthin starry. Rx? <8 years?. Look at p. 307 (pregnant w path/clini)	
+Case of plantar red plaues, painful? [Pseudomonas Hot Foot Syndrom], cause is:	
+Bacilli (Gram-negative rod (Bacilli) aerobic bacteria, grows well in aqueous envir.)	
+Path: verrcuous TB	
+HFMD best dx: nasoph PCR. MC: A16, A6: atypical, generalized, onychomad, ecz	
+coxch. Ent:A71: cardiopul/neuro. Entero(coxch) pathology: upper epidermis	
+vesiculation w necrotic kcs + reticular degeration, upper epidermis spared.	
+Herpes path, inclusion type? intraNUCLEAR Cowdry A (eosino) aka Lipschutz body	
+Gianoti crosti: reassure (3-6 wks). Cause: EBV > Hep B	
+Papular purpuric glove and stocking: reassure (1-2 wks). Cause: Par B19 > EBV	
+Toxic shock syndrome: low BP, Low PLT, Low PT (DIC). Stept TSS (leg pain)	
+Stept TSS mortality: 30-60% (RX: clinda + fasciotomy) vs staph TSS: <3%	
+Culture +ve: Step TSC >50% vs < 15%	
+SSSS mortality: <5yrs =4% vs adult >50%	
+• HUS/TTP caused by? Valacyclovir, esp in HIV	
+• Valacyclovir: check? PLT & creatinine	
+• Extensive HSV in lips, rx? 7-10 days of:	
+Valacyclovir 1g BID	
+• Acyclovir 400TID/20x5/d	
+• Famciclovir 250 TID/500BID	
+• Eryth infectiousum [lacy] Par B19 (not infect once rash appear) a/w: low retic (aplastic crisis)	
+• Pic of peripheral organism in histio? Leishmania (Marq. Sign)	
+• Child with facial verru plaue (leishmania), fluco dose? 6-8mg/kg x6wks (itra	
+7mg 3 w)	
+HNB2025	
+
+****** Result for Image/Page 10 ******
+• Leishmaniais grows on Nicolle-Novy-MacNeal media or chick embryo media	
+• Cardaic pt, rx? Miltefosine [gout risk]. (Avoid pent. Antim. and Penatidimine)	
+• AML on chemo, nodules, cause? candida albicans [P.255 MCQ file]	
+• Splendroe hoppl. Foot lesion, cause? Staph ar. (Botryom) CD4<250. Rx:clinda/surgl	
+• +ve PAS, Giemsa, Gram	
+• JAK in SE? zoster	
+• Trichodysp spi.: poyomav. dsD(good prog. In Merkel), Rx: cido, ganci/valganc. Path+	
+• Myasis path; dx, rx? Suffocation (no extraction)	
+Lao lao [loiasis: Mango fly [Chrysops], Migratory warms on eye,	
+• Calabar swellings → focal migratory angioedema of hands,	
+• Rx: Diethycarbamazine. If used in onchocerciasis → Mazzoti reaction:	
+• Fever, urticaria,swollen and tender lymph nodes, tachycardia,	
+hypotension, arthralgias → give DOXYCYCLINE	
+• Lumpy jaw (actinomy.) next step? Panorama x-ray. Rx: penicillin iv2-6w. yellow gran.	
+• Review syphilis diagnosis	
+•	Pregnanct with RMSF, rx? Doxy is preferred over rifampin	
+HIV with resistent HSV, rx? Foscarnet (SE: penile ulcer). Defect in Thymidine kinase	
+• 1ry HSV location: buccal/gingiva. Recurrent MC: vermilion	
+• Koplik spot [mess/rubEOla], delayed complication? Subacute sclerosing panencephalitis	
+• Congenital varicella (1st 20 wks of gest) vs neon. Varicella (5 d b/f 2 d after)	
+• Exposure proph in pregn/compromised → w/in 4 days varic. IVIG	
+• Dissimintated zoster/varicella → airborne prec. (gown,N95, goggles..)	
+• Anthrax rx? Ciprofloxacin/moxiflox. > doxy x>2weeks. Mortality dec. from 20 to 0%.	
+• All flouroquinolone excreted by ks exc. moxifloxacin	
+Virulence of the organism:	
+• Polysaccharide capsule	
+• Edema toxin: increase CAMP	
+• Lethal toxin: increase IL1B, TNF-a > shock and death	
+• Painful hemorrhagic blister with cellulitis + hypotension, Dx? Vibrio.	
+• Organism and risk: male>40, DM, liver, hemochroma, sickler	
+• Drink Contaminated seawater/shellfish parahaemolyticus	
+• Exposed to wound with vulnificus	
+• Next step? Iron.	
+• Rx: Oral TCN/doxycycline + cephalosporin [IV/IM]	
+• Path of Rhinoscleroma (hebra nose) → Russell bodies & Mikulicz cell.	
+• Rx? TCN x 6mo +/- surg → cipro	
+• Mikulicz cell: Foamy cell contains bacteria, seen w Warthin-Starry, Giemsa	
+HNB2025	
+
+****** Result for Image/Page 11 ******
+• Russell bodies: Plasma cell (eosinophilic inclusion) due acclamation of Ig,	
++PAS, Gimsa, gram, silver	
+Malakoplakia (UTI:E.coli, HSCT ass w HIV), perianal lesion. Path: von Hansemann	
+cells contain Michaelis-Gutmann bodies (von kossa +). Rx: Cipro, TMP:SMX	
+HIV eryth w cen. Necr. Anoge/ext (ecthyma gangr./pseumonas), pathogenesis? Perivascular	
+invesion and release of exotoxin, sparing the INTIMA → septic vasculitis → iv aminog (strep)	
+• Poor prognosis: neutropenia	
+• Blood and wound cuture: +Ve, vs ecthyma	
+• Lemon-/knuckle-brass path; dx? Rx? Presentation?: lobomycosis, surgi., keloidal	
+• Aka Keloidal blastomycosis	
+• No culture	
+Mexico. Ear and distal ext	
+Rx: surgical, if widesoread add: clofazamine + itraconazole	
+Eumycotic mycetoma grains: white/white yellow/black. Rx: debrid + itrac months/yrs	
+Chromoblastomycosis: verrucous. (Fonseaca Pedrosi), risk SCC, no bone invasion, Medlar	
+bodies (Copper bennies). Cult: Black velvety colony. RX: debrid + itrac +/- flucyt.mini. 6mo	
+Verrucous/sporotrichoid lesion on the wrist (florist, wood, alcohol) → Sporotrichosis	
+(cut + lymph). Asteroid body [Splendore-Hoeppli] + cigar shaped + flower like conidia.	
+Rx: itraconazole 3-6mo. Others: supersaturated Potassium iodide, common SE	
+is Gl > thyroid suppression	
+Systemic → amph. B. Preganant: Cryotherapy. Responsible moss: sphagnum	
+Bil tender LL nodules (EN), with palmar target lesions; (Coccioidomycosis vs	
+Histoplasmosis) rx? Asymptomatic and self resolve. Symptomatic → itracon.	
+Severe Amph B	
+Both CD4 in HIV <250, a/w STAT1, IFNyR1	
+Coccidio: no capsule, thick wall wherules with endospores. EN prog good	
+Histoplas: pseudocapsule, round w clear halo. Spiny macroconidia	
+• Dissimin → MC presentation: oral ulcer	
+Paracoccioid → oral and peri oral, painful + cerv LDP. Micky mouse/marine wheel	
+(spiny, clear central). Rx: mild → TMP/SMX. Itrac, amph B	
+Path of Blastomycosis (round yeast, braod based budding with thick double	
+walls), rx + duration? If mild → itraconazole, +CNS→ amphot. 6 months	
+• Verrucous pla with central ulceration	
+• Risk of osteomyelitis	
+o path of gelatinous and another of soap buble like: dx? Crypt. neoformans. CD4<250	
+• Could be gelatinous, soap bubble, granulomatous	
+• Rx? Amphot. B + flucyteine. Mild fluconazole. Death? Meningioenc.	
+• Capsule staining: Alcian blue, Mucicarmine stain, India ink stain	
+HNB2025	
+
+****** Result for Image/Page 12 ******
+Central yeast stain: PAS	
+• Review other opportunistic fungal (asper, fusar., mucur [zygo], hyphomy, ..)	
+• → path Mucormycosis/zygomycosis, DM is the most major risk factor other is	
+neutropenia	
+• Both Zygo/aspergi. seen with DM and burn.	
+• Zygomycosis: 90 degree branch " wider" ,non-septate,	
+• Rx: Debrid + Amphotericin B, posaconazole, or isavuconazole	
+• Aspergillosis: 45-60 branch and septate.	
+- Rx: Voriconazole and caspofungin > Amphotericin B	
+• STDs	
+Syphilis diagnosis and rx	
+• Chancroid (H duc.), pain, Giemsa: school of fish, Rx: Azithro → ceftriax.	
+Gran. Ingui. (kles. Trachoma.), painless, beefy, +LDP, Giemsa:	
+Donovan/safety pin (rod shap in histiocytes). RX: azithro/ cipro.	
+Lymph G. Ven. (chlamydia): 1-painless ulcer 2-painful LN Bubo 3-ano gen	
+rectal syndrome. Giemsa: Gamma Favre (basoph inclusions) . Rx: Doxy.	
+• Gonorrhea: (N. gono.): Arthritis dermatosis syndrome (acral pustules),	
+urethritis, Culture: chocolate agar in 10% co2, Thayer Marten. Rx: ceftria.	
+• Complication: Fitz-Hugh-Curtis syndrome	
+Ddx of paratitized histiocytes: 1. Histoplasmosis 2. Granuloma inguinale 3.	
+Rhinoscleroma 4. Leishmaniasis 4. Penicilliosis (Talaromycosis)	
+Bartonella infections p. 280	
+• Oroya fever [carion's disease (verruga peruana resolve 1 mo post rx) scenrio of	
+fever, anemia..] B. bacillifo. MC complication: cardiac. Death: salmonella	
+Bacillary angiomatosis CD4<200: B. henseal (cat flea) (doxy 100 bidx3mo), B. quintana (body	
+louse). Rx? Erythro. 500 TID x3 mo /Doxy 100mg bid 3 m. If endocard: doxy & genta. Stain? War. Starr.	
+Brown macule on palm, rx: Topical ketoconazole (t. nigra)	
+• Azole creams, Whiteld's ointment (typically 6% benzoic acid plus 3% salicylic acid); oral	
+terbinafine if recalcitrant (from Alikhan). Organism? Hortaea werneckii =	
+Phaeoannellomyces wernecki.	
+• Fungal triggers:	
+• → Lobomycosis: dolphin is trigger	
+• → Sporotrichosis: Woodsplinter injury in flourst/alcohol is risk, caused by sphagnum moss	
+• → Histoplasmosis: caused by bat/bird dropping in caves	
+• → Blastomycosis: can be carried by dogs, mississippi river	
+→ Cryptococcus: pigeon	
+• Picture of tick 24 hours attached. Prognosis? Complete resolution (case of Southern Tick-	
+Associated Rash Illness vs Lyme disease) P. 288	
+• Patient with penicillin allergy. What is the treatment? (depends on the scanario)	
+HNB2025	
+
+****** Result for Image/Page 13 ******
+• Streptococcal/staph; macrol. (clindamycin, erythromycin, clarithromycin) CEC	
+• Syphilis: doxycycline, azithromycin, ceftriaxone	
+• % of culture positivity:	
+Cellulitis: 0% → Ill defined exc	
+H influenza [type B] [Gram negative coccobacilli facultative anaerobic ]	
+• (purpule on face in children, +Blood culture, high WBC)	
+• Erysipelas: 5% → Well defined	
+Dracunculiasis: take up to 1 years, drinking from cyclops, Nodules and ulcers on lower	
+extremity. Prevention: water filtration, treatment: removal of worm	
+Gnathostomiasis: from drinking fresh water,eating sushi, migratory urticarial nodules.	
+Eosinophilic panniculitis, can have systemic symptoms. Rx→ albendazole, ivermectin.	
+Different corynebacterium: minitu vs tenis vs sedentari	
+• necrotizing fasciitis (fournier gangrene) x-ray hip, next step → surgical consult	
+• severe pain started on scrotum, pain move to? Supra pubic area	
+• Mortality 50%	
+Forchheimer spots (hard pal. Petechia) can be seen in scarlet fever, rubella, measles, EBV	
+• Scabies:	
+• Oral Ivermectin is Not used in pregnancy, breastfeeding or infant, Least to have	
+resistance so excellent efficacy (can cause CNS toxicity in infant and young	
+children). 200mcg 1,2,8/9,15/22,29	
+Topical ivermectin: skin and eye irritation	
+Permethrin cream 5% 1st line, can be used in pregnancy and infants =>2mo, risk of	
+allergy to sunflower and formaldehyde.	
+Sulfer ointment :the Safest in pregnancy. SE: staining, Irritant and messy odor.	
+Crotamiton: safe in pregnancy and infants	
+Spinosad: single use, >=4 yrs	
+Lindane risk of CNS toxicity in (avoide in pregnancy, preterm, elderly, < 50kg,	
+crusted scabies, hx of seizure)	
+• Pit rosae like scenario but NOT ITCHY, Palmoplantar, dx? 2ry syphilis	
+Mollusc. In HIV: <250 dissiminated. <50 giant. Type? MC2. MC location: face	
+M. canis p. 299, tinea capitis in children rx? Griseafulvin	
+Leprosy: TL: DR2-D3, LL: DQ. Risk of househeld transmission? 25%. Rx?	
+• Multibacillary (more than 5 lesions): 12-month duration: dapsone 100mg daily,	
+clofazimine 50mg daily and 300mg monthly, rifampin 600mg monthly	
+Paucibacillary (less than 5 lesions): : 6-month duration: dapsone 100mg daily,	
+rifampin 600mg monthly	
+• Paucibacillary (Single lesions): single dose of (rifampin 600mg ofloxacin 400 mg +	
+minocycline 100 mg)	
+follow up for 2 years for Paucibacillary	
+Patients are no longer infectious after first or second dose of rifampin	
+Review reactions and treatments	
+HNB2025	
+
+****** Result for Image/Page 14 ******
+• Atypical mycobacteria review. Marinum (31 deg x3wks) → clarithromy (sudden death).	
+Kanassi (photochrome, yellow) MSK others:Marinum, simiae.	
+• Culture medium of atyp. Mycoba.: Ziehl-Neelsen stain; Lowenstein-Jensen	
+Ramsy hunt → geniculate ganglio	
+P. 300-301 Q of blastomycosis and umbilicated lesions	
+Extenssive tinea corporis rx? Flucon.&Gris. 2-4 wks while Itrac & terbin for 1 week	
+Meningiococcemia rx: IV Ceftriaxone 2g q 12h iv for 7 days	
+Patient +ve PPD, treated then developed pain on fingers, cause? Pyrazinamide (B6) [gout]	
+Flaurescence:	
+→ Erythrasma: coproporphyrin ||I	
+• → Acne: coproporphyrin III.	
+• → Ectothrix tinea capitis: pteridine	
+• → Mycobacterium kansasii: from B-caroten crystals	
+• → Photodynamic therapy: protoporphyrin IX (9)	
+• Pityriasis amiantacea MC cause: psoriasis	
+Pediatric/ Genoderm.	
+• EDV: EVER1/TMC6, EVER 2/TMC8. HPV genus B, lack E5. Zinc trasp. Ch17	
+• Transplant, HPV 5,8.	
+• Gray granules in granular layer	
+• Risk of AK, SCC >30yrs >30%	
+• Mastocytosis (Urt pigm) photo, stains?	
+• codon 816 of C-KIT ch. 17	
+• Origin: CD34	
+• Degranulated: leder, CD117 (c-kit)	
+• Granulated: typtase, giemsa, tul. Blue	
+• Metachromatic = Toluidine blue (purpule), Alcian Blue, Giemsa (purpule)	
+• Non-Metachromatic = Leder (red stain)	
+• ІНС: с-KIT(CD117) (membrabous), tryptase (cytoplasmin)	
+• CD25, CD2: neoplastic	
+• Adult; next step is Tryptase	
+• Most common bone area is axial bone: skull, spine, pelvis	
+• The bone is more common in adult, while Gl more common children	
+• HiStamine/IL6- osteoSclerosis > heParin/SCF -osteoPorosis	
+• Gl invol due to: heparin	
+• Food rich in histamine: eggplant, spinch, perm .cheese, alcohol..	
+• Safe anesthesia: local lido, ketamine, propofol, fentanyl, Tylenol	
+• Sclerema neon: preterm,spare genital,P/S. lobular pann needle cleft. Poor prognosis:	
+hypothermia, low birth wt, hemorrhgic pupura. Review SCFN p.311	
+HNB2025	
+
+****** Result for Image/Page 15 ******
+• XG expected stain(Non-LCH): -ve S100, CD207 (langerin), CD1a	
+• +ve: CD68, CD163, HAM56, Factor Xill, CD11b, CD11c, CD14b	
+• Refer to ophtha if: periocular in <2yrs of age or multiple	
+• Single, not periocular: reassurance	
+• Periorbital nodules+swelling ++mucin, rx: reasurance	
+• Self-healing cutaneous mucinosis resolve in 1-8 months	
+• Pathology: deep mucinous deposits with fibrosis and a prominent proliferation of	
+fibroblast-like cells and gangliocytic-like cells.	
+• Venous MF on lower lips, next step: D-dimer (high) (low fibrinogen if severe LIC) (diagram p. 312)	
+• baby with on/off PP vesicles, scabies r/out. Rx: topical steroi/antihstamine. Severe>dapso.	
+• Acropustulosis of infancy (Neutrophil mediated)	
+• → Rule out scabies first → Mineral oil prep for scabies	
+• → Start by 3-6 months, resolve by three years, associated with atopy	
+• Pic of coloboma; other finding? oteopathia striata	Coloboma also seen in:	
+• GOLTZ (focal dermal hypoplasia), XLD PORCN.	Gorlin, TS, CHIME	
+• Blaschkoid linear atrophies + telangiectasia. Red rasperry like papilloma	
+• Aplsia cutis congenita. Alopecia. Absent/enemal hypoplasia	
+oteopathia striata, ectrodactyly (lobster hand)	
+Path: decr/absent dermis	
+• pic of Lips telangiectasia, Mol: AD. (hereditary hem. Telangiectasia./Osler weber rendu)	
+AV malformation. AD TGF-B (type1: Endoglin, pulmo-cerebral) (type 2 ALK, hepatic	
+cardiac) (other: SMAD: Gl juv. Polyposis). Q; pt with endog mut, next? Brain MRI	
+• First: epistaxis. After puberty: telangiectsia (face, lips, oral, P/Soles)	
+• Inv: transth Echo, brain MRI, annual Hb after 35 yrs, if hepatic/cardiac:triph CT/dopl.	
+• Nevus simplex, best next step: reassurance	
+• Brown macules on lips/hands +wt loss, Gi polyps, dx: cronkhite-canada (sporadic)	
+• NAL: nail, alopecia, lentigens. + Gl polyps w diarrhea + malabs	
+• face lesions, path report: comma/worm shaped structures, rx: observation (ben ceph his)	
+sacrral dimples in 4 mo, next? MRI	
+MC spinal dys? Lipoma	
+US if <3 months. MRI if >3 months	
+• Adams oliver (AD → ARHGAP31,NOTCH1, DLL4) (AR → DOCK6, EOGT)	
+• Aplsia cutis [midline], Cutis mar, CNS, Cardiac, trans skeltal defect)	
+• Focal PPK(2nd de), hx of esoph ca, (5th dec)dx? Howel evans. Gene? TOC/tylosis. Mol: AD.	
+• Pic: anonychia, oral leukoker, retic pigm (dysk con/zinnerman col), cause of death: pancyto	
+0 XLR (DKC1), AD/AR (TERT). Tolmerase defect	
+• Path of tricholemm (ORS); a/w? Cowden. Other findings? Macroceph. + follic thy ca	
+• Path of sclerotic fibroma	
+• Cobblestonning MC: lips & tongue vs Hard palate in Darier	
+• Transluscent skin Prominent veins, risk of? Uterine rupture (EDS 4, COL3) (MC sigmoid).	
+• Spon keloid	
+HNB2025	
+
+****** Result for Image/Page 16 ******
+• 5% mortality in females, redced by OCP	
+• Use of celiprolol, a long-acting b1-ant with part b2-agonist (decr. arter. dissect)	
+• Nevus seb pic, MC ass: trichoblastoma	
+• Pic of Cribriform nevus on the sole in MALE, a/w: PROTEUS [AKT1, mosaic]. a/w: Lung cyst	
+(no ovarian in males!!!) → HRCT chest	
+• Dolichocephaly (long narrow head)	
+• DVT in 20%	
+• Impared intell.	
+• Tumors: ovariac cystadenoma (MC), parotid adenoma, meningioma, testicular	
+• Path of steatocytoma; gene? K17 or K6b (PC2)	
+• Premature aging: Werner (adult progeria, AR, RECQL2/WRN) Proger. (Hch Gil, AD LMN A/B)	
+• Werner: normal till 2nd dec, sclerodermoid, chr leg ulcer, mottl. Hypopig., gry hair	
+BIL cataract 99%. Cardiac/maligna (age 50) (osteosarc, soft ti sarc, SCC)	
+Metabolic syndrome atheroscl	
+• Rx: Vit C	
+• Progeria: prem. aging at 6-18 mo → macroc, prom. vein, face sclerod., front boss	
+• Death → cardiac (12 years)	
+• Atheroscalerosis	
+• RX → FDA: Lonafarnib Lis (Zokinvy) =>12 mo, reduce mortality	
+• Path of sebaceoma, next step: colonoscopy (malign b/f skin (prox colon/GU/Glioblast.)	
+• Murre tur. [DNA mismatch]. Review Geno lecture 3	
+• Pt did bifid ribs surgery with multiple skin lesions, MC cancer in child? Medulloblasto.	
+• SUFU gene a/w high risk medulloblas, no odontogenic keratocyst	
+• Gorlin (AD, PTCH1 inhibit smoothened), Review Geno lecture 3	
+• Odontogenic keratocysts of jaw > earliest finding	
+• Screeing: derm at 10, dental and optha at 8, cardiac at dx, brain MRI if SUFU/abn exam	
+• Path of leiomyoma, gene function? Kreb's cycle	
+Reed's syndrome: AD, fumarate hydratase > Krebs cycle related (Cr1) - pa go ja	
+Multiple pilar leiomyomas (arrector pili muscles)	
+• Uterine leiomyomatosis (>90%)	
+• Risk of renal malignancy: Type 2 Papillary RCC 10% (mets >50%)	
+• Investigation: Refer to p. 322 table	
+• If known reed: MRI	
+Next step: US	
+• Oral lentigens (not crossing vermilion lips vs Peutz J., genital lentigens, palmar, no internal	
+invovlemt) dx? Laugier Hanziker. Ddx of genital lent: Banayan Ril., MEN2a	
+• Peutz Jegher: AD, serine threonine, STK11/LBK.	
+Mucosal oral lentigens (not proportionate to Gl polyps)	
+GI polyps (MC: Jeuj, ileum) → intussu. (MC), bleeding, anemia.	
+• Cancer (93% <65yrs): GI [small intes, stomach, esopha, pancr), lung, breast,	
+testicular, uterine.	
+HNB2025	
+
+****** Result for Image/Page 17 ******
+• Colonosc. At 8 yrs → q2 years	
+• HS pt has reticular pigm → Dowling degos, AD, KRT 5, best next step? Genetic tes	
+• HS + DDD = PSENEN gene	
+• a/w → Comedo-like, perioral pitted scar, HS, epidermoid cyst	
+• Haber: w facial rosacea	
+• Galli Galli: subra basilar acantholysis	
+• Pigmento reticularis facie et colli: facial pigment + multiple Epiderm cysts	
+• Rx? QS NDYAG + fractional Co2/Er YAG	
+• Vascular lesions since birth, inc size, low PLTs. Rx?	
+Vincristine plus prednisone or sirolimus (rapamycin)	
+• Kasabach-Merritt phenomenon: KHE, tufted angioma >> angiosarcoma...etc	
+• Pic of angiofibroma, systemic SE of the approved topical therapy (sirolimus/rapamycin)?	
+Acneiform eruption	
+Topical sirolimus → local irritation, acneiform, Cont derm.	
+• Oral sirolimus → "lipids, marrow, mouth (ulcer/mucositis), lungs, liver".	
+Review last Q in p. 325	
+Female w XLD: 50% risk of inheriting regardless of the gender	
+ZERO risk of any born boy (lethal) except in som.mosaicism/chrom abnor)	
+• XLR disaese: risk of having another disease child: 50% risk for male, 0% for female.	
+• Females: 50% risk of carrying the disease	
+• Look p. 361 (Menkes, XLR)	
+• AD (male) risk of having children with same: 50% of any children	
+Dental pits + path. Of angiofib? TS. RX: rapmycin[sirolimus] (review TS GENO lect. 4)	
+Sirolimus improve >6yrs: renal angiomyolipoma, lung lymphangioleiomyomatosis, CNS	
+Lung lymphangioleiomyomatosis mainly in adult female	
+75% spontaneous mutation vs Autosomal dominant mutation	
+Hamartin chromosome 9 q34 (TSC1) vs Tuberin chromosome 16 p13 (TSC2) (MC & sev.)	
+• Tuberin inhibits [mTOR], inhibiting the cell growth and proliferation	
+First: cardiac rhabdomyoma (24-26 weeks) > resolve by 3 yrs [Echo before 3 yrs ]	
+Most common finding: dental pits	
+• First cutaneous lesion: hypopigmentation (few mon) (MC Thumpri/Speci: confetti)	
+MC eye findings? Translucent hamartoma	
+• First CNS: infantile spasm, MC: cortical tubers. a/w: autism	
+Most common cause of death: Seizure then Renal pathology	
+• Poikiloderma on his face, buttocks, arms and legs. He is also noted to have a	
+hypoplastic thumb and no radius, optha exam for? Cataract [Rothmund thomson]	
+Rothmund-Thomson Syndrome (Poikiloderma Congenitale [normal immunity]	
+• REcQL4 (DNA helicase) Risk osteosarcoma 10-30%. And less common	
+(premalig acral keratosis )SCC, Parathyroid adenoma	
+• Alopecia, cataract, elasto PS., hypogonadism, hypopl thumb/radii/ulni	
+HNB2025	
+
+****** Result for Image/Page 18 ******
+Bloom [defective immunity(low M/A)] i Lial| pe} → leukemia, lymphoma, Gl.	
+A/w DM and chronic lung disease (up to 50%). (Q about doing regular CBC)	
+• REcQL2,3 (DNA helicase, sister chrom, Ch15)	
+• Eryth/telangi. CALM (risk of malig). High pitched voice, defect sperms	
+• Both are AR and NORMAL INTELLIGENCE	
+Hoarseness, biopsy report deposition of PAS positive and diastase resistant what is	
+the underlying gene? ECM1, AR [Lipo. Prot]	
+Axon 6 associated with severe condition	
+• What is the radiology finding: calcification of hippocampus/amygd	
+• Warts on hands with recurrent cellulitis. a/w: neutropenia	
+• WHIM syndrome: AD, CXCR4	
+Warts, Hypogammaglobulinemia, Infections (bacterial)/ Immunodeficiency, myelokathexis	
+• Myelokathexis (Neutropenia) (retention of mature neutrophils in the bone marrow).	
+• WILD syndrome → Warts, Immunodeficiency, Lymphedema, Dysplasia (anogenital)	
+• Post wine stain on V2, asymptomatic, next? PDL	
+• If V1 And symptomatic do MRI before age of 1 year with ophthalmology/neurology	
+referral	
+• IfV1 and asymptomatic ophthalmology/ neurology referral and MRI after 1 year	
+• Other indication of MRI: of symptomatic (ophthalmology+neurology) or overlapping	
+more than one dermatomes	
+• Cylidroma path (Jigsaw), a/w: Brooke-Sp. chromosome? 16	
+0 CYLD -> NEMO -> NF-kB, Cr 16, Associated with Spiradenomas, cylindromas and	
+trichoepitheliomas	
+- Oculocutaneous albinism, mutation with SLC45A2, what is the underlying type? OCA4	
+• AR. Normal melanocytes not like WD, Piablad. FDA Rx → Nitisinone (talkaptinuria)	
+• OCA2 MC (P gene (pink eye) TYR +ve, Glutathio. Accum	
+• OCA1 Chr 11. TRR -ve in A, reduced in B.	
+• 1A→ amelanocytic nevi + highest risk of SCC. Non sense/frame shift	
+• 1B→ yellow multant, tempreture sens at low degree (35). Missense mut	
+• OCA3: TRPV1, rufous type	
+• OCA4: >>Japan. SLC 45A2 (MATP)	
+• OCA6: SLC24A5	
+• MEN: AD	
+1 [wermer, MENIN]: collagn., smaller angiofi., lipoms, CALM. Pituit/parathy/pancrea	
+• 2a [sipple,RET]: mac/lich amyl., notalgia par., genital lentig. Parath/medull/pheo	High calcitonin, low ca	
+• 2b [mul. Muco. Neuroma, RET]: muco. Neuroma, marfanoid. Medll/pheo/ Ganglioneuro.	"megacol	
+• Pic of hyper IgE, teeth? Retention of 1 ry teeth	diverti.)	
+• AD: STAT3 (IL6,23,22), low Th17[IL-17]. → Chiari malform., coronary art aneury, B-cell non-Hodgkin	
+• AR: DOCK8: a/w viral infection including EDV, low IgM	
+AR: TYK2: a/w Non tuberculoid mycobacteria infections	
+• Atopy (no allergy risk) + infections (staph, candid)	
+Pulmo: Bronchitis/pneumonitis (staph,Hemoph), pneumatocele (aspergillus risk)	
+Bone: coarse facies, osteopenia (fracture), scoliosis) + retention of 1ry teeth	
+• Labs: x10 Increase in IgE, peripheral eosinophilia	
+HNB2025	
+
+****** Result for Image/Page 19 ******
+• A 25-year-old woman with gray hair of Puerto Rican descent presents with complaints of easy	
+bruising and prolonged bleeding after dental extractions. She also reports progressive	
+shortness of breath on exertion.	
+• Hermansky-Pudlak syndrome = AR.	
+Triad:Oculocutaneous albinism, Bleeding diathesis (due to platelet storage pool	
+defect and lysosomal accumulation of ceroid lipofucin. MCQ), & Systemic	
+complications (pulmonary fibrosis, cardiomyopathy, granulomatous colitis, renal	
+failure due to ceroid accomulation).	
+Skin cancers	
+Avoid aspirin	
+Absent dense bodies in platelets. In type 1 HPS	
+Cause of death is pulmonary fibrosis	
+9 types, MC is HPS2 → AP-3B1	
+• BLOC1: HPS7, HPS8, HPS9	
+• BLOC2: HPS3, HPS5, HPS6	
+BLOC3: HPS1, HPS4: a/w Pulmonary, cardio, granulo. colitis	
+• AP-3: HPS2, HPS10 a/w immunodefi. (cytotoxic T cell CD1) +/- Pulmonary	
+>>neuro	
+• A 7-year-old boy is brought to the clinic with recurrent fever, skin infections, and	
+pneumonia since infancy. His parents note he has always had light skin, silvery-gray hair,	
+and photophobia. PBS: giant granules in PLT. a/w? Periph neuropathy	
+Chediak-Higashi syndrome, AR, LYST: Albinism [normal vision] + recurr	
+infections/immunod. (NK cell) + bleeding (gum, dental, bruise → high PT) +/- neuro	
+degeneration (Periph neuropathy)	
+Small regular melanin clumps	
+Next step: periph. Blood: giant lysosomes in PLT, melanosomes, & neutrophils	
+Accelerated phase 85% (cause of death): (hemophagocytic syndrome (rx: steroid),	
+pancytopenia and lymphocytic infiltration of liver/spleen/lymph nodes)	
+Rx: HSCT (not improve pigmentary or neuro changes	
+• Pic of epidermal nevus, hx of rhambomyosarcoma, dx? Costello. Gene? HRAS	
+• ADHRAS (part of RASAapthies > Neonan, LEOPARD, NF, cardio-facio-cutaneous	
+syndrome)	
+Epidermal nevus	
+• Hypertrophic Cardiomyopathy, pulmonary stenosis	
+• Perioral papiloma, acanthosis nigricans, PPK with curly hair	
+Risk of rhabdomyosarcoma and transitional bladder cancer	
+• Case of linear whorled vesicle in newborn → IP [Bloch-Sulzberger Syndrome]	
+0 XLD. IKGBG (NEMO) gene mutation (activating NFkß)	
+• the first specialty to refer to ? Ophtha > Neurology	
+• Review topic and pathology (Genoder lect 2)	
+• patient present with mutation GJB6 [connexin30], what is the disease? AD, Hidrotic ED	
+(ClousSTON) → Sweating / teeth → Normal. (afftected nail, hair + diff PPK). REVIEW ED GENO1	
+• GJB2: KID, Vohwinkel Syndrome (hearing loss form), Bart-Pumphrey syndrome	
+HNB2025	
+
+****** Result for Image/Page 20 ******
+• GJB3 and GJB4: EKV (pic of EKV, Rx? Retinoid, check if she is on OCP)	
+• A 22-year-old man presents with multiple firm, subcutaneous nodules on the scalp and trunk. He also has	
+several epidermoid cysts and desmoid tumors in the abdominal wall. His dentist notes supernumerary teeth	
+(20%). Colonoscopy performed for abdominal pain reveals multiple adenomatous polyps throughout the	
+colon. Family history is positive for colorectal cancer at a young age. Dx? Gardner, AD, APC (down WNT/b-	
+catn)	
+Timing: Eye [CRRPE → If bilateral (specific and sensitive)] >skin/bone > GI polyposis (100% ca risk)	
+• NSAID reduce risk colon cancer	
+• Gl adenocar, Papillary thyroid ca, hepatoblastoma (children, a-fetaprtn), Adre adenomas, osteochondromas	
+Start coloscopy at 10 yrs annual	
+• Path of fibrofolliculoma, next step? HRCT abdomen (no MRI in choices) for RCC	
+• Birt Hogg dube, AD, FLCN, FAT: fibrofol, achroch., trichodiscoma	
+• Spont. Pneumothorax30%, lung cyst 90%	
+• RCC 15% [annula renal MRI at 18yrs]> Medullary thyroid CA	
+• Photo distributed rash, tremor and ataxia, what is the treatment? Niacinamide	
+• Hartnub; AR, SLC6A19. (pellagra-like, photosens, ataxia, tremors)	
+• Pt with recurrent thrush, found to have hypothyroidism, gene? AIRE	
+Autoimmune polyendocrinopathy- candidiasis-ectodermal dystrophy syndrome [APECED], AR	
+Skin: mucut candic, candida granuloma of face/saclp	
+Al: vitiligo, alopecia, Urticaria	
+Endocrine: HypoPTH (90%) (Major), HypoACTH (80%) (Major), Hypogonadism(30-50%), Thyorid, DM 1	
+Dental enamel hypoplasia → type 1 INF-a abs (100%)	
+Contin. Of Halo. Like with Chronic mucocut. cadidiasis feature(pustules) Rx: Fluconazole	
+Linear lesions of Darier disease, cause: post zygotic mut in ATP2A2	
+Classic → misssense mut	
+• Wischott Aldrich (XLR): Atopy + bleeding + immunodeficiency+ infections + malignancy (by age 10)	
+Labs: High Eosinophils and IgA, IgD, IgE [EAD], and low level of IgG2 and IgM and platelets	
+• +/ atopy, urticaria, cSVV	
+Hepatospl, lyphadenop., non-Hodgkin Lymphoma (large B cell type)	
+• Pic of numerous neurofibromas, next thing to check? BP	
+• Type of BP: essential	
+• Associated vascular tumor? Glomus	
+• Tumors with NF1: Optic glioma (10-15%) (+/- precocious puberty) - Malignant	
+peripheral nerve sheath tumors (3-15%) - Pheochromocytoma (~1%) -Juvenile	
+myelomonocytic leukemia -CNS tumors other than optic gliomas (~5%) -	
+Rhabdomyosarcoma, especially of the genitourinary tract -Duodenal carcinoid -	
+Somatostatinoma -Parathyroid adenoma - Gastrointestinal stromal tumors	
+(GIST) -Breast cancer (~5-fold increased risk in women <50 years of age), &	
+Glomus tumor	
+• A 14-year-old boy is brought to the clinic with a 2-day history of migratory non-itchy rash on	
+his trunk and inner thighs. His parents report that he had a sore throat 3 weeks ago that was	
+not treated. [erythema marginatum], next step? Pediatric referral	
+• Abx will not changes the outcome of the lesion, Skin Associated mainly with carditis	
+• Milky hard lesion on the face, k/c myotonic dystrophy. Gene? Activation of B-catenin	
+• Multiple Pilomatrixoma a/w: myotonic dystrophy>> Rubenstein tay., Turner, Gardner	
+HNB2025	
+
+****** Result for Image/Page 21 ******
+• Xeroderma pigmentosa variant mutation >>> Defective post replication repair, DNA	
+polymerase (with no neuro involvement)	
+A newborn male infant is noted to have large body size, macroglossia, and an umbilical hernia. On exam, he also	
+has ear creases and pits. His abdomen is distended, and ultrasound shows hepatomegaly. During hospitalization, he	
+develops hypoglycemia requiring IV glucose. [Beckwith-Wiedemann syndrome (BWS)]. a/w: Wilms tumor	
+Sporadic > AD, (P57) KIP2 gene vs Megalencephaly capillary malformation → PIKCA	
+Macroglossia, Macrosomia/gigantism	
+Visceromegaly, hemihypertrophy of tissue/viscera	
+Circular depression over rim of helices, linear earlobe crease, facial [midline] capillary malformation,.	
+Omphalocele/exomphalos	
+Neonatal hypoglycemia	
+a/w Wilms tumor (most common) and hepatoblastoma	
+4 days old patient with central scalp defect, what is the investigation to do? CT (no MRI in options)	
+Case of aplasia cutis with hair collar sign	
+Membranous ACC → Most common. MC location:scalp	
+• Small < em, it no hypertrichosis with no vein > no neurovascular involvement > no need imaging: heal	
+within the first few months (Atrophic/hypertrophic scar)	
+• Large lesions > 4-5 cm or neurovascular involvement: need surgical intervention with preoperative	
+imaging	
+• CT first to check defect then MRI, however in infant avoid CT due radiation exposure	
+• Elevated a-fetoprotein, acetylcholinesterase early sign of ACC in pregnancy	
+a/w Methimazole, APLS, infections Others: carbimazole , LMWH, valproic acid, misoprostol	
+MIDAS: XLD HCCS gene, ACC from mid cheek to bridge of nose. Microphthalmia,	
+Delleman syndrome: crescentic shape on neck, also a/w → orbital cyst	
+• Accessory tragus: Typical covered by vellus hair › communicate with auditory canal	
+a/w treacher collin, Goldenhar	
+• Accessory nipple a/w? Becker	
+Path of accessory nipple, asking diagnosis, Location? Along milk lines	
+Conge. Lip pits; communicate with salivary glands	
+•	Bilateral acromion dimples a/w? 18q deletion	
+• Diffuse angiokeratoma, eye findings: Corneal opacities (cornea verticillate)	
+Fabry: XLR, a-galactosidase A. REVIEW PATH OF ANGIOKERATOMA	
+Leading accumulation defect in glycosphingolipid metabolism (mainly over vascular endothelium)	
+[Accumulation of Ceramide trihexoside]	
+Skin:	
+Acral pain and paresthesia /osteopenia/arthralgia	
+Episodic acral vasospasm resembling Raynaud	
+Angiokeratoma corporis diffusum (mainly between umbilical and knee)	
+Linear telangiectasia (face, lips, oral)	
+Hypo Hidrosis (some time hypotrichosis)	
+Ocular: corneal opacities (cornea verticillata)	
+Systemic → Cardiac {hypertrophic/arrhth], CVS [TIA], GI, Renal: birefringent urine lipid	
+globules Malteese cross (risk of renal insufficiency > requiring dialysis	
+FDA rx: Recombinant A galsidase-a/b, Megalostat (adult, avoid if GFR <30)	
+Fucosidosis: AR, A-fucosidase. Same as Fabry in Angiokeratoma and conreal	
+No renal No cardiac	
+0 +CNS +ENT	
+Elevated sweat chloride	
+• Dystostosis multiplex, and neurologic deterioration with associated hypomyelination	
+Sinupulmo infections	
+• Hypothyroidism cause in IH? Increase 3 iodothyronine deiodinase related to consumption hypothyroidism	
+Increase Indoleamine 2-3 dioxygene present in proliferative phase	
+HNB2025	
+
+****** Result for Image/Page 22 ******
+• Glumeruloid hemangioma path; (PEOMS), MC tumor: osteo. Multiple myeloma	
+• MC cutaneous: hyperpigmentation	
+• Serum protein electrophoresis: monoclonal & light chain.	
+‹Acquired digital fibrokeratoma similar/identical histology to Periungual fibroma (Koenen tumor)	
+• Poliosis of hair, Huscbrung, dx: Waardenburg. Gene: SOX10	
+• Features: All 4 Types	
+• Depigmented patch on the forehead w/ white forelock (poliosis)	
+• Congenital deafness	
+- Heterochromia irides, synophrys, broad nasal root, and dystopia canthorum.	
+1: AD PAX3. + deafness uncommon	
+• 2: AD MITF. Absent dytopia canthurom. Deafness is common	
+• 3: AD PAX3. tupper limbs anomalis	
+• 4: AD SOX10/AR Endoth. 3/R. + hirschsprung	
+• Scenario of refsum, rx instructions? Low fat diet	
+• AR, PEX7 (excess phytanic acid). Children: PEX1,2,6	
+• a/w:	
+• Ichth-vulgaris like	
+• Retinitis pigmentosa (night blindness, progressive vision loss)	
+• Deafness	
+• Ataxia, Peripheral neuropathy (distal weakness, sensory loss)	
+• Cardiac conduction defects, arrhythmias	
+• Rx: diet low in green vege. Dairy product, fat, fat fish, tuna (improve neuro NOT RETINAL)/	
+Orlistat	
+• Sjogren larsson:	
+• AR, ALDH33 > encode FALDH (encoding fatty aldehyde dehydrogenase) →Involved in synth	
+of epider. lipids & Catabolism of sphingolipids in the brain	
+• Congenital ichthyosis w intense pruritus (Leukotrienes B4 accumulation Rx → Zileuton)	
+Spasticity / neurologic impairment (esp. spastic diplegia/quadriplegia) + Intellectual disability w	
+White matter disease	
+•	Perifoveal glistening white dots	
+Pic of facial cheecks erythema, thin low density hair, KID syndrome, cancer risk? SCC 10-20% by age 25	
+AD, GJB2, connexin 26	
+Keratitis progressive, ichthyosis with stippled diffuse PPK +facial/extensor, SNHL. Nail:leuko	
+• Complications:	
+- Malignancy: oral & cutaneous SCC 10-20% age 25, epidermal cysts, proliferating	
+pilar tumors	
+• Infections: sepsis, CANDIDA	
+• Rare report: Dandy-Walker malformation	
+• Reticular pigmentation with non scarring alopecia, gene? K14, AD	
+• Naegeli-Franceschetti-Jadassohn Syndrome vs Dermatopathia Pigmentosa Reticularis (DPR)	
+• Similarities:	
+• AD, K14	
+• Reticulate pigmentation (NFJS: improve/ DPR: persist)	
+• PPK and loss of dermatoglyphics	
+• Differences:	
+• NFJS: dental vs. DPR: non scarring alopecia	
+• Pic of cutis marmorata telangiectatica congenita, risk of: Glucoma	
+Pedigree of parents not affected (Carrier), Single child affecte, syndrome? Tay (they want AR inheritance)	
+HNB2025	
+
+****** Result for Image/Page 23 ******
+• Bazex syndrome (acrokeratosis paraneoplastica): Acral psoriasiform plaque (mainly violaceous)	
+• Mainly over nose and helices, Nail ridging → 75%	
+• Malignancy: most common is (Q) upper digestive ( Pharynx, esophagus) > (Q) SCC type →	
+next step? endoscopy./ age appropriate cancer screening	
+• Bazex-Dupré Christol: ACTRT1 gene XLD	
+• Multiple BCC 40%, Multiple Trichoepithelioma	
+• Milia, Hypotrichosis, epidermoid cysts	
+Follicular atrophoderma back of the hands and feet or on the cheeks	
+Hypohidrosis to anhidrosis (localized above neck)	
+• Naxos is plakoglobin and RVH. Carvajal is desmoplakin and LVH	
+Pt w Aortic dissection, skin lesions → elasto per. Ser., what is the mutation? Fibrillin1 (marfan)	
+infantile hemangioma, all markers present except? Placental lactogen	
+• + →GLUT1, Lewis Y antigen, merosin, and FeyRII, WT1(negative in conge. and vascu malf)	
+Vohwinkel.	VS	Bart pumphery	VS	Loricin keratoderma	
+AD GJB2 Connexin 26	AD GJB2 Connexin 26	AD Loricrin	
+Honycomb PPK +/- pseudoainhum	Honycomb PPK +-pseudoainhum	Same as vohwinkel	
+Starfish keratosis on knuckles	Knuckle pads	No deafness	
+Hearing loss	Hearing loss + leukonychia	
+Pathology of Epidermolytic ichthyosis, gene? AD, K1/10 (K1 → PPK)	
+At birth: Erythroderma with blister and erosion	
+• At later infancy: cobblestone hyperkeratosis	
+Posture and gait abnormalities	
+Path: Ortho-hyperkeratosis, Intracellular vacuolization of keratinocytes, Prominent granular layer	
+with clumped keratin filaments [KIF]	
+• Multiple hyperpigmented lesion pathology showed fusiform cell, in deep dermis with no dermal sclerosis	
+(another hint given for epithelioid blue nevus given), what is the next step? Echo (caney → atrial myxo)	
+Tumors and Neoplasms	
+Path and pic of Lymphangioma cicuscriptum; stain? D2-40	
+• Lymphatic marker: D2-40 (podo), PROX1, LYVE1, VEGF3	
+Leser trelate, a/w? Gastic ca +/colon	
+• 40% pruritus, 20% acnthosis	
+• Tripe palms:	
+• If associated with acanthosis nigricans: GI cancer [Gastric]	
+If not associated with acanthosis nigricans: Lung cancer	
+Resolved papules on arms with variolliform scales, Isst lines rx? MTX (LyP, CD30+)	
+• Scarring? → MTX 5-20mg/w → radiotherapy	
+Non scarring → observe	
+Another case of ulcerative nodule what CD to order > CD30	
+Patient with Ulcerative nodules biopsy shows: Wedge shape infiltration of CD30,	
+next? CBC diff > Periph blood smear	
+Path of cornoid lamella, lowers risk of ca? Punctate, ptychotropic	
+Eruptive dissiminated: GI (hepatocellular ca) 30%	
+Porokeratosis of Mibelli: PMVK mutation (SLC17A9)	
+Second lowest risk → DSAP → MC (HIV, HepC, pso on phototherapy, Lupus)	
+HNB2025	
+
+****** Result for Image/Page 24 ******
+• Highest risk → linear	
+• Patient presented with SCC, the least transplant induce this risk: hematopoietic	
+Heart > kidney > blood (transplant risk is (40-250 risk) than normal)	
+Erythroplasia of Queyrat: more often progresses to invasive SCC 30% MCQ	
+SCC from sun exposed area (less metastases and more indolent course)	
+Chronic (Marjolin] ulcer risk of SCC: 2%	
+cutaneous horn (conical excrescence) > 15-20% SCC on the base of AK (strawberry, flag)	
+Bowen disease (glumeruloid vssis on dermosc., eyeliner sign on path)	
+Risk of mets on each type of SCC (clinical/path) (Review Tumor 1)	
+Verrucous carcinoma, what should be avoided? Radiotherapy (due anaplast. Change)	
+Q; lip lesion [SCC], what indicated a good prognosis and not risk for mets? Well def. histol.	
+Path of Lichenoid keratosis (lichenoid, periph. Solar lentigo, parakeratosis, +/- pautrier microa), MC	
+locations? Chest > forearms. (genes: FGFR3, PIKCA, RAS (H>K))	
+• Patient presented with solitary lesion, pathology attached (full of plasma cells), history of endocrinopathy	
+(PEOMS?), what is expected clinical scenario.	Large red to violaceous brown patch over tumor. (AESOP?)	
+Adenopathy and Erythema of Skin Overlying Plasmacytoma	
+Pic of KMS, A patient presented with this lesion since birth Increasing recently in size labs shown (low D	
+dimer), what is the pathology characteristic finding? Cannonball ? (tufted angioma, shoulder/neck)	
+KMS: all low (D-dimer, fibrignogen and PLT)	
+• Kaposiform hemangioendothelioma (KHE) → slit-like lamina spaces with positive CD61	
+Rx: vincristine + predo or sirolimus/rapamycin	
+Venous malformation LIC: High D-dimer, fibrinogen may be low, PLT low/normal	
+• lesion over thigh, color turned from red/blue to yellow, what is the pathology characteristic finding?	
+hobnail hemangioma (Targetoid hemosiderotic lymphatic malformation) with targetoid appearance	
+dermoscopy: pigmented + arborizing vsls,rx? Sonidigib (smoothened inhi)	
+painful,dx? Neurotropic BCC → if invasion → 0.9mm: poor prognosis. next step? MRI	
+MC SE? muscle spasm	
+Elderly, violaceous plaques on soles, low HB, rx? (KAPOSI sarcoma) Radiation therapy (Multifocal but	
+localized cutaneous & oral KS) Review other rx options on Tumor 5	
+Promontory sign: vessel in vessel, Drof ball: Eosinophilic globules, Plasma cells	
+LANA1: 100% positive (Stain HHV8) (perinuclear dotted pattern)	
+• Endothelial: CD31 (pan endothelial marker), CD34 (vascular differentiation)	
+• Lymphatic: VEGFR-3, podoplanin, LYVE-1	
+PCR for HHV8 is less specific	
+Localized → Observation and close follow up in old immunocompetent patients is an option.	
+Cryo (30 sec, Q3 weeks), ulcer is end point	
+Topical: Alitretinoin 0.1% BID, Imiquimod 5% cream 3xWeek.	
+AIDS FDA approved [PID]: pomalidomide, INF-a, Daunorubicin	
+Organ transplant patients with KS: stop cyclosporin and switch to sirolimus (improve	
+clinically in 3 months, histology in 6 months)	
+• Pic of mucosal melanoma, gene? C-KIT	
+→ Case of melanoma (Acral/mucosal): C-KIT	
+• → Lentigo maligna: CKIT> NRAS	
+• → Nodular: NRAS	
+• → Superficial spread: BRAF V600E [ Back (Men) Legs (Women) 1	
+• → Desmoplastic: NF1	
+• → Spitzoid melanoma (most common histological in pediatric): BAP1	
+HNB2025	
+
+****** Result for Image/Page 25 ******
+• → Blue nevi melanoma and ocular (liver mets risk): GNAQ/GNA11/BAP-1	
+• Dermoscopy of palmar melanoma with nodularity, next step? Excisional biopsy with 1-2 mm (narrow	
+margin) from nodular/elevated area	
+• A patient who had melanocytic lesions over the face since infancy/birth now started to become nodular and	
+developed melanoma, what is the mutation? BAP-1	
+• → Spitzoid melanoma > Malignant blue nevi	
+• → Ophthalmology screening is needed (Risk of solid organ malignancy: Mesothelioma/Renal	
+carcinoma/Cholangiocarcinoma and Risk of BCC	
+• Note: NRAS/BRAF/CKIT: sporadic mutation → Note: CDKN2A (P16,P14raf), BAP1 is	
+inheritance mutation	
+Pt with history of two pathologically atypical nevi on the trunk, fhe melanoma, nex? CDKN2A	
+• Familial atypical multiple mole melanoma syndrome > dysplastic nevi (most common is familial	
+related to CDKN2A mutation (tumor suppression gene), CDK4 Activation (oncogene)	
+• They might have risk of [PAN]: pancreatic cancer, astrocytoma, Neurofibroma	
+Multiple AK on the saclp, rx: Photodynamic therapy (produce protoporphyrin IX, avoid in PCT)	
+• UV protection, cryotherapy (mainstay, 99% cure rate) (20-40 sec freeze → grasp, 2-3 mm beyond)	
+5-fluorouracil	(5% BID for 2-4 weeks) Esp. if combined with ]calcipotriene	
+Imiquimod	5% 2x/w for 16 weeks) vs Sup. BCC (5% 5x/w for 6 wks)	
+Diclofenac (BID for 90 days)	
+Ingenol mebutate 0.015% or 0.05%	
+Other: Tirbanibulin (FDA approved: Microtubule inhibitor)	
+Multiple: chemical peels, photodynamic therapy (avoid in PORPHYRIA): Topical	
+Aminolevulinic acid (ALA) with daylight or red light (best choice in multiple AK)	
+Co2 laser can be used for treatment (esp actinic cheilitis)	
+solitary nodule, pathology attached report of CK20 +ve, what is the best management? WLE 2 cm margins	
+deep to the fascia (no sentinal node biopsy) [Merkel cell]	
+• FDA approved: Anti-PD-1 pembrolizumab (2mg per kg) every 3 weeks, Anti-PD-L1 Avelumab	
+(anti PD-L1 on tumor cells) Both approved FDA > 12 years	
+Blue dermal monotonous cells tumor	
+another Q, stains: CK20 and Neurofilament → peri nuclear dot, EMA, neural markers (synaptop)	
+Mets: Mla: met to skin/LNs, Mlb: lung, M1c: distant sites	
+Path picture +S100, rx? Complete excision (recurr 3%)	
+• Painful lesion on the tongue; Granular cell tumor.	
+a/w Noonan	
+Pseudo ovoid bodies (phagolysosomes), PALE polygonal cells w granular cytoplasm	
+Stains: S100, CD57, PGP9.5, CD68, NKL/C3, MITF, SOX10	
+Screen for Neural defects	
+• → Treatment: complete excision (local mets is 3%)	
+• Spindle cells on path, keratin +, S100-ve, rx? Cetuximab	
+Case of spindle cell (SCC)	
+1st line → Surgical:	
+• Moh's, WLE (6mm for low risk), & Curet. with electrodes. (well-differ. 1ry <1 cm ).	
+If mets or unresectable → First line → Cetuximab [EGFR inh] [acneiform → doxy]	
+Radiation (Adjuva): esp if perineural. (avoid in verrucous carcinoma due anaplastic changes)	
+• Other FDA: Anti-PD-1 (Pembrolizumab and Cemiplimab)	
+• SCC risk of mets: if >2mm depth (4% risk of mets), >6mm (16 risk of mets)	
+• If perineural invasion esp >0.9mm	
+HNB2025	
+
+****** Result for Image/Page 26 ******
+• Spindle (DDX: SLAM against atrophic epidermis)	
+• SCC (sarcomatoid/spindle cell variant): stains keratin (CK903 and CK5/6), p63 and p40	
+- Leiomyosarcoma: SMA + and desmin+ (diffuse cytoplasmic vs tram-track in AFX)	
+Angiosarcoma: ERG+ and CD31+	
+AFX: negative for high-molecular weight keratin, p63, p40, S100, SOX10, and ERG,	
+desmin. Positive: CD10, CD68 (histiocytes), CD99 (procollagen 1), SMA (tram-track	
+pattern) and vimentin	
+Melanoma (spindle cell or desmoplastic variants): S100+ and SOX-10+	
+• Path of Spitz nevus (kamino bodies [COL4]), cause of eruptive? HIV others: Pregnancy, puberty,	
+Addison, chemotherapy. Rx: excision free margin (atypical → 1cm w 6-12 mo f/u)	
+• Spitz nevi: HRAS mutation > Spitzoid melanoma > BAP1 > risk of death loss P16	
+• Agminated (grouped) Spitz nevi: +/- w seizure	
+•	Wiesner nevi (spitz): inactivation of BAP1 (theoretical risk of cutaneous and uveal melanoma)	
+• Case of alopecia neoplastic; MC: breast (female). Others: Lung & renal in males	
+Patches of erythema mimicking erysipelas (inflammatory carcinoma) to woody induration with a	
+peaud'orange appearance as "en cuirasse" (Breast cancer)	
+PG-like w clear cells/easy bleed (RCC → + PAX8, Napsin A, RCC, CD10, vimentin, EMA > hepatic)	
+Alopecia neoplastica: Breast tumor is most common	
+Atypical single cells (Indian file) infiltrating through collagen bundles (breast carcinoma)	
+Sister Mary Joseph Nodule "umbilicus nodule: (gastric cancer)	
+Migratory superficial thrombophlebitis (trousseau sign): (pancreatic cancer)	
+MC location: trunk. Most common in male: melanoma, Most common in female: breast, least	
+common: prostate. Children: rhabdomyosarcoma, neuroblastoma	
+Review STAINING of metastasis and Paget disease	
+• Multiple KA: BRAF vemurafenib	
+• The addition of an mitogen-activated protein kinase kinase (MEK) inhibitor to a BRAF inhibitor	
+significantly reduces the incidence of SCCs and KAs. (Ex of MEK inhibitor is Trametinib)	
+Rx of KA? IL MTX	
+Ist line: Surgical: conventional vs Mohs / Alternative: E&D, IL MTX or SFU,	
+Radiotherapy	
+Path of DFSP (storiform, honycombing), mutations? COL1A1-PDGFB fusion / Translocation of (17;22)	
+Most common abnormality: supernumerary ring chromosomes 22	
+• Stain CD34 > less in Fibrosarcomatous degeneration, Negative for Factor XIIIa and stromelysin-3	
+• Mets: Lung	
+Pigmented? Bednar	
+Imatinib responsive	
+Moh's	
+• WLE (3 cm)	
+• Adult presented with brownish papules and plaques, (CD68: +, S100: - , CD207: -),dx?	
+• A. Rosi dorfman	
+• B. Langerhan cell histiocytosis	
+• C. Erdheim chester	
+• D. Progressive nodular histiocytosis Answer: D	
+Non langerhan histiocytosis persistent cutaneous with no systemic involvement	
+• Rosi dorfman: with systemic involvement and positive S100	
+• Erdheim chester: rare cutaneous involvement and primary systemic involvement	
+morpheaform BCC, what is the treatment? Moh's	
+Path of Clear cell acanthoma (Degos), similar to tricholem, MC location? Leg	
+HNB2025	
+
+****** Result for Image/Page 27 ******
+• Dermoscopy: linear dotted vessels (string of pearls)	
+• Multiple? Ichthyosis	
+Rarely SCC	
+PAS+ as a result of phosphorylase deficiency lead glycogen accumulation	
+• Hands eczematous lesions for years, rx? Radiotherapy or surgical excision	
+• → Case of pagetoid reticulosis	
+• → Pathology: hyperplastic epidermis, with infiltration by large atypical pagetoid cells,	
+• → Immunostaining: CD3+, CD30+ then either (CD4+, CD8-) or a (CD4- CD8+) CD45-	
+• Mycosis fungoides, BSA: > 15%, with hair involvement with loss, rx? PUVA with INF-a + retinoids	
+• Folliculotropic MF: CD3+, CD4t, CD30+ CD8- blast cells is common.	
+• BCC met to?	
+• BCC rarely metastasizes <0.1% (0.0028%): Lymph node > lung > bone (9 years on average to	
+mets)	
+Basosquamous is 5%	
+• Granulomatous slack skin: 30% Hodgkin lymphoma	
+Path: multinucleated giant cells. prominent elastophagocytosis (lost elastic recoil)	
+• Immunostaining: CD3+,CD4+,CD8-	
+• Treatment: radiotherapy (self-limited, avoid surgery > recurrence)	
+• Elderly patient with nose lesion, that is positive CD56, rx? Radiotherapy (+L-asparaginase)	
+Case of EXTRANODAL NK/T-CELL LYMPHOMA, NASAL TYPE	
+EBV related (downregulation of C-MYC)	
+Positive CD56/ cytoplasmic CD3& and negative surface CD3	
+CD56: also present in gamma delta (subcutaneous T-cell lymphoma)	
+• Case of primary cutaneous melanoma, which of the following factors has the greatest impact on prognosis	
+after tumor thickness (breslow)? Lymphatic invesion	
+• Case of melanoma biopsy done Showed depth 5.8 mm. What's the recommended excision amrgin? 2cm	
+→ In situ: 0.5 cm → <= 1cm: 1 cm → 1.01-2 cm: 1-2 cm → > 2cm: 2cm	
+• Melanoma, 1.2mm with no ulceration, mitotic rate 1mm, no lymph no involvement, or mets, sentinel lymph	
+node biopsy done: negative what is the next step: no imaging needed	
+Review staging and rx (depend on stage and gene mut)	
+• PET scan (most sensitive for metastasize, high LDH), but sentinel lymph node (is more	
+accurate and sensitive)	
+Case of melanoma with high LDH [mets], What is imaging? PET-CT	
+• Indication of US: > 1mm breslow depth, Scar, lymphatic involvement	
+• Indication of CT: 2b (2-4 cm with ulceration or > 4cm without ulcer)	
+• SLNB should be considered in:	
+• 1- Breslow thickness of => 1mm,	
+• 2- thickness of 0.8 to 1.0 mm (with or without ulceration)	
+3- less than 0.8 mm, in the presence of risk factors: young age (<40y, lymphovascular	
+invasion, deep biopsy margin, high mitotic rate (≥1 mitosis/mm2)	
+• Mycosis fungoides, what are the approved medications? Mogamolizumab	
+FDA APPROVED MEDS FOR MF:	
+• 1. Topical bexarotene	
+2. Nitrogen mustard	
+3. Oral bexarotene ( preg X, RXR, hepatobiliary excretion. SE : centr. hypoTH/ hyperTG	
+• 4. Denileukin difitox (bind IL 2 receptor) , SE: capillary leak $	
+• 5. ECP - treatment of choice Sezary syndrome (if no response → add IFN-a,)	
+HNB2025	
+
+****** Result for Image/Page 28 ******
+• 6. Vorinostat - Histone deacetylase inhibitor (erythrodermic/Sezary)	Revers. thrombocytopenia	
+• 7. Romidepsin - Histone deacetylase inhibitors (erythrodermic/Sezary)	
+• 8. Mogamulizumab (MF + sezary) anti-CCR4	
+• 9. Pralatrexate (MTX analog)	
+• 10. Brentuximab →> anti CD30 / SE: peripheral neuropathy	
+• Stage 2B → Tumor stage. Stage 3 → erythroderma	
+• Stage 2 and more (2A: T1-2 + N1-2) + or extracutaneous Mets suspected (CT chest and	
+abdomen)	
+• Review IHC	
+• Sezary, next step? Flow cytometry	
+All the patient should investigate for peripheral smear and flow cytometry	
+• Peripheral blood: absolute Sézary cell count '1000 cells/mcl	
+• Immunophenotypical: expanded CD4+ T-cell population resulting in a CD4/ CD8 ratio	
+>10 and/or aberrant expression of pan-T-cell antigens or >40% of CD4/CD7-, >30% of	
+CD4/CD26-.	
+If MF next ? PCR	
+Path of scwhannoma (Neurilemmoma)	
+Classical Antoni A and B	
+Negative neurofilaments and positive S100 and EMA	
+Psammomatous melanocytic schwannoma (brown-black to blue-gray papulonodules)	
+related Carney complex	
+• 63 years old male, presented with violaceous papules small non tender over finger, ear, trunk, face,	
+with destructive arthropathy, with finger deformity, pathology showed: ground glass appearance	
+Case of → Multicentric reticulohistiocytos. Risk of malignancy? 25%	
+• Positive markers? CD68	
+Ground glass: Multicentric reticulohistiocytosis	
+Tuton giant cells: JXG, necrobiotic xanthogranuloma, xanthoma disseminatum	
+Coma cells (worm bodies): Neonatal cephalic histiocytosis	
+Emperipolesis: Rosai-Dorfman Disease (positive S100)	
+Positive S100 and CDia and negative CD207 Indeterminate cell histiocytosis	
+Langerhan: S100, CD1a, CD207	
+Non langerhan: CD11b, CD11c, CD14b, CD68, CD163, HAM56, Factor Xill	
+• Pt with mysthenia gravis and basaloid islans, dx? Basaloid follicular hamartoma	
+a/w autoimmune associated esp myasthenia gravis and SLE	
+•	Basaloid follicular hamartoma syndrome: Skin to brown colored papules also on upper	
+trunk and arms	
+with palmoplantar pits and hypohidrosis	
+path: prominent horn cyst	
+patient with langerhan histiocytosis, what is the poor prognosis factor? Low PLT	
+• Poor prognosis factors:	
+• → Multisystem disease	
+• → Involvement of High-risk organs: hematopoietic system, liver, lungs or spleen	
+• → Presentation: Jaundice, hepatic failure, thrombocytopenia, anemia, and nail	
+involvement	
+→ Children <2 years of age	
+→ Failure to respond to treatment at 6 weeks	
+• → Note: BRAF mutation is poor prognosis	
+HNB2025	
+
+****** Result for Image/Page 29 ******
+• Scenario of multiorgan system langerhan histiocytosis what is the treatment? Vinblastine	
+Multisystem disease Referral to oncology to start chemotherapy	
+1st line: Vinblastine + prednisone	
+2nd line: Cytarabine + 2-chlorodeoxyadenosine, Allogeneic SCT, BRAF inhibitors	
+• Stain?	• Melanoma with wild type BRAF on nivolumab (Anti PD1), biopsy done showed melanoma. What to	
+use as an alternative?	
+Alternative (mean stop and start another → if discontinue and to start new medication then	
+T-VEC SE: cellulitis ), if not in options → another anti PD-1: pemrolizumab, cimiplimab	
+Additional: CTLA-4 → ipilimumab	
+• Path of clear cell syringoma, next step? HBA1c	
+• Syringoma DNEM D: Down syndrome, DM, N: Nicholas blau syndrome, E: Ehlers danlos,	
+M: Marfan	
+• Path of extram. Paget, a/w: colon and bladder cancer	
+Next step: colonoscopy	
+Hidrocytoma path; syndrome? Schopf s. passarge [Odonto-onycho-dermal Dysplasia], AR WNT1	
+Non transgradiant diffuse PPK	
+Facial telangiectasia and reticulate erythema	
+• Hypodontia, nail dystrophy, hypotrichosis. Hidrotic state is preserved.	
+Neoplasm: hidrocystomas, adnexal tumors (poromas, tumors of the follicular infundibulum),	
+• Hypertrichotic hyperhidrotic pigmented lesion in a child, MC site?	
+• ?Fibrous hamartoma of infancy (a/w Hypertrichosis & hyperhidrotic) → Shouler/axillae	
+• Triphasic on histology:	
+• spindle fascicles myofibroblasts (SMA+) w/I myxoid stroma	
+• Mature adipocytes	
+Smaller, round to plump, spindle-shaped, immature mesenchymal cells	
+?Smooth Muscle Hamartoma: A/w follicular prominent and hypertrichosis: Trunk/ext/but.	
+• A/w pseudo-Darier sign, A/w Becker's nevus, MC over trunk, buttocks or proximal	
+extremities,	
+• Multiple lesions may lead to Michelin tire baby	
+?Becker melanosis: (pigmented and hypertrichosis): shoulder/scapulae/upper chest	
+Pigmentation resolves, but hypertrichosis remains although it's easier to rx.	
+• a/w Ipsilateral breast hypoplasia/ arm, spina bifida, lumbar scoliosis. Pectus carinatum,	
+ipsilateral enlargement of foot, Accessory scortum	
+• follicular papules → activity → arrector pili muscle	
+Path: Acanthosis, hyperkeratosis, Mild papillomatosis (plate like rete ridges),	
+Hyperplasia of pilosebaceous unit, smooth muscle in dermis, increase basal melanin,	
+normal or slight melanocytes inrease	
+• Penile in situ? Squamous cell carcinoma, refused Surgery, what medical rx? Imiquimod?	
+• Path of Trichofolliuloma (mom and doughters) → reassureance	
+• Which substance does P53, cause apoptosis through inhibition of BCL-2: PUMA	
+• P53 half life is 2 mins	
+• Stop G1 to S cycle	
+• Path of warty dyskeratoma, MC location? Head & Neck	
+• Single lesion (stain: BCL-6, CD20, CD79a), what is the treatment?	
+• B-cell lymphoma markers: CD20, CD19, CD79A	
+HNB2025	
+
+****** Result for Image/Page 30 ******
+Primary cut follicle center: BCL6, Lack t(14:18), MC scalp/forehead, (Crosti lymphoma).	
+Poor prognosis? Leg	
+1ry cut marginal zone: BCL2, Upper ext> L/trunk. Dutcher cells in plasma celli. PAS+	
+Excellent progn., no need for flow cyt., PET or BM biopsy	
+Large B cell, leg type: BCL2,6 + MUM1. 5-yrs surv:50%. Grenz zone, immunoblast.	
+CD30+ better prognosis	
+• Worst prognosis: loss of 9q21 enc. CDKn2A & Myd88	
+Intravascular B call lymphoma: CD20 + CD31/34, MUM1,BCL2.	
+• Pupule Patches/plques on trunk/thighs.	
+• +systemic (CNS, neuro deficit)	
+• Rx: Follicl and marginal zoen	
+Radiotherapy (10-20cm margin for Crosti lymphoma) > surgival rxcision	
+• Diffuse large, intravascular :	
+Cyclophosphamide, doxorubicin, vincristine and prednisone (CHOP) plus	
+rituximab with radiotherapy	
+• Lesion over neck. Biopsy done with basaloid strand extend from epidermis, what is the cryotherapy	
+temperature (superficial BCC)? -40 - -50	
+• Pic of lesion of melanoma, what to expect in pathogenesis? Serine threonine phosphorylation	
+Retinoblastoma	
+• Eruptive dermatofibroma, a/w? HIV, SLE, Hemato malignancy, Pregnancy	
+PHARMACOLOGY	
+• Acne, present with hyperkalemia, cause? Drospirenone	
+Topical eflornithine: only topical used for hair removal: ornithine decarb. Inhibit., preg C	
+Best combination for hirsutism: OCP (cat. X) + spironolactone (cat. C)	
+• Topical minoxidil: 10% ACD (from propylene glycol) > switch to foam/lotion	
+• HTN and thromboembolism (more with drospirenone, cyproterone acetate, dienogest)	
+• Review OCPs and 5-a reduc (Adnexal 2)	
+• psoriasis, on phototherapy, what is the effect at the molecular level ? release of IL1,6	
+• PP pustulosis, what is the target for a medication works used twice weekly? P75 (Etanercept)	
+• Pic with blue colored acne scars, cause? Minocycline	
+• Type 1 : post acne scar, iron (blue stain) deposition with macrophage (tve pearl stain)	
+• Path of Hailey Hailey in pregnant, Rx? Naltrexone	
+• The MC reaction in Dupilumab? Injection site reaction (10%)	
+• Another Q, SE? conjuctivitis (10% of pts) [absent in non atopic pts taking dupilumb]	
+• Can cause vasculitis in asthmatic pts	
+• psoriasis, on ixekizumab follow up regularly, what expect in labs? Neutropenia (reveresible)	
+• psoriasis, on secukinumab follow up regularly, what infections? Candida	
+IL-17: risk of reversible neutropenia and candida	
+• prescribed crisaborole (PDE4 inh), what is the side effect/or tell the patient? Pain (burn/sting)	
+• 2% ointment, approved for = 3 months	
+• Danazol fearful side effect? Increase D-dimer	
+• Class X	
+• Used in: Hereditary angioedema, lipodermatosclerosis, Microvascular occlusion,	
+cryoglobulinemia vasculitis	
+HNB2025	
+
+****** Result for Image/Page 31 ******
+Side effect related to: Androgen excess symptoms, Mild elevation In LFT (reversible)	
+Sodium-retaining properties can worsen hypertension and cause congestive heart failure,	
+and lipid profiles can be negatively altered	
+• ECP MoA?	• the most common side effect of the FDA approved med for PV: drug eruption (infusion reaction)	
+• Black Box warning: Anaphylaxis, Severe mucocutaneous reaction, Hepatitis B reactivation,	
+Progressive multifocal leukoencephalopathy	
+• Isotretinoin vs Acitretin	
+• More with isotretinoin: Reduce night vision [Nyctalopia], cheilitis, pseudotumor cerebri	
+• More with acitretin: sticky skin in palms (main with etretinate), Nail finding	
+• This med/modulate stimulates the malignant T-cell to be targeted by immune cells in CTCL? ECP	
+(also mogamolizumab)	
+• Stimulate NK cells	
+• Monocyte will express DC	
+• Shift from TH2 and Tregulatory to TH1 (inf-y)	
+• 1. ECP is improved in individuals with normal or near normal natural killer (NK) and	
+CD8+ cytotoxic T lymphocyte (CTL) numbers and function (through stimulation of NK and	
+CTL-mediated antitumor responses)	
+2. Induces large numbers of monocytes to express dendritic cell (DC) differentiation	
+3. Shifts from increased T-helper type (Th) 2 cytokines (e.g., interleukin (IL]-4, IL-5, IL-13,	
+IL-31) and T-regulatory cytokines (e.g., TGF ), to increased Thi cytokines that favor an	
+antitumor milieu including interferon (IFN)-	
+• patient on PUVA developed an ear infection and will start ciprofloxacin. Reduce UVA by 25%	
+• patient with lesions over the face, will start NBUVB, what is your advice? Close eyes	
+If not applied on face: Cover will pillow, if applied on face: (keep the eyes closed no need	
+goggles), Genitalia: covered by jockstrap	
+• Max dose: face: 1500, trunk/extr: 3000	
+• Pt on JAK in, when to stop: neutropenia <1	
+Laboratory :	
+Lymphopenia (<500cells/mm3)	
+Neutropenia (<1000cells/mm3)	
+Anemia (hemoglobin <8-9g/dL- drop more than 2	
+Thrombocytopenia (<50000cells/mm3). (thrombocytosis and genital candidiasis is unique for Baricitinib)	
+• ALT, AST > 3 ULN	
+• Severe hyperlipidemia not cotrolled with treatement	
+Clinical:	
+• Pregnancy or planning(stop 4 weeks before, D: Upada, Baric., Deuroxo) C: TRAR: tofa, ruxo, abro, retlic	
+• serious infection or reactivating of HCV and TB [oral Ruxo. risk of CMV]	
+• Malignancy (sepcially lymphoma or non-melanoma skin cancer) [Tofacitinib risk of PML]	
+• Thromboembolic event (DVT, PE, MI, Stroke)	
+• Bowel perforation (Tofacitinib > baricitinib)	
+• Hypersensitivity	
+• No improvement in 12-16 weeks	
+• Patient want to stop or not tolerating side Wects	
+• Upadacitinib MC SE: URTI > acne. Eczema herpeticum	
+• Deucravacitinib:[TEC2, psoriasis]. SEs: rhabdomy. And inc CPK	
+• FDAAA: bari. (JAK1/2, 18yrs), deuroxo. (JAK1/2), Retli (50mg, JAK3/TEC, 12)	
+• FDA for chronic hand eczema: Delgocitinib cream (non selective)	
+• Phase 2 for scarring alopecia: Brepocitinib	
+• patient was started on cyclosporine, this would worsen: Gout	
+HNB2025	
+
+****** Result for Image/Page 32 ******
+• AZA and Allopurinol? Neutropenia, and increase AZA level	
+• If patient on alopurinol reduce the dose of AZA by 75%	
+• AZA and TNF-a ? hepatosplenic T-cell lymphoma	
+• MTX and TMP/SMX ? cytopenia. (MTX may cause non-dose-dependent Pneumonitis)	
+• Reduce MTX level: Neomycin, Cholestyramine	
+• Silver sulfadiazine and cimetidine ? leukopenia	
+• MF on topical rx, came with telangiectasia, cause? Carmustine	
+• Alcoholic patient, started dupilumab, what side effects might occur ? Flushing	
+Cause: Dupilumab induce disulfiram reaction with alcohol	
+• Lichenoid drug eruption, least to cause: Nifedipine. Another Q: Terbinafine	
+Patient started on pembrolizumab what pathology finding you will expect: Lichenoid interf.	
+• Prevention of SCC: acitretin > sirolimus	
+• Starting dose of Bath PUVA? 30% MPD	
+• Reading after 72 hours	
+• Oral PUVA starting dose: 50-70% MPD	
+No erythema: increase by 30%	
+Minimal erythema: no increase (stay same)	
+Painful burning;STOP until resolution and RESUME with 50% reduction and fruther incr. by 10%	
+Q: Maintenance dose of PUVA for CTCL ? 2/w for 1 month then 1/w for 1 month	
+PUVA rx for: Folliculotropic MF, Morphea, Sceleredema type 3	
+• UVB:	
+First reading 24 hours	
+NbUVB: 70% MED	
+No erythema: increase by 30-40% MED or fix increase of 10-20 mJ/cm2	
+Minimal erythema: increase by 15-20% MED (every other rx, esp if 5x/w)	
+Persistent asymptomatic: No increase, same dose	
+Painful erythe/ Blisters: Stop, resume after resolut. RESUME at 50% MED, inc by 10% MED	
+• Missed sessions?	
+Modality	BBUVB	PUVA/NB-UVB	
+<1 wk	No increase in dose	
+1-2 wks	Red 50%	Red. 25%	
+2-3 wks	Red. 75%	Red. 50%	
+>3 wks	Re-start at initial dose	
+• Dapsone lethal SE: agranulocytosis	
+• Agranulocytosis: Most serious idiosyncratic reaction	
+• 3-12 weeks (average 7 weeks)	
+• Fever, sore throat, occasionally sepsis	
+• D/C, give G-CSF > recover quickly	
+• Sticky skin syndrome. What medication induces it? Doxorubicin with Ketoconazole, retinoid	
+(etretinate and acitretin)	
+• SMO inhibitor: Vismodigib	
+• Most common is muscle spasm (give L-carnitine)	
+Most common SE: muscle spasm > alopecia > dysgeusia	
+• Q self: molecular target of this medication? G-protein coupled receptor	
+• 60 years old patient either has (Pemphigus vulgaris on rituximab) or (psoriasis on biologics), he has	
+taken pneumococcal polysaccharide vaccine (PPSV23 or Pnemovax23R), and the meningococcal	
+HNB2025	
+
+****** Result for Image/Page 33 ******
+conjugate or MenACWY vaccine within past year, what is needed to give in the 6 months period	
+starting with appropriate treatment for the patient?	
+A. Give booster meningococcal conjugate or MenACWY vaccine	
+B. Give booster pneumococcal polysaccharide vaccine (PPSV23 or Pnemovax23R	
+C. Give pneumococcal conjugate vaccine (PCV13 or Prevnar 13R)	
+Patient on topical steroid, and he is not responding, what is the cause? Taking non halogented	
+• Pic of plexiform neurofibroma approved drug? Selumetinib, Inhibition of MAPK pathway	
+Patient on cyclosporine, what is the least effective: Nail	
+Surgery	
+Fillers/ Chemical peels	
+Sutures:	
+Vertical mattress suturing: Strongly everts edges but highest risk of cross-hatching	
+Pulley suture: wound closure under high tension, disadvantage = tissue strangulation, Far-near near-	
+far vertical mattress (MCQ	
+Plain gut > Silk → Highest for tissue reactivity. Lowest is Polypropylene	
+Mucosal sutures: Silk, polyster, vicryl	
+• Advantage of using Vicryl 4-0 over of 5-0? Increased tensile strength	
+• Q: Patient did surgery 5 months back, you did a biopsy and found a remnant of suture, what is the	
+suture? Polydioxanone (last 8 months)	
+polyglyconate last 6 months	
+Anesthetics	
+• Amide CIs: End-stage liver disease, Propanol > increased risk of toxicity	
+Fastest and safest in pregnancy → Lidocaine (review Lido. overdose table)	
+• Longest in absence of Epi → Rupivicaine	
+• Longest (w epi), risk of cardiac toxi., and fetal bradycardia → Bupivicaine (=baby)	
+• Risk of fetal bradycardia → Mepivacaine (=may be)	
+• Risk of methemeglob. Esp < lyr old (incl. EMLA) → Prilocaine (avoid in G6PD), safe in sickle cell pts	
+• Esters Cis/Cross reaction? allergy to PABA, pseudocholinesterase deficiency, and renal insufficiency,	
+Cross reaction	
+Procaine → shortest duration of action	
+All are vasodilators except: Cocaine	
+Cross reaction with ester: PPPESTAA (Esp Benzocaine) MCQ	
+Paraphenylenediamine (PPD), PABA, Para-aminosalicylic acid, Ethylenediamine.	
+Sulfonamides, Thiazides, Anesthetics(esters), Azo dyes	
+Cryotherapy	
+Liquid nitrogen (-196°C): most common vs Solid carbon dioxide (-79°C):	
+Application technique: Rapid freeze then slow thew (provide more intercellular ice formation)	
+• Short for benign from 5 to 7 seconds	
+• Long for malignant 45 seconds and need 2 cycle (MCQ)	
+When cryoprobe is used the freeze time is 2 to 3 times longer than Open spray (MCQ)	
+Eyelid is safe (MCQ)	
+HNB2025	
+
+****** Result for Image/Page 34 ******
+• Wart: need 1 - 2 mm rim (MCQ) (cantharidin can cause doughnut wart) MCQ	
+• Type of cell:	
+Melanocytes (most sensitive): -5°C	
+• Keratinocytes: -20°C to -30°C	
+• Fibroblasts (least sensitive): -35°C to -40°C	
+• Benign vs malignant	
+• Benign: -25°C	
+• Malignant: -50°C	
+• Contraindication: Cold Urticaria - cold intolerance - cryofibrinogen - ill defined tumor - deeply penetrated cancer	
+ElectroSurgery	
+• Q: Patient did surgery, and did electrosurgery, developed burns, which modality is used?	
+Monoterminal	
+• Precautions: Avoid	
+• Perianal area (carful due methane gas)	
+• Aluminum chloride	
+• Oxygen (stop temporary in Procedure)	
+• Alcohol: Use chlorhexidine, iodine (make it dry)	
+• Implantable Cardioverter Defibrillator (ICD):	
+• Best is electro cautery (0% risk) MCQ, can try bi-terminal forceps more effect and safe	
+Highest risk is electrosection (MCQ)	
+Do not use within 5 cm from the device	
+Dermr. Papulose niagre → Electrodessication (coagnula/hemost, less cutting, On skin) (Monoterminal)	
+Electrofulguration: same as above but no contact with skin (Monoterminal)	
+• Electro coagulation: same, but deeper penetration + Biterminal	
+• Electrosection: cutting + Bi terminal	
+Excisions:	
+• Excision margin:	
+Melanoma (based on Breslow depth: in situ (0.5), < 1 mm: (1cm). 1.01-2mm (1-2cm), More	
+than 2mm depth (2cm).	
+• BCC/SCC: low risk (0.4 mm) high risk (0.6mm) > esp in SCC	
+Sebaceous carcinoma: 5-6 mm	
+Merkel cell: 2 cm	
+• DEPS: 3 cm (Moh better)	
+Moh's:	
+• BCC/SCC: cure rate of primary 99%, recurrent lesion: >90%, Toluidine blue can aid during	
+procedure	
+•	Extramammary page: cure rate 85% (increased if used interoperative CK7 stain)	
+Tradepoor deformity: inadequete undermining	
+Flaps and grafts:	
+→ Flaps:	
+Advancement: [ U-plasty uni. 2x tanget, H-plasty, O/A → T, crescentric, VY (island pedicle) I	
+HNB2025	
+
+****** Result for Image/Page 35 ******
+Rotation: Uni rot. (Single curvilinear), Dorsal nasal (Rieger) (axial [angular arteryl, underm	
+above perichond, SE: Pig nose), Mustarde >50% of eyelid& Tanzel <50%(to red ectropion →	
+suture to lateral orbital rim periosteum, Bilateral rotation (O→Z, mainly saclp)	
+Transposition: Rhombic, Bilobed (SE: pincush.) , NL transp., Z-plasty (lengthen scar)	
+Interpolation (two stage transposition): Paramedian, (axial, supratrochlear), Abbe' lip (axial),	
+NL interpol., retroauricular BOOK flap.	
+→ Grafts:	
+• FTSG:	
+•	Neovascul. At 7 days	
+• Innervation at 2 wks to 2 months	
+STSG: full epider +partial dermis (indication? Poor vascular site)	
+MC donor site: antero-medial thigh	
+Thin: 0.13-0.30 mm	
+Medium: 0.30-0.46 mm	
+• Thick: 0.46-0.76mm	
+Composite; modified FTSG: =>2 layers of tissues (e skin + fat, cartilage)	
+Free cartilage graft	
+Wound healing	
+Radiotherapy (not as monotherapy): used first 24-48 hours (10-15Gy) MCQ	
+Nail surgery	
+Absence of subcutaneous tissue in the nails, so the nail bed dermis lies of periosteum (More risk of	
+infections)	
+To rule melanoma: Biopsy from Distal nail matrix, horizontal orientation.	
+Botox	
+→ A patient received botox multiple times, said lately she needed more frequent injections, and her last	
+injection didn't work. What is the involved pathogenesis? Heavy chain	
+→ Complication of infraorbital botox injection? Festooning of lower eyelid	
+Due involvement of zygomatic branch of facial nerve › affect lower muscle of orbicularis oculi	
+→ Counterindications:	
+Neuromuscular disorders: Mysthenia gravis, Lambart-eaton syndrome, ALS	
+Medication (due potentiate effects): Aminoglycoside (gentamycin), Muscular relaxants, ССВ,	
+Cyclosporin, Quinidine, Polymyxin,	
+> Donepezil (diminish its affect), HCQ (reduce its effects)	
+• Botulinum A toxin (Avoid in cowmilk allergy)	
+→ the only type does not have Complexing proteins is Xeomin (Inco-botulinum toxin A) [neurotoxin onlyl	
+MoA: Cleave- SNAP 25. Store before: <25, after recons. -8	
+→ Side effects: Eyelid Ptosis: Due diffusion into levator palpebral muscle	
+HNB2025	
+
+****** Result for Image/Page 36 ******
+> Treatment A-2 agonist ipsilateral (Apraclonidine 0.5%, Naphazoline 0.05%, Phenylephrine	
+2.5%) (Stimulate muller muscle)	
+Scalerotherapy	
+A patient receiving sclerotherapy, what is the delayed side effect on this patient? Telangiectatic	
+matting	
+→ Pain: Most with hypertonic saline (+/-necrosis), least with polidocanol	
+→ Disulfiram reaction: polidocanol	
+• nausea, vomiting, flushing, dizziness, and a headache.	
+→ Hyperpigmentation: Sodium tetradecyl sulfate. Least is Glycerin (chemical irritant)	
+→ Anaphylaxis: Sodium morrhuate, least with glycerin and hypertonic saline	
+→ Urticaria (generalized), renal failure and hemolytic raction: Ethanolamine	
+• post surgery, with flushing after eating: Frey (auriculotemporal), 40%	
+anesthesia and pheochromocytoma? Epinephrine is CI in uncontrolled HTN/pheochromocytoma	
+Cis to epinephrine: pheochromocytoma, hyperthyroidism, PAD (if digital anesthesia)	
+• Q in one of the banks : Any NF1 pt who will undergo anesthesia should be screened for	
+pheochromocytoma with urine catecholamine measurements	
+• First test for pheochromocytoma? Plasma fractionated metaphrines	
+• Path of Lymph. Circumscriptum, laser wavelength?	
+• lymphangioma circumscriptum: destructive Co2 (10600), Nd: YAG (1064), Diode (800)	
+• Hemangioma: Superficial → PDL (595), Deep → Nd: YAG (1064)	
+• The highest risk site for blindness in filler injection? Glabella → nasal region → NL fold → forehead.	
+• Lip nodules, what kind of filler causes this reaction? Ca hydroxypetate	
+• PWS pic, MC SE of laser used; PDL? Bruising/Purpura	
+Longer pulse duration (>6ms) can be used to avoid cosmentically unwanted purpura due to IT	
+Pulse duration for PDL: 0.4-20 ms	
+Short pulse: <5ms (Purpuric) (More effective, less cosmesis) (Q boy with PWS)	
+Long pulse: 6-10 ms (Not purpuric) need cooling (less effective) (Q women going work)	
+Bolognia: Commonly used settings range from energy fluences of 4-15 J/cm2 with pulse	
+widths of 1.5-10 ms and a 7-12 mm spot size	
+Review Therma relax. Time, MCQ file p.446	
+• Old bank Q: Maximum EMILA in 9 months old ? 2 g over 20 cm? for ≤4 hours.	
+• Pic of paramedian flap, which artery? Supratrochlear (axial, contralateral)	
+• → Dorsal nasal flaps (angular artery)	
+• → Abbe cross lips flaps (Labial artery)	
+• Pic of Bilobed flap closure, type of? Transposition flap	
+Complication? Pincushioning/trapdooring Cause? Inadeque. undermining	
+• Transposition flap used to lengthen the scar and redistribute the tension? Z-plasty	
+• shorten the scar? M-plasty	
+• Left cheek BCC, Moh's done, how to avoid ectropion? Linear repair with long axis of ellipse oriented vertically	
+• Follow-up after treatment with medium-depth chemical peel. Which of the following complications	
+puts the patient at greatest risk for scarring? Persistent erythema	
+• Regarding botox, which is true: SEs are short lived	
+• FDA: Glabella, forehead, lateral canthi lines, and primary axillary hyperhidrosis	
+HNB2025	
+
+****** Result for Image/Page 37 ******
+• Volar botox: muscle weekness of the instrinsic muscles, 2-5 weeks recovery	
+• Pt came with laterel eyebrow lifted up, cause? Untreated/inadequently treated frontalis lateral fibers	
+• Cockeyed/Quizzical appearnace	
+• Pt k/c mitral valve prolapse and mitral regurgitation presents, came for BCC removal, on the arm	
+any rx? No need (no prosthetic valve)	
+Preventions: Cephalexin 2g, 60 min before procedure for:-	
+High risk Lesion: below knee (Including groin), Skin graft, Wedge excision (ear and lip),	
+Flap (Nose and ear)	
+Joint prosthetic infection (First 2yrs of replacem. previous infection Old, immunocom.)	
+High risk of infective endocarditis (Prosthetic cardiac valve, Previous infective endocarditis,	
+cardiac transplant with vulvar disease, unrepaired cyanotic heart disease, Repaired cyanotic	
+heart disease before 6 months) > Use amoxicillin	
+Allergy to penicillin? → Clindamycin, azithromycin, clarithromycin	
+• Ptosis after botox, what to give to help? a-2-agonist ipsilateral (Apra-clonidine 0.5%)	
+• a-2-agonist ipsilateral (Apra-clonidine 0.5%, Napha-zoline 0.05%, Phenylephrine 2.5%)	
+(Stimulate muller muscle)	
+• A patient who will have surgery of large BCC, injected by 1% Lidocaine with epinephrine, total	
+amount injected 42ml, his weight is 68kg, what will happen? No effect	
+2% is 20mg/mL	
+Max dose w/o epinephrine: 4.5-5mg/kg	
+• Max dose w epin: 7mg/kg	
+Pediatrics: 2 and 4.5mg, respectively	
+• 55mg/ml for tumescent anesthesia	
+• Pregnancy category B, safe in lactation, caution with liver disease	
+• Local anesthetic systemic reactions	
+• Vasovagal: Low HR, low BP - Trendelenburg, cold compr., reassurance	
+• Epinephrine reaction: High HR, High BP - reassure, pentolamine, propranolol	
+• Anaphylactic reaction: High HR, Low BP → SQ epiPEN	
+• Ealiest feature of lidocaine toxicity: perioral tingling and paresthesia	
+• Patient had sclerotherapy performed on spider veins on her lower legs. She later developed nausea,	
+vomiting, flushing, dizziness, and a headache. Which sclerosant was used to treat her spider veins?	
+(Disulfiram-like reaction) caused by → Polidocanol	
+• Other sclerosing agents P. 453 MCQ file	
+• SCC in temple, level of undermining? Structure at risk? Superficial subQ fat; temp. of CN7	
+• BCC&SCC on cheeck, undermining? Deep SubQ fats uperfic to the fascia. P. 454 MCQ file	
+• picture of nerves pointing at the temporal branch of the facial nerve if Injured, what's the finding?	
+Inability to elevate the frontalis ipsilateral	
+• Co2 Safety measure ? Evaucator 2 inches from the treatment sit (app. 5 cm?)	
+• Painful dry wound, dressing? Hydrogel	
+• → Hydrogel: Painless non adhesive for dry wound	
+• → Hydrocolloid: Autolytic, absorbent, provide angiogenesis for mild mod exudate wound	
+• → Film: Transparent adhesive for superficial lesion	
+• → Allegynate: Homeostatic highly absorbent for heavy exudate (tunnilling/undermind)	
+wound	
+• dnagoerous for filers? Angular artery	
+Arterial occlusion:	
+HNB2025	
+
+****** Result for Image/Page 38 ******
+• Stages: Pallor (seconds) > reticular erythema (last 24-36 hours) > Blistering/pustules (start at	
+72 hours) > Necrosis	
+• High risk: Glabella > nasolabial	
+Treatment: hyaluronidase (high dose), Aspirin, LMWH, massage, vasodilator, nitrogl.	
+• Patient received sclerotherapy over lower extremities, then developed pain, swelling after 1 week.	
+What is your next step? Duplex US (DVT, 1 week)	
+if immediate (consult surgery for intravacular injection)	
+• Intra Arterial injection (Most feared): present with immediate pain and pallor > Apply Ice,	
+Vasodilator and thrombolytic (Most common popliteal over saphenous vein)	
+• Crow's feet, responsible msucle? Orbicularis oculi	
+• Patient had (sad smiling face), did botox, came with lower lips protruding and with an asymmetrical	
+smile. What muscle was affected? Depressor labialis inferioris. BUT if Sad face at rest (due prominent	
+marionette lines → Depressor angularis oris	
+• → Crow feet: Orbulcarlis oculi muscle	
+• → Bunny lines: Nasalis (transverse portion)	
+• → Gummy smile: Levator labialis superioris	
+• → Depressing mouth corner, marionette line: Depressor angularis oris	
+• → Smoker line: Orbulcarlis oris muscle.	
+• A patient will do a derm procedure, on argatroban, next step? No need to stop	
+• All form of anticoagulant (can continue), we can stop before 48 hours but not needed.	
+• Aspirin if primary need don't Stop	
+But avoid: Fish oil, Garlic, Ginger, Vit E, Licorice, Alcohol (enhance anticoagulant)	
+• Gray hyperpigmentation over wound site after the procedure, cause? Monsel solution (form of ferrus)	
+• Innervation of lateral neck, and pinna? Great auricular nerve	
+Anterior ear, upper anterior middle including tragus is Auriculotemporal nerve,	
+Lower anterior third including pinna and helix and antitragus is Great auricular nerve,	
+Q:- Posterior ear innervation? → Lesser occipital nerve	
+• Which of the following is permanent filler ? Polymethacrylate (artefill)	
+• Post Moh's 6 hrs, on anticoagulant c/o severe bleeding, next step? Come for evaluatino and drainage	
+• Tranexamic acid MoA: Decr. melanin produc. by inhibi. the conversion of plasminogen to plasmin	
+• Decubitus ulcer with dull thickness, stage? 3	
+• Periorbital skin tags, what instruments to use? Gradle	
+• Excimer laser WL: 308, risk of : cataract, Protein chromophore	
+• Diode is most efficacious in hair reduction > risk of reticular erythema	
+• Laser wavelength is > 1300, chromophore? Water	
+• IPL >PDL: Poikiloderma of Civatte.	
+• Ablative laser: Persist erythema (persist for months) hypo-hyperpigmentation, Scarring, Millia	
+Consider prophylaxis	
+• Yellow tattoo, how to treat this lesion? Qs NdYAG (double frequency) 532nm	
+QS lasers:	
+Primary end point: Tattoo/pigmented laser: Immediate whitening, Vascular laser: purpura,	
+Hair: perifollicular edema/erythema	
+• Yellow- White-Red-Violet: (doubled freq.) Qs Nd: YAG	
+• Black- Brown- Blue: RAN: Ruby, Alexandrite, or Nd: YAG	
+• Pigmented lesions/minocycline pigmentation: RAN laser	
+HNB2025	
+
+****** Result for Image/Page 39 ******
+Nevus of ota: QS Ruby	
+Dermal melanocytosis: QS Ruby	
+CALMs: QS ruby laser 50% improvement, Long-pulsed alexandrite	
+Amiodarone: QS Nd: YAG	
+Acne keloidalis nuchae, laser? Long pulse Nd: YAG	
+Green: Ruby > Alexandrite	
+Red tattoos (mercuric sulfide): most likely cause allergic reaction (different form	
+include psudolymphoma) and risk of paradoxical darkening	
+Pink, flesh-toned, or light red tattoos undergo immediate paradoxical to	
+brown-black darkening due reduction of ferric oxide (Fe3+) → ferrous	
+oxide (Fe2+)	
+Yellow tattoo (Cadmium sulfide): Phototoxic	
+White tattoos (Titanium oxide) may undergo immediate paradoxical darkening	
+(turns black or blue)	
+Hair transplant:	
+• Hair transplant, when can he exercise? 7 days (sutures/staples removed, crust gradually diappear)	
+• light exercise: 4-7 days	
+•	Grafted hair begin to grow at? 8-10 weeks (2-3 months)	
+favorable criteria for transplant:	
+• Age >25 yrs	
+• Large calibars >70 microns	
+Donor hair >80 follicular units /cm2	
+Degree of baldness, affecting primarly anterior scalp	
+Blonde, salt& pepper, red > black	
+Liposuction	
+• Question about liposuction, which are to avoid or worse location? Arm	
+→ Side effect: arm (compartment syndrome, distal to anesthesia injected), breast enlargement, abdominal	
+pain & distention	
+→ Contraindications: Severe obesity	
+→ Maximum removal is 5L	
+→ Tumescent anesthesia = 55 mg/kg (0.05 lidocaine in 1:1.000.000 epinephrine + Sodium bicarbonate)	
+Ethics:	
+• PPV: True +ve over all +ve x100	
+• NPV: True -ve over all -ve x100	
+• Sensetivity: Probability of a positive test among patient with the disease	
+• True + Ve over True positive + false negatives	
+Specificity: Probability of a negative test in patient without the disease	
+• True-ve over True -ver + false positive	
+HNB2025	
+
+****** Result for Image/Page 40 ******
+Breaking Bad new: SPIKE	
+• Recall bias? A type of information bias in which study participants do not accurately remember past	
+exposures or events. (case control)	
+Absolute risk reduction? C/(C+D) - A/(A+B) (depending on numbers given)	
+• CanMEDS:	
+• Medical Expert	
+• Communicator	
+Collaborator	
+Leader	
+Health Advocate	
+Scholar	
+Professional	
+Margin of error:	
+The range within which the true population parameter is expected to lie, based on sample data.	
+• Expresses the uncertainty or precision of an estimate (usually for proportions or means).	
+Larger sample size = lower MoE	
+Higher Confi. Interval = larger MoE	
+HNB2025	
+`;
+            
+            const container = document.getElementById('qa-container');
+            let qaCounter = 0;
+
+            const lines = rawText.split('\n');
+            let currentSection = null;
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line || line.startsWith('---') || line.endsWith('HNB2025')) {
+                    return;
+                }
+
+                if (line.startsWith('******')) {
+                    const pageTitle = line.replace(/\*/g, '').trim();
+                    const h2 = document.createElement('h2');
+                    h2.className = 'page-title';
+                    h2.textContent = pageTitle;
+                    container.appendChild(h2);
+                    currentSection = null;
+                } else if (line.startsWith('•') || /^[A-Z]/.test(line) && !line.includes(':') && !line.includes('→') && line.split(' ').length < 5) {
+                    // Heuristic for section titles: starts with capital, few words, no separator
+                    const sectionTitleText = line.replace(/^•\s*/, '').trim();
+                     if (sectionTitleText.length > 50) { // If it's too long, it's likely a question
+                        createQAItem(line);
+                        return;
+                    }
+                    const h3 = document.createElement('h3');
+                    h3.className = 'section-title';
+                    h3.textContent = sectionTitleText;
+                    container.appendChild(h3);
+                    currentSection = h3;
+                } else {
+                    createQAItem(line);
+                }
+            });
+            
+            function createQAItem(line) {
+                qaCounter++;
+                const qaId = `qa-item-${qaCounter}`;
+                let questionText = '';
+                let answerText = '';
+                
+                let separator = null;
+                if(line.includes(':')) separator = ':';
+                else if(line.includes('→')) separator = '→';
+                else if(line.includes('?')) separator = '?';
+
+                if (separator) {
+                    const parts = line.split(separator);
+                    questionText = parts.shift().trim();
+                    answerText = parts.join(separator).trim();
+                } else {
+                    questionText = line;
+                    answerText = "Self-review this concept.";
+                }
+
+                questionText = questionText.replace(/^•\s*/, '').replace(/^0\s*/, '').replace(/^[-\d]+\.\s*/, '').trim();
+
+                if (!questionText) return;
+
+                const item = document.createElement('div');
+                item.className = 'qa-item';
+                item.id = qaId;
+
+                item.innerHTML = `
+                    <div class="question">${questionText}</div>
+                    <div class="answer">${answerText.replace(/\n/g, '<br>')}</div>
+                    <div class="controls">
+                        <button class="btn-review">Review</button>
+                        <button class="btn-correct">Got it!</button>
+                    </div>
+                `;
+                container.appendChild(item);
+            }
+
+            // --- Interactivity and State Management ---
+            const allQAItems = document.querySelectorAll('.qa-item');
+            const progressTracker = document.getElementById('progress-tracker');
+            const restartBtn = document.getElementById('restart-btn');
+
+            function updateProgress() {
+                const total = allQAItems.length;
+                const answered = document.querySelectorAll('.qa-item.correct, .qa-item.review').length;
+                progressTracker.textContent = `Progress: ${answered}/${total}`;
+            }
+
+            function loadState() {
+                allQAItems.forEach(item => {
+                    const state = localStorage.getItem(item.id);
+                    if (state === 'correct') {
+                        item.classList.add('correct');
+                    } else if (state === 'review') {
+                        item.classList.add('review');
+                    }
+                });
+                updateProgress();
+            }
+
+            allQAItems.forEach(item => {
+                const questionDiv = item.querySelector('.question');
+                
+                questionDiv.addEventListener('click', () => {
+                    const answerDiv = item.querySelector('.answer');
+                    item.classList.toggle('answer-revealed');
+                    answerDiv.style.display = answerDiv.style.display === 'block' ? 'none' : 'block';
+                });
+
+                const correctBtn = item.querySelector('.btn-correct');
+                correctBtn.addEventListener('click', () => {
+                    item.classList.add('correct');
+                    item.classList.remove('review');
+                    localStorage.setItem(item.id, 'correct');
+                    updateProgress();
+                });
+
+                const reviewBtn = item.querySelector('.btn-review');
+                reviewBtn.addEventListener('click', () => {
+                    item.classList.add('review');
+                    item.classList.remove('correct');
+                    localStorage.setItem(item.id, 'review');
+                    updateProgress();
+                });
+            });
+
+            restartBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to restart and clear all your progress?')) {
+                    allQAItems.forEach(item => {
+                        localStorage.removeItem(item.id);
+                    });
+                    location.reload();
+                }
+            });
+
+            // Initial Load
+            loadState();
+        });
+    </script>
+
+</body>
+</html>

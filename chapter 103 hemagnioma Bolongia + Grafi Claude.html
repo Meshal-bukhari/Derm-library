@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infantile Hemangiomas - Saudi Board Dermatology Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --info: #3498db;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--primary);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-text {
+            flex: 2;
+        }
+        
+        .header-image {
+            flex: 1;
+            text-align: right;
+            max-width: 200px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            color: var(--dark);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--dark);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.6rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .clinical-pearl {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .warning-box {
+            background-color: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .exam-tip {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(236, 240, 241, 0.5);
+        }
+        
+        .tabs {
+            display: flex;
+            margin: 1.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-right: 0.25rem;
+            transition: var(--transition);
+        }
+        
+        .tab.active {
+            background-color: white;
+            border-bottom: 2px solid white;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 1.5rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 5px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .accordion {
+            background-color: white;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: var(--transition);
+            font-weight: bold;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .accordion:hover {
+            background-color: #ecf0f1;
+        }
+        
+        .accordion::after {
+            content: "▼";
+            color: var(--accent);
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .accordion.active::after {
+            content: "▲";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-top: -10px;
+            margin-bottom: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .panel-content {
+            padding: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c0392b;
+        }
+        
+        .image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #777;
+        }
+        
+        .progress-container {
+            margin: 1.5rem 0;
+        }
+        
+        .progress {
+            width: 100%;
+            height: 25px;
+            background-color: #ecf0f1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%);
+            transition: width 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            height: 200px;
+            margin: 1.5rem 0;
+            cursor: pointer;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .flashcard-front {
+            background-color: var(--accent);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--primary);
+            transform: rotateY(180deg);
+        }
+
+        .comparison-table th, .comparison-table td {
+            text-align: center;
+        }
+
+        .comparison-table th:first-child, .comparison-table td:first-child {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        #toc {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc h3 {
+            margin-top: 0;
+        }
+
+        #toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #toc ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        #toc ul li a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+        }
+
+        #toc ul li a:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding-left: 1rem;
+        }
+
+        .sub-toc {
+            padding-left: 1.5rem !important;
+        }
+
+        .callout {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+            background-color: rgba(52, 152, 219, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .callout-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+        }
+
+        .callout-title::before {
+            content: "💡";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .quiz-container {
+            margin: 1.5rem 0;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-options {
+            margin-bottom: 1rem;
+        }
+
+        .quiz-option {
+            display: block;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quiz-option:hover {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+
+        .quiz-option.selected {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .quiz-option.correct {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .quiz-option.incorrect {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .treatment-algorithm {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .algorithm-step {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        .algorithm-step::after {
+            content: "↓";
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .algorithm-step:last-child::after {
+            display: none;
+        }
+
+        .algorithm-decision {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+        }
+
+        .algorithm-option {
+            flex: 1;
+            margin: 0 0.5rem;
+            padding: 1rem;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: var(--border-radius);
+            text-align: center;
+            position: relative;
+        }
+
+        .algorithm-option::after {
+            content: "↓";
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--dark);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .two-columns {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::after {
+                left: 15px;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="header-text">
+                <h1>Infantile Hemangiomas</h1>
+                <p>Comprehensive Saudi Board Exam Review</p>
+            </div>
+            <div class="header-image">
+                <!-- Placeholder for an image -->
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="toc" class="card">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#introduction">Introduction & Classification</a></li>
+                <li><a href="#epidemiology">Epidemiology</a></li>
+                <li><a href="#pathogenesis">Pathogenesis</a></li>
+                <li>
+                    <a href="#clinical-features">Clinical Features</a>
+                    <ul class="sub-toc">
+                        <li><a href="#presentation">Presentation</a></li>
+                        <li><a href="#types">Types & Patterns</a></li>
+                        <li><a href="#natural-history">Natural History</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#complications">Complications</a>
+                    <ul class="sub-toc">
+                        <li><a href="#ulceration">Ulceration</a></li>
+                        <li><a href="#disfigurement">Disfigurement & Functional Impairment</a></li>
+                        <li><a href="#extracutaneous">Extracutaneous Involvement</a></li>
+                        <li><a href="#phaces">PHACE(S) Syndrome</a></li>
+                        <li><a href="#lumbar">LUMBAR Syndrome</a></li>
+                    </ul>
+                </li>
+                <li><a href="#diagnosis">Diagnosis & Evaluation</a></li>
+                <li><a href="#pathology">Pathology</a></li>
+                <li><a href="#differential">Differential Diagnosis</a></li>
+                <li>
+                    <a href="#treatment">Treatment</a>
+                    <ul class="sub-toc">
+                        <li><a href="#ulcer-management">Management of Ulceration</a></li>
+                        <li><a href="#local-therapy">Local Therapies</a></li>
+                        <li><a href="#systemic-therapy">Systemic Therapies</a></li>
+                        <li><a href="#surgical-therapy">Surgical Therapy</a></li>
+                    </ul>
+                </li>
+                <li><a href="#congenital">Congenital Hemangiomas (RICH/NICH)</a></li>
+                <li><a href="#clinical-cases">Clinical Cases</a></li>
+                <li><a href="#quiz">Self-Assessment Quiz</a></li>
+                <li><a href="#high-yield">High-Yield Summary</a></li>
+            </ul>
+        </div>
+
+        <section id="introduction" class="card">
+            <h2>Introduction & Classification</h2>
+            <p>Infantile hemangiomas (IHs) are the most common benign soft tissue tumors of infancy, characterized by their distinctive growth pattern of early proliferation followed by gradual, spontaneous involution with variable residual skin changes.</p>
+
+            <div class="clinical-pearl">
+                <strong>Clinical Pearl:</strong> IHs have distinct histopathologic and immunohistochemical features (GLUT1 positivity) that differentiate them from other vascular anomalies.
+            </div>
+
+            <h3>Classification of Vascular Birthmarks</h3>
+            <p>The International Society for the Study of Vascular Anomalies (ISSVA) classifies vascular birthmarks into three categories:</p>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Definition</th>
+                        <th>Examples</th>
+                    </tr>
+                    <tr>
+                        <td>Vascular Tumors</td>
+                        <td>Characterized by cellular proliferation</td>
+                        <td>Infantile hemangioma, pyogenic granuloma, tufted angioma, kaposiform hemangioendothelioma</td>
+                    </tr>
+                    <tr>
+                        <td>Vascular Malformations</td>
+                        <td>Errors in vascular morphogenesis that do not proliferate or involute</td>
+                        <td>Capillary, venous, lymphatic, and arteriovenous malformations</td>
+                    </tr>
+                    <tr>
+                        <td>Provisionally Unclassified</td>
+                        <td>Lesions that don't fit neatly in above categories</td>
+                        <td>Angiokeratomas, multifocal lymphangioendotheliomatosis with thrombocytopenia</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Key Distinction:</strong> IHs differ from vascular malformations in their natural history, with IHs showing a characteristic growth pattern (proliferation followed by involution) while vascular malformations grow proportionately with the child.
+            </div>
+        </section>
+
+        <section id="epidemiology" class="card">
+            <h2>Epidemiology</h2>
+            <ul>
+                <li>Incidence: 4-5% of infants</li>
+                <li>Female:male ratio of 2-5:1</li>
+                <li>Higher female:male ratio (7-9:1) for severe, complicated IHs</li>
+                <li>Risk factors include:
+                    <ul>
+                        <li>Prematurity and low birth weight (25-30% in infants <1000g)</li>
+                        <li>Placental abnormalities (preeclampsia, placenta previa)</li>
+                        <li>Advanced maternal age</li>
+                        <li>Multiple gestation pregnancies</li>
+                        <li>Chorionic villus sampling (3-fold increased risk)</li>
+                    </ul>
+                </li>
+                <li>Usually sporadic, though family history reported in up to 30% of cases</li>
+            </ul>
+
+            <div class="exam-tip">
+                <strong>Exam Tip:</strong> Low birth weight is an independent risk factor for IH, with higher incidence as birth weight decreases. Be prepared to recall specific statistics: 25-30% in infants <1000g, 15% in infants 1000-1500g.
+            </div>
+        </section>
+
+        <section id="pathogenesis" class="card">
+            <h2>Pathogenesis</h2>
+            <p>IHs represent localized areas of abnormal vascular development and proliferation involving multiple processes:</p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h3>Key Cellular Mechanisms</h3>
+                    <ul>
+                        <li>De novo formation of vessels from multipotent hemangioma-derived stem cells (HemSCs) and endothelial progenitor cells (vasculogenesis)</li>
+                        <li>Formation of new vessels from existing ones (angiogenesis)</li>
+                        <li>Involvement of multiple cell types: monocytes, fibroblasts, pericytes, mesenchymal cells, adipocytes and mast cells</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Placental Connection</h3>
+                    <ul>
+                        <li>Overlapping immunohistochemical phenotype between hemangioma cells and placental endothelium</li>
+                        <li>GLUT1 expression in IHs and placenta (not in other vascular tumors/malformations)</li>
+                        <li>Other shared placental markers: merosin, FcyRII, and Lewis Y antigen</li>
+                        <li>IHs don't express placental trophoblastic markers (human placental lactogen)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Role of Hypoxia</h3>
+            <p>Hypoxia plays a crucial role in IH pathogenesis:</p>
+            <ul>
+                <li>Clinical associations: prematurity, placental insufficiency, regional arterial insufficiency</li>
+                <li>Hypoxia upregulates GLUT1 and VEGF expression, leading to mobilization of endothelial progenitor cells</li>
+                <li>Hypoxia inducible factor (HIF)-1α and its downstream effectors are upregulated in proliferative phase</li>
+                <li>Synergistic effect between hypoxia and estrogen on hemangioma endothelial cell proliferation (may explain female predominance)</li>
+            </ul>
+
+            <h3>Signaling Pathways</h3>
+            <div class="callout">
+                <div class="callout-title">Important Signaling Pathways in IH Development</div>
+                <ul>
+                    <li><strong>VEGF Pathway:</strong> Shift from VEGFR-1 (weak signal) to VEGFR-2 (strongly stimulates proliferation)</li>
+                    <li><strong>PI3K-mTOR Pathway:</strong> Activated by VEGFR-2, leads to HIF-1α upregulation and increased VEGF levels</li>
+                    <li><strong>Tie-2 and Angiopoietin-2:</strong> Dysregulated production promotes angiogenesis and inhibits vessel maturation</li>
+                    <li><strong>Notch Pathway:</strong> Mediates differentiation of HemSCs into pericytes/vascular smooth muscle cells</li>
+                    <li><strong>Renin-Angiotensin System:</strong> Implicated in IH proliferation via angiotensin II receptor 2</li>
+                </ul>
+            </div>
+
+            <h3>Genetic Factors</h3>
+            <ul>
+                <li>Somatic mutations in genes encoding proteins involved in VEGF signaling (e.g., VEGFRs)</li>
+                <li>Heterozygous germline mutations in VEGFR2 and ANTXR1 (anthrax toxin receptor 1)</li>
+                <li>ANTXR1 encodes an integrin-like endothelial cell receptor</li>
+            </ul>
+
+            <div class="clinical-pearl">
+                <strong>Clinical Pearl:</strong> Treatment with mTOR inhibitor sirolimus (rapamycin) reduces hemangioma endothelial cell proliferation in vitro, explaining its effectiveness as a therapy in some cases.
+            </div>
+
+            <h3>Factors Influencing Natural History</h3>
+            <p>Proliferative phase is characterized by:</p>
+            <ul>
+                <li>Increased expression of proliferation markers (e.g., PCNA)</li>
+                <li>Pro-angiogenic molecules (VEGF, bFGF)</li>
+                <li>Adhesion molecules (E-selectin, ICAM-3)</li>
+                <li>Matrix remodeling enzymes (MMP-2, MMP-9)</li>
+                <li>Apoptosis inhibitors</li>
+            </ul>
+
+            <p>Involuting phase shows:</p>
+            <ul>
+                <li>Increased expression of angiogenesis inhibitors</li>
+                <li>Apoptosis promoters</li>
+                <li>Interferon-regulated gene products</li>
+                <li>Tissue inhibitor of matrix metalloproteinases-1</li>
+                <li>Increased mast cells (early in involution)</li>
+            </ul>
+        </section>
+
+        <section id="clinical-features" class="card">
+            <h2>Clinical Features</h2>
+
+            <section id="presentation">
+                <h3>Presentation</h3>
+                <p>Most IHs have a typical presentation and growth pattern:</p>
+                <ul>
+                    <li>Usually become apparent during the first few weeks of life</li>
+                    <li>15-60% present as "congenital" (present at birth)</li>
+                    <li>Most often appear as precursor lesions at birth</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Precursor IH Lesions Include:</strong>
+                    <ul>
+                        <li>Telangiectasias surrounded by a vasoconstricted halo</li>
+                        <li>Areas of pallor</li>
+                        <li>Pink macules</li>
+                        <li>Blue bruise-like patches</li>
+                    </ul>
+                </div>
+
+                <p>Pink macules and patches may mimic a capillary malformation, and repeat examination over the ensuing weeks is essential to determine the diagnosis.</p>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Occasionally, an area of ulceration in the diaper area, in other skin folds, or on the lip may herald the onset of an IH. In a newborn, these lesions may be confused with bacterial or viral infections.
+                </div>
+            </section>
+
+            <section id="types">
+                <h3>Types of Infantile Hemangiomas</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Clinical Appearance</th>
+                            <th>Frequency</th>
+                        </tr>
+                        <tr>
+                            <td>Superficial</td>
+                            <td>Upper dermis</td>
+                            <td>Bright red, finely lobulated ("strawberry hemangioma")</td>
+                            <td>50-60%</td>
+                        </tr>
+                        <tr>
+                            <td>Deep</td>
+                            <td>Deep dermis and/or subcutis</td>
+                            <td>Warm, ill-defined, light blue-purple masses with minimal overlying skin changes</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>Mixed</td>
+                            <td>Both superficial and deep components</td>
+                            <td>Well-delineated red vascular plaque overlying a larger, poorly circumscribed violaceous nodule</td>
+                            <td>25-35%</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> Deep hemangiomas are not apparent in the immediate newborn period, often becoming evident a few weeks or even months after birth. The presence of dilated veins or telangiectasias overlying a deep blue mass provides a clue to the vascular nature of the lesion.
+                </div>
+
+                <h3>Pattern Classification</h3>
+                <p>IHs can be categorized based on pattern of involvement, which helps predict prognosis:</p>
+                <ol>
+                    <li><strong>Focal:</strong> Arising from a single localized focus (most common)</li>
+                    <li><strong>Segmental:</strong> Covering a broad area or developmental unit in a "plaque-like" manner</li>
+                    <li><strong>Indeterminate:</strong> Difficult to classify, may represent partial segmental lesions</li>
+                </ol>
+
+                <div class="callout">
+                    <div class="callout-title">Segmental Facial Hemangioma Patterns (S1-S4)</div>
+                    <ul>
+                        <li><strong>S1:</strong> Frontotemporal region</li>
+                        <li><strong>S2:</strong> Maxillary region</li>
+                        <li><strong>S3:</strong> Mandibular region</li>
+                        <li><strong>S4:</strong> Frontonasal region</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Important:</strong> Segmental hemangiomas are more likely to be associated with regional extracutaneous anomalies, including PHACE(S) and LUMBAR syndromes. On extremities, smaller segmental hemangiomas typically spare the distal digits in a "biker glove" pattern.
+                </div>
+
+                <h3>Infantile Hemangioma with Minimal or Arrested Growth (IH-MAG)</h3>
+                <p>A subset of hemangiomas previously described as "abortive" or "reticular" that display little or no growth beyond patches of reticulated erythema with telangiectasias, often on a background of pallor.</p>
+                <ul>
+                    <li>Proliferative component involves &lt;25% of surface area, often as small red papules at periphery</li>
+                    <li>More common on lower body</li>
+                    <li>May develop recalcitrant ulceration</li>
+                    <li>If larger and segmental, may be associated with LUMBAR or PHACE(S) syndrome</li>
+                    <li>GLUT1-positive and involute similar to classic IHs</li>
+                </ul>
+            </section>
+
+            <section id="natural-history">
+                <h3>Natural History</h3>
+                <p>IHs follow a distinctive growth pattern with several phases:</p>
+
+                <div class="timeline">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h4>Early Proliferation</h4>
+                            <ul>
+                                <li>Rapid increase in size</li>
+                                <li>Most rapid from 5-8 weeks of age</li>
+                                <li>Ends around 3 months</li>
+                                <li>IHs reach 80% of final size by end of this phase</li>
+                                <li>Hemangiomas "mark out their territory" early</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h4>Late Proliferation</h4>
+                            <ul>
+                                <li>Continued growth at slower rate</li>
+                                <li>Usually from 3-9 months</li>
+                                <li>Only 3% grow beyond 9 months</li>
+                                <li>Deep, segmental, and parotid hemangiomas may grow longer</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h4>Plateau Phase</h4>
+                            <ul>
+                                <li>Growth stabilizes</li>
+                                <li>Existence as distinct phase is debated</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h4>Involution</h4>
+                            <ul>
+                                <li>Color change from bright red to gray-purple</li>
+                                <li>Softening and flattening of surface</li>
+                                <li>Gradual loss of volume</li>
+                                <li>Median age of completed involution: 3 years</li>
+                                <li>&gt;90% show no further improvement after 4 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> Classic studies showed 30% involute by 3 years, 50% by 5 years, 70% by 7 years, and >90% by 9 years. More recent data suggests faster involution with median age of completion at 36 months.
+                </div>
+
+                <h4>Residual Changes</h4>
+                <p>After involution, IHs may leave:</p>
+                <ul>
+                    <li>Residual telangiectasias</li>
+                    <li>Atrophy/anetoderma</li>
+                    <li>Fibrofatty tissue</li>
+                    <li>Redundant skin</li>
+                    <li>Scarring (if previously ulcerated)</li>
+                </ul>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Risk factors for more prominent sequelae include abrupt "step" border, "cobblestoned" surface, and mixed IH subtype.
+                </div>
+            </section>
+        </section>
+
+        <section id="complications" class="card">
+            <h2>Complications</h2>
+            <p>While most IHs are small lesions requiring little intervention, some become problematic due to size, location, or association with other anomalies.</p>
+
+            <section id="ulceration">
+                <h3>Ulceration</h3>
+                <p>The most common complication, occurring in up to 10% of all IHs.</p>
+                <ul>
+                    <li>More common in:
+                        <ul>
+                            <li>Lip and anogenital region or other skin folds (e.g., neck)</li>
+                            <li>Large, mixed (superficial and deep) hemangiomas</li>
+                            <li>Segmental hemangiomas (up to 30% of segmental extremity lesions)</li>
+                            <li>IHs-MAG</li>
+                        </ul>
+                    </li>
+                    <li>Usually occurs during proliferative phase, with most developing within first 6 months</li>
+                    <li>Whitish discoloration in infants &lt;3 months may be a sign of impending ulceration</li>
+                    <li>Complications: pain, infection risk, scarring</li>
+                    <li>Bleeding is rare and can usually be controlled with firm pressure</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>Warning:</strong> Larger hemangioma size, segmental morphology, and ulceration extending over a greater surface area are associated with longer healing times.
+                </div>
+            </section>
+
+            <section id="disfigurement">
+                <h3>Disfigurement and Interference with Function</h3>
+                <p>Large hemangiomas can distort tissues, interfere with function, and lead to significant long-term sequelae.</p>
+                
+                <h4>Common Problematic Locations</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Location</th>
+                            <th>Potential Complications</th>
+                        </tr>
+                        <tr>
+                            <td>Periocular</td>
+                            <td>Astigmatism, amblyopia, strabismus, proptosis (especially upper lid)</td>
+                        </tr>
+                        <tr>
+                            <td>Nasal Tip</td>
+                            <td>Distortion of cartilage → "Cyrano-nose" deformity</td>
+                        </tr>
+                        <tr>
+                            <td>Columella</td>
+                            <td>Destruction of underlying cartilage (with ulceration)</td>
+                        </tr>
+                        <tr>
+                            <td>Lip</td>
+                            <td>Distortion of vermilion border, lengthening of lip, feeding difficulties</td>
+                        </tr>
+                        <tr>
+                            <td>Pinna (Auricle)</td>
+                            <td>Distortion, conductive hearing loss from canal obstruction</td>
+                        </tr>
+                        <tr>
+                            <td>Breast</td>
+                            <td>Asymmetry, potential effect on normal development</td>
+                        </tr>
+                        <tr>
+                            <td>Anogenital</td>
+                            <td>Ulceration, infection, difficult wound care</td>
+                        </tr>
+                        <tr>
+                            <td>Limbs</td>
+                            <td>Excess tissue, rare length discrepancy</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> Periocular hemangiomas can cause astigmatism by compressing the globe and deforming the cornea. All infants with periocular hemangiomas should have baseline ophthalmologic evaluation with appropriate follow-up during the proliferative stage.
+                </div>
+            </section>
+
+            <section id="extracutaneous">
+                <h3>Extracutaneous Involvement</h3>
+                <p>Large hemangiomas, particularly segmental lesions, may be associated with extracutaneous anomalies.</p>
+
+                <h4>Common Extracutaneous Locations</h4>
+                <ul>
+                    <li><strong>Airway:</strong> Associated with "beard" distribution cutaneous hemangiomas</li>
+                    <li><strong>Liver:</strong> Most common site of internal hemangiomas, especially with multiple cutaneous IHs</li>
+                    <li><strong>Gastrointestinal tract:</strong> Can cause bleeding, especially in distribution of superior mesenteric artery</li>
+                    <li><strong>CNS:</strong> Rare, typically represent extension of overlying IH</li>
+                    <li><strong>Other:</strong> Mediastinum, lungs</li>
+                </ul>
+
+                <h4>Hepatic Hemangiomas</h4>
+                <p>Three types:</p>
+                <ol>
+                    <li><strong>Focal:</strong> Likely distinct from IHs, similar to RICH</li>
+                    <li><strong>Multifocal:</strong> Associated with multiple cutaneous IHs</li>
+                    <li><strong>Diffuse:</strong> Massive hepatomegaly, risk of high-output cardiac failure, hypothyroidism, and abdominal compartment syndrome</li>
+                </ol>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Evaluation with abdominal ultrasonography is recommended when ≥5 cutaneous hemangiomas are present. Rarely, infants with a single large IH or fewer than 5 small IHs have liver involvement.
+                </div>
+
+                <h4>Consumptive Hypothyroidism</h4>
+                <ul>
+                    <li>Caused by increased levels of type 3 iodothyronine deiodinase (deactivates thyroid hormone)</li>
+                    <li>Most common with hepatic hemangiomas, but reported with large parotid hemangiomas</li>
+                    <li>Often difficult to correct, resolves with tumor regression</li>
+                    <li>Screening at birth is inadequate as hemangiomas typically developing later</li>
+                </ul>
+            </section>
+
+            <section id="phaces">
+                <h3>PHACE(S) Syndrome</h3>
+                <p>A spectrum of associated anomalies linked to large segmental facial hemangiomas.</p>
+
+                <div class="callout">
+                    <div class="callout-title">PHACE(S) Components</div>
+                    <ul>
+                        <li><strong>P:</strong> Posterior fossa and other structural brain malformations</li>
+                        <li><strong>H:</strong> Hemangioma</li>
+                        <li><strong>A:</strong> Arterial anomalies of cervical and cerebral vessels</li>
+                        <li><strong>C:</strong> Cardiac defects (especially coarctation of the aorta)</li>
+                        <li><strong>E:</strong> Eye anomalies</li>
+                        <li><strong>(S):</strong> Sternal defects and supraumbilical raphe</li>
+                    </ul>
+                </div>
+
+                <p>Additional features include hearing impairment, dysphagia, speech/language delay, dental anomalies, and endocrine abnormalities (hypopituitarism, hypothyroidism).</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th colspan="3">Diagnostic Criteria for PHACE(S) Syndrome</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>Definite PHACE(S):</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">• Hemangioma >5 cm in diameter of the head including scalp PLUS 1 major criterion or 2 minor criteria<br>• Hemangioma of the neck, upper trunk, or trunk and proximal upper extremity PLUS 2 major criteria</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>Possible PHACE(S):</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">• Hemangioma >5 cm in diameter of the head including scalp PLUS 1 minor criterion<br>• Hemangioma of the neck, upper trunk, or trunk and proximal upper extremity PLUS 1 major criterion or 2 minor criteria<br>• No hemangioma PLUS 2 major criteria</td>
+                        </tr>
+                        <tr>
+                            <th>Organ system</th>
+                            <th>Major criteria</th>
+                            <th>Minor criteria</th>
+                        </tr>
+                        <tr>
+                            <td>Arterial</td>
+                            <td>• Anomalies of major cerebral or cervical arteries - dysplasia, hypoplasia, stenosis/occlusion, aberrant origin/course<br>• Persistent carotid-vertebrobasilar anastomosis</td>
+                            <td>• Aneurysm of cerebral arteries</td>
+                        </tr>
+                        <tr>
+                            <td>Structural brain</td>
+                            <td>• Posterior fossa anomalies - Dandy-Walker complex, other hypoplasia/dysplasia of the mid or hind brain</td>
+                            <td>• Midline anomalies<br>• Malformation of cortical development</td>
+                        </tr>
+                        <tr>
+                            <td>Cardiovascular</td>
+                            <td>• Aortic arch anomalies<br>• Aberrant origin of subclavian artery + vascular ring</td>
+                            <td>• Ventricular septal defect<br>• Right/double aortic arch<br>• Systemic venous anomalies</td>
+                        </tr>
+                        <tr>
+                            <td>Ocular</td>
+                            <td>• Posterior segment anomalies - persistent hyperplastic primary vitreous/persistent fetal vasculature, retinal vascular anomalies, optic nerve hypoplasia, morning glory disc anomaly</td>
+                            <td>• Anterior segment anomalies, e.g. sclerocornea, cataract, coloboma, microphthalmia</td>
+                        </tr>
+                        <tr>
+                            <td>Ventral or midline</td>
+                            <td>• Sternal defect/pit/cleft<br>• Supraumbilical raphe</td>
+                            <td>• Hypopituitarism<br>• Ectopic thyroid<br>• Midline sternal papule/hamartoma</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Important:</strong> The cerebrovascular anomalies typically occur ipsilateral to the hemangioma and most commonly involve the internal carotid artery. Cerebrovascular and cardiovascular changes may be progressive, with potential complications including ischemic stroke and neurovascular sequelae in adulthood.
+                </div>
+
+                <div class="exam-tip">
+                    <strong>Exam Tip:</strong> In prospective studies of infants with large facial hemangiomas (≥22 cm), 31% had PHACE(S) syndrome. The prevalence of PHACE(S) in infants with segmental IHs of the head and neck was as high as 58% in some studies.
+                </div>
+            </section>
+
+            <section id="lumbar">
+                <h3>LUMBAR Syndrome</h3>
+                <p>A spectrum of anomalies associated with large segmental hemangiomas on the lower body.</p>
+
+                <div class="callout">
+                    <div class="callout-title">LUMBAR Components</div>
+                    <ul>
+                        <li><strong>L:</strong> Lower body/lumbosacral hemangioma and lipomas or other cutaneous anomalies</li>
+                        <li><strong>U:</strong> Urogenital anomalies and ulceration of the hemangioma</li>
+                        <li><strong>M:</strong> Myelopathy (spinal dysraphism)</li>
+                        <li><strong>B:</strong> Bony deformities</li>
+                        <li><strong>A:</strong> Anorectal and arterial anomalies</li>
+                        <li><strong>R:</strong> Renal anomalies</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Hemangiomas located in the midline lumbosacral area are a marker for occult spinal dysraphism. The risk in an infant with an isolated midline lumbosacral hemangioma >2.5 cm in diameter is ~35%.
+                </div>
+
+                <p>Also known as SACRAL syndrome (spinal dysraphism, anogenital anomalies, cutaneous anomalies, renal/urologic anomalies, angioma in lumbosacral area) and PELVIS syndrome (perineal hemangioma, external genital malformations, lipomyelomeningocele, vesicorenal abnormalities, imperforate anus, skin tag).</p>
+            </section>
+        </section>
+
+        <section id="diagnosis" class="card">
+            <h2>Diagnosis & Evaluation</h2>
+            <p>Diagnosis of superficial and mixed IHs is typically based on clinical features. Additional evaluation may be needed for deep IHs or when complications or syndromes are suspected.</p>
+
+            <h3>Radiologic Evaluation</h3>
+            <ul>
+                <li><strong>Ultrasonography:</strong> Useful for confirming diagnosis and extent of deep IHs</li>
+                <li><strong>MRI with contrast:</strong> Most useful for defining extent and tissue characteristics</li>
+                <li><strong>MRA:</strong> Used to detect internal hemangiomas and structural abnormalities</li>
+            </ul>
+
+            <h3>Systematic Approach to Evaluation</h3>
+            <div class="accordion">Patient with Multiple (≥5) Hemangiomas</div>
+            <div class="panel">
+                <div class="panel-content">
+                    <ul>
+                        <li>Abdominal (hepatic) ultrasound</li>
+                        <li>Consider CBC, stool guaiac, and urinalysis</li>
+                        <li>If multifocal or diffuse hepatic hemangiomas:
+                            <ul>
+                                <li>Thyroid function tests, liver function tests, α-fetoprotein level</li>
+                                <li>Consider echocardiogram/cardiac evaluation and abdominal MRI</li>
+                            </ul>
+                        </li>
+                        <li>Referral to specialists as needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">"Beard" Distribution Hemangiomas</div>
+            <div class="panel">
+                <div class="panel-content">
+                    <ul>
+                        <li>ENT evaluation, airway endoscopy</li>
+                        <li>Serial examinations</li>
+                        <li>Treatment as indicated</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">Segmental Hemangioma - Head and/or Neck</div>
+            <div class="panel">
+                <div class="panel-content">
+                    <ul>
+                        <li>Evaluate for PHACE(S) syndrome:
+                            <ul>
+                                <li>Ophthalmologic examination</li>
+                                <li>Echocardiogram, cardiac evaluation</li>
+                                <li>MRI/MRA of head and neck</li>
+                            </ul>
+                        </li>
+                        <li>Evaluation of other organ systems as clinically indicated</li>
+                        <li>Serial examinations</li>
+                        <li>Treatment as indicated</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">Segmental Hemangioma - Lower Body and/or Lumbosacral</div>
+            <div class="panel">
+                <div class="panel-content">
+                    <ul>
+                        <li>Evaluate for LUMBAR syndrome:
+                            <ul>
+                                <li>Physical examination of affected region</li>
+                                <li>Ultrasound (with Doppler) of abdomen, pelvis and (if age &lt;3 months) spine</li>
+                            </ul>
+                        </li>
+                        <li>Additional evaluation (preferably at age 3-6 months):
+                            <ul>
+                                <li>If midline lumbar hemangioma or lipoma (or abnormal spinal ultrasound): MRI of spine and consider neurosurgical evaluation</li>
+                                <li>If extensive diaper area involvement (or abnormal pelvic/renal ultrasound): consider urologic evaluation</li>
+                                <li>If extensive limb involvement: orthopedic evaluation and additional imaging as clinically indicated</li>
+                            </ul>
+                        </li>
+                        <li>Serial examinations</li>
+                        <li>Additional evaluation and treatment as indicated</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exam-tip">
+                <strong>Exam Tip:</strong> "Beard" distribution hemangiomas with involvement of 4 or more anatomic areas (preauricular, mandible, lower lip, chin, anterior neck) have a 63% risk of symptomatic airway involvement in one study.
+            </div>
+        </section>
+
+        <section id="pathology" class="card">
+            <h2>Pathology</h2>
+            <p>The histopathologic features of IH correlate with the stage of hemangioma development.</p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h3>Proliferating Phase</h3>
+                    <ul>
+                        <li>Well-defined non-encapsulated masses</li>
+                        <li>Proliferating plump endothelial cells and pericytes</li>
+                        <li>Small vascular lumens</li>
+                        <li>Later: lobules of endothelial masses separated by fibrous septae</li>
+                        <li>Feeding and draining vessels within septae</li>
+                        <li>Mitotic figures and apoptotic bodies</li>
+                        <li>Increased number of mast cells</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Involuting Phase</h3>
+                    <ul>
+                        <li>Flattening of the endothelium</li>
+                        <li>Reduced numbers of mitotic figures</li>
+                        <li>Decreased vessel density</li>
+                        <li>Increased fibrous and fatty tissue</li>
+                        <li>Persistence of feeding and draining vessels</li>
+                    </ul>
+                    <h3>Involuted Phase</h3>
+                    <ul>
+                        <li>Fibrofatty tissue replacement</li>
+                        <li>Few persistent vessels</li>
+                        <li>Decreased mast cells</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Immunohistochemistry</h3>
+            <p>Immunohistochemical analysis is useful for confirming the diagnosis of IH:</p>
+            <ul>
+                <li>GLUT1: High-level immunoreactivity in endothelia within IHs of all phases (pathognomonic)</li>
+                <li>Other markers: Lewis Y antigen, merosin, and FcyRII</li>
+                <li>Wilms tumor 1 (WT1) expression is also observed in IH but not vascular malformations (except AVMs)</li>
+            </ul>
+
+            <div class="clinical-pearl">
+                <strong>Clinical Pearl:</strong> GLUT1 positivity distinguishes IHs from other vascular tumors and malformations (which are GLUT1-negative). This is a key diagnostic feature in challenging cases.
+            </div>
+        </section>
+
+        <section id="differential" class="card">
+            <h2>Differential Diagnosis</h2>
+
+            <div class="callout">
+                <div class="callout-title">Key Differential Diagnoses</div>
+                <h4>Superficial/Mixed Hemangiomas</h4>
+                <ul>
+                    <li>Capillary malformation (early pink patches)</li>
+                    <li>Pyogenic granuloma (usually arises after first few months)</li>
+                    <li>Tufted angioma</li>
+                    <li>Multifocal lymphangioendotheliomatosis with thrombocytopenia</li>
+                    <li>Infantile myofibromatosis</li>
+                    <li>Lipoblastoma</li>
+                    <li>Nasal glial heterotopia</li>
+                </ul>
+
+                <h4>Deep Hemangiomas</h4>
+                <ul>
+                    <li>Venous, lymphatic, or combined venous-lymphatic malformation</li>
+                    <li>Congenital hemangioma (RICH/NICH)</li>
+                    <li>Kaposiform hemangioendothelioma</li>
+                    <li>Congenital fibrosarcoma</li>
+                    <li>Rhabdomyosarcoma</li>
+                    <li>Neuroblastoma</li>
+                </ul>
+            </div>
+
+            <div class="exam-tip">
+                <strong>Exam Tip:</strong> While Kasabach-Merritt phenomenon (KMP) was historically associated with IHs, it is now known to be primarily associated with kaposiform hemangioendotheliomas and tufted angiomas, NOT with IHs.
+            </div>
+
+            <h3>Comparison of Infantile and Congenital Hemangiomas</h3>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Infantile Hemangioma</th>
+                        <th>Rapidly Involuting Congenital Hemangioma (RICH)</th>
+                        <th>Non-Involuting Congenital Hemangioma (NICH)</th>
+                    </tr>
+                    <tr>
+                        <td>Presentation at birth</td>
+                        <td>Usually absent or precursor lesion</td>
+                        <td>Fully developed at birth</td>
+                        <td>Fully developed at birth</td>
+                    </tr>
+                    <tr>
+                        <td>Growth pattern</td>
+                        <td>Rapid postnatal proliferation</td>
+                        <td>Intrauterine proliferation, then rapid involution</td>
+                        <td>Intrauterine proliferation, then proportionate growth</td>
+                    </tr>
+                    <tr>
+                        <td>Involution</td>
+                        <td>Slow spontaneous involution</td>
+                        <td>Rapid involution during first year</td>
+                        <td>Do not involute spontaneously</td>
+                    </tr>
+                    <tr>
+                        <td>Gender predilection</td>
+                        <td>More common in girls (2-5:1)</td>
+                        <td>Equal prevalence in boys and girls</td>
+                        <td>Equal prevalence or slightly more common in girls</td>
+                    </tr>
+                    <tr>
+                        <td>Histopathology</td>
+                        <td>Lobular endothelial proliferation; fibrofatty tissue during involution</td>
+                        <td>Capillary lobules within fibrotic stroma containing thin-walled vessels, hemosiderin</td>
+                        <td>Lobules of small, thin-walled vessels with large central vessel; dilated, dysplastic veins</td>
+                    </tr>
+                    <tr>
+                        <td>Immunohistochemistry</td>
+                        <td>Positive GLUT1 and Lewis Y antigen</td>
+                        <td>Negative GLUT1 and Lewis Y antigen</td>
+                        <td>Negative GLUT1 and Lewis Y antigen</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="treatment" class="card">
+            <h2>Treatment</h2>
+            <p>Management of IHs needs to be individualized based on the clinical presentation, location, potential for complications, and growth phase.</p>
+
+            <h3>Goals of Management</h3>
+            <ol>
+                <li>Preventing or reversing life- or function-threatening complications</li>
+                <li>Treating ulcerations</li>
+                <li>Preventing permanent disfigurement</li>
+                <li>Minimizing psychosocial distress to patients and their families</li>
+                <li>Avoiding overly aggressive, potentially scarring procedures for lesions likely to involute without significant residua</li>
+            </ol>
+
+            <div class="callout">
+                <div class="callout-title">Indications for Intervention</div>
+                <h4>Threatened Vital Functions</h4>
+                <ul>
+                    <li>Vision (periocular hemangiomas)</li>
+                    <li>Airway ("beard" distribution)</li>
+                </ul>
+
+                <h4>Increased Potential for Disfigurement</h4>
+                <ul>
+                    <li>Nasal tip/columella</li>
+                    <li>Lip, especially if crossing vermilion border</li>
+                    <li>Large lesions, especially on face (>1cm)</li>
+                    <li>Lesions with abrupt "step" border</li>
+                    <li>Breast (especially if involving nipple in girls)</li>
+                </ul>
+
+                <h4>Other Indications</h4>
+                <ul>
+                    <li>Recalcitrant/severe ulceration</li>
+                    <li>High-output cardiac failure</li>
+                    <li>Significant pain or bleeding</li>
+                </ul>
+            </div>
+
+            <h3>Active Non-Intervention</h3>
+            <p>Appropriate for small, uncomplicated hemangiomas with excellent prognosis for spontaneous resolution.</p>
+            <ul>
+                <li>Addressing parental concerns</li>
+                <li>Discussing natural history and expected outcomes</li>
+                <li>Periodic clinical assessment and photography</li>
+                <li>Providing anticipatory guidance for potential complications</li>
+            </ul>
+
+            <section id="ulcer-management">
+                <h3>Management of Ulceration</h3>
+                <p>The primary goals are healing the ulceration, preventing infection, and reducing pain.</p>
+
+                <h4>Wound Care</h4>
+                <ul>
+                    <li>Saline solution compresses to debride crusts</li>
+                    <li>Topical antibacterial ointments (e.g., mupirocin)</li>
+                    <li>Occlusive dressings (hydrocolloid, foam, silicone-based)</li>
+                    <li>Petrolatum-impregnated gauze (helpful for perineal ulcers)</li>
+                </ul>
+
+                <h4>Specific Therapies</h4>
+                <ul>
+                    <li>Topical timolol for small ulcerated IHs (caution with systemic absorption)</li>
+                    <li>Oral propranolol (often achieves healing within 4 weeks at doses ≤1 mg/kg/day)</li>
+                    <li>Pulsed dye laser (mixed results)</li>
+                    <li>Excisional surgery for small or pedunculated ulcerated lesions</li>
+                </ul>
+
+                <h4>Pain Control</h4>
+                <ul>
+                    <li>Occlusive dressings</li>
+                    <li>Oral acetaminophen</li>
+                    <li>Topical lidocaine 2%-5% ointment (use sparingly)</li>
+                    <li>Avoid EMLA on ulcerated skin</li>
+                    <li>Consider pain management consultation for severe cases</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>Warning:</strong> Use topical lidocaine sparingly (e.g., maximum of a pea-sized amount) to prevent systemic lidocaine toxicity.
+                </div>
+            </section>
+
+            <section id="local-therapy">
+                <h3>Local Therapies</h3>
+
+                <h4>Topical β-Blockers</h4>
+                <ul>
+                    <li>Timolol maleate 0.5% (non-selective β-blocker)</li>
+                    <li>Most effective for small superficial lesions &lt;1 mm thickness</li>
+                    <li>One drop (0.25 mg) twice daily of gel-forming solution (extended-release)</li>
+                    <li>Benefit seen after 8-16 weeks of treatment</li>
+                    <li>Pharmacokinetic considerations: increased plasma concentration with thicker hemangiomas</li>
+                    <li>Recommended dose limit: maximum of 2 drops of timolol 0.5% GFS daily or &lt;0.25 mg/kg/day</li>
+                    <li>Generally well-tolerated with rare serious adverse events</li>
+                </ul>
+
+                <h4>Intralesional Corticosteroids</h4>
+                <ul>
+                    <li>Historically used for localized IHs</li>
+                    <li>Less commonly used since advent of β-blockers</li>
+                    <li>Triamcinolone &lt;3 mg/kg per treatment session</li>
+                    <li>Complications: potential retinal and ophthalmic artery occlusion (periorbital area), local atrophy, and necrosis</li>
+                </ul>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> Despite systemic absorption, topical timolol treatment is generally well tolerated and serious adverse events are rare, making it a good option for small superficial IHs.
+                </div>
+            </section>
+
+            <section id="systemic-therapy">
+                <h3>Systemic Therapies</h3>
+
+                <h4>Systemic β-Blockers</h4>
+                <p>Propranolol is the first-line systemic therapy for IHs, and in 2014, propranolol (Hemangeol™) became the first FDA-approved treatment for IHs.</p>
+
+                <h5>Mechanism of Action</h5>
+                <ul>
+                    <li>Immediate vasoconstriction via β2-adrenergic receptors (color change from red to purple and softening)</li>
+                    <li>Decreased serum concentration of VEGF, bFGF, and renin</li>
+                    <li>Induction of endothelial cell apoptosis</li>
+                </ul>
+
+                <h5>Dosing and Administration</h5>
+                <ul>
+                    <li>Initial dose: ~1 mg/kg/day divided into 2-3 doses</li>
+                    <li>Target dose: 2-3 mg/kg/day (FDA-approved maximum: 3.4 mg/kg/day)</li>
+                    <li>Lower dose (~1 mg/kg/day) may be preferable for ulcerated lesions</li>
+                    <li>Duration: typically 6-12 months, followed by gradual tapering</li>
+                    <li>Adjust dose for weight gain during treatment</li>
+                </ul>
+
+                <h5>Monitoring and Precautions</h5>
+                <ul>
+                    <li>Evaluate for cardiovascular and cerebrovascular anomalies in patients at risk of PHACE(S) syndrome</li>
+                    <li>Monitor heart rate and blood pressure</li>
+                    <li>Feed infants in conjunction with medication administration to prevent hypoglycemia</li>
+                    <li>Consider inpatient initiation for infants &lt;5 weeks of age or with comorbidities</li>
+                    <li>Caution in patients with reactive airway disease/asthma</li>
+                </ul>
+
+                <h5>Side Effects</h5>
+                <ul>
+                    <li>Potentially serious: hypotension, bradycardia, hypoglycemia, bronchospasm (uncommon)</li>
+                    <li>Common: sleep disturbances, cold extremities, diarrhea, somnolence</li>
+                    <li>Rare: hyperkalemia (with large ulcerated hemangiomas)</li>
+                </ul>
+
+                <h5>Alternative β-Blockers</h5>
+                <ul>
+                    <li>Atenolol (β1-selective): doesn't cross blood-brain barrier, may produce fewer CNS effects</li>
+                    <li>Nadolol (non-selective): hydrophilic, doesn't cross blood-brain barrier</li>
+                    <li>Neither FDA-approved for IH treatment</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>Warning:</strong> Approximately 25% of IHs undergo rebound growth after cessation of propranolol, with higher risk if the lesion is deep or therapy is discontinued before 9 months of age.
+                </div>
+
+                <h4>Systemic Corticosteroids</h4>
+                <ul>
+                    <li>Historically first-line therapy, now second-line when β-blockers contraindicated</li>
+                    <li>Initial doses: 2-3 mg/kg/day of prednisone equivalent</li>
+                    <li>Suppresses VEGF production by hemangioma-derived stem cells</li>
+                    <li>Adverse effects: cushinoid facies, irritability, sleep disruption, GI symptoms, hypertension, HPA axis suppression, increased infection risk</li>
+                </ul>
+
+                <h4>Other Systemic Therapies</h4>
+                <ul>
+                    <li><strong>Sirolimus (rapamycin):</strong> mTOR inhibitor, emerging second-line treatment for recalcitrant cases, adverse effects include mucositis, hyperlipidemia, neutropenia</li>
+                    <li><strong>Vincristine:</strong> Historical third-line therapy, adverse effects include peripheral neuropathy</li>
+                    <li><strong>Interferon-α:</strong> Historical therapy, no longer used due to risk of spastic diplegia</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>Propranolol Dosing and Monitoring</h4>
+                    
+                    <h5>Dose Escalation</h5>
+                    <ul>
+                        <li><strong>General Principle:</strong> Dose is typically increased in increments until the target dose is reached.</li>
+                        <li><strong>Outpatient Setting:</strong> Increase by 1 mg/kg/day weekly.</li>
+                        <li><strong>Inpatient Setting:</strong> Faster escalation (e.g., daily or more frequently) after 1-3 doses, until target, under close medical supervision.</li>
+                        <li><strong>At-Home Initiation (Telemedicine):</strong> Start 0.5 mg/kg/day, increase by 0.5 mg/kg/day every 3-4 days until target.</li>
+                        <li><strong>Higher Risk Patients:</strong> May require lower starting/target dose and slower escalation.</li>
+                        <li><strong>Monitoring During Dose Increase:</strong>
+                            <ul>
+                                <li>FDA recommends monitoring heart rate and blood pressure for 2 hours after the initial dose or a significant dose increase (Hemangeol™).</li>
+                                <li>A study found in-office monitoring upon initiation/escalation rarely changed management, but FDA recommendation remains.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Initial Dose:</strong> Typically ~1 mg/kg/day divided into 2 (or 3) doses.</li>
+                        <li><strong>Target Dose:</strong>
+                            <ul>
+                                <li>Usually 2-3 mg/kg/day divided into 2 (or 3) doses.</li>
+                                <li>FDA-approved maximum: 3.4 mg/kg/day.</li>
+                                <li>For ulcerated lesions, target may be lower (~1 mg/kg/day).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h5>Ongoing Monitoring and Management (Stable Target Dose)</h5>
+                    <ul>
+                        <li><strong>Vital Signs:</strong> Measure heart rate and blood pressure every 4-8 weeks while on a stable dose.</li>
+                        <li><strong>Weight-Based Dose Adjustments:</strong> Adjust dose for weight gain to maintain goal dose/kg (requires regular weight checks).</li>
+                        <li><strong>Efficacy and Duration:</strong>
+                            <ul>
+                                <li>For proliferating IH, treatment typically continued for 6-12 months.</li>
+                                <li>Longer duration may be needed for IHs with prolonged growth or rebound.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Side Effects (Parental Counseling & Clinical Assessment):</strong>
+                            <ul>
+                                <li>Counsel parents on signs of hypoglycemia, sleep disturbances, bronchospasm, etc.</li>
+                                <li>Physicians: be aware of common side effects (sleep disturbances, cold extremities, diarrhea, somnolence).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Intercurrent Illnesses:</strong> Lower dose or suspend therapy during illnesses with decreased oral intake or vomiting (requires parental education).</li>
+                        <li><strong>Tapering & Rebound Growth:</strong> Taper over 2-4+ weeks before discontinuing, primarily to assess for rebound growth.</li>
+                    </ul>
+                </div>
+                <div class="treatment-algorithm">
+                    <h4>Systemic Treatment Algorithm</h4>
+                    <div class="algorithm-step">
+                        <strong>Initial Assessment:</strong> Evaluate location, size, growth phase, and risk for complications
+                    </div>
+                    <div class="algorithm-step">
+                        <strong>Indications for Systemic Therapy:</strong> Threatened vital function, potential disfigurement, ulceration, pain
+                    </div>
+                    <div class="algorithm-step">
+                        <strong>First-line:</strong> Propranolol (2-3 mg/kg/day)
+                    </div>
+                    <div class="algorithm-decision">
+                        <div class="algorithm-option">
+                            <strong>Response:</strong> Continue for 6-12 months, then taper
+                        </div>
+                        <div class="algorithm-option">
+                            <strong>Contraindication or No Response:</strong> Consider alternative
+                        </div>
+                    </div>
+                    <div class="algorithm-step">
+                        <strong>Second-line Options:</strong>
+                        <ul>
+                            <li>Alternative β-blockers (atenolol, nadolol)</li>
+                            <li>Systemic corticosteroids</li>
+                            <li>Sirolimus</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <div id="contraindications-propranolol" class="info-section">
+                <h3>Contraindications of Propranolol</h3>
+                <div class="contraindications-summary">
+                    <strong>Absolute Contraindications:</strong>
+                    <ul>
+                        <li>Bradycardia: &lt;80 beats/minute</li>
+                        <li>Hypotension: Blood pressure &lt;50/30 mmHg</li>
+                        <li>&gt;1st degree heart block</li>
+                        <li>Decompensated heart failure</li>
+                    </ul>
+                    <strong>Relative Contraindications:</strong>
+                    <ul>
+                        <li>Reactive airway disease/bronchospasm: This is a relative contraindication and may require consultation with a pulmonologist.<br>
+                        <em>A history of airway reactivity or asthma may not be an absolute contraindication, but such patients require closer monitoring and consultation with a pulmonologist.</em></li>
+                    </ul>
+                    <strong>Situations Requiring Significant Caution:</strong>
+                    <ul>
+                        <li><strong>PHACE(S) Syndrome:</strong> Patients at risk should be evaluated for cardiovascular and cerebrovascular anomalies. Severe arterial anomalies or significant pre-existing cardiac issues may make propranolol contraindicated or require extreme caution and multidisciplinary input.</li>
+                        <li><strong>Extensive hepatic hemangiomas:</strong> Higher risk for complications of β-blocker therapy. Not an absolute contraindication, but may influence decision-making.</li>
+                        <li><strong>Brain malformation:</strong> Higher risk for complications (not absolute contraindication).</li>
+                        <li><strong>First-degree relative with congenital heart disease, sudden death, or arrhythmia:</strong> Higher risk, may prompt more thorough cardiac evaluation before starting propranolol.</li>
+                        <li><strong>Maternal history of connective tissue disorder:</strong> Higher risk for certain cardiac issues in the infant.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section id="surgical-therapy">
+                <h3>Surgical Therapy</h3>
+
+                <h4>Laser Therapy</h4>
+                <ul>
+                    <li><strong>Pulsed Dye Laser (PDL):</strong>
+                        <ul>
+                            <li>585-600nm wavelength</li>
+                            <li>Not first-line for proliferating hemangiomas</li>
+                            <li>Most useful for residual telangiectasias after β-blocker therapy/involution</li>
+                            <li>Adverse effects: pigmentary alteration, atrophic scarring, ulceration</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nd:YAG Laser:</strong> Less commonly used, higher risk of scarring</li>
+                    <li><strong>Fractional CO₂ Laser:</strong> Used to improve texture of residual atrophy and scarring</li>
+                </ul>
+
+                <h4>Surgical Excision</h4>
+                <ul>
+                    <li>For involuted or partially involuted lesions to remove fibrofatty tissue and redundant skin</li>
+                    <li>Optimal timing typically 2-3 years of age</li>
+                    <li>Early excision controversial, generally limited to:
+                        <ul>
+                            <li>Function-threatening hemangiomas that failed pharmacologic therapy</li>
+                            <li>Pedunculated lesions for which resection will be inevitable</li>
+                            <li>Small, persistently ulcerated lesions that failed conservative therapy</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Pearl:</strong> The ultimate management goal is to achieve as normal an appearance as possible, considering the expected surgical scar as well as the predicted time course and outcome of involution.
+                </div>
+            </section>
+        </section>
+
+        <section id="congenital" class="card">
+            <h2>Congenital Hemangiomas</h2>
+            <p>Infants are occasionally born with fully developed hemangiomas that are clinically, histologically, immunohistochemically, and genetically distinct from IHs.</p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h3>Rapidly Involuting Congenital Hemangioma (RICH)</h3>
+                    <ul>
+                        <li>Intrauterine development, with little postnatal growth</li>
+                        <li>Rapid involution within the first year of life</li>
+                        <li>Equal gender distribution</li>
+                        <li>May be detected by prenatal ultrasound as early as 12 weeks</li>
+                        <li>Appearance at birth:
+                            <ul>
+                                <li>Raised violaceous mass with prominent radiating veins</li>
+                                <li>Hemispheric nodule with coarse telangiectasias and pale rim</li>
+                                <li>Firm, pink to violaceous plaque (often on lower extremity)</li>
+                            </ul>
+                        </li>
+                        <li>Possible complications: necrosis, ulceration, transient thrombocytopenia, hemorrhage</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Non-Involuting Congenital Hemangioma (NICH)</h3>
+                    <ul>
+                        <li>Grows proportionately with the child, does not involute</li>
+                        <li>Slight female predominance</li>
+                        <li>Most common on trunk and extremities</li>
+                        <li>Appearance:
+                            <ul>
+                                <li>Well-circumscribed, pink to blue-violet plaque or nodule</li>
+                                <li>Overlying coarse telangiectasias</li>
+                                <li>Pale or bluish rim and often draining veins</li>
+                                <li>"Patch" subtype with flat surface and minimal induration</li>
+                            </ul>
+                        </li>
+                        <li>Warm and may be painful</li>
+                        <li>10% undergo tardive growth (age 2-10 years)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Partially Involuting Congenital Hemangioma (PICH)</h3>
+            <p>Congenital hemangiomas that initially show regression soon after birth but fail to fully involute.</p>
+
+            <h3>Diagnostic Features</h3>
+            <ul>
+                <li><strong>Imaging:</strong> Dense vascularity with fast-flow component, more heterogeneous than IH, visible vessels, sometimes calcifications (especially in RICH)</li>
+                <li><strong>Histology:</strong> Lobular architecture with densely fibrotic stroma, stromal hemosiderin deposits, focal thrombosis and sclerosis</li>
+                <li><strong>Immunohistochemistry:</strong> GLUT1-negative, Lewis Y antigen-negative</li>
+                <li><strong>Genetics:</strong> Often have somatic gain-of-function mutations in GNAQ or GNA11</li>
+            </ul>
+
+            <div class="clinical-pearl">
+                <strong>Clinical Pearl:</strong> Most congenital hemangiomas do not require treatment, and medical therapies such as propranolol are generally not effective. Surgical excision may be an option for well-defined NICH.
+            </div>
+
+            <div class="exam-tip">
+                <strong>Exam Tip:</strong> The key distinguishing feature between IHs and congenital hemangiomas (RICH/NICH/PICH) is that congenital hemangiomas are GLUT1-negative. This is a critical distinction that may appear on exams.
+            </div>
+        </section>
+
+        <section id="clinical-cases" class="card">
+            <h2>Clinical Cases</h2>
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Case 1: Periocular Hemangioma</h3>
+                        <p>A 2-month-old female presents with a rapidly growing red nodule on the right upper eyelid partially obstructing the visual axis. What is the most appropriate management?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p><strong>Management:</strong> Urgent ophthalmologic examination, followed by prompt initiation of oral propranolol (starting at 1 mg/kg/day, gradually increasing to 2-3 mg/kg/day) to prevent amblyopia. Monitor for response and continue treatment for 6-12 months.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Case 2: Large Segmental Facial Hemangioma</h3>
+                        <p>A 6-week-old infant presents with a large segmental hemangioma involving the right forehead, temple, and upper face, measuring 6 cm in diameter. What evaluation is indicated?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p><strong>Evaluation:</strong> The infant should be evaluated for PHACE(S) syndrome with ophthalmologic examination, echocardiogram, and MRI/MRA of the head and neck. Oral propranolol therapy should be initiated after cardiac evaluation, with caution in dose escalation if cerebrovascular anomalies are detected.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Case 3: Ulcerated Lip Hemangioma</h3>
+                        <p>A 3-month-old boy presents with an ulcerated hemangioma on the lower lip causing pain and difficulty feeding. What is the most appropriate treatment?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p><strong>Treatment:</strong> Oral propranolol at a lower dose (1 mg/kg/day) initially, with local wound care using petrolatum ointment and consideration of occlusive dressings. Pain control with oral acetaminophen. Consider topical mupirocin to prevent infection. Expect healing in approximately 4 weeks with propranolol therapy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Case 4: Multiple Cutaneous Hemangiomas</h3>
+                        <p>A 6-week-old infant presents with 7 small cutaneous hemangiomas scattered over the trunk and extremities. What investigation should be performed?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p><strong>Investigation:</strong> Abdominal ultrasonography to evaluate for hepatic hemangiomas. If hepatic hemangiomas are detected, further evaluation should include thyroid function tests, liver function tests, and possibly echocardiogram to assess for high-output cardiac failure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Case 5: Fully-Formed Hemangioma at Birth</h3>
+                        <p>A newborn presents with a fully-formed vascular tumor on the thigh that has prominent superficial vessels, a pale rim, and absence of any proliferation over the first month of life. What is the most likely diagnosis?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p><strong>Diagnosis:</strong> This is most likely a congenital hemangioma, either RICH or NICH. The absence of proliferation suggests RICH. Ultrasonography would show high flow, and biopsy would reveal GLUT1-negative endothelium, confirming it is not an infantile hemangioma. RICHs typically involute rapidly over the first year of life, so observation is appropriate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="card">
+            <h2>Self-Assessment Quiz</h2>
+            <div class="quiz-container">
+                <div class="quiz-question">1. Which of the following is NOT a characteristic feature of infantile hemangiomas?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">GLUT1-negative endothelium</div>
+                    <div class="quiz-option">Rapid postnatal proliferation</div>
+                    <div class="quiz-option">Spontaneous involution over years</div>
+                    <div class="quiz-option">Female predominance</div>
+                </div>
+                <div class="quiz-feedback"></div>
+
+                <div class="quiz-question">2. Which of the following is the most common complication of infantile hemangiomas?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Ulceration</div>
+                    <div class="quiz-option">Visual impairment</div>
+                    <div class="quiz-option">High-output cardiac failure</div>
+                    <div class="quiz-option">Airway obstruction</div>
+                </div>
+                <div class="quiz-feedback"></div>
+
+                <div class="quiz-question">3. The first-line systemic therapy for problematic infantile hemangiomas is:</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Propranolol</div>
+                    <div class="quiz-option">Prednisone</div>
+                    <div class="quiz-option">Vincristine</div>
+                    <div class="quiz-option">Interferon-α</div>
+                </div>
+                <div class="quiz-feedback"></div>
+
+                <div class="quiz-question">4. PHACE(S) syndrome is most commonly associated with:</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Large segmental facial hemangiomas</div>
+                    <div class="quiz-option">Multiple small cutaneous hemangiomas</div>
+                    <div class="quiz-option">Rapidly involuting congenital hemangiomas</div>
+                    <div class="quiz-option">Midline lumbosacral hemangiomas</div>
+                </div>
+                <div class="quiz-feedback"></div>
+
+                <div class="quiz-question">5. Which of the following is a high-risk feature that suggests a hemangioma may not completely involute without significant residua?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option">Superficial hemangioma located on the trunk</div>
+                    <div class="quiz-option" data-correct="true">Mixed hemangioma with a cobblestoned surface</div>
+                    <div class="quiz-option">Deep hemangioma on the scalp</div>
+                    <div class="quiz-option">Small focal hemangioma on the arm</div>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+        </section>
+
+        <section id="high-yield" class="card">
+            <h2>High-Yield Summary</h2>
+            <div class="callout">
+                <div class="callout-title">Must-Know Facts for the Saudi Board Exam</div>
+                <ol>
+                    <li>Infantile hemangiomas are benign vascular tumors characterized by proliferation followed by involution, affecting 4-5% of infants with female predominance (2-5:1).</li>
+                    <li>GLUT1 positivity is the key immunohistochemical marker that distinguishes IHs from other vascular anomalies.</li>
+                    <li>IHs are classified as superficial, deep, or mixed based on location within the skin, and as focal, segmental, or indeterminate based on pattern.</li>
+                    <li>Most IHs undergo rapid growth from 5-8 weeks, reach 80% of final size by 3 months, and begin involution by 1 year of age.</li>
+                    <li>Segmental IHs are associated with higher risk of complications and extracutaneous anomalies (PHACE(S) syndrome for head/neck, LUMBAR syndrome for lower body).</li>
+                    <li>Major complications include ulceration (10%), functional impairment, and disfigurement.</li>
+                    <li>Propranolol (2-3 mg/kg/day) is the first-line systemic therapy for complicated IHs; timolol 0.5% is effective for small superficial lesions.</li>
+                    <li>Congenital hemangiomas (RICH/NICH/PICH) are distinct from infantile hemangiomas as they are fully formed at birth, GLUT1-negative, and have different natural histories. RICH (Rapidly Involuting Congenital Hemangioma) involutes quickly in the first year of life, NICH (Non-Involuting Congenital Hemangioma) persists without significant change, and PICH (Partially Involuting Congenital Hemangioma) shows initial regression but fails to completely involute. They often have somatic mutations in GNAQ or GNA11 genes and do not typically respond to propranolol therapy.</li>
+                    <li>Multiple cutaneous hemangiomas (≥5) warrant screening for hepatic hemangiomas, which may be focal, multifocal, or diffuse.</li>
+                    <li>Lumbosacral hemangiomas >2.5cm have ~35% risk of underlying spinal dysraphism, especially if ulcerated or associated with other cutaneous markers.</li>
+                    <li>"Beard" distribution hemangiomas have increased risk of airway involvement, particularly subglottic hemangiomas that can cause stridor and respiratory distress.</li>
+                    <li>Approximately 25% of IHs undergo rebound growth after cessation of propranolol, with higher risk if the lesion is deep or therapy is discontinued before 9 months of age.</li>
+                    <li>Risk factors for IH include prematurity, low birth weight (25-30% in infants <1000g), female gender, advanced maternal age, multiple gestation, and placental abnormalities (preeclampsia, placenta previa).</li>
+                    <li>IHs may persist after involution as telangiectasias, fibrofatty tissue, atrophy, or scarring (if ulcerated), with highest risk of significant residua in mixed-type hemangiomas and those with cobblestoned surfaces or abrupt borders.</li>
+                    <li>Kasabach-Merritt phenomenon (thrombocytopenic coagulopathy) is NOT associated with IHs, but rather with kaposiform hemangioendothelioma and tufted angioma.</li>
+                    <li>Consumptive hypothyroidism can occur with large IHs (especially hepatic) due to increased type 3 iodothyronine deiodinase activity, which inactivates thyroid hormone.</li>
+                    <li>Segmental hemangiomas of the face ≥5 cm in diameter have a high risk of PHACE(S) syndrome (31% in prospective studies), with cerebrovascular anomalies (91%) being the most common extracutaneous finding.</li>
+                    <li>Infantile hemangioma with minimal or arrested growth (IH-MAG) is a variant with telangiectasias and ≤25% proliferative component that is still GLUT1-positive and follows a similar involution pattern.</li>
+                    <li>Propranolol's mechanism of action includes vasoconstriction (early effect), decreased VEGF/bFGF production, and induction of endothelial cell apoptosis (later effects).</li>
+                    <li>VEGF and its receptors play a crucial role in IH pathogenesis, with a shift from VEGFR-1 (decoy receptor) to VEGFR-2 (promotes proliferation) signaling.</li>
+                    <li>The mTOR pathway is implicated in IH development, explaining the efficacy of sirolimus (rapamycin) as a second-line treatment for recalcitrant cases.</li>
+                    <li>Deep hemangiomas tend to proliferate longer than superficial ones, and the deep component of mixed lesions often continues to grow after the superficial component has plateaued.</li>
+                </ol>
+            </div>
+        </section>
+
+        <div class="card">
+            <h2>Comparison Table: IH vs. Vascular Malformations</h2>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Infantile Hemangioma</th>
+                        <th>Vascular Malformation</th>
+                    </tr>
+                    <tr>
+                        <td>Clinical Appearance</td>
+                        <td>Usually absent at birth or subtle precursor lesion present; only occasionally well-formed</td>
+                        <td>Usually evident at birth</td>
+                    </tr>
+                    <tr>
+                        <td>Growth Pattern</td>
+                        <td>Rapid proliferation in first 2-5 months of life</td>
+                        <td>Slower expansion, proportionate with child's growth</td>
+                    </tr>
+                    <tr>
+                        <td>Resolution</td>
+                        <td>Spontaneous involution over years</td>
+                        <td>Persists into adulthood</td>
+                    </tr>
+                    <tr>
+                        <td>Epidemiology</td>
+                        <td>More common in girls (2-5:1), premature/low-birth-weight infants, and older maternal age</td>
+                        <td>No sex or gestation predilection</td>
+                    </tr>
+                    <tr>
+                        <td>Pathology</td>
+                        <td>Proliferating: endothelial cell hyperplasia, lobule formation, mast cells, prominent basement membrane
+                        <br>Involuting: fibrofatty tissue replacement, decreased mast cells</td>
+                        <td>Dependent upon type, often irregular vascular channels</td>
+                    </tr>
+                    <tr>
+                        <td>Immunohistochemistry</td>
+                        <td>Positive for GLUT1, Lewis Y antigen, merosin, FcyRII, and WT1</td>
+                        <td>Negative for GLUT1, Lewis Y antigen, merosin, FcyRII, and WT1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Approach to Management Algorithm</h2>
+            <div class="treatment-algorithm">
+                <div class="algorithm-step">
+                    <strong>Step 1: Initial Assessment</strong>
+                    <ul>
+                        <li>Assess size, location, and type of hemangioma</li>
+                        <li>Identify potential complications (functional, cosmetic, ulceration)</li>
+                        <li>Screen for extracutaneous involvement if indicated</li>
+                    </ul>
+                </div>
+                <div class="algorithm-step">
+                    <strong>Step 2: Risk Stratification</strong>
+                    <ul>
+                        <li>High-risk: Periocular, airway involvement, large facial, hepatic with complications</li>
+                        <li>Medium-risk: Cosmetically sensitive sites, ulcerated lesions</li>
+                        <li>Low-risk: Small, uncomplicated lesions in non-critical sites</li>
+                    </ul>
+                </div>
+                <div class="algorithm-step">
+                    <strong>Step 3: Management Decision</strong>
+                </div>
+                <div class="algorithm-decision">
+                    <div class="algorithm-option">
+                        <strong>Low-risk:</strong>
+                        <p>Active non-intervention with monitoring</p>
+                    </div>
+                    <div class="algorithm-option">
+                        <strong>Medium-risk:</strong>
+                        <p>Topical timolol or systemic therapy</p>
+                    </div>
+                    <div class="algorithm-option">
+                        <strong>High-risk:</strong>
+                        <p>Prompt systemic therapy +/- specialist referral</p>
+                    </div>
+                </div>
+                <div class="algorithm-step">
+                    <strong>Step 4: First-line Therapy</strong>
+                    <p><strong>Superficial, small:</strong> Topical timolol 0.5% twice daily</p>
+                    <p><strong>Problematic, large, or deep:</strong> Propranolol 2-3 mg/kg/day (start low, titrate up)</p>
+                </div>
+                <div class="algorithm-step">
+                    <strong>Step 5: Follow-up and Reassessment</strong>
+                    <p>Monitor for response, adjust treatment as needed, continue for 6-12 months</p>
+                </div>
+                <div class="algorithm-step">
+                    <strong>Step 6: Consider Additional Therapy for Residua</strong>
+                    <p>PDL for telangiectasias, surgical correction for fibrofatty residua/redundant skin</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Memory Aid: Infantile Hemangioma Mnemonic</h2>
+            <div class="highlight-box">
+                <strong>"H-E-M-A-N-G-I-O-M-A"</strong>
+                <ul>
+                    <li><strong>H</strong>igh female predominance (2-5:1)</li>
+                    <li><strong>E</strong>ndothelial cell proliferation with GLUT1 positivity</li>
+                    <li><strong>M</strong>arked growth in first 3 months, then plateau</li>
+                    <li><strong>A</strong>ssociations: PHACE(S) and LUMBAR syndromes</li>
+                    <li><strong>N</strong>atural history: proliferation → involution over years</li>
+                    <li><strong>G</strong>rowth is superficial (strawberry), deep (bluish), or mixed</li>
+                    <li><strong>I</strong>nvolution begins by 1 year with median completion at 3 years</li>
+                    <li><strong>O</strong>ral propranolol is first-line therapy (2-3 mg/kg/day)</li>
+                    <li><strong>M</strong>ultiple (≥5) cutaneous lesions warrant hepatic screening</li>
+                    <li><strong>A</strong>irway involvement with "beard" distribution hemangiomas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-to-top">↑</div>
+
+    <footer>
+        <p>&copy; 2025 Saudi Board Dermatology Review. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // On page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open all accordion panels initially so they can be indexed by search engines
+            const panels = document.querySelectorAll('.panel');
+            panels.forEach(panel => {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            });
+            
+            // Then close them for the user to interact with
+            setTimeout(() => {
+                panels.forEach(panel => {
+                    panel.style.maxHeight = null;
+                });
+            }, 100);
+        });
+
+        // Accordion functionality
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Tabs functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabs = document.getElementsByClassName('tab');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Flashcard functionality
+        const flashcards = document.querySelectorAll('.flashcard');
+        flashcards.forEach(flashcard => {
+            flashcard.addEventListener('click', function() {
+                this.classList.toggle('flipped');
+            });
+        });
+
+        // Quiz functionality
+        const quizOptions = document.querySelectorAll('.quiz-option');
+        quizOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const questionContainer = this.parentElement;
+                const options = questionContainer.querySelectorAll('.quiz-option');
+                
+                options.forEach(opt => {
+                    opt.classList.remove('selected', 'correct', 'incorrect');
+                });
+                
+                this.classList.add('selected');
+                
+                const feedbackContainer = questionContainer.nextElementSibling;
+                
+                if (this.dataset.correct === "true") {
+                    this.classList.add('correct');
+                    feedbackContainer.style.display = 'block';
+                    feedbackContainer.style.backgroundColor = 'rgba(46, 204, 113, 0.1)';
+                    feedbackContainer.style.borderLeft = '4px solid #2ecc71';
+                    feedbackContainer.innerHTML = "<strong>Correct!</strong> Well done!";
+                } else {
+                    this.classList.add('incorrect');
+                    
+                    // Find and highlight the correct answer
+                    options.forEach(opt => {
+                        if (opt.dataset.correct === "true") {
+                            opt.classList.add('correct');
+                        }
+                    });
+                    
+                    feedbackContainer.style.display = 'block';
+                    feedbackContainer.style.backgroundColor = 'rgba(231, 76, 60, 0.1)';
+                    feedbackContainer.style.borderLeft = '4px solid #e74c3c';
+                    feedbackContainer.innerHTML = "<strong>Incorrect.</strong> Review this topic again.";
+                }
+            });
+        });
+
+        // Scroll to Top functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

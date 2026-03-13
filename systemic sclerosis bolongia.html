@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systemic Sclerosis (Scleroderma) & Related Disorders - Saudi Board Prep</title>
+    <style>
+        :root {
+            --primary: #3a5999;
+            --secondary: #e63946;
+            --highlight: #ffcb69;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --success: #2a9d8f;
+            --warning: #e9c46a;
+            --danger: #e76f51;
+            --info: #457b9d;
+            --light-info: #a8dadc;
+        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    /* Utility Classes */
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .flex {
+        display: flex;
+    }
+    
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    
+    .justify-between {
+        justify-content: space-between;
+    }
+    
+    .align-center {
+        align-items: center;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+    
+    /* Header Styling */
+    header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        color: white;
+        padding: 1.5rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 10;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+    
+    header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    /* Navigation */
+    nav {
+        background-color: #fff;
+        border-bottom: 1px solid #e9ecef;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        scrollbar-width: thin;
+        gap: 15px;
+    }
+    
+    .nav-links li a {
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+    
+    .nav-links li a:hover, .nav-links li a.active {
+        background-color: var(--light-info);
+        color: var(--dark);
+    }
+    
+    /* Main Content */
+    main {
+        padding: 40px 0;
+    }
+    
+    section {
+        margin-bottom: 40px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: var(--primary);
+    }
+    
+    /* Heading Styles */
+    h2 {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #f0f0f0;
+        position: relative;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        color: var(--dark);
+        margin: 1.5rem 0 1rem;
+        padding-left: 15px;
+        border-left: 3px solid var(--secondary);
+    }
+    
+    h4 {
+        font-size: 1.25rem;
+        color: var(--dark);
+        margin: 1.2rem 0 0.8rem;
+    }
+    
+    /* Lists */
+    ul, ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    ul li, ol li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Tables */
+    table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-collapse: collapse;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        overflow-x: auto;
+        display: block;
+    }
+    
+    @media (min-width: 768px) {
+        table {
+            display: table;
+        }
+    }
+    
+    th, td {
+        padding: 12px 18px;
+        text-align: left;
+        border: 1px solid #e9ecef;
+    }
+    
+    th {
+        background-color: var(--light-info);
+        color: var(--dark);
+        font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+    
+    /* Callouts and Highlights */
+    .callout {
+        padding: 15px 20px;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+        border-left: 5px solid;
+        background-color: rgba(0,0,0,0.02);
+    }
+    
+    .callout-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    .callout.info {
+        border-color: var(--info);
+        background-color: rgba(69, 123, 157, 0.08);
+    }
+    
+    .callout.warning {
+        border-color: var(--warning);
+        background-color: rgba(233, 196, 106, 0.15);
+    }
+    
+    .callout.danger {
+        border-color: var(--danger);
+        background-color: rgba(231, 111, 81, 0.08);
+    }
+    
+    .callout.success {
+        border-color: var(--success);
+        background-color: rgba(42, 157, 143, 0.08);
+    }
+    
+    /* Highlight Text */
+    mark, .highlight {
+        background-color: var(--highlight);
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+    
+    .keyword {
+        font-weight: 600;
+        color: var(--secondary);
+        position: relative;
+    }
+    
+    /* Clinical Pearls */
+    .pearl {
+        background-color: #f1f8ff;
+        border: 1px solid #d4e5ff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 1.5rem 0;
+        position: relative;
+    }
+    
+    .pearl::before {
+        content: '💎 Clinical Pearl';
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--primary);
+    }
+    
+    /* MCQ Practice */
+    .mcq {
+        background-color: #f9f5ff;
+        border: 1px solid #e4d5f7;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 1.5rem 0;
+    }
+    
+    .mcq-question {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: var(--dark);
+    }
+    
+    .mcq-options {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .mcq-option {
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border: 1px solid #e9ecef;
+        border-radius: 5px;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+    
+    .mcq-option:hover {
+        background-color: #f5f5f5;
+    }
+    
+    .mcq-option.correct {
+        background-color: rgba(42, 157, 143, 0.15);
+        border-color: var(--success);
+    }
+    
+    .mcq-option.incorrect {
+        background-color: rgba(231, 111, 81, 0.15);
+        border-color: var(--danger);
+    }
+    
+    .mcq-explanation {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        border-left: 3px solid var(--info);
+        display: none;
+    }
+    
+    /* Comparison Tables */
+    .comparison-table th {
+        background-color: var(--dark);
+        color: white;
+    }
+    
+    .comparison-table th:first-child {
+        background-color: var(--primary);
+    }
+    
+    .comparison-table tr:nth-child(odd) {
+        background-color: #f8f9fa;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+        background-color: white;
+    }
+    
+    /* Memory Aids */
+    .memory-aid {
+        background: linear-gradient(135deg, #f9f9f9 0%, #f3f3f3 100%);
+        border: 1px dashed var(--primary);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    .memory-aid-title {
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    /* Diagram and Flow Charts */
+    .diagram {
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .diagram img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .diagram-caption {
+        margin-top: 10px;
+        font-style: italic;
+        color: #666;
+    }
+    
+    /* Collapsible Content */
+    .collapsible {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+    
+    .collapsible-header {
+        padding: 15px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--light-info);
+    }
+    
+    .collapsible-header:hover {
+        background-color: rgba(168, 218, 220, 0.8);
+    }
+    
+    .collapsible-header::after {
+        content: '▼';
+        font-size: 0.8rem;
+        transition: all 0.3s;
+    }
+    
+    .collapsible-header.active::after {
+        transform: rotate(180deg);
+    }
+    
+    .collapsible-content {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .collapsible-content.show {
+        padding: 20px;
+        max-height: 1000px;
+    }
+    
+    /* Feature Box */
+    .feature-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 2rem 0;
+    }
+    
+    .feature-item {
+        flex: 1 1 300px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 20px;
+        transition: all 0.3s;
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    
+    .feature-title {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 8px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        
+        header p {
+            font-size: 1rem;
+        }
+        
+        section {
+            padding: 20px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+        }
+    }
+    
+    /* Print Styles */
+    @media print {
+        header, nav, footer {
+            display: none;
+        }
+        
+        body {
+            background-color: white;
+            font-size: 12pt;
+        }
+        
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        section, .callout, .pearl, .mcq, .diagram, .collapsible, .memory-aid {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+        
+        .collapsible-content {
+            max-height: none !important;
+            padding: 20px !important;
+            display: block !important;
+        }
+        
+        table {
+            display: table;
+            width: 100%;
+            page-break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f3f3f3 !important;
+            color: black !important;
+        }
+        
+        mark, .highlight {
+            background-color: #fffecf !important;
+            box-shadow: none;
+        }
+        
+        /* Only show explanation of MCQs in print */
+        .mcq-explanation {
+            display: block !important;
+        }
+        
+        /* Remove click indicators */
+        *[onclick], .collapsible-header::after {
+            display: none;
+        }
+    }
+
+    /* Two-column layout for certain elements */
+    .two-column {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 1.5rem 0;
+    }
+    
+    .two-column > div {
+        flex: 1 1 calc(50% - 20px);
+        min-width: 300px;
+    }
+
+    /* Timeline */
+    .timeline {
+        position: relative;
+        margin: 2rem 0;
+        padding-left: 40px;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        height: 100%;
+        width: 2px;
+        background-color: var(--primary);
+    }
+    
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -40px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid white;
+        background-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(58, 89, 153, 0.2);
+    }
+    
+    .timeline-item-title {
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 5px;
+    }
+    
+    /* Important box */
+    .important-box {
+        background-color: rgba(230, 57, 70, 0.08);
+        border-left: 5px solid var(--secondary);
+        padding: 15px 20px;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+    }
+    
+    .important-title {
+        font-weight: 600;
+        color: var(--secondary);
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+
+    /* Interactive tabs */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1.5rem 0;
+    }
+    
+    .tab-links {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .tab-link {
+        padding: 12px 20px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+    }
+    
+    .tab-link:hover {
+        color: var(--primary);
+    }
+    
+    .tab-link.active {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+    }
+    
+    .tab-content {
+        display: none;
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* Pathogenesis diagram styles */
+    .pathogenesis-diagram {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .path-box {
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        position: relative;
+    }
+    
+    .path-box h4 {
+        color: white;
+        padding: 8px 15px;
+        margin: -20px -20px 15px -20px;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .path-box.vascular h4 {
+        background-color: var(--danger);
+    }
+    
+    .path-box.immune h4 {
+        background-color: var(--info);
+    }
+    
+    .path-box.matrix h4 {
+        background-color: var(--success);
+    }
+    
+    .path-arrows {
+        position: relative;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 15px 0;
+    }
+    
+    .path-arrows::after {
+        content: '→';
+        font-size: 2rem;
+        color: var(--dark);
+    }
+    
+    @media (max-width: 768px) {
+        .path-arrows::after {
+            transform: rotate(90deg);
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Systemic Sclerosis (Scleroderma) & Related Disorders</h1>
+            <p>Saudi Board Exam Preparation Guide • High-Yield Review • Last Updated: 2024</p>
+        </div>
+    </header>
+<nav>
+    <div class="container nav-container">
+        <ul class="nav-links">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#classification">Classification</a></li>
+            <li><a href="#pathogenesis">Pathogenesis</a></li>
+            <li><a href="#clinical-features">Clinical Features</a></li>
+            <li><a href="#diagnosis">Diagnosis</a></li>
+            <li><a href="#treatment">Treatment</a></li>
+            <li><a href="#differential">Differential</a></li>
+            <li><a href="#related">Related Disorders</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container">
+    <section id="introduction">
+        <h2>Introduction to Systemic Sclerosis</h2>
+        
+        <div class="callout info">
+            <div class="callout-title">Terminology & Synonyms</div>
+            <ul>
+                <li><strong>Systemic sclerosis (SSc)</strong> - Preferred name</li>
+                <li><strong>Scleroderma</strong> - Traditional name</li>
+                <li><strong>Progressive systemic sclerosis</strong> - Less preferred term</li>
+            </ul>
+        </div>
+        
+        <h3>Definition</h3>
+        <p>Systemic sclerosis is an <span class="keyword">uncommon autoimmune connective tissue disease</span> of unknown etiology that affects the skin, blood vessels, and internal organs. It is characterized by <span class="highlight">symmetric hardening of the skin</span> of the fingers, hands, and face that may generalize, in association with Raynaud phenomenon and internal organ involvement.</p>
+        
+        <div class="two-column">
+            <div>
+                <h3>Epidemiology</h3>
+                <ul>
+                    <li><strong>Incidence:</strong> ~20 cases per million annually</li>
+                    <li><strong>Prevalence:</strong> ~275 cases per million</li>
+                    <li><strong>Gender ratio:</strong> Women affected 3-4× more than men</li>
+                    <li><strong>Age of onset:</strong> Typically 35-50 years</li>
+                    <li><strong>Race:</strong> Black individuals have earlier onset and higher likelihood of diffuse disease</li>
+                    <li><strong>Familial risk:</strong> 1.5% have affected first-degree relatives (10-15× higher risk than general population)</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>Prognosis</h3>
+                <ul>
+                    <li>Overall 10-year survival: ~70%</li>
+                    <li><strong>Poor prognostic factors:</strong>
+                        <ul>
+                            <li>Male sex</li>
+                            <li>Older age at diagnosis</li>
+                            <li>African-American race</li>
+                            <li>Internal organ involvement at diagnosis (especially pulmonary)</li>
+                            <li>Cutaneous sclerosis affecting the trunk</li>
+                            <li>Elevated ESR</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="important-box">
+            <div class="important-title">🔔 Key Clinical Features of SSc</div>
+            <ul>
+                <li>Symmetric hardening of the skin (fingers, hands, face → may generalize)</li>
+                <li>Raynaud phenomenon (common)</li>
+                <li>Digital ulcers may develop</li>
+                <li>Internal organ involvement (lungs, GI tract, heart, kidneys)</li>
+                <li>Pulmonary disease is the leading cause of death</li>
+            </ul>
+        </div>
+        
+        <div class="pearl">
+            <p>The name "systemic sclerosis" is intended to convey the systemic nature of the disease. While the skin is the most visible target, internal organ involvement determines prognosis. Pulmonary disease has replaced renal crisis as the leading cause of death in SSc patients.</p>
+        </div>
+    </section>
+    
+    <section id="classification">
+        <h2>Classification of Systemic Sclerosis</h2>
+        
+        <h3>Major Clinical Subtypes</h3>
+        
+        <div class="tabs">
+            <div class="tab-links">
+                <div class="tab-link active" onclick="openTab(event, 'lcSSc')">Limited Cutaneous SSc</div>
+                <div class="tab-link" onclick="openTab(event, 'dcSSc')">Diffuse Cutaneous SSc</div>
+                <div class="tab-link" onclick="openTab(event, 'CREST')">CREST Syndrome</div>
+                <div class="tab-link" onclick="openTab(event, 'sineSSc')">SSc sine scleroderma</div>
+            </div>
+            
+            <div id="lcSSc" class="tab-content active">
+                <h4>Limited Cutaneous SSc (lcSSc)</h4>
+                <ul>
+                    <li>Cutaneous sclerosis <span class="highlight">limited to fingers, hands and face</span></li>
+                    <li>Long preceding history of Raynaud phenomenon</li>
+                    <li>Slower development of skin changes</li>
+                    <li><strong>Later</strong> onset of internal organ involvement (after 10-15 years)</li>
+                    <li>Pulmonary arterial hypertension (PAH) more common than interstitial lung disease</li>
+                    <li>More favorable long-term prognosis</li>
+                    <li>Often associated with anti-centromere antibodies</li>
+                </ul>
+            </div>
+            
+            <div id="dcSSc" class="tab-content">
+                <h4>Diffuse Cutaneous SSc (dcSSc)</h4>
+                <ul>
+                    <li>Cutaneous sclerosis <span class="highlight">extends proximally to forearms, arms, face, trunk and lower extremities</span></li>
+                    <li>Sudden onset of Raynaud phenomenon</li>
+                    <li>Rapidly progressive, more widespread cutaneous sclerosis (usually peaks within 12-18 months)</li>
+                    <li><strong>Early</strong> internal organ involvement (within 5 years of disease onset)</li>
+                    <li>Interstitial lung disease (ILD) more common than PAH</li>
+                    <li>Higher risk of renal disease</li>
+                    <li>Often associated with anti-topoisomerase I (Scl-70) or anti-RNA polymerase III antibodies</li>
+                    <li>Worse prognosis</li>
+                </ul>
+            </div>
+            
+            <div id="CREST" class="tab-content">
+                <h4>CREST Syndrome</h4>
+                <p>CREST is an acronym describing a subset of patients with lcSSc:</p>
+                <ul>
+                    <li><strong>C</strong>alcinosis cutis</li>
+                    <li><strong>R</strong>aynaud phenomenon</li>
+                    <li><strong>E</strong>sophageal involvement</li>
+                    <li><strong>S</strong>clerodactyly</li>
+                    <li><strong>T</strong>elangiectasias</li>
+                </ul>
+                <p class="callout info">Not every patient has all five features, so the term lcSSc is generally favored over CREST syndrome.</p>
+            </div>
+            
+            <div id="sineSSc" class="tab-content">
+                <h4>Systemic Sclerosis sine scleroderma (ssSSc)</h4>
+                <ul>
+                    <li>Characteristic internal organ involvement</li>
+                    <li>Raynaud phenomenon present</li>
+                    <li>Abnormal nail-fold capillaries</li>
+                    <li>Positive serologies</li>
+                    <li><strong>No cutaneous sclerosis</strong> (key distinguishing feature)</li>
+                    <li>Behaves clinically similar to lcSSc</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Comparison of Diffuse and Limited SSc</h3>
+        
+        <table class="comparison-table">
+            <tr>
+                <th>Clinical Feature</th>
+                <th>Diffuse SSc (%)</th>
+                <th>Limited SSc (%)</th>
+            </tr>
+            <tr>
+                <td>Raynaud phenomenon</td>
+                <td>90</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>Finger swelling</td>
+                <td>95</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Tendon friction rubs</td>
+                <td>70</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Arthralgia</td>
+                <td>98</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>Proximal weakness</td>
+                <td>80</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Calcinosis</td>
+                <td>20</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Mat telangiectasias</td>
+                <td>60</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Esophageal dysmotility</td>
+                <td>80</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Small bowel involvement</td>
+                <td>40</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Interstitial lung disease</td>
+                <td>70</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>Pulmonary arterial hypertension</td>
+                <td>10</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Cardiomyopathy</td>
+                <td>15</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Renal crisis</td>
+                <td>20*</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Sicca syndrome</td>
+                <td>15</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>Anti-nuclear antibodies</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Anti-centromere antibody</td>
+                <td>5-10</td>
+                <td>30-70</td>
+            </tr>
+            <tr>
+                <td>Anti-topoisomerase I (Scl-70)</td>
+                <td>30-70</td>
+                <td>5-15</td>
+            </tr>
+            <tr>
+                <td>Anti-RNA polymerase III</td>
+                <td>5-25</td>
+                <td>1-5</td>
+            </tr>
+            <tr>
+                <td>Cumulative survival (5 years)</td>
+                <td>80</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Cumulative survival (10 years)</td>
+                <td>70</td>
+                <td>80</td>
+            </tr>
+        </table>
+        <p class="text-right"><small>*Has decreased with the use of angiotensin-converting enzyme (ACE) inhibitors</small></p>
+        
+        <div class="memory-aid">
+            <div class="memory-aid-title">💡 Remembering Limited vs Diffuse SSc</div>
+            <p><strong>Limited</strong>: "CRUTE" or "CUTE" distribution - Cutaneous involvement limited to <mark>C</mark>lavicle, <mark>R</mark>adius, <mark>U</mark>lna, <mark>T</mark>ibia, <mark>E</mark>xtremities</p>
+            <p><strong>Diffuse</strong>: "PAT" prognosis - <mark>P</mark>oor prognosis, <mark>A</mark>ccelerated onset, <mark>T</mark>runk involvement</p>
+        </div>
+        
+        <div class="timeline">
+            <h3>SSc Disease Course Timeline</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-item-title">Early Phase (0-1 years)</div>
+                <p>Raynaud phenomenon, puffy fingers, arthralgia. In dcSSc, rapid skin thickening begins.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-item-title">Established Disease (1-3 years)</div>
+                <p>In dcSSc: Peak skin thickness reached (12-18 months), early organ involvement, pain and pruritus prominent. In lcSSc: Slower progression.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-item-title">Late Phase (3-5 years)</div>
+                <p>In dcSSc: Skin thickness may begin to improve, organ involvement progresses. In lcSSc: Stable skin, minimal organ involvement.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-item-title">Very Late Phase (5-15+ years)</div>
+                <p>In dcSSc: Skin atrophy, fixed organ damage. In lcSSc: Development of PAH and other organ involvement (10-15 years).</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pathogenesis">
+        <h2>Pathogenesis of Systemic Sclerosis</h2>
+        
+        <p>The pathogenesis of SSc is unknown but involves three major pathophysiologic processes:</p>
+        
+        <div class="pathogenesis-diagram">
+            <div class="path-box vascular">
+                <h4>Vascular Dysregulation</h4>
+                <ul>
+                    <li>Early endothelial cell injury</li>
+                    <li>Perivascular edema</li>
+                    <li>↑ Adhesion molecules</li>
+                    <li>↑ VEGF and receptors</li>
+                    <li>Altered responsiveness to vasoconstrictive/dilatory factors</li>
+                    <li>Structural abnormalities → luminal occlusion → hypoxia</li>
+                </ul>
+            </div>
+            
+            <div class="path-arrows"></div>
+            
+            <div class="path-box immune">
+                <h4>Immune Dysregulation</h4>
+                <ul>
+                    <li>SSc-specific autoantibodies</li>
+                    <li>T-cell oligoclonal expansion in lesional skin</li>
+                    <li>Th2 predominant profile</li>
+                    <li>↑ Profibrotic cytokines (IL-4, IL-13)</li>
+                    <li>B-cell dysfunction</li>
+                    <li>↑ CXCL4 levels (correlate with progression)</li>
+                    <li>Innate immune activation (plasmacytoid DCs)</li>
+                </ul>
+            </div>
+            
+            <div class="path-arrows"></div>
+            
+            <div class="path-box matrix">
+                <h4>Extracellular Matrix Dysregulation</h4>
+                <ul>
+                    <li>Excessive deposition of collagens</li>
+                    <li>↑ Proteoglycans, fibronectin, fibrillins</li>
+                    <li>↑ Adhesion molecules (β1-integrins)</li>
+                    <li>↑ TGF-β and CTGF</li>
+                    <li>Fibroblast/myofibroblast activation</li>
+                    <li>Altered microenvironment</li>
+                    <li>Primarily ↑ synthesis (not ↓ degradation)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="callout warning">
+            <div class="callout-title">Pathogenesis Highlights for Exam</div>
+            <ul>
+                <li><strong>Vascular events occur first</strong> - endothelial damage precedes fibrosis</li>
+                <li><strong>Key cytokines</strong> - TGF-β, CTGF, and IL-4/IL-13 play crucial roles in fibrosis</li>
+                <li><strong>CXCL4</strong> - elevated in circulation, correlates with disease progression</li>
+                <li><strong>Fibroblast dysfunction</strong> - may be inherent defect, autocrine loop, or hypersensitivity to growth factors</li>
+                <li><strong>Clinical correlation</strong> - understand how the pathogenic triad explains Raynaud phenomenon, digital ulcers, and fibrosis</li>
+            </ul>
+        </div>
+        
+        <div class="pearl">
+            <p>All three pathogenic processes (vascular injury, immune activation, and fibrosis) are interconnected. For example, endothelial injury leads to hypoxia, which induces profibrotic cytokines that activate fibroblasts, culminating in tissue fibrosis.</p>
+        </div>
+    </section>
+    
+    <section id="clinical-features">
+        <h2>Clinical Features of Systemic Sclerosis</h2>
+        
+        <h3>Cutaneous Features</h3>
+        
+        <div class="collapsible">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">Phases of Skin Involvement</div>
+            <div class="collapsible-content">
+                <ol>
+                    <li><strong>Edematous phase</strong>
+                        <ul>
+                            <li>Early disease marked by pitting edema of digits</li>
+                            <li>Puffy fingers/hands</li>
+                            <li>Often the initial presentation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Indurated phase</strong>
+                        <ul>
+                            <li>Hardening of the skin</li>
+                            <li>Development of taut, shiny appearance</li>
+                            <li>Loss of skin creases/wrinkles</li>
+                            <li>Limitation of movement</li>
+                        </ul>
+                    </li>
+                    <li><strong>Late atrophic phase</strong>
+                        <ul>
+                            <li>Gradual thinning of the skin</li>
+                            <li>Fixed contractures</li>
+                            <li>Fingertip pitted scars may be prominent</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="feature-box">
+            <div class="feature-item">
+                <div class="feature-title">Salt and Pepper Sign</div>
+                <p>Leukoderma with sparing of the perifollicular skin, creating a characteristic "salt and pepper" appearance. This typically involves the upper trunk and central face and may overlie uninvolved or sclerotic skin.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Mat Telangiectasias</div>
+                <p>Dilated blood vessels with a squared-off or matted appearance. More common in lcSSc (90%) than dcSSc (60%). Most often involve the face, lips, and palms. Distinctive pattern from other causes of telangiectasias.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Digital Pitting & Ulcers</div>
+                <p>Pitted scars on the digital pulp are characteristic. Ulcers can develop over fingertips (ischemic) or interphalangeal joints (traumatic). May lead to osteomyelitis or even amputation.</p>
+            </div>
+        </div>
+        
+        <div class="feature-box">
+            <div class="feature-item">
+                <div class="feature-title">Calcinosis Cutis</div>
+                <p>Calcium deposits in the skin, most commonly on extremities near joints. Can lead to pain, ulceration, and secondary infection. More common in lcSSc (40%) than dcSSc (20%).</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Facial Changes</div>
+                <p>Microstomia (small mouth), beaked nose, and a more youthful appearance due to tight skin with loss of wrinkles. Perioral radial furrowing ("purse string" appearance).</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Nail-fold Capillary Changes</div>
+                <p>Present in >90% of SSc patients. Characterized by capillary "drop out" alternating with dilated loops. Changes have prognostic value for fingertip ulceration and lung disease progression.</p>
+            </div>
+        </div>
+        
+        <h3>Raynaud Phenomenon</h3>
+        
+        <div class="callout info">
+            <div class="callout-title">Definition</div>
+            <p>Raynaud phenomenon is characterized by episodic vasospasm of the digital arteries resulting in white (pallor), blue (cyanosis), and red (hyperemia) discoloration of the fingers secondary to cold exposure or emotional stress.</p>
+        </div>
+        
+        <div class="two-column">
+            <div>
+                <h4>Primary Raynaud</h4>
+                <ul>
+                    <li>No underlying disease</li>
+                    <li>F:M ratio 20:1</li>
+                    <li>Onset during puberty</li>
+                    <li>Usually &lt;5 attacks per day</li>
+                    <li>Triggered by cold AND emotional stress</li>
+                    <li>No ischemic injury</li>
+                    <li>Normal capillaroscopy</li>
+                    <li>Negative autoantibodies</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Secondary Raynaud (SSc)</h4>
+                <ul>
+                    <li>Associated with underlying disease</li>
+                    <li>F:M ratio 4:1</li>
+                    <li>Age of onset >25 years</li>
+                    <li>5-10+ attacks per day</li>
+                    <li>Primarily triggered by cold</li>
+                    <li>Ischemic injury present</li>
+                    <li>Abnormal capillaroscopy (>95%)</li>
+                    <li>Positive autoantibodies (90-95%)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="important-box">
+            <div class="important-title">Clinical Pearl: Evaluating Raynaud Phenomenon</div>
+            <p>When a patient presents with Raynaud phenomenon, key features suggesting secondary Raynaud (associated with SSc):</p>
+            <ul>
+                <li>Onset after age 25</li>
+                <li>Asymmetric or severe attacks</li>
+                <li>Digital pits or ulcers</li>
+                <li>Abnormal nail-fold capillaries</li>
+                <li>Presence of sclerodactyly</li>
+                <li>Positive SSc-specific antibodies</li>
+            </ul>
+        </div>
+        
+        <h3>Extracutaneous Features</h3>
+        
+        <div class="tabs">
+            <div class="tab-links">
+                <div class="tab-link active" onclick="openTab(event, 'pulmonary')">Pulmonary</div>
+                <div class="tab-link" onclick="openTab(event, 'GI')">Gastrointestinal</div>
+                <div class="tab-link" onclick="openTab(event, 'renal')">Renal</div>
+                <div class="tab-link" onclick="openTab(event, 'cardiac')">Cardiac</div>
+                <div class="tab-link" onclick="openTab(event, 'MSK')">Musculoskeletal</div>
+            </div>
+            
+            <div id="pulmonary" class="tab-content active">
+                <h4>Pulmonary Involvement</h4>
+                <p>Pulmonary disease has replaced renal crisis as the leading cause of death in SSc. Two major forms:</p>
+                
+                <div class="two-column">
+                    <div>
+                        <h4>Interstitial Lung Disease (ILD)</h4>
+                        <ul>
+                            <li>More common in dcSSc (70%)</li>
+                            <li>Associated with anti-topoisomerase I antibodies</li>
+                            <li>Fibrotic thickening of visceral pleura</li>
+                            <li>Progressive dyspnea, cough</li>
+                            <li>Decreased DLCO on PFTs</li>
+                            <li>Ground-glass opacities and reticular pattern on HRCT</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Pulmonary Arterial Hypertension (PAH)</h4>
+                        <ul>
+                            <li>More common in lcSSc (30%)</li>
+                            <li>Associated with anti-centromere antibodies</li>
+                            <li>Usually develops later (10-15 years after onset)</li>
+                            <li>Progressive dyspnea, fatigue</li>
+                            <li>Elevated right ventricular pressure</li>
+                            <li>Requires right heart catheterization for diagnosis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="callout warning">
+                    <div class="callout-title">Important for Exam</div>
+                    <p>Pleuroparenchymal fibroelastosis (PPFE) is a rare subtype of ILD in SSc that portends a poor prognosis. It affects the upper lobes and requires close monitoring with serial DLCO and HRCT.</p>
+                </div>
+            </div>
+            
+            <div id="GI" class="tab-content">
+                <h4>Gastrointestinal Involvement</h4>
+                <ul>
+                    <li>Esophageal dysfunction (80-90%)
+                        <ul>
+                            <li>Most common GI manifestation</li>
+                            <li>Decreased lower esophageal sphincter pressure</li>
+                            <li>Diminished/absent peristalsis</li>
+                            <li>Symptoms: dysphagia, heartburn, regurgitation</li>
+                            <li>Complications: Barrett's esophagus, strictures</li>
+                        </ul>
+                    </li>
+                    <li>Small bowel involvement (40-60%)
+                        <ul>
+                            <li>Hypomotility, bacterial overgrowth</li>
+                            <li>Symptoms: bloating, diarrhea, malabsorption</li>
+                            <li>May lead to malnutrition and weight loss</li>
+                        </ul>
+                    </li>
+                    <li>Other GI issues
+                        <ul>
+                            <li>Gastric antral vascular ectasia ("watermelon stomach")</li>
+                            <li>Colonic hypomotility</li>
+                            <li>Anorectal dysfunction</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="renal" class="tab-content">
+                <h4>Renal Involvement</h4>
+                <p>Scleroderma renal crisis (SRC) is the most serious renal manifestation:</p>
+                <ul>
+                    <li>More common in dcSSc (20%) than lcSSc (1%)</li>
+                    <li>Associated with anti-RNA polymerase III antibodies</li>
+                    <li>Usually occurs within first 4-5 years of disease</li>
+                    <li>Characterized by:
+                        <ul>
+                            <li>Accelerated hypertension</li>
+                            <li>Rapidly progressive renal failure</li>
+                            <li>Microangiopathic hemolytic anemia</li>
+                            <li>Proteinuria, hematuria</li>
+                        </ul>
+                    </li>
+                    <li>Risk factors:
+                        <ul>
+                            <li>Rapidly progressive skin disease</li>
+                            <li>Use of high-dose corticosteroids</li>
+                            <li>New cardiac events</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="callout info">
+                    <div class="callout-title">Treatment Pearl</div>
+                    <p>ACE inhibitors have dramatically improved outcomes in scleroderma renal crisis but should be instituted early for treatment. However, they are <strong>not helpful for prevention</strong>.</p>
+                </div>
+            </div>
+            
+            <div id="cardiac" class="tab-content">
+                <h4>Cardiac Involvement</h4>
+                <ul>
+                    <li>Primary myocardial involvement
+                        <ul>
+                            <li>Patchy fibrosis of myocardium</li>
+                            <li>Microvascular disease</li>
+                            <li>Diastolic dysfunction</li>
+                        </ul>
+                    </li>
+                    <li>Secondary cardiac involvement
+                        <ul>
+                            <li>Right heart failure secondary to PAH</li>
+                            <li>Cor pulmonale</li>
+                        </ul>
+                    </li>
+                    <li>Conduction disturbances</li>
+                    <li>Pericardial effusion</li>
+                </ul>
+            </div>
+            
+            <div id="MSK" class="tab-content">
+                <h4>Musculoskeletal Involvement</h4>
+                <ul>
+                    <li>Arthralgia/arthritis (80-98%)
+                        <ul>
+                            <li>Usually symmetric, polyarticular</li>
+                            <li>Small joints of hands most commonly affected</li>
+                        </ul>
+                    </li>
+                    <li>Tendon friction rubs (more common in dcSSc)</li>
+                    <li>Joint contractures due to skin tightening</li>
+                    <li>Myopathy/myositis
+                        <ul>
+                            <li>May be inflammatory or fibrotic</li>
+                            <li>Proximal muscle weakness (60-80%)</li>
+                        </ul>
+                    </li>
+                    <li>Acro-osteolysis (bone resorption of distal phalanges)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="callout danger">
+            <div class="callout-title">Monitoring Priorities</div>
+            <p>The majority of SSc patients have internal organ involvement which is the major cause of morbidity and mortality. Initial screening tests for all patients should include:</p>
+            <ul>
+                <li>Pulmonary function tests (DLCO, spirometry)</li>
+                <li>High-resolution CT (if abnormal PFTs)</li>
+                <li>Transthoracic echocardiography</li>
+                <li>Serum N-Tpro-BNP level</li>
+                <li>Close monitoring of blood pressure</li>
+                <li>BUN/Creatinine and urinalysis</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="diagnosis">
+        <h2>Diagnosis of Systemic Sclerosis</h2>
+        
+        <h3>2013 ACR/EULAR Classification Criteria</h3>
+        
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Sub-item</th>
+                <th>Weight/Score</th>
+            </tr>
+            <tr>
+                <td>Skin thickening of the fingers of both hands extending proximal to the MCP joints (sufficient criterion)</td>
+                <td>-</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Skin thickening of the fingers</td>
+                <td>Puffy fingers</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Sclerodactyly</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Fingertip lesions</td>
+                <td>Digital tip ulcers</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Pitting scars</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Telangiectasias</td>
+                <td>-</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Abnormal nail-fold capillaries</td>
+                <td>-</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Pulmonary arterial hypertension and/or interstitial lung disease</td>
+                <td>Pulmonary arterial hypertension</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Interstitial lung disease</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Raynaud phenomenon</td>
+                <td>-</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td rowspan="3">SSc-related autoantibodies</td>
+                <td>Anti-centromere</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Anti-topoisomerase I</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Anti-RNA polymerase III</td>
+                <td>3</td>
+            </tr>
+        </table>
+        
+        <div class="callout warning">
+            <div class="callout-title">Diagnostic Threshold</div>
+            <p>Patients with a total score of ≥9 are classified as having definite SSc.</p>
+            <p>Note: Skin thickening of the fingers of both hands extending proximal to MCP joints (9 points) is by itself sufficient for diagnosis.</p>
+        </div>
+        
+        <h3>Autoantibodies in SSc</h3>
+        
+        <div class="feature-box">
+            <div class="feature-item">
+                <div class="feature-title">Anti-centromere Antibodies</div>
+                <ul>
+                    <li>Present in 30-70% of lcSSc, 5-10% of dcSSc</li>
+                    <li>Associated with:
+                        <ul>
+                            <li>Limited cutaneous disease</li>
+                            <li>Digital gangrene</li>
+                            <li>Pulmonary arterial hypertension</li>
+                            <li>Better long-term survival</li>
+                        </ul>
+                    </li>
+                    <li>Discrete speckled (centromere) ANA pattern</li>
+                </ul>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Anti-topoisomerase I (Scl-70)</div>
+                <ul>
+                    <li>Present in 30-70% of dcSSc, 5-15% of lcSSc</li>
+                    <li>Associated with:
+                        <ul>
+                            <li>Diffuse cutaneous disease</li>
+                            <li>Interstitial lung disease</li>
+                            <li>Pulmonary fibrosis</li>
+                            <li>Poorer prognosis</li>
+                        </ul>
+                    </li>
+                    <li>Speckled ANA pattern</li>
+                </ul>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-title">Anti-RNA polymerase III</div>
+                <ul>
+                    <li>Present in 5-25% of dcSSc, 1-5% of lcSSc</li>
+                    <li>Associated with:
+                        <ul>
+                            <li>Rapidly progressive diffuse skin disease</li>
+                            <li>Renal crisis</li>
+                            <li>Increased risk of malignancy (esp. breast cancer)</li>
+                        </ul>
+                    </li>
+                    <li>Nucleolar or speckled ANA pattern</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="memory-aid">
+            <div class="memory-aid-title">💡 Antibody Mnemonic: "CAT"</div>
+            <p><strong>C</strong>entromere: <strong>L</strong>imited disease, <strong>P</strong>AH</p>
+            <p><strong>A</strong>nti-topo (Scl-70): <strong>D</strong>iffuse disease, <strong>I</strong>LD</p>
+            <p><strong>T</strong>ranscriptase (RNA polymerase III): <strong>R</strong>enal crisis, <strong>R</strong>apid progression</p>
+        </div>
+        
+        <h3>Pathology</h3>
+        
+        <p>Histologically, areas of cutaneous induration in SSc are characterized by:</p>
+        <ul>
+            <li>Compact or hyalinized collagen</li>
+            <li>Excessive collagen deposition</li>
+            <li>Atrophic eccrine and pilosebaceous glands</li>
+            <li>"Miniaturization" of adnexal structures</li>
+            <li>Adnexal structures appear "trapped" by collagen</li>
+            <li>Loss of subcutaneous fat</li>
+            <li>Sparse lymphocytic infiltrate</li>
+            <li>Direct immunofluorescence usually negative</li>
+            <li>Endothelial damage visible only at ultrastructural level</li>
+        </ul>
+        
+        <div class="pearl">
+            <p>In its end stage, areas of sclerosis may be indistinguishable histologically from other diseases characterized by collagen deposition, such as morphea, which tends to have a more robust inflammatory infiltrate than SSc in its earlier stages.</p>
+        </div>
+    </section>
+    
+    <section id="treatment">
+        <h2>Treatment of Systemic Sclerosis</h2>
+        
+        <p>SSc is a challenging disease to treat. Therapeutic interventions focus primarily on internal organ involvement, but unfortunately most of these treatments have minimal effect on cutaneous sclerosis.</p>
+        
+        <h3>Raynaud Phenomenon & Digital Ulcers</h3>
+        
+        <div class="tabs">
+            <div class="tab-links">
+                <div class="tab-link active" onclick="openTab(event, 'raynaud-firstline')">First-line</div>
+                <div class="tab-link" onclick="openTab(event, 'raynaud-secondline')">Second-line</div>
+                <div class="tab-link" onclick="openTab(event, 'raynaud-thirdline')">Third-line</div>
+                <div class="tab-link" onclick="openTab(event, 'raynaud-fourthline')">Fourth-line</div>
+            </div>
+            
+            <div id="raynaud-firstline" class="tab-content active">
+                <h4>First-line for Raynaud</h4>
+                <ul>
+                    <li><strong>Non-pharmacologic</strong>
+                        <ul>
+                            <li>Cold avoidance</li>
+                            <li>Hand and feet warming packets</li>
+                            <li>Discontinue all tobacco products</li>
+                            <li>Biofeedback</li>
+                        </ul>
+                    </li>
+                    <li><strong>For digital ulcers</strong>
+                        <ul>
+                            <li>Avoid excessive debridement</li>
+                            <li>Moist, non-adherent dressings</li>
+                            <li>Autolytic debridement via occlusive dressings</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="raynaud-secondline" class="tab-content">
+                <h4>Second-line for Raynaud</h4>
+                <ul>
+                    <li><strong>Calcium channel blockers</strong>
+                        <ul>
+                            <li>Nifedipine SR: 30mg daily, increasing to BID after 2 weeks if tolerated</li>
+                            <li>Amlodipine: 2.5mg daily, with increments of 2.5mg every 2 weeks as tolerated, up to 10mg daily</li>
+                            <li>Caution: may exacerbate GERD and cause peripheral edema</li>
+                        </ul>
+                    </li>
+                    <li><strong>For digital ulcers</strong>
+                        <ul>
+                            <li>Low-dose aspirin or clopidogrel</li>
+                            <li>Pentoxifylline</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="raynaud-thirdline" class="tab-content">
+                <h4>Third-line for Raynaud (especially with ulceration)</h4>
+                <ul>
+                    <li><strong>Phosphodiesterase type 5 inhibitors</strong>
+                        <ul>
+                            <li>Sildenafil: initial dose as low as 5mg PO TID, but most patients tolerate and require 50mg PO BID</li>
+                            <li>Tadalafil: initially 20mg PO every other day, increased to 40mg PO daily</li>
+                        </ul>
+                    </li>
+                    <li><strong>Other options</strong>
+                        <ul>
+                            <li>α-Adrenergic blockers (e.g., prazosin)</li>
+                            <li>Angiotensin II receptor blockers (e.g., losartan)</li>
+                            <li>Endothelin receptor antagonists (e.g., bosentan) - approved in Europe for prevention of new digital ulcers</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="raynaud-fourthline" class="tab-content">
+                <h4>Fourth-line for Raynaud</h4>
+                <ul>
+                    <li><strong>Serotonin reuptake inhibitors</strong> (e.g., fluoxetine)
+                        <ul>
+                            <li>Option for patients who cannot tolerate vasodilators due to hypotension</li>
+                        </ul>
+                    </li>
+                    <li><strong>Botulinum toxin type A</strong>
+                        <ul>
+                            <li>Injections into base of digits</li>
+                            <li>Mixed results in clinical trials</li>
+                        </ul>
+                    </li>
+                    <li><strong>For severe digital ulcers</strong>
+                        <ul>
+                            <li>IV prostanoids (e.g., epoprostenol, iloprost)</li>
+                            <li>Surgical options: sympathectomy, debridement</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Cutaneous Sclerosis</h3>
+        
+        <div class="callout info">
+            <div class="callout-title">Challenges in Treatment</div>
+            <p>Effective therapy for cutaneous sclerosis remains inadequate. The modified Rodnan skin score (mRSS) is the traditional instrument for measuring skin involvement but is relatively insensitive to small changes over short periods of time.</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Treatment Option</th>
+                <th>Comments</th>
+            </tr>
+            <tr>
+                <td>Topical therapies</td>
+                <td>Similar to those used for morphea; limited efficacy</td>
+            </tr>
+            <tr>
+                <td>UV phototherapy</td>
+                <td>May help some patients; protocols similar to those used for morphea</td>
+            </tr>
+            <tr>
+                <td>Methotrexate</td>
+                <td>Helpful in SSc patients with overlapping myositis and inflammatory arthritis; avoid if ILD present; 3-6 month trial reasonable</td>
+            </tr>
+            <tr>
+                <td>Mycophenolate mofetil (MMF)</td>
+                <td>Routinely used for SSc-ILD; may benefit early cutaneous sclerosis; 2-3g daily</td>
+            </tr>
+            <tr>
+                <td>D-penicillamine</td>
+                <td>No difference between low-dose and high-dose; now rarely used</td>
+            </tr>
+            <tr>
+                <td>Minocycline</td>
+                <td>Initial promising results not confirmed in larger studies</td>
+            </tr>
+            <tr>
+                <td>IVIg</td>
+                <td>Some data to support use in recalcitrant cutaneous disease; larger studies needed</td>
+            </tr>
+            <tr>
+                <td>Rituximab</td>
+                <td>Used as rescue therapy; benefits seen in some studies</td>
+            </tr>
+            <tr>
+                <td>Anti-TGF-β1 antibodies</td>
+                <td>Did not show benefit in clinical trials</td>
+            </tr>
+        </table>
+        
+        <h3>Internal Organ Involvement</h3>
+        
+        <table>
+            <tr>
+                <th>Organ System</th>
+                <th>Treatment Options</th>
+            </tr>
+            <tr>
+                <td>Interstitial Lung Disease</td>
+                <td>
+                    <ul>
+                        <li>Nintedanib (FDA-approved for SSc-ILD)</li>
+                        <li>Mycophenolate mofetil (preferred over cyclophosphamide due to better safety profile)</li>
+                        <li>Cyclophosphamide (second-line; significant side effects)</li>
+                        <li>Tocilizumab (FDA-approved for SSc-ILD)</li>
+                        <li>Rituximab (for refractory cases)</li>
+                        <li>Autologous HSCT in selected patients with rapidly progressive ILD</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Pulmonary Arterial Hypertension</td>
+                <td>
+                    <ul>
+                        <li>Phosphodiesterase type 5 inhibitors (e.g., tadalafil)</li>
+                        <li>Endothelin receptor antagonists (e.g., bosentan, ambrisentan, macitentan)</li>
+                        <li>Prostacyclin analogues (e.g., treprostinil, epoprostenol)</li>
+                        <li>Prostacyclin receptor agonists (e.g., selexipag)</li>
+                        <li>Soluble guanylate cyclase stimulant (e.g., riociguat)</li>
+                        <li>Anticoagulation</li>
+                        <li>Oxygen</li>
+                        <li>Lung transplantation (for advanced disease)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Renal Crisis</td>
+                <td>
+                    <ul>
+                        <li>ACE inhibitors (dramatic improvement in outcomes)</li>
+                        <li>Must be initiated early in the course of renal crisis</li>
+                        <li>Not helpful for prevention</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Gastrointestinal</td>
+                <td>
+                    <ul>
+                        <li>Proton pump inhibitors (for GERD and esophageal involvement)</li>
+                        <li>Promotility agents (e.g., metoclopramide, domperidone, erythromycin)</li>
+                        <li>Antibiotics (for bacterial overgrowth)</li>
+                        <li>Nutritional support as needed</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Cardiac</td>
+                <td>
+                    <ul>
+                        <li>ACE inhibitors</li>
+                        <li>Standard heart failure therapy</li>
+                        <li>Treatment of underlying PAH if present</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <div class="callout warning">
+            <div class="callout-title">Corticosteroid Warning</div>
+            <p>Concern exists that concomitant administration of systemic corticosteroids may increase the risk of developing renal crisis. If needed, low-dose corticosteroids (e.g., prednisone &lt;10 mg daily) may be safer.</p>
+        </div>
+        
+        <h3>Newer/Emerging Therapies</h3>
+        <ul>
+            <li><strong>Autologous HSCT</strong>: Three randomized controlled trials have demonstrated superiority of HSCT over cyclophosphamide, with greater improvement in lung and skin disease as well as quality-of-life. Consider for selected patients with rapidly progressive SSc.</li>
+            <li><strong>Autotaxin inhibitors</strong>: Ziritaxestat showed improvement in cutaneous sclerosis based on mRSS in a phase II trial.</li>
+            <li><strong>IL-4/IL-13 inhibitors</strong>: Romilkimab, a humanized antibody that neutralizes IL-4/IL-13, under investigation.</li>
+            <li><strong>Melanocortin 1 receptor agonists</strong>: Dersimelagon being studied in preclinical models.</li>
+        </ul>
+    </section>
+    
+    <section id="differential">
+        <h2>Differential Diagnosis</h2>
+        
+        <p>The differential diagnosis of SSc includes other conditions that can lead to symmetric and widespread cutaneous induration.</p>
+        
+        <div class="collapsible">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">Differential Diagnosis Categories</div>
+            <div class="collapsible-content">
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Conditions</th>
+                    </tr>
+                    <tr>
+                        <td>Mucinoses</td>
+                        <td>
+                            <ul>
+                                <li>Scleredema - induration of upper back, neck, face</li>
+                                <li>Scleromyxedema - waxy papules, diffuse induration, monoclonal gammopathy</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Immunologic</td>
+                        <td>
+                            <ul>
+                                <li>Sclerotic chronic GVHD</li>
+                                <li>Eosinophilic fasciitis</li>
+                                <li>Generalized morphea</li>
+                                <li>Overlap syndromes</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Paraneoplastic</td>
+                        <td>
+                            <ul>
+                                <li>POEMS syndrome</li>
+                                <li>Amyloidosis (primary systemic)</li>
+                                <li>Carcinoid syndrome</li>
+                                <li>Paraneoplastic scleroderma-like syndrome</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neoplastic</td>
+                        <td>
+                            <ul>
+                                <li>Carcinoma en cuirasse - sclerodermoid encasement of chest by metastatic carcinoma</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Metabolic</td>
+                        <td>
+                            <ul>
+                                <li>Diabetic cheiroarthropathy</li>
+                                <li>Porphyria cutanea tarda</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Toxin-mediated</td>
+                        <td>
+                            <ul>
+                                <li>Nephrogenic systemic fibrosis</li>
+                                <li>Eosinophilia-myalgia syndrome</li>
+                                <li>Toxic oil syndrome</li>
+                                <li>Silicosis</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Drug-induced</td>
+                        <td>
+                            <ul>
+                                <li>Bleomycin</li>
+                                <li>Taxanes</li>
+                                <li>Vinyl chloride</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Genetic</td>
+                        <td>
+                            <ul>
+                                <li>Stiff skin syndrome</li>
+                                <li>Hutchinson-Gilford progeria syndrome</li>
+                                <li>Werner syndrome</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <h3>Distinguishing SSc from Other Sclerodermoid Conditions</h3>
+        
+        <div class="mcq">
+            <div class="mcq-question">Which of the following is NOT a typical feature that helps distinguish systemic sclerosis from generalized morphea?</div>
+            <ul class="mcq-options">
+                <li class="mcq-option" onclick="selectOption(this)">Raynaud phenomenon</li>
+                <li class="mcq-option" onclick="selectOption(this)">Abnormal nail-fold capillaries</li>
+                <li class="mcq-option correct" onclick="selectOption(this)">Perifollicular sparing of pigment (salt and pepper sign)</li>
+                <li class="mcq-option" onclick="selectOption(this)">SSc-specific autoantibodies</li>
+                <li class="mcq-option" onclick="selectOption(this)">Internal organ involvement</li>
+            </ul>
+            <div class="mcq-explanation">
+                <p><strong>Explanation:</strong> The "salt and pepper sign" (perifollicular sparing of pigment) can be seen in both systemic sclerosis and generalized morphea, so it's not a distinguishing feature. Raynaud phenomenon, abnormal nail-fold capillaries, SSc-specific autoantibodies (anti-centromere, anti-topoisomerase I, anti-RNA polymerase III), and internal organ involvement are all features that help distinguish systemic sclerosis from generalized morphea.</p>
+            </div>
+        </div>
+        
+        <div class="two-column">
+            <div>
+                <h4>Key Distinguishing Features of SSc</h4>
+                <ul>
+                    <li>Raynaud phenomenon (90-99%)</li>
+                    <li>Abnormal nail-fold capillaries (>90%)</li>
+                    <li>Specific autoantibody patterns</li>
+                    <li>Significant internal organ involvement</li>
+                    <li>Digital ulcers</li>
+                    <li>Characteristic mat telangiectasias</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Features Suggestive of Alternative Diagnoses</h4>
+                <ul>
+                    <li>Asymmetric cutaneous involvement</li>
+                    <li>Rapid onset following identifiable trigger (chemical, drug)</li>
+                    <li>Monoclonal gammopathy (scleromyxedema)</li>
+                    <li>Eosinophilia with "pseudo-cellulite" appearance (eosinophilic fasciitis)</li>
+                    <li>Exposure to gadolinium with renal disease (NSF)</li>
+                    <li>Induration limited to buttocks/thighs with sparing of inguinal folds (stiff skin syndrome)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="related">
+        <h2>Related Disorders</h2>
+        
+        <div class="tabs">
+            <div class="tab-links">
+                <div class="tab-link active" onclick="openTab(event, 'eosinophilic')">Eosinophilic Fasciitis</div>
+                <div class="tab-link" onclick="openTab(event, 'stiff-skin')">Stiff Skin Syndrome</div>
+                <div class="tab-link" onclick="openTab(event, 'nsf')">Nephrogenic Systemic Fibrosis</div>
+                <div class="tab-link" onclick="openTab(event, 'exogenous')">Exogenous Sclerodermoid Syndromes</div>
+            </div>
+            
+            <div id="eosinophilic" class="tab-content active">
+                <h3>Eosinophilic Fasciitis</h3>
+                
+                <div class="callout info">
+                    <div class="callout-title">Synonyms</div>
+                    <ul>
+                        <li>Shulman syndrome</li>
+                        <li>Diffuse fasciitis with eosinophilia</li>
+                    </ul>
+                </div>
+                
+                <h4>Clinical Features</h4>
+                <ul>
+                    <li>History of strenuous physical activity in ~30% of cases</li>
+                    <li>Initial manifestations: edema and pain of involved extremities</li>
+                    <li>Progresses to sclerosis with dimpled or "pseudo-cellulite" appearance</li>
+                    <li>Distribution is symmetric and usually <strong>spares hands, feet and face</strong></li>
+                    <li>"Groove sign" - linear depressions where veins appear sunken within indurated skin</li>
+                    <li>Laboratory findings:
+                        <ul>
+                            <li>Elevated ESR</li>
+                            <li>Hypergammaglobulinemia</li>
+                            <li>Peripheral eosinophilia (may be absent if receiving corticosteroids)</li>
+                            <li>ANA typically not elevated</li>
+                            <li>Normal complement levels</li>
+                        </ul>
+                    </li>
+                    <li>May be associated with hematologic abnormalities:
+                        <ul>
+                            <li>Pancytopenia</li>
+                            <li>Anemia</li>
+                            <li>Thrombocytopenia</li>
+                            <li>Myeloproliferative disorders</li>
+                            <li>Monoclonal gammopathy</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Pathology</h4>
+                <ul>
+                    <li>Thickening of deep fascia (10-50 times normal width)</li>
+                    <li>Patchy infiltrate of lymphocytes, plasma cells, and eosinophils</li>
+                    <li>Dermal sclerosis in some cases</li>
+                </ul>
+                
+                <h4>Treatment</h4>
+                <ul>
+                    <li>Prompt treatment essential to preserve mobility and prevent contractures</li>
+                    <li>Oral corticosteroids (e.g., prednisone 1-2 mg/kg daily)</li>
+                    <li>Response typically noted within first few weeks</li>
+                    <li>Prednisone tapered over 6-24 months</li>
+                    <li>Concurrent immunosuppressive drugs often added:
+                        <ul>
+                            <li>Methotrexate</li>
+                            <li>Mycophenolate mofetil</li>
+                        </ul>
+                    </li>
+                    <li>For inadequate response:
+                        <ul>
+                            <li>Pulse-dose corticosteroids</li>
+                            <li>IVIg</li>
+                            <li>Hydroxychloroquine</li>
+                            <li>JAK inhibitors</li>
+                            <li>UVA-based phototherapy</li>
+                            <li>Cyclosporine</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="stiff-skin" class="tab-content">
+                <h3>Stiff Skin Syndrome</h3>
+                
+                <div class="callout info">
+                    <div class="callout-title">Synonym</div>
+                    <p>Congenital fascial dystrophy</p>
+                </div>
+                
+                <h4>Pathogenesis</h4>
+                <ul>
+                    <li>Due to heterozygosity for a mutation in the gene encoding fibrillin-1 (FBN1)</li>
+                    <li>Presence of giant "amianthoid-like" collagen fibrils in affected fascia</li>
+                    <li>Disturbance in organization of collagen and glycosaminoglycans in the extracellular matrix</li>
+                    <li>Segmental form may be associated with IL-17C mutation</li>
+                </ul>
+                
+                <h4>Clinical Features</h4>
+                <ul>
+                    <li>May be congenital or develop during early childhood</li>
+                    <li>Familial occurrences described</li>
+                    <li>"Rock hard" induration and thickening of skin and subcutaneous tissues</li>
+                    <li>Most pronounced on buttocks and thighs</li>
+                    <li><strong>Characteristic sparing of the inguinal folds</strong></li>
+                    <li>Hands and feet not involved</li>
+                    <li>Mild hypertrichosis often observed in affected areas</li>
+                    <li>Restricted joint mobility leading to:
+                        <ul>
+                            <li>Hip and knee flexion</li>
+                            <li>Prominent lumbar lordosis while standing</li>
+                        </ul>
+                    </li>
+                    <li>Patients may have short stature</li>
+                    <li>Condition is stable or slowly progressive</li>
+                    <li>Internal organs typically not involved</li>
+                </ul>
+                
+                <h4>Pathology</h4>
+                <ul>
+                    <li>Markedly thickened, hyalinized fascia</li>
+                    <li>No associated inflammatory infiltrate</li>
+                    <li>Thickened collagen bundles and mucin deposition may be present in overlying dermis</li>
+                </ul>
+                
+                <h4>Treatment</h4>
+                <ul>
+                    <li>Chronic course with no generally effective treatments</li>
+                    <li>Physical therapy helps prevent progressive joint contractures</li>
+                    <li>Segmental form with IL-17 mutation has been successfully treated with secukinumab</li>
+                </ul>
+            </div>
+            
+            <div id="nsf" class="tab-content">
+                <h3>Nephrogenic Systemic Fibrosis</h3>
+                
+                <div class="callout info">
+                    <div class="callout-title">Synonym</div>
+                    <p>Nephrogenic fibrosing dermopathy</p>
+                </div>
+                
+                <h4>Epidemiology & Pathogenesis</h4>
+                <ul>
+                    <li>Incidence declining since identification of causative agent</li>
+                    <li>Nearly all patients had history of exposure to gadolinium-based contrast agents</li>
+                    <li>Vast majority had advanced chronic kidney disease or acute kidney injury at time of exposure</li>
+                    <li>By 2010, FDA contraindicated three gadolinium-based contrast agents in such patients:
+                        <ul>
+                            <li>Gadopentetate dimeglumine (Magnevist®)</li>
+                            <li>Gadodiamide (Omniscan™)</li>
+                            <li>Gadoversetamide (OptiMARK™)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Clinical Features</h4>
+                <ul>
+                    <li>Thick, indurated plaques distributed symmetrically on trunk and extremities</li>
+                    <li>Often results in joint contractures</li>
+                    <li>Plaques are erythematous to hyperpigmented</li>
+                    <li>Irregular advancing edge with "ameboid" appearance</li>
+                    <li>Yellow scleral plaques may be present</li>
+                    <li>Fibrosis can develop within heart, lungs, and skeletal muscle</li>
+                </ul>
+                
+                <h4>Pathology</h4>
+                <ul>
+                    <li>Disease process extends along fibrous septa into subcutis (deep biopsy required)
+                    <li>Haphazard arrangement of thickened collagen bundles</li>
+                    <li>Increased dermal fibroblast-like cells that stain positively for CD34 and procollagen I</li>
+                    <li>Mucin deposition and osseous metaplasia may be seen</li>
+                    <li>Energy dispersive spectroscopy can detect gadolinium particles within involved tissue</li>
+                </ul>
+                
+                <h4>Treatment</h4>
+                <ul>
+                    <li>Generally refractory to corticosteroids and other immunosuppressive drugs</li>
+                    <li>Improvement in renal function (following renal transplantation) may improve NSF</li>
+                    <li>Potential therapeutic options similar to those for other sclerodermoid conditions</li>
+                </ul>
+            </div>
+            
+            <div id="exogenous" class="tab-content">
+                <h3>Sclerodermoid Syndromes Induced by Exogenous Substances</h3>
+                
+                <h4>Toxic Oil Syndrome</h4>
+                <ul>
+                    <li>1981 outbreak in Spain affecting >25,000 people (600 deaths)</li>
+                    <li>Caused by ingestion of aniline-degraded and reprocessed rapeseed oil</li>
+                    <li>Initial manifestations:
+                        <ul>
+                            <li>Morbilliform eruption</li>
+                            <li>Flu-like symptoms</li>
+                            <li>Peripheral eosinophilia (in 50%)</li>
+                        </ul>
+                    </li>
+                    <li>Late manifestations:
+                        <ul>
+                            <li>Affected CNS, lungs, and salivary glands</li>
+                            <li>Skin involvement either resolved, evolved into lichen planus-like eruption, or progressed to morpheaform or sclerodermoid picture</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Eosinophilia-Myalgia Syndrome</h4>
+                <ul>
+                    <li>1989 outbreak in US affecting >1,500 people (≥30 fatalities)</li>
+                    <li>Caused by contaminated preparation of L-tryptophan</li>
+                    <li>Acute phase:
+                        <ul>
+                            <li>Severe myalgias</li>
+                            <li>Fever, dyspnea</li>
+                            <li>Edema</li>
+                            <li>Macular exanthem</li>
+                            <li>Peripheral eosinophilia</li>
+                        </ul>
+                    </li>
+                    <li>Chronic phase (~50% of patients):
+                        <ul>
+                            <li>Diffuse, deep sclerodermoid induration of extremities (with acral sparing)</li>
+                            <li>Progressive peripheral neuropathy</li>
+                            <li>Myopathy</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Chemical-Induced Sclerodermoid Syndromes</h4>
+                <ul>
+                    <li>Organic chemicals associated with SSc-like picture:
+                        <ul>
+                            <li>Vinyl chloride</li>
+                            <li>Organic solvents (trichloroethylene, trichloroethane, perchloroethylene)</li>
+                            <li>Pesticides</li>
+                            <li>Epoxy resins</li>
+                        </ul>
+                    </li>
+                    <li>Slowly progressive process (unlike toxic oil and eosinophilia-myalgia syndromes)</li>
+                    <li>Begins with insidious acrosclerosis and Raynaud phenomenon</li>
+                    <li>May involve acral osteolysis, hepatic toxicity, pulmonary involvement</li>
+                    <li>Also associated with fatigue, weight loss, arthralgias, myalgias</li>
+                    <li>Autoantibodies typically absent</li>
+                    <li>Disease process ceases or reverses with removal of exposure</li>
+                </ul>
+                
+                <h4>Silicosis</h4>
+                <ul>
+                    <li>Incidence of SSc ~20-fold higher in individuals with occupational silica exposure</li>
+                    <li>Common in miners and foundry workers</li>
+                    <li>Mean duration of exposure: 14 years</li>
+                    <li>Mean delay in onset: 24 years from first exposure</li>
+                    <li>Once absorbed, silica cannot be removed from body</li>
+                    <li>HLA and TNF allele associations suggest need for specific pre-existing immunophenotype</li>
+                    <li>SSc associated with pulmonary silicosis is clinically indistinguishable from idiopathic form</li>
+                </ul>
+                
+                <h4>Drug-Induced Sclerodermoid Syndromes</h4>
+                <ul>
+                    <li>Bleomycin - acrosclerosis, Raynaud phenomenon, pulmonary fibrosis</li>
+                    <li>Taxanes - edema followed by sclerosis of lower extremities, acrosclerosis</li>
+                    <li>Other chemotherapeutic agents:
+                        <ul>
+                            <li>Cisplatin</li>
+                            <li>Pemetrexed</li>
+                            <li>Carboplatin</li>
+                            <li>Topotecan</li>
+                            <li>Gemcitabine (especially of the lower extremities)</li>
+                        </ul>
+                    </li>
+                    <li>Additional agents:
+                        <ul>
+                            <li>Ergot alkaloids</li>
+                            <li>L-5-hydroxytryptophan +/- carbidopa</li>
+                            <li>Appetite suppressants</li>
+                            <li>Cocaine</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="summary">
+        <h2>High-Yield Board Exam Summary</h2>
+        
+        <div class="important-box">
+            <div class="important-title">🎯 Top 10 Exam Targets</div>
+            <ol>
+                <li><strong>Classification:</strong> Distinguish lcSSc from dcSSc based on extent of skin involvement, timing of organ involvement, and autoantibody associations</li>
+                <li><strong>ACR/EULAR criteria:</strong> Know the 2013 classification criteria and scoring system (score ≥9 classified as definite SSc)</li>
+                <li><strong>Pathogenesis triad:</strong> Vascular injury → immune activation → fibrosis (know key mediators like TGF-β, CTGF)</li>
+                <li><strong>Antibodies:</strong> Anti-centromere (lcSSc, PAH), anti-topoisomerase I (dcSSc, ILD), anti-RNA polymerase III (dcSSc, renal crisis, malignancy)</li>
+                <li><strong>Raynaud phenomenon:</strong> Distinguish primary vs. secondary Raynaud and know treatment approach</li>
+                <li><strong>Organ involvement:</strong> Know that pulmonary disease (ILD/PAH) is the leading cause of death and how to screen for it</li>
+                <li><strong>Treatment:</strong> Nintedanib and MMF for ILD; ACE inhibitors for renal crisis; vasodilators for Raynaud</li>
+                <li><strong>Differential diagnosis:</strong> Know how to distinguish SSc from eosinophilic fasciitis, morphea, and other sclerodermoid conditions</li>
+                <li><strong>Related conditions:</strong> Recognize eosinophilic fasciitis, stiff skin syndrome, NSF and their key distinguishing features</li>
+                <li><strong>Prognosis factors:</strong> Male sex, older age, African-American race, internal organ involvement at diagnosis, truncal skin involvement</li>
+            </ol>
+        </div>
+        
+        <h3>Most Commonly Tested Differentiating Features</h3>
+        
+        <table class="comparison-table">
+            <tr>
+                <th>Feature</th>
+                <th>Systemic Sclerosis</th>
+                <th>Eosinophilic Fasciitis</th>
+                <th>Generalized Morphea</th>
+                <th>Stiff Skin Syndrome</th>
+            </tr>
+            <tr>
+                <td>Raynaud phenomenon</td>
+                <td>+++</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Distribution</td>
+                <td>Acral (fingers, face) → trunk</td>
+                <td>Extremities (sparing hands/feet/face)</td>
+                <td>Trunk → extremities</td>
+                <td>Buttocks, thighs (sparing inguinal folds)</td>
+            </tr>
+            <tr>
+                <td>Autoantibodies</td>
+                <td>+++ (specific pattern)</td>
+                <td>- (or nonspecific)</td>
+                <td>+/- (nonspecific)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Systemic involvement</td>
+                <td>+++</td>
+                <td>+/- (hematologic)</td>
+                <td>+/- (if involving head)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Nail-fold changes</td>
+                <td>+++</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Laboratory markers</td>
+                <td>SSc-specific antibodies</td>
+                <td>Eosinophilia, hypergammaglobulinemia</td>
+                <td>Normal or nonspecific</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <td>Genetic association</td>
+                <td>None specific</td>
+                <td>None specific</td>
+                <td>None specific</td>
+                <td>FBN1 mutation</td>
+            </tr>
+            <tr>
+                <td>Response to corticosteroids</td>
+                <td>Poor</td>
+                <td>Good</td>
+                <td>Variable</td>
+                <td>Poor</td>
+            </tr>
+        </table>
+        
+        <div class="mcq">
+            <div class="mcq-question">A 45-year-old woman presents with 6 months of progressive skin tightening affecting her fingers, hands, forearms, and face. She reports Raynaud phenomenon for the past year. Nail-fold capillaroscopy shows dilated loops with areas of capillary dropout. She has dyspnea on exertion, and pulmonary function tests show decreased DLCO. Which autoantibody is most likely to be positive in this patient?</div>
+            <ul class="mcq-options">
+                <li class="mcq-option" onclick="selectOption(this)">Anti-centromere antibody</li>
+                <li class="mcq-option correct" onclick="selectOption(this)">Anti-topoisomerase I (Scl-70) antibody</li>
+                <li class="mcq-option" onclick="selectOption(this)">Anti-RNA polymerase III antibody</li>
+                <li class="mcq-option" onclick="selectOption(this)">Anti-U1-RNP antibody</li>
+                <li class="mcq-option" onclick="selectOption(this)">Anti-Jo-1 antibody</li>
+            </ul>
+            <div class="mcq-explanation">
+                <p><strong>Explanation:</strong> This patient has diffuse cutaneous systemic sclerosis (dcSSc) with interstitial lung disease (ILD), evidenced by decreased DLCO. Anti-topoisomerase I (Scl-70) antibody is strongly associated with dcSSc and increased risk of ILD. Anti-centromere antibody is associated with limited cutaneous systemic sclerosis and PAH. Anti-RNA polymerase III is associated with dcSSc and renal crisis. Anti-U1-RNP is associated with mixed connective tissue disease. Anti-Jo-1 is associated with polymyositis/dermatomyositis with ILD.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Toggle collapsible sections
+    function toggleCollapsible(header) {
+        header.classList.toggle("active");
+        let content = header.nextElementSibling;
+        
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            content.classList.remove("show");
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.classList.add("show");
+        }
+    }
+    
+    // Switch tabs
+    function openTab(evt, tabName) {
+        var i, tabContent, tabLinks;
+        
+        // Get all tab content elements and hide them
+        tabContent = evt.currentTarget.parentElement.nextElementSibling.parentElement.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].className = tabContent[i].className.replace(" active", "");
+        }
+        
+        // Get all tab links and remove the active class
+        tabLinks = evt.currentTarget.parentElement.getElementsByClassName("tab-link");
+        for (i = 0; i < tabLinks.length; i++) {
+            tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+        }
+        
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(tabName).className += " active";
+        evt.currentTarget.className += " active";
+    }
+    
+    // MCQ option selection
+    function selectOption(option) {
+        // First, remove selected state from all options
+        let options = option.parentElement.getElementsByClassName("mcq-option");
+        for (let i = 0; i < options.length; i++) {
+            options[i].classList.remove("selected");
+            if (!options[i].classList.contains("correct") && !options[i].classList.contains("incorrect")) {
+                options[i].classList.remove("correct", "incorrect");
+            }
+        }
+        
+        // Mark the selected option
+        option.classList.add("selected");
+        
+        // If the option is not already marked as correct/incorrect, do that now
+        if (!option.classList.contains("correct") && !option.classList.contains("incorrect")) {
+            if (option.classList.contains("correct")) {
+                // Already marked as correct from HTML
+            } else {
+                option.classList.add("incorrect");
+            }
+        }
+        
+        // Show the explanation
+        let explanation = option.parentElement.nextElementSibling;
+        explanation.style.display = "block";
+    }
+    
+    // Open collapsibles that might be helpful by default
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // You can add logic here to pre-open specific sections if desired
+    });
+</script>
+</body>
+</html>

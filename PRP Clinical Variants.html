@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRP Clinical Variants - Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-size: 13px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 26px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: -20px -20px 25px -20px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        
+        .good-prognosis { background: linear-gradient(135deg, #d4edda, #c3e6cb); }
+        .chronic-prognosis { background: linear-gradient(135deg, #f8d7da, #f5c6cb); }
+        .variable-prognosis { background: linear-gradient(135deg, #fff3cd, #ffeaa7); }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #4a69bd, #3742fa);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        td {
+            padding: 10px 8px;
+            border: 1px solid #dee2e6;
+            vertical-align: top;
+            line-height: 1.3;
+        }
+        
+        .type-header {
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50;
+            font-size: 14px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            min-width: 120px;
+        }
+        
+        .pearl {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            margin: 5px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 11px;
+        }
+        
+        .clinical-image {
+            background: #e3f2fd;
+            padding: 6px;
+            border-radius: 4px;
+            font-style: italic;
+            border-left: 4px solid #2196f3;
+            margin: 3px 0;
+            font-size: 11px;
+        }
+        
+        .prevalence {
+            background: #f0f4ff;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #4a69bd;
+            text-align: center;
+        }
+        
+        .age-group {
+            background: #fff3e0;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #ef6c00;
+            text-align: center;
+        }
+        
+        .feature-list {
+            margin: 0;
+            padding-left: 12px;
+        }
+        
+        .feature-list li {
+            margin: 2px 0;
+            font-size: 11px;
+        }
+        
+        .high-yield {
+            background: #fff176;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .board-trap {
+            background: #ffcdd2;
+            padding: 6px;
+            border-radius: 4px;
+            border-left: 4px solid #f44336;
+            margin: 3px 0;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        .genetics {
+            background: #e8f5e8;
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 10px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 PRP Clinical Variants - Board Exam Quick Reference</h1>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color good-prognosis"></div>
+                Good Prognosis (80% clear in 3 years)
+            </div>
+            <div class="legend-item">
+                <div class="legend-color chronic-prognosis"></div>
+                Chronic Course
+            </div>
+            <div class="legend-item">
+                <div class="legend-color variable-prognosis"></div>
+                Variable/Treatment-Resistant
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 12%;">Type</th>
+                    <th style="width: 10%;">Prevalence</th>
+                    <th style="width: 10%;">Age</th>
+                    <th style="width: 12%;">Distribution</th>
+                    <th style="width: 35%;">Key Clinical Features</th>
+                    <th style="width: 12%;">Course</th>
+                    <th style="width: 9%;">Board Pearl</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Type I: Classic Adult -->
+                <tr class="good-prognosis">
+                    <td class="type-header">
+                        <strong>Type I</strong><br>
+                        Classic Adult PRP
+                    </td>
+                    <td class="prevalence">55%<br>Most Common</td>
+                    <td class="age-group">Adult</td>
+                    <td>Generalized</td>
+                    <td>
+                        <div class="clinical-image">🏔️ "Cephalocaudal spread" - head to toe progression</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">"Islands of sparing"</span> in orange-red plaques</li>
+                            <li><span class="high-yield">Waxy orange-red keratoderma</span> (palms/soles)</li>
+                            <li><span class="high-yield">"Nutmeg grater"</span> follicular hyperkeratosis</li>
+                            <li>Sharply demarcated lesions</li>
+                        </ul>
+                    </td>
+                    <td class="good-prognosis" style="text-align: center;">
+                        <strong>FAVORABLE</strong><br>
+                        80% clear<br>
+                        within 3 years
+                    </td>
+                    <td class="pearl">
+                        Classic triad:<br>
+                        Head→Toe +<br>
+                        Islands +<br>
+                        Waxy palms
+                    </td>
+                </tr>
+                
+                <!-- Type II: Atypical Adult -->
+                <tr class="chronic-prognosis">
+                    <td class="type-header">
+                        <strong>Type II</strong><br>
+                        Atypical Adult PRP
+                    </td>
+                    <td class="prevalence">5%<br>Uncommon</td>
+                    <td class="age-group">Adult</td>
+                    <td>Generalized</td>
+                    <td>
+                        <div class="clinical-image">🐟 Thick, lamellated "fish-like" scaling on legs</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">Ichthyosiform scaling</span> (especially legs)</li>
+                            <li><span class="high-yield">Coarse keratoderma</span> (vs waxy in Type I)</li>
+                            <li>Eczematous areas</li>
+                            <li>Occasional alopecia</li>
+                        </ul>
+                        <div class="board-trap">⚠️ TRAP: Don't confuse with inherited ichthyosis!</div>
+                    </td>
+                    <td class="chronic-prognosis" style="text-align: center;">
+                        <strong>CHRONIC</strong><br>
+                        No spontaneous<br>
+                        resolution
+                    </td>
+                    <td class="pearl">
+                        Think:<br>
+                        "Ichthyosis-like"<br>
+                        = Type II
+                    </td>
+                </tr>
+                
+                <!-- Type III: Classic Juvenile -->
+                <tr class="good-prognosis">
+                    <td class="type-header">
+                        <strong>Type III</strong><br>
+                        Classic Juvenile PRP
+                    </td>
+                    <td class="prevalence">10%</td>
+                    <td class="age-group">Juvenile<br>(peaks 0-2 yrs<br>& adolescence)</td>
+                    <td>Generalized</td>
+                    <td>
+                        <div class="clinical-image">👶 "Mini Type I" - identical features in children</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">Identical to Type I</span> clinically</li>
+                            <li>Cephalocaudal spread</li>
+                            <li>Islands of sparing</li>
+                            <li>Orange-red waxy keratoderma</li>
+                        </ul>
+                        <div class="board-trap">⚠️ TRAP: Age is the ONLY difference from Type I!</div>
+                    </td>
+                    <td class="good-prognosis" style="text-align: center;">
+                        <strong>FAVORABLE</strong><br>
+                        Majority clear<br>
+                        within 3 years
+                    </td>
+                    <td class="pearl">
+                        Type I features<br>
+                        + Juvenile age<br>
+                        = Type III
+                    </td>
+                </tr>
+                
+                <!-- Type IV: Circumscribed Juvenile -->
+                <tr class="chronic-prognosis">
+                    <td class="type-header">
+                        <strong>Type IV</strong><br>
+                        Circumscribed Juvenile PRP
+                    </td>
+                    <td class="prevalence">25%<br>Most Common<br>Juvenile Form</td>
+                    <td class="age-group">Juvenile<br>(prepubertal)</td>
+                    <td><span class="high-yield">FOCAL</span></td>
+                    <td>
+                        <div class="clinical-image">🦵 Well-demarcated plaques confined to elbows & knees</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">Localized to elbows/knees ONLY</span></li>
+                            <li>Well-demarcated erythematous plaques</li>
+                            <li>Follicular papules</li>
+                            <li>Circumscribed nature</li>
+                        </ul>
+                    </td>
+                    <td class="chronic-prognosis" style="text-align: center;">
+                        <strong>CHRONIC</strong><br>
+                        Often >3 years<br>
+                        but stays localized
+                    </td>
+                    <td class="pearl">
+                        "Elbow/Knee<br>
+                        Only"<br>
+                        = Type IV
+                    </td>
+                </tr>
+                
+                <!-- Type V: Atypical Juvenile -->
+                <tr class="chronic-prognosis">
+                    <td class="type-header">
+                        <strong>Type V</strong><br>
+                        Atypical Juvenile PRP
+                    </td>
+                    <td class="prevalence">5%<br>Uncommon</td>
+                    <td class="age-group">Juvenile<br>(first few<br>years of life)</td>
+                    <td>Generalized</td>
+                    <td>
+                        <div class="clinical-image">🧬 Sclerotic hands/feet + family history</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">Ichthyosiform scaling</span></li>
+                            <li><span class="high-yield">Scleroderma-like hands/feet</span></li>
+                            <li><span class="high-yield">Familial clustering</span></li>
+                        </ul>
+                        <div class="genetics">🧬 CARD14 mutations - "CAPE syndrome"</div>
+                    </td>
+                    <td class="chronic-prognosis" style="text-align: center;">
+                        <strong>CHRONIC</strong><br>
+                        Persistent
+                    </td>
+                    <td class="pearl">
+                        Sclerotic<br>
+                        changes +<br>
+                        Family Hx<br>
+                        = CARD14
+                    </td>
+                </tr>
+                
+                <!-- Type VI: HIV-Associated -->
+                <tr class="variable-prognosis">
+                    <td class="type-header">
+                        <strong>Type VI</strong><br>
+                        HIV-Associated PRP
+                    </td>
+                    <td class="prevalence"><1%<br>Rare</td>
+                    <td class="age-group">Variable<br>(Adult)</td>
+                    <td>Generalized</td>
+                    <td>
+                        <div class="clinical-image">🦠 PRP + acne conglobata + hidradenitis</div>
+                        <ul class="feature-list">
+                            <li><span class="high-yield">HIV infection</span></li>
+                            <li><span class="high-yield">Follicular spines</span></li>
+                            <li><span class="high-yield">Acne conglobata</span></li>
+                            <li><span class="high-yield">Hidradenitis suppurativa</span></li>
+                        </ul>
+                        <div class="board-trap">⚠️ Fails conventional PRP therapy!</div>
+                    </td>
+                    <td class="variable-prognosis" style="text-align: center;">
+                        <strong>VARIABLE</strong><br>
+                        Treatment-resistant<br>
+                        May improve<br>
+                        with ART
+                    </td>
+                    <td class="pearl">
+                        PRP +<br>
+                        Suppurative<br>
+                        lesions<br>
+                        = Check HIV
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <h3 style="margin-top: 0; text-align: center;">🎯 High-Yield Board Pearls</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 12px;">
+                <div>
+                    <strong>🔥 Most Testable:</strong>
+                    <ul style="margin: 5px 0;">
+                        <li>Type I = "Islands of sparing" + cephalocaudal</li>
+                        <li>Type IV = Most common juvenile (elbows/knees only)</li>
+                        <li>Type V = CARD14 + scleroderma-like changes</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>⚠️ Classic Traps:</strong>
+                    <ul style="margin: 5px 0;">
+                        <li>Type III = Type I in children (age only difference)</li>
+                        <li>Type II vs inherited ichthyosis</li>
+                        <li>Type VI = Treatment failure should prompt HIV testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

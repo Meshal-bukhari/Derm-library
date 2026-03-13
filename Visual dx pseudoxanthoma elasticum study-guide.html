@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXE (Pseudoxanthoma Elasticum) - Saudi Board Exam Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #34495e;
+            --secondary: #f1c40f;
+            --accent: #e74c3c;
+            --success: #2ecc71;
+            --info: #3498db;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 5px solid var(--secondary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--info);
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .card-img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Specialty Sections */
+        .definition {
+            background-color: #e8f4fd;
+            border-left: 5px solid var(--info);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .clinical-pearl {
+            background-color: #fff3cd;
+            border-left: 5px solid var(--warning);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .diagnostic-criteria {
+            background-color: #d1e7dd;
+            border-left: 5px solid var(--success);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .high-yield {
+            background-color: #f8d7da;
+            border-left: 5px solid var(--danger);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .mnemonic {
+            background-color: #e0cffc;
+            border-left: 5px solid #8540f5;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+        
+        thead {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tbody tr:nth-child(odd) {
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .collapsible {
+            background-color: var(--light);
+            color: var(--dark);
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .collapsible:after {
+            content: '\\002B';
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .active:after {
+            content: "\\2212";
+        }
+        
+        .content {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .flashcard {
+            cursor: pointer;
+            perspective: 1000px;
+            height: 200px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .flashcard-front {
+            background-color: var(--info);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: var(--light);
+            color: var(--dark);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .badge-primary { background-color: var(--primary); color: white; }
+        .badge-secondary { background-color: var(--secondary); color: black; }
+        .badge-success { background-color: var(--success); color: white; }
+        .badge-danger { background-color: var(--danger); color: white; }
+        .badge-warning { background-color: var(--warning); color: black; }
+        .badge-info { background-color: var(--info); color: white; }
+        
+        .quick-nav {
+            position: sticky;
+            top: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .quick-nav-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .quick-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .quick-nav-link {
+            padding: 0.25rem 0.5rem;
+            background-color: var(--light);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .quick-nav-link:hover {
+            background-color: var(--info);
+            color: white;
+        }
+        
+        .summary-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .summary-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .self-test {
+            margin-bottom: 1.5rem;
+        }
+        
+        .question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .answer {
+            display: none;
+            padding: 0.5rem;
+            background-color: var(--light);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .show-answer {
+            background-color: var(--info);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        
+        .mnemo-letter {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .differential-table td, .differential-table th {
+            vertical-align: top;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Specific custom styling for PXE */
+        .pxe-triad {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+        }
+        
+        .triad-item {
+            flex: 1;
+            min-width: 250px;
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .triad-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .triad-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .criteria-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Image Placeholders */
+        .image-placeholder {
+            background-color: #ddd;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PSEUDOXANTHOMA ELASTICUM (PXE)</h1>
+            <p style="text-align: center; color: var(--secondary); font-weight: bold;">Saudi Board Exam Study Guide</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="quick-nav">
+            <div class="quick-nav-title">Quick Navigation</div>
+            <div class="quick-nav-links">
+                <a href="#definition" class="quick-nav-link">Definition</a>
+                <a href="#clinical" class="quick-nav-link">Clinical Features</a>
+                <a href="#diagnostic-criteria" class="quick-nav-link">Diagnostic Criteria</a>
+                <a href="#differential" class="quick-nav-link">Differential Diagnosis</a>
+                <a href="#tests" class="quick-nav-link">Best Tests</a>
+                <a href="#management" class="quick-nav-link">Management</a>
+                <a href="#therapy" class="quick-nav-link">Therapy</a>
+                <a href="#self-test" class="quick-nav-link">Self-Test</a>
+            </div>
+        </div>
+        
+        <section id="definition">
+            <h2>Definition & Pathophysiology</h2>
+            
+            <div class="definition">
+                <p><strong>Pseudoxanthoma elasticum (PXE)</strong>, also known as <strong>Grönblad-Strandberg syndrome</strong>, is a rare autosomal recessive disorder resulting in abnormal calcification and fragmentation of elastic connective tissue in the skin, eyes, and blood vessels.</p>
+            </div>
+            
+            <div class="mnemonic">
+                <h3>PXE Mnemonic: "EYE SEE PXE"</h3>
+                <p><span class="mnemo-letter">E</span> - <strong>Elastin</strong> fiber abnormality</p>
+                <p><span class="mnemo-letter">Y</span> - <strong>Yellow</strong> papules and plaques</p>
+                <p><span class="mnemo-letter">E</span> - <strong>Eye</strong> findings (angioid streaks)</p>
+                <p><span class="mnemo-letter">S</span> - <strong>Systemic</strong> vascular calcification</p>
+                <p><span class="mnemo-letter">E</span> - <strong>ECTRIM</strong> (Extracellular matrix) affected</p>
+                <p><span class="mnemo-letter">E</span> - <strong>Elastic</strong> tissue in dermis, eyes, vessels</p>
+                <p><span class="mnemo-letter">P</span> - <strong>PPi</strong> deficiency (pyrophosphate)</p>
+                <p><span class="mnemo-letter">X</span> - <strong>Xanthoma</strong>-like appearance</p>
+                <p><span class="mnemo-letter">E</span> - <strong>ENPP1</strong> enzyme implications</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Genetic & Molecular Basis</div>
+                <ul>
+                    <li><strong>Gene defect:</strong> Loss of function mutation in both alleles of the gene that encodes for the cellular transport protein ATP-binding cassette C6 (ABCC6)</li>
+                    <li><strong>Function:</strong> ABCC6 is an efflux pump that transports ATP from hepatocytes</li>
+                    <li><strong>Pathophysiology:</strong> ATP is converted extracellularly to AMP and inorganic pyrophosphate (PPi)</li>
+                    <li><strong>Key problem:</strong> Insufficient PPi leads to mineralization of elastic fibers (PPi normally inhibits this)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Epidemiology</div>
+                <ul>
+                    <li><strong>Prevalence:</strong> 1 in 25,000 to 1 in 100,000</li>
+                    <li><strong>Gender:</strong> Slight female preponderance</li>
+                    <li><strong>Age of onset:</strong> As early as first or second decade of life</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="clinical">
+            <h2>Clinical Manifestations</h2>
+            
+            <div class="pxe-triad">
+                <div class="triad-item">
+                    <div class="triad-icon">👨‍⚕️</div>
+                    <div class="triad-title">Cutaneous</div>
+                    <p>Yellow papules/plaques on flexural areas, "plucked chicken skin" appearance</p>
+                </div>
+                <div class="triad-item">
+                    <div class="triad-icon">👁️</div>
+                    <div class="triad-title">Ocular</div>
+                    <p>Angioid streaks, peau d'orange retinal changes, neovascularization</p>
+                </div>
+                <div class="triad-item">
+                    <div class="triad-icon">❤️</div>
+                    <div class="triad-title">Cardiovascular</div>
+                    <p>Vessel calcification, premature atherosclerosis, GI bleeding</p>
+                </div>
+            </div>
+            
+            <button class="collapsible">Cutaneous Manifestations</button>
+            <div class="content">
+                <ul>
+                    <li><strong>Primary lesions:</strong> Yellowish (xanthoma-like) papules on flexural areas</li>
+                    <li><strong>First site:</strong> Lateral neck (most common initial area of involvement)</li>
+                    <li><strong>Other sites:</strong> Antecubital fossa, popliteal fossa, axillae, wrists, groin</li>
+                    <li><strong>Mucosal involvement:</strong> Lower lip (look for yellow papules)</li>
+                    <li><strong>Progression:</strong> Papules coalesce into plaques resembling "plucked chicken skin"</li>
+                    <li><strong>Advanced findings:</strong>
+                        <ul>
+                            <li>Perforating PXE (dermal calcium extruding through epidermis)</li>
+                            <li>Prominent creases on chin (by age 30 in majority of patients)</li>
+                            <li>Redundant and sagging skin folds (secondary cutis laxa) in axillae and groin</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="collapsible">Ocular Manifestations</button>
+            <div class="content">
+                <ul>
+                    <li><strong>Angioid streaks (AS):</strong> 
+                        <ul>
+                            <li>Most characteristic ocular finding in PXE</li>
+                            <li>Breaks in Bruch's membrane due to calcification of elastic lamina</li>
+                            <li>Appear as reddish-brown, jagged, irregular lines with serrated edges</li>
+                            <li>Radiate from optic disc</li>
+                            <li>Almost all patients exhibit AS by age 30</li>
+                        </ul>
+                    </li>
+                    <li><strong>Peau d'orange:</strong> 
+                        <ul>
+                            <li>Mottled retinal changes</li>
+                            <li>Represents subconfluent calcification of Bruch's membrane</li>
+                            <li>More commonly seen than angioid streaks</li>
+                        </ul>
+                    </li>
+                    <li><strong>Complications:</strong>
+                        <ul>
+                            <li>Choroidal neovascularization at fracture sites</li>
+                            <li>Hemorrhage and subsequent scarring</li>
+                            <li>Gradual vision loss</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="collapsible">Cardiovascular Manifestations</button>
+            <div class="content">
+                <ul>
+                    <li><strong>Pathophysiology:</strong> Calcification of elastic media and intima of vessels</li>
+                    <li><strong>Primary target:</strong> Medium-sized vessels of extremities</li>
+                    <li><strong>Symptoms:</strong>
+                        <ul>
+                            <li>Intermittent claudication</li>
+                            <li>Angina pectoris</li>
+                            <li>Decreased or lost peripheral pulses</li>
+                            <li>Renovascular hypertension</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cardiac findings:</strong>
+                        <ul>
+                            <li>Increased rates of mitral valve prolapse</li>
+                            <li>Higher risk of myocardial infarction</li>
+                            <li>Higher risk of stroke</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gastrointestinal complications:</strong>
+                        <ul>
+                            <li>Involvement of vessels in gastric and intestinal mucosa</li>
+                            <li>Increased incidence of GI bleeding</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h3>🔑 Clinical Pearls</h3>
+                <ul>
+                    <li><strong>Horizontal and oblique mental creases</strong> on the chin are highly suggestive of PXE, especially when accompanied by secondary cutis laxa changes</li>
+                    <li>Calcification in visceral areas and blood vessels on routine radiographs should prompt suspicion</li>
+                    <li>A PXE-like syndrome may be precipitated by long-term D-penicillamine use (treatment for cystinuria or Wilson disease)</li>
+                    <li>Unlike true PXE, penicillamine-induced PXE does not exhibit calcification histologically</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="diagnostic-criteria">
+            <h2>Diagnostic Criteria</h2>
+            
+            <div class="diagnostic-criteria">
+                <h3>2014 Diagnostic Criteria for PXE</h3>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4>Major Criteria</h4>
+                        <ol class="criteria-list">
+                            <li><strong>Cutaneous:</strong>
+                                <ul>
+                                    <li>Characteristic papules and plaques on flexural areas</li>
+                                    <li>Histopathology showing elastic fiber fragmentation and calcification in the reticular dermis</li>
+                                </ul>
+                            </li>
+                            <li><strong>Ophthalmic:</strong>
+                                <ul>
+                                    <li>Angioid streaks larger than one disc diameter in length</li>
+                                    <li>Peau d'orange changes</li>
+                                </ul>
+                            </li>
+                            <li><strong>Genetic:</strong>
+                                <ul>
+                                    <li>Molecular genetic testing for the presence of biallelic ABCC6 pathogenic variants</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <h4>Minor Criteria</h4>
+                        <ol class="criteria-list">
+                            <li>PXE in a first-degree relative</li>
+                            <li>Genetic test with pathologic variant in one allele of ABCC6</li>
+                            <li>PXE changes in the histopathology of nonlesional skin</li>
+                        </ol>
+                        
+                        <h4>Diagnosis Classification</h4>
+                        <ul class="criteria-list">
+                            <li><strong>Definitive diagnosis:</strong> Both major cutaneous criteria plus either one ophthalmic criterion OR positive genetic testing</li>
+                            <li><strong>Probable diagnosis:</strong> An affected first-degree relative plus either both major cutaneous criteria OR one major ophthalmic criterion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="high-yield">
+                <h3>🔍 High-Yield for Exam</h3>
+                <ul>
+                    <li>First manifestation is usually in the skin, but ocular findings are most specific</li>
+                    <li>Recall the classic triad: Skin involvement + Eye findings + Cardiovascular complications</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="look-for">
+            <h2>What to Look For</h2>
+            
+            <div class="card">
+                <div class="card-header">Key Examination Findings</div>
+                <ul>
+                    <li><strong>Skin:</strong>
+                        <ul>
+                            <li>Yellow papules/plaques on lateral neck (earliest sign)</li>
+                            <li>Flexural areas: axillae, subclavicular areas, antecubital fossae, popliteal fossae</li>
+                            <li>Inguinal and periumbilical areas often involved</li>
+                            <li>Yellow papules on mucosal surface of lower lip</li>
+                            <li>Possible rectal and vaginal involvement</li>
+                            <li>Advanced: "plucked chicken skin" appearance of plaques</li>
+                            <li>Horizontal/oblique mental creases (chin)</li>
+                            <li>Redundant skin folds (axillae, groin)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eyes (Fundoscopic examination):</strong>
+                        <ul>
+                            <li>Mottled "peau d'orange" appearance</li>
+                            <li>Angioid streaks - reddish-brown, jagged lines radiating from optic disc</li>
+                            <li>Possible neovascularization, hemorrhages, and scarring</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Most Common Initial Presentation</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Yellow papules and plaques on the lateral neck in adolescence or early adulthood.</p>
+                        <p>These may be subtle and easily missed if not specifically looked for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="differential">
+            <h2>Differential Diagnosis</h2>
+            
+            <div class="table-container">
+                <table class="differential-table">
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Key Differentiating Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Solar elastosis</td>
+                            <td>Severe photodamage, primarily on sun-exposed areas, history of sun exposure</td>
+                        </tr>
+                        <tr>
+                            <td>Focal dermal elastosis</td>
+                            <td>Seen primarily in elderly patients</td>
+                        </tr>
+                        <tr>
+                            <td>Perforating calcific elastosis</td>
+                            <td>Acquired, localized PXE-like condition</td>
+                        </tr>
+                        <tr>
+                            <td>Fibroelastolytic papulosis</td>
+                            <td>Different histopathology, no calcification</td>
+                        </tr>
+                        <tr>
+                            <td>Ehlers-Danlos syndrome</td>
+                            <td>Hyperextensible skin, hypermobility, poor wound healing</td>
+                        </tr>
+                        <tr>
+                            <td>Elastosis perforans serpiginosa</td>
+                            <td>Papules with central keratotic plug, different distribution</td>
+                        </tr>
+                        <tr>
+                            <td>Cutis laxa</td>
+                            <td>Loose, pendulous skin without yellow papules or plaques</td>
+                        </tr>
+                        <tr>
+                            <td>Buschke-Ollendorff syndrome</td>
+                            <td>Dermatofibrosis lenticularis, different clinical presentation</td>
+                        </tr>
+                        <tr>
+                            <td>Marfan syndrome</td>
+                            <td>Tall stature, arachnodactyly, lens dislocation, aortic dilatation</td>
+                        </tr>
+                        <tr>
+                            <td>Xanthomas</td>
+                            <td>Associated with lipid abnormalities, different histopathology</td>
+                        </tr>
+                        <tr>
+                            <td>Granulomatous slack skin</td>
+                            <td>Form of cutaneous T-cell lymphoma</td>
+                        </tr>
+                        <tr>
+                            <td>Amyloid elastosis</td>
+                            <td>Different histopathology with amyloid deposits</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Differential for Angioid Streaks</div>
+                <ul>
+                    <li>Paget disease of bone</li>
+                    <li>Sickle cell anemia</li>
+                    <li>Thalassemia</li>
+                    <li>Lead poisoning</li>
+                    <li>Age-related degeneration</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h3>🔑 Differential Diagnosis Pearl</h3>
+                <p>Remember the mnemonic <strong>"PEPSI"</strong> for causes of angioid streaks:</p>
+                <ul>
+                    <li><strong>P</strong> - PXE</li>
+                    <li><strong>E</strong> - Ehlers-Danlos syndrome</li>
+                    <li><strong>P</strong> - Paget's disease of bone</li>
+                    <li><strong>S</strong> - Sickle cell anemia</li>
+                    <li><strong>I</strong> - Idiopathic/age-related</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="tests">
+            <h2>Best Tests</h2>
+            
+            <div class="card">
+                <div class="card-header">Diagnostic Approach</div>
+                <ul>
+                    <li><strong>Gold standard:</strong> Skin biopsy with special stains
+                        <ul>
+                            <li>Verhoeff-van Gieson stain (for elastin)</li>
+                            <li>von Kossa stain (for calcium)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Key finding:</strong> Clumped and frayed calcified elastic fibers in the reticular dermis ("pink or blue squiggles")</li>
+                    <li><strong>Alternative for high suspicion without skin findings:</strong> Biopsy of pre-existing scar may be diagnostic</li>
+                    <li><strong>Note:</strong> Penicillamine-induced PXE does not exhibit calcification</li>
+                </ul>
+            </div>
+            
+            <div class="high-yield">
+                <h3>🔍 High-Yield Workup & Monitoring</h3>
+                <ul>
+                    <li>Blood pressure assessment and monitoring</li>
+                    <li>Complete hematology panel</li>
+                    <li>Fasting lipid profile</li>
+                    <li>Fecal occult blood test</li>
+                    <li>Comprehensive liver and kidney profiles</li>
+                    <li>Funduscopic examination with retinal photos</li>
+                    <li>Regular use of Amsler grid for self-monitoring of visual changes</li>
+                    <li>Doppler ankle-brachial index (ABI) measurements in patients with claudication</li>
+                    <li>ECG for patients with heart murmur</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="management">
+            <h2>Management Pearls</h2>
+            
+            <div class="card">
+                <div class="card-header">Multidisciplinary Approach</div>
+                <ul>
+                    <li><strong>Ophthalmologic:</strong> Routine ophthalmologist follow-up, Amsler grid for self-monitoring</li>
+                    <li><strong>Activity restrictions:</strong> Avoid contact sports (risk of head trauma) and heavy lifting/straining</li>
+                    <li><strong>Lifestyle modifications:</strong>
+                        <ul>
+                            <li>Smoking cessation (tobacco may exacerbate disease)</li>
+                            <li>Limit alcohol intake</li>
+                            <li>Balanced diet including antioxidants</li>
+                            <li>Regular exercise</li>
+                            <li>Weight control</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genetic counseling:</strong> For patients and family members</li>
+                    <li><strong>Subspecialty referrals:</strong>
+                        <ul>
+                            <li>Gastroenterologist for GI bleeding</li>
+                            <li>Cardiologist for cardiovascular manifestations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Medication precautions:</strong> Avoid long-term anticoagulants or antiplatelet agents when possible</li>
+                    <li><strong>Prophylactic antibiotics:</strong> Required prior to dental/surgical procedures for patients with mitral valve insufficiency</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h3>🔑 Management Pearls</h3>
+                <p>PXE International is a patient support and advocacy group for patients and their families</p>
+                <p>Gene testing may be warranted in individual cases and for the first affected child in a family</p>
+                <p>Always remember the triad of specialists: Dermatologist + Ophthalmologist + Cardiologist</p>
+            </div>
+        </section>
+        
+        <section id="therapy">
+            <h2>Therapy</h2>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">Current Treatment Options</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Manifestation</th>
+                                <th>Treatment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Skin findings</td>
+                                <td>No specific treatment; surgical intervention for lax skin if needed (usually not necessary for children)</td>
+                            </tr>
+                            <tr>
+                                <td>Ocular disease</td>
+                                <td>
+                                    <ul>
+                                        <li>Intravitreal VEGF antagonist injections</li>
+                                        <li>Laser coagulation</li>
+                                        <li>Photodynamic therapy with verteporfin</li>
+                                        <li>Macular translocation (for choroidal neovascularization)</li>
+                                        <li>Vitamin/mineral supplementation (A, C, E, zinc, selenium, copper) - anecdotal evidence</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cardiovascular disease</td>
+                                <td>
+                                    <ul>
+                                        <li>Dietary optimization</li>
+                                        <li>Correction of hyperlipidemia and hypertension</li>
+                                        <li>Medications for claudication:
+                                            <ul>
+                                                <li>Pentoxifylline (400 mg PO before each meal)</li>
+                                                <li>Cilostazol</li>
+                                                <li>Low-dose aspirin</li>
+                                                <li>Clopidogrel</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Emerging Therapies</div>
+                    <p><strong>Target:</strong> Systemically address low levels of the mineralization inhibitor PPi</p>
+                    <p><strong>Direct approaches:</strong></p>
+                    <ul>
+                        <li>Direct PPi supplementation</li>
+                        <li>PPi analog etidronate</li>
+                    </ul>
+                    <p><strong>Indirect approaches:</strong></p>
+                    <ul>
+                        <li>Increase ENPP1 activity (enzyme that converts extracellular ATP to AMP and PPi)</li>
+                        <li>Decrease TNAP activity (enzyme that degrades PPi)</li>
+                        <li>Lansoprazole (proton pump inhibitor) has shown effectiveness</li>
+                    </ul>
+                    <p><strong>Clinical trials:</strong></p>
+                    <ul>
+                        <li>PROPHECI trial - phase II clinical trial for PXE with oral pyrophosphate</li>
+                        <li>Etidronate trials for prevention of ectopic mineralization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="self-test">
+            <h2>Self-Test Questions</h2>
+            
+            <div class="self-test">
+                <div class="question">1. What is the genetic defect in PXE?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Loss of function mutation in both alleles of the gene that encodes for the cellular transport protein ATP-binding cassette C6 (ABCC6).</div>
+                
+                <div class="question">2. What is the characteristic ocular finding in PXE?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Angioid streaks (breaks in Bruch's membrane due to calcification of the elastic lamina).</div>
+                
+                <div class="question">3. By what age will almost all PXE patients exhibit angioid streaks?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">By age 30 years.</div>
+                
+                <div class="question">4. What is the most common initial area of cutaneous involvement in PXE?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Lateral neck.</div>
+                
+                <div class="question">5. What stains are used to assist in the diagnosis of PXE in a skin biopsy?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Verhoeff-van Gieson stain (for elastin) and von Kossa stain (for calcium).</div>
+                
+                <div class="question">6. What is a unique feature of penicillamine-induced PXE compared to true PXE?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Penicillamine-induced PXE does not exhibit calcification.</div>
+                
+                <div class="question">7. What criteria are required for a definitive diagnosis of PXE?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Both major cutaneous criteria plus either one ophthalmic criterion OR positive genetic testing.</div>
+                
+                <div class="question">8. What molecule is deficient in PXE that normally inhibits mineralization?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Inorganic pyrophosphate (PPi).</div>
+                
+                <div class="question">9. What facial finding is highly suggestive of PXE, especially when accompanied by secondary cutis laxa changes?</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Horizontal and oblique mental creases on the chin.</div>
+                
+                <div class="question">10. Name three other conditions besides PXE that can cause angioid streaks.</div>
+                <button class="show-answer" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">Show Answer</button>
+                <div class="answer">Paget disease of bone, sickle cell anemia, thalassemia, lead poisoning, and age-related degeneration.</div>
+            </div>
+        </section>
+        
+        <section id="summary">
+            <h2>Summary</h2>
+            
+            <div class="summary-box">
+                <div class="summary-title">Key Points to Remember</div>
+                <ul>
+                    <li>PXE is an autosomal recessive disorder with ABCC6 mutations causing abnormal calcification of elastic tissue</li>
+                    <li>Classic triad: skin (yellow papules on flexural areas), eyes (angioid streaks), and blood vessels (calcification)</li>
+                    <li>Lateral neck is the most common initial site of involvement</li>
+                    <li>Angioid streaks are the most characteristic ocular finding</li>
+                    <li>Complications include vision loss, GI bleeding, and accelerated cardiovascular disease</li>
+                    <li>Diagnosis requires both cutaneous criteria plus either ocular findings or genetic confirmation</li>
+                    <li>Skin biopsy with elastic tissue stains is the gold standard for diagnosis</li>
+                    <li>Management requires a multidisciplinary approach</li>
+                    <li>Emerging therapies target the PPi pathway to prevent mineralization</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Last Reviewed: 03/09/2025 | Last Updated: 03/23/2025</p>
+            <p>Saudi Board Exam Preparation Resource</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Collapsible sections
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+            
+            // Open first collapsible by default
+            if (coll.length > 0) {
+                coll[0].click();
+            }
+        });
+    </script>
+</body>
+</html>

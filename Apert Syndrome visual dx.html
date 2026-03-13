@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apert Syndrome: Dermatology Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9; /* Light, calming background */
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            background-color: #005A9C; /* Professional blue, common in medical contexts */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+        
+        header .contributors {
+            font-size: 0.8em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #005A9C;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007BFF; /* Accent color */
+        }
+        
+        .section h3 {
+            font-size: 1.4em;
+            color: #1A73E8; /* Slightly lighter blue for subheadings */
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .key-feature-box {
+            background-color: #e6f7ff; /* Light blue for key features */
+            border-left: 5px solid #007BFF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .key-feature-box strong {
+            color: #005A9C;
+        }
+
+        .board-alert {
+            background-color: #fff3cd; /* Yellow for alerts/pearls */
+            border-left: 5px solid #ffc107; /* Amber/gold */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+        
+        .board-alert strong {
+            color: #856404; /* Darker yellow for emphasis within alert */
+        }
+
+        .differential-box {
+            background-color: #ffeaea; /* Light red for differentials */
+            border-left: 5px solid #dc3545; /* Red */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .differential-box strong {
+            color: #721c24; /* Darker red for emphasis */
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 25px; /* Space for custom bullet */
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        ul li::before {
+            content: "🔹"; /* Custom bullet */
+            color: #007BFF;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .cutaneous-findings ul li::before { content: "💧"; color: #17a2b8; /* Water drop for skin/sweat */ }
+        .ocular-findings ul li::before { content: "👁️"; color: #6f42c1; /* Eye icon for ocular */ }
+        .skeletal-findings ul li::before { content: "🦴"; color: #fd7e14; /* Bone icon for skeletal */ }
+        .management-pearls ul li::before { content: "💡"; color: #28a745; /* Lightbulb for management */ }
+        .genetic-pearls ul li::before { content: "🧬"; color: #6610f2; /* DNA icon for genetics */ }
+
+
+        .highlight {
+            background-color: #ffeb3b; /* Bright yellow highlight */
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .mnemonic {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #efefef;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e9ecef; /* Light grey for table headers */
+            color: #005A9C;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .code-box {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        /* For the image-like feature list on page 1 */
+        .visualdx-feature-list {
+            border: 2px dashed #007BFF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f0f8ff; /* AliceBlue */
+        }
+        .visualdx-feature-list h4 {
+            margin-top: 0;
+            color: #005A9C;
+            text-align: center;
+            font-style: italic;
+        }
+        .visualdx-feature-list ul {
+            padding-left: 20px; /* Indent list items */
+            list-style-type: disc; /* Use standard discs for this specific list */
+        }
+        .visualdx-feature-list ul li {
+            padding-left: 5px; /* Adjust padding */
+            margin-bottom: 3px;
+        }
+        .visualdx-feature-list ul li::before {
+            content: ""; /* Remove the global custom bullet for this list */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Apert Syndrome: Dermatology Board Review</h1>
+            <div class="contributors">Contributors: Harold E. Cross MD, PhD, Lauren Patty Daskivich MD, MSHS (Source: VisualDx)</div>
+        </header>
+
+        <!-- "At a Glance" - Quick visual summary of core features -->
+        <section class="key-feature-box">
+            <h2>Apert Syndrome: Core Triad & Key Identifiers</h2>
+            <p>Remember Apert by its most striking features often tested:</p>
+            <ul>
+                <li><strong>Acrocephaly (Craniosynostosis):</strong> Tower-shaped skull due to premature fusion of coronal sutures.</li>
+                <li><strong>Midface Hypoplasia:</strong> Flattened midface appearance.</li>
+                <li><strong>Syndactyly:</strong> Significant fusion of digits in hands ("mitten hands") and feet ("sock feet").</li>
+                <li><strong class="highlight">FGFR2 Gene Mutation:</strong> Exclusively caused by mutations in this gene. This is a CRITICAL distinction.</li>
+                <li><strong>Chronic Hyperhidrosis:</strong> Often a universal cutaneous finding.</li>
+            </ul>
+        </section>
+
+        <!-- VisualDx Style Feature List -->
+        <div class="visualdx-feature-list">
+            <h4>Key Visual Clues (VisualDx Snapshot)</h4>
+            <ul>
+                <li>Craniosynostosis</li>
+                <li>Flat nasal bridge</li>
+                <li>Hypertelorism</li>
+                <li>Chronic hyperhidrosis</li>
+                <li>Broad nail and/or distal digit</li>
+                <li>Syndactyly</li>
+            </ul>
+        </div>
+
+        <section id="synopsis">
+            <h2>The Big Picture: Understanding Apert Syndrome</h2>
+            <p>Apert syndrome is a clinically heterogeneous skeletal disorder. It shares features with, and is <strong>allelic to</strong>, Crouzon, Pfeiffer, and Jackson-Weiss acrocephalopolysyndactyly syndromes. Clinical severity varies widely:</p>
+            <ul>
+                <li>Some patients are mildly affected, appearing almost normal.</li>
+                <li>Others exhibit severe facial deformities.</li>
+                <li>Syndactyly can be present, sometimes to a marked degree.</li>
+                <li>Pre- and postaxial polydactyly may occur.</li>
+            </ul>
+            <p><strong>Progressive Synostosis is a Hallmark:</strong> This occurs in hands, cervical vertebrae, carpus, tarsus, and, critically, the skull (leading to acrocephaly). The midface is typically flattened. A small but significant number of individuals experience developmental delay and cognitive impairments.</p>
+        </section>
+
+        <section id="look-for">
+            <h2>Clinical Presentation: Spotting Apert Syndrome</h2>
+            <p>A high index of suspicion is key. Combine these findings for a strong diagnostic suggestion:</p>
+
+            <h3>Craniofacial Features – The "Apert Look"</h3>
+            <ul class="skeletal-findings">
+                <li><strong>Acrocephaly:</strong> The most striking feature. A tall, "tower-like" skull due to craniosynostosis.</li>
+                <li><strong>High Forehead:</strong> Contributes to the characteristic skull shape.</li>
+                <li><strong>Flattened Midface:</strong> Results in a retruded appearance of the central face.</li>
+                <li><strong>Shallow Orbits:</strong> Leads to proptosis.</li>
+            </ul>
+
+            <h3>Ocular Manifestations – More Than Just Appearance</h3>
+            <ul class="ocular-findings">
+                <li><strong>Proptosis (Exophthalmos):</strong> Bulging eyes due to shallow orbits. Can be severe.
+                    <ul><li><em>Clinical Pearl:</em> Significant proptosis can lead to periodic entrapment of eyelids behind the eyeballs, requiring manual replacement.</li></ul>
+                </li>
+                <li><strong>Apparent Hypertelorism:</strong> Eyes appear widely spaced.</li>
+                <li><strong>Strabismus:</strong> Often a V-pattern exotropia (outward turning of eyes, worse on upgaze).</li>
+                <li><strong>Downward-Slanting Palpebral Fissures.</strong></li>
+                <li><strong>Interrupted Eyebrows:</strong> Gaps or sparsity of hair in eyebrows.</li>
+                <li><strong>Exposure Keratitis:</strong> Corneal inflammation due to poor eyelid closure over proptotic eyes.</li>
+                <li><strong>Amblyopia:</strong> Present in nearly 20% of patients ("lazy eye").</li>
+                <li><strong>Corneal Scarring & Optic Atrophy:</strong> Can result from chronic exposure or other complications.</li>
+            </ul>
+            
+            <h3>Limb Anomalies – The Telltale Hands & Feet</h3>
+            <ul class="skeletal-findings">
+                <li><strong>Syndactyly:</strong> Common, but highly variable in severity. Often involves both skin and bone (synostosis).
+                    <ul>
+                        <li><strong>"Mitten Hand" and "Sock Foot":</strong> Classic descriptors for severe syndactyly.</li>
+                        <li><strong class="highlight">BOARD ALERT:</strong> Fusion of distal phalanges and synonychia (fused nails) can be present in the <em>hands</em> but is <strong>NEVER</strong> present in the <em>feet</em>.</li>
+                    </ul>
+                </li>
+                <li><strong>Synpolydactyly:</strong> Syndactyly combined with polydactyly. Sometimes used for classification, but not always present.</li>
+                 <li><strong>Broad Nail and/or Distal Digit:</strong> Often seen, particularly of the thumb and great toe.</li>
+            </ul>
+
+            <h3>Other Skeletal & Systemic Findings</h3>
+            <ul class="skeletal-findings">
+                <li><strong>Cervical Spine Fusion:</strong> Present in ~25% of individuals, most commonly C2-C3.
+                    <ul><li><em>Clinical Implication:</em> Important for pre-anesthesia assessment.</li></ul>
+                </li>
+                <li><strong>Cleft Palate:</strong> May be present.</li>
+            </ul>
+            
+            <h3>Neurological & Developmental Aspects</h3>
+            <ul>
+                <li><strong>Brain Anomalies (on Imaging):</strong>
+                    <ul>
+                        <li>Ventriculomegaly</li>
+                        <li>Defects of the corpus callosum</li>
+                        <li>Partial absence of the septum pellucidum <strong class="highlight">(Anomalies here seem to correlate with IQ)</strong></li>
+                        <li>Chiari I malformations</li>
+                        <li>Hydrocephalus</li>
+                        <li>Abnormalities of the semicircular canals</li>
+                    </ul>
+                </li>
+                <li><strong>Cognitive Function:</strong>
+                    <ul>
+                        <li>Developmental delays are common.</li>
+                        <li>Intellectual disability is found in a minority.</li>
+                        <li><strong class="highlight">More than 39% of patients have a normal IQ.</strong> Other CNS defects (besides septum pellucidum) do not strongly correlate with IQ.</li>
+                    </ul>
+                </li>
+                <li><strong>Neurosensory Hearing Loss:</strong> Sometimes present.</li>
+            </ul>
+
+            <h3>Cutaneous Findings – Key for Dermatologists!</h3>
+            <ul class="cutaneous-findings">
+                <li><strong>Hyperhidrosis (Excessive Sweating):</strong> <strong class="highlight">Probably present in ALL patients.</strong> A very high-yield point.</li>
+                <li><strong>Oily Skin & Acneiform Lesions:</strong> With onset of adolescence, skin becomes excessively oily. Severe, recalcitrant acne may appear on the face, trunk, and upper arms.</li>
+                <li><strong>Eyebrow Gaps (Sparsity of Hair):</strong> Apparent gaps where there is a lack of eyebrow hair (connects with "interrupted eyebrows" under ocular findings).</li>
+            </ul>
+        </section>
+
+        <section id="diagnostic-pearls">
+            <h2>Diagnostic Pearls & Considerations</h2>
+            <p>The combination of <strong>acrocephaly (facial features) and synpolydactyly (digital deformities)</strong> strongly suggests an acrocephalopolysyndactyly syndrome, like Apert.</p>
+            <p>However, classifying the specific type and syndrome is challenging due to:
+                <ul>
+                    <li>Overlapping features among related syndromes.</li>
+                    <li>Significant clinical variation even within Apert syndrome.</li>
+                </ul>
+            </p>
+            <div class="board-alert">
+                <strong>No Unequivocal Diagnostic Criteria:</strong> Diagnosis relies heavily on clinical pattern recognition, supported by genetic testing.
+            </div>
+        </section>
+
+        <section id="differential-diagnosis">
+            <h2>Differential Diagnosis & Pitfalls: Distinguishing Apert</h2>
+            <p>Craniosynostosis is a feature of over 150 heritable conditions. The specific pattern of synostoses combined with hand/foot deformities narrows the field to acrocephalopolysyndactyly syndromes.</p>
+            <div class="board-alert">
+                <strong>The Major Challenge:</strong> Discerning which specific type of acrocephalopolysyndactyly a patient has. Members of this group (Apert, Crouzon, Pfeiffer, Jackson-Weiss) are allelic and have overlapping features.
+            </div>
+            
+            <h3>Key Distinctions – Focus on Genetics!</h3>
+            <ul class="genetic-pearls">
+                <li><strong>Apert Syndrome:</strong> Caused <strong class="highlight">SOLELY by mutations in FGFR2</strong>. Diagnostic certainty for Apert syndrome is achieved when mutations are found in FGFR2.</li>
+                <li><strong>Crouzon, Pfeiffer, Jackson-Weiss Syndromes:</strong>
+                    <ul>
+                        <li>Also allelic with Apert and *can* have FGFR2 mutations.</li>
+                        <li>However, these conditions can *also* result from mutations in other genes (e.g., FGFR1, FGFR3), allowing for genetic differentiation.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Comparing Specific Syndromes:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Syndrome</th>
+                        <th>Key Differentiating Features from Apert</th>
+                        <th>Common Gene(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Apert Syndrome</strong></td>
+                        <td>Severe symmetric syndactyly (osseous/cutaneous "mitten hand/sock foot"), acne, hyperhidrosis. Intellectual disability more common than in Crouzon.</td>
+                        <td><strong class="highlight">FGFR2 (exclusive)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crouzon Syndrome</strong></td>
+                        <td>Craniosynostosis, midface hypoplasia, proptosis. <strong class="highlight">Typically normal hands and feet.</strong> Intelligence usually normal.</td>
+                        <td>FGFR2, (rarely FGFR3 - Crouzonodermoskeletal)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pfeiffer Syndrome</strong></td>
+                        <td>Craniosynostosis, <strong class="highlight">broad, medially deviated thumbs and great toes</strong>, variable syndactyly (usually milder than Apert). Three clinical subtypes with varying severity.</td>
+                        <td>FGFR1, FGFR2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jackson-Weiss Syndrome</strong></td>
+                        <td>Craniosynostosis, midface hypoplasia, <strong class="highlight">foot anomalies (broad great toes, tarsal synostosis)</strong>. Hand anomalies less severe or absent. Intelligence usually normal.</td>
+                        <td>FGFR2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saethre-Chotzen Syndrome</strong></td>
+                        <td>Coronal synostosis (often asymmetric leading to plagiocephaly), ptosis, low frontal hairline, small ears, mild syndactyly (2-3 fingers). <strong class="highlight">Often short stature, radioulnar synostosis, hallux valgus (C).</strong></td>
+                        <td>TWIST1 (most common), FGFR2, FGFR3 (rare)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Carpenter Syndrome</strong></td>
+                        <td>Craniosynostosis (cloverleaf or turribrachycephaly), polysyndactyly (preaxial in feet, postaxial in hands), obesity, congenital heart disease, intellectual disability. <strong class="highlight">Autosomal Recessive inheritance.</strong></td>
+                        <td>RAB23, MEGF8</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="differential-box">
+                <strong>Pitfall Reminder:</strong> Clinical overlap is significant! Genetic testing is crucial for definitive classification within the acrocephalopolysyndactyly group.
+            </div>
+        </section>
+
+        <section id="best-tests">
+            <h2>Best Tests: Confirming the Diagnosis</h2>
+            <ul class="genetic-pearls">
+                <li><strong>Clinical Experience:</strong> Remains highly valuable for initial suspicion and guiding workup in acrocephalopolysyndactyly syndromes.</li>
+                <li><strong>FGFR2 Gene Sequencing:</strong>
+                    <ul>
+                        <li>Finding mutations in FGFR2 confirms the patient's diagnosis belongs to the group of conditions including Apert, Crouzon, Pfeiffer, and Jackson-Weiss.</li>
+                        <li><strong class="highlight">Crucial Point: Apert syndrome is the ONLY acrocephalopolysyndactyly syndrome caused SOLELY by mutations in FGFR2.</strong> Specific mutations (S252W and P253R) account for >98% of Apert cases.</li>
+                    </ul>
+                </li>
+                <li><strong>Genetic Panel for Craniosynostosis Syndromes:</strong> May be used if clinical picture is unclear, to test for FGFR1, FGFR3, TWIST1, RAB23 etc.</li>
+            </ul>
+            <h3>Genetic Pattern:</h3>
+            <ul>
+                <li><strong>Inheritance:</strong> Autosomal dominant.</li>
+                <li><strong>Occurrence:</strong> Most cases occur sporadically (new mutations).</li>
+                <li><strong>Paternal Age Effect:</strong> Increased risk with advanced paternal age.</li>
+                <li><strong>Prenatal Diagnosis:</strong> Possible via ultrasonography (showing characteristic features) and molecular testing if a familial mutation is known or features are highly suggestive.</li>
+            </ul>
+        </section>
+
+        <section id="management">
+            <h2>Management Pearls & Therapeutic Approach</h2>
+            <p>A multidisciplinary team approach is essential, addressing individual deformities and potential complications.</p>
+            
+            <h3>Key Management Goals & Pearls:</h3>
+            <ul class="management-pearls">
+                <li><strong>Early Skull Decompression:</strong> Significantly improves final IQ compared with later surgery. Surgical interventions like craniotomy and fronto-orbital advancement may begin as early as 3 months of age and often require staged procedures.</li>
+                <li><strong>Home Environment:</strong> Children raised at home have a significantly higher IQ compared with those who are institutionalized.</li>
+                <li><strong>Cervical Spine Imaging:</strong> Crucial before general anesthesia due to risk of cervical fusion.</li>
+                <li><strong>Orthopedic Surgery:</strong> Can improve hand and digit mobility in select cases with syndactyly and/or polydactyly.</li>
+                <li><strong>Spinal X-rays:</strong> Important for early detection of serious spinal deformities.</li>
+                <li><strong>Ocular Care - Aggressive Lubrication:</strong> Use eye drops and ointment to maintain proper corneal surface wetting, especially with proptosis.</li>
+                <li><strong>Eyelid Entrapment/Severe Keratitis:</strong> May require lateral tarsorrhaphies (partial surgical fusion of eyelids).</li>
+                <li><strong>Monitoring Optic Nerve:</strong> Regular checks for optic nerve compression in the optic canal allow for timely intervention to prevent vision loss.</li>
+            </ul>
+
+            <h3>Specific Therapies:</h3>
+            <ul>
+                <li><strong>Cranial Surgery:</strong> Decompression, fronto-orbital advancement.</li>
+                <li><strong>CNS Shunting:</strong> For hydrocephalus, if present.</li>
+                <li><strong>Hand and Foot Surgery:</strong> Release of syndactyly, management of polydactyly. (e.g., Fearon JA. Plast Reconstr Surg. 2003)</li>
+                <li><strong>Ophthalmologic Management:</strong> Strabismus surgery, management of exposure keratitis.</li>
+                <li><strong>Dermatologic Management:</strong> For severe acne (e.g., isotretinoin has been used - Gilaberte M, et al. Pediatr Dermatol. 2003), and symptomatic management of hyperhidrosis.</li>
+                <li><strong>Developmental & Educational Support.</strong></li>
+                <li><strong>Hearing Aids / Support:</strong> If neurosensory hearing loss is present.</li>
+            </ul>
+        </section>
+        
+        <section id="codes">
+            <h2>Coding & Classification</h2>
+            <div class="code-box">
+                <strong>ICD-10-CM:</strong> Q87.0 - Congenital malformation syndromes predominantly affecting facial appearance
+            </div>
+            <div class="code-box">
+                <strong>SNOMED CT:</strong> 205258009 - Apert syndrome
+            </div>
+        </section>
+
+        <section id="references">
+            <h2>References & Further Reading (as provided)</h2>
+            <ul>
+                <li>Apert syndrome. OMIM - Online Mendelian Inheritance in Man. (Accessed 2022 Jan 11)</li>
+                <li>Freiman A, Tessler O, Barankin B. Apert syndrome. Int J Dermatol. 2006 Nov; 45(11):1341-3.</li>
+                <li>Quintero-Rivera F, Robson CD, Reiss RE, et al. Intracranial anomalies detected by imaging studies in 30 patients with Apert syndrome. Am J Med Genet A. 2006 Jun 15;140(12):1337-8.</li>
+                <li>Verma S, Draznin M. Apert syndrome. Dermatol Online J. 2005;11(1):15.</li>
+                <li>Gilaberte M, Puig L, Alomar A. Isotretinoin treatment of acne in a patient with Apert syndrome. Pediatr Dermatol. 2003 Sep-Oct;20(5):443-6.</li>
+                <li>Fearon JA. Treatment of the hands and feet in Apert syndrome: an evolution in management. Plast Reconstr Surg. 2003 Jul;112(1):1-12; discussion 13-9.</li>
+                <li>Lajeunie E, Cameron R, El Ghouzzi V, et al. Clinical variability in patients with Apert's syndrome. J Neurosurg. 1999 Mar; 90(3):443-7.</li>
+                <li>Patton MA, Goodship J, Hayward R, Lansdown R. Intellectual development in Apert's syndrome: a long term follow up of 29 patients. J Med Genet. 1988 Mar; 25(3):164-7.</li>
+                <li>Robin NH, Falk M, Haldeman-Englert CR. FGFR-related craniosynostosis syndromes. GeneReviews® [Internet]. (Updated June 7, 2011)</li>
+            </ul>
+        </section>
+
+        <div class="footer">
+            Content adapted from VisualDx summary on Apert Syndrome.
+            <br>
+            Original "2017 VisualDx®" mark noted. Last Updated in source: 05/16/2024.
+            <br>
+            This webpage is for educational and board preparation purposes only. Copyright © 2025 VisualDx® (for original content).
+        </div>
+    </div>
+</body>
+</html>

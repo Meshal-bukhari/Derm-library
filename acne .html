@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acne Vulgaris - Saudi Board Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            z-index: 100;
+        }
+        
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .nav-pill {
+            padding: 8px 16px;
+            background: #e9ecef;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #495057;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .nav-pill:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Content Sections */
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        /* Memory Anchors */
+        .memory-anchor {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-anchor::before {
+            content: "🧠";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3em;
+            opacity: 0.3;
+        }
+        
+        /* Board Pearl */
+        .board-pearl {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .board-pearl::before {
+            content: "💎 BOARD PEARL: ";
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        /* Clinical Alert */
+        .clinical-alert {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .clinical-alert::before {
+            content: "⚠️ CLINICAL ALERT: ";
+            font-weight: bold;
+        }
+        
+        /* High Yield Box */
+        .review-card {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .review-card p {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .review-card .card-details {
+            transition: max-height 0.3s, opacity 0.3s;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+        }
+        .review-card.active .card-details {
+            max-height: 300px;
+            opacity: 1;
+            display: block;
+        }
+        
+        .high-yield-title {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Interactive Elements */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .flip-card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .flip-card-back {
+            background: #f8f9fa;
+            color: black;
+            transform: rotateY(180deg);
+            border: 2px solid #667eea;
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .grid-item:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Mnemonics */
+        .mnemonic {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Quick Reference */
+        .quick-ref {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: opacity 0.3s, max-height 0.3s;
+    opacity: 1;
+}
+.collapsible-quick-ref[aria-expanded="false"] {
+    opacity: 0.3;
+}
+.collapsible-quick-ref #quickRefContent {
+    transition: display 0.3s;
+}
+.collapsible-quick-ref[aria-expanded="false"] #quickRefContent {
+    display: none;
+}
+        
+        .quick-ref h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .quick-ref ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .quick-ref li {
+            padding: 5px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.9em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .quick-ref {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>ACNE VULGARIS</h1>
+            <div class="subtitle">Saudi Board Dermatology Review - Memory-Optimized Edition</div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="nav-sticky">
+            <div class="nav-pills">
+                <a href="#pathogenesis" class="nav-pill">Pathogenesis</a>
+                <a href="#clinical" class="nav-pill">Clinical Features</a>
+                <a href="#variants" class="nav-pill">Variants</a>
+                <a href="#differential" class="nav-pill">Differential</a>
+                <a href="#treatment" class="nav-pill">Treatment</a>
+                <a href="#pearls" class="nav-pill">Board Pearls</a>
+            </div>
+        </nav>
+        
+        <!-- Quick Reference Sidebar -->
+        <div class="quick-ref collapsible-quick-ref" aria-expanded="true">
+    <button id="quickRefToggle" aria-expanded="true" aria-controls="quickRefContent" style="width:100%;background:#667eea;color:white;border:none;border-radius:8px;padding:8px 0;margin-bottom:10px;font-weight:bold;cursor:pointer;font-size:1em;display:flex;align-items:center;justify-content:center;gap:8px;">
+        <span id="quickRefToggleText">Hide Quick Facts</span>
+        <span id="quickRefToggleIcon" style="font-size:1em;">&#9650;</span>
+    </button>
+    <div id="quickRefContent">
+        <h3>🎯 Quick Facts</h3>
+        <ul>
+            <li><strong>Peak age:</strong> 12-24 years</li>
+            <li><strong>Prevalence:</strong> 85% of youth</li>
+            <li><strong>4 Main factors</strong></li>
+            <li><strong>First-line Rx:</strong> Retinoid + BPO</li>
+            <li><strong>Isotretinoin dose:</strong> 120-150mg/kg</li>
+        </ul>
+    </div>
+</div>
+        
+        <!-- Key Facts Memory Anchor -->
+        <div class="section">
+            <div class="memory-anchor">
+                <h2>🧠 MEMORY ANCHOR: The Big Picture</h2>
+                <p><strong>ACNE = A Chronic Nuisance Everywhere</strong></p>
+                <p>Remember: <strong>85%</strong> of people 12-24 years get it (think: 85 = "ate five" burgers → teenage diet!)</p>
+                <p>Peak = Adolescence (when sebaceous glands go crazy with androgens)</p>
+            </div>
+        </div>
+        
+        <!-- Pathogenesis Section -->
+        <section id="pathogenesis" class="section">
+            <h2 class="section-title">PATHOGENESIS - The Fatal Four</h2>
+            
+            <div class="mnemonic">
+                🎯 "FISH" - The 4 Factors of Acne<br>
+                <strong>F</strong>ollicular hyperkeratinization<br>
+                <strong>I</strong>nflammation<br>
+                <strong>S</strong>ebum (hormonal influences)<br>
+                <strong>H</strong>ome of C. acnes (bacterial colonization)
+            </div>
+            
+            <div class="grid-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>1. Follicular Hyperkeratinization</h3>
+                            <p>What starts it all?</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Microcomedo formation</strong><br>
+                            • ↑ Keratinocyte proliferation<br>
+                            • ↑ Corneocyte cohesiveness<br>
+                            • IL-1α involved<br>
+                            • Creates the "bottleneck"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>2. Hormonal/Sebum</h3>
+                            <p>The grease factory</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>DHT is the villain!</strong><br>
+                            • 5-10x more potent than testosterone<br>
+                            • Sebaceous glands have AR<br>
+                            • Adrenarche (7-8 yrs) = start<br>
+                            • DHEAS rises → acne begins</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>3. Inflammation</h3>
+                            <p>The immune response</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Early & Late Players</strong><br>
+                            • CD4+ T cells (early)<br>
+                            • TLR2 activation<br>
+                            • IL-1β, IL-8, TNF release<br>
+                            • Neutrophils → pustules</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>4. C. acnes</h3>
+                            <p>The bacterial player</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Not just a pathogen!</strong><br>
+                            • Gram-positive anaerobe<br>
+                            • Makes porphyrins (Wood's lamp+)<br>
+                            • Ribotypes 4 & 5 = acne-associated<br>
+                            • Triggers TLR2 → inflammation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="board-pearl">
+                Inflammation occurs BEFORE comedo rupture! CD4+ T cells and IL-1 are increased perifollicularly in early lesions.
+            </div>
+        </section>
+        
+        <!-- Clinical Features Section -->
+        <section id="clinical" class="section">
+            <h2 class="section-title">CLINICAL FEATURES - Pattern Recognition</h2>
+            
+            <div class="high-yield">
+                <div class="high-yield-title">HIGH YIELD</div>
+                <h3>Lesion Types - From Mild to Wild</h3>
+                <ol>
+                    <li><strong>Comedones</strong> (non-inflammatory)
+                        <ul>
+                            <li>Closed (whiteheads) - small, skin-colored, no opening</li>
+                            <li>Open (blackheads) - dilated opening, oxidized lipids/melanin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Inflammatory lesions</strong>
+                        <ul>
+                            <li>Papules - 1-5mm erythematous</li>
+                            <li>Pustules - white purulent material</li>
+                            <li>Nodules - deep, inflamed, tender</li>
+                            <li>Pseudocysts - pus + serosanguineous fluid</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>📍 Most Common Sites?<br>(Hover to reveal)</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <div>
+                            <strong>Sebaceous Areas:</strong><br>
+                            • Face<br>
+                            • Neck<br>
+                            • Behind ears<br>
+                            • Upper trunk<br>
+                            • Upper arms
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                Women often flare 1 week prior to menstruation due to hormonal changes
+            </div>
+            
+            <div class="board-focus">
+                Scarring Types to Know: Icepick, Rolling, Boxcar, Anetoderma-like, Hypertrophic, Keloidal
+            </div>
+        
+            
+            <div class="clinical-alert">
+                Early treatment prevents scarring! Look for: pitted scars (face), hypertrophic scars (trunk), postinflammatory hyperpigmentation (darker skin types)
+            </div>
+        </section>
+        
+        <div class="review-cards">
+    <div class="review-card">
+        <h4>Acne Fulminans</h4>
+        <p style="font-size: 0.9em;">Click to reveal key features</p>
+        <div class="card-details">
+            • Males 13-16 yo<br>
+            • Systemic symptoms<br>
+            • Hemorrhagic crusts<br>
+            • Sterile osteolytic lesions<br>
+            • Tx: Steroids → Isotretinoin
+        </div>
+    </div>
+    <div class="review-card">
+        <h4>Acne Conglobata</h4>
+        <p style="font-size: 0.9em;">Click to reveal key features</p>
+        <div class="card-details">
+            • M > F<br>
+            • NO systemic symptoms<br>
+            • Polyporous comedones<br>
+            • Yellow blood-tinged fluid<br>
+            • Tx: Isotretinoin ± steroids
+        </div>
+    </div>
+    <div class="review-card">
+        <h4>Acne Mechanica</h4>
+        <p style="font-size: 0.9em;">Click to reveal key features</p>
+        <div class="card-details">
+            • Pressure/friction areas<br>
+            • Helmets, backpacks<br>
+            • Unusual distribution<br>
+            • Based on external factor
+        </div>
+    </div>
+    <div class="review-card">
+        <h4>Acne Excoriée</h4>
+        <p style="font-size: 0.9em;">Click to reveal key features</p>
+        <div class="card-details">
+            • Young women<br>
+            • Underlying psych disorder<br>
+            • Self-mutilation<br>
+            • Tx: Antidepressants + behavioral
+        </div>
+    </div>
+</div>
+        <!-- Variants Section -->
+        <section id="variants" class="section">
+            <h2 class="section-title">ACNE VARIANTS - The Special Cases</h2>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Variant</th>
+                        <th>Age/Demographics</th>
+                        <th>Key Features</th>
+                        <th>Board Pearl</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Neonatal Cephalic Pustulosis</strong></td>
+                        <td>2 weeks old, 20% of newborns</td>
+                        <td>Papulopustules, NO comedones</td>
+                        <td>Malassezia → Ketoconazole 2% cream</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Infantile Acne</strong></td>
+                        <td>2-12 months</td>
+                        <td>Comedones prominent, scarring risk</td>
+                        <td>Check for hyperandrogenism if severe</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mid-childhood Acne</strong></td>
+                        <td>1-7 years</td>
+                        <td>Uncommon = red flag!</td>
+                        <td>history : assess for signs of hyperandrogenism (e.g., hirsutism, coarsening of the voice, muscular habitus, androgenetic alopecia, clitoromegaly, increased libido) and precocious puberty And always investigate:Check: Growth curve,
+                            hand or wrist xray for Bone age , Full endocrine workup CAH, tumors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acne Fulminans</strong></td>
+                        <td>Boys 13-16 years</td>
+                        <td>Systemic symptoms, ulceration</td>
+                        <td>Prednisone FIRST, then low-dose isotretinoin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acne Conglobata</strong></td>
+                        <td>Young adults</td>
+                        <td>Part of follicular occlusion tetrad</td>
+                        <td>Think PAPA syndrome if + arthritis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-adolescent (Women)</strong></td>
+                        <td>>25 years, women</td>
+                        <td>Mandibular distribution common</td>
+                        <td>20% have PCOS signs</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="memory-anchor">
+                <strong>Age-Based Memory Map:</strong><br>
+                Newborn (2 weeks) → No comedones = Neonatal<br>
+                Baby (2-12 mo) → Comedones + scarring = Infantile<br>
+                Toddler (1-7 yr) → Red flag! = Mid-childhood<br>
+                Teen boy + systemic → Fulminans<br>
+                Adult woman + jaw → Hormonal
+            </div>
+        </section>
+        
+        <!-- Differential Diagnosis Section -->
+        <section id="differential" class="section">
+            <h2 class="section-title">DIFFERENTIAL DIAGNOSIS - Pattern Recognition</h2>
+            
+            <div class="memory-anchor">
+                <strong>Think in 2 Categories:</strong><br>
+                1. <strong>COMEDONAL</strong> mimics (closed vs open)<br>
+                2. <strong>INFLAMMATORY</strong> mimics (papulopustular)
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>🔵 Closed Comedone Mimics</h3>
+                    <ul>
+                        <li><strong>Milia</strong> - white, hard, superficial</li>
+                        <li><strong>Syringomas</strong> - periorbital preference</li>
+                        <li><strong>Trichoepitheliomas</strong> - nasolabial folds</li>
+                        <li><strong>Eruptive vellus hair cysts</strong> - chest/trunk</li>
+                        <li><strong>Steatocystoma multiplex</strong> - yellowish, inherited</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h3>⚫ Open Comedone Mimics</h3>
+                    <ul>
+                        <li><strong>Favre-Racouchot</strong> - lateral malar, elderly</li>
+                        <li><strong>Nevus comedonicus</strong> - linear array</li>
+                        <li><strong>Trichostasis spinulosa</strong> - multiple hairs/follicle</li>
+                        <li><strong>Dilated pore of Winer</strong> - single large</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item">
+                    <h3>🔴 Inflammatory Mimics</h3>
+                    <ul>
+                        <li><strong>Rosacea</strong> - no comedones, flushing, telangiectasias</li>
+                        <li><strong>Perioral dermatitis</strong> - spares vermillion</li>
+                        <li><strong>Folliculitis</strong> - monomorphous, no comedones</li>
+                        <li><strong>Pseudofolliculitis barbae</strong> - shaving areas</li>
+                        <li><strong>Demodicosis</strong> - adult > children</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="board-pearl">
+                Gram-negative folliculitis = upper lip + cheeks in patient on prolonged antibiotics for acne!
+            </div>
+            
+            <div class="clinical-alert">
+                Solid facial edema (Morbihan disease) - woody induration of mid-face. Treatment: Extended isotretinoin (9-24 months) ± ketotifen
+            </div>
+        </section>
+        
+        <!-- Treatment Section -->
+        <section id="treatment" class="section">
+            <h2 class="section-title">TREATMENT - The Board Algorithm</h2>
+            
+            <div class="mnemonic">
+                🎯 Treatment Ladder: "MATCH"<br>
+                <strong>M</strong>ild → Topical retinoid + BPO<br>
+                <strong>A</strong>dd oral antibiotics for moderate<br>
+                <strong>T</strong>ry hormonal therapy (females)<br>
+                <strong>C</strong>hange to isotretinoin for severe<br>
+                <strong>H</strong>igh-dose prednisone for fulminans
+            </div>
+            
+            <!-- Topical Treatments -->
+            <div class="high-yield">
+                <div class="high-yield-title">TOPICAL ARSENAL</div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Drug Class</th>
+                            <th>Examples</th>
+                            <th>Key Points</th>
+                            <th>Board Pearl</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Retinoids</strong></td>
+                            <td>Tretinoin, Adapalene, Tazarotene, Trifarotene</td>
+                            <td>Normalize keratinization, comedolytic</td>
+                            <td>Adapalene = OTC, photostable, can mix with BPO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antimicrobials</strong></td>
+                            <td>BPO, Clindamycin, Erythromycin</td>
+                            <td>BPO = no resistance</td>
+                            <td>Never use topical antibiotics alone!</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Others</strong></td>
+                            <td>Azelaic acid, Dapsone, Clascoterone</td>
+                            <td>Alternative options</td>
+                            <td>Azelaic acid helps PIH; Dapsone + BPO = orange staining</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Systemic Treatments -->
+            <div class="section" style="background: #f8f9fa;">
+                <h3>SYSTEMIC THERAPY</h3>
+                
+                <div class="grid-container">
+                    <div class="grid-item" style="background: #e3f2fd;">
+                        <h4>🔷 Oral Antibiotics</h4>
+                        <p><strong>First-line:</strong> Doxycycline, Minocycline</p>
+                        <p><strong>Duration:</strong> 3-4 months MAX</p>
+                        <p><strong>Always combine with:</strong> Topical retinoid + BPO</p>
+                        <div class="board-pearl" style="margin-top: 10px;">
+                            Subantimicrobial doxy (40mg) = same efficacy, fewer side effects!
+                        </div>
+                    </div>
+                    
+                    <div class="grid-item" style="background: #fce4ec;">
+                        <h4>💊 Hormonal (Females)</h4>
+                        <p><strong>OCPs:</strong> 3 FDA-approved</p>
+                        <ul>
+                            <li>Ortho Tri-Cyclen (norgestimate)</li>
+                            <li>Estrostep (norethindrone)</li>
+                            <li>Yaz (drospirenone)</li>
+                        </ul>
+                        <p><strong>Spironolactone:</strong> 50-100mg BID</p>
+                        <div class="clinical-alert" style="margin-top: 10px;">
+                            Drospirenone = ↑K+ (like 25mg spiro)
+                        </div>
+                    </div>
+                    
+                    <div class="grid-item" style="background: #fff3cd;">
+                        <h4>⭐ Isotretinoin</h4>
+                        <p><strong>Dose:</strong> 0.5-1 mg/kg/day</p>
+                        <p><strong>Cumulative:</strong> 120-150 mg/kg</p>
+                        <p><strong>Duration:</strong> ~5-6 months</p>
+                        <div class="board-pearl" style="margin-top: 10px;">
+                            Start LOW (0.5mg/kg) to prevent flares, especially in teenage boys!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-anchor">
+                <h3>TREATMENT OF ACNE IN PREGNANCY</h3>
+                <ul>
+                    <li><strong>Azithromycin:</strong> 500 mg three times per week for 8 or 12 weeks</li>
+                    <li><strong>Oral Erythromycin:</strong> Dose: Erythromycin (base) 500 mg twice daily</li>
+                    <li><strong>Topical Erythromycin:</strong>
+                        <ul>
+                            <li>2% gel, solution, pledget</li>
+                            <li>Applied once or twice daily</li>
+                        </ul>
+                    </li>
+                    <li><strong>Topical Clindamycin:</strong>
+                        <ul>
+                            <li>Preparations & Dose: % gel, lotion, pledget, solution, foam</li>
+                            <li>Applied once or twice daily for most forms; foam is once daily</li>
+                        </ul>
+                    </li>
+                    <li><strong>Topical Azelaic Acid:</strong>
+                        <ul>
+                            <li>Preparations & Dose:  20% cream, 15% gel, 15% foam</li>
+                            <li>Applied twice daily</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <!-- Isotretinoin Special Section -->
+            <div class="memory-anchor">
+                <h3>ISOTRETINOIN BOARD FACTS</h3>
+                <p><strong>iPLEDGE Requirements:</strong></p>
+                <ul>
+                    <li>2 negative pregnancy tests before starting</li>
+                    <li>Monthly pregnancy tests</li>
+                    <li>2 forms of contraception</li>
+                    <li>Wait 1 month after stopping before pregnancy</li>
+                </ul>
+                <p><strong>Side Effects to Know:</strong></p>
+                <ul>
+                    <li>Most common: Cheilitis, xerosis</li>
+                    <li>Labs: ↑TG/cholesterol (20-50%)</li>
+                    <li>Muscles: ↑CK in athletes</li>
+                    <li>NO proven link to depression/IBD!</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Drug-Induced Acne Section -->
+        <section class="section">
+            <h2 class="section-title">DRUG-INDUCED ACNE - The Culprits</h2>
+            
+            <div class="mnemonic">
+                🎯 "VITAMINS BLAST" - Common Acne Inducers<br>
+                <strong>V</strong>itamins B6, B12<br>
+                <strong>I</strong>soniazid<br>
+                <strong>T</strong>estosterone/Anabolic steroids<br>
+                <strong>A</strong>nti-epileptics (phenytoin)<br>
+                <strong>M</strong>TOR inhibitors<br>
+                <strong>I</strong>odides<br>
+                <strong>N</strong>eoplastic drugs (EGFR inhibitors)<br>
+                <strong>S</strong>teroids (corticosteroids)<br>
+                <br>
+                <strong>B</strong>romides<br>
+                <strong>L</strong>ithium<br>
+                <strong>A</strong>zathioprine<br>
+                <strong>S</strong>upplements (whey protein)<br>
+                <strong>T</strong>NF inhibitors
+            </div>
+            
+            <div class="clinical-alert">
+                Drug-induced = MONOMORPHOUS papulopustules, abrupt onset! Steroids → chest/back preference
+            </div>
+            <div class="clinical-alert">
+                EGFR Inhibitor Acne:<br>
+                • Occurs in >80% of patients<br>
+                • Starts 1-3 weeks after therapy<br>
+                • Severity correlates with treatment response!<br>
+                • Prophylaxis: Doxycycline/Minocycline started same day
+            </div>
+
+
+            
+        </section>
+        
+        <!-- Special Situations -->
+        <section class="section">
+            <h2 class="section-title">SPECIAL SITUATIONS</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background: #e8f5e9;">
+                    <h3>🤰 Pregnancy</h3>
+                    <p><strong>Safe:</strong></p>
+                    <ul>
+                        <li>Azelaic acid</li>
+                        <li>Topical clindamycin/erythromycin</li>
+                        <li>Oral azithromycin, cephalexin</li>
+                    </ul>
+                    <p><strong>Avoid:</strong> All retinoids, tetracyclines</p>
+                </div>
+                
+                <div class="grid-item" style="background: #fff8e1;">
+                    <h3>🧬 Genetic Syndromes</h3>
+                    <ul>
+                        <li><strong>Apert:</strong> severe widespread nodulocystic acne, acrocephaly (Craniosynostosis), midface hypoplasia, syndactyly, FGFR2 gene mutation, chronic hyperhidrosis</li>
+                        <li><strong>PAPA:</strong> Pyogenic arthritis + acne conglobata</li>
+                        <li><strong>SAPHO:</strong> Synovitis, Acne, Pustulosis, Hyperostosis, Osteitis<br>
+                            • Most common site: Sternoclavicular area<br>
+                            • "Bull's head" sign on X-ray<br>
+                            • Tx: Bisphosphonates, TNF-α inhibitors</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background: #f3e5f5;">
+                    <h3>🔬 Endocrine Workup</h3>
+                    <p><strong>When to test:</strong> Hirsutism, irregular menses</p>
+                    <p><strong>Tests:</strong></p>
+                    <ul>
+                        <li>Free/total testosterone</li>
+                        <li>DHEAS</li>
+                        <li>17-hydroxyprogesterone</li>
+                    </ul>
+                    <p><strong>DHEAS >8000 = adrenal tumor!</strong></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final Board Pearls -->
+        <section id="pearls" class="section">
+            <h2 class="section-title">🏆 FINAL BOARD PEARLS - The Must-Knows</h2>
+            
+            <div class="grid-container">
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>1.</strong> Microcomedo = precursor of ALL acne lesions
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>2.</strong> DHT > testosterone (5-10x more potent)
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>3.</strong> C. acnes density ≠ severity
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>4.</strong> Wood's lamp + = porphyrins from C. acnes
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>5.</strong> Adapalene = only OTC retinoid, photostable
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>6.</strong> BPO = NO bacterial resistance ever
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>7.</strong> Oral antibiotics: 3-4 months MAX
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>8.</strong> Isotretinoin: 120-150mg/kg cumulative
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>9.</strong> Acne fulminans: Prednisone FIRST
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>10.</strong> Mid-childhood acne = investigate hormones
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>11.</strong> Gram-neg folliculitis = upper lip location
+                </div>
+                <div class="board-pearl" style="font-size: 1.1em;">
+                    <strong>12.</strong> PAPA syndrome = CD2BP1/PSTPIP1 mutation
+                </div>
+            </div>
+            
+            <div class="memory-anchor" style="margin-top: 30px;">
+                <h3>🎯 LAST-MINUTE REVIEW</h3>
+                <p><strong>Ages:</strong> Neonatal (2wk) → Infantile (2-12mo) → Mid-childhood (1-7yr) → Preadolescent (7-11yr)</p>
+                <p><strong>Hormones:</strong> Adrenarche (7-8yr) → DHEAS rises → comedones start</p>
+                <p><strong>Treatment ladder:</strong> Topical → + Oral Abx → + Hormonal → Isotretinoin</p>
+                <p><strong>Isotretinoin math:</strong> 70kg person × 150mg/kg = 10,500mg total ÷ 70mg/day = 150 days (~5 months)</p>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <div style="text-align: center; padding: 40px 0; color: #666;">
+            <p>🎓 Saudi Board Dermatology Review - Acne Vulgaris</p>
+            <p>Remember: Understanding > Memorization</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Highlight current section in nav
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-pill').forEach(link => {
+                link.style.background = '#e9ecef';
+                link.style.color = '#495057';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.background = '#667eea';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
+<script>
+// Collapsible Quick Facts logic
+const quickRefToggle = document.getElementById('quickRefToggle');
+const quickRefContent = document.getElementById('quickRefContent');
+const quickRefSidebar = document.querySelector('.collapsible-quick-ref');
+const quickRefToggleText = document.getElementById('quickRefToggleText');
+const quickRefToggleIcon = document.getElementById('quickRefToggleIcon');
+let quickRefOpen = true;
+
+function setQuickRefState(open) {
+    if (open) {
+        quickRefContent.style.display = 'block';
+        quickRefSidebar.setAttribute('aria-expanded', 'true');
+        quickRefToggle.setAttribute('aria-expanded', 'true');
+        quickRefToggleText.textContent = 'Hide Quick Facts';
+        quickRefToggleIcon.innerHTML = '&#9650;'; // Up small triangle
+    } else {
+        quickRefContent.style.display = 'none';
+        quickRefSidebar.setAttribute('aria-expanded', 'false');
+        quickRefToggle.setAttribute('aria-expanded', 'false');
+        quickRefToggleText.textContent = 'Show Quick Facts';
+        quickRefToggleIcon.innerHTML = '&#9660;'; // Down small triangle
+    }
+}
+
+if (quickRefToggle && quickRefContent && quickRefSidebar) {
+    quickRefToggle.addEventListener('click', function() {
+        quickRefOpen = !quickRefOpen;
+        setQuickRefState(quickRefOpen);
+    });
+    setQuickRefState(true);
+}
+// Review cards toggle logic
+(function() {
+    const cards = document.querySelectorAll('.review-card');
+    cards.forEach(card => {
+        const details = card.querySelector('.card-details');
+        const trigger = card.querySelector('p');
+        if (details && trigger) {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.toggle('active');
+            });
+            card.addEventListener('click', function(e) {
+                // Also allow clicking anywhere on the card
+                if (e.target.tagName !== 'P') {
+                    card.classList.toggle('active');
+                }
+            });
+        }
+    });
+})();
+</script>
+</body>
+</html>

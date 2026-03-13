@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palisaded Neutrophilic Granulomatous Dermatitis (PNGD) - Board Review</title>
+    <style>
+        :root {
+            --primary: #3b5998;
+            --secondary: #8b9dc3;
+            --accent: #f15a5a;
+            --light: #f7f7f7;
+            --dark: #333;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --info: #2196f3;
+        }
+        
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.7;
+        }
+        
+        /* Card styles */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-header .icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Alert box styles */
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 5px solid;
+        }
+        
+        .alert-info {
+            background-color: rgba(33, 150, 243, 0.1);
+            border-color: var(--info);
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 152, 0, 0.1);
+            border-color: var(--warning);
+        }
+        
+        .alert-danger {
+            background-color: rgba(244, 67, 54, 0.1);
+            border-color: var(--danger);
+        }
+        
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            border-color: var(--success);
+        }
+        
+        /* Badge styles */
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        
+        .badge-high-yield {
+            background-color: var(--warning);
+            color: white;
+        }
+        
+        .badge-board-fav {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--light);
+            font-weight: 600;
+        }
+        
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Flashcard styles */
+        .flashcard-container {
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flashcard {
+            position: relative;
+            height: 200px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--dark);
+            border: 2px solid var(--primary);
+            transform: rotateY(180deg);
+        }
+        
+        /* Memory aid styles */
+        .memory-aid {
+            background-color: #f3e5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #9c27b0;
+        }
+        
+        .memory-aid h3 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        
+        /* Accordion styles */
+        .accordion {
+            background-color: var(--light);
+            color: var(--dark);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.4s;
+            font-weight: 600;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion:after {
+            content: '\002B';
+            color: var(--primary);
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .accordion.active:after {
+            content: "\2212";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        
+        /* Comparison container */
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        
+        .comparison-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .comparison-item h3 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            color: var(--primary);
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Quiz styles */
+        .quiz-container {
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .quiz-options {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .quiz-option {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: var(--light);
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            background-color: #e3f2fd;
+            border-left-color: var(--primary);
+        }
+        
+        .quiz-option.selected {
+            background-color: #e3f2fd;
+            border-left-color: var(--primary);
+        }
+        
+        .quiz-option.correct {
+            background-color: #e8f5e9;
+            border-left-color: var(--success);
+        }
+        
+        .quiz-option.incorrect {
+            background-color: #ffebee;
+            border-left-color: var(--danger);
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+        
+        /* Visual mechanism styles */
+        .mechanism-container {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .mechanism-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+        }
+        
+        .mechanism-body {
+            padding: 15px;
+            background-color: white;
+        }
+        
+        .mechanism-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 21px;
+            }
+            
+            .timeline-container.right {
+                left: 0;
+            }
+            
+            .comparison-item {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Palisaded Neutrophilic Granulomatous Dermatitis (PNGD)</h1>
+            <p>A rare inflammatory cutaneous reaction with important systemic associations</p>
+        </div>
+        
+        <!-- Quick Facts Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">⚡</span> Quick High-Yield Facts
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Board Exam Focus:</strong>
+                    <ul>
+                        <li>PNGD is <strong>extremely rare</strong> and <strong>almost never seen independently</strong> from an underlying systemic illness</li>
+                        <li>Most common associations: <strong>SLE</strong> and <strong>Rheumatoid Arthritis</strong></li>
+                        <li>Female predominance (3:1 ratio)</li>
+                        <li>Classic presentation: Symmetrically distributed, skin-colored to erythematous papules on elbows/extensor surfaces</li>
+                        <li>May precede malignancy diagnosis by up to 5 years</li>
+                    </ul>
+                </div>
+                
+                <div class="memory-aid">
+                    <h3>🧠 Memory Aid: "PNGD" Mnemonic</h3>
+                    <ul>
+                        <li><strong>P</strong>apules on extensor surfaces (symmetrical)</li>
+                        <li><strong>N</strong>eutrophilic infiltrates (early histology)</li>
+                        <li><strong>G</strong>ranulomas (later histology)</li>
+                        <li><strong>D</strong>isease associations (SLE, RA, malignancy)</li>
+                    </ul>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">
+                            What are the common underlying diseases associated with PNGD?
+                        </div>
+                        <div class="flashcard-back">
+                            <ul>
+                                <li>Most common: SLE and Rheumatoid Arthritis</li>
+                                <li>Less common: Inflammatory bowel disease, systemic vasculitides</li>
+                                <li>Rare: Myelodysplastic syndrome and lymphoproliferative conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Definition & Etiology Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">ℹ️</span> Definition & Etiology
+            </div>
+            <div class="card-body">
+                <p><strong>Palisaded neutrophilic granulomatous dermatitis (PNGD)</strong> is an extremely rare inflammatory cutaneous reaction seen in the setting of connective tissue disease or rheumatoid arthritis. It is almost never seen independently from an underlying systemic illness.</p>
+                
+                <div class="mechanism-container">
+                    <div class="mechanism-header">Pathophysiologic Progression</div>
+                    <div class="mechanism-body">
+                        <div class="mechanism-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Early Phase:</strong> Neutrophilic inflammation and leukocytoclastic vasculitis
+                            </div>
+                        </div>
+                        <div class="mechanism-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Intermediate Phase:</strong> Collagen degeneration
+                            </div>
+                        </div>
+                        <div class="mechanism-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Late Phase:</strong> Granuloma formation and associated fibrosis
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <strong>Remember:</strong> PNGD is likely a <strong>reactive process</strong> to underlying systemic disease. The exact etiology remains unknown.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Demographics & Associations Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">👥</span> Demographics & Disease Associations <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <button class="accordion">Demographics</button>
+                <div class="panel">
+                    <ul>
+                        <li>Affects patients of all ages</li>
+                        <li>Reports in children are rare</li>
+                        <li>Female predominance (3:1 ratio)
+                            <ul>
+                                <li>Likely reflects demographics of underlying autoimmune diseases</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="accordion">Disease Associations <span class="badge badge-board-fav">BOARD FAVORITE</span></button>
+                <div class="panel">
+                    <div class="comparison-container">
+                        <div class="comparison-item">
+                            <h3>Most Common</h3>
+                            <ul>
+                                <li>Systemic lupus erythematosus (SLE)</li>
+                                <li>Rheumatoid arthritis (RA)</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>Less Common</h3>
+                            <ul>
+                                <li>Inflammatory bowel disease</li>
+                                <li>Systemic vasculitides</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>Rare Associations</h3>
+                            <ul>
+                                <li>Myelodysplastic syndrome</li>
+                                <li>Lymphoproliferative conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger">
+                    <strong>Board Alert:</strong> PNGD may precede malignancy diagnosis by up to 5 years, or may be present at the time of diagnosis. Consider occult malignancy when PNGD is identified without other clear associations.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clinical Presentation Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔍</span> Clinical Presentation <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Diagnostic Pearl:</strong> Consider PNGD in a patient with connective tissue disease or rheumatoid arthritis who presents with a skin-colored to erythematous papular eruption distributed symmetrically on the elbows or extensor surfaces.
+                </div>
+                
+                <h3>Clinical Features</h3>
+                <ul>
+                    <li><strong>Morphology:</strong> Skin-colored to erythematous papules that are umbilicated or crusted</li>
+                    <li><strong>Distribution:</strong> Symmetrical, primarily on extremities
+                        <ul>
+                            <li>Upper extremities (50% of cases)</li>
+                            <li>Lower extremities (33% of cases)</li>
+                            <li>Trunk, head, and neck (&lt;20% of cases)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Symptoms:</strong> Usually asymptomatic; some lesions may be tender</li>
+                </ul>
+                
+                <h3>Morphological Variants</h3>
+                <ul>
+                    <li>Urticarial plaques</li>
+                    <li>Annular plaques</li>
+                    <li>Erythematous or violaceous papules, plaques, and nodules</li>
+                </ul>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">
+                            What is the distribution pattern of PNGD lesions?
+                        </div>
+                        <div class="flashcard-back">
+                            <p><strong>Classic Distribution:</strong></p>
+                            <ul>
+                                <li>Symmetrical involvement</li>
+                                <li>Upper extremities (50%) - especially elbows</li>
+                                <li>Lower extremities (33%)</li>
+                                <li>Trunk, head, and neck (&lt;20%)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Differential Diagnosis Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔄</span> Differential Diagnosis <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Key Differentiating Features</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Interstitial granulomatous dermatitis</strong></td>
+                        <td>
+                            <ul>
+                                <li>Classically presents as linear subcutaneous cords or bands ("rope sign")</li>
+                                <li>Typically on proximal trunk rather than extensor surfaces</li>
+                                <li><strong>No vasculitis</strong> on histology (key differentiator from PNGD)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interstitial granulomatous drug reaction</strong></td>
+                        <td>
+                            <ul>
+                                <li>Erythematous to violaceous annular or nonannular plaques</li>
+                                <li>Distribution: trunk, inner upper arms, proximal thighs, intertriginous skin</li>
+                                <li>Typically <strong>preceded by a new drug exposure</strong></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Granuloma annulare</strong></td>
+                        <td>
+                            <ul>
+                                <li>Nonscaly erythematous papules or plaques</li>
+                                <li>Histology: lymphocytic infiltrate with mucin deposition (not neutrophilic)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bowel-associated dermatosis arthritis syndrome</strong></td>
+                        <td>
+                            <ul>
+                                <li>History of inflammatory bowel disease or bowel bypass surgery</li>
+                                <li>Systemic symptoms (fever, arthralgia) often present</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Erythema elevatum diutinum</strong></td>
+                        <td>
+                            <ul>
+                                <li>Persistent, symmetric, red-purple to yellow-brown papules/nodules</li>
+                                <li>Predilection for extensor surfaces over joints</li>
+                                <li>Association with paraproteinemias</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="memory-aid">
+                    <h3>🧠 Memory Aid: "PIDGE" - Differentiating Granulomatous Dermatoses</h3>
+                    <ul>
+                        <li><strong>P</strong>NGD: Neutrophilic infiltrates, vasculitis present, SLE/RA associated</li>
+                        <li><strong>I</strong>nterstitial granulomatous dermatitis: No vasculitis, "rope sign"</li>
+                        <li><strong>D</strong>rug-induced granulomatous reaction: New medication exposure</li>
+                        <li><strong>G</strong>ranuloma annulare: Lymphocytes & mucin, not neutrophils</li>
+                        <li><strong>E</strong>rythema elevatum diutinum: Persistent, often yellow-brown lesions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagnostic Workup Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔬</span> Diagnostic Workup <span class="badge badge-board-fav">BOARD FAVORITE</span>
+            </div>
+            <div class="card-body">
+                <h3>Skin Biopsy Findings</h3>
+                <div class="timeline">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>Early Lesions</h3>
+                            <ul>
+                                <li>Dermal neutrophilic infiltrates</li>
+                                <li>Karyorrhectic debris</li>
+                                <li>Leukocytoclastic vasculitis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>Later Lesions</h3>
+                            <ul>
+                                <li>Palisaded granulomas around degenerated collagen</li>
+                                <li>Areas of fibrosis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Laboratory Workup</h3>
+                <ul>
+                    <li>CBC with differential</li>
+                    <li>Antinuclear antibody (ANA)</li>
+                    <li>Antineutrophilic cytoplasmic antibodies (ANCA)</li>
+                    <li>Rheumatoid factor (RF)</li>
+                    <li>Cyclic citrullinated antibodies (CCP)</li>
+                </ul>
+                
+                <div class="alert alert-warning">
+                    <strong>Additional Workup:</strong> If no underlying connective tissue disease or vasculitis is present and CBC/differential are normal:
+                    <ul>
+                        <li>Perform a full review of systems</li>
+                        <li>Complete lymph node examination</li>
+                        <li>Consider further directed imaging or bone marrow studies depending on clinical picture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Management Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">💊</span> Management & Treatment
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Management Pearls:</strong>
+                    <ul>
+                        <li>All patients with PNGD should be evaluated for underlying systemic diseases</li>
+                        <li>A minority of cases resolve with treatment of the underlying disease</li>
+                        <li>Consult a rheumatologist or hematologist/oncologist to further evaluate and manage the underlying systemic disease</li>
+                    </ul>
+                </div>
+                
+                <h3>Treatment Options</h3>
+                <p>PNGD lesions may resolve spontaneously or with treatment of the underlying systemic illness. Because the disease is so rare, there have not been any prospective trials determining the efficacy of potential treatments.</p>
+                
+                <table>
+                    <tr>
+                        <th>Treatment</th>
+                        <th>Dosing</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Intralesional triamcinolone</td>
+                        <td>Injection as needed</td>
+                        <td>May cause hypopigmentation in darker skin colors</td>
+                    </tr>
+                    <tr>
+                        <td>Systemic corticosteroids</td>
+                        <td>Variable based on severity</td>
+                        <td>Consider side effect profile</td>
+                    </tr>
+                    <tr>
+                        <td>Hydroxychloroquine</td>
+                        <td>200 mg orally twice daily</td>
+                        <td>Useful particularly with underlying SLE</td>
+                    </tr>
+                    <tr>
+                        <td>Dapsone</td>
+                        <td>50-200 mg orally daily</td>
+                        <td>Check G6PD before initiating</td>
+                    </tr>
+                </table>
+                
+                <div class="alert alert-danger">
+                    <strong>Important Note:</strong> Topical corticosteroids are generally NOT effective for PNGD.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Board Review Quiz -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📝</span> Quick Board Review Quiz
+            </div>
+            <div class="card-body">
+                <div class="quiz-container">
+                    <div class="quiz-question">1. Which of the following is the most common disease association with PNGD?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this, true)">Systemic lupus erythematosus and rheumatoid arthritis</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Inflammatory bowel disease</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Myelodysplastic syndrome</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Lymphoproliferative disorders</li>
+                    </ul>
+                    <div class="quiz-feedback">
+                        Correct! SLE and RA are the most common associations with PNGD. This is a high-yield fact for board exams.
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">2. What histopathologic finding distinguishes PNGD from interstitial granulomatous dermatitis?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this, false)">Palisaded granulomas</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Neutrophilic infiltrates</li>
+                        <li class="quiz-option" onclick="selectOption(this, true)">Leukocytoclastic vasculitis</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Collagen degeneration</li>
+                    </ul>
+                    <div class="quiz-feedback">
+                        Correct! The presence of leukocytoclastic vasculitis in PNGD distinguishes it from interstitial granulomatous dermatitis, which lacks vasculitis.
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">3. Which treatment is generally NOT effective for PNGD?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this, false)">Dapsone</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Intralesional triamcinolone</li>
+                        <li class="quiz-option" onclick="selectOption(this, false)">Hydroxychloroquine</li>
+                        <li class="quiz-option" onclick="selectOption(this, true)">Topical corticosteroids</li>
+                    </ul>
+                    <div class="quiz-feedback">
+                        Correct! Topical corticosteroids are generally not effective for PNGD, unlike the other treatments listed.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var acc = document.getElementsByClassName("accordion");
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+                
+                // Open the first accordion by default
+                if (i === 0) {
+                    acc[i].click();
+                }
+            }
+        });
+        
+        // Quiz functionality
+        function selectOption(element, isCorrect) {
+            // Get all options in this quiz
+            var quizContainer = element.closest('.quiz-container');
+            var options = quizContainer.querySelectorAll('.quiz-option');
+            
+            // Reset all options
+            for (var i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected', 'correct', 'incorrect');
+            }
+            
+            // Mark selected option
+            element.classList.add('selected');
+            
+            // Show feedback
+            var feedback = quizContainer.querySelector('.quiz-feedback');
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.classList.add('correct');
+                feedback.classList.remove('incorrect');
+            } else {
+                element.classList.add('incorrect');
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
+                feedback.textContent = "Incorrect. Try again!";
+            }
+        }
+    </script>
+</body>
+</html>

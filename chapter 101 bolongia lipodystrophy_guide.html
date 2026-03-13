@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipodystrophies - Interactive Board Review</title>
+    <style>
+        :root {
+            --primary: #8e44ad;
+            --secondary: #3498db;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --inherited: #8e44ad;
+            --acquired: #3498db;
+            --localized: #2ecc71;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            background-color: white;
+            color: var(--dark);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .nav-button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin-top: 25px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        .key-features {
+            background-color: #f8f4fc;
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .clinical-pearl {
+            background-color: #e8f7ff;
+            border: 1px dashed var(--secondary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .clinical-pearl::before {
+            content: "Clinical Pearl";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .high-yield {
+            background-color: #fff9e6;
+            border: 1px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .high-yield::before {
+            content: "High-Yield";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            color: var(--warning);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .board-tip {
+            background-color: #ffebee;
+            border: 1px solid var(--danger);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .board-tip::before {
+            content: "Board Exam Tip";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grid-item.inherited {
+            border-top: 5px solid var(--inherited);
+        }
+        
+        .grid-item.acquired {
+            border-top: 5px solid var(--acquired);
+        }
+        
+        .grid-item.localized {
+            border-top: 5px solid var(--localized);
+        }
+        
+        .grid-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .grid-title.inherited {
+            color: var(--inherited);
+        }
+        
+        .grid-title.acquired {
+            color: var(--acquired);
+        }
+        
+        .grid-title.localized {
+            color: var(--localized);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tabs {
+            display: flex;
+            overflow-x: auto;
+            margin: 20px 0;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        .tab-button {
+            background-color: inherit;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab-button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0 0 5px 5px;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .toggle-container {
+            margin: 20px 0;
+        }
+        
+        .toggle-button {
+            background-color: #f1f1f1;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-radius: 5px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .toggle-button:hover {
+            background-color: #ddd;
+        }
+        
+        .toggle-button:after {
+            content: "+";
+            color: var(--dark);
+            font-weight: bold;
+            float: right;
+        }
+        
+        .toggle-button.active:after {
+            content: "−";
+        }
+        
+        .toggle-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .mnemonic {
+            background-color: #e8f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .mnemonic-title {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .mnemonic-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .mnemonic-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .mnemonic-list li:before {
+            content: attr(data-letter);
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            margin-bottom: 20px;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--dark);
+            transform: rotateY(180deg);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 20px 20px 0 0;
+            margin-top: 30px;
+        }
+        
+        .bold-highlight {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .treatment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .treatment-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .treatment-title {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .pathology-highlight {
+            background-color: #f9edf9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .definition-box {
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #cfdbe6;
+        }
+
+        .differential-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .differential-item {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--warning);
+        }
+
+        .checkmark-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .checkmark-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .checkmark-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .classification-grid,
+            .treatment-options,
+            .differential-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lipodystrophies: Comprehensive Board Review</h1>
+            <div class="subtitle">Chapter 101 - Saudi Board Exam Preparation Guide</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <button class="nav-button active" onclick="scrollToSection('overview')">Overview</button>
+            <button class="nav-button" onclick="scrollToSection('pathogenesis')">Pathogenesis</button>
+            <button class="nav-button" onclick="scrollToSection('classification')">Classification</button>
+            <button class="nav-button" onclick="scrollToSection('inherited')">Inherited</button>
+            <button class="nav-button" onclick="scrollToSection('acquired')">Acquired</button>
+            <button class="nav-button" onclick="scrollToSection('clinical')">Clinical Features</button>
+            <button class="nav-button" onclick="scrollToSection('pathology')">Pathology</button>
+            <button class="nav-button" onclick="scrollToSection('differential')">Differential Dx</button>
+            <button class="nav-button" onclick="scrollToSection('treatment')">Treatment</button>
+        </nav>
+        
+        <!-- OVERVIEW SECTION -->
+        <section id="overview" class="section">
+            <h2>Overview of Lipodystrophies</h2>
+            
+            <div class="definition-box">
+                <p><strong>Lipodystrophy</strong> describes a heterogeneous group of diseases characterized by a selective fat loss in a characteristic body distribution pattern, often accompanied by secondary fat accumulation. These disorders can be inherited or acquired and result in both cosmetic concerns and metabolic complications.</p>
+            </div>
+            
+            <div class="key-features">
+                <h3>Key Features</h3>
+                <ul class="checkmark-list">
+                    <li>Lipodystrophies are characterized by a paucity or complete absence of fat that may be generalized, partial, or localized</li>
+                    <li>Though often used interchangeably, <strong>lipoatrophy</strong> specifically refers to selective loss of fat, while <strong>lipodystrophy</strong> implies a redistribution of fat with hypertrophic compensation of non-atrophic fat</li>
+                    <li>Fat is a metabolically active organ; therefore, fat loss is associated with metabolic derangements (insulin resistance, diabetes mellitus, hyperinsulinemia, dyslipidemia, cardiovascular disease, hepatic steatosis)</li>
+                    <li>Systemic manifestations may include hormonal abnormalities, organ dysfunction, anabolic features, glomerulonephritis, and autoimmune disorders</li>
+                </ul>
+            </div>
+            
+            <div class="board-tip">
+                <p>Board exams frequently test your ability to recognize different patterns of fat loss and their associated metabolic and systemic manifestations. Pay particular attention to distinguishing between inherited and acquired forms, as well as the specific genetic mutations associated with each.</p>
+            </div>
+        </section>
+        
+        <!-- PATHOGENESIS SECTION -->
+        <section id="pathogenesis" class="section">
+            <h2>Pathogenesis</h2>
+            
+            <div class="pathology-highlight">
+                <p>Adipose tissue functions as an endocrine organ via its secretion of hormones and adipocytokines (leptin, TNF, IL-6, adiponectin). Altered expression and activity of these factors play a key role in the development of insulin resistance and other metabolic sequelae seen in lipodystrophic syndromes.</p>
+            </div>
+            
+            <h3>Mechanisms of Fat Loss/Dysfunction</h3>
+            <p>There appears to be a final common pathway of defective adipocyte triglyceride storage in conditions characterized by fat loss. This defect can result from:</p>
+            <ul>
+                <li><strong>Impaired triglyceride synthesis</strong> due to enzyme deficiency (e.g., 1-acylglycerol-3-phosphate O-acyltransferase 2)</li>
+                <li><strong>Defective adipocyte development</strong> caused by mutations in genes critical to adipocyte differentiation (e.g., BSCL2/seipin, PPARG, LMNA)</li>
+                <li><strong>Adipocyte apoptosis</strong></li>
+                <li><strong>Autoimmune or drug-mediated adipocyte destruction</strong></li>
+            </ul>
+            
+            <h3>Hormonal and Metabolic Consequences</h3>
+            <p>The destruction or impaired differentiation of adipocytes leads to:</p>
+            <ul>
+                <li>Decreased plasma adiponectin levels (inversely correlated with insulin resistance)</li>
+                <li>Reduced leptin levels (correlates with decreased body fat)</li>
+                <li>Insulin resistance and hyperinsulinemia</li>
+                <li>Dyslipidemia (hypertriglyceridemia, low HDL)</li>
+                <li>Hepatic steatosis</li>
+            </ul>
+            
+            <div class="clinical-pearl">
+                <p>Leptin replacement has been shown to reverse insulin resistance in mouse models and results in significant improvements in hyperglycemia, dyslipidemia, and hepatic steatosis in patients with different forms of lipodystrophy.</p>
+            </div>
+        </section>
+        
+        <!-- CLASSIFICATION SECTION -->
+        <section id="classification" class="section">
+            <h2>Classification of Lipodystrophies</h2>
+            
+            <p>Lipodystrophies can be broadly classified based on:</p>
+            <ol>
+                <li><strong>Etiology</strong>: Inherited vs. Acquired</li>
+                <li><strong>Extent</strong>: Generalized vs. Partial vs. Localized</li>
+                <li><strong>Specific genetic mutations and clinical features</strong></li>
+            </ol>
+            
+            <div class="classification-grid">
+                <div class="grid-item inherited">
+                    <div class="grid-title inherited">INHERITED</div>
+                    <ul>
+                        <li>Congenital generalized lipodystrophy (Berardinelli-Seip syndrome)</li>
+                        <li>Familial partial lipodystrophy (Köbberling-Dunnigan syndrome)</li>
+                        <li>Familial partial lipodystrophy with mandibuloacral dysplasia</li>
+                        <li>Proteasome-associated autoinflammatory disorders</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item acquired">
+                    <div class="grid-title acquired">ACQUIRED</div>
+                    <ul>
+                        <li>Acquired generalized lipodystrophy (Lawrence syndrome)</li>
+                        <li>Acquired partial lipodystrophy (Barraquer-Simons syndrome)</li>
+                        <li>HIV/ART-associated lipodystrophy</li>
+                        <li>Immune checkpoint inhibitor-associated lipodystrophy</li>
+                        <li>Localized forms (trauma, injections, pressure, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item localized">
+                    <div class="grid-title localized">PATTERNS OF FAT LOSS</div>
+                    <ul>
+                        <li><strong>Generalized</strong>: Face, trunk, extremities, viscera</li>
+                        <li><strong>Partial</strong>: Extensive but not generalized (varies by type)</li>
+                        <li><strong>Localized</strong>: Isolated areas (e.g., injection sites, trauma)</li>
+                        <li><strong>Lipohypertrophy</strong>: Excessive fat accumulation (can co-exist)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="high-yield">
+                <p>The distribution pattern of fat loss is a key diagnostic feature. For board exams, remember:</p>
+                <ul>
+                    <li>Congenital generalized lipodystrophy presents at birth with near-total absence of subcutaneous fat</li>
+                    <li>Familial partial lipodystrophy typically presents after puberty with fat loss in extremities but preservation of facial fat</li>
+                    <li>Acquired partial lipodystrophy shows characteristic cephalocaudal progression (starting with face)</li>
+                    <li>HIV/ART lipodystrophy shows peripheral lipoatrophy with central adiposity</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- INHERITED LIPODYSTROPHIES SECTION -->
+        <section id="inherited" class="section">
+            <h2>Inherited Lipodystrophies</h2>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Congenital Generalized Lipodystrophy (Berardinelli-Seip Syndrome)</button>
+                <div class="toggle-content">
+                    <p><strong>Genetics & Subtypes:</strong> Autosomal recessive disorder with four known genetic subtypes:</p>
+                    <ul>
+                        <li><strong>Type 1</strong>: AGPAT2 mutations (encodes 1-acylglycerol-3-phosphate O-acyltransferase 2)</li>
+                        <li><strong>Type 2</strong>: BSCL2/seipin mutations (critical for lipid droplet morphology)</li>
+                        <li><strong>Type 3</strong>: CAV1 mutations (encodes caveolin 1)</li>
+                        <li><strong>Type 4</strong>: CAVIN1/PTRF mutations (biogenesis of caveolae)</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Present at birth with near-complete absence of subcutaneous fat</li>
+                        <li>Muscular appearance with prominent veins</li>
+                        <li>Acromegalic features</li>
+                        <li>Types 1, 3, 4: Loss of metabolically active adipose tissue but preservation of mechanical adipose tissue (palms, soles, orbital fat)</li>
+                        <li>Type 2: Both metabolically active and mechanical adipose tissue are lost</li>
+                        <li>Types 1, 2: Lack of bone marrow fat; Types 3, 4: Preserved bone marrow fat</li>
+                    </ul>
+                    
+                    <p><strong>Metabolic Manifestations:</strong></p>
+                    <ul>
+                        <li>Severe insulin resistance and diabetes mellitus</li>
+                        <li>Hypertriglyceridemia</li>
+                        <li>Hepatic steatosis/cirrhosis</li>
+                        <li>Hypertrophic cardiomyopathy</li>
+                    </ul>
+                    
+                    <p><strong>Additional Features:</strong></p>
+                    <ul>
+                        <li>Acanthosis nigricans</li>
+                        <li>Hypertrichosis</li>
+                        <li>Organomegaly</li>
+                        <li>Type 2: More severe with higher incidence of intellectual disability</li>
+                        <li>Type 4: Cardiac conduction defects, pyloric stenosis</li>
+                    </ul>
+                    
+                    <div class="board-tip">
+                        <p>For the boards, remember that Type 2 CGL (BSCL2/seipin mutations) is more severe than other types, with higher incidence of intellectual disability and cardiomyopathy. Also, note that in one series, there was ~35-year reduction in lifespan, with liver disease and infection as the most common causes of death.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Familial Partial Lipodystrophy (FPLD)</button>
+                <div class="toggle-content">
+                    <p><strong>Genetics & Subtypes:</strong> Primarily autosomal dominant, with several types:</p>
+                    <ul>
+                        <li><strong>FPLD1</strong> (Köbberling type): Unknown genetic basis</li>
+                        <li><strong>FPLD2</strong> (Dunnigan type): LMNA mutations (encodes lamins A/C)</li>
+                        <li><strong>FPLD3</strong>: PPARG mutations (peroxisome proliferator-activated receptor gamma)</li>
+                        <li><strong>FPLD4</strong>: PLIN1 mutations (perilipin 1)</li>
+                        <li><strong>FPLD5</strong>: CIDEC mutations (autosomal recessive)</li>
+                        <li><strong>FPLD6</strong>: LIPE mutations (autosomal recessive)</li>
+                        <li><strong>FPLD7</strong>: CAV1 mutations</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Onset typically after puberty</li>
+                        <li>Fat loss predominantly affecting extremities</li>
+                        <li>Preservation of facial fat (often with increased fat in face/neck)</li>
+                        <li>FPLD2: Muscular appearance with prominent veins, excess fat in face and neck</li>
+                        <li>FPLD3: Less severe fat loss than FPLD2, mainly affecting extremities/buttocks</li>
+                    </ul>
+                    
+                    <p><strong>Metabolic Manifestations:</strong></p>
+                    <ul>
+                        <li>Insulin resistance and diabetes mellitus</li>
+                        <li>Hypertriglyceridemia (may develop chylomicronemia syndrome)</li>
+                        <li>Metabolic abnormalities often more severe in FPLD3 than FPLD2</li>
+                        <li>Elevated risk of cardiovascular disease</li>
+                    </ul>
+                    
+                    <div class="clinical-pearl">
+                        <p>LMNA mutations (FPLD2) are responsible for a group of disorders known as laminopathies that includes premature aging syndromes (progeria), muscular dystrophies, cardiomyopathies, and Charcot-Marie-Tooth neuropathy. The specific clinical phenotype is determined by the site and type of mutation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Familial Partial Lipodystrophy with Mandibuloacral Dysplasia</button>
+                <div class="toggle-content">
+                    <p><strong>Genetics:</strong> Autosomal recessive</p>
+                    <ul>
+                        <li><strong>Type A</strong>: LMNA mutations</li>
+                        <li><strong>Type B</strong>: ZMPSTE24 mutations (zinc metalloproteinase)</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Mandibular and clavicular hypoplasia</li>
+                        <li>Short stature</li>
+                        <li>Lipoatrophy of extremities (Type B may have generalized lipodystrophy)</li>
+                        <li>Premature aging features</li>
+                        <li>Scleroderma-like skin lesions with mottled pigmentation</li>
+                        <li>Osteolysis of terminal digits</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Proteasome-Associated Autoinflammatory Syndromes</button>
+                <div class="toggle-content">
+                    <p><strong>Genetics:</strong> Autosomal recessive, due to mutations in several genes encoding proteasome-associated proteins</p>
+                    <ul>
+                        <li><strong>PRAAS1</strong>: PSMB8, PSMA3 (digenic)</li>
+                        <li><strong>PRAAS2</strong>: POMP</li>
+                        <li><strong>PRAAS3</strong>: PSMB4, PSMB9 (digenic)</li>
+                        <li><strong>PRAAS4</strong>: PSMG2</li>
+                        <li><strong>PRAAS5</strong>: PSMB10</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Onset in childhood</li>
+                        <li>Recurrent fevers</li>
+                        <li>Annular violaceous plaques</li>
+                        <li>Eyelid erythema</li>
+                        <li>Pernio-like lesions</li>
+                        <li>Partial (e.g., PRAAS1) or generalized (e.g., PRAAS4) lipoatrophy</li>
+                        <li>Joint contractures</li>
+                        <li>Hepatosplenomegaly</li>
+                        <li>Basal ganglia calcifications</li>
+                    </ul>
+                    
+                    <p><strong>Note:</strong> PRAAS1 has also been referred to as CANDLE (chronic atypical neutrophilic dermatosis with lipodystrophy and elevated temperature) syndrome and Nakajo-Nishimura syndrome.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ACQUIRED LIPODYSTROPHIES SECTION -->
+        <section id="acquired" class="section">
+            <h2>Acquired Lipodystrophies</h2>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Acquired Generalized Lipodystrophy (Lawrence Syndrome)</button>
+                <div class="toggle-content">
+                    <p><strong>Etiology:</strong> No known genetic defect. Often associated with:</p>
+                    <ul>
+                        <li>Preceding autoimmune disease (in approximately one-third of patients)</li>
+                        <li>Viral or bacterial infection</li>
+                        <li>Panniculitis (in 25% of patients)</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Onset typically in childhood or adolescence</li>
+                        <li>Fat loss involving face, trunk, and extremities</li>
+                        <li>Can involve palms and soles</li>
+                        <li>Preservation of bone marrow fat (unlike CGL types 1 and 2)</li>
+                    </ul>
+                    
+                    <p><strong>Three Proposed Subtypes:</strong></p>
+                    <ol>
+                        <li><strong>Panniculitic variant (type 1)</strong>: Panniculitis precedes lipoatrophy; mild metabolic derangements</li>
+                        <li><strong>Autoimmune variant (type 2)</strong>: Associated with autoimmune diseases (dermatomyositis, Sjögren syndrome, etc.)</li>
+                        <li><strong>Idiopathic (type 3)</strong>: No evidence of panniculitis or autoimmune disease</li>
+                    </ol>
+                    
+                    <p><strong>Metabolic and Systemic Manifestations:</strong></p>
+                    <ul>
+                        <li>Insulin resistance and diabetes mellitus</li>
+                        <li>Hypertriglyceridemia</li>
+                        <li>Hepatic steatosis/cirrhosis</li>
+                        <li>Associated autoimmune diseases</li>
+                        <li>Rarely associated with CVID (common variable immunodeficiency)</li>
+                    </ul>
+                    
+                    <div class="clinical-pearl">
+                        <p>Autoantibodies against adipocyte membrane or against perilipin 1 have been reported in some patients with acquired generalized lipodystrophy, supporting an autoimmune pathogenesis.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Acquired Partial Lipodystrophy (Barraquer-Simons Syndrome)</button>
+                <div class="toggle-content">
+                    <p><strong>Etiology:</strong> Sporadic or autosomal dominant (LMNB2 mutations in some patients)</p>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Onset usually in childhood or pre-puberty</li>
+                        <li>Often follows a viral illness</li>
+                        <li>Symmetric progressive loss of subcutaneous fat in a cephalocaudal direction (starting with face)</li>
+                        <li>Characteristic sunken eyes due to loss of retro-orbital and periorbital fat</li>
+                        <li>Hips and legs typically spared (may show fat hypertrophy)</li>
+                        <li>Three phenotypic subtypes:
+                            <ol>
+                                <li>Fat loss in upper half of body</li>
+                                <li>Fat loss in upper half with hypertrophy in lower half</li>
+                                <li>Hemi-lipodystrophy (one half of face/body affected)</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>Key Associations:</strong></p>
+                    <ul>
+                        <li>Low C3 levels and presence of C3 nephritic factor (C3NeF) in almost all patients</li>
+                        <li>Mesangiocapillary glomerulonephritis type II (MCGN II) in 20% of patients</li>
+                        <li>Autoimmune diseases (SLE, dermatomyositis, systemic sclerosis, Sjögren syndrome)</li>
+                        <li>Predisposition to recurrent Neisseria meningitidis infections</li>
+                    </ul>
+                    
+                    <div class="board-tip">
+                        <p>For the boards, remember the key association with hypocomplementemia (low C3) and C3 nephritic factor, which leads to dysregulated activation of the alternative complement pathway and complement-dependent lysis of adipocytes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">HIV/ART-Associated Lipodystrophy</button>
+                <div class="toggle-content">
+                    <p><strong>Etiology:</strong> Associated with antiretroviral therapy (ART), particularly:</p>
+                    <ul>
+                        <li>Protease inhibitors (PIs)</li>
+                        <li>Nucleoside reverse transcriptase inhibitors (NRTIs), especially stavudine and didanosine</li>
+                        <li>Integrase strand transfer inhibitors (INSTIs) like raltegravir</li>
+                    </ul>
+                    
+                    <p><strong>Pathogenesis:</strong></p>
+                    <ul>
+                        <li>Impaired pre-adipocyte differentiation</li>
+                        <li>Increased adipocyte apoptosis</li>
+                        <li>Impaired insulin-stimulated lipogenesis</li>
+                        <li>Increased lipolysis</li>
+                        <li>Mitochondrial toxicity</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>Typically develops 2 months to 2 years after initiation of ART</li>
+                        <li>Facial lipoatrophy (sunken cheeks)</li>
+                        <li>Peripheral fat wasting (extremities, buttocks)</li>
+                        <li>Central fat accumulation (abdomen, dorsocervical "buffalo hump")</li>
+                        <li>Breast enlargement</li>
+                    </ul>
+                    
+                    <p><strong>Metabolic Complications:</strong></p>
+                    <ul>
+                        <li>Insulin resistance</li>
+                        <li>Dyslipidemia (increased triglycerides, increased LDL, decreased HDL)</li>
+                        <li>Increased cardiovascular risk</li>
+                    </ul>
+                    
+                    <p><strong>Risk Factors:</strong></p>
+                    <ul>
+                        <li>Age >40 years</li>
+                        <li>Longer duration of therapy</li>
+                        <li>Higher body mass index before therapy</li>
+                        <li>More severe HIV infection</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Localized Lipoatrophy</button>
+                <div class="toggle-content">
+                    <p><strong>Etiology:</strong></p>
+                    <ul>
+                        <li><strong>Iatrogenic</strong>: Injections (insulin, corticosteroids, vaccines, etc.)</li>
+                        <li><strong>Traumatic</strong>: Pressure, injury (lipoatrophia semicircularis)</li>
+                        <li><strong>Inflammatory</strong>: Panniculitis associated with autoimmune diseases</li>
+                        <li><strong>Idiopathic</strong>: Involutional lipoatrophy, lipodystrophia centrifugalis abdominalis infantilis</li>
+                    </ul>
+                    
+                    <p><strong>Key Clinical Features:</strong></p>
+                    <ul>
+                        <li>One or multiple depressed areas, usually on proximal extremities</li>
+                        <li>Size ranges from a few centimeters to >20cm in diameter</li>
+                        <li>No systemic manifestations</li>
+                    </ul>
+                    
+                    <h4>Specific Types:</h4>
+                    
+                    <p><strong>Involutional Lipoatrophy:</strong></p>
+                    <ul>
+                        <li>Idiopathic, non-inflammatory focal loss of fat</li>
+                        <li>Strong female predominance</li>
+                        <li>Focal oval areas 2-8cm in diameter</li>
+                        <li>Predominantly on buttocks and proximal extremities</li>
+                    </ul>
+                    
+                    <p><strong>Lipoatrophia Semicircularis:</strong></p>
+                    <ul>
+                        <li>Primarily in women 20-30 years old</li>
+                        <li>Symmetric, 4-8cm curvilinear horizontal depressions on anterolateral thighs</li>
+                        <li>Associated with pressure (leaning against furniture, etc.)</li>
+                        <li>Usually resolves spontaneously within 9 months to 4 years</li>
+                    </ul>
+                    
+                    <p><strong>Lipodystrophia Centrifugalis Abdominalis Infantilis:</strong></p>
+                    <ul>
+                        <li>Predominantly reported in East Asian children (Japanese, Korean, Chinese)</li>
+                        <li>Onset before 3 years of age</li>
+                        <li>Well-demarcated lipoatrophy with erythematous rim</li>
+                        <li>Begins on lower abdomen/groin or axillary region</li>
+                        <li>Spreads in a centrifugal fashion</li>
+                        <li>Often resolves spontaneously</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button class="toggle-button">Other Acquired Lipodystrophies</button>
+                <div class="toggle-content">
+                    <p><strong>Immune Checkpoint Inhibitor-Associated Lipodystrophy:</strong></p>
+                    <ul>
+                        <li>Associated with anti-PD-1 antibodies (nivolumab, pembrolizumab)</li>
+                        <li>Develops after at least 10 months of administration</li>
+                        <li>Associated with diabetes mellitus, insulin resistance, hypertriglyceridemia</li>
+                        <li>Persists despite discontinuation of medication</li>
+                    </ul>
+                    
+                    <p><strong>POEMS Syndrome-Associated Lipodystrophy:</strong></p>
+                    <ul>
+                        <li>Acquired partial lipodystrophy affecting the face</li>
+                        <li>Seen in up to half of patients with POEMS (polyneuropathy, organomegaly, endocrinopathy, monoclonal gammopathy, skin changes)</li>
+                        <li>Treatment of underlying paraproteinemia may arrest progression</li>
+                    </ul>
+                    
+                    <p><strong>Allogeneic Hematopoietic Stem Cell Transplantation-Associated Lipodystrophy:</strong></p>
+                    <ul>
+                        <li>Primarily in children</li>
+                        <li>Resembles FPLD with lipoatrophy of gluteal region and extremities</li>
+                        <li>Retention of fat in face and abdomen</li>
+                        <li>May reflect graft-versus-host reaction at adipocyte level</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CLINICAL FEATURES SECTION -->
+        <section id="clinical" class="section">
+            <h2>Clinical Features</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'congenital-tab')">Congenital Generalized</button>
+                <button class="tab-button" onclick="openTab(event, 'fpld-tab')">Familial Partial</button>
+                <button class="tab-button" onclick="openTab(event, 'agl-tab')">Acquired Generalized</button>
+                <button class="tab-button" onclick="openTab(event, 'apl-tab')">Acquired Partial</button>
+                <button class="tab-button" onclick="openTab(event, 'hiv-tab')">HIV/ART-Associated</button>
+            </div>
+            
+            <div id="congenital-tab" class="tab-content" style="display: block;">
+                <h3>Congenital Generalized Lipodystrophy Features</h3>
+                
+                <div class="high-yield">
+                    <h4>Lipodystrophic Features</h4>
+                    <ul>
+                        <li>Lack of fat in the buccal region, resulting in a cadaveric facies</li>
+                        <li>Near total absence of subcutaneous fat and other metabolically active tissues</li>
+                        <li>Preservation of "mechanical" fat deposits (types 1, 3, 4): orbit, palms, soles, tongue, breasts, vulva, periarticular and epidural regions</li>
+                        <li>Muscular body habitus with prominent superficial veins</li>
+                    </ul>
+                    
+                    <h4>Anabolic Features</h4>
+                    <ul>
+                        <li>Muscular hypertrophy with prominent superficial veins</li>
+                        <li>Acromegalic facial and acral features</li>
+                        <li>Voracious appetite</li>
+                        <li>Increased basal metabolic rate</li>
+                        <li>Accelerated growth</li>
+                        <li>Advanced bone and dental age</li>
+                    </ul>
+                    
+                    <h4>Metabolic Disturbances</h4>
+                    <ul>
+                        <li>Severe insulin resistance and hyperinsulinemia from early infancy</li>
+                        <li>Diabetes mellitus (evident by adolescence)</li>
+                        <li>Hypertriglyceridemia</li>
+                        <li>Low HDL-cholesterol</li>
+                        <li>Low plasma leptin levels</li>
+                    </ul>
+                    
+                    <h4>Other Manifestations</h4>
+                    <ul>
+                        <li>Acanthosis nigricans (often extensive)</li>
+                        <li>Hypertrichosis</li>
+                        <li>Hypertrophic cardiomyopathy</li>
+                        <li>Hepatomegaly, cirrhosis</li>
+                        <li>Organomegaly (tonsils, adenoids, lymph nodes, spleen, etc.)</li>
+                        <li>Type 2: Intellectual disability</li>
+                        <li>Type 4: Cardiac conduction defects, pyloric stenosis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="fpld-tab" class="tab-content">
+                <h3>Familial Partial Lipodystrophy Features</h3>
+                
+                <p><strong>FPLD2 (Dunnigan type - most common)</strong></p>
+                <ul>
+                    <li>Normal childhood followed by progressive loss of subcutaneous fat after puberty</li>
+                    <li>Fat loss in extremities and trunk (anterior > posterior)</li>
+                    <li>Compensatory accumulation of excess fat in face/neck</li>
+                    <li>Acromegalic facies with submental fullness ("double chin")</li>
+                    <li>Muscular appearance with accentuation of subcutaneous veins</li>
+                    <li>Insulin resistance and diabetes mellitus in young adulthood</li>
+                    <li>Hypertriglyceridemia (more severe in women)</li>
+                    <li>Clinical features and metabolic complications more severe in women</li>
+                </ul>
+                
+                <p><strong>FPLD with Mandibuloacral Dysplasia</strong></p>
+                <ul>
+                    <li>Mandibular and clavicular hypoplasia</li>
+                    <li>Short stature</li>
+                    <li>High-pitched voice</li>
+                    <li>Mottled hyperpigmentation</li>
+                    <li>Alopecia</li>
+                    <li>Atrophy of extremity skin</li>
+                    <li>Nail dysplasia</li>
+                    <li>Scleroderma-like skin lesions</li>
+                </ul>
+            </div>
+            
+            <div id="agl-tab" class="tab-content">
+                <h3>Acquired Generalized Lipodystrophy Features</h3>
+                
+                <p>Clinical features similar to congenital variant but with later onset (childhood/adolescence) and milder presentation:</p>
+                
+                <ul>
+                    <li>Fat loss involving face, trunk, and extremities</li>
+                    <li>Preservation of bone marrow fat (key differentiating factor from CGL)</li>
+                    <li>May be preceded by panniculitis</li>
+                    <li>Associated autoimmune diseases (juvenile dermatomyositis, Sjögren syndrome, etc.)</li>
+                    <li>Acanthosis nigricans</li>
+                    <li>Hepatic steatosis/cirrhosis</li>
+                    <li>Insulin resistance and diabetes mellitus</li>
+                    <li>Hypertriglyceridemia</li>
+                </ul>
+                
+                <div class="board-tip">
+                    <p>The three proposed subtypes of AGL (panniculitic, autoimmune, and idiopathic) differ in their clinical and metabolic presentation. The panniculitic variant tends to have less severe fat loss and metabolic derangements compared to the autoimmune and idiopathic variants.</p>
+                </div>
+            </div>
+            
+            <div id="apl-tab" class="tab-content">
+                <h3>Acquired Partial Lipodystrophy Features</h3>
+                
+                <ul>
+                    <li>Onset typically in childhood/adolescence, often after viral illness</li>
+                    <li>Progressive loss of subcutaneous fat in cephalocaudal direction</li>
+                    <li>Sunken eyes due to loss of retro-orbital and periorbital fat</li>
+                    <li>Loss of buccal and temporal fat (progeria-like appearance)</li>
+                    <li>Sparing of lower extremities (often with fat hypertrophy)</li>
+                    <li>Low C3 levels and presence of C3 nephritic factor</li>
+                    <li>Mesangiocapillary glomerulonephritis in ~20% of patients</li>
+                    <li>Associated autoimmune diseases</li>
+                    <li>Metabolic syndrome less common than in other lipodystrophies</li>
+                </ul>
+            </div>
+            
+            <div id="hiv-tab" class="tab-content">
+                <h3>HIV/ART-Associated Lipodystrophy Features</h3>
+                
+                <ul>
+                    <li>Develops 2 months to 2 years after ART initiation</li>
+                    <li>Peripheral lipoatrophy:
+                        <ul>
+                            <li>Facial fat loss (sunken cheeks)</li>
+                            <li>Loss of subcutaneous fat in extremities</li>
+                            <li>Prominent veins</li>
+                            <li>Loss of buttock fat</li>
+                        </ul>
+                    </li>
+                    <li>Central lipohypertrophy:
+                        <ul>
+                            <li>Increased abdominal visceral fat</li>
+                            <li>Dorsocervical fat pad ("buffalo hump")</li>
+                            <li>Breast enlargement</li>
+                            <li>Lipomas (e.g., pubic area)</li>
+                        </ul>
+                    </li>
+                    <li>Metabolic complications:
+                        <ul>
+                            <li>Insulin resistance</li>
+                            <li>Dyslipidemia</li>
+                            <li>Increased cardiovascular risk</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <p>Different antiretroviral medications are associated with different patterns of fat redistribution. NRTIs (especially stavudine) are more likely to cause peripheral lipoatrophy, while PIs and INSTIs are more associated with central fat accumulation and weight gain.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PATHOLOGY SECTION -->
+        <section id="pathology" class="section">
+            <h2>Pathology Findings</h2>
+            
+            <div class="pathology-highlight">
+                <p>The histologic picture of lipodystrophy syndromes varies based on the type and stage of the disease. Generally, inherited forms show non-inflammatory changes, while acquired forms may show inflammatory changes, particularly in early stages.</p>
+            </div>
+            
+            <h3>Generalized Lipodystrophy</h3>
+            <ul>
+                <li>Complete or near-complete absence of subcutaneous fat</li>
+                <li>Dermis and fascia in direct apposition</li>
+                <li>Replacement of fat by collagen</li>
+                <li>In acquired generalized lipodystrophy (type 1), there may be a lobular panniculitis, especially in early stages</li>
+            </ul>
+            
+            <h3>Acquired Partial Lipodystrophy</h3>
+            <p>Two histologic patterns have been recognized:</p>
+            <ol>
+                <li><strong>Non-inflammatory</strong> with involutional changes of the fat</li>
+                <li><strong>Inflammatory</strong> in the form of a lobular panniculitis with lymphocytes, lipophages, and plasma cells</li>
+            </ol>
+            <p>Whether these patterns are stage-related remains unclear.</p>
+            
+            <h3>Involutional Lipoatrophy</h3>
+            <p>Two histologic subtypes:</p>
+            <ol>
+                <li>Lobules with faintly acidophilic, small fat cells that retract from one another and surrounding connective tissue; resembles embryonic fat</li>
+                <li>Small atrophic adipocytes with normal cell membrane surrounded by prominent vasculature; collapsed lobules with orientation parallel to skin surface</li>
+            </ol>
+            <p>Features common to both subtypes:</p>
+            <ul>
+                <li>Absence of inflammation</li>
+                <li>Absence of foreign body giant cells and lipophages</li>
+                <li>CD68+ macrophages can be demonstrated with immunohistochemistry</li>
+                <li>Acid mucopolysaccharide deposition and fibrosis may be seen</li>
+            </ul>
+            
+            <h3>Lipodystrophia Centrifugalis Abdominalis Infantilis</h3>
+            <ul>
+                <li>Diminution of subcutaneous fat with scant or absent inflammation</li>
+                <li>Erythematous rim corresponds to lymphohistiocytic infiltrate</li>
+                <li>Fibrosis and thickening of septae within subcutis</li>
+                <li>Myxoid changes in remaining adipocytes</li>
+            </ul>
+            
+            <div class="board-tip">
+                <p>For the boards, remember that bone marrow fat is preserved in acquired generalized lipodystrophy but absent in congenital generalized lipodystrophy types 1 and 2. This can be an important differentiating feature when evaluating a patient with generalized fat loss.</p>
+            </div>
+        </section>
+        
+        <!-- DIFFERENTIAL DIAGNOSIS SECTION -->
+        <section id="differential" class="section">
+            <h2>Differential Diagnosis</h2>
+            
+            <p>When evaluating patients with suspected lipodystrophy, consider other conditions that can present with similar patterns of fat loss or metabolic abnormalities:</p>
+            
+            <div class="differential-grid">
+                <div class="differential-item">
+                    <h3>Leprechaunism (Donohue syndrome)</h3>
+                    <p>Presents with generalized lipodystrophy, insulin resistance, acanthosis nigricans, and hirsutism but differs from CGL by:</p>
+                    <ul>
+                        <li>Elfin facies</li>
+                        <li>Severe intrauterine growth retardation</li>
+                        <li>Prominent nipples</li>
+                        <li>Cutis laxa</li>
+                        <li>Mutations in insulin receptor gene</li>
+                        <li>Death during infancy</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-item">
+                    <h3>SHORT Syndrome</h3>
+                    <p>(Short stature, Hyperextensible joints, Ocular depression, Rieger anomaly, Teething delay)</p>
+                    <ul>
+                        <li>Congenital lipoatrophy of face and upper body</li>
+                        <li>Intrauterine growth retardation</li>
+                        <li>Delayed bone age</li>
+                        <li>PIK3R1 mutations</li>
+                        <li>Dysmorphic facies (triangular shape, micrognathia, deep-set eyes)</li>
+                        <li>Rare to absent metabolic abnormalities</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-item">
+                    <h3>Progeria-Type Syndromes</h3>
+                    <ul>
+                        <li>Limb lipoatrophy</li>
+                        <li>Cardiovascular disease and diabetes</li>
+                        <li>Muscle wasting</li>
+                        <li>Sclerodermatous changes</li>
+                        <li>Cataracts</li>
+                        <li>Premature aging signs</li>
+                        <li>Some have LMNA mutations (laminopathies)</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-item">
+                    <h3>Cushing Syndrome vs. FPLD2</h3>
+                    <p>Both can present with central obesity, but differ by:</p>
+                    <ul>
+                        <li>Cushing: Fat accumulation throughout trunk, no lipoatrophy of extremities</li>
+                        <li>FPLD2: Lipoatrophy of extremities with fat accumulation in face/neck</li>
+                        <li>Cushing: Purple striae, easy bruising, proximal myopathy</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-item">
+                    <h3>Simple Obesity vs. Lipodystrophy</h3>
+                    <p>Both associated with metabolic syndrome, but differ by:</p>
+                    <ul>
+                        <li>Obesity: Increased subcutaneous and visceral fat</li>
+                        <li>Lipodystrophy: Selective loss of subcutaneous fat</li>
+                        <li>Severity of metabolic complications often greater in lipodystrophy despite lower BMI</li>
+                    </ul>
+                </div>
+                
+                <div class="differential-item">
+                    <h3>Localized Lipodystrophy Differentials</h3>
+                    <ul>
+                        <li>Morphea</li>
+                        <li>Lupus panniculitis</li>
+                        <li>Atrophoderma of Pasini and Pierini</li>
+                        <li>Progressive hemifacial atrophy (Parry-Romberg syndrome)</li>
+                        <li>Poland syndrome (absence of breast and/or pectoralis muscle)</li>
+                        <li>Lipohypoplasia (e.g., Proteus syndrome)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <p>Whole-body MRI has been shown to assist in differentiating various subtypes of lipodystrophies based on the amount and extent of residual adipose tissue and the absence or preservation of marrow fat. This information, combined with clinical phenotype and genetic testing, improves diagnostic accuracy.</p>
+            </div>
+        </section>
+        
+        <!-- TREATMENT SECTION -->
+        <section id="treatment" class="section">
+            <h2>Treatment Approach</h2>
+            
+            <p>Therapeutic interventions for lipodystrophy syndromes focus on three aspects:</p>
+            <ol>
+                <li>Cosmetic concerns</li>
+                <li>Metabolic derangements</li>
+                <li>Systemic associations</li>
+            </ol>
+            
+            <div class="treatment-options">
+                <div class="treatment-card">
+                    <div class="treatment-title">Cosmetic Interventions</div>
+                    <ul>
+                        <li>Soft tissue fillers (temporary)</li>
+                        <li>Autologous fat transplantation (temporary)</li>
+                        <li>Solid synthetic volumetric midfacial implants (more durable)</li>
+                        <li>Conservative approach for pressure-induced or traumatic lipoatrophy (often resolves spontaneously)</li>
+                        <li>Liposuction and lipectomy for lipohypertrophy</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-title">Metabolic Management</div>
+                    <ul>
+                        <li>Metreleptin (recombinant human leptin) - FDA-approved for congenital or acquired generalized lipodystrophy</li>
+                        <li>Insulin sensitizers (thiazolidinediones, metformin)</li>
+                        <li>Antidiabetic agents (GLP-1 agonists, SGLT-2 inhibitors)</li>
+                        <li>Lipid-lowering drugs (fibrates, omega-3 fatty acids, niacin, statins)</li>
+                        <li>Bariatric surgery for refractory metabolic disease</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-title">HIV/ART-Associated Lipodystrophy</div>
+                    <ul>
+                        <li>Switching to newer antiretroviral agents</li>
+                        <li>Surgical correction of facial lipoatrophy</li>
+                        <li>Management of metabolic complications</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-title">Acquired Partial Lipodystrophy</div>
+                    <ul>
+                        <li>Treatment of underlying autoimmune disease</li>
+                        <li>Monitoring for MCGN II</li>
+                        <li>IVIg (may contain neutralizing antibodies against C3NeF)</li>
+                        <li>Prophylaxis against Neisseria meningitidis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="high-yield">
+                <h3>Metreleptin Therapy</h3>
+                <p>Key points for board exams:</p>
+                <ul>
+                    <li>Recombinant methionyl human leptin (metreleptin) is FDA-approved for congenital or acquired generalized lipodystrophy</li>
+                    <li>Binds to hypothalamic leptin receptors</li>
+                    <li>Decreases appetite and increases insulin sensitivity</li>
+                    <li>Significant improvements in glycemic control, hyperlipidemia, hepatic steatosis, and proteinuria</li>
+                    <li>Generally well-tolerated with sustained effects</li>
+                    <li>Black box warning regarding risk of lymphoma</li>
+                    <li>Not approved for partial lipodystrophy syndromes</li>
+                </ul>
+            </div>
+            
+            <div class="board-tip">
+                <p>Emerging therapies that may appear on your exam include volanesorsen (antisense oligonucleotide targeting apoC-III), evinacumab (ANGPTL3 blocking antibody), and setmelanotide (melanocortin-4 receptor agonist) - all of which have shown efficacy in treating various aspects of lipodystrophy-associated metabolic abnormalities.</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Lipodystrophies: Chapter 101 - Comprehensive Board Review</p>
+            <p>Created for Saudi Board Dermatology Exam Preparation</p>
+        </footer>
+    </div>
+    
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Update active nav button
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('onclick').includes(sectionId)) {
+                    button.classList.add('active');
+                }
+            });
+        }
+        
+        function openTab(evt, tabId) {
+            // Hide all tab content
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show the selected tab and add active class to the button
+            document.getElementById(tabId).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Initialize toggle sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Infectious Granulomatous Dermatitides</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #e74c3c;
+            --warning: #f39c12;
+            --info: #9b59b6;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --white: #ffffff;
+            --gray: #95a5a6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--info));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .intro-box {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .nav-tabs li {
+            margin-right: 5px;
+        }
+
+        .nav-tabs button {
+            padding: 12px 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs button:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .nav-tabs button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background-color: var(--white);
+            border-radius: 0 10px 10px 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        h3 {
+            color: var(--info);
+            margin: 1.5rem 0 1rem;
+        }
+
+        h4 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(236, 240, 241, 0.5);
+        }
+
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .highlight-box {
+            background-color: rgba(155, 89, 182, 0.1);
+            border-left: 4px solid var(--info);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .high-yield {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .pearl {
+            background-color: rgba(241, 196, 15, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .toggle-content {
+            display: none;
+            padding: 1rem;
+            background-color: var(--light);
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+
+        .toggle-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--info);
+        }
+
+        .flashcard {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .flashcard-question {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .flashcard-answer {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light);
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: var(--info);
+        }
+
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-item h4 {
+            color: var(--white);
+            background-color: var(--primary);
+            padding: 10px;
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--info);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark);
+            color: var(--white);
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs button {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .comparison-item {
+                min-width: 100%;
+            }
+        }
+
+        /* Custom styles for specific disease tabs */
+        #sarcoidosis-tab button.active {
+            background-color: #e67e22;
+        }
+        
+        #granuloma-annulare-tab button.active {
+            background-color: #27ae60;
+        }
+        
+        #aegcg-tab button.active {
+            background-color: #8e44ad;
+        }
+        
+        #necrobiosis-lipoidica-tab button.active {
+            background-color: #d35400;
+        }
+        
+        #crohn-tab button.active {
+            background-color: #16a085;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: var(--gray);
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
+        }
+
+        /* Quiz styles */
+        .quiz-container {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-question {
+            margin-bottom: 1.5rem;
+        }
+
+        .options {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .option {
+            padding: 10px 15px;
+            background-color: var(--light);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .option.selected {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .option.correct {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .option.incorrect {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .result-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .result-message.correct {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .result-message.incorrect {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Memory aid styles */
+        .memory-aid {
+            background-color: rgba(52, 152, 219, 0.1);
+            border: 2px dashed var(--primary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+
+        .memory-aid h4 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            right: -14px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -14px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tab indicator */
+        .tab-progress {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--light);
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .progress-dot.active {
+            background-color: var(--primary);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after {
+                left: 15px;
+            }
+        }
+
+        /* Hover tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--info);
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--dark) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Non-Infectious Granulomatous Dermatitides</h1>
+            <div class="subtitle">A Comprehensive Interactive Guide for Saudi Board Exam Preparation</div>
+        </header>
+
+        <div class="intro-box">
+            <h2>Introduction to Granulomatous Diseases</h2>
+            <p>Granulomatous diseases may be defined as having an inflammatory cutaneous infiltrate in which histiocytes are the preponderant inflammatory cells. This interactive guide covers the major non-infectious granulomatous dermatitides you need to master for your board exam.</p>
+            
+            <div class="memory-aid">
+                <h4>Memory Aid: "SANGCLIF"</h4>
+                <p>To remember the major non-infectious granulomatous dermatitides:</p>
+                <ul>
+                    <li><strong>S</strong>arcoidosis</li>
+                    <li><strong>A</strong>nnular Elastolytic Giant Cell Granuloma</li>
+                    <li><strong>N</strong>ecrobiosis Lipoidica</li>
+                    <li><strong>G</strong>ranuloma Annulare</li>
+                    <li><strong>C</strong>utaneous Crohn Disease</li>
+                    <li><strong>L</strong>esions with Foreign Bodies</li>
+                    <li><strong>I</strong>nterstitial Granulomatous Dermatitis</li>
+                    <li><strong>F</strong>oreign Body Granulomas</li>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="nav-tabs">
+            <li><button class="tablink active" onclick="openTab('overview')">Overview</button></li>
+            <li><button class="tablink" onclick="openTab('sarcoidosis')">Sarcoidosis</button></li>
+            <li><button class="tablink" onclick="openTab('granuloma-annulare')">Granuloma Annulare</button></li>
+            <li><button class="tablink" onclick="openTab('aegcg')">AEGCG</button></li>
+            <li><button class="tablink" onclick="openTab('necrobiosis-lipoidica')">Necrobiosis Lipoidica</button></li>
+            <li><button class="tablink" onclick="openTab('crohn')">Cutaneous Crohn</button></li>
+            <li><button class="tablink" onclick="openTab('igd-pngd')">IGD & PNGD</button></li>
+            <li><button class="tablink" onclick="openTab('comparisons')">Comparisons</button></li>
+            <li><button class="tablink" onclick="openTab('quiz')">Quiz</button></li>
+        </ul>
+
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+            <h2>Clinical Overview of Major Non-Infectious Granulomatous Dermatitides</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Sarcoidosis</th>
+                        <th>Granuloma Annulare</th>
+                        <th>AEGCG</th>
+                        <th>Necrobiosis Lipoidica</th>
+                        <th>Cutaneous Crohn</th>
+                        <th>Rheumatoid Nodule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Average age (years)</td>
+                        <td>25-35, 45-65</td>
+                        <td>&lt;30</td>
+                        <td>50-70</td>
+                        <td>30</td>
+                        <td>35</td>
+                        <td>40-50</td>
+                    </tr>
+                    <tr>
+                        <td>Sex predilection</td>
+                        <td>Female</td>
+                        <td>Female</td>
+                        <td>Female</td>
+                        <td>Female</td>
+                        <td>Female</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>Racial/ethnic predilection in US</td>
+                        <td>African-American</td>
+                        <td>None</td>
+                        <td>Caucasian</td>
+                        <td>None</td>
+                        <td>Ashkenazi Jews</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Sites</td>
+                        <td>Symmetric on face, neck, upper trunk, extremities</td>
+                        <td>Hands, feet, extensor aspects of extremities</td>
+                        <td>Face, neck, forearms (sites of chronic sun exposure)</td>
+                        <td>Anterior and lateral aspects of shins</td>
+                        <td>Anogenital region, buttocks, lower > upper extremities</td>
+                        <td>Juxta-articular areas, especially elbows and hands</td>
+                    </tr>
+                    <tr>
+                        <td>Appearance</td>
+                        <td>Protean; most commonly red-brown or violaceous papules and plaques</td>
+                        <td>Papules coalescing into annular plaques</td>
+                        <td>Annular plaques</td>
+                        <td>Plaques with elevated borders, telangiectasias centrally</td>
+                        <td>Dusky erythema, lymphedema, ulceration, vegetating plaques</td>
+                        <td>Skin-colored, firm, mobile subcutaneous nodules</td>
+                    </tr>
+                    <tr>
+                        <td>Size of lesions</td>
+                        <td>0.2 to >5 cm</td>
+                        <td>1-3 mm papules, annular plaques usually <5 cm</td>
+                        <td>2 to >10 cm</td>
+                        <td>3 to >10 cm</td>
+                        <td>Variable</td>
+                        <td>1-3 cm</td>
+                    </tr>
+                    <tr>
+                        <td>No. of lesions</td>
+                        <td>Variable</td>
+                        <td>1-10</td>
+                        <td>1-10</td>
+                        <td>1-10</td>
+                        <td>1-5</td>
+                        <td>1-10</td>
+                    </tr>
+                    <tr>
+                        <td>Associations</td>
+                        <td>Systemic manifestations of sarcoidosis; can be drug-induced (e.g. IFN, TNF inhibitors) or reaction pattern to underlying lymphoma</td>
+                        <td>Possible diabetes mellitus, thyroid disease, or hyperlipidemia; rare reports of HIV infection, malignancy</td>
+                        <td>Actinic damage</td>
+                        <td>Diabetes mellitus</td>
+                        <td>Intestinal Crohn disease</td>
+                        <td>Rheumatoid arthritis</td>
+                    </tr>
+                    <tr>
+                        <td>Special clinical characteristics</td>
+                        <td>Develop within sites of trauma including scars and tattoos</td>
+                        <td>Central hyperpigmentation</td>
+                        <td>Central atrophy and hypopigmentation</td>
+                        <td>Yellow-brown atrophic centers, ulceration</td>
+                        <td>Draining sinuses and fistulas</td>
+                        <td>Occasional ulceration, especially at sites of trauma</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="high-yield">
+                <h3>Histologic Features: High-Yield Comparison</h3>
+                <p>Understanding the histopathologic differences between these conditions is critical for your exam. Key distinguishing features include:</p>
+                <ul>
+                    <li><strong>Sarcoidosis:</strong> "Naked" tubercles (granulomas with few peripheral lymphocytes)</li>
+                    <li><strong>Granuloma Annulare:</strong> Palisading granulomas with mucin deposition and "blue" necrobiosis</li>
+                    <li><strong>AEGCG:</strong> Elastophagocytosis and elastolysis without mucin</li>
+                    <li><strong>Necrobiosis Lipoidica:</strong> "Layered" tiers of granulomatous inflammation with "red" necrobiosis</li>
+                    <li><strong>Cutaneous Crohn:</strong> Tuberculoid granulomas throughout dermis and sometimes subcutis</li>
+                </ul>
+            </div>
+
+            <div class="pearl">
+                <h3>Clinical Pearl: "Three A's of Granulomatous Diseases"</h3>
+                <p>When evaluating a granulomatous lesion, remember the "Three A's":</p>
+                <ol>
+                    <li><strong>Appearance:</strong> Morphology and distribution pattern</li>
+                    <li><strong>Associations:</strong> Systemic diseases and conditions</li>
+                    <li><strong>Analysis:</strong> Histopathologic features including necrosis, caseation, lymphocyte presence</li>
+                </ol>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('triage-algorithm')">Show Diagnostic Triage Algorithm</button>
+            <div id="triage-algorithm" class="toggle-content">
+                <h4>Algorithm for Histologic Diagnosis of Non-Infectious Granulomas</h4>
+                <ol>
+                    <li>First, evaluate for epithelioid granulomas
+                        <ul>
+                            <li>If caseation present: Consider tubercle</li>
+                            <li>If non-caseating with lymphocytic infiltrate: Consider Crohn's disease</li>
+                            <li>If plasma cells present: Consider syphilis infection</li>
+                        </ul>
+                    </li>
+                    <li>If "naked" granulomas (few lymphocytes): Consider sarcoidosis</li>
+                    <li>If appreciable lymphocytes: Consider Crohn disease or granulomatous slack skin</li>
+                    <li>If neutrophils present: Consider ruptured cyst or follicle</li>
+                    <li>For palisaded granulomas:
+                        <ul>
+                            <li>If superficial dermal infiltrate: Consider granuloma annulare</li>
+                            <li>If horizontal "tiers": Consider necrobiosis lipoidica</li>
+                            <li>If diffuse infiltrate with marked collagen alteration: Consider necrobiotic xanthogranuloma</li>
+                            <li>If elastophagocytosis: Consider annular elastolytic giant cell granuloma</li>
+                            <li>If subcutis involvement: Consider rheumatoid nodule</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- SARCOIDOSIS TAB -->
+        <div id="sarcoidosis" class="tab-content">
+            <h2>Sarcoidosis</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>A multisystem granulomatous disorder of unknown origin that most commonly involves the lungs</li>
+                    <li>Bimodal age distribution: peaks at 25-35 years and 45-65 years</li>
+                    <li>Female > Male predominance</li>
+                    <li>More common and severe in African Americans</li>
+                    <li>Cutaneous manifestations in up to 1/3 of patients</li>
+                </ul>
+            </div>
+
+            <h3>Clinical Features</h3>
+            <p>Cutaneous sarcoidosis presents with a wide variety of morphologies:</p>
+
+            <div class="high-yield">
+                <h4>Spectrum of Cutaneous Manifestations (High-Yield)</h4>
+                <p><strong>Common presentations:</strong></p>
+                <ul>
+                    <li>Papules - favor periorificial sites on face</li>
+                    <li>Plaques - favor trunk and extremities</li>
+                    <li>Lupus pernio - favors nose and central face</li>
+                    <li>Scar-associated - initial insult weeks to decades prior</li>
+                    <li>Tattoo-associated - favors sites of red and yellow pigments</li>
+                </ul>
+                <p><strong>Uncommon presentations:</strong></p>
+                <ul>
+                    <li>Annular, atrophic, lichenoid, psoriasiform</li>
+                    <li>Subcutaneous (Darier-Roussy) - favors extremities</li>
+                </ul>
+                <p><strong>Rare presentations:</strong></p>
+                <ul>
+                    <li>Alopecia, Angiolupoid (prominent telangiectasias within facial lesions, may mimic rosacea), erythrodermic, hypopigmented</li>
+                    <li>Ichthyosiform, micropapular, nail dystrophy</li>
+                    <li>Photodistributed/photo-exacerbated, ulcerative, verrucous</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Important Clinical Variants & Prognostic Indicators</h4>
+                <p><strong>Good Prognosis:</strong></p>
+                <ul>
+                    <li><strong>Löfgren syndrome:</strong> Erythema nodosum, hilar adenopathy, fever, arthritis, acute iritis</li>
+                    <li><strong>Darier-Roussy disease:</strong> Subcutaneous sarcoidosis</li>
+                </ul>
+                <p><strong>Poor Prognosis:</strong></p>
+                <ul>
+                    <li><strong>Lupus pernio:</strong> Violaceous plaques on nose and cheeks
+                        <ul>
+                            <li>Associated with chronic sarcoidosis of lungs (75%) and upper respiratory tract (50%)</li>
+                            <li>Associated with cystic degeneration of bones of distal phalanges</li>
+                            <li>Rarely involutes, resolves with scarring</li>
+                        </ul>
+                    </li>
+                    <li><strong>Heerfordt syndrome:</strong> Parotid gland enlargement, Anterior uveitis, fever, cranial nerve palsy</li>
+                </ul>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Multisystem granulomatous disease with hyperactivity of cell-mediated immunity</li>
+                <li>Primarily Th1-driven with increased production of IL-2, IL-12, IL-18, and IFN-γ</li>
+                <li>TNF-α release by macrophages helps drive granuloma formation</li>
+                <li>INF-α and GM-CSF promote fusion of activated macrophages into multinucleated giant cells</li>
+                <li>Genetic predisposition: 80x risk in monozygotic twins, familial relative risk of 4.7</li>
+            </ul>
+
+            <div class="pearl">
+                <h4>Triggers of Sarcoidosis (Exam Pearl)</h4>
+                <ul>
+                    <li><strong>Infections:</strong> TB, acne, viruses, mycoplasma</li>
+                    <li><strong>Materials:</strong> Organic and inorganic (wood, building materials)</li>
+                    <li><strong>Malignancy:</strong> Lymphoma</li>
+                    <li><strong>Medications:</strong>
+                        <ul>
+                            <li>TNF-α inhibitors (especially etanercept)</li>
+                            <li>IFN-α</li>
+                            <li>HAART</li>
+                            <li>BRAF inhibitors (vemurafenib)</li>
+                            <li>Immune checkpoint inhibitors (ipilimumab, nivolumab)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Systemic Manifestations</h3>
+            <button class="toggle-btn" onclick="toggleContent('systemic-manifestations')">Show Systemic Manifestations Table</button>
+            <div id="systemic-manifestations" class="toggle-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Organ</th>
+                            <th>% of patients affected</th>
+                            <th>Clinical manifestations/findings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lungs</td>
+                            <td>90-95%</td>
+                            <td>Dyspnea, non-productive cough, pulmonary infiltrates, fibrosis, restrictive lung disease</td>
+                        </tr>
+                        <tr>
+                            <td>Lymph nodes</td>
+                            <td>30-40% (peripheral), 90% (hilar)</td>
+                            <td>Lymphadenopathy/enlarged hilar and/or paratracheal LN</td>
+                        </tr>
+                        <tr>
+                            <td>Eyes</td>
+                            <td>25-30%</td>
+                            <td>Uveitis (often anterior uveitis), conjunctivitis, sicca symptoms</td>
+                        </tr>
+                        <tr>
+                            <td>Liver/spleen</td>
+                            <td>10-20%</td>
+                            <td>Hepatomegaly and/or splenomegaly, elevated LFTs, thrombocytopenia</td>
+                        </tr>
+                        <tr>
+                            <td>Heart</td>
+                            <td>25% (5% clinically relevant)</td>
+                            <td>Palpitations, sudden death, CHF, arrhythmias, cardiomegaly</td>
+                        </tr>
+                        <tr>
+                            <td>CNS and peripheral nervous system</td>
+                            <td>10-20%</td>
+                            <td>Neuropathies - cranial, spinal cord, peripheral, small fiber</td>
+                        </tr>
+                        <tr>
+                            <td>Upper respiratory tract</td>
+                            <td>5-10%</td>
+                            <td>Sinusitis, nasal congestion, stridor, parotiditis</td>
+                        </tr>
+                        <tr>
+                            <td>Bones</td>
+                            <td>5-10%</td>
+                            <td>Usually asymptomatic, lytic bone lesions</td>
+                        </tr>
+                        <tr>
+                            <td>Joints/muscles</td>
+                            <td>5-10%</td>
+                            <td>Arthritis, weakness, severe fatigue, myopathy</td>
+                        </tr>
+                        <tr>
+                            <td>Bone marrow</td>
+                            <td>50%</td>
+                            <td>Lymphopenia, leukopenia, eosinophilia, hypergammaglobulinemia, anemia</td>
+                        </tr>
+                        <tr>
+                            <td>Kidneys</td>
+                            <td>10-40%</td>
+                            <td>Nephrolithiasis, hypercalciuria, renal dysfunction</td>
+                        </tr>
+                        <tr>
+                            <td>Endocrine</td>
+                            <td>5-10%</td>
+                            <td>Pituitary or thyroid dysfunction, hypercalcemia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Pathology</h3>
+            <ul>
+                <li>Histopathologic hallmark: "Naked tubercles" - epithelioid cell granulomas with few peripheral lymphocytes</li>
+                <li>Absence of caseation (though fibrinoid deposition may be seen in up to 10%)</li>
+                <li>Multinucleated giant cells (Langhans type) with peripheral nuclei</li>
+                <li>May contain:
+                    <ul>
+                        <li>Asteroid bodies (eosinophilic stellate inclusions) - represent engulfed collagen</li>
+                        <li>Schaumann bodies (laminated basophilic inclusions) - likely degenerating lysosomes</li>
+                    </ul>
+                </li>
+                <li>Up to 20% of biopsies may contain polarizable material</li>
+            </ul>
+
+            <div class="flashcard" onclick="toggleFlashcard('flashcard1')">
+                <div class="flashcard-question">What are the dermoscopic features of sarcoidosis?</div>
+                <div id="flashcard1" class="flashcard-answer">
+                    <p>Dermoscopic features include:</p>
+                    <ul>
+                        <li>Small translucent yellow to orange globules</li>
+                        <li>Linear vessels</li>
+                        <li>Central scar-like areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Diagnosis</h3>
+            <ul>
+                <li>Diagnosis of exclusion, requires compatible clinical and histologic findings</li>
+                <li>Elevated ACE level in ~60% of patients (more useful for monitoring than diagnosis)
+                    <ul>
+                        <li>ACE level >2-3 times upper limit of normal is more suggestive of sarcoidosis</li>
+                    </ul>
+                </li>
+                <li>Special stains for acid-fast and fungal organisms should be obtained</li>
+                <li>Polarization to exclude foreign material (though 20% of sarcoidal granulomas may have foreign material)</li>
+                <li>Historical test: Kveim-Siltzbach test - injection of sarcoidal spleen material causing characteristic non-caseating granuloma formation</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Key Differential Diagnoses</h4>
+                <ul>
+                    <li>Infectious granulomas: Tuberculoid leprosy, lupus vulgaris (TB)</li>
+                    <li>Foreign body reactions: Zirconium, beryllium, silica, tattoo ink, soft tissue fillers</li>
+                    <li>Other conditions: Granulomatous mycosis fungoides, Hodgkin disease, granulomatous rosacea, cutaneous Crohn disease</li>
+                    <li>In children: Blau syndrome (autosomal dominant mutation in NOD2/CARD15 gene)</li>
+                </ul>
+            </div>
+
+            <h3>Treatment</h3>
+            <button class="toggle-btn" onclick="toggleContent('sarcoidosis-treatment')">Show Treatment Options</button>
+            <div id="sarcoidosis-treatment" class="toggle-content">
+                <p><strong>First-line:</strong></p>
+                <ul>
+                    <li>Topical or intralesional corticosteroids (for limited cutaneous disease)</li>
+                    <li>Systemic corticosteroids (for systemic disease): 0.5-1 mg/kg/day for 4-6 weeks, followed by slow taper</li>
+                </ul>
+                <p><strong>Second-line (widespread cutaneous disease):</strong></p>
+                <ul>
+                    <li>Hydroxychloroquine (200-400 mg/day)</li>
+                    <li>Chloroquine (250-500 mg/day)</li>
+                    <li>Methotrexate (10-25 mg weekly)</li>
+                    <li>Minocycline (200 mg/day)</li>
+                </ul>
+                <p><strong>Third-line (recalcitrant disease):</strong></p>
+                <ul>
+                    <li>TNF-α inhibitors (infliximab, adalimumab) - paradoxically can also trigger sarcoidosis</li>
+                    <li>Thalidomide (50-300 mg/day)</li>
+                    <li>Newer options: Apremilast, tofacitinib</li>
+                </ul>
+            </div>
+
+            <div class="high-yield">
+                <h4>High-Yield Review Points</h4>
+                <ul>
+                    <li>Age 20-60, F>M, blacks more common and severe</li>
+                    <li>30% have skin findings, 90% have lung involvement</li>
+                    <li>Lupus pernio has poor prognosis; papular, EN, and subcutaneous nodules have good prognosis</li>
+                    <li>Look for involvement of scars and tattoos (diagnostic clue)</li>
+                    <li>Remember potential drug triggers (TNF-α inhibitors, IFN-α, HAART, BRAF inhibitors, checkpoint inhibitors)</li>
+                    <li>Hypercalcemia: Granulomas secrete alpha-1-hydroxylase enzyme leading to increased 1,25-dihydroxycalciferol</li>
+                    <li>Corticosteroids (topical, intralesional, systemic) are mainstay of therapy</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GRANULOMA ANNULARE TAB -->
+        <div id="granuloma-annulare" class="tab-content">
+            <h2>Granuloma Annulare (GA)</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Small grouped papules assuming an annular configuration, often in a symmetrical and acral distribution</li>
+                    <li>Seen primarily in children and young adults (two-thirds of patients with GA are <30 years)</li>
+                    <li>Female:male ratio approximately 2:1</li>
+                    <li>Usually self-limited with 50% resolving within 2 years (40% recurrence rate)</li>
+                </ul>
+            </div>
+
+            <h3>Clinical Variants</h3>
+            <div class="high-yield">
+                <h4>Major Clinical Forms (High-Yield)</h4>
+                <ol>
+                    <li><strong>Localized GA:</strong> Most common form
+                        <ul>
+                            <li>Mainly affects children</li>
+                            <li>Primarily on extremities (60% isolated to hands and arms)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generalized GA:</strong>
+                        <ul>
+                            <li>Mainly affects adults</li>
+                            <li>Widespread, symmetrically distributed lesions on trunk and extremities</li>
+                            <li>Poor response to therapy</li>
+                            <li>Associated with HLA-BW35, dyslipidemia (45%), diabetes (20%)</li>
+                            <li>Associations: HIV, thyroid disorders, malignancy</li>
+                        </ul>
+                    </li>
+                    <li><strong>Subcutaneous GA:</strong>
+                        <ul>
+                            <li>Primarily affects children <6 years old</li>
+                            <li>Develops on dorsum of foot, often after trauma</li>
+                            <li>Presents as painless, skin-colored nodules</li>
+                            <li>Often called "pseudorheumatoid nodule"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Perforating GA:</strong>
+                        <ul>
+                            <li>Occurs in up to 5% of patients</li>
+                            <li>Papules with central umbilication, scale-crust or focal ulceration</li>
+                            <li>Primarily on dorsal hands and fingers</li>
+                            <li>Results in scarring</li>
+                        <li>Perforating GA may develop within herpes zoster scars</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Less Common Variants:</strong></p>
+                <ul>
+                    <li><strong>Patch GA:</strong> Erythematous patches, often on extremities and trunk; interstitial pattern on histology</li>
+                    <li><strong>Linear GA</strong></li>
+                    <li><strong>Follicular pustular form</strong></li>
+                    <li><strong>Papular umbilicated GA</strong> (in children)</li>
+                    <li><strong>Photosensitive GA</strong> (in HIV)</li>
+                </ul>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Etiology unknown; possible triggers include:
+                    <ul>
+                        <li>Trauma, insect bites, tuberculin skin testing, vaccination</li>
+                        <li>UV exposure, Borrelia and viral infections</li>
+                    </ul>
+                </li>
+                <li>Likely a delayed-type hypersensitivity reaction to an unknown antigen</li>
+                <li>Th1-driven inflammatory reaction with elevated IL-2R-positive lymphocytes, IFN-γ-producing lymphocytes, and TNF</li>
+                <li>One ultrastructural study suggests primary disorder of elastic tissue injury</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Important Associations & Triggers</h4>
+                <ol>
+                    <li><strong>Systemic diseases:</strong>
+                        <ul>
+                            <li>Diabetes mellitus (esp. with chronic relapsing generalized GA)</li>
+                            <li>Thyroid disorders</li>
+                            <li>Dyslipidemia</li>
+                        </ul>
+                    </li>
+                    <li><strong>Infections:</strong>
+                        <ul>
+                            <li>HIV (especially photodistributed GA)</li>
+                            <li>Hepatitis B and C</li>
+                        </ul>
+                    </li>
+                    <li><strong>Medications:</strong>
+                        <ul>
+                            <li>TNF-α inhibitors</li>
+                            <li>Amlodipine</li>
+                            <li>Allopurinol</li>
+                            <li>Diclofenac</li>
+                            <li>Gold</li>
+                        </ul>
+                    </li>
+                    <li><strong>Malignancy:</strong> Paraneoplastic reaction to solid tumors, lymphomas
+                        <ul>
+                            <li>Often atypical presentation with painful lesions in unusual locations (palms and soles)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Pathology</h3>
+            <p>The key to histopathologic diagnosis is the presence of mucin plus the identification of histiocytes in one of two patterns:</p>
+            <ul>
+                <li><strong>Interstitial pattern (50-70% of cases):</strong>
+                    <ul>
+                        <li>Scattered histiocytes distributed between collagen fibers</li>
+                        <li>Minimal collagen degeneration</li>
+                        <li>Mucin deposition between collagen bundles (highlight with Alcian blue and colloidal iron stains)</li>
+                    </ul>
+                </li>
+                <li><strong>Palisading pattern (25-50% of cases):</strong>
+                    <ul>
+                        <li>Palisading granulomas with central connective tissue degeneration</li>
+                        <li>Surrounded by histiocytes and lymphocytes</li>
+                        <li>Abundant mucin in center of granuloma</li>
+                        <li>May contain fibrin, neutrophils, and nuclear dust</li>
+                    </ul>
+                </li>
+                <li>Other histologic patterns include:
+                    <ul>
+                        <li><strong>Sarcoidal pattern</strong></li>
+                        <li><strong>Perforating pattern:</strong> Transfollicular/transepidermal elimination of granulomatous inflammation</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="pearl">
+                <h4>Clinical Course and Prognosis</h4>
+                <ul>
+                    <li>Most cases of localized GA resolve spontaneously without sequelae</li>
+                    <li>50% disappear within 2 years</li>
+                    <li>40% recurrence rate, usually at the same site</li>
+                    <li>Perforating GA results in scarring</li>
+                    <li>Generalized GA has prolonged course</li>
+                    <li>May result in anetoderma, middermal elastolysis</li>
+                    <li>Photosensitive distribution may heal with scarring and milia formation</li>
+                </ul>
+            </div>
+
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li><strong>Localized GA:</strong> Annular sarcoidosis, AEGCG, annular lichen planus, tinea corporis</li>
+                <li><strong>Papular GA:</strong> Flat warts, secondary syphilis, eruptive xanthomas</li>
+                <li><strong>Subcutaneous GA:</strong> Rheumatoid nodules, tendinous xanthomas, epithelioid sarcoma, subcutaneous sarcoidosis</li>
+                <li><strong>Perforating GA:</strong> Primary perforating disorders, perforating calcinosis cutis, perforating gout, molluscum contagiosum</li>
+            </ul>
+
+            <h3>Treatment</h3>
+            <button class="toggle-btn" onclick="toggleContent('ga-treatment')">Show Treatment Options</button>
+            <div id="ga-treatment" class="toggle-content">
+                <p><strong>First-line approaches:</strong></p>
+                <ul>
+                    <li>Observation (given self-limited nature)</li>
+                    <li>High-potency topical corticosteroids with/without occlusion</li>
+                    <li>Intralesional corticosteroid injections</li>
+                    <li>Cryosurgery</li>
+                </ul>
+                <p><strong>Second-line (for extensive disease):</strong></p>
+                <ul>
+                    <li>Hydroxychloroquine (6 mg/kg/day) or chloroquine (3 mg/kg/day)</li>
+                    <li>Niacinamide (nicotinamide; 500 mg TID)</li>
+                    <li>PUVA (psoralen plus UVA) or UVA1</li>
+                </ul>
+                <p><strong>Third-line options:</strong></p>
+                <ul>
+                    <li>Dapsone (100 mg/day)</li>
+                    <li>Isotretinoin (0.5-0.75 mg/kg/day)</li>
+                    <li>Methotrexate</li>
+                    <li>TNF-α inhibitors (adalimumab, infliximab)</li>
+                    <li>Photodynamic therapy</li>
+                    <li>Lasers: CO₂, pulsed dye (585 nm), excimer (308 nm)</li>
+                </ul>
+            </div>
+
+            <div class="flashcard" onclick="toggleFlashcard('flashcard2')">
+                <div class="flashcard-question">What is the effect of biopsy on granuloma annulare lesions?</div>
+                <div id="flashcard2" class="flashcard-answer">
+                    <p>In some cases, biopsy of a GA lesion can lead to resolution of the lesion — a phenomenon known as reverse Köbnerization.</p>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>High-Yield Review Points</h4>
+                <ul>
+                    <li>Most patients with GA are under 30 years of age with F>M ratio of 2:1</li>
+                    <li>Generalized GA (defined as ≥10 lesions) has associations with diabetes, dyslipidemia, thyroid disease, and potentially malignancy</li>
+                    <li>JAAD 2022 study showed paraneoplastic generalized GA occurs in 3.5% of cases, with hematologic malignancies (28.6%) and breast cancer (19.3%) being most common</li>
+                    <li>Atypical presentations with painful lesions in unusual locations should raise suspicion for paraneoplastic GA</li>
+                    <li>Two major histologic patterns: interstitial (70%, most common) and palisading (with mucin)</li>
+                    <li>50% resolve spontaneously within 2 years; 40% recurrence rate</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- AEGCG TAB -->
+        <div id="aegcg" class="tab-content">
+            <h2>Annular Elastolytic Giant Cell Granuloma (AEGCG)</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Also known as actinic granuloma</li>
+                    <li>Asymptomatic annular plaques, predominantly on the head and neck and other sun-exposed sites</li>
+                    <li>Elevated erythematous border with slightly atrophic, hypopigmented center</li>
+                    <li>Predominantly affects middle-aged women over 40 years</li>
+                    <li>Persistent condition that responds poorly to therapy</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Clinical Features</h3>
+                <ul>
+                    <li>Medium to large annular plaques with raised erythematous border (3-5 mm)</li>
+                    <li>Slightly atrophic, hypopigmented center</li>
+                    <li>Distribution mainly in chronically sun-exposed areas:
+                        <ul>
+                            <li>Neck</li>
+                            <li>Face</li>
+                            <li>Upper trunk</li>
+                            <li>Arms</li>
+                        </ul>
+                    </li>
+                    <li>Absence of yellow color and telangiectasias (unlike necrobiosis lipoidica)</li>
+                    <li>Absence of associated alopecia</li>
+                    <li>Lesions last for months to years</li>
+                    <li>Spontaneous remission may occur, leaving mottled dyspigmentation or normal-appearing skin</li>
+                    <li>Conjunctival lesions with similar features have been described</li>
+                </ul>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Debate exists whether AEGCG is a distinct entity or a variant of GA</li>
+                <li>Pathogenesis may be related to inflammation precipitated by actinic damage</li>
+                <li>T lymphocytes involved are predominantly of the helper subset</li>
+                <li>Suggests cell-mediated immunologic response to a weakly antigenic determinant on altered elastotic fibers</li>
+                <li>Destruction of elastic tissue observed in classic GA and necrobiosis lipoidica as well</li>
+                <li>A few patients with AEGCG plus diabetes mellitus, NL, and/or sarcoidosis have been reported</li>
+                <li>Rare associations with lymphoma or leukemia</li>
+            </ul>
+
+            <div class="memory-aid">
+                <h4>Remembering AEGCG vs. GA vs. NL</h4>
+                <p><strong>The "ENA Triangle" for Distinguishing AEGCG from Similar Conditions:</strong></p>
+                <ul>
+                    <li><strong>E</strong>lastophagocytosis - hallmark of AEGCG, may be seen in GA/NL but less frequently</li>
+                    <li><strong>N</strong>o mucin - unlike GA which has abundant mucin</li>
+                    <li><strong>A</strong>bsence of elastic fibers in affected areas - pathognomonic finding on special stains</li>
+                </ul>
+            </div>
+
+            <h3>Pathology</h3>
+            <div class="high-yield">
+                <h4>Histopathologic Hallmarks</h4>
+                <ul>
+                    <li>Nonpalisading granulomatous infiltrate in the mid to upper dermis</li>
+                    <li>Infiltrate consists of:
+                        <ul>
+                            <li>Histiocytes</li>
+                            <li>Foreign body type multinucleated giant cells (with haphazardly arranged nuclei)</li>
+                            <li>Lymphocytes</li>
+                        </ul>
+                    </li>
+                    <li>Absence of altered collagen, mucin, or lipid deposition</li>
+                    <li><strong>Key finding:</strong> Elastic fibers identified adjacent to and within giant cells (elastophagocytosis)</li>
+                    <li>Asteroid bodies may be observed within multinucleated giant cells</li>
+                    <li><strong>Pathognomonic feature:</strong> Complete absence of elastic fibers in areas affected by granulomatous inflammation (demonstrate with Verhoeff-van Gieson stain)</li>
+                </ul>
+            </div>
+
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li><strong>Clinical:</strong>
+                    <ul>
+                        <li>Erythema annulare centrifugum (different distribution)</li>
+                        <li>Annular lichen planus</li>
+                        <li>Secondary syphilis (central hyperpigmentation)</li>
+                        <li>Tinea corporis</li>
+                        <li>Granulomatous infections</li>
+                        <li>Granuloma multiforme (Mkar disease) - occurs in Africa</li>
+                    </ul>
+                </li>
+                <li><strong>Histopathologic:</strong>
+                    <ul>
+                        <li>Granulomatous slack skin</li>
+                        <li>Mid-dermal elastolysis</li>
+                        <li>Anetoderma</li>
+                        <li>Acquired cutis laxa</li>
+                        <li>Foreign body reaction (polarization should be done to exclude foreign bodies)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Treatment</h3>
+            <ul>
+                <li>Persistent condition that often responds poorly to therapy</li>
+                <li>Treatment options overlap with those for GA and NL:
+                    <ul>
+                        <li>Topical or intralesional corticosteroids</li>
+                        <li>PUVA therapy</li>
+                    </ul>
+                </li>
+                <li>Variable and inconsistent responses to treatment</li>
+            </ul>
+
+            <div class="pearl">
+                <h4>Clinical Pearl: AEGCG vs. GA</h4>
+                <p>When differentiating AEGCG from GA, remember:</p>
+                <ul>
+                    <li>AEGCG occurs in older patients (>40) vs. GA in younger patients (most &lt;30)</li>
+                    <li>AEGCG favors sun-exposed sites vs. GA on extremities</li>
+                    <li>AEGCG has central hypopigmentation and atrophy vs. GA with central hyperpigmentation</li>
+                    <li>AEGCG shows elastophagocytosis and absent elastic fibers vs. GA with mucin deposition</li>
+                    <li>AEGCG responds poorly to therapy vs. GA which often resolves spontaneously</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NECROBIOSIS LIPOIDICA TAB -->
+        <div id="necrobiosis-lipoidica" class="tab-content">
+            <h2>Necrobiosis Lipoidica (NL)</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Characterized by yellow-brown, atrophic, telangiectatic plaques with violaceous rims</li>
+                    <li>Most common site is the anterior shins</li>
+                    <li>Ulceration occurs in approximately 1/3 of lesions, usually following trauma</li>
+                    <li>Associated with diabetes mellitus in 15-65% of cases</li>
+                    <li>Only 0.3% of diabetic patients develop NL</li>
+                    <li>Young to middle-aged adults, female:male ratio ~3:1</li>
+                </ul>
+            </div>
+
+            <h3>Clinical Features</h3>
+            <div class="high-yield">
+                <h4>Characteristic Presentation</h4>
+                <ul>
+                    <li>Yellow-brown, atrophic, telangiectatic plaques with an elevated violaceous rim</li>
+                    <li>Typically in the pretibial region</li>
+                    <li>Usually multiple and bilateral</li>
+                    <li>Lesions begin as small, firm, red-brown papules that gradually enlarge, then develop central epidermal atrophy</li>
+                    <li>Ulceration occurs in ~1/3 of lesions, usually following minor trauma</li>
+                    <li>Decreased sensation to pinprick and fine touch within plaques</li>
+                    <li>Hypohidrosis and partial alopecia can be observed</li>
+                    <li>Lesions may be asymptomatic or have pruritus, dysesthesia, or pain</li>
+                    <li>Rare development of squamous cell carcinoma within long-standing lesions</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Important Associations</h4>
+                <ul>
+                    <li><strong>Diabetes mellitus:</strong> 15-65% of NL patients have diabetes
+                        <ul>
+                            <li>No proven connection between glycemic control and likelihood of developing NL</li>
+                            <li>Diabetic patients with NL have higher rates of diabetes-related complications:
+                                <ul>
+                                    <li>Peripheral neuropathy</li>
+                                    <li>Retinopathy</li>
+                                    <li>Limited joint mobility</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Thyroid dysfunction:</strong> 13% of NL patients</li>
+                    <li><strong>Inflammatory bowel disease:</strong> Rare association</li>
+                </ul>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Exact cause remains unknown</li>
+                <li>Theories include:
+                    <ul>
+                        <li>Immunologically mediated vascular disease as primary cause of altered collagen</li>
+                        <li>Microangiopathic vessel changes in diabetic patients contributing to collagen degeneration</li>
+                        <li>Venous insufficiency and hyperlipidemia as potential triggers</li>
+                    </ul>
+                </li>
+                <li>Electron microscopy shows:
+                    <ul>
+                        <li>Decreased collagen concentration</li>
+                        <li>Loss of cross-striations of collagen fibrils</li>
+                        <li>Significant variation in diameter of individual fibrils</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="pearl">
+                <h4>Dermoscopic Findings</h4>
+                <ul>
+                    <li><strong>Early lesions:</strong> Comma-shaped vessels</li>
+                    <li><strong>Advanced lesions:</strong> Irregular pattern of arborizing vessels</li>
+                    <li><strong>Whitish areas:</strong> Correspond to degenerated collagen</li>
+                    <li><strong>Yellow to orange patches:</strong> Correspond to granulomatous inflammation</li>
+                </ul>
+            </div>
+
+            <h3>Pathology</h3>
+            <ul>
+                <li>Palpable inflammatory border shows diffuse palisaded and interstitial granulomatous dermatitis</li>
+                <li>Involves entire dermis and extends into subcutaneous fat septae</li>
+                <li><strong>Key finding:</strong> "Layered" tiers of granulomatous inflammation composed of histiocytes surrounding horizontal tiers of degenerated collagen</li>
+                <li>Histiocytes often multinucleated; collagen fibers have irregular sizes and shapes</li>
+                <li>In contrast to GA:
+                    <ul>
+                        <li>No significant mucin deposition within center of palisading granulomas</li>
+                        <li>More prominent endothelial cell swelling, fibrosis, and hyalinization</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li>Granuloma annulare</li>
+                <li>Necrobiotic xanthogranuloma</li>
+                <li>Sarcoidosis</li>
+                <li>Diabetic dermopathy</li>
+                <li>Lipodermatosclerosis</li>
+                <li>Granulomatous infections (leprosy, tertiary syphilis, dimorphic fungal infections)</li>
+            </ul>
+
+            <div class="memory-aid">
+                <h4>Distinguishing NL from GA and Sarcoidosis</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>NL</th>
+                            <th>GA</th>
+                            <th>Sarcoidosis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Color</td>
+                            <td>Yellow-brown</td>
+                            <td>Flesh-colored to pink</td>
+                            <td>Red-brown to violaceous</td>
+                        </tr>
+                        <tr>
+                            <td>Atrophy</td>
+                            <td>Marked</td>
+                            <td>Minimal to none</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Telangiectasias</td>
+                            <td>Prominent</td>
+                            <td>Absent</td>
+                            <td>Can be present in angiolupoid variant</td>
+                        </tr>
+                        <tr>
+                            <td>Ulceration</td>
+                            <td>Common (1/3)</td>
+                            <td>Rare (except perforating)</td>
+                            <td>Uncommon</td>
+                        </tr>
+                        <tr>
+                            <td>Histology</td>
+                            <td>"Layered" granulomas, no mucin</td>
+                            <td>Palisading granulomas with mucin</td>
+                            <td>"Naked" tubercles</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Treatment</h3>
+            <button class="toggle-btn" onclick="toggleContent('nl-treatment')">Show Treatment Options</button>
+            <div id="nl-treatment" class="toggle-content">
+                <p><strong>First-line approaches:</strong></p>
+                <ul>
+                    <li>Potent topical corticosteroids (including under occlusion) for early lesions</li>
+                    <li>Intralesional corticosteroids injected into active borders of established lesions</li>
+                    <li>Injection into a rim of clinically normal skin around expanding plaques to halt progression</li>
+                    <li>Topical tacrolimus 0.1% ointment</li>
+                </ul>
+                <p><strong>For ulcerations:</strong></p>
+                <ul>
+                    <li>Topical GM-CSF</li>
+                    <li>Bovine collagen</li>
+                    <li>Tretinoin gel (0.025% BID) for lesional atrophy</li>
+                    <li>Avoidance of trauma and local care</li>
+                </ul>
+                <p><strong>Systemic options (based on case series):</strong></p>
+                <ul>
+                    <li>Antimalarials</li>
+                    <li>Niacinamide</li>
+                    <li>Mycophenolate mofetil</li>
+                    <li>Doxycycline</li>
+                    <li>Colchicine</li>
+                    <li>Methotrexate</li>
+                    <li>Thalidomide</li>
+                    <li>TNF-α inhibitors (for recalcitrant ulcerated lesions)</li>
+                    <li>Cyclosporine (for severe ulcerations)</li>
+                </ul>
+                <p><strong>Other modalities:</strong></p>
+                <ul>
+                    <li>Topical PUVA therapy (~50% improvement)</li>
+                    <li>UVA1 phototherapy</li>
+                    <li>Fractional CO2 laser</li>
+                    <li>Photodynamic therapy</li>
+                </ul>
+                <p><strong>Surgical options:</strong></p>
+                <ul>
+                    <li>Excision to deep fascia or periosteum (to minimize recurrence)</li>
+                    <li>Split-thickness skin grafting following excision</li>
+                </ul>
+            </div>
+
+            <div class="flashcard" onclick="toggleFlashcard('flashcard3')">
+                <div class="flashcard-question">What is the natural course of necrobiosis lipoidica?</div>
+                <div id="flashcard3" class="flashcard-answer">
+                    <p>Necrobiosis lipoidica tends to be chronic and persistent. Spontaneous remission occurs in only about 17% of patients after an average of 8-12 years. Control of blood glucose levels in diabetic patients usually does not have a significant effect on the course of NL.</p>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>High-Yield Review Points</h4>
+                <ul>
+                    <li>Young to middle-aged adults, F>M ratio of 3:1</li>
+                    <li>Associated with DM in 15-65% of patients, but only 0.3% of diabetic patients develop NL</li>
+                    <li>Average age at presentation: 25 years for diabetic patients, 45 years for non-diabetic patients</li>
+                    <li>Yellow-brown, atrophic, telangiectatic plaques with violaceous border, typically on shins</li>
+                    <li>Ulceration in 1/3 of lesions, usually after trauma</li>
+                    <li>Histologic "layered" tiers of granulomatous inflammation</li>
+                    <li>First-line therapy: Topical/intralesional corticosteroids</li>
+                    <li>Spontaneous remission is rare (17% after 8-12 years)</li>
+                    <li>Rare development of squamous cell carcinoma in chronic lesions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CUTANEOUS CROHN TAB -->
+        <div id="crohn" class="tab-content">
+            <h2>Cutaneous Crohn Disease</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Erythematous plaques, lymphedema, and knife-like ulcerations most commonly in the anogenital region</li>
+                    <li>Non-caseating granulomatous skin lesions not contiguous with intestinal Crohn disease referred to as "metastatic"</li>
+                    <li>Approximately 20% of patients with cutaneous lesions have no preceding diagnosis of gastrointestinal Crohn disease</li>
+                    <li>Mean age of onset is 35 years, with two-thirds of patients being women</li>
+                </ul>
+            </div>
+
+            <h3>Clinical Features</h3>
+            <div class="high-yield">
+                <h4>Mucocutaneous Manifestations</h4>
+                <p>Mucocutaneous findings occur in 20-45% of Crohn disease patients and can be subdivided into:</p>
+                <ol>
+                    <li><strong>Specific lesions:</strong>
+                        <ul>
+                            <li>Distant cutaneous (metastatic) Crohn disease</li>
+                            <li>Contiguous perianal Crohn disease</li>
+                            <li>Oral Crohn disease</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nonspecific/reactive dermatologic disorders:</strong>
+                        <ul>
+                            <li>Erythema nodosum</li>
+                            <li>Pyoderma gangrenosum</li>
+                            <li>Others: Cutaneous polyarteritis nodosa, erythema multiforme, small vessel vasculitis, etc.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nutritional skin changes</strong> due to malabsorption</li>
+                    <li><strong>Treatment-related side effects</strong></li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Characteristic Presentations</h4>
+                <ul>
+                    <li><strong>Genital involvement:</strong> Found in approximately two-thirds of children and one-half of adults
+                        <ul>
+                            <li>Labial, penile or scrotal erythema and/or lymphedema (can be dramatic)</li>
+                            <li>Linear or "knife-like" ulcerations within body folds (inguinal creases, perianal region, axillae)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Perianal involvement:</strong> Occurs in approximately one-third of intestinal Crohn patients
+                        <ul>
+                            <li>Sinus tracts, fissures, ulcers, and vegetating plaques</li>
+                            <li>Can extend to adjacent perineum, buttocks or abdomen</li>
+                            <li>Perianal skin tags in up to 40% of patients (secondary to lymphedema)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oral lesions:</strong> Found in 5-20% of Crohn patients
+                        <ul>
+                            <li>Cobblestoning of buccal mucosa</li>
+                            <li>Tiny gingival nodules, gingival hyperplasia</li>
+                            <li>Aphthae-like or linear, knife-like ulcers</li>
+                            <li>Pyostomatitis vegetans</li>
+                            <li>Cheilitis granulomatosa, diffuse oral swelling</li>
+                            <li>Indurated fissuring of the lower lip</li>
+                        </ul>
+                    </li>
+                    <li><strong>Non-genital disease:</strong> Dusky erythematous plaques, often followed by ulceration, draining sinuses, and fistulas
+                        <ul>
+                            <li>Lower extremities and soles (38%)</li>
+                            <li>Abdomen and trunk (24%)</li>
+                            <li>Upper extremities and palms (15%)</li>
+                            <li>Face and lips (11%)</li>
+                            <li>Flexural areas (8%)</li>
+                            <li>Generalized distribution (4%)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pearl">
+                <h4>Clinical Pearl: "Saxophone Penis"</h4>
+                <p>A characteristic finding in male patients with genital Crohn disease is marked penile lymphedema, sometimes referred to as "saxophone penis" due to its distinctive appearance.</p>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Multiple genetic abnormalities can lead to exaggerated T-cell response to commensal enteric bacteria</li>
+                <li>Defective microbial clearance after breaks in mucosal barrier</li>
+                <li>Alteration in gut flora balance (dysbiosis)</li>
+                <li>Patients with variants in TRAF3IP2 (a psoriasis susceptibility gene) may have greater risk of cutaneous involvement</li>
+                <li>Like psoriasis, Crohn disease is a predominantly Th1- and Th17-mediated disease</li>
+                <li>Elevated levels of IL-23 and IL-17 within involved tissues</li>
+            </ul>
+
+            <h3>Pathology</h3>
+            <ul>
+                <li>Nodular, noncaseating, epithelioid tubercles with surrounding lymphocytes in superficial and deep dermis</li>
+                <li>May extend into subcutaneous fat</li>
+                <li>Key histopathologic clue: Combination of lichenoid and granulomatous inflammation plus granulomatous perivasculitis</li>
+            </ul>
+
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li>Cutaneous sarcoidosis</li>
+                <li>Mycobacterial infections</li>
+                <li>Deep fungal infections</li>
+                <li>Foreign body reactions</li>
+                <li>Pyoderma gangrenosum (ulcerated lesions)</li>
+                <li>For genital swelling and ulcerations:
+                    <ul>
+                        <li>Granuloma inguinale</li>
+                        <li>Schistosomiasis</li>
+                        <li>Hidradenitis suppurativa</li>
+                        <li>Chronic lymphedema due to obstruction</li>
+                    </ul>
+                </li>
+                <li>Lupus vulgaris (TB) - central necrosis within tubercles is a helpful distinguishing clue</li>
+            </ul>
+
+            <div class="memory-aid">
+                <h4>Distinguishing Cutaneous Crohn from Sarcoidosis</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Cutaneous Crohn</th>
+                            <th>Sarcoidosis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Distribution</td>
+                            <td>Anogenital region, lower extremities</td>
+                            <td>Face, neck, upper trunk, extremities</td>
+                        </tr>
+                        <tr>
+                            <td>Ulceration</td>
+                            <td>Common, often "knife-like"</td>
+                            <td>Rare (except in ulcerative variant)</td>
+                        </tr>
+                        <tr>
+                            <td>Lymphedema</td>
+                            <td>Common in genital disease</td>
+                            <td>Uncommon</td>
+                        </tr>
+                        <tr>
+                            <td>Histology</td>
+                            <td>Dense collections of lymphocytes, granulomatous perivasculitis</td>
+                            <td>"Naked" tubercles with few lymphocytes</td>
+                        </tr>
+                        <tr>
+                            <td>System involvement</td>
+                            <td>GI tract</td>
+                            <td>Lungs (90%), lymph nodes, eyes, etc.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Treatment</h3>
+            <ul>
+                <li><strong>Localized disease:</strong>
+                    <ul>
+                        <li>Topical or intralesional corticosteroids</li>
+                        <li>Topical calcineurin inhibitors</li>
+                    </ul>
+                </li>
+                <li><strong>First-line systemic therapy:</strong>
+                    <ul>
+                        <li>Oral metronidazole (250 mg TID for at least 4 months)</li>
+                    </ul>
+                </li>
+                <li><strong>More extensive disease:</strong>
+                    <ul>
+                        <li>Systemic corticosteroids</li>
+                        <li>Sulfasalazine</li>
+                        <li>Azathioprine</li>
+                        <li>6-mercaptopurine</li>
+                        <li>TNF-α inhibitors (infliximab, adalimumab)</li>
+                        <li>Thalidomide</li>
+                    </ul>
+                </li>
+                <li><strong>Surgical considerations:</strong>
+                    <ul>
+                        <li>Often complicated by wound dehiscence and disease recurrence</li>
+                        <li>Can be considered for refractory disease</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Important Clinical Notes</h4>
+                <ul>
+                    <li>Cutaneous Crohn disease tends to be chronic</li>
+                    <li>Its severity is not related to the activity of intestinal disease</li>
+                    <li>Based on a large retrospective series, cutaneous involvement may be indicative of colonic rather than ileal involvement</li>
+                    <li>No consistent correlation exists between mucocutaneous disease activity and degree of gastrointestinal involvement</li>
+                    <li>Approximately 20% of patients with cutaneous Crohn have no preceding diagnosis of intestinal disease</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- IGD & PNGD TAB -->
+        <div id="igd-pngd" class="tab-content">
+            <h2>Interstitial Granulomatous Dermatitis (IGD) and Palisaded Neutrophilic and Granulomatous Dermatitis (PNGD)</h2>
+            
+            <div class="card">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Granulomatous dermatitides presenting in the context of autoimmune disease</li>
+                    <li>Two major clinicopathologic patterns: IGD and PNGD</li>
+                    <li>Associated with rheumatoid arthritis, systemic lupus erythematosus, and other autoimmune conditions</li>
+                    <li>Often presents with symmetrical papules or plaques</li>
+                </ul>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <h4>Interstitial Granulomatous Dermatitis (IGD)</h4>
+                    <p><strong>Clinical features:</strong></p>
+                    <ul>
+                        <li>Annular plaques or linear cords (the "rope sign")</li>
+                        <li>Favor trunk, axillae, medial thighs, and groin</li>
+                        <li>Large areas of involvement can be seen</li>
+                        <li>Usually in women with RA, seronegative arthritis, or polyarthralgias</li>
+                        <li>Often associated with autoimmune thyroiditis</li>
+                    </ul>
+                    <p><strong>Histologic features:</strong></p>
+                    <ul>
+                        <li>Smaller "rosettes" of palisading histiocytes</li>
+                        <li>Surrounding tiny, discrete foci of degenerated collagen (piecemeal fragmentation)</li>
+                        <li>Dense, "bottom-heavy" dermal interstitial infiltrate</li>
+                        <li>Variable numbers of neutrophils and eosinophils</li>
+                        <li>No evidence of vasculitis</li>
+                        <li>Dermal mucin usually absent</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Palisaded Neutrophilic and Granulomatous Dermatitis (PNGD)</h4>
+                    <p><strong>Clinical features:</strong></p>
+                    <ul>
+                        <li>Skin-colored to erythematous papules</li>
+                        <li>Symmetrical distribution on extensor surfaces</li>
+                        <li>Particularly on elbows and fingers</li>
+                        <li>Central umbilication with crusts or perforation may be present</li>
+                        <li>Ulceration occasionally occurs</li>
+                        <li>Most often in patients with RA, systemic LE, or systemic vasculitis</li>
+                    </ul>
+                    <p><strong>Histologic features:</strong></p>
+                    <ul>
+                        <li><strong>Early lesions:</strong> Pandermal infiltrate of neutrophils, sometimes with focal leukocytoclastic vasculitis</li>
+                        <li><strong>Fully developed lesions:</strong> Zones of basophilic degenerated collagen surrounded by palisades of histiocytes, neutrophils, and nuclear debris</li>
+                        <li><strong>"Incomplete" early lesions:</strong> Focal basophilic collagen necrosis and histiocytes without orderly palisading</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Initial insult: Immune complex deposition on or around walls of small dermal blood vessels due to underlying disease</li>
+                <li>Leads to subacute or chronic neutrophil-rich small vessel vasculitis (more prominent in PNGD)</li>
+                <li>Impairs blood flow in a smoldering fashion (vs. abrupt vascular occlusion of classic vasculitis)</li>
+                <li>Results in degeneration of local collagen rather than acute necrosis</li>
+                <li>Degenerated collagen incites immune response resulting in palisading lymphohistiocytic infiltrate</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Interstitial Granulomatous Drug Reaction</h4>
+                <p>An important mimic of IGD and PNGD is the interstitial granulomatous drug reaction, which can be clinically and histologically similar.</p>
+                <p><strong>Common causative medications:</strong></p>
+                <ul>
+                    <li>Calcium channel blockers: diltiazem, verapamil, nifedipine</li>
+                    <li>ACE inhibitors: enalapril, lisinopril</li>
+                    <li>β-blockers: labetalol, metoprolol, atenolol, propranolol</li>
+                    <li>Furosemide</li>
+                    <li>HMG-CoA reductase inhibitors (statins): simvastatin, pravastatin, lovastatin</li>
+                    <li>Antihistamines: famotidine, cimetidine, ranitidine, brompheniramine</li>
+                    <li>TNF-α inhibitors: infliximab, etanercept, adalimumab</li>
+                    <li>Anakinra</li>
+                </ul>
+                <p><strong>Key point:</strong> Onset typically occurs after months to years of therapy with the culprit medication.</p>
+            </div>
+
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li><strong>Clinical differential for PNGD:</strong>
+                    <ul>
+                        <li>Perforating disorders</li>
+                        <li>Early rheumatoid nodules</li>
+                        <li>Accelerated rheumatoid nodulosis</li>
+                        <li>Papular granuloma annulare</li>
+                    </ul>
+                </li>
+                <li><strong>Histologic differential diagnosis:</strong>
+                    <ul>
+                        <li>Other palisaded granulomatous dermatitides: GA, necrobiosis lipoidica, rheumatoid nodules</li>
+                        <li>GA: More likely to have patchy infiltrate concentrated in upper dermis ("top heavy") and focal mucin deposition</li>
+                        <li>Rheumatoid nodules: Recognized by central eosinophilia (rather than basophilia) and predominantly subcutaneous location</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="memory-aid">
+                <h4>Spectrum of Granulomatous, Neutrophilic and Vasculitic Dermatoses in Rheumatologic Disorders</h4>
+                <ul>
+                    <li>Erythema elevatum diutinum</li>
+                    <li>Rheumatoid or other AI-CTD-associated vasculitis</li>
+                    <li>ANCA-associated vasculitis</li>
+                    <li>PNGD</li>
+                    <li>IGD</li>
+                    <li>Sweet syndrome</li>
+                    <li>Rheumatoid neutrophilic dermatitis</li>
+                    <li>Rheumatoid nodule</li>
+                </ul>
+            </div>
+
+            <h3>Treatment</h3>
+            <ul>
+                <li>High-potency topical or intralesional corticosteroids</li>
+                <li>Dapsone</li>
+                <li>Hydroxychloroquine</li>
+                <li>Treatment of the underlying disease can lead to resolution and prevent recurrences</li>
+                <li>If drug-induced, discontinuation of the causative medication usually leads to improvement</li>
+            </ul>
+
+            <div class="pearl">
+                <h4>Clinical Pearl: The "Rope Sign"</h4>
+                <p>The "rope sign" refers to the characteristic linear, cord-like subcutaneous induration sometimes seen in IGD, particularly on the trunk or lateral aspects of the thorax. This feature is highly suggestive of IGD in a patient with rheumatoid arthritis or other autoimmune disease.</p>
+            </div>
+        </div>
+
+        <!-- COMPARISONS TAB -->
+        <div id="comparisons" class="tab-content">
+            <h2>Key Comparative Features</h2>
+            
+            <h3>Histopathologic Comparison</h3>
+            <button class="toggle-btn" onclick="toggleContent('histo-comparison')">Show Histologic Features Table</button>
+            <div id="histo-comparison" class="toggle-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Sarcoidosis</th>
+                            <th>Granuloma annulare</th>
+                            <th>AEGCG</th>
+                            <th>Necrobiosis lipoidica</th>
+                            <th>Cutaneous Crohn</th>
+                            <th>IGD</th>
+                            <th>PNGD</th>
+                            <th>Rheumatoid nodule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typical location</td>
+                            <td>Superficial and deep dermis</td>
+                            <td>Superficial and mid dermis</td>
+                            <td>Superficial and mid dermis</td>
+                            <td>Superficial and deep dermis</td>
+                            <td>Superficial and deep dermis</td>
+                            <td>Mid and deep dermis</td>
+                            <td>Entire dermis</td>
+                            <td>Deep dermis, subcutis</td>
+                        </tr>
+                        <tr>
+                            <td>Granuloma pattern</td>
+                            <td>Tubercle with few peripheral lymphocytes ("naked")</td>
+                            <td>Palisading or interstitial; patchy with discrete foci</td>
+                            <td>Tuberculoid, nonpalisading</td>
+                            <td>Palisading, "layered tiers"</td>
+                            <td>Tubercle with surrounding lymphocytes</td>
+                            <td>Interstitial and small "rosettes" around single collagen fibers</td>
+                            <td>Palisading and interstitial; prominent neutrophils and leukocytoclasis</td>
+                            <td>Palisading</td>
+                        </tr>
+                        <tr>
+                            <td>Necrobiosis (altered collagen)</td>
+                            <td>No</td>
+                            <td>Yes ("blue")</td>
+                            <td>Yes ("red")</td>
+                            <td>Yes ("blue")</td>
+                            <td>No</td>
+                            <td>Yes ("blue")</td>
+                            <td>Yes ("blue")</td>
+                            <td>Yes ("red")</td>
+                        </tr>
+                        <tr>
+                            <td>Giant cells</td>
+                            <td>Yes</td>
+                            <td>Variable</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Variable</td>
+                            <td>Variable</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Elastolysis</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>Yes</td>
+                            <td>Variable</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>Variable</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Elastophagocytosis</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>Yes (key finding)</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Asteroid bodies</td>
+                            <td>Yes</td>
+                            <td>Variable</td>
+                            <td>Yes</td>
+                            <td>Variable</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>Variable</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Mucin</td>
+                            <td>No</td>
+                            <td>Yes (key finding)</td>
+                            <td>Minimal</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>Minimal</td>
+                            <td>Variable</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Extracellular lipid</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Vascular changes</td>
+                            <td>No</td>
+                            <td>Variable</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Clinical Pearls for Differentiation</h3>
+            <div class="highlight-box">
+                <h4>Top 10 Differentiating Features</h4>
+                <ol>
+                    <li><strong>Yellow-brown color with telangiectasias:</strong> Highly suggestive of necrobiosis lipoidica</li>
+                    <li><strong>Involvement of scars and tattoos:</strong> Classic for sarcoidosis</li>
+                    <li><strong>Photodistribution with central hypopigmentation/atrophy:</strong> Think AEGCG</li>
+                    <li><strong>"Knife-like" linear ulcers in body folds:</strong> Characteristic of cutaneous Crohn</li>
+                    <li><strong>Symmetric papules on extensor surfaces with umbilication:</strong> Consider PNGD</li>
+                    <li><strong>Linear cords ("rope sign") on trunk:</strong> Pathognomonic for IGD</li>
+                    <li><strong>Papular lesions gradually coalescing into annular plaques on dorsal hands:</strong> Classic for GA</li>
+                    <li><strong>Painful lesions in unusual locations (palms/soles) with malignancy history:</strong> Suspect paraneoplastic GA</li>
+                    <li><strong>Violaceous plaques on nose with chronic respiratory symptoms:</strong> Lupus pernio variant of sarcoidosis</li>
+                    <li><strong>Subcutaneous nodules in young child post-trauma:</strong> Consider subcutaneous GA ("pseudorheumatoid nodule")</li>
+                </ol>
+            </div>
+
+            <h3>Treatment Approach Comparison</h3>
+            <button class="toggle-btn" onclick="toggleContent('treatment-comparison')">Show Treatment Comparison Table</button>
+            <div id="treatment-comparison" class="toggle-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Treatment</th>
+                            <th>Sarcoidosis</th>
+                            <th>GA</th>
+                            <th>AEGCG</th>
+                            <th>NL</th>
+                            <th>Cutaneous Crohn</th>
+                            <th>IGD/PNGD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Topical corticosteroids</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Intralesional corticosteroids</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Systemic corticosteroids</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Antimalarials</td>
+                            <td>✓✓</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                        </tr>
+                        <tr>
+                            <td>Methotrexate</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Tetracyclines</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>TNF-α inhibitors</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓✓✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Thalidomide</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>PUVA</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                            <td>✓✓</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Dapsone</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓✓</td>
+                        </tr>
+                        <tr>
+                            <td>Metronidazole</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>✓✓✓</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Surgery</td>
+                            <td>-</td>
+                            <td>✓</td>
+                            <td>-</td>
+                            <td>✓✓</td>
+                            <td>✓</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Legend: ✓ = occasionally used, ✓✓ = commonly used, ✓✓✓ = first-line therapy, - = not typically used</p>
+            </div>
+
+            <h3>Diagnostic Algorithm</h3>
+            <div class="card">
+                <h4>Step-by-Step Approach to Granulomatous Lesions</h4>
+                <ol>
+                    <li><strong>Step 1: Clinical pattern recognition</strong>
+                        <ul>
+                            <li>Distribution, morphology, associated symptoms</li>
+                            <li>Underlying medical conditions (diabetes, autoimmune disease)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 2: Biopsy with appropriate stains</strong>
+                        <ul>
+                            <li>H&E, elastic tissue (Verhoeff-van Gieson), mucin (Alcian blue)</li>
+                            <li>Special stains to exclude infection (AFB, PAS, GMS)</li>
+                            <li>Polarization to exclude foreign material</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 3: Evaluate key histopathologic features</strong>
+                        <ul>
+                            <li>Granuloma pattern ("naked" vs. palisaded)</li>
+                            <li>Presence of necrobiosis, mucin, elastophagocytosis</li>
+                            <li>Vascular changes, lipid deposition</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 4: Correlate with clinical findings</strong>
+                        <ul>
+                            <li>Consider additional workup: ACE level, glucose, autoimmune panel, GI evaluation</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="flashcard" onclick="toggleFlashcard('flashcard-compare')">
+                <div class="flashcard-question">What are the key histological features that help differentiate GA vs. NL vs. AEGCG?</div>
+                <div id="flashcard-compare" class="flashcard-answer">
+                    <p><strong>Granuloma Annulare:</strong> Palisading granulomas with abundant central mucin deposition ("blue" necrobiosis)</p>
+                    <p><strong>Necrobiosis Lipoidica:</strong> "Layered" tiers of granulomatous inflammation, no significant mucin deposition, prominent vascular changes, more extensive collagen degeneration ("red" necrobiosis)</p>
+                    <p><strong>AEGCG:</strong> Non-palisading granulomas with elastophagocytosis and complete absence of elastic fibers in affected areas (demonstrate with elastic tissue stains)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZ TAB -->
+        <div id="quiz" class="tab-content">
+            <h2>Test Your Knowledge</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="q1">
+                    <h3>Question 1:</h3>
+                    <p>A 55-year-old female presents with asymptomatic annular plaques with raised erythematous borders and hypopigmented centers on the face and neck. Biopsy shows granulomas with giant cells containing elastic fibers and complete absence of elastic fibers in affected areas. What is the most likely diagnosis?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q1', 0)">Granuloma annulare</li>
+                        <li class="option" onclick="selectOption('q1', 1)">Annular elastolytic giant cell granuloma</li>
+                        <li class="option" onclick="selectOption('q1', 2)">Necrobiosis lipoidica</li>
+                        <li class="option" onclick="selectOption('q1', 3)">Sarcoidosis</li>
+                    </ul>
+                    <div class="result-message" id="result-q1"></div>
+                </div>
+
+                <div class="quiz-question" id="q2">
+                    <h3>Question 2:</h3>
+                    <p>Which of the following findings would be most suggestive of necrobiosis lipoidica rather than granuloma annulare?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q2', 0)">Mucin deposition in palisading granulomas</li>
+                        <li class="option" onclick="selectOption('q2', 1)">Elastophagocytosis</li>
+                        <li class="option" onclick="selectOption('q2', 2)">Yellow-brown atrophic plaques with telangiectasias</li>
+                        <li class="option" onclick="selectOption('q2', 3)">Involvement of knuckles and dorsal hands</li>
+                    </ul>
+                    <div class="result-message" id="result-q2"></div>
+                </div>
+
+                <div class="quiz-question" id="q3">
+                    <h3>Question 3:</h3>
+                    <p>A 32-year-old male presents with erythematous nodules and plaques on the penis with "knife-like" ulcerations in the inguinal creases. Biopsy shows non-caseating granulomas. No history of gastrointestinal symptoms. What is the most appropriate next step?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q3', 0)">Empiric treatment with topical corticosteroids</li>
+                        <li class="option" onclick="selectOption('q3', 1)">Serum ACE level</li>
+                        <li class="option" onclick="selectOption('q3', 2)">Tuberculin skin test</li>
+                        <li class="option" onclick="selectOption('q3', 3)">Gastrointestinal evaluation for Crohn disease</li>
+                    </ul>
+                    <div class="result-message" id="result-q3"></div>
+                </div>
+
+                <div class="quiz-question" id="q4">
+                    <h3>Question 4:</h3>
+                    <p>A 55-year-old woman with rheumatoid arthritis develops linear cord-like lesions on her trunk. Biopsy shows small "rosettes" of palisading histiocytes surrounding tiny discrete foci of degenerated collagen. What is the diagnosis?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q4', 0)">Rheumatoid nodule</li>
+                        <li class="option" onclick="selectOption('q4', 1)">Palisaded neutrophilic and granulomatous dermatitis</li>
+                        <li class="option" onclick="selectOption('q4', 2)">Interstitial granulomatous dermatitis</li>
+                        <li class="option" onclick="selectOption('q4', 3)">Granuloma annulare</li>
+                    </ul>
+                    <div class="result-message" id="result-q4"></div>
+                </div>
+
+                <div class="quiz-question" id="q5">
+                    <h3>Question 5:</h3>
+                    <p>A 30-year-old male with diabetes presents with red-brown to violaceous papules on his face and within old scars. Biopsy shows "naked tubercles" without necrosis. Which of the following is a poor prognostic indicator in this condition?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q5', 0)">Presence of erythema nodosum</li>
+                        <li class="option" onclick="selectOption('q5', 1)">Lupus pernio lesions on the nose</li>
+                        <li class="option" onclick="selectOption('q5', 2)">Subcutaneous nodules (Darier-Roussy disease)</li>
+                        <li class="option" onclick="selectOption('q5', 3)">Involvement of scars</li>
+                    </ul>
+                    <div class="result-message" id="result-q5"></div>
+                </div>
+
+                <div class="quiz-question" id="q6">
+                    <h3>Question 6:</h3>
+                    <p>Which of the following medications has been most strongly associated with inducing sarcoidosis or sarcoid-like granulomatous reactions?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q6', 0)">Methotrexate</li>
+                        <li class="option" onclick="selectOption('q6', 1)">Etanercept (TNF-α inhibitor)</li>
+                        <li class="option" onclick="selectOption('q6', 2)">Hydroxychloroquine</li>
+                        <li class="option" onclick="selectOption('q6', 3)">Metronidazole</li>
+                    </ul>
+                    <div class="result-message" id="result-q6"></div>
+                </div>
+
+                <div class="quiz-question" id="q7">
+                    <h3>Question 7:</h3>
+                    <p>A 27-year-old patient presents with annular plaques on the dorsal hands. You suspect granuloma annulare. Which of the following systemic associations is most concerning and requires further evaluation?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q7', 0)">Atypical, painful lesions on palms and soles</li>
+                        <li class="option" onclick="selectOption('q7', 1)">Presence of 10 or more lesions (generalized pattern)</li>
+                        <li class="option" onclick="selectOption('q7', 2)">Development within herpes zoster scars</li>
+                        <li class="option" onclick="selectOption('q7', 3)">Photodistributed lesions</li>
+                    </ul>
+                    <div class="result-message" id="result-q7"></div>
+                </div>
+
+                <div class="quiz-question" id="q8">
+                    <h3>Question 8:</h3>
+                    <p>Which histopathologic feature is pathognomonic for annular elastolytic giant cell granuloma (AEGCG)?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q8', 0)">Palisading granulomas</li>
+                        <li class="option" onclick="selectOption('q8', 1)">Complete absence of elastic fibers in affected areas</li>
+                        <li class="option" onclick="selectOption('q8', 2)">Mucin deposition</li>
+                        <li class="option" onclick="selectOption('q8', 3)">Layered tiers of granulomatous inflammation</li>
+                    </ul>
+                    <div class="result-message" id="result-q8"></div>
+                </div>
+
+                <div class="quiz-question" id="q9">
+                    <h3>Question 9:</h3>
+                    <p>A patient with rheumatoid arthritis presents with umbilicated papules on the extensor surfaces of the elbows. Biopsy shows zones of basophilic degenerated collagen surrounded by palisades of histiocytes with neutrophils and nuclear debris. What is the most likely diagnosis?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q9', 0)">Palisaded neutrophilic and granulomatous dermatitis</li>
+                        <li class="option" onclick="selectOption('q9', 1)">Granuloma annulare</li>
+                        <li class="option" onclick="selectOption('q9', 2)">Rheumatoid nodule</li>
+                        <li class="option" onclick="selectOption('q9', 3)">Perforating collagenosis</li>
+                    </ul>
+                    <div class="result-message" id="result-q9"></div>
+                </div>
+
+                <div class="quiz-question" id="q10">
+                    <h3>Question 10:</h3>
+                    <p>Which of the following is true regarding the relationship between necrobiosis lipoidica and diabetes mellitus?</p>
+                    <ul class="options">
+                        <li class="option" onclick="selectOption('q10', 0)">Nearly all patients with necrobiosis lipoidica have diabetes</li>
+                        <li class="option" onclick="selectOption('q10', 1)">Approximately 15-65% of NL patients have diabetes, but only 0.3% of diabetic patients develop NL</li>
+                        <li class="option" onclick="selectOption('q10', 2)">Control of blood glucose levels usually leads to resolution of NL lesions</li>
+                        <li class="option" onclick="selectOption('q10', 3)">NL rarely ulcerates in diabetic patients</li>
+                    </ul>
+                    <div class="result-message" id="result-q10"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created for Saudi Board Exam Preparation &copy; 2025</p>
+            <p>Remember: Granulomatous diseases are defined as having an inflammatory cutaneous infiltrate in which histiocytes are the preponderant inflammatory cells.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab navigation
+        function openTab(tabName) {
+            let i, tabcontent, tablinks;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            
+            // Find the tab button and add active class
+            for (i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].getAttribute("onclick").includes(tabName)) {
+                    tablinks[i].classList.add("active");
+                }
+            }
+        }
+
+        // Toggle content visibility
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // Flashcard functionality
+        function toggleFlashcard(flashcardId) {
+            const answer = document.getElementById(flashcardId);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+
+        // Quiz functionality
+        function selectOption(questionId, optionIndex) {
+            const question = document.getElementById(questionId);
+            const options = question.getElementsByClassName("option");
+            const resultMessage = document.getElementById("result-" + questionId);
+            
+            // Reset all options
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove("selected", "correct", "incorrect");
+            }
+            
+            // Select the clicked option
+            options[optionIndex].classList.add("selected");
+            
+            // Check if correct (hardcoded answers)
+            const answers = {
+                'q1': 1, // AEGCG
+                'q2': 2, // Yellow-brown atrophic plaques with telangiectasias
+                'q3': 3, // GI evaluation for Crohn
+                'q4': 2, // IGD
+                'q5': 1, // Lupus pernio
+                'q6': 1, // Etanercept
+                'q7': 0, // Atypical painful lesions on palms and soles
+                'q8': 1, // Complete absence of elastic fibers
+                'q9': 0, // PNGD
+                'q10': 1 // 15-65% of NL patients have diabetes
+            };
+            
+            if (optionIndex === answers[questionId]) {
+                options[optionIndex].classList.add("correct");
+                resultMessage.innerHTML = "Correct! Great job.";
+                resultMessage.classList.add("correct");
+                resultMessage.classList.remove("incorrect");
+            } else {
+                options[optionIndex].classList.add("incorrect");
+                options[answers[questionId]].classList.add("correct");
+                resultMessage.innerHTML = "Incorrect. The correct answer is highlighted.";
+                resultMessage.classList.add("incorrect");
+                resultMessage.classList.remove("correct");
+            }
+            
+            resultMessage.style.display = "block";
+        }
+
+        // Initialize first tab
+        document.addEventListener("DOMContentLoaded", function() {
+            // All tabs are already set with active/inactive in the HTML
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goltz Syndrome (FDH) - Board Review PowerPage</title>
+    <style>
+        :root {
+            --primary-color: #007A7A; /* Teal for main theme */
+            --secondary-color: #FFB800; /* Amber for highlights/pearls */
+            --accent-color: #D9534F; /* Soft red for warnings/differentials */
+            --bg-color: #f8f9fa;
+            --card-bg-color: #ffffff;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            font-size: 1.6em;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            opacity: 0.85;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            border-bottom: 1px dashed #eee;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: '🔹'; /* Or other suitable icon */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        .highlight-pearl {
+            background-color: #fff3cd; /* Light yellow for pearls */
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: var(--border-radius);
+        }
+        .highlight-pearl strong {
+            color: var(--secondary-color);
+        }
+
+        .mnemonic-box {
+            background-color: #e0f7fa; /* Light cyan */
+            border: 2px dashed var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        .mnemonic-box h3 {
+            color: var(--primary-color);
+            margin-top:0;
+        }
+        .mnemonic-box p {
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .differential-list li::before {
+            content: '🆚'; /* Versus icon */
+            color: var(--accent-color);
+        }
+
+        .management-list li::before {
+            content: '🤝'; /* Handshake for collaboration */
+        }
+
+        .test-list li::before {
+            content: '🔬'; /* Microscope for tests */
+        }
+
+        .key-finding {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .later-feature {
+            font-style: italic;
+            color: #555;
+        }
+        
+        .image-keywords {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .image-keywords strong {
+            color: var(--primary-color);
+        }
+        .image-keywords span {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            margin: 3px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .blaschko-highlight {
+            background: linear-gradient(45deg, #f0e68c, #fffacd); /* Khaki to LemonChiffon */
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .prognosis-section {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .codes-section {
+            font-size: 0.9em;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+        .codes-section strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+
+        /* Specific icons for lists */
+        .cutaneous-signs li::before { content: '🖐️'; }
+        .skeletal-signs li::before { content: '🦴'; }
+        .ocular-signs li::before { content: '👁️'; }
+        .other-signs li::before { content: '🧠'; }
+        .diagnostic-pearls li::before { content: '💡'; }
+        .management-pearls li::before { content: '🛠️'; }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Goltz Syndrome (Focal Dermal Hypoplasia)</h1>
+        <p>Your High-Yield Board Review PowerPage for FDH</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🚨 At a Glance: What is Goltz Syndrome?</h2>
+            <p>Focal Dermal Hypoplasia (FDH), or Goltz syndrome, is a <key-finding>rare X-linked dominant disorder</key-finding>. It primarily affects <key-finding>females</key-finding>. Sporadic cases in males occur due to post-zygotic mutations.</p>
+            <p>Think: <span class="blaschko-highlight">Lines of Blaschko</span> + Multisystem Involvement (Skin, Bones, Eyes primarily).</p>
+             <div class="image-keywords">
+                <strong>Key Visual Cues (from source images):</strong>
+                <span>Whorled configuration</span> <span>Hypoplastic phalanges</span> <span>Limb hypoplasia</span> <span>Skin atrophy</span> <span>Skin ulceration</span> <span>Aplasia cutis congenita</span> <span>Syndactyly</span> <span>Coloboma</span>
+            </div>
+        </div>
+
+        <div class="mnemonic-box">
+            <h3>Memory Anchor: "GOLTZ"</h3>
+            <p>
+                <strong>G</strong>aps in skin (Atrophy, Hypoplasia, Aplasia Cutis)<br>
+                <strong>O</strong>cular findings (Coloboma, Microphthalmia)<br>
+                <strong>L</strong>imbs & Lines (Syndactyly, Osteopathia Striata; Blaschko Lines)<br>
+                <strong>T</strong>elangiectasias & Fat Hernia<strong>T</strong>ions (Red-yellow nodules)<br>
+                <strong>Z</strong>ygotic (Post-zygotic mutations in males, X-linked dominant)
+            </p>
+        </div>
+
+        <div class="grid-container">
+
+            <div class="card">
+                <h2>👶 Clinical Presentation: Neonate & Infant</h2>
+                
+                <h3>🖐️ Key Cutaneous Signs (Follow <span class="blaschko-highlight">Blaschko Lines</span>!)</h3>
+                <ul class="cutaneous-signs">
+                    <li>Linear, streaky <key-finding>cutaneous atrophy</key-finding> with <key-finding>telangiectasias</key-finding> (trunk & extremities).</li>
+                    <li><key-finding>Ulcers</key-finding> at sites of congenital skin absence, healing with atrophy.</li>
+                    <li>Soft <key-finding>red-yellow nodules (fat herniations)</key-finding> along Blaschko lines.</li>
+                    <li><key-finding>Aplasia cutis congenita</key-finding> (can be present, rare).</li>
+                    <li>Absent or <key-finding>dystrophic nails</key-finding>.</li>
+                </ul>
+                <h3><span class="later-feature">Later Cutaneous Features:</span></h3>
+                <ul>
+                    <li>Hypo- and hyperpigmentation with fat herniation.</li>
+                    <li>Fleshy and vascular papillomas (mucosal, perioral, perigenital, intertriginous areas).</li>
+                    <li>Sparse hair.</li>
+                </ul>
+
+                <h3>🦴 Skeletal Abnormalities</h3>
+                <ul class="skeletal-signs">
+                    <li><key-finding>Syndactyly</key-finding> (most common).</li>
+                    <li>Polydactyly, oligodactyly (often with <key-finding>lobster-claw deformity</key-finding>).</li>
+                    <li>Asymmetry of trunk and limbs (<key-finding>Limb hypoplasia</key-finding>).</li>
+                    <li><span class="later-feature">X-ray (older patients):</span> Vertical striations in metaphysis of long bones (<key-finding>Osteopathia striata</key-finding>).</li>
+                </ul>
+
+                <h3>👁️ Ocular Abnormalities</h3>
+                <ul class="ocular-signs">
+                    <li><key-finding>Coloboma</key-finding> (iris, retina, optic nerve).</li>
+                    <li>Microphthalmia, anophthalmia.</li>
+                    <li>Strabismus.</li>
+                    <li>Aniridia.</li>
+                </ul>
+                
+                <h3>🧠 Other Potential Findings</h3>
+                <ul class="other-signs">
+                    <li>Intellectual disability (can be present).</li>
+                    <li>Dental anomalies (implying need for dental specialist).</li>
+                    <li>Central nervous system anomalies.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>💡 Diagnostic Pearls & Key Tests</h2>
+                <div class="highlight-pearl">
+                    <p><strong>Classic Clue:</strong> Cutaneous lesions following <span class="blaschko-highlight">Blaschko lines</span> are CLASSIC for FDH.</p>
+                </div>
+                <h3>Diagnostic Pearls</h3>
+                <ul class="diagnostic-pearls">
+                    <li><key-finding>Osteopathia striata</key-finding> on X-ray is a characteristic bony finding, but generally found in <span class="later-feature">older patients</span>, not neonates.</li>
+                    <li>Vascular lesions around mucocutaneous junctions are usually <span class="later-feature">not obvious in the neonatal period</span>.</li>
+                </ul>
+
+                <h3>🔬 Best Tests</h3>
+                <ul class="test-list">
+                    <li><strong>Skin Biopsy:</strong> Shows a <key-finding>decreased to absent dermis</key-finding> with a normal overlying epidermis. <key-finding>Adipose cells extend up to the epidermis</key-finding> (fat herniation).</li>
+                    <li><strong>Radiography (X-ray):</strong> Reveals <key-finding>osteopathia striata</key-finding> in long bones (especially metaphyses).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🔄 Differential Diagnosis & Pitfalls</h2>
+                <p>Be ready to differentiate Goltz from these conditions:</p>
+                <ul class="differential-list">
+                    <li>Incontinentia pigmenti (also X-linked, Blaschko lines; but different stages, skin biopsy distinct)</li>
+                    <li>Rothmund-Thomson syndrome (poikiloderma, skeletal, cataracts, but AR, photosensitivity)</li>
+                    <li>Conradi-Hünermann syndrome (chondrodysplasia punctata, ichthyosis, cataracts)</li>
+                    <li>Aplasia cutis congenita (isolated ACC vs. syndromic feature in Goltz)</li>
+                    <li>Nevus lipomatosus superficialis (fat herniation, but localized, not usually linear/Blaschkoid in the same way, no systemic features)</li>
+                    <li>Encephalocraniocutaneous lipomatosis (ipsilateral neurocutaneous findings, lipomas)</li>
+                    <li>Ectrodactyly-ectodermal dysplasia-clefting (EEC) syndrome (key triad, AD)</li>
+                </ul>
+                <div class="highlight-pearl" style="border-left-color: var(--accent-color); background-color: #fdecea;">
+                    <p><strong>Board Pitfall:</strong> Don't confuse the <span class="blaschko-highlight">Blaschko lines</span> of Goltz with Incontinentia Pigmenti without considering other features. Goltz has <key-finding>fat herniations</key-finding> and dermal hypoplasia; IP has distinct evolving stages (vesicular, verrucous, hyperpigmented, hypopigmented/atrophic).</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🛠️ Management & Prognosis</h2>
+                <h3>Management Pearls</h3>
+                <ul class="management-pearls">
+                    <li>Treatment is <key-finding>supportive</key-finding>.</li>
+                    <li>Requires a <key-finding>multidisciplinary team</key-finding>:
+                        <ul>
+                            <li>Dermatologist</li>
+                            <li>Ophthalmologist</li>
+                            <li>Dentist</li>
+                            <li>Orthopedic surgeon</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Therapy</h3>
+                <p>Supportive care tailored to the patient's specific anomalies.</p>
+
+                <div class="prognosis-section">
+                    <h3>Prognosis</h3>
+                    <ul>
+                        <li>Patients generally have a <key-finding>normal lifespan</key-finding>.</li>
+                        <li>May be handicapped by skeletal deformities.</li>
+                        <li>Skin, eye, teeth, CNS, and skeletal anomalies can have psychosocial consequences.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📚 Codes & References</h2>
+            <div class="codes-section">
+                <strong>ICD10CM:</strong> Q82.8 - Other specified congenital malformations of skin
+                <br>
+                <strong>SNOMEDCT:</strong> 205573006 - Focal dermal hypoplasia
+            </div>
+            <p style="font-size: 0.9em; margin-top: 15px;"><em>Key references from the source document include OMIM, Sacoor MF et al. (2005), Tejani Z et al. (2005), Terezhalmy GT et al. (2002), Kore-Eda S et al. (1995), Howell JB et al. (1989), Moore DJ et al. (1989).</em></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Content adapted from "GOLTZ syndrome.txt" for educational purposes. Last Updated (source): 12/18/2022.</p>
+        <p>This page is designed as a study aid and does not replace comprehensive medical texts or clinical judgment.</p>
+        <p>Original content source: VisualDx® (Copyrights noted in source: © 2017, © 2025)</p>
+    </footer>
+
+</body>
+</html>

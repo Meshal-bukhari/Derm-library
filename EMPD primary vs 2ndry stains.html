@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EMPD CK Profile Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f9;
+      padding: 20px;
+      color: #2c3e50;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1f4e79;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #1f4e79;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0f4f8;
+    }
+
+    .positive {
+      color: green;
+      font-weight: bold;
+    }
+
+    .negative {
+      color: red;
+      font-weight: bold;
+    }
+
+    .origin {
+      font-weight: bold;
+      background-color: #d6eaf8;
+    }
+
+    .note {
+      text-align: left;
+      font-style: italic;
+      background-color: #fcf3cf;
+    }
+  </style>
+</head>
+<body>
+
+<h2>CK7 / CK20 Profile: Primary vs. Secondary EMPD</h2>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Origin</th>
+    <th>CK7</th>
+    <th>CK20</th>
+    <th>Additional Markers / Notes</th>
+  </tr>
+  <tr>
+    <td>Primary EMPD</td>
+    <td class="origin">Cutaneous / Apocrine</td>
+    <td class="positive">Positive</td>
+    <td class="negative">Negative</td>
+    <td class="note">Often GCDFP-15 positive</td>
+  </tr>
+  <tr>
+    <td>Secondary EMPD</td>
+    <td class="origin">Gastrointestinal (Colorectal)</td>
+    <td class="negative">Negative</td>
+    <td class="positive">Positive</td>
+    <td class="note">Distinguished by CDX2 positivity</td>
+  </tr>
+  <tr>
+    <td>Secondary EMPD</td>
+    <td class="origin">Urothelial</td>
+    <td class="positive">Positive</td>
+    <td class="positive">Positive</td>
+    <td class="note">Characterized by Uroplakin-III expression</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listeriosis - Saudi Board Exam Prep</title>
+    <style>
+        :root {
+            --primary: #3a6ea5;
+            --secondary: #ff6b6b;
+            --tertiary: #6b47b8;
+            --highlight: #ffd166;
+            --success: #06d6a0;
+            --warning: #f9844a;
+            --danger: #ef476f;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-header i {
+            margin-right: 10px;
+            font-size: 1.6rem;
+        }
+        
+        .section-content {
+            padding: 20px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .card-header {
+            background: #f0f4f8;
+            padding: 12px 15px;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 1px solid #e3e8ed;
+        }
+        
+        .card-content {
+            padding: 15px;
+        }
+        
+        /* High-Yield Styles */
+        .high-yield {
+            background-color: rgba(255, 209, 102, 0.2);
+            border-left: 4px solid var(--highlight);
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .high-yield::before {
+            content: "HIGH YIELD";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--highlight);
+            color: var(--dark);
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-weight: bold;
+            border-bottom-left-radius: 6px;
+        }
+        
+        /* Risk Group Styles */
+        .risk-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .risk-group {
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+        }
+        
+        .risk-group.high {
+            background-color: rgba(239, 71, 111, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .risk-group.moderate {
+            background-color: rgba(255, 209, 102, 0.1);
+            border-left: 4px solid var(--warning);
+        }
+        
+        .risk-group i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        /* Clinical Features */
+        .clinical-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .clinical-feature {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            border: 1px solid #e3e8ed;
+        }
+        
+        .clinical-feature i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* Toggle Sections */
+        .toggle-content {
+            display: none;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+            margin-top: 5px;
+        }
+        
+        .toggle-btn {
+            background: var(--light);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            margin: 5px 0;
+            transition: all 0.2s;
+        }
+        
+        .toggle-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .toggle-btn i {
+            margin-right: 5px;
+        }
+        
+        /* Treatment Algorithm */
+        .algorithm-container {
+            margin: 20px 0;
+            border: 1px solid #e3e8ed;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .algorithm-header {
+            background: var(--tertiary);
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+        }
+        
+        .algorithm-steps {
+            padding: 15px;
+        }
+        
+        .algorithm-step {
+            display: flex;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .algorithm-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            width: 2px;
+            height: calc(100% - 30px);
+            background-color: #e3e8ed;
+        }
+        
+        .step-number {
+            background: var(--tertiary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            z-index: 1;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 5px;
+            color: var(--tertiary);
+        }
+        
+        /* Differential Table */
+        .diff-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .diff-table th {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .diff-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e3e8ed;
+        }
+        
+        .diff-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* Quiz Section */
+        .quiz-container {
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        
+        .quiz-options {
+            margin-top: 10px;
+        }
+        
+        .quiz-option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f4f8;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-option:hover {
+            background: #e3e8ed;
+        }
+        
+        .quiz-option input {
+            margin-right: 10px;
+        }
+        
+        .quiz-feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: rgba(6, 214, 160, 0.2);
+            border: 1px solid var(--success);
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: rgba(239, 71, 111, 0.2);
+            border: 1px solid var(--danger);
+        }
+        
+        /* Memory Aid */
+        .memory-aid {
+            background: linear-gradient(135deg, #f6f9fc, #eef4fa);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed var(--primary);
+        }
+        
+        .memory-aid h3 {
+            color: var(--tertiary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .memory-aid h3 i {
+            margin-right: 8px;
+        }
+        
+        /* Exam Alert */
+        .exam-alert {
+            background-color: rgba(239, 71, 111, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .exam-alert::before {
+            content: "EXAM ALERT";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-weight: bold;
+            border-bottom-left-radius: 6px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .risk-groups {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            header {
+                background: none !important;
+                color: black;
+                padding: 10px 0;
+            }
+            
+            .header-content h1 {
+                color: black;
+                text-shadow: none;
+            }
+            
+            .section {
+                box-shadow: none;
+                margin-bottom: 15px;
+                break-inside: avoid;
+            }
+            
+            .section-header {
+                background: none !important;
+                color: black;
+                border-bottom: 2px solid #333;
+            }
+            
+            .card, .high-yield, .risk-group, .algorithm-container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .toggle-btn, .quiz-container {
+                display: none;
+            }
+            
+            .toggle-content {
+                display: block !important;
+                background: white;
+            }
+            
+            .algorithm-header {
+                background: none !important;
+                color: black;
+                border-bottom: 1px solid #333;
+            }
+            
+            .step-number {
+                background: white;
+                color: black;
+                border: 1px solid black;
+            }
+            
+            .diff-table th {
+                background: white;
+                color: black;
+                border-bottom: 2px solid black;
+            }
+        }
+        
+        /* Interactive Elements */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 180px;
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .flip-card-front {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            color: white;
+        }
+        
+        .flip-card-back {
+            background: white;
+            color: var(--dark);
+            transform: rotateY(180deg);
+            text-align: left;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            overflow: auto;
+        }
+        
+        .tab-button {
+            padding: 10px 15px;
+            background: #f0f4f8;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray);
+            border-top: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            background: white;
+            color: var(--primary);
+            border-top: 2px solid var(--primary);
+        }
+        
+        .tab-content {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e3e8ed;
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Listeriosis</h1>
+                <p>A comprehensive guide for the Saudi Board Exam with high-yield clinical pearls, diagnostic criteria, and treatment protocols.</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Synopsis Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>📋</i> Synopsis
+            </div>
+            <div class="section-content">
+                <p>Listeriosis is caused by the gram-positive bacillus <strong>Listeria monocytogenes</strong>. The organism infects farm and laboratory animals worldwide and is rarely directly transferred to humans by handling infected animals.</p>
+                
+                <div class="high-yield">
+                    <p><strong>Main sources of human infection:</strong> Ingestion of contaminated milk, cheese, poultry, and increasingly produce. Vegan cheeses have also been associated with Listeria.</p>
+                </div>
+                
+                <p>Although most adult infections appear to be minimally symptomatic, clinical presentations can range from mild to severe illness. Most symptomatic adult infections occur in immunocompromised patients and in those at the extremes of age, but infection in immunocompetent hosts does occur, particularly in farmers and veterinarians.</p>
+                
+                <div class="exam-alert">
+                    <p>Listeriosis is associated with increased susceptibility among pregnant individuals, who account for 1 in 4 reported cases in the United States. Infections during pregnancy can lead to stillbirth.</p>
+                </div>
+                
+                <p>Severe infections present with meningitis, gastrointestinal symptoms and signs, or a glandular fever-like illness. Hematogenous spread and widespread dissemination is uncommon.</p>
+                
+                <p>Cutaneous involvement outside of the neonatal period is rare and usually occurs from direct inoculation of the skin in farmers or veterinarians who are exposed to animal products of conception.</p>
+                
+                <p><strong>Pediatric patient considerations:</strong> As with adults, in children, infection and illness are more likely in the immunocompromised. Infection can occur by ingestion of contaminated or unpasteurized milk or ingestion of cheeses from unpasteurized milk.</p>
+                
+                <p>The highest incidence of disease is in the neonatal period.</p>
+            </div>
+        </div>
+        
+        <!-- Risk Groups Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>🔍</i> High-Risk Groups
+            </div>
+            <div class="section-content">
+                <p>Understanding the high-risk populations is crucial for diagnosis and management of Listeriosis:</p>
+                
+                <div class="risk-groups">
+                    <div class="risk-group high">
+                        <i>🚨</i>
+                        <div>
+                            <strong>Immunocompromised patients</strong>
+                            <p>Higher risk of symptomatic disease</p>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-group high">
+                        <i>🤰</i>
+                        <div>
+                            <strong>Pregnant individuals</strong>
+                            <p>1 in 4 US cases; risk of stillbirth</p>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-group high">
+                        <i>👴</i>
+                        <div>
+                            <strong>Extremes of age</strong>
+                            <p>Elderly and neonates at higher risk</p>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-group moderate">
+                        <i>🚜</i>
+                        <div>
+                            <strong>Occupational exposure</strong>
+                            <p>Farmers and veterinarians</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clinical Presentation Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>🩺</i> Clinical Presentation
+            </div>
+            <div class="section-content">
+                <p>Listeriosis can present with a wide range of clinical manifestations:</p>
+                
+                <div class="clinical-features">
+                    <div class="clinical-feature"><i>🤒</i> Malaise</div>
+                    <div class="clinical-feature"><i>🚽</i> Diarrhea</div>
+                    <div class="clinical-feature"><i>💪</i> Myalgia</div>
+                    <div class="clinical-feature"><i>🔴</i> Erythema</div>
+                    <div class="clinical-feature"><i>⚪</i> Smooth papules</div>
+                </div>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'tab-general')">General Presentation</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-cutaneous')">Cutaneous Findings</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-pregnancy')">Pregnancy</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-pediatric')">Pediatric</button>
+                    </div>
+                    
+                    <div id="tab-general" class="tab-content active">
+                        <p>Most adult infections appear to be minimally symptomatic, but clinical presentations can range from mild to severe illness.</p>
+                        <p>Severe infections present with:</p>
+                        <ul>
+                            <li>Meningitis</li>
+                            <li>Gastrointestinal symptoms and signs</li>
+                            <li>Glandular fever-like illness</li>
+                        </ul>
+                        <p>Hematogenous spread and widespread dissemination is uncommon.</p>
+                    </div>
+                    
+                    <div id="tab-cutaneous" class="tab-content">
+                        <p><strong>Cutaneous involvement outside of the neonatal period is rare</strong> and usually occurs from direct inoculation of the skin in farmers or veterinarians who are exposed to animal products of conception.</p>
+                        
+                        <p>Typical findings include:</p>
+                        <ul>
+                            <li>One or more erythematous papules, pustules, or vesicles seen on the hands and arms</li>
+                            <li>Disseminated disease may present with single or multiple lesions, including papules and abscesses with cellulitis</li>
+                            <li>In patients with Listeria sepsis, purpura and petechiae may be observed</li>
+                        </ul>
+                        
+                        <div class="high-yield">
+                            <p><strong>Impact of skin color on clinical presentation:</strong> Erythema is more readily appreciated in lighter skin colors. Erythema may be subtle in darker skin colors, and in the case of papules, topographical change may be the sole clinical finding. A deep red, maroon, or violaceous hue may be seen.</p>
+                            <p>Applying brief gentle pressure with a fingertip or microscope slide to blanch involved skin may accentuate subtle erythema as the pressure is withdrawn.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="tab-pregnancy" class="tab-content">
+                        <p>Listeriosis is associated with increased susceptibility among pregnant individuals, who account for 1 in 4 reported cases in the United States.</p>
+                        
+                        <div class="exam-alert">
+                            <p>Listeria infection in pregnancy commonly presents with febrile gastroenteritis or bacteremia, most commonly in the third trimester.</p>
+                            <p>Infections during pregnancy can lead to stillbirth.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="tab-pediatric" class="tab-content">
+                        <p>As with adults, in children, infection and illness are more likely in the immunocompromised.</p>
+                        <p>Infection can occur by ingestion of contaminated or unpasteurized milk or ingestion of cheeses from unpasteurized milk.</p>
+                        <p>The highest incidence of disease is in the neonatal period.</p>
+                        <p>Red papules, pustules, vesicles, purpura, and petechiae are typical in the neonatal period. These findings have been reported in children outside the neonatal period as well.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagnostic Pearls Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>💎</i> Diagnostic Pearls
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-header">Key Diagnostic Considerations</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Consider Listeria as a cause of meningitis in patients with immune compromise or in those aged older than 55 years.</li>
+                            <li>Listeria bacteremia can present in the immunocompromised and elderly generally with fever and chills, with about one-quarter of cases including preceding diarrhea.</li>
+                            <li>Focal infections with Listeria, such as those involving the skin or involving peritoneal dialysis catheters, are described but are less common.</li>
+                            <li>Listeria infection in pregnancy commonly presents with febrile gastroenteritis or bacteremia, most commonly in the third trimester.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="memory-aid">
+                    <h3><i>🧠</i> Memory Aid: "LISTERIA"</h3>
+                    <ul>
+                        <li><strong>L</strong>aboratory animals and farms (source)</li>
+                        <li><strong>I</strong>mmunocompromised (high-risk group)</li>
+                        <li><strong>S</strong>tillbirth risk in pregnancy</li>
+                        <li><strong>T</strong>hird trimester (highest risk)</li>
+                        <li><strong>E</strong>lderly patients (high-risk)</li>
+                        <li><strong>R</strong>ods, gram-positive (microbiology)</li>
+                        <li><strong>I</strong>ngestion of contaminated food</li>
+                        <li><strong>A</strong>mpicillin (treatment of choice)</li>
+                    </ul>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>🔍 When to suspect Listeriosis?</h3>
+                            <p>(Hover to reveal)</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Consider in:</h4>
+                            <ul>
+                                <li>Immunocompromised patients with meningitis</li>
+                                <li>Elderly (>55 years) with meningitis</li>
+                                <li>Pregnant patients with febrile gastroenteritis</li>
+                                <li>Veterinarians/farmers with skin lesions after animal exposure</li>
+                                <li>Patients with diarrhea and recent exposure to contaminated food</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exam-alert">
+                    <p><strong>Thin gram-positive rods may be noted on Gram stain.</strong></p>
+                    <p>This diagnosis should be considered in veterinarians or farmers who develop lesions after recent contact with birthing animals.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Differential Diagnosis Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>🔄</i> Differential Diagnosis
+            </div>
+            <div class="section-content">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'diff-pregnancy')">Pregnancy</button>
+                        <button class="tab-button" onclick="openTab(event, 'diff-cns')">CNS Infection</button>
+                        <button class="tab-button" onclick="openTab(event, 'diff-bacteremia')">Bacteremia</button>
+                    </div>
+                    
+                    <div id="diff-pregnancy" class="tab-content active">
+                        <p>In pregnant patients, consider:</p>
+                        <ul>
+                            <li>Viral gastroenteritis</li>
+                            <li>Endometritis</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="diff-cns" class="tab-content">
+                        <p>For CNS infections, consider:</p>
+                        <ul>
+                            <li>Other bacterial meningitis</li>
+                            <li>Fungal meningitis</li>
+                            <li>Mycobacterial meningitis</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="diff-bacteremia" class="tab-content">
+                        <p>For bacteremia, consider:</p>
+                        <ul>
+                            <li>Sepsis from other types of bacteremia</li>
+                            <li>Atypical mycobacterial infection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagnosis Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>🔬</i> Best Tests
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-header">Diagnostic Tests</div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Blood cultures</strong></li>
+                            <li><strong>Cerebrospinal fluid (CSF) cultures</strong></li>
+                            <li><strong>CSF polymerase chain reaction (PCR)</strong> is available as well</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Treatment Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>💊</i> Treatment Algorithm
+            </div>
+            <div class="section-content">
+                <div class="high-yield">
+                    <p>The preferred therapy is generally ampicillin with the addition of gentamicin in severe or CNS infections. In the setting of penicillin allergy, trimethoprim-sulfamethoxazole (TMP-SMX) and meropenem can be used.</p>
+                </div>
+                
+                <div class="algorithm-container">
+                    <div class="algorithm-header">Treatment Protocol</div>
+                    <div class="algorithm-steps">
+                        <div class="algorithm-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Non-pregnant Adults</h4>
+                                <p><strong>First-line:</strong> Ampicillin 2g IV q4h OR Penicillin G 4 million units IV q4h</p>
+                                <p><strong>Severe infection:</strong> Add Gentamicin</p>
+                                <p><strong>Penicillin allergy:</strong> TMP-SMX 10-20 mg/kg IV daily (divided q6-12h) OR Meropenem 2g IV q8h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Pregnant Patients</h4>
+                                <p><strong>Treatment:</strong> Ampicillin 2g IV q4h OR Penicillin 4 million units IV q4h for 14 days</p>
+                                <div class="exam-alert">
+                                    <p>Gentamicin and TMP-SMX are not added to the regimen in pregnant patients due to potential fetal toxicity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Pediatric Patients</h4>
+                                <p><strong>Ampicillin:</strong> 300 mg/kg per day IV in 4 divided doses</p>
+                                <p><strong>Alternative:</strong> Penicillin G at 250,000-400,000 units/kg per day in 4-6 divided doses</p>
+                                <p><strong>Add:</strong> Gentamicin 7.5 mg/kg per day IV in 3 divided doses may be combined with either regimen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Duration of Therapy</h4>
+                                <p><strong>Bacteremia:</strong> At least 2 weeks</p>
+                                <p><strong>CNS infection:</strong> At least 21 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Management Pearls</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Consultation with infectious disease and a neurologist is recommended when neurologic signs are present.</li>
+                            <li>In the setting of infection during pregnancy, involvement of a maternal-fetal medicine specialist or obstetrician is recommended.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Drug Reactions Section -->
+        <div class="section">
+            <div class="section-header">
+                <i>⚠️</i> Drug Reaction Associations
+            </div>
+            <div class="section-content">
+                <p>Below are medications with evidence indicating adverse associations with Listeriosis:</p>
+                
+                <button class="toggle-btn" onclick="toggleContent('drug-reactions')">
+                    <i>📋</i> View Drug Associations
+                </button>
+                
+                <div id="drug-reactions" class="toggle-content">
+                    <table class="diff-table">
+                        <tr>
+                            <th>Medication</th>
+                            <th>Citations</th>
+                        </tr>
+                        <tr>
+                            <td>Systemic steroid</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>adalimumab</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Antimetabolite</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Corticosteroid</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>etanercept</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>JAK inhibitor</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Monoclonal antibody</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>mycophenolate mofetil</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>infliximab</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>prednisone</td>
+                            <td>2</td>
+                        </tr>
+                        <!-- Additional high-yield medications included -->
+                        <tr>
+                            <td>TNF-alpha inhibitor</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>rituximab</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>tofacitinib</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Board Exam Quiz -->
+        <div class="section">
+            <div class="section-header">
+                <i>📝</i> Board Exam Quiz
+            </div>
+            <div class="section-content">
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <p><strong>1. A 35-year-old pregnant woman in her third trimester presents with fever, headache, and diarrhea. She reports consuming unpasteurized cheese at a farmers market 3 days ago. Which of the following is the most appropriate initial treatment?</strong></p>
+                        
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a')"> Ampicillin 2g IV q4h
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b')"> TMP-SMX 10 mg/kg IV daily divided q6h
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c')"> Ampicillin 2g IV q4h plus gentamicin
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="d" onclick="checkAnswer('q1', 'd')"> Ceftriaxone 2g IV daily
+                            </label>
+                        </div>
+                        
+                        <div id="feedback-q1-a" class="quiz-feedback correct">
+                            <p>✓ CORRECT! Ampicillin 2g IV q4h is the treatment of choice for Listeriosis in pregnancy. Gentamicin and TMP-SMX are avoided due to potential fetal toxicity.</p>
+                        </div>
+                        <div id="feedback-q1-b" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. TMP-SMX is avoided in pregnant patients due to potential fetal toxicity.</p>
+                        </div>
+                        <div id="feedback-q1-c" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. While ampicillin is correct, gentamicin is avoided in pregnant patients due to potential fetal toxicity.</p>
+                        </div>
+                        <div id="feedback-q1-d" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. Ceftriaxone is not the first-line treatment for Listeriosis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p><strong>2. Which of the following cutaneous findings would be most characteristic of Listeriosis in a veterinarian who recently assisted with animal birthing?</strong></p>
+                        
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a" onclick="checkAnswer('q2', 'a')"> Erythematous papules and pustules on the hands and arms
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b" onclick="checkAnswer('q2', 'b')"> Generalized maculopapular rash on the trunk
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c" onclick="checkAnswer('q2', 'c')"> Targetoid lesions on the extremities
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="d" onclick="checkAnswer('q2', 'd')"> Vesicular rash in a dermatomal distribution
+                            </label>
+                        </div>
+                        
+                        <div id="feedback-q2-a" class="quiz-feedback correct">
+                            <p>✓ CORRECT! Erythematous papules, pustules, or vesicles on the hands and arms are typical of direct inoculation Listeriosis in occupational exposures.</p>
+                        </div>
+                        <div id="feedback-q2-b" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. A generalized maculopapular rash on the trunk is not characteristic of Listeriosis.</p>
+                        </div>
+                        <div id="feedback-q2-c" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. Targetoid lesions are more characteristic of erythema multiforme, not Listeriosis.</p>
+                        </div>
+                        <div id="feedback-q2-d" class="quiz-feedback incorrect">
+                            <p>✗ INCORRECT. A vesicular rash in a dermatomal distribution is characteristic of herpes zoster, not Listeriosis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle function for content sections
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+        
+        // Tab switching function
+        function openTab(evt, tabId) {
+            var i, tabcontent, tabbuttons;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Remove active class from all tab buttons
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        // Quiz answer checking function
+        function checkAnswer(question, selected) {
+            // Hide all feedback for this question
+            var feedbacks = document.querySelectorAll('[id^="feedback-' + question + '"]');
+            for (var i = 0; i < feedbacks.length; i++) {
+                feedbacks[i].style.display = "none";
+            }
+            
+            // Show the feedback for the selected answer
+            var feedback = document.getElementById('feedback-' + question + '-' + selected);
+            feedback.style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphea and Lichen Sclerosus - Board Review</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --border-color: #dee2e6;
+            --highlight-yellow: #fff3cd;
+            --highlight-blue: #cfe2ff;
+            --highlight-green: #d1e7dd;
+        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: #f9f9f9;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    header {
+        background: linear-gradient(135deg, var(--primary-color), #2980b9);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin: 25px 0 15px;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 5px;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+        margin: 20px 0 10px;
+        color: #2c3e50;
+    }
+    
+    h4 {
+        font-size: 1.2rem;
+        margin: 15px 0 8px;
+        color: #34495e;
+    }
+    
+    p {
+        margin-bottom: 15px;
+    }
+    
+    ul, ol {
+        margin: 0 0 15px 25px;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    .objectives-list li {
+        margin-bottom: 12px;
+    }
+    
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .highlight {
+        background-color: var(--highlight-yellow);
+        padding: 15px;
+        border-left: 4px solid #ffc107;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .info-box {
+        background-color: var(--highlight-blue);
+        padding: 15px;
+        border-left: 4px solid var(--primary-color);
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .success-box {
+        background-color: var(--highlight-green);
+        padding: 15px;
+        border-left: 4px solid var(--secondary-color);
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    .comparison-table th, 
+    .comparison-table td {
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        text-align: left;
+    }
+    
+    .comparison-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+    
+    .comparison-table tr:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .board-focus {
+        background-color: #ffe6e6;
+        border-left: 4px solid var(--accent-color);
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .board-focus h4 {
+        color: var(--accent-color);
+        margin-top: 0;
+    }
+    
+    mark {
+        background-color: #ffee58;
+        padding: 2px 4px;
+        border-radius: 2px;
+    }
+    
+    .mnemonic {
+        background-color: #e8f5e9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px dashed var(--secondary-color);
+    }
+    
+    .mnemonic h4 {
+        color: var(--secondary-color);
+        margin-top: 0;
+    }
+    
+    details {
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    summary {
+        padding: 12px 15px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    details > div {
+        padding: 15px;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .dual-column {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .dual-column > div {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    @media print {
+        body {
+            padding: 0;
+            background-color: white;
+        }
+        
+        .card, .highlight, .info-box, .success-box, .board-focus, .mnemonic {
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+        
+        header {
+            background: white;
+            color: black;
+            box-shadow: none;
+            border-bottom: 2px solid var(--primary-color);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+        
+        .dual-column > div {
+            flex: 100%;
+        }
+    }
+    
+    .clinical-pearl {
+        background-color: #e0f7fa;
+        border-left: 4px solid #00bcd4;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .clinical-pearl h4 {
+        color: #00838f;
+        margin-top: 0;
+    }
+    
+    .image-placeholder {
+        background-color: #f1f1f1;
+        border: 1px dashed #ccc;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: #777;
+        font-style: italic;
+    }
+    
+    .histology-box {
+        background-color: #fff8e1;
+        border: 1px solid #ffecb3;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .tag {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .tag-high {
+        background-color: #ffcdd2;
+        color: #c62828;
+    }
+    
+    .tag-medium {
+        background-color: #fff9c4;
+        color: #f57f17;
+    }
+
+    .checkbox-list {
+        list-style-type: none;
+        margin-left: 0;
+    }
+    
+    .checkbox-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .checkbox-list li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--primary-color);
+        border-radius: 3px;
+    }
+    
+    .treatment-algorithm {
+        border: 2px solid #3498db;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .treatment-algorithm h3 {
+        color: #3498db;
+        margin-top: 0;
+    }
+    
+    .treatment-step {
+        margin-bottom: 15px;
+        padding-left: 20px;
+        border-left: 3px solid #3498db;
+    }
+    
+    .treatment-step h4 {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Morphea and Lichen Sclerosus</h1>
+        <p>Board Review for Dermatology Residents</p>
+    </header>
+
+
+<section class="card">
+    <h2>Introduction to Morphea</h2>
+    <p>Morphea is a clinically distinct inflammatory disease, primarily of the dermis and subcutaneous fat, which ultimately leads to a scar-like sclerosis. It is characterized by:</p>
+    <ul>
+        <li>Asymmetric sclerotic plaques (usually 2-15 cm in diameter)</li>
+        <li>Active lesions with a lilac border and central hypo- or dyspigmentation</li>
+        <li>Inactive lesions that often become hyperpigmented</li>
+        <li>Sclerosis that may extend deeply into fat or underlying structures</li>
+        <li>No systemic manifestations (except for rare ocular/neurologic symptoms in linear morphea of the head)</li>
+    </ul>
+    
+    <div class="highlight">
+        <h4>🔑 Key Point</h4>
+        <p>Morphea and systemic sclerosis (SSc) share similar histological features but are distinct entities that can be distinguished clinically. Morphea has an asymmetric, patchy, or linear distribution, while SSc has symmetric involvement with distinctive patterns.</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Epidemiology of Morphea</h2>
+    <p>Annual incidence rate: 27 per million</p>
+    <ul>
+        <li>Prevalence increases with age: ~500 per million at age 18, ~2200 per million at age 80</li>
+        <li>Female-to-male ratio: 2.6:1 (exception: linear morphea has no sex preference)</li>
+        <li>Rarely life-threatening but can cause substantial disability in 11% of patients</li>
+    </ul>
+    
+    <div class="board-focus">
+        <h4>📝 Board Exam Focus</h4>
+        <p><mark>Distribution of morphea subtypes (Olmsted County study):</mark></p>
+        <ul>
+            <li>56% - Plaque-type morphea</li>
+            <li>20% - Linear morphea</li>
+            <li>13% - Generalized morphea</li>
+            <li>11% - Deep morphea</li>
+        </ul>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Pathogenesis of Morphea</h2>
+    
+    <div class="dual-column">
+        <div>
+            <h3>Three Key Components</h3>
+            <ol>
+                <li><strong>Vascular Changes</strong>: Reduction in capillaries; hypoxia from microvascular injury</li>
+                <li><strong>T Cell Activation</strong>: Production of pro-fibrotic cytokines</li>
+                <li><strong>Altered Fibroblast Function</strong>: Excessive collagen and ECM production</li>
+            </ol>
+        </div>
+        
+        <div>
+            <h3>Autoantibodies in Morphea</h3>
+            <ul>
+                <li>Anti-single strand DNA (ssDNA)</li>
+                <li>Anti-topoisomerase IIα</li>
+                <li>Anti-phospholipid</li>
+                <li>Anti-fibrillin-1</li>
+                <li>Anti-histone antibodies (AHA)</li>
+            </ul>
+            <p class="board-focus"><mark>In patients with linear morphea, ssDNA antibodies or AHA are associated with increased risk of functional impairment</mark></p>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h4>📊 Key Cytokines in Morphea Pathogenesis</h4>
+        <p>Enhanced production of collagen and extracellular matrix proteins is induced by T cell-derived cytokines:</p>
+        <ul>
+            <li><mark>IL-4</mark>: Produced by CD4+ Th2 lymphocytes; enhances TGF-β production and pathologic collagen production by fibroblasts</li>
+            <li><mark>IL-13</mark>: Th2-associated cytokine that promotes skin fibrosis</li>
+            <li>IL-17A: Contributes to fibrotic processes</li>
+            <li><mark>TGF-β</mark>: Central mediator of fibrosis</li>
+        </ul>
+        <p><strong>Supporting evidence:</strong> Early treatment of scleroderma-developing mice with anti-IL-4 antibodies prevented scleroderma.</p>
+    </div>
+    
+    <h3>Triggering Events for Morphea</h3>
+    <p>Focal, asymmetric inflammation and sclerosis may be triggered by:</p>
+    <ul>
+        <li>Mechanical trauma</li>
+        <li>Injections</li>
+        <li>Vaccinations</li>
+        <li>X-irradiation</li>
+    </ul>
+    <p><strong>Note:</strong> Despite early speculation, <mark>Borrelia burgdorferi</mark> has NOT been confirmed as a consistent trigger for morphea.</p>
+</section>
+
+<section class="card">
+    <h2>Clinical Features and Classification of Morphea</h2>
+    
+    <h3>Classification Schemes</h3>
+    <p>Several classification schemes exist, with the Padua criteria performing best (95%) in classifying patients into groups with cohesive features:</p>
+    
+    <div class="dual-column">
+        <div>
+            <h4>Major Types of Morphea</h4>
+            <ul>
+                <li>Plaque-type (circumscribed)</li>
+                <li>Linear</li>
+                <li>Generalized</li>
+                <li>Deep</li>
+                <li>Pansclerotic</li>
+                <li>Mixed</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4>Modifiers</h4>
+            <ul>
+                <li>Superficial</li>
+                <li>Deep</li>
+                <li>Keloidal</li>
+                <li>Bullous</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h3>Plaque-Type (Circumscribed) Morphea</h3>
+    <p>The most frequent variant, characterized by:</p>
+    <ul>
+        <li>Insidious onset of a slightly elevated, erythematous or violaceous, edematous plaque</li>
+        <li>Central portion transforms into sclerotic, scar-like tissue</li>
+        <li>Usually multiple and asymmetric</li>
+        <li>Most commonly on the trunk</li>
+        <li>Size typically between 2-15 cm in diameter</li>
+    </ul>
+    
+    <div class="clinical-pearl">
+        <h4>🔍 Clinical Pearl</h4>
+        <p>The "lilac ring" at the border of an active plaque is an important indicator of disease activity. When this inflammatory margin vanishes, the lesion's progression typically halts.</p>
+    </div>
+    
+    <h3>Variants of Morphea</h3>
+    
+    <div class="dual-column">
+        <div>
+            <h4>Guttate Morphea</h4>
+            <p>Multiple, rather superficial, nummular plaques that may become deeply indurated despite their small size.</p>
+            
+            <h4>Atrophoderma of Pasini and Pierini</h4>
+            <p>A very superficial variant of plaque-type morphea with hyperpigmented patches most commonly on the posterior trunk. Some consider it a separate entity in the differential diagnosis of "burnt-out" morphea.</p>
+            
+            <div class="highlight">
+                <p><mark>Occasionally, lesions follow the lines of Blaschko (linear atrophoderma of Moulin)</mark></p>
+            </div>
+        </div>
+        
+        <div>
+            <h4>Deep Morphea</h4>
+            <p>Inflammation and sclerosis primarily affecting the deep dermis and subcutaneous fat, potentially involving underlying structures (e.g., fascia). Characterized by:</p>
+            <ul>
+                <li>Small number of hard deep plaques</li>
+                <li>May impair skin motility</li>
+                <li>Lesions may eventually calcify (dystrophic calcinosis cutis)</li>
+                <li>May resemble eosinophilic fasciitis</li>
+            </ul>
+            
+            <h4>Nodular or Keloidal Morphea</h4>
+            <p>Dermal inflammation leading to thick, keloid-like nodules or bands; clinically may be indistinguishable from indurated keloids.</p>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h4>⚠️ Pathogenesis of Bullous Morphea</h4>
+        <p>Bullous morphea develops through two main mechanisms:</p>
+        <ol>
+            <li><strong>Primary mechanism:</strong> Diffuse, rapidly progressive edema causing stasis of lymphatic fluid and development of lymphoceles, which can evolve into bullae</li>
+            <li><strong>Secondary mechanism:</strong> Mechanical blisters occurring centrally within plaques due to impaired mechanical stability of the dermal-epidermal junction</li>
+        </ol>
+        <p><mark>Bullous morphea is more frequently observed in generalized morphea and sclerodermoid/morpheaform GVHD, and rarely in plaque-type morphea</mark></p>
+    </div>
+    
+    <h3>Linear Morphea and Parry-Romberg Syndrome</h3>
+    <p>Different from plaque-type morphea with respect to age of onset, distribution, clinical outcome, and serologies:</p>
+    <ul>
+        <li>May present initially as a linear, erythematous streak or begin as plaque-type morphea that extends longitudinally</li>
+        <li>Forms a scar-like band that may severely impair limb mobility</li>
+        <li>Tends to involve underlying fascia, muscle, and tendons</li>
+        <li>Especially problematic when extending over joints</li>
+        <li>Can have prolonged periods of quiescence followed by reactivation</li>
+    </ul>
+    
+    <h4>Morphea en coup de sabre</h4>
+    <p>Linear morphea of the head that is typically unilateral, extending from the forehead into the frontal scalp. Usually paramedian in location.</p>
+    
+    <h4>Parry-Romberg Syndrome (Hemifacial Atrophy)</h4>
+    <p>Probably a severe variant of linear morphea characterized by progressive loss of subcutaneous fat with little or no sclerosis. May affect the entire distribution of the trigeminal nerve.</p>
+    
+    <div class="board-focus">
+        <h4>🔑 Important Complications</h4>
+        <p><mark>En coup de sabre can involve underlying muscles and osseous structures. Rarely, inflammation and sclerosis progress to involve the meninges and brain, creating a potential focus for seizures.</mark></p>
+        <p><mark>Ocular involvement occurs in up to 15% of juvenile and 25% of adult patients with linear morphea of the head.</mark></p>
+    </div>
+    
+    <h3>Generalized Morphea</h3>
+    <p>Begins insidiously on the trunk as plaque-type morphea, but individual lesions do not stop expanding:</p>
+    <ul>
+        <li>Multiple plaques rapidly coalesce, affecting nearly the entire trunk (often sparing only the areolae and nipples)</li>
+        <li>Sclerosis may involve extremities down to the hands</li>
+        <li>Can cause disabling constrictions affecting breathing (impaired thorax mobility)</li>
+        <li>Usually persistent with limited response to treatment</li>
+    </ul>
+    
+    <h3>Morphea in Childhood</h3>
+    <p>Approximately 20% of individuals with morphea are children and teenagers:</p>
+    <ul>
+        <li>Female-to-male ratio for plaque-type morphea: 2:1</li>
+        <li>Mean age at disease onset: 7 years</li>
+        <li><mark>In two-thirds of patients with linear morphea, disease onset is prior to age 18 years</mark></li>
+        <li>Pansclerotic morphea of children usually starts before age 14 and tends to cause lifelong severe disability</li>
+    </ul>
+    
+    <div class="highlight">
+        <h4>⚠️ Extracutaneous Manifestations in Children</h4>
+        <p>In a large multicenter study of children with morphea, 22% had extracutaneous findings:</p>
+        <ul>
+            <li>Articular (11%)</li>
+            <li>Neurologic (4%)</li>
+            <li>Ocular (2%)</li>
+        </ul>
+        <p>The latter two were seen primarily in those with linear morphea of the head or Parry-Romberg syndrome (85% of affected patients).</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Laboratory Findings in Morphea</h2>
+    
+    <div class="info-box">
+        <h4>🔬 Key Laboratory Findings</h4>
+        <ul>
+            <li><mark>Laboratory abnormalities are not a prominent feature of morphea, except for generalized and linear morphea</mark></li>
+            <li>ESR and serum protein levels are usually normal</li>
+            <li><mark>Eosinophilia may occur, especially during early active phases of the disease</mark></li>
+            <li>High titers of ANA or antibodies to DNA and histones: 40%-80% of patients with linear and generalized morphea</li>
+            <li>Uncommon in adults with plaque-type morphea</li>
+            <li>Approximately 40% of children and adolescents with morphea have elevated ANA titers</li>
+        </ul>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Histopathology of Morphea</h2>
+    
+    <div class="histology-box">
+        <h3>🔬 Histopathological Features</h3>
+        <p>The histopathology depends on two factors:</p>
+        <ol>
+            <li>Stage of the lesion (early inflammatory vs. late sclerotic)</li>
+            <li>Area sampled (inflammatory border vs. central sclerosis)</li>
+        </ol>
+        
+        <h4>Early/Inflammatory Border</h4>
+        <ul>
+            <li>Vascular changes: endothelial swelling and edema</li>
+            <li>Perivascular infiltrate primarily of CD4+ T cells</li>
+            <li>Sometimes eosinophils, plasma cells, and mast cells</li>
+        </ul>
+        
+        <h4>Late/Sclerotic Center</h4>
+        <ul>
+            <li>Inflammatory infiltrate wanes and eventually disappears</li>
+            <li>Normal-appearing epidermis with flattened dermal-epidermal junction</li>
+            <li>No edema in dermis and upper subcutis</li>
+            <li>Significant reduction in capillaries and small vessels</li>
+            <li><mark>Homogeneous collagen bundles with decreased space between bundles</mark></li>
+            <li>Densely packed collagen bundles in reticular dermis (more intense eosinophilic staining)</li>
+            <li>Collagen aligned parallel to dermal-epidermal junction</li>
+            <li><mark>Eccrine glands appear atrophic and "trapped" within thickened dermis</mark></li>
+            <li>Homogenized and hyalinized subcutis</li>
+        </ul>
+        
+        <h4>Deep Morphea</h4>
+        <ul>
+            <li>Primarily affects deep subcutaneous tissue</li>
+            <li>Extensive sclerosis and hyalinization extending into underlying fascia</li>
+            <li>Fascia and underlying muscle may be involved in progressive sclerosis</li>
+            <li>Replacement of differentiated tissue by collagen bundles</li>
+        </ul>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Differential Diagnosis of Morphea</h2>
+    
+    <p>The most important entity in the differential diagnosis is systemic sclerosis (SSc). Distinguishing features of morphea include:</p>
+    <ul>
+        <li>Asymmetric skin involvement</li>
+        <li>Absence of Raynaud phenomenon</li>
+        <li>No lung or esophageal involvement</li>
+    </ul>
+    
+    <p>Other considerations include:</p>
+    <ul>
+        <li>Lichen sclerosus (may coexist with morphea)</li>
+        <li>Keloids</li>
+        <li>Lipodermatosclerosis</li>
+        <li>Radiation-induced morphea</li>
+        <li>Chronic graft-versus-host disease</li>
+        <li>Injection site sclerosis (vitamin K1, silicone, paraffin)</li>
+        <li>Nephrogenic systemic fibrosis</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Treatment of Morphea</h2>
+    
+    <div class="treatment-algorithm">
+        <h3>🏥 Treatment Algorithm for Morphea</h3>
+        
+        <div class="treatment-step">
+            <h4>Plaque-Type (Circumscribed) Morphea</h4>
+            <p><strong>First-line:</strong></p>
+            <ul>
+                <li>Topical class I corticosteroids, daily-twice daily</li>
+                <li>Intradermal corticosteroids (e.g., triamcinolone acetonide 5-10 mg/mL) every 4-6 weeks into active rim</li>
+                <li>Tacrolimus 0.1% ointment, twice daily</li>
+                <li>Topical vitamin D analogue (calcipotriene/calcipotriol) under occlusion + class I topical corticosteroids</li>
+                <li>Lesion-limited phototherapy</li>
+            </ul>
+            <p><strong>Third-line (or if lesions spreading, unstable):</strong></p>
+            <ul>
+                <li>Generalized phototherapy</li>
+                <li>Weekly methotrexate</li>
+            </ul>
+        </div>
+        
+        <div class="treatment-step">
+            <h4>Linear Morphea</h4>
+            <p><strong>Deep variant, facial involvement, crossing joints:</strong></p>
+            <ul>
+                <li><mark>Weekly methotrexate + systemic corticosteroids</mark></li>
+            </ul>
+            <p><strong>Second-line:</strong></p>
+            <ul>
+                <li>Corticosteroid-sparing agents (e.g., mycophenolate mofetil, JAK inhibitors, tocalizumab)</li>
+            </ul>
+            <p><strong>Superficial variant, not involving face or crossing joints:</strong></p>
+            <ul>
+                <li>Phototherapy</li>
+            </ul>
+        </div>
+        
+        <div class="treatment-step">
+            <h4>Generalized Morphea</h4>
+            <p><strong>First-line:</strong></p>
+            <ul>
+                <li>Phototherapy (if superficial and without joint contractures)</li>
+                <li>Weekly methotrexate + systemic corticosteroids</li>
+            </ul>
+            <p><strong>Second-line:</strong></p>
+            <ul>
+                <li>Corticosteroid-sparing agents (e.g., mycophenolate mofetil, JAK inhibitors, tocalizumab)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="board-focus">
+        <h4>📝 First-Line Treatment for Severe or Joint-Crossing Linear Morphea in Children</h4>
+        <ul>
+            <li><mark>Weekly methotrexate (0.3-0.5 mg/kg/week) combined with systemic corticosteroids</mark></li>
+            <li>Corticosteroids are often given as pulsed dosing: intravenous methylprednisolone 30 mg/kg/day (≤33kg) for three consecutive days per month</li>
+            <li>Methotrexate is typically continued for at least 12 months and tapering is not begun until at least 6-12 months after the disease is inactive</li>
+        </ul>
+    </div>
+    
+    <h3>Phototherapy for Morphea</h3>
+    <div class="info-box">
+        <h4>🔆 Phototherapy Modalities</h4>
+        <p>When available, <mark>UVA1 has become the phototherapy of choice, followed by BB-UVA and PUVA</mark>. NB-UVB may be beneficial for superficial morphea but is less effective for deeper involvement.</p>
+        
+        <h4>Efficacy and Protocol:</h4>
+        <ul>
+            <li>Following 30-36 treatments of bath PUVA therapy (at slightly suberythematous doses) or UVA1 (30-60 J/cm²), morphea resolves or markedly improves in at least 60% of patients</li>
+            <li>Therapy can be terminated after 36 treatments, even if sclerosis has not completely resolved (exception: linear morphea may require up to 60 treatments)</li>
+            <li>UVA1 doses: 30 J/cm² or 50-60 J/cm² for 36 treatments</li>
+            <li>Continued improvement may occur after completion of therapy</li>
+        </ul>
+        
+        <h4>Mechanism of Action:</h4>
+        <p>Phototherapy works through:</p>
+        <ul>
+            <li>Immunomodulatory effects</li>
+            <li>Upregulation of matrix metalloproteinases that stimulate collagen breakdown</li>
+        </ul>
+    </div>
+    
+    <h3>Systemic Therapies</h3>
+    <p>Indications for systemic therapies:</p>
+    <ul>
+        <li>Progression or risk of functional impairment</li>
+        <li>Decreased range of motion of joints</li>
+        <li>Involvement across joints</li>
+        <li>Significant disfigurement (e.g., linear facial morphea)</li>
+        <li>Deep morphea (subcutaneous, fascia, muscles)</li>
+    </ul>
+    
+    <h4>Additional Therapeutic Options:</h4>
+    <ul>
+        <li>Mycophenolate mofetil: Beneficial and well-tolerated in severe morphea</li>
+        <li>JAK inhibitors (tofacitinib, baricitinib): Improvement in recalcitrant morphea</li>
+        <li>IL-6R inhibitors (tocilizumab): Improvement in pansclerotic morphea</li>
+        <li>Systemic retinoids: Interact with TGF-β signaling and may improve skin sclerosis</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Introduction to Lichen Sclerosus</h2>
+    
+    <p>Lichen sclerosus (LS) is a clinically distinct inflammatory disease, primarily of the superficial dermis or submucosa, that leads to ivory-white scar-like atrophy. Key features include:</p>
+    <ul>
+        <li>Sclerotic, ivory-white, flat papules and plaques with epidermal atrophy</li>
+        <li>Follicular plugging (in extramucosal sites)</li>
+        <li>Most commonly affects female or male genitalia, less often extragenital skin</li>
+        <li>May cause scarring of the vaginal introitus or phimosis</li>
+        <li>No systemic manifestations</li>
+    </ul>
+    
+    <div class="highlight">
+        <h4>⚠️ Important Complication</h4>
+        <p><mark>If left untreated, ~4% of patients with vulvar LS may develop differentiated vulvar intraepithelial neoplasia (VIN) or squamous cell carcinoma (SCC)</mark></p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Epidemiology of Lichen Sclerosus</h2>
+    
+    <ul>
+        <li>Relatively uncommon, exact prevalence unknown</li>
+        <li>Occurs at all ages with similar incidence across races</li>
+        <li>Female-to-male ratio varies widely from 10:1 to 1:1</li>
+        <li>In women, peak incidence is during the fifth and sixth decades</li>
+        <li>Second peak occurs in girls between 8 and 13 years of age</li>
+        <li>In boys and men, LS frequently leads to phimosis (seen in 14% of prepubertal boys undergoing circumcision for phimosis)</li>
+    </ul>
+    
+    <div class="clinical-pearl">
+        <h4>🔍 Clinical Pearl</h4>
+        <p>A recent retrospective analysis demonstrated a high prevalence of LS in patients with plaque-type morphea and generalized morphea. This coexistence suggests either a common trigger or a common susceptibility factor for both diseases.</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Pathogenesis of Lichen Sclerosus</h2>
+    
+    <div class="dual-column">
+        <div>
+            <h3>Genetic Factors</h3>
+            <ul>
+                <li>May be found in monozygotic and fraternal twins</li>
+                <li><mark>Association with MHC class II antigen HLA-DQ7</mark> was observed in a relatively large study</li>
+                <li>This region is associated with greater risk of organ-specific autoimmune diseases</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>Autoimmune Factors</h3>
+            <ul>
+                <li><mark>IgG autoantibodies against extracellular matrix protein 1 (ECM-1) are found in 80% of patients with LS</mark></li>
+                <li>Higher prevalence of autoimmune diseases (especially autoimmune thyroid disease) and ANA positivity in female patients compared to male patients</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h3>Inflammatory Mechanisms</h3>
+    <ul>
+        <li>Increased production of IL-6, TNF, and collagen (types I, III, and V) promotes sclerosis</li>
+        <li>Oxidative stress may play a role, based on analysis showing lipid peroxidation, oxidative DNA damage, and oxidative protein damage</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Clinical Features of Lichen Sclerosus</h2>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Extragenital LS</th>
+                <th>Anogenital LS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Symptoms</strong></td>
+                <td><mark>Normally does not cause symptoms except for dryness and associated pruritus</mark></td>
+                <td><mark>Frequently causes severe pruritus and soreness; can lead to dysuria, dyspareunia, or pain upon defecation</mark></td>
+            </tr>
+            <tr>
+                <td><strong>Distribution</strong></td>
+                <td>Trunk and proximal extremities; specifically neck, shoulders, flexor surfaces of wrists, sites of physical trauma or pressure</td>
+                <td>Vulva and perianal region in women, often in a figure-of-eight configuration; glans and inner aspect of foreskin in men</td>
+            </tr>
+            <tr>
+                <td><strong>Early Appearance</strong></td>
+                <td>Polygonal, bluish-white, shiny, slightly elevated papules</td>
+                <td>Slightly elevated, sharply demarcated area of erythema, which can be slightly eroded</td>
+            </tr>
+            <tr>
+                <td><strong>Late Appearance</strong></td>
+                <td>Sclerotic, ivory-colored, shiny papules and plaques with wrinkled surface; may develop telangiectasias or follicular plugging</td>
+                <td>Shiny, hypopigmented, and sclerotic skin; fissures may develop; purpura often develops within lesions</td>
+            </tr>
+            <tr>
+                <td><strong>Complications</strong></td>
+                <td>Fragility at dermal-epidermal junction leading to bullae, which may become hemorrhagic</td>
+                <td>Scarring leading to burying of clitoris, fusion of labia, narrowing of introitus in women; acquired phimosis or recurrent balanitis in men</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="board-focus">
+        <h4>🚩 Squamous Cell Carcinoma Risk</h4>
+        <p><mark>A prospective cohort study of 507 women with vulvar LS noted the development of SCC or VIN in 5% of patients partially compliant with topical corticosteroid treatment and in none of the compliant patients (mean follow-up: 4.7 years)</mark></p>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Histopathology of Lichen Sclerosus</h2>
+    
+    <div class="histology-box">
+        <h3>🔬 Key Histopathological Findings</h3>
+        
+        <h4>Early Lesions</h4>
+        <ul>
+            <li><mark>Superficial dermal edema associated with a band-like lymphocytic infiltrate</mark></li>
+            <li>Thinned epidermis with orthohyperkeratosis and vacuolar degeneration of the basal layer</li>
+            <li>Pronounced hyperkeratosis at follicular openings, potentially leading to plugging</li>
+        </ul>
+        
+        <h4>Late Lesions</h4>
+        <ul>
+            <li><mark>Homogenized dermal collagen in the superficial dermis</mark></li>
+            <li><mark>Loss of elastic fibers (typical for LS and not observed in morphea)</mark></li>
+            <li>Subepidermal clefting and hemorrhage within the homogenized papillary dermis</li>
+            <li>Reduced and sparse mononuclear infiltrate with patchy islands of mononuclear cells in the hyalinized dermis</li>
+            <li>Ultrastructurally, shortened collagen fibers</li>
+        </ul>
+    </div>
+    
+    <div class="clinical-pearl">
+        <h4>💡 Distinguishing LS from Morphea Histologically</h4>
+        <p>Key differentiating features of lichen sclerosus:</p>
+        <ul>
+            <li>Involvement is primarily in the superficial dermis (vs. deeper involvement in morphea)</li>
+            <li>Vacuolar degeneration of the basal layer</li>
+            <li>Loss of elastic fibers (not seen in morphea)</li>
+            <li>Hyperkeratosis with follicular plugging</li>
+            <li>Homogenization confined to the papillary dermis</li>
+        </ul>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Differential Diagnosis of Lichen Sclerosus</h2>
+    
+    <p>The most important entities in the differential diagnosis:</p>
+    <ul>
+        <li><strong>Extragenital LS:</strong> Morphea (can coexist)</li>
+        <li><strong>Genital LS in children:</strong> Sexual abuse</li>
+        <li><strong>Genital LS in adults:</strong> Erosive lichen planus, mucous membrane pemphigoid, erythroplasia of Queyrat</li>
+        <li><strong>Histologic considerations:</strong> LS-associated pseudoepitheliomatous hyperplasia needs to be distinguished from SCC</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Treatment of Lichen Sclerosus</h2>
+    
+    <h3>Genital Lichen Sclerosus</h3>
+    <p>Goals of treatment:</p>
+    <ul>
+        <li>Relieve symptoms (e.g., pruritus)</li>
+        <li>Reverse skin changes (e.g., hyperkeratosis)</li>
+        <li>Prevent scarring, adhesions, and SCC</li>
+    </ul>
+    
+    <div class="treatment-algorithm">
+        <h3>First-Line Therapy</h3>
+        <ul>
+            <li><mark>Ultrapotent topical corticosteroids (e.g., clobetasol propionate 0.05%)</mark></li>
+            <li>Intralesional corticosteroids for areas of hyperkeratosis</li>
+        </ul>
+        
+        <h3>Adjunctive Measures</h3>
+        <ul>
+            <li>Ointments preferred over creams (better tolerated)</li>
+            <li>Frequent use of emollients (e.g., petrolatum)</li>
+        </ul>
+        
+        <h3>Second-Line Options</h3>
+        <ul>
+            <li>Topical calcineurin inhibitors</li>
+            <li>Systemic agents (e.g., acitretin, abrocitinib)</li>
+        </ul>
+        
+        <h3>Long-Term Management</h3>
+        <ul>
+            <li>Maintenance regimen upon resolution of signs and symptoms (typically after 6-12 weeks of induction therapy)</li>
+            <li>Regular follow-up until stable maintenance regimen is established</li>
+            <li>Annual genital examination to exclude development of malignancy</li>
+        </ul>
+    </div>
+    
+    <h3>Extragenital Lichen Sclerosus</h3>
+    <p>Treatment options include:</p>
+    <ul>
+        <li>Phototherapy (UVA1 preferred, followed by NB-UVB and PUVA)</li>
+        <li>Potent topical corticosteroids</li>
+        <li>Topical vitamin D analogues +/- occlusion</li>
+        <li>Topical calcineurin inhibitors</li>
+        <li>Systemic immunosuppressive therapy (weekly methotrexate +/- systemic corticosteroids) for widespread, refractory disease</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2>Summary of Key Points</h2>
+    
+    <div class="dual-column">
+        <div>
+            <h3>Morphea</h3>
+            <ul>
+                <li>Most common subtype: Plaque-type (56%)</li>
+                <li>In children: Linear morphea is predominant subtype with onset before age 18 in 2/3 of cases</li>
+                <li>Key cytokines: IL-4, IL-13, TGF-β</li>
+                <li>Associated antibodies: Anti-ssDNA and AHA in linear morphea (associated with functional impairment)</li>
+                <li>First-line for joint-crossing linear morphea in children: Methotrexate + systemic corticosteroids</li>
+                <li>Best phototherapy: UVA1, followed by BB-UVA and PUVA</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>Lichen Sclerosus</h3>
+            <ul>
+                <li>Key autoantibody: Anti-ECM-1 (in 80% of patients)</li>
+                <li>HLA association: HLA-DQ7</li>
+                <li>Extragenital LS: Minimal symptoms (dryness, mild pruritus)</li>
+                <li>Anogenital LS: Severe pruritus, soreness, functional impairment</li>
+                <li>Histology: Superficial dermal edema, band-like infiltrate, loss of elastic fibers</li>
+                <li>Malignancy risk: 4-5% of untreated/partially treated vulvar LS may develop SCC or VIN</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Clinical Pearls for Board Exam</h2>
+    
+    <div class="mnemonic">
+        <h4>🧠 "MORPHEA" Mnemonic for Key Features</h4>
+        <ul>
+            <li><strong>M</strong>ultiple subtypes (plaque-type most common overall)</li>
+            <li><strong>O</strong>cular and neurologic symptoms possible with linear morphea of the head</li>
+            <li><strong>R</strong>apid progression in generalized and pansclerotic types</li>
+            <li><strong>P</strong>hototherapy (UVA1) is effective in most cases</li>
+            <li><strong>H</strong>istology shows homogenized collagen, "trapped" eccrine glands</li>
+            <li><strong>E</strong>osinophilia in early active disease</li>
+            <li><strong>A</strong>ntibodies (anti-ssDNA, AHA) associated with functional impairment in linear type</li>
+        </ul>
+    </div>
+    
+    <div class="mnemonic">
+        <h4>🧠 "SCLEROSUS" Mnemonic for Lichen Sclerosus</h4>
+        <ul>
+            <li><strong>S</strong>quamous cell carcinoma risk (4-5% in untreated vulvar LS)</li>
+            <li><strong>C</strong>orticosteroids (ultrapotent topical) as first-line therapy</li>
+            <li><strong>L</strong>oss of elastic fibers (histologic hallmark)</li>
+            <li><strong>E</strong>CM-1 autoantibodies in 80% of patients</li>
+            <li><strong>R</strong>educed symptoms with maintenance therapy</li>
+            <li><strong>O</strong>rthohyperkeratosis with follicular plugging</li>
+            <li><strong>S</strong>uperficial dermal homogenization</li>
+            <li><strong>U</strong>ncommon in extragenital sites compared to genital</li>
+            <li><strong>S</strong>ymptoms differ between genital (severe pruritus) and extragenital (minimal)</li>
+        </ul>
+    </div>
+    
+    <div class="board-focus">
+        <h4>🎯 High-Yield Board Points</h4>
+        <ul>
+            <li>Methotrexate (0.3-0.5 mg/kg/week) + systemic corticosteroids is first-line for severe, joint-crossing linear morphea in children</li>
+            <li>UVA1 phototherapy is most effective for morphea, followed by BB-UVA and PUVA</li>
+            <li>Bullous morphea results from lymphatic stasis or impaired mechanical stability at the DEJ</li>
+            <li>IL-4 is a key cytokine in morphea pathogenesis; produced by Th2 cells and directly enhances TGF-β</li>
+            <li>"Trapped" eccrine glands in sclerotic dermis are characteristic in morphea histology</li>
+            <li>Atrophoderma of Pasini and Pierini presents as hyperpigmented patches on the posterior trunk</li>
+            <li>Anti-ECM-1 antibodies are found in 80% of lichen sclerosus patients</li>
+            <li>Anti-ssDNA antibodies in linear morphea are associated with increased risk of functional impairment</li>
+            <li>Plaque-type is the most common morphea subtype overall; linear morphea is more common in children</li>
+            <li>HLA-DQ7 is associated with lichen sclerosus</li>
+            <li>Loss of elastic fibers is seen in lichen sclerosus but not in morphea</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="card">
+    <p><strong>Note:</strong> This material is designed for board review purposes and should be used in conjunction with other learning resources. The management recommendations reflect current consensus but may evolve with new research.</p>
+</footer>
+</body>
+</html>

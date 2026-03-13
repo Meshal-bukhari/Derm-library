@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipoblastoma: Clinical Dossier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #e8e4dd; /* Parchment/light tan background */
+            color: #3a3a3a; /* Dark grey text */
+        }
+
+        .dossier-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fdfcf7; /* Off-white paper */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid #d1c7b8; /* Slightly darker border */
+            border-radius: 3px;
+        }
+
+        .dossier-header {
+            background-color: #5a6a62; /* Muted teal/green */
+            color: #fdfcf7;
+            padding: 25px 30px;
+            text-align: center;
+            border-bottom: 5px solid #c8b08a; /* Muted gold accent */
+            border-radius: 3px 3px 0 0;
+        }
+
+        .dossier-header h1 {
+            font-family: 'Roboto Slab', serif;
+            margin: 0 0 5px 0;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+
+        .dossier-header .case-id {
+            font-size: 0.9em;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        .report-section {
+            padding: 25px 30px;
+            border-bottom: 1px dashed #c8b08a; /* Dashed separator */
+        }
+
+        .report-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.6em;
+            color: #4a5750; /* Darker muted teal/green */
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 12px;
+            font-size: 1.2em;
+            color: #c8b08a; /* Muted gold icon color */
+        }
+
+        .key-fact {
+            background-color: #f4f0e8; /* Lighter parchment highlight */
+            border-left: 4px solid #c8b08a;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        .key-fact strong {
+            color: #5a6a62;
+        }
+
+        .comparison-box {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .comparison-item {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #d1c7b8;
+            border-radius: 3px;
+            background-color: #f9f7f2;
+        }
+        .comparison-item h4 {
+            margin-top: 0;
+            font-family: 'Roboto Slab', serif;
+            color: #5a6a62;
+            border-bottom: 1px solid #e0d9cc;
+            padding-bottom: 8px;
+        }
+        .comparison-item ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 0.95em;
+        }
+        .comparison-item ul li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .comparison-item ul li::before {
+            content: "\f10c"; /* fa-circle-thin or similar */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #c8b08a;
+            font-size: 0.8em;
+        }
+        .encapsulated-tag {
+            background-color: #a7c9af; /* Soft green */
+            color: #2a5733;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .infiltrating-tag {
+            background-color: #e8b3b3; /* Soft red */
+            color: #782f2f;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .diagnostic-pearl-highlight {
+            background-color: #fff9e0; /* Light yellow "sticky note" */
+            border: 1px solid #f0e68c; /* Khaki border */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 3px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .diagnostic-pearl-highlight::before {
+            content: "\f08d"; /* fa-thumb-tack */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+            color: #b8860b; /* DarkGoldenRod */
+        }
+        .diagnostic-pearl-highlight p {
+            font-size: 1.1em;
+            text-align: center;
+            color: #5e553c;
+        }
+        .diagnostic-pearl-highlight strong {
+            color: #8b4513; /* SaddleBrown */
+        }
+
+        .ddx-item {
+            background-color: #f9f7f2;
+            border: 1px solid #e0d9cc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+        .ddx-item .ddx-title {
+            font-weight: bold;
+            color: #5a6a62;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ddx-details {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #c8b08a;
+            font-size: 0.95em;
+            display: none; /* Hidden by default */
+            color: #4a5750;
+        }
+        .ddx-details strong {
+            color: #3a3a3a;
+        }
+        .ddx-item .ddx-title .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .histology-focus {
+            background-color: #e6f0ff; /* Light blue for lab/microscopy */
+            border: 1px solid #b3d1ff;
+            border-left: 5px solid #5a8cd8; /* Blue accent */
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+        .histology-focus h5 {
+            margin-top: 0;
+            color: #3367b3;
+            font-size: 1.1em;
+            font-family: 'Roboto Slab', serif;
+        }
+        .histology-focus ul { padding-left: 20px; list-style: disc; }
+        .histology-focus ul li { margin-bottom: 5px; }
+        .histology-focus .distinction { color: #c0392b; font-weight: bold; } /* Red for distinction */
+
+        .action-item {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            background-color: #e6f4ea; /* Light green for action/management */
+            border-left: 4px solid #5cb85c; /* Green accent */
+        }
+        .action-item strong {
+            color: #3d7c3d;
+        }
+
+        .code-section {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        .code-section strong { color: #333; }
+
+        .references-list {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 0.9em;
+            max-height: 150px; /* Make scrollable if too long */
+            overflow-y: auto;
+            background-color: #f9f7f2;
+            padding: 10px;
+            border: 1px solid #e0d9cc;
+            border-radius: 3px;
+        }
+        .references-list li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        .references-list li a {
+            color: #5a6a62;
+            text-decoration: none;
+        }
+        .references-list li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-stamp {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85em;
+            color: #777;
+            background-color: #e8e4dd;
+            border-top: 1px solid #d1c7b8;
+            border-radius: 0 0 3px 3px;
+        }
+        .footer-stamp img {
+            height: 30px;
+            opacity: 0.5;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .comparison-box {
+                flex-direction: column;
+            }
+            .dossier-header h1 {
+                font-size: 1.8em;
+            }
+            .section-title {
+                font-size: 1.4em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dossier-container">
+        <header class="dossier-header">
+            <h1>LIPOBLASTOMA</h1>
+            <p class="case-id">Dermatology Board Review - Case File: PedFatNeo-002</p>
+            <p style="font-size: 0.8em; opacity: 0.7;">Contributors: Craig N. Burkhart MD, Dean Morrell MD, Lowell A. Goldsmith MD, MPH</p>
+        </header>
+
+        <!-- Subject Profile / Synopsis -->
+        <section class="report-section" id="synopsis">
+            <h2 class="section-title"><i class="fas fa-id-card"></i>Subject Profile & Initial Findings</h2>
+            <p>Benign neoplasms of immature adipose tissue, primarily affecting <strong>neonates and infants</strong>.</p>
+            <div class="key-fact">
+                <i class="fas fa-venus-mars"></i> <strong>Gender Predilection:</strong> Males affected <strong>twice as often</strong> as females.
+            </div>
+            <p>The term "Lipoblastoma" typically refers to encapsulated lesions, while "Lipoblastomatosis" is used for unencapsulated, more infiltrating forms.</p>
+            
+            <div class="comparison-box">
+                <div class="comparison-item">
+                    <h4><i class="fas fa-shield-alt"></i>Lipoblastoma <span class="encapsulated-tag">ENCAPSULATED</span></h4>
+                    <ul>
+                        <li>Soft, subcutaneous neoplasm</li>
+                        <li>Well-defined, encapsulated</li>
+                        <li><strong>Rare recurrence</strong> after complete excision</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4><i class="fas fa-project-diagram"></i>Lipoblastomatosis <span class="infiltrating-tag">INFILTRATING</span></h4>
+                    <ul>
+                        <li>Unencapsulated, more diffuse</li>
+                        <li>More infiltrating nature</li>
+                        <li><strong>Higher incidence of recurrence</strong></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="key-fact">
+                <i class="fas fa-ruler-combined"></i> <strong>Typical Size:</strong> Ranges from 1-12 cm.
+            </div>
+        </section>
+
+        <!-- Field Observations / Look For -->
+        <section class="report-section" id="look-for">
+            <h2 class="section-title"><i class="fas fa-binoculars"></i>Field Observations: Clinical Presentation</h2>
+            <p>Parents usually notice a:</p>
+            <ul>
+                <li><strong>Slow-growing</strong> mass</li>
+                <li><strong>Soft</strong> consistency</li>
+                <li><strong>Mobile</strong> (especially Lipoblastoma)</li>
+                <li><strong>Painless</strong> nodule or deep soft tissue mass</li>
+            </ul>
+            <div class="key-fact">
+                <i class="fas fa-map-marker-alt"></i> <strong>Common Locations:</strong> Extremities (most common), trunk, and face.
+            </div>
+             <div style="text-align: center; margin: 15px 0;">
+                <i class="fas fa-baby" style="font-size: 2em; color: #c8b08a;"></i>
+                <p style="font-size: 0.9em; color: #5a6a62;">Typically observed in neonates and infants.</p>
+            </div>
+        </section>
+
+        <!-- Investigator's Hunch / Diagnostic Pearl -->
+        <section class="report-section" id="diagnostic-pearls">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i>Investigator's Hunch: Key Diagnostic Pearl</h2>
+            <div class="diagnostic-pearl-highlight">
+                <p><i class="fas fa-exclamation-circle" style="color: #8b4513; margin-right: 5px;"></i>BOARD EXAM ALERT!<br>
+                In an <strong>infant or neonate</strong>, true lipomas are <strong>RARE</strong>.
+                If you encounter a lesion resembling a lipoma in this age group,
+                your primary suspicion should be <strong>LIPOBLASTOMA</strong>!</p>
+            </div>
+        </section>
+
+        <!-- Case Codes -->
+        <section class="report-section" id="codes">
+            <h2 class="section-title"><i class="fas fa-barcode"></i>Case Classification Codes</h2>
+            <div class="code-section">
+                <strong>ICD10CM:</strong> D17.9 - Benign lipomatous neoplasm, unspecified
+            </div>
+            <div class="code-section">
+                <strong>SNOMEDCT:</strong> 400102008 - Lipoblastoma
+            </div>
+        </section>
+
+        <!-- Similar Profiles / DDx -->
+        <section class="report-section" id="ddx">
+            <h2 class="section-title"><i class="fas fa-users-slash"></i>Potential Misidentifications: Differential Diagnosis</h2>
+            <div class="ddx-item">
+                <div class="ddx-title" onclick="toggleDdxDetails('ddx-liposarcoma')">
+                    <span><i class="fas fa-flask-vial" style="margin-right: 8px; color: #c0392b;"></i>Liposarcoma</span>
+                    <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="ddx-details" id="ddx-liposarcoma">
+                    <p><strong>Key Distinctions from Lipoblastoma:</strong></p>
+                    <ul>
+                        <li><strong>Age:</strong> Generally found in children and young adults <strong>older than 10 years</strong> (Lipoblastoma is in neonates/infants).</li>
+                        <li><strong>Location:</strong> Typically in <strong>deep soft tissue</strong>.</li>
+                        <li><strong>Histology:</strong> Shows cellular atypia and more frequent mitoses (see Best Tests).</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Placeholder for VisualDx image of "Tumor" if available -->
+            <div style="text-align:center; margin-top:15px; padding:10px; border:1px dashed #ccc; border-radius:3px; background-color:#f9f7f2;">
+                <i class="fas fa-tumor" style="font-size: 1.5em; color: #c8b08a; display:block; margin-bottom:5px;"></i>
+                <span style="font-style: italic; font-size:0.9em; color: #5a6a62;">VisualDx® reference: "Tumor" (generic visual cue from source)</span>
+            </div>
+        </section>
+
+        <!-- Lab Analysis / Best Tests -->
+        <section class="report-section" id="best-tests">
+            <h2 class="section-title"><i class="fas fa-microscope"></i>Laboratory Analysis: Best Tests</h2>
+            <p><strong>Excisional Biopsy is key. Histopathological findings include:</strong></p>
+            <div class="histology-focus">
+                <h5><i class="fas fa-search-plus"></i> Microscopic Evidence:</h5>
+                <ul>
+                    <li>Lobules of <strong>mature AND immature fat cells</strong>.</li>
+                    <li>Presence of <strong>lipoblasts</strong> (immature fat cells) with varying degrees of differentiation.</li>
+                    <li><span class="distinction"><i class="fas fa-check-circle" style="color: #27ae60;"></i> LACK of significant cellular atypia.</span></li>
+                    <li><span class="distinction"><i class="fas fa-check-circle" style="color: #27ae60;"></i> RARE mitoses.</span></li>
+                </ul>
+                <p style="margin-top:10px; font-size:0.9em;">These latter two features (lack of atypia, rare mitoses) are crucial for distinguishing it histologically from liposarcoma.</p>
+            </div>
+        </section>
+
+        <!-- Recommended Action Plan / Management -->
+        <section class="report-section" id="management">
+            <h2 class="section-title"><i class="fas fa-clipboard-check"></i>Recommended Action Plan</h2>
+            <div class="action-item">
+                <strong>Referral:</strong> To a dermatologist or pediatric plastic surgeon.
+            </div>
+            <div class="action-item">
+                <strong>Treatment of Choice:</strong> <strong>Complete surgical excision</strong> of the lesion.
+            </div>
+            <p style="margin-top:15px;"><strong>Prognosis & Recurrence:</strong></p>
+            <ul>
+                <li><strong>Lipoblastomas (encapsulated):</strong> Easily treated by complete excision and <strong>rarely recur</strong>.</li>
+                <li><strong>Lipoblastomatosis (diffuse):</strong> Has a <strong>higher incidence of recurrence</strong> due to its infiltrative nature. Careful and complete excision is paramount.</li>
+            </ul>
+        </section>
+
+        <!-- Archived Case Notes / References -->
+        <section class="report-section" id="references">
+            <h2 class="section-title"><i class="fas fa-archive"></i>Archived Case Notes & References</h2>
+            <div class="toggle-title" onclick="toggleDdxDetails('references-list-content')" style="cursor:pointer; background-color:#f4f0e8; padding:8px; border-radius:3px; display:flex; justify-content:space-between; align-items:center;">
+                <span>Show/Hide Full Reference List</span>
+                <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div id="references-list-content" style="display:none; margin-top:10px;">
+                <ul class="references-list">
+                    <li>Bourelle S, et al. Lipoblastoma and lipoblastomatosis. J Pediatr Orthop B. 2006.</li>
+                    <li>Chien AL, et al. Two young girls with lipoblastoma and a review of the literature. Pediatr Dermatol. 2006.</li>
+                    <li>Steckman D, et al. Lipoblastoma of infancy mimicking hemangioma of infancy. Arch Facial Plast Surg. 2005.</li>
+                    <li>Harrer J, et al. Lipoblastoma and lipoblastomatosis: a report of two cases and review... Eur J Pediatr Surg. 2001.</li>
+                    <li>Tsai H, et al. Perineal lipoblastoma in a neonate. J Urol. 1997.</li>
+                    <li>Mentzel T, et al. Lipoblastoma and lipoblastomatosis: a clinicopathological study of 14 cases. Histopathology. 1993.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer-stamp">
+            <!-- You could add a small, thematic icon or "stamp" image here -->
+            <!-- <img src="path_to_stamp_icon.png" alt="Official Seal"> -->
+            <p>Last Updated: 02/01/2022</p>
+            <p>Content derived from ParsedResult (2).txt. Educational transformation for board review.</p>
+            <p>Original content source: Copyright © 2025 VisualDx®. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDdxDetails(id) {
+            var content = document.getElementById(id);
+            var arrowIcon = content.previousElementSibling.querySelector('.arrow i');
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                if(arrowIcon) {
+                    arrowIcon.classList.remove('fa-chevron-down');
+                    arrowIcon.classList.add('fa-chevron-up');
+                }
+            } else {
+                content.style.display = "none";
+                if(arrowIcon) {
+                    arrowIcon.classList.remove('fa-chevron-up');
+                    arrowIcon.classList.add('fa-chevron-down');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

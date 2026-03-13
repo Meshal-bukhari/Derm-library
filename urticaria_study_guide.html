@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urticaria & Angioedema - Saudi Dermatology Board Exam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .header .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            padding: 25px;
+            display: block;
+        }
+
+        .section-content.hidden {
+            display: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #e17055;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .clinical-pearl::before {
+            content: '💎';
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .mcq-focus {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .mcq-focus::before {
+            content: '📋 MCQ: ';
+            font-weight: bold;
+        }
+
+        .pathophysiology {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .epidemiology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .epi-card {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .classification-tree {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tree-node {
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .tree-parent {
+            background: linear-gradient(135deg, #55a3ff 0%, #3742fa 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tree-child {
+            background: linear-gradient(135deg, #26de81 0%, #20bf6b 100%);
+            color: white;
+            margin-left: 20px;
+        }
+
+        .differential-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .differential-table th {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .differential-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .differential-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .treatment-algorithm {
+            background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .step-box {
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #fff;
+        }
+
+        .key-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .fact-card {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e17055;
+        }
+
+        .memory-aid {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .epidemiology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>URTICARIA & ANGIOEDEMA</h1>
+            <div class="subtitle">Saudi Dermatology Board Exam - Complete Study Guide</div>
+            <div style="text-align: center; margin-top: 15px;">
+                <div style="background: rgba(255,255,255,0.2); border-radius: 20px; padding: 10px; display: inline-block;">
+                    Abdullah Nasser Al-Omair - January 2022
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                📚 INTRODUCTION & EPIDEMIOLOGY
+            </div>
+            <div class="section-content">
+                <div class="epidemiology-grid">
+                    <div class="epi-card">
+                        <h3>👥 GENDER DISTRIBUTION</h3>
+                        <p><strong>Acute urticaria:</strong> Men = Women</p>
+                        <p><strong>Chronic urticaria:</strong> Women (60%)</p>
+                        <p><strong>Delayed pressure urticaria:</strong> More in males</p>
+                    </div>
+                    <div class="epi-card">
+                        <h3>🎂 AGE DISTRIBUTION</h3>
+                        <p>Urticaria can occur in any age group</p>
+                        <p><strong>Chronic urticaria:</strong> More common in 4th and 5th decades</p>
+                    </div>
+                </div>
+
+                <div class="pathophysiology">
+                    <h3>🧬 PATHOGENESIS</h3>
+                    <div class="highlight-box">
+                        <strong>HLA Association:</strong> HLA DR4, DQ8 (chronic spontaneous urticaria) associated mainly with Th2 response
+                    </div>
+                    <div class="clinical-pearl">
+                        The primary effector cell of Urticaria is the mast cell, and histamine is the major mediator of pruritus and wheals.
+                    </div>
+                    <div class="key-facts">
+                        <div class="fact-card">
+                            <strong>Acute spontaneous urticaria:</strong> Type 1 hypersensitivity reaction
+                        </div>
+                        <div class="fact-card">
+                            <strong>Chronic Urticaria:</strong> Mainly is idiopathic
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔬 MAST CELL DEGRANULATION MECHANISMS
+                    </h3>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #e74c3c; margin-bottom: 15px;">❖ Classic Immediate Hypersensitivity:</h4>
+                        <p style="margin-bottom: 10px;">Bound specific IgE by allergen then immunologic degranulating stimuli that act through the IgE receptor</p>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Autoimmune:</strong> Autoantibodies against FcɛRI or IgE
+                            </div>
+                            <div class="fact-card">
+                                <strong>IgE-dependent (allergic):</strong> latex gloves
+                                <div class="mcq-focus">Latex gloves - MCQ focus</div>
+                            </div>
+                            <div class="fact-card">
+                                <strong>Immune complex:</strong> Vasculitis
+                            </div>
+                            <div class="fact-card">
+                                <strong>Kinin- and complement-dependent:</strong> C1 esterase inhibitor deficiency
+                            </div>
+                            <div class="fact-card">
+                                <strong>Medications:</strong> PCN and cephalosporins (>TMP/SMX, and minocycline)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #27ae60; margin-bottom: 15px;">❖ Non-immunologic Stimuli:</h4>
+                        <p style="margin-bottom: 10px;">Independent of the FcɛRI</p>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Medications:</strong> Opiates, Aspirin, NSAID, ACEI, radiocontrast media, polymyxin B
+                            </div>
+                            <div class="fact-card">
+                                <strong>Complement:</strong> C5a anaphylatoxin, Stem cell factor
+                            </div>
+                            <div class="fact-card">
+                                <strong>Neuropeptides:</strong> Substance P, VIP
+                            </div>
+                            <div class="fact-card">
+                                <strong>Vasoactive stimuli:</strong> Nettle stings
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clinical-pearl">
+                        <strong>Mast cell Activators:</strong> PGD2, leukotrienes F,D,E4 
+                        <br><strong>Inhibitors:</strong> PGE2
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Important Note:</strong> Increase anti thyroid antibodies → up to 25% (mainly with autoimmune urticaria)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentation Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🎯 URTICARIA PRESENTATION
+            </div>
+            <div class="section-content">
+                <table class="differential-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Wheal</th>
+                            <th>Angioedema</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Prevalence</strong></td>
+                            <td>Primary lesion</td>
+                            <td>Up to 40% of cases of urticaria have associated angioedema</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>Superficial dermis: present as well defined erythematous edematous lesions that may be distributed on any part of the body. Usually blanching if not should raise suspicion for vasculitis.</td>
+                            <td>Deep subdermal layer into subcutaneous tissue: less defined can affect any part of the body, but often occurs on the face, tongue, or lips. With regular lack of erythematous presentations Exclude: GI/Urinary/Respiratory symptoms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Duration</strong></td>
+                            <td>Last less than 24 hours apart of Delayed pressure urticaria or delayed dermographism</td>
+                            <td>Can last 2-3 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Presentation</strong></td>
+                            <td>Usually present as Pruritic</td>
+                            <td>Usually present as burning sensation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mediator</strong></td>
+                            <td>Histamine</td>
+                            <td>Histamine or Bradykinin if hereditary angioedema and angiotensin-converting enzyme (ACE) related.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Classification Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                📊 CLASSIFICATIONS
+            </div>
+            <div class="section-content">
+                <div class="memory-aid">
+                    Duration-Based Classification Memory Aid
+                </div>
+                
+                <div class="key-facts">
+                    <div class="fact-card">
+                        <strong>Acute:</strong> Less than 6 weeks
+                    </div>
+                    <div class="fact-card">
+                        <strong>Chronic:</strong> More than 6 weeks and occurring at least twice a week off treatment
+                    </div>
+                    <div class="fact-card">
+                        <strong>Episodic:</strong> Long period usually more than 6 weeks and only to an identifiable environmental cause
+                    </div>
+                </div>
+
+                <div class="classification-tree">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: #2d3436;">URTICARIA CLASSIFICATIONS</h3>
+                    
+                    <div style="text-align: center;">
+                        <div class="tree-node tree-parent">SPONTANEOUS</div>
+                        <div style="margin: 10px 0;">
+                            <div class="tree-node tree-child">Acute</div>
+                            <div class="tree-node tree-child">Chronic</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <div class="tree-node tree-parent">INDUCIBLE</div>
+                        
+                        <div style="margin: 15px 0;">
+                            <div class="tree-node tree-child">Mechanical stimuli</div>
+                            <div style="margin-left: 40px;">
+                                <div class="tree-node">1- Dermographism (Simple, Symptomatic)</div>
+                                <div class="tree-node">2- Delayed pressure urticaria</div>
+                                <div class="tree-node">3- Vibratory angioedema</div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 15px 0;">
+                            <div class="tree-node tree-child">Thermal stimuli</div>
+                            <div style="margin-left: 40px;">
+                                <div class="tree-node">Heat induced</div>
+                                <div class="tree-node">Cold induced (Primary cold, Secondary Cold cryoproteinemia, Reflex cold)</div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 15px 0;">
+                            <div class="tree-node tree-child">Sweeting/stress stimuli</div>
+                            <div style="margin-left: 40px;">
+                                <div class="tree-node">Cholinergic</div>
+                                <div class="tree-node">Adrenergic</div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 15px 0;">
+                            <div class="tree-node tree-child">Contact</div>
+                        </div>
+
+                        <div style="margin: 15px 0;">
+                            <div class="tree-node tree-child">Syndromic</div>
+                            <div style="margin-left: 40px;">
+                                <div class="tree-node">Cryopyrin associated periodic syndrome</div>
+                                <div class="tree-node">Schnitzler's syndrome</div>
+                                <div class="tree-node">Episodic angioedema with eosinophilia</div>
+                                <div class="tree-node">Systemic capillary leak syndrome</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Classifications Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🔍 DETAILED CLASSIFICATIONS & TYPES
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #00b894 0%, #00a085 100%); color: white; padding: 15px; border-radius: 8px;">
+                        A- SPONTANEOUS URTICARIAS
+                    </h3>
+                    
+                    <div style="background: #f1f2f6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #e74c3c; margin-bottom: 15px;">🔹 Acute Urticaria:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Causes (in order):</strong> (1) idiopathic > (2) infectious: URIs, UTI, GI > (3) drugs (b-lactams most common), (4) foods
+                            </div>
+                            <div class="fact-card">
+                                Common in children with atopic dermatitis
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #3498db;">
+                            <h5>📊 CAUSES OF ACUTE URTICARIA</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">50% Idiopathic</div>
+                                <div class="fact-card">40% Upper respiratory tract infections</div>
+                                <div class="fact-card">9% Drugs</div>
+                                <div class="fact-card">1% Foods</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #27ae60; margin-bottom: 15px;">🔹 Chronic Spontaneous Urticaria:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>60% idiopathic</strong> Associated with Autoimmune disorder
+                            </div>
+                            <div class="fact-card">
+                                <strong>Prognosis:</strong> 55% will resolve within 1 year, only 5% will persist after 5 years
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #e74c3c;">
+                            <h5>📊 CAUSES OF CHRONIC URTICARIA</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">45% Idiopathic</div>
+                                <div class="fact-card">20% Autoimmune</div>
+                                <div class="fact-card">5% Pseudoallergic</div>
+                                <div class="fact-card">5% Infection-related</div>
+                                <div class="fact-card">25% Inducible</div>
+                            </div>
+                            <div class="memory-aid">
+                                75% Spontaneous (non-physical, non-vasculitic) + 25% Inducible
+                            </div>
+                            <div class="fact-card">
+                                <strong>Aspirin:</strong> aggravates pre-existing chronic urticaria in up to 30% of patients
+                            </div>
+                            
+
+                            <div class="clinical-pearl">
+                                Autoimmune represents those patients with functional autoantibodies against FcɛRI or the Fc portion of IgE.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        B- INDUCIBLE URTICARIAS: Mechanical, Thermal, sweeting/stress
+                    </h3>
+                    
+                    <div class="highlight-box">
+                        <strong>Key Features:</strong> Mechanical urticarias: May last more than 24 hours. Not associated with Atopy
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #2d3436; margin-bottom: 15px;">🔧 1- DERMOGRAPHISM:</h4>
+                        <p><strong>Can be simple or symptomatic</strong></p>
+                        <div class="clinical-pearl">
+                            Immediate response within seconds/minutes from provocations
+                        </div>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Simple immediate dermographism:</strong> Occurs in at least 5% of the normal population (non pruritic)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Symptomatic immediate:</strong> The most common type of physical urticaria (pruritic)
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-pearl">
+                            Darier's sign: A localized dermographic response after rubbing cutaneous lesions of mastocytosis
+                        </div>
+                    </div>
+
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #e74c3c;">
+                        <h4 style="color: #e74c3c; margin-bottom: 15px;">🔧 2- DELAYED PRESSURE URTICARIA (DPU):</h4>
+                        <div class="clinical-pearl">
+                            Deep erythematous swellings at sites of sustained pressure to the skin. After a delay of 30 minutes to 12 hours And can last more than 24 hours.
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>📍 Sites frequently affected:</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">
+                                    <strong>Waistline:</strong> After wearing tight clothing
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Feet and sole:</strong> From tight shoes and after walking
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Palms:</strong> From manual work
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Genitalia:</strong> After intercourse
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <strong>Systemic features:</strong> Such as malaise, "flu-like" symptoms, arthralgia
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #3498db;">
+                        <h4 style="color: #3498db; margin-bottom: 15px;">🔧 3- VIBRATORY ANGIOEDEMA:</h4>
+                        <div class="fact-card">
+                            Very rare form, lasting 30 minutes. Stimuli include jogging, and the use of vibrating machinery
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #ff7675 0%, #d63031 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🌡️ THERMAL URTICARIAS: Heat or Cold
+                    </h3>
+                    
+                    <div style="background: #ffe8e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #d63031; margin-bottom: 15px;">🔥 1- Heat Contact Urticaria:</h4>
+                        <div class="fact-card">
+                            Within minutes of contact with heat source for 30 minutes, can present with systemic manifestations
+                        </div>
+                    </div>
+
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #0984e3; margin-bottom: 15px;">❄️ 2- Cold Exposure:</h4>
+                        <div class="clinical-pearl">
+                            Can be acquired or familial (NLRP3,NLRP12,PLCG2 gene mutation)
+                        </div>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Primary cold contact urticaria:</strong> 95% of cold urticaria. Wheeling occurs minutes after re-warming the skin. May follow URTI, arthropod bites, HIV infection. (idiopathic)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Secondary cold contact urticaria:</strong> Cryoglobulinemia, cryofibrinogenemia, hepatitis B/C, lymphoproliferative disease, mononucleosis associated with other manifestations such as Raynaud's phenomenon or purpura, may last longer other types.
+                            </div>
+                            <div class="fact-card">
+                                <strong>Reflex cold urticaria:</strong> Life threatening due generalized cooling of the body
+                            </div>
+                        </div>
+                        
+                        <div class="mcq-focus">
+                            Negative ice cube test in reflex cold urticaria and familial cold urticaria
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <strong>⚠️ SAFETY WARNING:</strong> Pts should never swim alone as massive mediator release can cause hypotension
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); color: white; padding: 15px; border-radius: 8px;">
+                        💦 SWEETING/STRESS URTICARIAS: Adrenergic / Cholinergic
+                    </h3>
+                    
+                    <div style="background: #fff9e6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #e17055; margin-bottom: 15px;">🔹 Cholinergic Urticaria:</h4>
+                        <div class="clinical-pearl">
+                            Any form of physical exertion with rising body temperature
+                        </div>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">Hot baths "Aquagenic urticaria"</div>
+                            <div class="fact-card">Sudden emotional stress</div>
+                            <div class="fact-card">Drinking alcohol, and eating spicy</div>
+                        </div>
+                        
+                        <div class="mcq-focus">
+                            Methacholine skin test → Injection of Methylene chloride
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <strong>"Aquagenic urticaria"</strong> (seen in cystic fibrosis, Polycythemia vara, old xerotic patient and Hodgkin's)
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f0f0; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4 style="color: #636e72; margin-bottom: 15px;">🔹 Adrenergic Urticaria:</h4>
+                        <div class="clinical-pearl">
+                            Distinguished from cholinergic urticaria by the presence of blanched vasoconstricted skin surrounding small pink wheel
+                        </div>
+                        <div class="fact-card">
+                            <strong>Test:</strong> Intradermal norepinephrine injection
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🤝 C- CONTACT URTICARIA
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Immediate and transient localized swelling and redness that occurs on the skin after direct contact with an offending substance.
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Immunological:</strong> IgE mediated such patient with atopic dermatitis.
+                            </div>
+                            <div class="fact-card">
+                                <strong>Non-Immunological:</strong> Sorbic acid and benzoic acid in eye solutions, cinnamic aldehyde in cosmetics and Fragrances, eating Raw meat, fish, and vegetables
+                            </div>
+                        </div>
+                        
+                        <div style="background: #e8f5e8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>🍎 Food Contact Hypersensitivity Syndrome:</h5>
+                            <p>Itching and mild swelling of the mouth, tongue, and soft palate within minutes of eating fresh fruits and not cooked fruit. It usually occurs in hay-fever sufferer</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <h5>📊 STAGING SYSTEM FOR CONTACT URTICARIA SYNDROME</h5>
+                        <table class="differential-table">
+                            <thead>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Manifestations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Stage 1</strong></td>
+                                    <td>Localized urticaria (redness and swelling); dermatitis (eczema); nonspecific symptoms (itching, tingling, burning sensation)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stage 2</strong></td>
+                                    <td>Generalized urticaria</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stage 3</strong></td>
+                                    <td>1. Bronchial asthma (wheezing); rhinitis, conjunctivitis<br>2. Oropharyngeal symptoms: (lip swelling, hoarseness, difficulty in swallowing);<br>3. GI symptoms: (nausea, vomiting, diarrhea, cramps)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stage 4</strong></td>
+                                    <td>Anaphylactoid reactions (shock)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Differentials Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🎯 MAJOR DIFFERENTIALS
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%); color: white; padding: 15px; border-radius: 8px;">
+                        (1) URTICARIAL VASCULITIS
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Lesions that resemble urticaria but have distinct characteristics
+                    </div>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🔍 Key Distinguishing Features:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">Last >24 h</div>
+                            <div class="fact-card">Burn/hurt (rather than itchy)</div>
+                            <div class="fact-card">Post inflammatory hyperpigmentation</div>
+                            <div class="fact-card">Histology shows mild LCV (+/- eosinophils)</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>📊 Two Types: Both common in female</h4>
+                        
+                        <div style="background: #e8f5e8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>❖ Normocomplementemic urticarial vasculitis (NUV): 70%–80%</h5>
+                            <p>Skin-limited and idiopathic (self limited in 3 years)</p>
+                        </div>
+                        
+                        <div style="background: #ffe8e8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>❖ Hypocomplementemic vasculitis (HUV): 20%–30%</h5>
+                            <p>Highly associated with systemic disease "only in females"</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🧬 Pathogenesis:</h4>
+                        <div class="clinical-pearl">
+                            Immunocomplex vascular deposition
+                        </div>
+                        <div class="mcq-focus">
+                            Hypocomplementemia vasculitis (antibody against C1q) = low C1q levels
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff9e6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>⚡ Triggers: Its idiopathic disorders with triggers</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Autoimmune disease:</strong> SLE (associated with HUV), Sjogren's
+                            </div>
+                            <div class="fact-card">
+                                <strong>Infection:</strong> Viral Hepatitis B/C, EBV
+                            </div>
+                            <div class="fact-card">
+                                <strong>Medications:</strong> NSAIDs, MTX, TNF-α inhibitors, Cimetidine, Fluoxetine, Potassium iodide
+                            </div>
+                            <div class="fact-card">
+                                <strong>Malignancy:</strong> Leukemia/lymphoma, Gammopathies (IgM, IgG)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Others:</strong> Serum sickness
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            May have concomitant angioedema. Recurrent episodes lasting months to years
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <h5>🏥 SYSTEMIC MANIFESTATIONS</h5>
+                        <table class="differential-table">
+                            <thead>
+                                <tr>
+                                    <th>System</th>
+                                    <th>Manifestations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Musculoskeletal (50%)</strong></td>
+                                    <td>Arthralgias, myalgias</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>GI (15%–30%)</strong></td>
+                                    <td>Recurrent abdominal pain, diarrhea, N/V</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Renal (20%–30%)</strong></td>
+                                    <td>Glomerulonephritis or interstitial nephritis</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pulmonary (20%)</strong></td>
+                                    <td>SOB, severe COPD (major prognostic finding), laryngeal edema</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ocular (10%)</strong></td>
+                                    <td>Uveitis, conjunctivitis, episcleritis</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Constitutional symptom</strong></td>
+                                    <td>Fever, malaise, arthralgias, myalgias</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="background: #f1f2f6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🧪 Laboratory Testing:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>HUV:</strong> (low) CH50, C3 and C4; anti-C1Q Ab (~100% of HUV patients) and high ESR
+                            </div>
+                            <div class="fact-card">
+                                <strong>Check ANA</strong> given strong association of HUV with SLE (up to 50%)
+                            </div>
+                            <div class="fact-card">
+                                <strong>DsDNA and Anti smith (+)</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Diagnostic Workflow & Lab Evaluation Flowchart -->
+<div style="background: #e3f6fd; padding: 22px; border-radius: 12px; margin: 18px 0; box-shadow: 0 2px 8px rgba(44,62,80,0.08);">
+    <h4 style="margin-bottom: 18px; color: #0984e3;">🩺 Diagnostic Workflow & Lab Evaluation</h4>
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; justify-content: space-between;">
+        <!-- Flowchart -->
+        <div style="flex: 2 1 320px; min-width: 300px;">
+            <div style="display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap;">
+                <div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 16px 22px; border-radius: 10px; font-weight: bold; margin-right: 12px; min-width: 160px; text-align: center;">
+                    Lesional Skin Biopsy<br><span style='font-size:0.95em;font-weight:400;'>12-24 hr lesion</span>
+                </div>
+                <div style="font-size: 2.2em; color: #0984e3; margin: 0 10px;">&#8594;</div>
+                <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); color: #2d3436; padding: 16px 22px; border-radius: 10px; font-weight: bold; margin-right: 12px; min-width: 160px; text-align: center;">
+                    Histology<br><span style='font-size:0.95em;font-weight:400;'>Leukocytoclastic vasculitis?</span>
+                </div>
+                <div style="font-size: 2.2em; color: #0984e3; margin: 0 10px;">&#8594;</div>
+                <div style="background: linear-gradient(135deg, #55efc4 0%, #00b894 100%); color: #065c3a; padding: 16px 22px; border-radius: 10px; font-weight: bold; margin-right: 12px; min-width: 160px; text-align: center;">
+                    Lab & Imaging Workup<br><span style='font-size:0.95em;font-weight:400;'>Systematic evaluation</span>
+                </div>
+            </div>
+            <ul style="margin-top: 18px; margin-left: 10px; color: #636e72; font-size: 1em;">
+                <li><strong>Biopsy:</strong> Lesion present 12-24 hours. H&E stain. <span style="color:#d35400;">DIF not routinely needed</span>.</li>
+                <li><strong>Histology:</strong> Look for leukocytoclastic vasculitis.</li>
+                <li><strong>Labs/Imaging:</strong> See table for details. Imaging only if symptoms suggest organ involvement.</li>
+            </ul>
+        </div>
+        <!-- Lab Table -->
+        <div style="flex: 1 1 320px; min-width: 300px;">
+            <table class="differential-table" style="margin:0;">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Tests</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Baseline</strong></td>
+                        <td>
+                            CBC, Platelets<br>
+                            ESR, CRP<br>
+                            BUN, Creatinine, Urinalysis<br>
+                            LFTs
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Immunologic</strong></td>
+                        <td>
+                            C3, C4, CH50, (C1q if C4 low)<br>
+                            ANA, Anti-Ro (SS-A)<br>
+                            Cryoglobulins, HBV/HCV/EBV serologies
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Imaging/Targeted</strong></td>
+                        <td>
+                            PFTs, CXR (if pulmonary symptoms)<br>
+                            GI imaging (if GI symptoms)<br>
+                            Ophthalmology referral (if ocular symptoms)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 14px; color: #636e72; font-size: 0.97em;">
+        <strong>Note:</strong> The cornerstone of diagnosis is a standard H&E-stained biopsy of a 12- to 24-hour-old lesion. Direct immunofluorescence (DIF) is generally <span style="color:#d35400;">not needed routinely</span>.
+    </div>
+</div>
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>📋 Diagnostic Criteria:</h4>
+                        <div class="clinical-pearl">
+                            <strong>Major:</strong> 1- urticaria more than 6 months, 2- Hypo complements
+                        </div>
+                        <div class="highlight-box">
+                            <strong>Minor:</strong><br>
+                            1- Vasculitis on skin biopsy, 2- Arthralgia/arthritis. 3- Uveitis/episcleritis.<br>
+                            4- Recreant abdominal pain, 5- glomerulonephritis, 6- positive C1q on immunofluorescent with low C1q
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <h5>💊 TREATMENT FOR URTICARIAL VASCULITIS</h5>
+                        <table class="differential-table">
+                            <thead>
+                                <tr>
+                                    <th>Treatment Level</th>
+                                    <th>Medications</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Primary</strong></td>
+                                    <td>Antihistamines<br>Oral steroids<br>Indomethacin</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Secondary</strong></td>
+                                    <td>Dapsone<br>Colchicine<br>Hydroxychloroquine</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Severe</strong></td>
+                                    <td>Prednisone+ MMF</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Resistant</strong></td>
+                                    <td>Rituximab<br>IVIG</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 15px; border-radius: 8px;">
+                        (2) SCHNITZLER'S SYNDROME
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Chronic urticaria + IgM gammopathy + two of the following:
+                    </div>
+                    
+                    <div class="key-facts">
+                        <div class="fact-card">Periodic fever, arthralgia, bone pain (otosclerosis), high ESR, or high WBC</div>
+                        <div class="fact-card">Neutrophilic infiltrate on histopathology</div>
+                        <div class="fact-card"><strong>Treatment:</strong> Anakinra (IL1 antagonist)</div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 15px; border-radius: 8px;">
+                        (3) EPISODIC ANGIOEDEMA WITH EOSINOPHILIA (GLEICH SYNDROME)
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        A syndrome of episodic angioedema with hypereosinophilia, weight gain, and fever
+                    </div>
+                    
+                    <div class="mcq-focus">
+                        High IL5
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        (4) SYSTEMIC CAPILLARY LEAK SYNDROME
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Aka Clarkson syndrome
+                    </div>
+                    
+                    <div class="key-facts">
+                        <div class="fact-card">Episodic massive plasma exudation from blood vessels >> potential life-threatening hypotension, analogous to anaphylaxis</div>
+                        <div class="fact-card">Angioedema maybe a feature</div>
+                        <div class="fact-card">associated with an IgG paraproteinemia</div>
+                        
+
+                        <div class="fact-card">Medications (in particular IL-2) >> can produce systemic capillary leak syndrome</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Approach Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🔬 CLINICAL APPROACH
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #00b894 0%, #00a085 100%); color: white; padding: 15px; border-radius: 8px;">
+                        📋 HISTORY
+                    </h3>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Lesion:</strong> Duration, size, frequency, distribution, pruritic or painful
+                            </div>
+                            <div class="fact-card">
+                                <strong>Risk factor:</strong> Travel history, Medication, Allergy, Stress, Food, Type of Work, History of infections
+                            </div>
+                            <div class="fact-card">
+                                <strong>Other:</strong> Quality of life, Previous therapy, Family history, Medical condition, Constitutional symptoms, systemic symptoms: Respiratory/GI/urinary
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        👨‍⚕️ EXAMINATION
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>1-</strong> Thorough General examination and local examination for the wheel and exclude if any sign of angioedema
+                            </div>
+                            <div class="fact-card">
+                                <strong>2-</strong> Sign of systemic disease
+                            </div>
+                            <div class="fact-card">
+                                <strong>3-</strong> Common for urticaria to have cleared by the time of consultations, so patient optimal to take photograph, testing for dermatographism is needed if no lesion is visible at the time of consultation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🧪 SPECIAL TESTS
+                    </h3>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Delayed pressure urticaria:</strong> Apply 2.5 kg weight as pressure on the back or thigh for 20 minutes
+                            </div>
+                            <div class="fact-card">
+                                <strong>Thermal induced urticaria:</strong><br>
+                                1- Cold Ice cube for 5 minutes 4C (wheals from 30 seconds - 20 minutes) (negative in familial and reflex)<br>
+                                2- Hot Apply heated cylinder (temp increment up to 45C) for 30 seconds- 5 minutes
+                            </div>
+                            <div class="fact-card">
+                                <strong>Aquagenic urticaria:</strong> Shower at body temperature
+                            </div>
+                            <div class="fact-card">
+                                <strong>Cholinergic urticaria:</strong> Exercise on an over heated setting.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔬 SCREENING TESTS
+                    </h3>
+                    
+                    <div style="background: #f0f0f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Acute spontaneous urticaria:</strong> No need for screening but positive (RAST) due to type 1 hypersensitivity reaction
+                            </div>
+                            <div class="fact-card">
+                                <strong>Chronic spontaneous urticaria:</strong> CBC and ESR, thyroid function, IgE level
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #6c5ce7;">
+                            <h5>📊 Standard Laboratory Tests:</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">Complete blood cell (CBC) count with differential</div>
+                                <div class="fact-card">Erythrocyte sedimentation rate (ESR) and/or C-reactive protein (CRP)</div>
+                                <div class="fact-card">Liver enzymes, and thyrotropin (TSH).</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff9e6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🔍 Key Points for Additional Testing:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Eosinophilia:</strong> Elevated in parasitic infection as intestinal parasitosis
+                            </div>
+                            <div class="fact-card">
+                                <strong>High ESR and CRP:</strong> Urticarial vasculitis
+                            </div>
+                            <div class="fact-card">
+                                <strong>Examination for Stool for ova and parasites:</strong> If patient have 1- gastrointestinal (GI) tract symptoms, 2- an elevated eosinophil count, 3- a positive travel history
+                            </div>
+                            <div class="fact-card">
+                                <strong>ANA, Rheumatoid factor and C4 should be ordered:</strong> If ESR is high and there another rheumatological feature.
+                            </div>
+                            <div class="fact-card">
+                                <strong>Thyroid antibody titer order in:</strong> Patients with urticaria unresponsive to antihistamines or steroids to exclude thyroid disorder
+                            </div>
+                            <div class="fact-card">
+                                <strong>Hepatitis B and C:</strong> If suspected cryoglobulinemia or cold-induced urticaria and urticarial vasculitis.
+                            </div>
+                            <div class="fact-card">
+                                <strong>C1-esterase Level:</strong> If Angioedema without wheel and low C4 to Exclude hereditary Angioedema and acquired C1 inhibitor deficiency.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔬 SKIN BIOPSY
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Skin biopsy is not routinely needed but should be performed with one following features:
+                    </div>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                Indicative of urticarial vasculitis as lesions persisting beyond 24 hours, painful rather than pruritic, accompanying petechial or purpuric characteristics, leave residual pigmentation upon resolution
+                            </div>
+                            <div class="fact-card">
+                                An elevated CRP/ESR and/or systemic symptoms (arthralgias, fever).
+                            </div>
+                            <div class="fact-card">
+                                Symptoms that are unresponsive to appropriate doses of antihistamines
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <img src="https://i.postimg.cc/Dzvnp1P8/image.png" style="width: 50%; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);" />
+                    </div>
+            </div>
+        </div>
+
+        <!-- Treatment Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                💊 TREATMENT
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #00b894 0%, #00a085 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🎯 FIRST STEP: AVOID TRIGGERS
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #e74c3c;">
+                        <div class="highlight-box">
+                            <strong>⚠️ PRIORITY:</strong> If Angioedema is present: Securing Airway is top priority and the possibly of using adjuvant Epinephrine.
+                        </div>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">Soothing lotions (containing pramoxine and/or menthol)</div>
+                            <div class="fact-card">May need to avoid: Aspirin, NSAIDs Opiates</div>
+                            <div class="fact-card">Exclusion diets: low pseudoallergen diets may be helpful in some cases</div>
+                            <div class="fact-card">Cold urticaria: cyproheptadine 4-8 mg TID.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 15px; border-radius: 8px;">
+                        💊 FIRST LINE: 2nd Second-generation H1 antihistamines
+                    </h3>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="clinical-pearl">
+                            Only about 40% Respond. Should be taken daily even if not symptomatic
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #fd79a8;">
+                            <h5>🤰 Pregnancy Guidelines:</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">
+                                    <strong>Cetirizine and loratadine (category B)</strong> as preferred medication especially in the 2nd and 3rd trimester.
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Diphenhydramine and chlorpheniramine:</strong> have the most evidence supporting their safety in pregnancy. Not preferred during breastfeeding -> infant sedeative effect
+                                </div>
+
+                                <div class="fact-card">
+                                    <strong>Chlorpheniramine:</strong> Used but should be avoided close to delivery and specially during breast feeding (sedative effects in the child)
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Hydroxyzine:</strong> Contraindicated during breastfeeding due to reports of seizures in breastfed infants.
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        📈 2ND LINE: If not control within 2-4 weeks
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="clinical-pearl">
+                            Increase the dose of 2nd generation antihistamine up to 4 tablet
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fff; border-radius: 15px; padding: 25px; margin: 20px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="text-align: center; color: #2d3436; margin-bottom: 20px;">💊 ANTIHISTAMINES FOR URTICARIA</h3>
+                    
+                    <table class="differential-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Examples</th>
+                                <th>Plasma half-life (hours)</th>
+                                <th>Daily adult dose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Classic (sedating) H₁ antihistamines</strong></td>
+                                <td>Chlorpheniramine (1)</td>
+                                <td>12-15</td>
+                                <td>4 mg three times daily (up to 12 mg at night)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Hydroxyzine (1)</td>
+                                <td>20</td>
+                                <td>10-25 mg three times daily (up to 75 mg at night)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Diphenhydramine (2)</td>
+                                <td>4</td>
+                                <td>10-25 mg at night</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Doxepin† (1)</td>
+                                <td>17</td>
+                                <td>10-50 mg at night</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Second-generation H₁ antihistamines</strong></td>
+                                <td>Acrivastine‡ (1)</td>
+                                <td>2-4</td>
+                                <td>8 mg three times daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Cetirizine§ (1)</td>
+                                <td>7-11</td>
+                                <td>10 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Loratadine (1)</td>
+                                <td>8-11</td>
+                                <td>10 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Mizolastine‖ (1)</td>
+                                <td>13</td>
+                                <td>10 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Newer second-generation H₁ antihistamines</strong></td>
+                                <td>Desloratadine (1)</td>
+                                <td>19-35</td>
+                                <td>5 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Fexofenadine (1)</td>
+                                <td>17</td>
+                                <td>180 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Levocetirizine (1)</td>
+                                <td>7-10</td>
+                                <td>5 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Rupatadine‖ (1)</td>
+                                <td>6</td>
+                                <td>10 mg once daily</td>
+                            </tr>
+                            <tr>
+                                <td><strong>H₂ antagonists¶</strong></td>
+                                <td>Cimetidine (1)</td>
+                                <td>2</td>
+                                <td>400 mg twice daily</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Ranitidine (2)</td>
+                                <td>2-3</td>
+                                <td>150 mg twice daily</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <div><strong>*</strong>Current prescribing manuals should be consulted for details on doses in children.</div>
+                        <div><strong>†</strong>Possesses potent H₁ and H₂ antihistamine properties.</div>
+                        <div><strong>‡</strong>Only available in the US as a combination product with pseudoephedrine for seasonal allergic rhinitis.</div>
+                        <div><strong>§</strong>The active metabolite of hydroxyzine.</div>
+                        <div><strong>‖</strong>Not available in the US.</div>
+                        <div><strong>¶</strong>Used in combination with H₁ antagonists.</div>
+                        <div style="margin-top: 10px;">
+                            <strong>Key to evidence-based support:</strong> (1) prospective controlled trial; (2) retrospective study or large case series; (3) small case series or individual case reports.
+                        </div>
+                    </div>
+                    
+                    <div class="clinical-pearl">
+                        A short-acting classic antihistamine may be added at night to a daily second-generation antihistamine, with or without the addition of an H₂ antagonist for maximal antihistamine blockade.
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%); color: white; padding: 15px; border-radius: 8px;">
+                        ⚡ 3RD STEP: 2-4 weeks without improvement > 3rd step
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        3rd step is different from Saudi/European and US guidelines:
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🇸🇦 Saudi/European Guidelines:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Omalizumab (300mg S.C)</strong> monthly injection
+                            </div>
+                            <div class="fact-card">
+                                Excellent choice for Delayed pressure urticaria and urticaria vasculitis
+                            </div>
+                            <div class="fact-card">
+                                Failure after 6 months we can add cyclosporin
+                            </div>
+                            <div class="fact-card">
+                                Approved above the age of 12
+                            </div>
+                            <div class="fact-card">
+                                <strong>Ligelizumab</strong> (FDA approved) better efficacy then omalizumab
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🇺🇸 US Guidelines:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">Another second-generation anti histamine</div>
+                            <div class="fact-card">Montelukast (leukotriene receptor antagonist)</div>
+                            <div class="fact-card">First generation at bedtime (sedating effect)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔥 FOR MORE RECALCITRANT CASES CONSIDER:
+                    </h3>
+                    
+                    <div style="background: #f0f0f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Doxepin</strong> (tricyclic antidepressant with very potent H1 and H2 antihistamine properties)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Systemic steroids</strong> (30-50 mg daily) Short course (less than 10 days only)
+                            </div>
+                            <div class="fact-card">Phototherapy</div>
+                            <div class="fact-card">
+                                <strong>Sulfasalazine/Dapsone:</strong> Helpful in delayed pressure urticaria predominate
+                                <div class="mcq-focus">Should be avoided in aspirin sensitivity (for Sulfasalazine) and G6PD deficiency (both Dapsone and Sulfasalazine)</div>
+                            </div>
+                            <div class="fact-card">Cyclosporine</div>
+                            <div class="fact-card">Colchicine</div>
+                            <div class="fact-card">Dapsone</div>
+                            <div class="fact-card">Antimalaria</div>
+                            <div class="fact-card">MMF</div>
+                            <div class="fact-card">Dupilumab</div>
+                            <div class="fact-card">
+                                <strong>Remibrutinib</strong> Bruton's tyrosine kinase (BTK) phase 3
+                            </div>
+                            <div class="fact-card">
+                                <strong>Tezepelumab</strong> Anti TSLP Phase 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fff; border-radius: 15px; padding: 25px; margin: 20px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="text-align: center; color: #2d3436; margin-bottom: 20px;">📋 TREATMENT ALGORITHMS</h3>
+                    
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🌍 CU TREATMENT ALGORITHM FROM THE EAACI/GA²LEN/EDF/WAO INTERNATIONAL GUIDELINES</h4>
+                        
+                        <div class="step-box">
+                            <strong>First-line:</strong><br>
+                            Modern second-generation antihistamines<br>
+                            ↓ If symptoms persist after two weeks
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Second-line:</strong><br>
+                            Increase dose up to fourfold of modern second-generation antihistamines<br>
+                            ↓ If symptoms persist after one to four further weeks
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Third-line:</strong><br>
+                            Add on to second-line:*<br>
+                            Omalizumab, or cyclosporine A, or montelukast<br><br>
+                            Short course (maximum 10 days) of corticosteroids may also be used at all times if exacerbations demand this
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🇺🇸 UNITED STATES PRACTICE PARAMETERS FOR THE DIAGNOSIS AND MANAGEMENT OF CU</h4>
+                        
+                        <div class="highlight-box">
+                            Begin treatment at a step appropriate for patient's level of severity and previous treatment history<br>
+                            At each level of the step-care approach, medication(s) should be assessed for patient tolerance and efficacy<br>
+                            Returning to the previous level of treatment is appropriate at any step, once consistent control of urticaria/angioedema is achieved
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Step 1:</strong><br>
+                            Monotherapy with second-generation antihistamine<br>
+                            Avoidance of triggers (NSAIDs) and relevant physical factors if physical urticaria/angioedema syndrome is present
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Step 2:</strong><br>
+                            One or more of the following:<br>
+                            - Dose advancement of second-generation antihistamine used in step 1<br>
+                            - Add another second-generation antihistamine<br>
+                            - Add H₂-antagonist<br>
+                            - Add leukotriene-modifying agents<br>
+                            - Add first-generation antihistamine to be taken at bedtime
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Step 3:</strong><br>
+                            Dose advancement of sedating first-generation antihistamine (hydroxyzine or doxepin) as tolerated
+                        </div>
+                        
+                        <div class="step-box">
+                            <strong>Step 4:</strong><br>
+                            Add an alternative agent:<br>
+                            Omalizumab or cyclosporine<br>
+                            Other antiinflammatory agents, immunosuppressants, or biologics
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h5>📊 SOME TYPES OF URTICARIA AND THEIR MANAGEMENT</h5>
+                    <table class="differential-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Treatment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cold urticaria</strong></td>
+                                <td>Avoid cold<br>Protective clothing<br>Antihistamines</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Solar urticaria</strong></td>
+                                <td>Avoid sun exposure<br>Protective clothing<br>Sunscreens and sun blocks<br>Beta-carotene<br>Antihistamines</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cholinergic urticaria</strong></td>
+                                <td>Avoid heat<br>Minimize anxiety<br>Avoid excessive exercise<br>Anticholinergics<br>Antihistamines<br>Tranquillizers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dermographism</strong></td>
+                                <td>Avoid trauma<br>Antihistamines</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hereditary angioedema</strong></td>
+                                <td>Avoid trauma<br>Attenuated androgenic steroids as prophylaxis<br>Tracheotomy may be necessary</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hypersensitivity urticarias</strong></td>
+                                <td>Remove cause<br>Antihistamines (H1 + H2)<br>Sympathomimetics<br>Systemic steroids (rarely justified)<br>Avoid aspirin-containing drugs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Angioedema Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🎈 ANGIOEDEMA
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔍 INTRODUCTION
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>📋 Causes:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Idiopathic</strong> (most common)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Physical stimuli</strong> (temperature, vibration)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Type I hypersensitivity reactions:</strong> Drugs other than ACE-I, Arthropod bite, Food allergy
+                            </div>
+                            <div class="fact-card">
+                                <strong>Pseudo allergic:</strong> NSAID, Asprin, IV contrast
+                            </div>
+                            <div class="fact-card">
+                                <strong>C1 inhibitor deficiency syndromes</strong> (HAE, AAE)
+                            </div>
+                            <div class="fact-card">
+                                <strong>ACE-I induced angioedema</strong>
+                            </div>
+                            <div class="fact-card">
+                                <strong>Ascher syndrome:</strong> Recurrent upper (and sometimes lower) lips, with euthyroid goiter, stretching of eyelid skin
+                                <div class="mcq-focus">Ascher syndrome - MCQ focus</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🧬 Pathogenesis:</h4>
+                        <div class="clinical-pearl">
+                            Similar to urticaria. Main mediator is histamine apart from Urticaria (HAE, AAE) and ACE-I induced angioedema (main is excess bradykinin)
+                        </div>
+                        <div class="mcq-focus">
+                            HAE, AAE and ACE-I induced angioedema - main mediator is excess bradykinin
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Angioedema Disorders Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🔬 ANGIOEDEMA DISORDERS
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🧬 C1 INHIBITOR DEFICIENCY SYNDROMES
+                    </h3>
+                    
+                    <div class="clinical-pearl">
+                        Two types: Hereditary and acquired
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🧬 Hereditary Angioedema (HAE):</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                Starts in the 1st to 2nd decade and more severe in adolescence
+                            </div>
+                            <div class="fact-card">
+                                Three types (type 1 is the most common 85%), (Type 3 is more common in female, while other type similar between female and male)
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #00b894;">
+                            <h5>🔬 Pathogenesis: All forms of HAE are autosomal dominant</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">
+                                    <strong>Type 1 and 2:</strong> Mutation in C1 INH
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Types I</strong> low C1 INH levels and <strong>type II</strong> has low C1 INH function (but normal levels)
+                                    <div class="mcq-focus">Type I vs Type II C1 INH levels - Key MCQ point</div>
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Type 3:</strong> Due to an activating mutation in factor (FXII)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff9e6; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🔬 Acquired Angioedema (AAE):</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">Starts in middle age</div>
+                            <div class="fact-card">
+                                <strong>Type I:</strong> Consumption of C1 INH
+                            </div>
+                            <div class="fact-card">
+                                <strong>Type II:</strong> Inhibitory antibodies against C1 INH
+                            </div>
+                            <div class="fact-card">
+                                <strong>Risk:</strong> B-cell lymphoproliferative disorders, plasma cell dyscrasias, or autoimmune CTDs
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f0f0f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🧪 Investigations:</h4>
+                        <div class="clinical-pearl">
+                            Acquired and hereditary forms result in high level of bradykinin
+                        </div>
+                        
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Screening test:</strong> C4 (low result)
+                            </div>
+                            <div class="fact-card">
+                                Low C1q levels seen in acquired angioedema only
+                            </div>
+                            <div class="fact-card">
+                                Low C1 INH levels: in types I only (helps distinguish between between type 2 which normal level)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #e17055 0%, #d63031 100%); color: white; padding: 15px; border-radius: 8px;">
+                        💊 DRUG-INDUCED ANGIOEDEMA
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Most common:</strong> ACE inhibitors (lisinopril, enalapril > captopril)
+                            </div>
+                            <div class="fact-card">
+                                Risk is more with black, 77% occur within first 3 weeks, almost all within first year
+                            </div>
+                            <div class="fact-card">
+                                ACEI block kinase II led to high level of bradykinin
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #e8f4fd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🔹 Others causes (NOT bradykinin-induced):</h4>
+                        <div class="fact-card">
+                            PCN, cephalosporins, NSAIDs, radiocontrast media, and monoclonal antibodies (biologics)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Angioedema Approach Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🎯 ANGIOEDEMA APPROACH
+            </div>
+            <div class="section-content">
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #00b894 0%, #00a085 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🚨 GENERAL APPROACH
+                    </h3>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <div class="key-facts">
+                            <div class="fact-card">Similar to urticaria</div>
+                            <div class="fact-card">Intensive support may be needed</div>
+                            <div class="fact-card">Should carry epi-pen in case of angioedema in oropharynx</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin: 20px 0;">
+                    <h3 style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 15px; border-radius: 8px;">
+                        🔍 FOR C1 INH DEFICIENCY
+                    </h3>
+                    
+                    <div style="background: #fff5f5; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>❓ When to suspect:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                Recurrent episodes of angioedema without urticaria or pruritus, lasting two to five days (without treatment).
+                            </div>
+                            <div class="fact-card">
+                                Unexplained recurrent episodes of self-limited, colicky, abdominal pain especially in patients who also have had cutaneous angioedema.
+                            </div>
+                            <div class="fact-card">
+                                Unexplained laryngeal edema (even a single episode)
+                            </div>
+                            <div class="fact-card">
+                                A family history of angioedema
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>🔍 FOR ANGIOEDEMA WITHOUT WHEALS (ISOLATED ANGIOEDEMA)</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Step 1:</strong> Serum C4 level
+                            </div>
+                            <div class="fact-card">
+                                <strong>Step 2:</strong> Interpret C4 result
+                            </div>
+                            <div class="fact-card">
+                                <strong>If C4 is LOW:</strong>
+                                <div class="mcq-focus">C1 inh protein level (quantitative)</div>
+                                <div class="mcq-focus">C1 inh function (functional assay)</div>
+                                <ul>
+                                    <li><strong>HAE Type I:</strong> LOW C1 inh level, LOW C1 inh function</li>
+                                    <li><strong>HAE Type II:</strong> NORMAL C1 inh level, LOW C1 inh function</li>
+                                </ul>
+                                <div class="mcq-focus">C1q level</div>
+                                <ul>
+                                    <li><strong>Acquired C1 inh Deficiency:</strong> LOW C1q levels</li>
+                                    <li><strong>HAE (Types I & II):</strong> NORMAL C1q levels</li>
+                                </ul>
+                            </div>
+                            <div class="fact-card">
+                                <strong>If C4 is NORMAL:</strong>
+                                <ul>
+                                    <li><strong>Drug-Induced Angioedema:</strong> Clinical diagnosis based on medication history</li>
+                                    <li><strong>nC1-INH-HAE (formerly Type III):</strong> Genetic testing for mutations (F12, PLG, etc.)</li>
+                                    <li><strong>Idiopathic Angioedema:</strong> Diagnosis of exclusion</li>
+                                    <li><strong>Episodic Angioedema with Eosinophilia (Gleich Syndrome):</strong> Check CBC with differential for marked eosinophilia</li>
+                                    <li><strong>Systemic Capillary Leak Syndrome (Clarkson Syndrome):</strong> Serum Protein Electrophoresis (SPEP) if clinically suspected</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                                <td><div style="margin: 30px 0;">
+  <h3 style="color: #b71c1c;">Management of HAE</h3>
+  <div style="background: #fff3cd; border-left: 6px solid #ff9800; padding: 12px 18px; border-radius: 6px; margin-bottom: 20px;">
+    <strong>Antihistamines, Corticosteroids, and Epinephrine are <span style='color:#c62828;'>NOT effective</span> for HAE attacks.</strong> Using them is a clinical error and a common board exam trap.
+  </div>
+
+  <h3 style="color: #1976d2; margin-top: 30px;">Management of HAE: Summary Table</h3>
+  <table style="width:100%; border-collapse:collapse; font-size: 0.97em;">
+    <thead>
+      <tr style="background:#e3f2fd;">
+        <th style="border:1px solid #bdbdbd; padding:8px;">Scenario</th>
+        <th style="border:1px solid #bdbdbd; padding:8px;">Medication/Therapy</th>
+        <th style="border:1px solid #bdbdbd; padding:8px;">Mechanism/Action</th>
+        <th style="border:1px solid #bdbdbd; padding:8px;">Route & Dose</th>
+        <th style="border:1px solid #bdbdbd; padding:8px;">Key Notes / Side Effects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Acute Attacks -->
+      <tr style="background:#f5f5f5;">
+        <td rowspan="5" style="border:1px solid #bdbdbd; padding:8px; vertical-align:middle;"><strong>Acute Attack<br>(On-Demand)</strong></td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">C1-INH Concentrate</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Replaces deficient protein</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">IV, 20 units/kg</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Human plasma-derived</td>
+      </tr>
+      <tr style="background:#f5f5f5;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Recombinant C1-INH</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Replaces deficient protein</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">IV</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">From transgenic rabbits’ milk</td>
+      </tr>
+      <tr style="background:#f5f5f5;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Icatibant</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Bradykinin B2 receptor antagonist</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">SubQ</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Blocks bradykinin receptor</td>
+      </tr>
+      <tr style="background:#f5f5f5;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Ecallantide</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Kallikrein inhibitor</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">SubQ</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Prevents bradykinin formation</td>
+      </tr>
+      <tr style="background:#f5f5f5;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Fresh Frozen Plasma (FFP)</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Contains C1-INH & other factors</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">IV</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Use if C1-INH unavailable</td>
+      </tr>
+      <!-- Short-Term Prophylaxis -->
+      <tr style="background:#fffde7;">
+        <td rowspan="3" style="border:1px solid #bdbdbd; padding:8px; vertical-align:middle;"><strong>Short-Term Prophylaxis</strong></td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">C1-INH Concentrate</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Replaces deficient protein</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">IV, 1 hr before procedure</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Preferred. elective surgery, dental procedures (especially tooth extraction), or intubation.</td>
+      </tr>
+      <tr style="background:#fffde7;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Tranexamic Acid</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Inhibits plasminogen activation</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral: Adults 1g QID, Children 500mg QID, 48h before/after</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Contraindicated in thrombosis history</td>
+      </tr>
+      <tr style="background:#fffde7;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Anabolic Steroids (Danazol)</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Increases C1-INH synthesis</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral, increase maintenance dose</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Less favored due to side effects</td>
+      </tr>
+      <!-- Long-Term Prophylaxis Modern -->
+      <tr style="background:#e8f5e9;">
+        <td rowspan="3" style="border:1px solid #bdbdbd; padding:8px; vertical-align:middle;"><strong>Long-Term Prophylaxis (Modern)</strong></td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">C1-INH Concentrate</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Replaces deficient protein</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">IV or SubQ, every 3–4 days</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">FDA-approved, preferred</td>
+      </tr>
+      <tr style="background:#e8f5e9;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Lanadelumab</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Plasma kallikrein inhibitor</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">SubQ, every 2 weeks</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Monoclonal antibody</td>
+      </tr>
+      <tr style="background:#e8f5e9;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Berotralstat</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral kallikrein inhibitor</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral, 150mg daily</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">FDA-approved, preferred</td>
+      </tr>
+      <!-- Long-Term Prophylaxis Older -->
+      <tr style="background:#fce4ec;">
+        <td rowspan="2" style="border:1px solid #bdbdbd; padding:8px; vertical-align:middle;"><strong>Long-Term Prophylaxis (Older)</strong></td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Anabolic Steroids (Danazol, Oxandrolone)</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Increases C1-INH synthesis</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Virilizing effects, liver toxicity, lipid changes. Use declined.</td>
+      </tr>
+      <tr style="background:#fce4ec;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Tranexamic Acid</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Inhibits plasminogen activation</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Oral</td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Thrombosis risk, eye/liver monitoring</td>
+      </tr>
+      <!-- Special Populations -->
+      <tr style="background:#ede7f6;">
+        <td rowspan="2" style="border:1px solid #bdbdbd; padding:8px; vertical-align:middle;"><strong>Special Populations</strong></td>
+        <td style="border:1px solid #bdbdbd; padding:8px;">Pediatrics</td>
+        <td colspan="3" style="border:1px solid #bdbdbd; padding:8px;">Tranexamic acid: 500mg QID for short-term prophylaxis. Other agents: weight-based, follow FDA guidelines.</td>
+      </tr>
+      <tr style="background:#ede7f6;">
+        <td style="border:1px solid #bdbdbd; padding:8px;">Pregnancy & Hormonal</td>
+        <td colspan="3" style="border:1px solid #bdbdbd; padding:8px;">Estrogens (OCPs, HRT) may trigger or worsen HAE. <strong>Avoid if possible.</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+                    
+                    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>💊 Treatment:</h4>
+                        <div class="key-facts">
+                            <div class="fact-card">
+                                <strong>Oral danazol</strong> for prophylaxis
+                            </div>
+                            <div class="fact-card">
+                                <strong>C1 inh concentrate</strong> is for acute attacks (if not available then fresh frozen plasma)
+                                <div class="mcq-focus">C1 inh concentrate vs FFP - MCQ focus</div>
+                            </div>
+                            <div class="fact-card">
+                                Both danazol and C1 inhibitor concentrate can be used in prophylaxis prior to surgery
+                            </div>
+                            <div class="fact-card">
+                                <strong>Icatibant,</strong> a synthetic bradykinin B2 receptor antagonist (new option)
+                            </div>
+                            <div class="fact-card">
+                                <strong>Sebetralstat</strong> plasma kallikrein inhibitor (FDA approved)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pathophysiology Diagram Section -->
+     
+                        
+                        <div class="clinical-pearl">
+                            Angiotensin-converting enzyme (ACE) inhibitor-induced urticaria is believed to result from the inhibition of endogenous kininase and a subsequent increase in bradykinin.
+                        </div>
+                        
+                        <div style="background: #e8f5e8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>💊 Therapeutic Targets:</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">
+                                    <strong>Icatibant:</strong> A decapeptide, is a specific bradykinin B₂ receptor antagonist.
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Ecallantide:</strong> A 60-amino acid recombinant protein, selectively inhibits kallikrein.
+                                </div>
+                                <div class="fact-card">
+                                    Off label, icatibant has been used to treat ACE inhibitor-induced angioedema.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #ffe8e8; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>🩺 C1 Inhibitor Products:</h5>
+                            <div class="key-facts">
+                                <div class="fact-card">
+                                    Two forms of C1 inh, one of which is administered intravenously and the other subcutaneously, are approved for prevention of attacks.
+                                </div>
+                                <div class="fact-card">
+                                    <strong>Lanadelumab:</strong> A human monoclonal antibody that inhibits plasma kallikrein, is under investigation for prevention of attacks with twice-monthly administration.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #e8f4fd; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                            <h5>🧬 Alternative to C1 inh concentrate:</h5>
+                            <div class="fact-card">
+                                Icatibant and ecallantide have been approved for the emergency treatment of hereditary angioedema (HAE) as alternatives to C1 inh concentrate (derived from human plasma) or recombinant C1 inh (derived from milk of transgenic rabbits).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Box -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                🎯 BOARD EXAM SUMMARY
+            </div>
+            <div class="section-content">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin: 20px 0;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">⭐ HIGH-YIELD BOARD POINTS ⭐</h3>
+                    
+                    <div class="key-facts">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>MCQ Favorites:</strong> Latex gloves (IgE-dependent), Methacholine test for cholinergic, Ascher syndrome, HAE Type I vs II C1 INH levels
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>Duration Keys:</strong> Wheals <24h (except DPU), Angioedema 2-3 days, DPU 30min-12h delay lasting >24h
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>Mediators:</strong> Histamine (most), Bradykinin (HAE, AAE, ACE-I angioedema)
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>Prognosis:</strong> 55% CSU resolves in 1 year, only 5% persists after 5 years
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>Safety:</strong> Cold urticaria patients should never swim alone (massive mediator release → hypotension)
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>Treatment Pearls:</strong> Omalizumab 300mg monthly (Saudi/European 3rd line), Dapsone avoid in G6PD deficiency
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isHidden = content.classList.contains('hidden');
+            
+            if (isHidden) {
+                content.classList.remove('hidden');
+                header.classList.remove('collapsed');
+            } else {
+                content.classList.add('hidden');
+                header.classList.add('collapsed');
+            }
+        }
+
+        // Progress bar functionality
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Auto-expand all sections for comprehensive review
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.section-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                content.classList.remove('hidden');
+                header.classList.remove('collapsed');
+            });
+        });
+    </script>
+</body>
+</html>

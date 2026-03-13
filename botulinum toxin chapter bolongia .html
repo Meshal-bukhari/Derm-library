@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botulinum Toxin: Saudi Board Exam Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c6e49;
+            --primary-light: #4c956c;
+            --secondary: #fefee3;
+            --tertiary: #d68c45;
+            --text-dark: #2a2a2a;
+            --text-light: #f8f9fa;
+            --danger: #ff5a5f;
+            --warning: #ffb142;
+            --info: #2196f3;
+            --success: #4caf50;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8f9fa;
+            padding-bottom: 60px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .quick-nav {
+            background-color: var(--primary-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .quick-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        .quick-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .quick-nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            font-size: 1.8rem;
+        }
+        
+        section h3 {
+            color: var(--primary-light);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        ul, ol {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        ul li, ol li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card {
+            background-color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning-card {
+            background-color: #fff3cd;
+            border-left: 5px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .danger-card {
+            background-color: #f8d7da;
+            border-left: 5px solid var(--danger);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .success-card {
+            background-color: #d4edda;
+            border-left: 5px solid var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .key-point {
+            font-weight: 600;
+            color: var(--primary);
+            background-color: rgba(76, 149, 108, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .comparison-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(76, 149, 108, 0.1);
+        }
+        
+        .mnemonic {
+            background-color: #e6f7ff;
+            border: 1px dashed var(--info);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .mnemonic h4 {
+            color: var(--info);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mnemonic p {
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .injection-site {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .injection-site h4 {
+            color: var(--tertiary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .injection-site h4::before {
+            content: "💉";
+            margin-right: 8px;
+        }
+        
+        .injection-site-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .injection-site-table th {
+            background-color: var(--tertiary);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .injection-site-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .injection-site-table tr:nth-child(even) {
+            background-color: rgba(214, 140, 69, 0.1);
+        }
+        
+        .accordion {
+            margin: 1rem 0;
+        }
+        
+        .accordion-btn {
+            background-color: var(--primary-light);
+            color: white;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.4s;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .accordion-btn:after {
+            content: '+';
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .accordion-btn.active:after {
+            content: "-";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        
+        .panel.show {
+            max-height: 1000px; /* Arbitrary large value */
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .flashcard-container {
+            margin: 2rem 0;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary-light);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            transform: rotateY(180deg);
+        }
+        
+        .self-test {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        
+        .self-test h3 {
+            margin-bottom: 1rem;
+            color: var(--tertiary);
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .question p {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .options li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .options input {
+            margin-right: 10px;
+        }
+        
+        .show-answer {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        
+        .answer {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #d4edda;
+            border-radius: 4px;
+        }
+        
+        .answer.show {
+            display: block;
+        }
+        
+        .high-yield {
+            background-color: #ffeeba;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: 600;
+            color: #856404;
+            margin-right: 0.5rem;
+        }
+        
+        .image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .image-container figcaption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #6c757d;
+        }
+        
+        .progress-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background-color: var(--primary);
+            width: 0;
+            transition: width 0.3s;
+        }
+        
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 0 15px;
+        }
+        
+        .quiz-marker {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+            position: relative;
+        }
+        
+        .quiz-marker.active {
+            background-color: var(--primary);
+        }
+        
+        .quiz-marker.completed {
+            background-color: var(--success);
+        }
+        
+        .quiz-marker:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ddd;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+        }
+        
+        .quiz-marker:last-child:after {
+            display: none;
+        }
+        
+        .clinical-pearl {
+            background-color: #e6f2ff;
+            border-left: 5px solid #4e73df;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .clinical-pearl h4 {
+            color: #4e73df;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .clinical-pearl h4::before {
+            content: "💎";
+            margin-right: 8px;
+        }
+        
+        .memorization-tip {
+            background-color: #ffeeba;
+            border-left: 5px solid #d39e00;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .memorization-tip h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .memorization-tip h4::before {
+            content: "🧠";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .quick-nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Botulinum Toxin (BoNT)</h1>
+            <p>Comprehensive Study Guide for Saudi Board Exam (Chapter 159)</p>
+        </div>
+    </header>
+    
+    <div class="quick-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#formulations">Formulations</a></li>
+                <li><a href="#cosmetic-use">Cosmetic Use</a></li>
+                <li><a href="#medical-use">Medical Use</a></li>
+                <li><a href="#complications">Complications</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#self-assessment">Self-Assessment</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section id="introduction">
+            <h2>Introduction to Botulinum Toxin</h2>
+            <p>Botulinum toxin (BoNT) injections are commonly used to improve facial aesthetics by smoothing hyperdynamic rhytides of the face and neck. The use of BoNT has evolved to reflect a more three-dimensional approach to facial rejuvenation, often in combination with soft-tissue augmentation or other restorative procedures.</p>
+            
+            <div class="info-card">
+                <h4>Key Features</h4>
+                <ul>
+                    <li>BoNT causes <span class="key-point">chemodenervation of muscles</span> by blocking acetylcholine release</li>
+                    <li>BoNT also inhibits the release of other neurotransmitters, including <span class="key-point">substance P, noradrenaline, calcitonin gene-related peptide, and glutamate</span></li>
+                    <li>Injections that weaken or relax muscles can smooth hyperfunctional lines and change facial contour</li>
+                    <li>Adjunctive use with soft-tissue augmentation or laser resurfacing is beneficial</li>
+                    <li>Effects typically last months and may increase with subsequent injections</li>
+                    <li>BoNT-A also successfully denervates sweat glands (treatment for hyperhidrosis)</li>
+                    <li>Can improve pain, swelling, and discoloration associated with Raynaud phenomenon</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h4>Clinical Pearl</h4>
+                <p>Complications like eyelid ptosis are generally caused by diffusion of the toxin to non-targeted muscles. These can be minimized by using concentrated doses and careful injection technique.</p>
+            </div>
+        </section>
+        
+        <section id="properties">
+            <h2>Properties of Botulinum Toxins</h2>
+            <p>Various strains of Clostridium botulinum produce seven distinct serotypes of BoNT that affect neural function: A, B, C1, D, E, F, and G. Although all serotypes produce chemodenervation and atrophy of skeletal muscles by blocking acetylcholine release from motor neurons at the neuromuscular junction, they differ in their cellular mechanism of action and clinical profile.</p>
+            
+            
+            <div class="memorization-tip">
+                <h4>Memorization Tip</h4>
+                <p>Remember BoNT serotypes with "ABCDEFG" - the first 7 letters of the alphabet. For mechanism of action, use: "ACE" cleaves SNAP-25, while "BDFG" cleaves synaptobrevin.</p>
+            </div>
+        </section>
+        
+        <section id="formulations">
+            <h2>Formulations of Botulinum Toxin</h2>
+            <h3>BoNT Type A (BoNT-A) Formulations</h3>
+            <p>BoNT type A (BoNT-A), the first serotype developed for use in humans, is available in seven formulations worldwide. Five have been approved by the FDA for the treatment of glabellar rhytides:</p>
+            
+            <div class="accordion">
+                <button class="accordion-btn">Approved BoNT-A Formulations (Click to Expand)</button>
+                <div class="panel">
+                    <ul>
+                        <li><span class="key-point">OnabotulinumtoxinA (onaA)</span> - BOTOX®/BOTOX® Cosmetic</li>
+                        <li><span class="key-point">AbobotulinumtoxinA (aboA)</span> - Dysport®, Azzalure®</li>
+                        <li><span class="key-point">IncobotulinumtoxinA (incoA)</span> - Xeomin®/Bocouture®</li>
+                        <li><span class="key-point">PrabotulinumtoxinA-xvfs (praboA)</span> - Jeuveau®</li>
+                        <li><span class="key-point">DaxibotulinumtoxinA-lanm (DAXI)</span> - DAXXIFY®</li>
+                    </ul>
+                    <p>Outside of North America, additional BoNT-A formulations include Prosigne® and Neuronox®.</p>
+                </div>
+            </div>
+            
+            <h3>BoNT Type B (BoNT-B) Formulation</h3>
+            <p>One formulation of BoNT type B is also available in North America:</p>
+            <ul>
+                <li><span class="key-point">RimabotulinumtoxinB (rimaB)</span> - MYOBLOC®/NeuroBloc®</li>
+            </ul>
+            
+            <div class="warning-card">
+                <h4>⚠️ Important Note</h4>
+                <p>All preparations of BoNT differ in terms of purification procedures, potency, and clinical effect and <strong>may not be used interchangeably</strong>.</p>
+            </div>
+            
+            <h3>Comparison of Formulations</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>OnaA (BOTOX®)</th>
+                            <th>AboA (Dysport®)</th>
+                            <th>IncoA (Xeomin®)</th>
+                            <th>RimaB (MYOBLOC®)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Active substance</td>
+                            <td>BoNT-A + complex (900 kDa)</td>
+                            <td>BoNT-A + complex (400 kDa)</td>
+                            <td>BoNT-A free of complexing proteins (150 kDa)</td>
+                            <td>BoNT-B + complex (700 kDa)</td>
+                        </tr>
+                        <tr>
+                            <td>Units per vial</td>
+                            <td>50 or 100</td>
+                            <td>300 or 500</td>
+                            <td>100</td>
+                            <td>2500, 5000, or 10000</td>
+                        </tr>
+                        <tr>
+                            <td>Dose conversion</td>
+                            <td>Reference</td>
+                            <td>1:2.5 ratio (onaA:aboA)</td>
+                            <td>1:1 ratio (onaA:incoA)</td>
+                            <td>N/A (different serotype)</td>
+                        </tr>
+                        <tr>
+                            <td>Diffusion</td>
+                            <td>Standard</td>
+                            <td>Possibly greater diffusion</td>
+                            <td>Similar to onaA</td>
+                            <td>Diffuses more widely</td>
+                        </tr>
+                        <tr>
+                            <td>Onset of action</td>
+                            <td>Standard</td>
+                            <td>Possibly faster onset</td>
+                            <td>Rapid onset</td>
+                            <td>More rapid onset</td>
+                        </tr>
+                        <tr>
+                            <td>Duration of effect</td>
+                            <td>3-4 months</td>
+                            <td>Possibly greater longevity</td>
+                            <td>Up to 5 months or more</td>
+                            <td>Shorter duration</td>
+                        </tr>
+                        <tr>
+                            <td>Side effects</td>
+                            <td>Standard</td>
+                            <td>Similar to onaA</td>
+                            <td>Similar to onaA</td>
+                            <td>Greater pain and more side effects</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h4>Clinical Pearl</h4>
+                <p>When converting between products, use these suggested ratios:<br>
+                • onaA:aboA = 1:2.5 (or less than 1:3)<br>
+                • onaA:incoA = 1:1<br>
+                • onaA:praboA = 1:1<br>
+                • onaA:Prosigne®/Neuronox® = 1:1</p>
+            </div>
+            
+            <h3>Topical BoNT-A</h3>
+            <p>Percutaneous delivery of topical BoNT has been limited by its inability to cross the stratum corneum. Despite early promising reports for treating lateral canthal rhytides and primary axillary hyperhidrosis, no topical formulations have been approved by the FDA to date.</p>
+        </section>
+        
+        <section id="cosmetic-use">
+            <h2>Cosmetic Use of Botulinum Toxin Type A</h2>
+            <p>Hyperkinetic lines result from the repeated contraction of muscles perpendicular to the rhytides. Weakening or relaxing these muscles with BoNT-A can smooth lines in various facial areas.</p>
+            
+            <div class="info-card">
+                <h4>General Injection Guidelines</h4>
+                <ul>
+                    <li>Injections may be given intramuscularly, subcutaneously, or intradermally</li>
+                    <li>Intradermal injections (especially in crow's feet area) minimize bruising</li>
+                    <li>Effects are usually apparent within 1-2 days</li>
+                    <li>Results typically last 3-4 months, sometimes 6+ months</li>
+                    <li>Repeated injections may provide more prolonged aesthetic improvement</li>
+                    <li>Patients 30-50 years may be most responsive (rhytides more likely caused by muscle activity)</li>
+                </ul>
+            </div>
+            
+            <h3>Upper Face Treatment Areas</h3>
+            
+            <div class="injection-site">
+                <h4>Glabellar Frown Lines</h4>
+                <p>Caused by contraction of the corrugator supercilii, orbicularis oculi, procerus, and depressor supercilii muscles. The goal is to produce significant weakening of these muscles.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Men: starting dose 60U, titrate to 100U</li>
+                                    <li>Women: starting dose 30U, titrate to 50U</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>7-10U (women) or 15-20U (men) above inner canthus on each side</li>
+                                    <li>5-10U into procerus muscle at midline</li>
+                                    <li>4-5U in midpupillary line (caution: most likely to cause ptosis)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>May inject above lateral canthus or into tail of eyebrow to improve lateral eyebrow position</li>
+                                    <li>Treatment sites should be individualized based on muscle size/use</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Crow's Feet (Lateral Canthal Rhytides)</h4>
+                <p>Caused by contraction of the lateral fibers of the orbicularis oculi muscle. The goal is to produce weakening just in the lateral orbital area, not complete paralysis.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>12-15U per side</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Distributed amongst 2-4 sites</li>
+                                    <li>Some clinicians use up to 7 sites</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inject when patient is not smiling to avoid affecting zygomaticus complex</li>
+                                    <li>Inject lateral to lateral orbital rim; medial injections can cause lower eyelid droop</li>
+                                    <li>Superficial injections minimize bruising</li>
+                                    <li>Avoid injecting superficial veins</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Horizontal Forehead Lines</h4>
+                <p>Produced by repeated contraction of the frontalis muscle. The goal is to soften the lines while preserving some ability to elevate the eyebrows.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>10-15U total</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Multiple sites horizontally across the midforehead, 2-3cm above eyebrows</li>
+                                    <li>5 sites for broad foreheads; 4 sites and lower dose for narrow foreheads</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Sites must be kept well above brow to avoid brow ptosis</li>
+                                    <li>Brow depressors should always be treated concurrently with frontalis</li>
+                                    <li>Effects last 3-6 months</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Brow Lift and Shaping</h4>
+                <p>Shape and height of eyebrows are determined by opposing activity of the frontalis (elevator) and brow depressors. Central injections of 20-40U into the glabella can lead to dramatic lateral eyebrow elevation.</p>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Hypertrophic Orbicularis Oculi</h4>
+                <p>Contraction of the pretarsal orbicularis during smiling decreases palpebral aperture size and can create a "jelly roll" appearance to the lower eyelid.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>2-4U</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Lower pretarsal orbicularis oculi</li>
+                                    <li>In midpupillary line, 3mm below ciliary margin</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Opens palpebral aperture at rest and during smiling</li>
+                                    <li>Higher doses can result in keratoconjunctivitis sicca (dry eye)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>Midface Treatment Areas</h3>
+            
+            <div class="injection-site">
+                <h4>Bunny Lines</h4>
+                <p>Fanning rhytides at the nasal root caused by contraction of the upper nasalis muscle.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>2-4U per side</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Upper nasalis muscle</li>
+                                    <li>Usually 1 injection per side at lateral bony dorsum of nose</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inject well above nasofacial groove to avoid lip ptosis</li>
+                                    <li>Followed by gentle massage</li>
+                                    <li>Often treated with glabellar complex</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Other Midface Areas</h4>
+                <ul>
+                    <li><strong>Repeated nasal flare:</strong> 5-10U bilaterally into lower nasalis muscle fibers covering lateral nasal ala</li>
+                    <li><strong>Nasolabial folds:</strong> Selective patients only (those with naturally shorter cutaneous upper lip); 1U into each lip elevator complex above nasofacial groove</li>
+                    <li><strong>Nasal tip droop:</strong> 2-3U into depressor septi nasi at base of columella</li>
+                </ul>
+                
+                <div class="warning-card">
+                    <h4>⚠️ Important Note</h4>
+                    <p>Direct injection into nasolabial folds is not recommended, as it can result in asymmetric smile, flaccid cheek, midface flattening, and vertical lengthening of the cutaneous upper lip.</p>
+                </div>
+            </div>
+            
+            <h3>Lower Face and Neck Treatment Areas</h3>
+            
+            <div class="injection-site">
+                <h4>Perioral Rhytides (Vertical Lip Lines)</h4>
+                <p>Caused by orbicularis oris sphincter-like action. Treatment recommended only for deep lines.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>4U/lip (2U/lip quadrant)</li>
+                                    <li>Typically 1U per vertical lip line</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Into area of muscle contraction adjacent to creases at vermilion border</li>
+                                    <li>Either side of Cupid's bow</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Avoid injecting lip corners (can lead to drooping of lateral lip and drooling)</li>
+                                    <li>Avoid midline (can lead to flattening of Cupid's bow)</li>
+                                    <li>Use conservative doses to maintain mouth competence</li>
+                                    <li>Superficial injections preferred over deep injections</li>
+                                    <li>May affect mouth function; not ideal for musicians/singers</li>
+                                    <li>Particularly useful with perioral laser or electrosurgical resurfacing or with soft-tissue augmentation</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Mouth Frown/Melomental Folds</h4>
+                <p>Permanent angling downward of mouth corners creates impression of disapproval. Caused by depressor anguli oris (DAO) muscle.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>2-3U into each DAO</li>
+                                    <li>Additional 3U into each mentalis insertion</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Posterior aspect of DAO, close to mandible</li>
+                                    <li>2-5U into each DAO muscle above mandible angle and 1cm lateral to lateral oral commissure</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Ask patient to frown to identify DAO</li>
+                                    <li>Injection must be lateral and low</li>
+                                    <li>Too medial/high can cause depressor labii inferioris weakness and flattening of lower lip contour</li>
+                                    <li>Too high may compromise sphincter function</li>
+                                    <li>Not recommended for singers/musicians</li>
+                                    <li>Best results when combined with fillers</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Mental Crease/Peau d'Orange Chin</h4>
+                <p>Deep groove between lower lip and chin prominence caused by mentalis muscle contraction. "Orange peel" appearance results from collagen/fat loss aggravated by muscle activity.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Mental crease: 3-5U/mentalis band</li>
+                                    <li>Peau d'orange: 5-10U into mentalis</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Mentalis muscle at most distal point from orbicularis oris (chin prominence)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Injection of mentalis gives satisfactory softening while avoiding orbicularis oris weakening</li>
+                                    <li>Useful for patients with previous trauma/surgery</li>
+                                    <li>May be used with soft-tissue augmentation</li>
+                                    <li>Massage chin after treatment to facilitate toxin diffusion</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Masseteric Hypertrophy</h4>
+                <p>Treatment can reduce muscle thickness and effectively sculpt jawline.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Results</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>20-35U into each masseter muscle</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>20-50% reduction in muscle bulk</li>
+                                    <li>Lasts 3-6 months</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Smaller doses for White patients versus East Asian patients</li>
+                                    <li>May improve bruxism symptoms</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Platysmal Bands</h4>
+                <p>Vertical bands formed when anterior fibers of platysma separate. Become more visible during neck animation.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Injection Sites</th>
+                            <th>Technique Tips</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>5U per site</li>
+                                    <li>3 sites per band at 1-1.5cm intervals</li>
+                                    <li>Total 15U/band</li>
+                                    <li>2 bands = 30U total</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Into contracted platysma muscle bands</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Only for patients with obvious bands, good skin elasticity, minimal submental fat</li>
+                                    <li>May emphasize cords in aging necks with jowl formation/bone resorption</li>
+                                    <li>Use caution with neck injections; limit to 30-40U total</li>
+                                    <li>High doses (75-100U) can cause dysphagia and neck flexor weakness</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h4>Clinical Pearl: Adjunctive Use</h4>
+                <p>BoNT-A enhances other cosmetic procedures:</p>
+                <ul>
+                    <li>Pre-surgery: Chemodenervation facilitates tissue manipulation and better surgical correction/incision concealment</li>
+                    <li>With lasers/light-based modalities: Leads to greater aesthetic benefits and longer-lasting results</li>
+                    <li>With soft-tissue augmentation: Prevents distortion of fillers and prolongs benefits</li>
+                    <li>Caution: BoNT-A in areas with moderate/severe edema from procedures can increase diffusion</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="medical-use">
+            <h2>Medical Uses of Botulinum Toxin Type A</h2>
+            
+            <div class="injection-site">
+                <h4>Hyperhidrosis</h4>
+                <p>Dramatic efficacy with minimal side effects for axillary, palmar, and plantar hyperhidrosis.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Location</th>
+                            <th>Dosing</th>
+                            <th>Technique</th>
+                            <th>Results/Notes</th>
+                        </tr>
+                        <tr>
+                            <td>Axillary</td>
+                            <td>50-150U onaA per axilla</td>
+                            <td>
+                                <ul>
+                                    <li>10-20 injection sites spaced 1.5-2cm apart</li>
+                                    <li>Intradermal or immediate subdermal injection</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Level A recommendation (high efficacy)</li>
+                                    <li>Decreases perspiration for 6-24 months</li>
+                                    <li>Reduces body odor for up to 7 months</li>
+                                    <li>Repeat at 6-12 month intervals</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Palmar</td>
+                            <td>50-200U onaA per palm</td>
+                            <td>
+                                <ul>
+                                    <li>50-100 injection sites including distal wrist crease and thenar/hypothenar eminences</li>
+                                    <li>Anesthesia often required</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Level B recommendation (probably effective)</li>
+                                    <li>Significant sweat reduction for 3-4 months</li>
+                                    <li>Hand weakness may last up to 2 weeks (thumb-index pinch affected)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl</h4>
+                    <p>Studies comparing onaA with aboA or incoA show similar efficacy and safety. RimaB is effective but associated with more pain on injection and systemic adverse events (xerostomia, flu-like symptoms).</p>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Raynaud Phenomenon</h4>
+                <p>BoNT-A targets neural and vascular abnormalities in this condition characterized by exacerbated transient vasospasm of digital arteries triggered by cold or stress.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing</th>
+                            <th>Technique</th>
+                            <th>Results</th>
+                        </tr>
+                        <tr>
+                            <td>5U onaA per finger (50U total per hand)</td>
+                            <td>
+                                <ul>
+                                    <li>Inject into medial and lateral aspects of each finger at its base</li>
+                                    <li>Using insulin syringes (BD Ultrafine II, 0.3ml)</li>
+                                    <li>Some clinicians avoid injecting the thumb unless significantly involved</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Response within days to a week</li>
+                                    <li>Significant decrease in pain</li>
+                                    <li>Improvements in color, mobility, blood flow, and oxygen saturation</li>
+                                    <li>Healing of persistent digital ulcers</li>
+                                    <li>Minimal temporary side effects (local pain may trigger vasospastic attack)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Clinical Pearl</h4>
+                    <p>BoNT-A works via two mechanisms in Raynaud phenomenon:<br>
+                    1. <strong>Vascular level</strong>: Promotes vasodilation by blocking norepinephrine and acetylcholine release<br>
+                    2. <strong>Neural level</strong>: Blocks receptors and neurotransmitters that stimulate pain (substance P, CGRP, glutamate) and vasoconstriction</p>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Migraine</h4>
+                <p>FDA approved onaA for chronic migraine prophylaxis in 2011.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Dosing/Technique</th>
+                            <th>Mechanism</th>
+                            <th>Efficacy</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>100U onaA distributed within brow, temple, and occipital regions</li>
+                                    <li>Additional injections into trigger sites</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Inhibits release of acetylcholine</li>
+                                    <li>Inhibits release of glutamate, substance P, and calcitonin gene-related peptide (CGRP)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Meta-analysis of randomized, controlled trials showed reduced episode frequency</li>
+                                    <li>Improved quality of life for up to 3 months</li>
+                                    <li>Note: Criticism exists about blinding in trials due to visible effects on facial muscles</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="injection-site">
+                <h4>Depression</h4>
+                <p>Research indicates that BoNT injections and subsequent inability to frown correlates with improvement in depression symptoms.</p>
+                
+                <div class="injection-site-table">
+                    <table>
+                        <tr>
+                            <th>Study Results</th>
+                            <th>Hypothesis</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Double-blind, randomized, placebo-controlled trial showed 47% decrease in depression scores after one glabellar treatment vs. 9% with placebo</li>
+                                    <li>Results maintained over 16-week follow-up</li>
+                                    <li>Second trial showed ~50% reduction in scores with BoNT-A to corrugator/procerus vs. 15% with placebo</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Muscles of facial expression may play a role in mood regulation</li>
+                                    <li>Inability to frown may reduce depressive symptoms through facial feedback mechanism</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section id="complications">
+            <h2>Complications of Botulinum Toxin</h2>
+            <p>BoNT-A occasionally affects non-targeted muscles or glandular tissue, leading to various complications. The risk can be minimized through careful technique and proper dosing.</p>
+            
+            <div class="danger-card">
+                <h4>Upper Face Complications</h4>
+                <ul>
+                    <li><strong>Eyelid ptosis</strong>: Diffusion to levator palpebrae superioris</li>
+                    <li><strong>Brow ptosis</strong>: Excessive weakening of frontalis</li>
+                    <li><strong>"Cockeyed" appearance</strong>: Inadequate treatment of lateral frontalis fibers</li>
+                    <li><strong>Diplopia</strong>: Spread to extraocular muscles</li>
+                    <li><strong>Lower eyelid laxity/ectropion</strong></li>
+                    <li><strong>Epiphora</strong> (excessive tearing)</li>
+                    <li><strong>Dry eye</strong></li>
+                    <li><strong>Decreased strength of eye closure</strong></li>
+                </ul>
+            </div>
+            
+            <div class="danger-card">
+                <h4>Lower Face Complications</h4>
+                <ul>
+                    <li><strong>Mouth incompetence</strong></li>
+                    <li><strong>Difficulties in speech</strong></li>
+                    <li><strong>Inability to whistle</strong></li>
+                    <li><strong>Asymmetric smile</strong>: Spread to zygomaticus major</li>
+                    <li><strong>Flaccid cheek</strong></li>
+                    <li><strong>Dysphagia</strong>: With large doses in platysma</li>
+                    <li><strong>Neck flexor weakness</strong>: With large doses in platysma</li>
+                </ul>
+            </div>
+            
+            <h3>Management of Complications</h3>
+            
+            <div class="accordion">
+                <button class="accordion-btn">Management of Upper Eyelid Ptosis</button>
+                <div class="panel">
+                    <p>When upper eyelid ptosis occurs, three options are available:</p>
+                    <ol>
+                        <li><strong>Apraclonidine 0.5% eyedrops</strong>: Thrice daily application of this α2-adrenergic agonist leads to Müller muscle contraction and 1-2mm elevation of upper eyelid</li>
+                        <li><strong>Pyridostigmine bromide</strong>: 60mg 3-4 times daily; an anticholinesterase drug that inhibits acetylcholine breakdown. Side effects include hypersalivation, blurred vision, muscle cramps, vomiting, and diarrhea</li>
+                        <li><strong>Precise BoNT-A injections</strong>: 0.5-1U into subdermal plane above eyelash line at extreme medial and lateral aspects of upper eyelid, reducing orbicularis oculi strength and allowing Müller/levator muscles to become less opposed</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="memorization-tip">
+                <h4>Memorization Tip</h4>
+                <p>Remember complications by location:<br>
+                - <strong>Upper face</strong>: "BLEPD" - Brow ptosis, Lid ptosis, Eye dryness, Pupil/diplopia, Decreased blink<br>
+                - <strong>Lower face</strong>: "MAIDS" - Mouth incompetence, Asymmetric smile, Inability to whistle, Dysphagia, Speech difficulties</p>
+            </div>
+        </section>
+        
+        <section id="safety">
+            <h2>Safety of Botulinum Toxin</h2>
+            <p>No long-term adverse effects or systemic safety problems have been associated with FDA-approved uses of BoNT.</p>
+            
+            <div class="success-card">
+                <h4>Long-term Safety Profile</h4>
+                <ul>
+                    <li>Review found no serious adverse events in over 850 treatment sessions for up to 9 years</li>
+                    <li>Multiple treatments over 17 months well tolerated (768 patients)</li>
+                    <li>Phase III program of onaA for crow's feet and glabellar rhytides showed no serious treatment-related AEs, distant spread, or immunogenicity over 12 months</li>
+                    <li>Side effects (mostly mild) included hematoma, headache, injection-site hemorrhage</li>
+                    <li>Side effects appeared to decline with repeated treatments</li>
+                </ul>
+            </div>
+            
+            <div class="warning-card">
+                <h4>Safety Concerns with Higher Doses</h4>
+                <p>Risk of serious complications increases with higher doses:</p>
+                <ul>
+                    <li>FDA analysis of AE reports found 407 serious events with higher therapeutic doses, including deaths and cardiovascular complications</li>
+                    <li>Most fatalities involved patients with underlying cardiovascular diseases and elevated mortality risk</li>
+                    <li>No deaths or cardiovascular complications associated with cosmetic doses</li>
+                    <li>FDA requested safety label changes with black box warnings for all BoNT products</li>
+                </ul>
+            </div>
+            
+            <h3>Immunogenicity</h3>
+            <p>Although antibody formation leading to non-response is a concern, overall risk is low (&lt;1%) when BoNT-A is used at recommended cosmetic doses. Current protein content is much lower than in previous batches and less antigenic.</p>
+            
+            <div class="info-card">
+                <h4>Tips to Minimize Immunogenicity</h4>
+                <ul>
+                    <li>Inject the lowest effective doses</li>
+                    <li>Use longest feasible intervals between injections</li>
+                    <li>Antibody formation usually associated with large therapeutic doses rather than cosmetic purposes</li>
+                    <li>Lack of complexing proteins in incoA reduces but doesn't eliminate antigenicity</li>
+                </ul>
+            </div>
+            
+            <h3>Allergic Reactions</h3>
+            <p>Rare but described in literature. Additional reactions include cutaneous eruptions and granulomas. Anaphylactic reactions and severe respiratory failure have occurred after large therapeutic doses.</p>
+        </section>
+        
+        <section id="future-trends">
+            <h2>Future Trends</h2>
+            <p>The use of BoNT continues to evolve, with new applications deepening understanding of clinical effects and mechanisms of action.</p>
+            
+            <div class="info-card">
+                <h4>Emerging Applications</h4>
+                <ul>
+                    <li><strong>Skin Effects:</strong> Tighter, smoother skin and lower acne incidence reported anecdotally after BoNT-A injections</li>
+                    <li><strong>Effect on Fibroblasts:</strong> Reduces production of matrix metalloproteinases (MMPs), which degrade type I collagen</li>
+                    <li><strong>Collagen Production:</strong> Stimulates production of procollagen I, with increased PIP levels in fibroblasts grown with BoNT</li>
+                    <li><strong>Photodamage Protection:</strong> Decreased inflammatory cytokine secretion associated with photodamage and hyperpigmentation</li>
+                    <li><strong>Oily Skin/Enlarged Pores:</strong> Intradermal BoNT-A injections into T-zone showed improvement in 17/20 patients</li>
+                    <li><strong>Sebum Production:</strong> Lower sebum production noted in 25 patients treated with 3-5U aboA across forehead</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h4>Clinical Pearl</h4>
+                <p>Mechanism for sebum reduction: Blockade of local acetylcholine receptors in pilosebaceous unit may alter sebum production rates.</p>
+            </div>
+        </section>
+        
+        <section id="summary">
+            <h2>Summary</h2>
+            <div class="info-card">
+                <ul>
+                    <li>BoNT-A remains treatment of choice for smoothing hyperkinetic lines in face/neck</li>
+                    <li>Effective alone or in combination with surgery, soft-tissue augmentation, or laser resurfacing</li>
+                    <li>First-line therapeutic option for muscular hyperactivity disorders (strabismus, blepharospasm, hemifacial spasm, cervical dystonia)</li>
+                    <li>Also effective for hyperhidrosis, migraine prophylaxis, and Raynaud phenomenon</li>
+                    <li>Easy to use, minimally invasive, well-tolerated with impressive safety record</li>
+                    <li>Applications continue to expand</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="self-assessment">
+            <h2>Self-Assessment Quiz</h2>
+            
+            <div class="self-test">
+                <h3>Test Your Knowledge</h3>
+                
+                <div class="question">
+                    <p>1. Which of the following BoNT-A formulations is free of complexing proteins?</p>
+                    <ul class="options">
+                        <li>
+                            <label>
+                                <input type="radio" name="q1" value="a">
+                                a) OnabotulinumtoxinA (BOTOX®)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q1" value="b">
+                                b) AbobotulinumtoxinA (Dysport®)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q1" value="c">
+                                c) IncobotulinumtoxinA (Xeomin®)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q1" value="d">
+                                d) RimabotulinumtoxinB (MYOBLOC®)
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="show-answer" data-answer="q1">Show Answer</button>
+                    <div class="answer" id="answer-q1">
+                        <p><strong>Correct Answer: c) IncobotulinumtoxinA (Xeomin®)</strong></p>
+                        <p>IncobotulinumtoxinA was the first BoNT formulation without complexing proteins (150 kDa). It has been shown to be as safe and effective as onaA for glabellar rhytides, with a rapid onset and duration of up to 5 months or more.</p>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>2. Which muscle is primarily responsible for glabellar frown lines?</p>
+                    <ul class="options">
+                        <li>
+                            <label>
+                                <input type="radio" name="q2" value="a">
+                                a) Frontalis
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q2" value="b">
+                                b) Corrugator supercilii
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q2" value="c">
+                                c) Orbicularis oculi
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q2" value="d">
+                                d) Depressor anguli oris
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="show-answer" data-answer="q2">Show Answer</button>
+                    <div class="answer" id="answer-q2">
+                        <p><strong>Correct Answer: b) Corrugator supercilii</strong></p>
+                        <p>The corrugator supercilii is the primary muscle responsible for glabellar frown lines, moving the brow medially. The procerus and depressor supercilii pull the brow inferiorly, while the orbicularis oculi contributes to the frown as well. The frontalis is responsible for horizontal forehead lines, not glabellar lines.</p>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>3. What is the recommended conversion ratio when converting from onaA to aboA?</p>
+                    <ul class="options">
+                        <li>
+                            <label>
+                                <input type="radio" name="q3" value="a">
+                                a) 1:1
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q3" value="b">
+                                b) 1:2.5
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q3" value="c">
+                                c) 2.5:1
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q3" value="d">
+                                d) 1:5
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="show-answer" data-answer="q3">Show Answer</button>
+                    <div class="answer" id="answer-q3">
+                        <p><strong>Correct Answer: b) 1:2.5</strong></p>
+                        <p>Current guidelines recommend a dose ratio of 1:2.5 (onaA:aboA) or less than 1:3. This means 1 unit of onaA is equivalent to 2.5 units of aboA. This conversion ratio has been shown to increase the field of anhidrotic effect, and a higher dose ratio of 1:3 has been reported to result in greater longevity and faster onset of action.</p>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>4. Which of the following is NOT a recommended treatment for upper eyelid ptosis following BoNT-A injection?</p>
+                    <ul class="options">
+                        <li>
+                            <label>
+                                <input type="radio" name="q4" value="a">
+                                a) Apraclonidine 0.5% eyedrops
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q4" value="b">
+                                b) Pyridostigmine bromide
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q4" value="c">
+                                c) High-dose BoNT-A injection into the eyelid
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q4" value="d">
+                                d) Precise BoNT-A injections into subdermal plane above eyelash line
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="show-answer" data-answer="q4">Show Answer</button>
+                    <div class="answer" id="answer-q4">
+                        <p><strong>Correct Answer: c) High-dose BoNT-A injection into the eyelid</strong></p>
+                        <p>High-dose BoNT-A injection into the eyelid would worsen ptosis by further weakening the levator palpebrae superioris. The correct treatments include: apraclonidine 0.5% eyedrops thrice daily (α2-adrenergic agonist that contracts Müller muscle), pyridostigmine bromide (anticholinesterase drug that inhibits acetylcholine breakdown), and precise low-dose (0.5-1U) BoNT-A injections into subdermal plane above eyelash line at extreme medial and lateral aspects of upper eyelid to reduce orbicularis oculi strength.</p>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p>5. Which medical condition has Level A evidence (highest efficacy) for treatment with BoNT-A?</p>
+                    <ul class="options">
+                        <li>
+                            <label>
+                                <input type="radio" name="q5" value="a">
+                                a) Palmar hyperhidrosis
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q5" value="b">
+                                b) Axillary hyperhidrosis
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q5" value="c">
+                                c) Raynaud phenomenon
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="q5" value="d">
+                                d) Depression
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="show-answer" data-answer="q5">Show Answer</button>
+                    <div class="answer" id="answer-q5">
+                        <p><strong>Correct Answer: b) Axillary hyperhidrosis</strong></p>
+                        <p>Axillary hyperhidrosis has Level A recommendation (highest level of efficacy) for treatment with BoNT-A. Palmar hyperhidrosis has Level B recommendation (probably effective). Raynaud phenomenon and depression have promising research but lack the same level of evidence as axillary hyperhidrosis. BoNT-A was approved for axillary hyperhidrosis by the FDA in 2004.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="quiz-progress">
+                <div class="quiz-marker" data-section="introduction">1</div>
+                <div class="quiz-marker" data-section="properties">2</div>
+                <div class="quiz-marker" data-section="formulations">3</div>
+                <div class="quiz-marker" data-section="cosmetic-use">4</div>
+                <div class="quiz-marker" data-section="medical-use">5</div>
+                <div class="quiz-marker" data-section="complications">6</div>
+                <div class="quiz-marker" data-section="safety">7</div>
+                <div class="quiz-marker" data-section="self-assessment">8</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const panel = button.nextElementSibling;
+                panel.classList.toggle('show');
+            });
+        });
+        
+        // Flashcard functionality
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+        
+        // Show answer functionality
+        document.querySelectorAll('.show-answer').forEach(button => {
+            button.addEventListener('click', () => {
+                const answerId = `answer-${button.dataset.answer}`;
+                document.getElementById(answerId).classList.toggle('show');
+                button.textContent = button.textContent === 'Show Answer' ? 'Hide Answer' : 'Show Answer';
+            });
+        });
+        
+        // Progress tracking
+        function updateProgress() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const progress = (scrollTop / documentHeight) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            
+            // Update section markers
+            const sections = document.querySelectorAll('section');
+            let activeSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollTop >= sectionTop - 200 && scrollTop < sectionTop + sectionHeight - 200) {
+                    activeSection = section.id;
+                }
+            });
+            
+            if (activeSection) {
+                document.querySelectorAll('.quiz-marker').forEach(marker => {
+                    marker.classList.remove('active');
+                    if (marker.dataset.section === activeSection) {
+                        marker.classList.add('active');
+                    }
+                });
+            }
+        }
+        
+        window.addEventListener('scroll', updateProgress);
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
+    </script>
+</body>
+</html>

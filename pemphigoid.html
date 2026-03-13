@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemphigoid Group - Saudi Board Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "🎯";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Navigation Pills */
+        .nav-pills {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            background: white;
+            color: #764ba2;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .nav-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            border-color: #764ba2;
+        }
+
+        .nav-pill.active {
+            background: #764ba2;
+            color: white;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Disease Title Cards */
+        .disease-title {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Key Points Box */
+        .key-points {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .key-points h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            font-size: 1.2em;
+        }
+
+        /* Pathogenesis Box */
+        .pathogenesis-box {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .pathogenesis-box h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pathogenesis-box .step {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Clinical Features */
+        .clinical-features {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .clinical-features h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phase-box {
+            background: rgba(255,255,255,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        /* Diagnostic Tests */
+        .diagnostic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .test-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .test-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .test-card h5 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .test-card .result {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Treatment Algorithm */
+        .treatment-algorithm {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .treatment-step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .treatment-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #764ba2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Mnemonic Cards */
+        .mnemonic-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .mnemonic-card h4 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .mnemonic-letters {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Quick Reference */
+        .quick-ref {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #764ba2;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .quick-ref:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        /* Highlight Styles */
+        .highlight-yellow {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .highlight-red {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .highlight-green {
+            background: #d4edda;
+            color: #155724;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Interactive Elements */
+        .toggle-content {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toggle-content::after {
+            content: " ▼";
+            font-size: 0.8em;
+            color: #764ba2;
+        }
+
+        .toggle-content.collapsed::after {
+            content: " ▶";
+        }
+
+        .collapsible {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapsible.collapsed {
+            max-height: 0;
+        }
+
+        /* High Yield Alert */
+        .high-yield {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-left: 5px solid #ff0000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .high-yield::before {
+            content: "⚠️ HIGH YIELD";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #ff0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading::after {
+            content: "⚡";
+            font-size: 3em;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 50px auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h3 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .ref-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .ref-section h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .modal-content button {
+            background: #764ba2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background: #5a3a8a;
+            transform: translateY(-2px);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .nav-pills, .quick-ref {
+                display: none;
+            }
+            .content-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pemphigoid Group Mastery</h1>
+            <p>Saudi Board Dermatology - High-Yield Interactive Review</p>
+        </div>
+
+        <div class="nav-pills">
+            <a href="#bp" class="nav-pill active">Bullous Pemphigoid</a>
+            <a href="#pg" class="nav-pill">Pemphigoid Gestationis</a>
+            <a href="#variants" class="nav-pill">BP Variants</a>
+            <a href="#cp" class="nav-pill">Cicatricial Pemphigoid</a>
+            <a href="#eba" class="nav-pill">EBA</a>
+            <a href="#labd" class="nav-pill">Linear IgA</a>
+            <a href="#compare" class="nav-pill">Quick Compare</a>
+        </div>
+
+        <!-- Bullous Pemphigoid Section -->
+        <div id="bp" class="content-card">
+            <div class="disease-title">BULLOUS PEMPHIGOID (BP)</div>
+            
+            <div class="key-points">
+                <h3>🎯 Must-Know Facts</h3>
+                <ul>
+                    <li><span class="highlight-yellow">Most common</span> subepidermal blistering disorder</li>
+                    <li>Age: <span class="highlight-red">60-70 years</span> (risk ↑ 300-fold after 90)</li>
+                    <li>Most common immunobullous disease <span class="highlight-green">OVERALL</span></li>
+                    <li>Target antigens: <span class="highlight-yellow">BP180 (BPAG2)</span> NC16A domain + BP230 (BPAG1)</li>
+                    <li>Antibodies: Mainly <span class="highlight-red">IgG4 and IgG1</span></li>
+                </ul>
+            </div>
+
+            <div class="pathogenesis-box">
+                <h4>🧬 Pathogenesis Cascade</h4>
+                <div class="step">
+                    <strong>Step 1:</strong> IgG binds to BP180 NC16A (non-collagenous domain)
+                </div>
+                <div class="step">
+                    <strong>Step 2:</strong> Autoreactive T-cells → Th2 response (IL-4, IL-5, IL-13)
+                </div>
+                <div class="step">
+                    <strong>Step 3:</strong> Epitope spreading → antibodies to more regions
+                </div>
+                <div class="step">
+                    <strong>Step 4:</strong> Complement activation → Eosinophil recruitment
+                </div>
+                <div class="step">
+                    <strong>Step 5:</strong> MMP-9 & neutrophil elastase → Subepidermal blister
+                </div>
+            </div>
+
+            <div class="clinical-features">
+                <h4>🩺 Clinical Presentation</h4>
+                
+                <div class="phase-box">
+                    <h5>📍 Non-Bullous Phase (Urticarial)</h5>
+                    <ul>
+                        <li>Intense pruritus - may be isolated</li>
+                        <li>Fixed urticarial papules/eczematous plaques</li>
+                        <li>Often <span class="highlight-yellow">annular configuration</span></li>
+                        <li>~20% of patients remain in this phase</li>
+                        <li>Precedes bullous phase in 50%</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>📍 Bullous Phase</h5>
+                    <ul>
+                        <li><span class="highlight-red">TENSE bullae</span> (1-4 cm)</li>
+                        <li>Clear > blood-tinged fluid</li>
+                        <li>Symmetrical distribution</li>
+                        <li>Location: <span class="highlight-yellow">Flexures + Abdomen</span> (most common)</li>
+                        <li>Mucosa: 10-30% (vs PV 100%)</li>
+                        <li>Heals with: hyper/hypopigmentation + rarely milia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mnemonic-card">
+                <h4>💊 Drug-Induced BP Mnemonic</h4>
+                <div class="mnemonic-letters">PF ChaNGS</div>
+                <p>
+                    <strong>P</strong>enicillamine<br>
+                    <strong>F</strong>urosemide<br>
+                    <strong>C</strong>aptopril<br>
+                    <strong>N</strong>SAIDs<br>
+                    <strong>G</strong>old/Gliptins<br>
+                    <strong>S</strong>ulfa drugs
+                </p>
+            </div>
+
+            <div class="diagnostic-grid">
+                <div class="test-card">
+                    <h5>🔬 H&E</h5>
+                    <div class="result">
+                        Subepidermal blister<br>
+                        Eosinophilic infiltrate<br>
+                        Level: Lamina lucida
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🌟 DIF (Most Sensitive)</h5>
+                    <div class="result">
+                        Linear IgG/C3 at BMZ<br>
+                        N-serrated pattern<br>
+                        C3 in 95%, IgG4 in 80%
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🧪 Salt-Split Skin</h5>
+                    <div class="result">
+                        ROOF (Epidermal side)<br>
+                        Human skin substrate<br>
+                        No correlation with activity
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>📊 ELISA (Most Specific)</h5>
+                    <div class="result">
+                        BP180 NC16A antibodies<br>
+                        BP230 C-terminus<br>
+                        ✅ Correlates with activity
+                    </div>
+                </div>
+            </div>
+            <div class="high-yield">
+                <h4>Board Exam Pearls</h4>
+                <ul>
+                    <li>Elderly patient can have <span class="highlight-red">negative DIF but positive ELISA</span></li>
+                    <li>IgE antibodies → early urticarial phase</li>
+                    <li>Peripheral eosinophilia in 50%</li>
+                    <li>Associated with <span class="highlight-yellow">Multiple Sclerosis</span> (strongest)</li>
+                    <li>Dementia = risk factor for relapse</li>
+                    <li>Drug-induced: more mucosal involvement, Nikolsky may be (+)</li>
+                    <li>HLA associations: <span class="highlight-green">HLA-DQB1*0301 in whites - HLA-DRB1*04 and -DRB1*1101 in Asians</span></li>
+                    <li><span class="highlight-yellow">Scoring system:</span> Bullous Pemphigoid Disease Area Index (BPDAI)</li>
+                </ul>
+            </div>
+
+            <div class="treatment-algorithm">
+                <h4>💉 Treatment Algorithm</h4>
+
+                <div class="treatment-step" data-step="0">
+                    <h5>Drug-Induced BP</h5>
+                    <p>
+                        Always take a detailed drug history.<br>
+                        Discontinuation of the offending drug may or may not lead to improvement;<br>
+                        standard therapies may still be required
+                    </p>
+                </div>
+                
+                
+
+                
+                <div class="treatment-step" data-step="1">
+                    <h5>Localized/Mild Disease</h5>
+                    <p>
+                        <strong>First line:</strong> Super-potent topical steroids (Clobetasol 10-30g/day)<br>
+                        <strong>Alternative:</strong> Doxycycline + Nicotinamide<br>
+                        <strong>If mucosal:</strong> Add Dapsone
+                    </p>
+                </div>
+                
+                <div class="treatment-step" data-step="2">
+                    <h5>Generalized Disease (>10 blisters/day)</h5>
+                    <p>
+                        <strong>First line:</strong> Prednisone 0.5-1 mg/kg/day<br>
+                        <strong>OR</strong> Clobetasol 40g/day (equally effective)<br>
+                        <strong>Taper:</strong> Over 6-9 months
+                    </p>
+                </div>
+                
+                <div class="treatment-step" data-step="3">
+                    <h5>Steroid-Sparing Agents</h5>
+                    <p>
+                        • Azathioprine 0.5-2.5 mg/kg (most common)<br>
+                        • Mycophenolate mofetil 1.5-3 g/day<br>
+                        • Methotrexate 7.5-15 mg/week<br>
+                        • Dapsone (especially if mucosal involvement)
+                    </p>
+                </div>
+                
+                <div class="treatment-step" data-step="4">
+                    <h5>Refractory Cases</h5>
+                    <p>
+                        • Rituximab (anti-CD20)<br>
+                        • Omalizumab (targets IgE)<br>
+                        • IVIG<br>
+                        • Dupilumab (promising)
+                    </p>
+                </div>
+
+                <div class="treatment-step" data-step="5">
+                    <h5>Monitoring Remission</h5>
+                    <p>
+                        <strong>Clinical:</strong> BPDAI or daily blister count. Absence of new lesions/pruritus for ≥2 weeks before tapering systemic steroids.<br>
+                        <strong>Utility for guiding treatment remains to be established, but correlations exist:</strong><br>
+                        <strong>ELISA:</strong> Serum levels of IgG autoantibodies to BP180 (NC16A ELISA) correlate with disease severity.<br>
+                        <ul>
+                            <li>Anti-BP180 IgG levels by ELISA at days 0, 60, 150 may help predict relapse (a small &lt;20% decrease between days 0-60 associated with relapse).</li>
+                            <li>Predictors of future relapse:</li>
+                            <ul>
+                                <li>High BP180-NC16A ELISA score (&gt;27 U/ml) at cessation of therapy.</li>
+                                <li>Positive DIF findings at cessation of therapy.</li>
+                            </ul>
+                        </ul>
+                    </p>
+                </div>
+                <div class="treatment-step" data-step="6">
+                    <h5>Relapse </h5>
+                    <p>
+                        Relapse: <span class="highlight-red">~30% in first year; ~50% after therapy cessation</span> (mostly within 3 months).<br>
+                        Risk factors: Extensive disease, associated dementia, high BP180 ELISA, positive DIF at cessation.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Pemphigoid Gestationis Section -->
+        <div id="pg" class="content-card">
+            <div class="disease-title">PEMPHIGOID GESTATIONIS</div>
+            
+            <div class="key-points">
+                <h3>🤰 Essential Facts</h3>
+                <ul>
+                    <li>Variant of BP in pregnancy</li>
+                    <li>Target: <span class="highlight-yellow">BP180 NC16A</span> (same as BP)</li>
+                    <li>Timing: Any trimester (2nd/3rd most common)</li>
+                    <li><span class="highlight-red">75% flare at delivery</span></li>
+                    <li>Associated with trophoblastic tumors</li>
+                    <li>HLA associations: DR3 (70%), DR4 (50%)</li>
+                </ul>
+            </div>
+
+            <div class="clinical-features">
+                <h4>🩺 Clinical Features</h4>
+                <div class="phase-box">
+                    <h5>Distribution Pattern</h5>
+                    <ul>
+                        <li>Starts: <span class="highlight-yellow">Umbilicus → Trunk → Generalizes</span></li>
+                        <li>Annular urticarial/vesicular plaques</li>
+                        <li><span class="highlight-green">SPARES mucous membranes</span> (MCQ!)</li>
+                        <li>Rapid progression</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>Pregnancy Complications</h4>
+                <ul>
+                    <li>Premature delivery risk ↑</li>
+                    <li>Small for gestational age (SGA)</li>
+                    <li>Neonatal blistering: 10% (mortality 15-30%)</li>
+                    <li>Recurrence: 50% in subsequent pregnancies</li>
+                    <li>Can skip pregnancies (5-8%)</li>
+                    <li>OCP triggers recurrence (25-50%)</li>
+                </ul>
+            </div>
+
+            <div class="treatment-algorithm">
+                <h4>💊 Treatment Approach</h4>
+                <div class="treatment-step" data-step="1">
+                    <h5>Mild Disease</h5>
+                    <p>Topical high-potency steroids + Antihistamines</p>
+                </div>
+                <div class="treatment-step" data-step="2">
+                    <h5>Severe Disease</h5>
+                    <p>
+                        -Prednisone 0.5mg/kg<br>
+                        ⚠️ Increase dose at delivery<br>
+                        <p style="font-size: 0.8em;">
+                            The use of systemic corticosteroids during the pregnancy appears to be relatively safe. Although early studies suggested an association between systemic corticosteroids and risk of miscarriage or congenital malformation (oral clefts), larger population-based studies have not confirmed these findings. However, limited data suggest an increased risk of preterm birth or low birth weight for women with pemphigoid gestationis or other autoimmune diseases exposed to systemic corticosteroids during the pregnancy
+                        </p>
+                        
+
+                        - Alternative therapies that have been successfully used in a few patients with severe, persistent, postpartum pemphigoid gestationis include azathioprine, high-dose intravenous immunoglobulins (2 g/kg per cycle), cyclosporine 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cicatricial Pemphigoid Section -->
+        <div id="cp" class="content-card">
+            <div class="disease-title">CICATRICIAL PEMPHIGOID (MMP)</div>
+            
+            <div class="key-points">
+                <h3>🎯 Critical Features</h3>
+                <ul>
+                    <li><span class="highlight-red">Mucosal predominant + SCARRING</span></li>
+                    <li>Age: 60-80 years, Female > Male</li>
+                    <li>HLA-DQw7 association</li>
+                    <li><span class="highlight-yellow">Anti-epiligrin variant</span> = MALIGNANCY</li>
+                    <li>Most common sites: Oral (90%) > Conjunctival (40%)</li>
+                </ul>
+            </div>
+
+            <div class="pathogenesis-box">
+                <h4>🧬 Three Main Subgroups</h4>
+                <div class="step">
+                    <strong>1. Anti-BP Antigen MMP (Largest)</strong><br>
+                    Target: BP180 C-terminus<br>
+                    Skin + mucosal involvement
+                </div>
+                <div class="step">
+                    <strong>2. Anti-Epiligrin MMP (18-30%)</strong><br>
+                    Target: Laminin 332 (α3 chain)<br>
+                    <span class="highlight-red">⚠️ Malignancy association</span>
+                </div>
+                <div class="step">
+                    <strong>3. Ocular MMP</strong><br>
+                    Target: β4 subunit of α6β4 integrin<br>
+                    Nearly exclusive ocular involvement
+                </div>
+            </div>
+
+            <div class="clinical-features">
+                <h4>🩺 Clinical Manifestations by Site</h4>
+                
+                <div class="phase-box">
+                    <h5>👄 Oral (85%)</h5>
+                    <ul>
+                        <li><span class="highlight-yellow">Desquamative gingivitis</span></li>
+                        <li>Sites: Gingiva > Buccal > Palate</li>
+                        <li>Painful chronic erosions</li>
+                        <li>Rarely see intact blisters</li>
+                        <li>→ Periodontal damage → tooth loss</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>👁️ Conjunctival (75%)</h5>
+                    <ul>
+                        <li>Bilateral > Unilateral</li>
+                        <li>Starts as non-specific conjunctivitis</li>
+                        <li><span class="highlight-red">Symblepharon</span> (adhesions)</li>
+                        <li>Trichiasis → Entropion → Corneal damage</li>
+                        <li>End stage: <span class="highlight-red">BLINDNESS</span></li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>🔸 Other Sites</h5>
+                    <ul>
+                        <li>Nasopharyngeal → hoarseness, epistaxis</li>
+                        <li>Esophageal → dysphagia, strictures</li>
+                        <li>Genitalia → narrowing of orifice</li>
+                        <li>Skin (25-45%): <span class="highlight-yellow">Heals with atrophic scars</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mnemonic-card">
+                <h4>Brunsting-Perry Variant</h4>
+                <p>
+                    <strong>B</strong>listers on head/neck<br>
+                    <strong>P</strong>robably collagen 7<br>
+                    → Scarring alopecia<br>
+                    → NO mucosal involvement<br>
+                    → Good prognosis
+                </p>
+            </div>
+
+            <div class="diagnostic-grid">
+                <div class="test-card">
+                    <h5>🔬 H&E</h5>
+                    <div class="result">
+                        Subepidermal blister<br>
+                        <span class="highlight-yellow">Neutrophilic</span> infiltrate<br>
+                        Dermal fibrosis/scarring
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🌟 DIF</h5>
+                    <div class="result">
+                        Linear IgG/C3 at BMZ<br>
+                        N-serrated pattern<br>
+                        ⚡ Biopsy mucosal > cutaneous
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🧪 Salt-Split Skin</h5>
+                    <div class="result">
+                        Variable:<br>
+                        • Roof (epidermal)<br>
+                        • Floor<br>
+                        • Both
+                    </div>
+                </div>
+            </div>
+
+            <div class="treatment-algorithm">
+                <h4>💉 Treatment by Site</h4>
+                
+                <div class="treatment-step" data-step="1">
+                    <h5>Oral Disease</h5>
+                    <p>
+                        <strong>1st:</strong> Topical steroids/TCIs + Doxy + Niacinamide<br>
+                        <strong>2nd:</strong> Dapsone, Systemic steroids<br>
+                        <strong>3rd:</strong> MMF, AZA, MTX
+                    </p>
+                </div>
+                
+                <div class="treatment-step" data-step="2">
+                    <h5>Ocular/Laryngeal/Esophageal</h5>
+                    <p>
+                        <strong>1st:</strong> Rituximab, Systemic steroids, Dapsone<br>
+                        <strong>2nd:</strong> MMF, AZA, MTX<br>
+                        <strong>3rd:</strong> Cyclophosphamide, TNF-α inhibitors
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EBA Section -->
+        <div id="eba" class="content-card">
+            <div class="disease-title">EPIDERMOLYSIS BULLOSA ACQUISITA</div>
+            
+            <div class="key-points">
+                <h3>🎯 Key Differentiators</h3>
+                <ul>
+                    <li>Target: <span class="highlight-yellow">Type VII Collagen</span> (anchoring fibrils)</li>
+                    <li>Two variants: Mechanobullous vs Inflammatory</li>
+                    <li>Strongest association: <span class="highlight-red">IBD (Crohn's)</span></li>
+                    <li>Blister level: <span class="highlight-green">Sub-lamina densa</span></li>
+                    <li>Often refractory to treatment</li>
+                </ul>
+            </div>
+
+            <div class="clinical-features">
+                <h4>🩺 Two Clinical Variants</h4>
+                
+                <div class="phase-box">
+                    <h5>⚙️ Mechanobullous (Classic)</h5>
+                    <ul>
+                        <li>Resembles hereditary dystrophic EB</li>
+                        <li>Trauma-prone sites: hands, feet, elbows</li>
+                        <li><span class="highlight-yellow">Mitten-hand deformities</span></li>
+                        <li>Heals with: scarring + milia + dyspigmentation</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>🔥 Inflammatory</h5>
+                    <ul>
+                        <li>More common than mechanobullous</li>
+                        <li>BP-like presentation most common</li>
+                        <li>Can also mimic: MMP, LABD, Brunsting-Perry</li>
+                        <li>Still heals with scarring + milia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>Associated Conditions</h4>
+                <ul>
+                    <li><span class="highlight-red">IBD</span> (most common - Crohn's > UC)</li> <li> less common with LAD97 97 cleaved portion of LAD01
+
+                    </li>
+                    <li>SLE</li>
+                    <li>Thyroiditis</li>
+                    <li>Diabetes mellitus</li>
+                    <li>Rheumatoid arthritis</li>
+                </ul>
+            </div>
+
+            <div class="diagnostic-grid">
+                <div class="test-card">
+                    <h5>🔬 H&E</h5>
+                    <div class="result">
+                        Subepidermal blister<br>
+                        Neutrophilic infiltrate<br>
+                        Mechanobullous: pauci-inflammatory
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🌟 DIF</h5>
+                    <div class="result">
+                        Linear IgG/C3 at BMZ<br>
+                        <span class="highlight-red">U-serrated pattern</span><br>
+                        (vs N-serrated in BP)
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🧪 Salt-Split Skin</h5>
+                    <div class="result">
+                        <span class="highlight-yellow">FLOOR</span><br>
+                        (Dermal side)<br>
+                        Key differentiator!
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>📊 ELISA</h5>
+                    <div class="result">
+                        Type VII collagen<br>
+                        NC1 domain<br>
+                        Correlates with activity
+                    </div>
+                </div>
+            </div>
+
+            <div class="mnemonic-card">
+                <h4>EBA vs Bullous SLE</h4>
+                <p>
+                    Both target Type VII collagen BUT:<br>
+                    <strong>Dapsone Response:</strong><br>
+                    ✅ Bullous SLE → Excellent<br>
+                    ❌ EBA → Poor<br>
+                    <em>Use response to differentiate!</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- Linear IgA Section -->
+        <div id="labd" class="content-card">
+            <div class="disease-title">LINEAR IgA DISEASE</div>
+            
+            <div class="key-points">
+                <h3>🎯 Two Age Groups</h3>
+                <ul>
+                    <li><strong>Adults:</strong> LABD (>60 years, often drug-induced)</li>
+                    <li><strong>Children:</strong> CBDC (avg 4 years)</li>
+                    <li>Target: <span class="highlight-yellow">LAD-1</span> (120kD fragment of BP180)</li> <Li> less common with LAD 97 . which is cleaved portion of LAD-1</Li>
+                   
+                    <li>Common: other medications up to 1-780 days :
+                        <strong>1. Penicillins</strong>
+                        <strong>2. Cephalosporins</strong>
+                        <strong>3. Captopril</strong> > other <strong>ACE inhibitors</strong>
+                        <strong>4. NSAIDs</strong>
+                    </li>
+                    <li>Characteristic: <span class="highlight-green">"Crown of jewels"</span></li>
+                </ul>
+            </div>
+
+            <div class="mnemonic-card">
+                <h4>Drug Causes - "V-PCAN"</h4>
+                <p>
+                    <strong>V</strong>ancomycin (most common, 2-21 days)<br>
+                    <strong>P</strong>enicillins<br>
+                    <strong>C</strong>ephalosporins<br>
+                    <strong>A</strong>CE inhibitors (Captopril)<br>
+                    <strong>N</strong>SAIDs
+                </p>
+            </div>
+
+            <div class="clinical-features">
+                <h4>🩺 Clinical Pearls</h4>
+                
+                <div class="phase-box">
+                    <h5>👑 "Crown of Jewels" Pattern</h5>
+                    <ul>
+                        <li>Annular/polycyclic configuration</li>
+                        <li><span class="highlight-yellow">Vesicles at periphery</span></li>
+                        <li>Central crusting/erosion</li>
+                        <li>Herpetiform arrangement</li>
+                    </ul>
+                </div>
+                <div class="phase-box">
+                    <h5>📍 Distribution</h5>
+                    <ul>
+                        <li><strong>Children:</strong> Lower trunk, thighs, groin, buttocks, face</li>
+                        <li><strong>Adults:</strong> More widespread</li>
+                        <li>Isomorphic response (Koebner +)</li>
+                        <li>May involve mucosa (resembles MMP)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="clinical-features">
+    <h4>Associations</h4>
+    <div class="phase-box">
+        <h5>📝 Autoimmune</h5>
+        <ul>
+            <li>Rheumatoid arthritis</li>
+            <li>Lupus</li>
+            <li>Sjogren syndrome</li>
+            <li>Thyroiditis</li>
+            <li>Ulcerative colitis/Crohns</li>
+        </ul>
+    </div>
+    <div class="phase-box">
+        <h5>🏥 Malignancy</h5>
+        <ul>
+            <li>B-cell lymphoma</li>
+            <li>Chronic lymphocytic leukemia</li>
+            <li>Carcinoma of the bladder</li>
+            <li>Carcinoma of the thyroid</li>
+            <li>Carcinoma of the colon</li>
+            <li>Carcinoma of the esophagus</li>
+            
+        </ul>
+    </div>
+    <div class="phase-box">
+        <h5>🧠 Neurological</h5>
+        <ul>
+            <li>Multiple sclerosis</li>
+            <li>Neuromyelitis optica</li>
+        </ul>
+    </div>
+    <div class="phase-box">
+        <h5>🤢 Infection</h5>
+        <div>
+            <li>Varicella zoster virus</li>
+            <li>Acute Mononeuclosis</li>
+            <li>Paeclomyce lung infection</li>
+            <li>Influenza vaccine</li>
+            <li>Antibiotic-treated tetanus</li>
+            
+           
+        </div>
+    </div>
+    
+    <div class="phase-box">
+        <h5>📊 Other</h5>
+        <ul>
+            <li>Gluten intolerance - 24%</li>
+            <li>gastric hypochlorhydria</li>
+        </ul>
+    </div>
+</div>
+
+
+            <div class="diagnostic-grid">
+                <div class="test-card">
+                    <h5>🔬 H&E</h5>
+                    <div class="result">
+                        Subepidermal blister<br>
+                        <span class="highlight-red">Neutrophils</span> predominant<br>
+                        Neutrophilic papillitis
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🌟 DIF</h5>
+                    <div class="result">
+                        <span class="highlight-yellow">Linear IgA</span> at BMZ<br>
+                        N-serrated pattern<br>
+                        IgG = severe case
+                    </div>
+                </div>
+                
+                <div class="test-card">
+                    <h5>🧪 IIF</h5>
+                    <div class="result">
+                        Positive in 65%<br>
+                        Epidermal/roof staining<br>
+                        ELISA negative
+                    </div>
+                </div>
+            </div>
+
+            <div class="treatment-algorithm">
+                <h4>💊 Treatment</h4>
+                <div class="treatment-step" data-step="1">
+                    <h5>First Line</h5>
+                    <p>
+                        <strong>Dapsone</strong> 100mg (up to 300mg)<br>
+                        Children: 1-2 mg/kg<br>
+                        Response in 48-72 hours!
+                    </p>
+                </div>
+                <div class="treatment-step" data-step="2">
+                    <h5>Alternatives</h5>
+                    <p>
+                        Sulfapyridine, Erythromycin,<br>
+                        Tetracycline (>9 years)
+                    </p>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>Prognosis</h4>
+                <ul>
+                    <li>Childhood LABD: Remits in 2-4 years</li>
+                    <li>Drug-induced: 50% persist after discontinuation</li>
+                    <li>Spontaneous remission: 10-15%</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pemphigoid Variants Section -->
+        <div id="variants" class="content-card">
+            <div class="disease-title">PEMPHIGOID VARIANTS</div>
+            
+            <div class="key-points">
+                <h3>🎯 Unusual Clinical Variants</h3>
+                <ul>
+                    <li>Important for board exams - often tested!</li>
+                    <li>Same pathogenesis as BP but different presentations</li>
+                    <li>Treatment generally follows BP guidelines</li>
+                </ul>
+            </div>
+
+            <div class="clinical-features">
+                <h4>📋 Complete Variant List</h4>
+                
+                <div class="phase-box">
+                    <h5>1. Pemphigoid Vegetans</h5>
+                    <ul>
+                        <li>Vegetative plaques in <span class="highlight-yellow">intertriginous areas</span></li>
+                        <li>Resembles pemphigus vegetans clinically</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>2. Dyshidrosiform Pemphigoid</h5>
+                    <ul>
+                        <li>Palmoplantar vesicles and bullae</li>
+                        <li>Mimics dyshidrotic eczema</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>3. Pemphigoid Infantile/Childhood</h5>
+                    <ul>
+                        <li>Starts as <span class="highlight-red">acral bullae</span></li>
+                        <li>Then generalizes with facial/genital involvement</li>
+                        <li>Need DIF to distinguish from CBDC</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>4. Pemphigoid Nodularis</h5>
+                    <ul>
+                        <li>Resembles prurigo nodularis</li>
+                        <li><span class="highlight-yellow">Typically lacks bullae</span></li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>5. Lichen Planus Pemphigoides</h5>
+                    <ul>
+                        <li>BP develops after history of LP</li>
+                        <li>Bullae on <span class="highlight-green">unaffected skin</span></li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>6. Localized Pemphigoid</h5>
+                    <ul>
+                        <li>Sites: pretibial, peristomal, vulvar, umbilical</li>
+                        <li>Stump pemphigoid (amputation sites)</li>
+                        <li>Radiotherapy sites, paralyzed limbs</li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>7. Anti-p200 Pemphigoid</h5>
+                    <ul>
+                        <li>Target: <span class="highlight-yellow">Laminin γ1</span></li>
+                        <li>Classic BP eruption + head involvement</li>
+                        <li>NO mucosal involvement</li>
+                        <li>Associated with psoriasis</li>
+                        <li>Neutrophilic > eosinophilic → <span class="highlight-green">Dapsone helpful</span></li>
+                    </ul>
+                </div>
+
+                <div class="phase-box">
+                    <h5>8. Anti-p105 Pemphigoid</h5>
+                    <ul>
+                        <li>Resembles <span class="highlight-red">SJS/TEN</span></li>
+                        <li>Severe presentation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="high-yield">
+                <h4>Drug-Induced BP Features</h4>
+                <ul>
+                    <li>Affects <span class="highlight-yellow">younger age groups</span></li>
+                    <li>More mucosal involvement</li>
+                    <li>Nikolsky sign may be positive</li>
+                    <li>Appears on normal skin (vs urticarial in classic BP)</li>
+                    <li>More eosinophilia</li>
+                    <li>Histopathologic findings: Intraepidermal vesicles, necrotic keratinocytes, or thrombus formation (Classic BP is subepidermal)</li>
+
+                    <li>Latency: 1-48 months</li>
+                    <li>IIF often negative</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div id="compare" class="content-card">
+            <div class="disease-title">MASTER COMPARISON TABLE</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Disease</th>
+                            <th>Target Antigen</th>
+                            <th>Age</th>
+                            <th>Key Clinical</th>
+                            <th>DIF Pattern</th>
+                            <th>Salt-Split</th>
+                            <th>Best Treatment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>BP</strong></td>
+                            <td>BP180 NC16A<br>BP230</td>
+                            <td>60-70y</td>
+                            <td>Tense bullae<br>Flexures</td>
+                            <td>IgG/C3<br>N-serrated</td>
+                            <td>ROOF</td>
+                            <td>Topical steroids</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PG</strong></td>
+                            <td>BP180 NC16A</td>
+                            <td>Pregnancy</td>
+                            <td>Umbilicus start<br>NO mucosa</td>
+                            <td>IgG/C3</td>
+                            <td>ROOF</td>
+                            <td>Steroids</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CP/MMP</strong></td>
+                            <td>BP180 C-term<br>Laminin 332<br>β4 integrin</td>
+                            <td>60-80y</td>
+                            <td>Mucosa + scarring<br>Blindness risk</td>
+                            <td>IgG/C3<br>N-serrated</td>
+                            <td>Variable</td>
+                            <td>Dapsone<br>Rituximab</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EBA</strong></td>
+                            <td>Type VII collagen</td>
+                            <td>Adults</td>
+                            <td>Trauma sites<br>Scarring + milia</td>
+                            <td>IgG/C3<br>U-serrated</td>
+                            <td>FLOOR</td>
+                            <td>Steroids<br>Poor response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LABD</strong></td>
+                            <td>LAD-1 (BP180 fragment)</td>
+                            <td>Adults/Kids</td>
+                            <td>Crown of jewels<br>Drug-induced</td>
+                            <td>Linear IgA</td>
+                            <td>ROOF</td>
+                            <td>Dapsone</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mnemonic-card">
+                <h4>🎯 Quick Memory Tricks</h4>
+                <p>
+                    <strong>ROOF vs FLOOR:</strong><br>
+                    "BP Lives on the ROOF" (BP, PG, LABD = Roof)<br>
+                    "EBA Falls to the FLOOR" (EBA = Floor)<br><br>
+                    
+                    <strong>Serration Pattern:</strong><br>
+                    "N for Nice diseases" (BP, MMP = N-serrated)<br>
+                    "U for Ugly prognosis" (EBA = U-serrated)<br><br>
+                    
+                    <strong>Age Groups:</strong><br>
+                    60s = BP<br>
+                    70s = MMP<br>
+                    4 years = CBDC
+                </p>
+            </div>
+
+            <div class="high-yield">
+                <h4>🚨 Board Exam High-Yield Differentials</h4>
+                <ul>
+                    <li><strong>Tense bullae + elderly + eosinophils</strong> = BP</li>
+                    <li><strong>Pregnancy + umbilicus + spares mucosa</strong> = PG</li>
+                    <li><strong>Mucosa + scarring + blindness</strong> = MMP</li>
+                    <li><strong>Anti-epiligrin MMP</strong> = Check for malignancy!</li>
+                    <li><strong>IBD + trauma sites + U-serrated</strong> = EBA</li>
+                    <li><strong>Vancomycin + crown of jewels</strong> = LABD</li>
+                    <li><strong>Child + annular bullae</strong> = CBDC</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Final Summary Section -->
+        <div class="content-card">
+            <div class="disease-title">🎓 FINAL EXAM TIPS</div>
+            
+            <div class="mnemonic-card">
+                <h4>Top 10 Board Exam Pearls</h4>
+                <ol style="text-align: left; padding-left: 40px;">
+                    <li><strong>BP</strong> = Most common immunobullous disease overall</li>
+                    <li><strong>NC16A</strong> = Key epitope for BP180 antibodies</li>
+                    <li><strong>Epitope spreading</strong> = Explains disease progression</li>
+                    <li><strong>ELISA</strong> = Correlates with disease activity (not IIF!)</li>
+                    <li><strong>Dapsone response</strong> differentiates Bullous SLE from EBA</li>
+                    <li><strong>Laminin 332</strong> in MMP = Screen for malignancy</li>
+                    <li><strong>Vancomycin</strong> = #1 cause of drug-induced LABD</li>
+                    <li><strong>Multiple sclerosis</strong> = Strongest BP association</li>
+                    <li><strong>Floor pattern</strong> = Think EBA (Type VII collagen)</li>
+                    <li><strong>Pregnancy pemphigoid</strong> = Always spares mucosa</li>
+                </ol>
+            </div>
+
+            <div class="key-points" style="background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);">
+                <h3>⏰ Last-Minute Review Checklist</h3>
+                <ul>
+                    <li>✅ BP180 = Transmembrane (NC16A extracellular)</li>
+                    <li>✅ BP230 = Intracellular hemidesmosomal plaque</li>
+                    <li>✅ Type VII collagen = Anchoring fibrils (deep!)</li>
+                    <li>✅ N-serrated = Above lamina densa</li>
+                    <li>✅ U-serrated = Below lamina densa</li>
+                    <li>✅ Roof = Intralamina lucida split</li>
+                    <li>✅ Floor = Sublamina densa split</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 20px;">
+                <h3 style="color: #764ba2;">Good Luck on Your Saudi Board Exam! 🌟</h3>
+                <p style="font-size: 1.2em; color: #666;">You've got this! Trust your preparation.</p>
+                <p style="margin-top: 20px; font-style: italic; color: #999;">
+                    Created by Dr. Musaed Alsebayel - 2024<br>
+                    Interactive Design for Maximum Retention
+                </p>
+            </div>
+        </div>
+
+        <!-- Quick Reference Modal -->
+        <div id="quickRefModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>⚡ Quick Reference Guide</h3>
+                
+                <div class="ref-section">
+                    <h4>DIF Patterns</h4>
+                    <p>• <strong>N-serrated:</strong> BP, MMP, LABD<br>
+                    • <strong>U-serrated:</strong> EBA</p>
+                </div>
+                
+                <div class="ref-section">
+                    <h4>Salt-Split Results</h4>
+                    <p>• <strong>ROOF:</strong> BP, PG, LABD, some MMP<br>
+                    • <strong>FLOOR:</strong> EBA, anti-epiligrin MMP</p>
+                </div>
+                
+                <div class="ref-section">
+                    <h4>Target Antigens</h4>
+                    <p>• <strong>BP180:</strong> BP, PG, MMP, LABD<br>
+                    • <strong>BP230:</strong> BP<br>
+                    • <strong>Type VII collagen:</strong> EBA<br>
+                    • <strong>Laminin 332:</strong> Anti-epiligrin MMP</p>
+                </div>
+                
+                <div class="ref-section">
+                    <h4>First-Line Treatments</h4>
+                    <p>• <strong>BP:</strong> Topical clobetasol<br>
+                    • <strong>MMP:</strong> Dapsone + topical<br>
+                    • <strong>EBA:</strong> Systemic steroids<br>
+                    • <strong>LABD:</strong> Dapsone</p>
+                </div>
+                
+                <button onclick="closeQuickRef()">Close</button>
+            </div>
+        </div>
+        
+        <div class="quick-ref" onclick="toggleQuickRef()">
+            📚 Quick Reference
+        </div>
+    </div>
+
+    <script>
+        // Toggle collapsible content
+        document.querySelectorAll('.toggle-content').forEach(element => {
+            element.addEventListener('click', function() {
+                this.classList.toggle('collapsed');
+                const content = this.nextElementSibling;
+                if (content && content.classList.contains('collapsible')) {
+                    content.classList.toggle('collapsed');
+                }
+            });
+        });
+
+        // Navigation pill functionality
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Quick reference toggle
+        function toggleQuickRef() {
+            const modal = document.getElementById('quickRefModal');
+            modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function closeQuickRef() {
+            document.getElementById('quickRefModal').style.display = 'none';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('quickRefModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add interactive hover effects for diagnostic cards
+        document.querySelectorAll('.test-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 200);
+            });
+        });
+
+        // Highlight on hover for important elements
+        document.querySelectorAll('.highlight-yellow, .highlight-red, .highlight-green').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'all 0.2s ease';
+            });
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Progress tracking
+        let viewedSections = new Set();
+        
+        function trackProgress() {
+            const sections = ['bp', 'pg', 'variants', 'cp', 'eba', 'labd', 'compare'];
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        viewedSections.add(entry.target.id);
+                        updateProgressBar();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) observer.observe(element);
+            });
+        }
+
+        function updateProgressBar() {
+            const totalSections = 7;
+            const progress = (viewedSections.size / totalSections) * 100;
+            console.log(`Progress: ${progress}%`);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            trackProgress();
+            
+            // Smooth fade-in animation
+            document.querySelectorAll('.content-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuickRef();
+            }
+            if (e.ctrlKey && e.key === 'q') {
+                e.preventDefault();
+                toggleQuickRef();
+            }
+        });
+    </script>
+</body>
+</html>

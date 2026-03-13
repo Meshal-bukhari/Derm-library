@@ -1,0 +1,873 @@
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+  }
+  
+  h1, h2, h3, h4 {
+    color: #2c3e50;
+    margin-top: 1.5em;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #1a5276;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .box {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .highlight {
+    background-color: #ffe082;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
+  .board-alert {
+    background-color: #ffccbc;
+    border-left: 4px solid #e64a19;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .definition {
+    background-color: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .memory-aid {
+    background-color: #e8f5e9;
+    border: 1px dashed #4caf50;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+  }
+  
+  .image-box {
+    display: block;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  details {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px 0;
+  }
+  
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .flex-2col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .flex-2col > div {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  mark {
+    background-color: #fff9c4;
+    padding: 2px 0;
+  }
+  
+  .clinical-pearl {
+    background-color: #e0f7fa;
+    border-left: 4px solid #00acc1;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .interactive-box {
+    background-color: #f3e5f5;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+</style>
+<div class="definition">
+  <h4>Amyloidosis Defined:</h4>
+  <p>A group of diseases characterized by abnormal extracellular deposition of amyloid, a fibrillar proteinaceous material with a characteristic cross-β-pleated sheet configuration, within tissues.</p>
+</div>
+Core Amyloid Properties
+<div class="container">
+  <div class="box">
+    <h3>Major Components</h3>
+    <ul>
+      <li><mark>The major component of all amyloid deposits is the fibril protein</mark></li>
+      <li><mark>Amyloid P component (derived from serum amyloid P protein or SAP) is a universal constituent of all types of amyloid</mark></li>
+      <li>Other components include glycosaminoglycans and apoE lipoprotein</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>Physical Properties</h3>
+    <ul>
+      <li>Cross-β-pleated sheet configuration (all types)</li>
+      <li>7-10nm wide non-branching, non-anastomosing fibrils on EM</li>
+      <li>All amyloid types share these physical properties regardless of origin</li>
+    </ul>
+  </div>
+</div>
+<div class="board-alert">
+  <h4>💡 HIGH-YIELD: Amyloid Staining Properties</h4>
+  <ul>
+    <li><mark>Congo red stain: orange-red color under standard light microscopy</mark></li>
+    <li><mark>Characteristic apple-green birefringence with Congo red stain under polarized light</mark></li>
+    <li>Other useful stains: crystal violet, Thioflavin T, Sirius red, Dylon stain</li>
+    <li><mark>KMnO₄ test: AA amyloid (but not AL) loses its affinity for Congo red after exposure to potassium permanganate</mark></li>
+    <li>Immunohistochemical stains (e.g., for keratin, light chains) help identify amyloid type</li>
+    <li><mark>Tandem mass spectrometry (LC-MS/MS) is the preferred method for precise protein identification</mark> including AL, ATTR, and ALect2</li>
+  </ul>
+</div>
+Classification of Amyloidosis
+<table>
+  <tr>
+    <th>Classification Approach</th>
+    <th>Types</th>
+  </tr>
+  <tr>
+    <td>Clinical</td>
+    <td>
+      <ul>
+        <li>Systemic (generalized)</li>
+        <li>Organ-limited (localized)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Etiology</td>
+    <td>
+      <ul>
+        <li>Primary</li>
+        <li>Secondary</li>
+        <li>Hereditary</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Chemical (by protein)</td>
+    <td>
+      <ul>
+        <li>AL (light chain)</li>
+        <li>AA (amyloid-associated)</li>
+        <li>ATTR (transthyretin)</li>
+        <li>AKer (keratin)</li>
+        <li>Aβ2M (β2-microglobulin)</li>
+        <li>Others (>40 types identified)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<div class="memory-aid">
+  <h4>🧠 Amyloid Type Mnemonic: "AAAAA"</h4>
+  <ul>
+    <li><strong>A</strong>L: <strong>A</strong>ntibody <strong>L</strong>ight chain → <mark>Primary systemic amyloidosis & nodular cutaneous amyloidosis</mark></li>
+    <li><strong>A</strong>A: <strong>A</strong>cute phase proteins → <mark>Secondary systemic amyloidosis (inflammation/infection) & autoinflammatory disorders (FMF, Muckle-Wells)</mark></li>
+    <li><strong>A</strong>TTR: <strong>A</strong> <strong>T</strong>rans<strong>t</strong>hyretin protein → <mark>Wild-type ATTR associated with senile systemic/cardiac amyloidosis</mark></li>
+    <li><strong>A</strong>Ker: <strong>A</strong> <strong>Ker</strong>atin protein → <mark>Primary cutaneous macular & lichen amyloidosis</mark></li>
+    <li><strong>A</strong>β2M: <strong>A</strong> <strong>β2</strong>-<strong>M</strong>icroglobulin protein → <mark>Hemodialysis-associated amyloidosis</mark></li>
+  </ul>
+</div>
+Primary Localized Cutaneous Amyloidosis
+<div class="clinical-pearl">
+  <p><mark>Lichen amyloidosis is the most common form of primary cutaneous amyloidosis</mark></p>
+</div>
+<div class="flex-2col">
+  <div>
+    <h3>Macular Amyloidosis</h3>
+    <ul>
+      <li>Hyperpigmented macules in rippled pattern</li>
+      <li>Common sites: upper back (especially scapular)</li>
+      <li>Often pruritic</li>
+      <li>More common in women</li>
+      <li>Clinical overlap with notalgia paresthetica</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Lichen Amyloidosis</h3>
+    <ul>
+      <li>Persistent, pruritic, hyperpigmented papules</li>
+      <li>Predilection for shins and extensor surfaces</li>
+      <li>Often in rippled or ridged pattern</li>
+      <li>May coalesce into plaques</li>
+      <li>Initially unilateral, can become bilateral</li>
+    </ul>
+  </div>
+</div>
+<div class="flex-2col">
+  <div>
+    <h3>Biphasic Amyloidosis</h3>
+    <p>Features of both macular and lichen amyloidosis in the same patient (or even same lesion)</p>
+  </div>
+  <div>
+    <h3>Nodular Amyloidosis</h3>
+    <ul>
+      <li>Single or multiple waxy nodules/plaques</li>
+      <li>Common on trunk and extremities</li>
+      <li><mark>Composed of AL amyloid (immunoglobulin light chains)</mark></li>
+      <li><mark>~7% risk of progression to systemic involvement</mark> (much less than previously quoted 50%)</li>
+    </ul>
+  </div>
+</div>
+<div class="board-alert">
+  <h4>💡 HIGH-YIELD: Associations of Macular/Lichen Amyloidosis</h4>
+  <ul>
+    <li><mark>MEN type 2A (Sipple syndrome)</mark> - associated with lichen amyloidosis with early onset (often before age 10)</li>
+    <li>All patients with cutaneous amyloidosis in MEN2A have pathogenic variant in codon 634 of <mark>RET proto-oncogene</mark></li>
+    <li><mark>Notalgia paresthetica</mark> - significant clinical and histological overlap</li>
+    <li>Autoimmune connective tissue disorders (e.g., systemic sclerosis, SLE, dermatomyositis)</li>
+    <li>IL-31 receptor-associated amyloidosis (PLCA1 and PLCA2)</li>
+  </ul>
+</div>
+Histopathology of Primary Cutaneous Amyloidosis
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Histologic Features</th>
+    <th>Immunohistochemistry</th>
+  </tr>
+  <tr>
+    <td>Macular & Lichen</td>
+    <td>
+      <ul>
+        <li>Amyloid deposits in upper dermis (papillary dermis)</li>
+        <li>Papillary expansion in lichen amyloidosis</li>
+        <li>Overlying epidermal features of chronic rubbing</li>
+        <li>Melanophages and sparse perivascular inflammation</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><mark>Antikeratin antibodies (e.g., MNF 116) positive</mark></li>
+        <li>Keratin-derived (AKer amyloid)</li>
+        <li><mark>Pankeratin stain positivity differentiates it from colloid milium</mark></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Nodular</td>
+    <td>
+      <ul>
+        <li>Diffuse infiltration of dermis, subcutis, and blood vessel walls</li>
+        <li>Perivascular plasma cell infiltrate (often monoclonal)</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Immunoglobulin light chain-positive (AL amyloid)</li>
+        <li>β2-microglobulin may be present</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<div class="interactive-box">
+  <h4>🔍 Differential Diagnosis</h4>
+  <details>
+    <summary>Macular Amyloidosis</summary>
+    <ul>
+      <li>Notalgia paresthetica</li>
+      <li>Postinflammatory hyperpigmentation</li>
+      <li>Pityriasis versicolor</li>
+      <li>Atrophic lichen planus</li>
+      <li>Erythema dyschromicum perstans (ashy dermatosis)</li>
+      <li>Drug-induced pigmentation</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Lichen Amyloidosis</summary>
+    <ul>
+      <li>Lichen simplex chronicus</li>
+      <li>Hypertrophic lichen planus</li>
+      <li>Papular mucinosis</li>
+      <li>Pretibial myxedema</li>
+      <li>Prurigo nodularis</li>
+      <li>Pemphigoid nodularis</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Nodular Amyloidosis</summary>
+    <ul>
+      <li>Cutaneous lesions of primary systemic amyloidosis</li>
+      <li>Cutaneous lymphoid hyperplasia</li>
+      <li>Sarcoidosis</li>
+      <li>Colloid milium</li>
+    </ul>
+  </details>
+</div>
+Primary Systemic Amyloidosis (AL type)
+<div class="definition">
+  <p>AL amyloidosis is a life-threatening manifestation of an underlying plasma cell dyscrasia. The fibrils are composed of AL protein consisting of immunoglobulin light chains, <mark>usually λ-type (75%-80%)</mark>.</p>
+</div>
+<div class="board-alert">
+  <h4>💡 HIGH-YIELD: Classic Presentation</h4>
+  <p><mark>The presence of macroglossia together with carpal tunnel syndrome is a classic presentation and should trigger investigation for amyloidosis</mark></p>
+</div>
+Mucocutaneous Manifestations
+<div class="flex-2col">
+  <div>
+    <h4>Skin Findings (present in ~25% of cases)</h4>
+    <ul>
+      <li><mark>Waxy, translucent, or purpuric papules, nodules, and plaques</mark></li>
+      <li>Smooth, waxy infiltration with papules on palms and fingertips</li>
+      <li>Small papules on face, neck, scalp, anogenital region</li>
+      <li>Diffuse infiltration causing sclerodermoid appearance</li>
+      <li>Hemorrhagic bullae resembling porphyria cutanea tarda</li>
+      <li>Nail dystrophy resembling lichen planus</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Mucosal Findings</h4>
+    <ul>
+      <li><mark>Rubbery swellings or infiltration of the mucosa</mark></li>
+      <li><mark>Macroglossia (uniformly enlarged, firm tongue)</mark></li>
+      <li>Hemorrhagic papules, plaques, and blisters on tongue</li>
+      <li>Xerostomia due to salivary gland infiltration</li>
+    </ul>
+  </div>
+</div>
+<div class="clinical-pearl">
+  <h4>Periorbital Purpura ("Raccoon Eyes")</h4>
+  <p><mark>Characteristic purpura in periorbital distribution following minor trauma (coughing, Valsalva maneuver, proctoscopy)</mark></p>
+  <p><mark>Caused by amyloid infiltration of vessel walls leading to increased fragility</mark></p>
+  <p>Can also present as "pinch purpura" anywhere on the body</p>
+</div>
+Systemic Manifestations
+<div class="container">
+  <div class="box">
+    <h4>Renal</h4>
+    <ul>
+      <li><mark>Proteinuria (albuminuria)</mark></li>
+      <li><mark>Hypoalbuminemia</mark></li>
+      <li><mark>Edema (nephrotic syndrome)</mark></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Cardiac</h4>
+    <ul>
+      <li><mark>Restrictive cardiomyopathy</mark></li>
+      <li>Congestive heart failure with preserved ejection fraction</li>
+      <li>Dyspnea, hepatomegaly, edema</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Neurologic</h4>
+    <ul>
+      <li>Sensory neuropathy (bilateral, symmetrical)</li>
+      <li>Autonomic dysfunction</li>
+      <li>Postural hypotension</li>
+      <li>Impotence</li>
+      <li>GI motility disturbances</li>
+    </ul>
+  </div>
+</div>
+Diagnosis of Primary Systemic Amyloidosis
+<table>
+  <tr>
+    <th colspan="2">Diagnostic Approach</th>
+  </tr>
+  <tr>
+    <td>Tissue Biopsy</td>
+    <td>
+      <ul>
+        <li>Biopsy of specific mucocutaneous lesions, if present</li>
+        <li><mark>Fine needle aspiration of abdominal subcutaneous fat (preferred method when no specific skin/mucosal lesions)</mark></li>
+        <li>Rectal mucosal biopsies (less preferred due to bleeding risk)</li>
+        <li>Gingival or tongue biopsies</li>
+        <li>Bone marrow biopsy</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Laboratory Tests</td>
+    <td>
+      <ul>
+        <li><mark>Serum protein electrophoresis</mark></li>
+        <li><mark>Urine protein electrophoresis</mark></li>
+        <li><mark>Immunofixation electrophoresis (serum and urine)</mark></li>
+        <li><mark>Serum free light chain assay</mark></li>
+        <li>Complete blood count</li>
+        <li>Renal and liver function tests</li>
+        <li>Cardiac markers (NT-proBNP, troponin)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Imaging</td>
+    <td>
+      <ul>
+        <li><mark>Serum Amyloid P (SAP) component scintigraphy</mark> - used primarily outside US for localizing amyloid deposits and monitoring disease</li>
+        <li>Echocardiogram</li>
+        <li>Cardiac MRI</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Other Studies</td>
+    <td>
+      <ul>
+        <li>Nerve conduction studies</li>
+        <li>Bone marrow plasma cell assessment (percentage, clonality via flow cytometry, morphology)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<div class="board-alert">
+  <h4>💡 HIGH-YIELD: Prognosis & Treatment</h4>
+  <ul>
+    <li><mark>Cardiac and renal involvement are major negative prognostic factors</mark></li>
+    <li>Without therapy, prognosis is poor, especially with cardiac involvement</li>
+    <li><mark>Treatment strategies parallel those for multiple myeloma</mark></li>
+    <li>FDA-approved: cyclophosphamide, bortezomib, dexamethasone (CyborD) plus daratumumab</li>
+    <li>High-dose melphalan followed by autologous stem cell transplantation for eligible patients</li>
+    <li>Supportive measures according to affected organs</li>
+  </ul>
+</div>
+Secondary Systemic Amyloidosis (AA type)
+<div class="definition">
+  <p>Secondary systemic amyloidosis occurs as a complication of severe chronic inflammatory diseases. It is characterized by deposition of AA protein (derived from an acute phase protein synthesized by the liver).</p>
+</div>
+<div class="flex-2col">
+  <div>
+    <h4>Associated Conditions</h4>
+    <ul>
+      <li>Chronic infections (tuberculosis, lepromatous leprosy)</li>
+      <li>Chronic inflammatory diseases:
+        <ul>
+          <li>Rheumatoid arthritis</li>
+          <li>Ankylosing spondylitis</li>
+          <li>Hidradenitis suppurativa</li>
+          <li>Psoriasis (generalized or pustular)</li>
+          <li>Autoimmune connective tissue disorders</li>
+        </ul>
+      </li>
+      <li><mark>Autoinflammatory syndromes:
+        <ul>
+          <li>Familial Mediterranean Fever (FMF)</li>
+          <li>Muckle-Wells syndrome (associated with AA amyloid)</li>
+          <li>TNF receptor-associated periodic syndrome (TRAPS)</li>
+        </ul></mark>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4>Key Features</h4>
+    <ul>
+      <li>Primarily affects kidneys, liver, spleen, adrenals, heart</li>
+      <li>Cutaneous lesions are rare</li>
+      <li>Amyloid detectable in subcutaneous fat aspirates</li>
+      <li>Treatment involves addressing the underlying disease</li>
+      <li>TNF inhibitors can be beneficial for underlying inflammatory disorders</li>
+      <li>Eprodisate may slow renal function loss</li>
+      <li><mark>Colchicine is the treatment for Familial Mediterranean Fever (FMF) and prevents secondary AA amyloidosis</mark></li>
+    </ul>
+  </div>
+</div>
+Other Important Amyloidosis Types
+Hemodialysis-Associated Amyloidosis
+<div class="flex-2col">
+  <div>
+    <h4>Pathogenesis</h4>
+    <ul>
+      <li><mark>Results from decreased excretion of β2-microglobulin</mark></li>
+      <li><mark>Aβ2M accumulates because it's not readily filtered through dialysis membranes</mark></li>
+      <li>Improved dialysis membranes have decreased incidence</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Clinical Features</h4>
+    <ul>
+      <li>Primarily musculoskeletal manifestations:
+        <ul>
+          <li>Carpal tunnel syndrome</li>
+          <li>Bone cysts</li>
+          <li>Destructive spondylo-arthropathy</li>
+        </ul>
+      </li>
+      <li>Occasional subcutaneous nodules</li>
+    </ul>
+  </div>
+</div>
+ATTR Amyloidosis
+<div class="flex-2col">
+  <div>
+    <h4>Wild-type ATTR Amyloidosis</h4>
+    <ul>
+      <li><mark>Also known as senile systemic amyloidosis or senile cardiac amyloidosis</mark></li>
+      <li>Deposition of wild-type transthyretin in cardiac tissue</li>
+      <li>Predominantly affects the elderly</li>
+      <li>Treatment with tafamidis meglumine FDA-approved</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Hereditary ATTR Amyloidosis</h4>
+    <ul>
+      <li>Due to mutations in transthyretin gene</li>
+      <li>Presents with neurologic or cardiac dysfunction</li>
+      <li>Skin rarely involved</li>
+      <li>Treatments: liver transplantation, tafamidis, patisiran, inotersen</li>
+    </ul>
+  </div>
+</div>
+Board Exam Quick Reference
+<div class="interactive-box">
+  <h4>🧠 Key Associations to Remember</h4>
+  <table>
+    <tr>
+      <th>Amyloid Type</th>
+      <th>Precursor Protein</th>
+      <th>Clinical Entity</th>
+    </tr>
+    <tr>
+      <td>AL</td>
+      <td>Immunoglobulin light chains (mostly λ)</td>
+      <td>Primary systemic amyloidosis, Primary cutaneous nodular amyloidosis</td>
+    </tr>
+    <tr>
+      <td>AA</td>
+      <td>Serum AA protein (acute phase reactant)</td>
+      <td>Secondary systemic amyloidosis, Autoinflammatory disorders (FMF, Muckle-Wells)</td>
+    </tr>
+    <tr>
+      <td>ATTR</td>
+      <td>Transthyretin (wild-type)</td>
+      <td>Senile systemic/cardiac amyloidosis</td>
+    </tr>
+    <tr>
+      <td>ATTR</td>
+      <td>Transthyretin (variants)</td>
+      <td>Familial amyloid polyneuropathy, Familial amyloid cardiomyopathy</td>
+    </tr>
+    <tr>
+      <td>AKer</td>
+      <td>Keratin</td>
+      <td>Primary cutaneous macular and lichen amyloidosis</td>
+    </tr>
+    <tr>
+      <td>Aβ2M</td>
+      <td>β2-microglobulin</td>
+      <td>Hemodialysis-associated amyloidosis</td>
+    </tr>
+  </table>
+</div>
+<div class="memory-aid">
+  <h4>🧠 Primary Systemic Amyloidosis (AL) Recall Mnemonic: "CARPS"</h4>
+  <ul>
+    <li><strong>C</strong>arpal tunnel + macroglossia = classic presentation</li>
+    <li><strong>A</strong>L amyloid protein from lambda light chains (75-80%)</li>
+    <li><strong>R</strong>accoon eyes (periorbital purpura) after minor trauma</li>
+    <li><strong>P</strong>lasma cell dyscrasia underlies the condition</li>
+    <li><strong>S</strong>kin involvement in 25% of patients</li>
+  </ul>
+</div>
+<div class="board-alert">
+  <h4>💡 High-Yield Diagnostic Tests</h4>
+  <table>
+    <tr>
+      <th>Test</th>
+      <th>Purpose/Finding</th>
+    </tr>
+    <tr>
+      <td>Congo red stain</td>
+      <td>Orange-red under standard light; apple-green birefringence under polarized light</td>
+    </tr>
+    <tr>
+      <td>KMnO₄ test</td>
+      <td>AA amyloid loses Congo red affinity after treatment; AL remains positive</td>
+    </tr>
+    <tr>
+      <td>Abdominal fat aspiration</td>
+      <td>Safe, preferred method for diagnosing systemic amyloidosis with no specific cutaneous lesions</td>
+    </tr>
+    <tr>
+      <td>Immunohistochemistry</td>
+      <td>Helps identify amyloid type (e.g., antikeratin for AKer, anti-light chain for AL)</td>
+    </tr>
+    <tr>
+      <td>Tandem mass spectrometry</td>
+      <td>Preferred method for precise amyloid protein identification, particularly useful in complex cases</td>
+    </tr>
+  </table>
+</div>
+<div class="flex-2col">
+  <div>
+    <h4>Treatment Options for Macular & Lichen Amyloidosis</h4>
+    <ul>
+      <li>Breaking the itch-scratch cycle is essential</li>
+      <li>First-line:
+        <ul>
+          <li>Potent topical corticosteroids (with/without occlusion)</li>
+          <li>Mild keratolytics (salicylic acid) - especially for lichen amyloidosis</li>
+          <li>Occlusive dressings (hydrocolloid, zinc oxide-impregnated)</li>
+        </ul>
+      </li>
+      <li>Second-line:
+        <ul>
+          <li>Topical calcineurin inhibitors</li>
+          <li>Intralesional corticosteroids</li>
+          <li>UVB phototherapy</li>
+          <li>PUVA phototherapy</li>
+        </ul>
+      </li>
+      <li>Third-line:
+        <ul>
+          <li>Systemic retinoids (acitretin, alitretinoin)</li>
+          <li>Dermabrasion</li>
+          <li>CO₂ or erbium:YAG laser therapy</li>
+          <li>Low-dose cyclophosphamide</li>
+          <li>Dupilumab (case reports)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4>Treatment Options for Nodular Amyloidosis</h4>
+    <ul>
+      <li>Surgical excision</li>
+      <li>Cryotherapy</li>
+      <li>Electrodesiccation</li>
+      <li>CO₂ laser</li>
+      <li>Local recurrences are common</li>
+      <li>Cyclophosphamide may be used in some cases</li>
+    </ul>
+    <div class="board-alert">
+      <h4>Treatment of Systemic Involvement</h4>
+      <p>Primary systemic amyloidosis (AL type):</p>
+      <ul>
+        <li>Historically: Melphalan and corticosteroids</li>
+        <li>Current: Cyclophosphamide, bortezomib, dexamethasone plus daratumumab</li>
+        <li>For eligible patients: High-dose melphalan with autologous stem cell transplantation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+Secondary Cutaneous Amyloidosis
+<div class="definition">
+  <p>Secondary cutaneous amyloidosis refers to amyloid deposits that are clinically inapparent but detectable histopathologically within various skin lesions.</p>
+</div>
+<div class="container">
+  <div class="box">
+    <h4>Common Associations</h4>
+    <ul>
+      <li>Seborrheic keratoses</li>
+      <li>Basal cell carcinomas</li>
+      <li>Dermatofibromas</li>
+      <li>Intradermal melanocytic nevi</li>
+      <li>Adnexal tumors</li>
+      <li>Bowen disease</li>
+      <li>Porokeratosis</li>
+      <li>Following PUVA therapy</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Notable Examples</h4>
+    <ul>
+      <li>Hypotrichosis simplex of the scalp:
+        <ul>
+          <li>Autosomal dominant disorder</li>
+          <li>Progressive loss of scalp hair by third decade</li>
+          <li>Caused by variants in gene encoding corneodesmosin</li>
+          <li>Amyloid deposits around hair follicles and papillary dermis</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+Pathogenesis of Amyloid Formation
+<div class="flex-2col">
+  <div>
+    <h4>General Mechanisms</h4>
+    <ul>
+      <li>Begins with soluble precursor proteins</li>
+      <li>Proteins undergo conformational changes</li>
+      <li>These changes lead to:
+        <ul>
+          <li>Aggregation</li>
+          <li>Polymerization</li>
+          <li>Fibril formation</li>
+          <li>Extracellular tissue deposition as insoluble amyloid</li>
+        </ul>
+      </li>
+      <li>Specific mechanisms vary by amyloid type</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Type-Specific Mechanisms</h4>
+    <ul>
+      <li><strong>Primary Systemic (AL):</strong> Amino acid substitutions in variable region of immunoglobulin light chains destabilize them</li>
+      <li><strong>ATTR:</strong> Mutations in transthyretin gene alter protein stability and increase amyloidogenicity</li>
+      <li><strong>Primary Cutaneous (AKer):</strong>
+        <ul>
+          <li>Fibrillar theory: Keratinocyte tonofilaments degenerate, pass into dermis, modified by histiocytes/fibroblasts</li>
+          <li>Alternative theory: Precursor proteins secreted at dermoepidermal junction by basal keratinocytes</li>
+          <li>Small fiber neuropathy may relate to associated pruritus</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+Final Review: Summary Table
+<table>
+  <tr>
+    <th>Amyloid Type</th>
+    <th>Precursor</th>
+    <th>Clinical Entities</th>
+    <th>Key Features</th>
+    <th>Diagnostic Approach</th>
+    <th>Treatment</th>
+  </tr>
+  <tr>
+    <td>AL</td>
+    <td>Immunoglobulin light chains (λ > κ)</td>
+    <td>Primary systemic amyloidosis<br>Primary cutaneous nodular amyloidosis</td>
+    <td>Macroglossia + carpal tunnel syndrome<br>"Raccoon eyes"<br>~25% have skin involvement<br>~7% risk of progression from nodular to systemic</td>
+    <td>Abdominal fat aspiration<br>Serum/urine immunofixation<br>Serum free light chains<br>SAP scintigraphy</td>
+    <td>CyborD + daratumumab<br>Autologous stem cell transplantation</td>
+  </tr>
+  <tr>
+    <td>AA</td>
+    <td>Serum amyloid A (acute phase protein)</td>
+    <td>Secondary systemic amyloidosis<br>FMF<br>Muckle-Wells syndrome</td>
+    <td>Rare skin involvement<br>Loses Congo red affinity after KMnO₄</td>
+    <td>Biopsy + KMnO₄ test<br>History of chronic inflammation</td>
+    <td>Treat underlying disease<br>Colchicine for FMF<br>TNF inhibitors for inflammatory conditions</td>
+  </tr>
+  <tr>
+    <td>AKer</td>
+    <td>Keratin</td>
+    <td>Macular amyloidosis<br>Lichen amyloidosis</td>
+    <td>Lichen is most common type<br>Associated with MEN2A (RET), notalgia paresthetica</td>
+    <td>Clinical + histopathology<br>Antikeratin stains positive</td>
+    <td>Topical steroids<br>Phototherapy<br>Physical modalities</td>
+  </tr>
+  <tr>
+    <td>Aβ2M</td>
+    <td>β2-microglobulin</td>
+    <td>Hemodialysis-associated amyloidosis</td>
+    <td>Musculoskeletal manifestations<br>Carpal tunnel syndrome</td>
+    <td>Clinical + biopsy in long-term dialysis patients</td>
+    <td>Improved dialysis membranes</td>
+  </tr>
+  <tr>
+    <td>ATTR</td>
+    <td>Transthyretin (wild-type)</td>
+    <td>Senile systemic/cardiac amyloidosis</td>
+    <td>Cardiac manifestations<br>Affects elderly</td>
+    <td>Cardiac biopsy<br>Cardiac imaging</td>
+    <td>Tafamidis meglumine</td>
+  </tr>
+</table>
+Self-Assessment Questions
+<details>
+  <summary>1. What is the major fibrillar protein component common to all amyloid deposits?</summary>
+  <p>The major component of all amyloid deposits is the fibril protein. Despite different precursors, all amyloid fibrils share a common cross-β-pleated sheet configuration.</p>
+</details>
+<details>
+  <summary>2. Which staining pattern is characteristic of amyloid on Congo red stain under polarized light?</summary>
+  <p>Apple-green birefringence is the characteristic appearance of amyloid when stained with Congo red and viewed under polarized light.</p>
+</details>
+<details>
+  <summary>3. What amyloid protein type is associated with primary cutaneous macular and lichen amyloidosis?</summary>
+  <p>AKer (keratin-derived) amyloid protein is associated with primary cutaneous macular and lichen amyloidosis.</p>
+</details>
+<details>
+  <summary>4. What distinguishes AA amyloid from AL amyloid in laboratory testing?</summary>
+  <p>AA amyloid loses its affinity for Congo red after exposure to potassium permanganate (KMnO₄), while AL amyloid retains its staining.</p>
+</details>
+<details>
+  <summary>5. What is the classic clinical presentation that should trigger investigation for primary systemic amyloidosis?</summary>
+  <p>The combination of macroglossia (enlarged tongue) and carpal tunnel syndrome is a classic presentation of primary systemic amyloidosis.</p>
+</details>
+<details>
+  <summary>6. What is the approximate risk of progression to systemic disease for primary cutaneous nodular amyloidosis?</summary>
+  <p>Approximately 7% of patients with primary cutaneous nodular amyloidosis progress to systemic involvement (much less than the previously quoted 50%).</p>
+</details>
+<details>
+  <summary>7. What is the preferred diagnostic procedure for suspected systemic amyloidosis when specific skin/mucosal lesions are absent?</summary>
+  <p>Fine needle aspiration of abdominal subcutaneous fat is the preferred diagnostic procedure due to its safety and relatively high sensitivity.</p>
+</details>
+<details>
+  <summary>8. Which medication is used to prevent secondary AA amyloidosis in patients with Familial Mediterranean Fever?</summary>
+  <p>Colchicine is the treatment of choice for Familial Mediterranean Fever (FMF) and helps prevent the development of secondary AA amyloidosis.</p>
+</details>
+<div class="clinical-pearl">
+  <h4>Final Clinical Pearls</h4>
+  <ul>
+    <li>Always consider amyloidosis in patients with unexplained macroglossia</li>
+    <li>Periorbital purpura after Valsalva is nearly pathognomonic for systemic amyloidosis</li>
+    <li>Pruritic rippled hyperpigmentation on the back should raise suspicion for macular amyloidosis</li>
+    <li>Biopsy results should be correlated with clinical findings, as histology alone may not differentiate between types</li>
+    <li>Tandem mass spectrometry is now the gold standard for amyloid typing in complex cases</li>
+  </ul>
+</div>
+<script>
+  // Add any interactive functionality here
+  document.addEventListener('DOMContentLoaded', function() {
+    // Highlight click actions for memory-aids
+    const memoryAids = document.querySelectorAll('.memory-aid');
+    memoryAids.forEach(aid => {
+      aid.addEventListener('click', function() {
+        this.style.backgroundColor = '#d4edda';
+        setTimeout(() => {
+          this.style.backgroundColor = '#e8f5e9';
+        }, 300);
+      });
+    });
+  });
+</script>

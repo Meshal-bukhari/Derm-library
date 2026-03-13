@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carney Complex — Quick Board Review</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --good:#10b981; --warn:#f59e0b; --danger:#ef4444;
+      --table-head:#0ea5a4;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071028 0%, #081428 100%);color:#e6eef6}
+    .wrap{max-width:980px;margin:28px auto;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    header{display:flex;align-items:center;gap:16px}
+    header .logo{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021028}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 18px;color:var(--muted);font-size:13px}
+
+    /* compact colorful table */
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    thead th{background:linear-gradient(90deg,var(--table-head),#7c3aed);padding:10px;border-radius:6px;color:#021028;text-align:left;font-weight:700}
+    tbody td{padding:10px;border-top:1px dashed rgba(255,255,255,0.04);vertical-align:top}
+    tr.row-card{background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));border-radius:8px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;color:#021028;font-weight:700}
+    .pill.cardiac{background:var(--danger)}
+    .pill.endocrine{background:var(--warn)}
+    .pill.cutaneous{background:var(--accent)}
+    .pill.myx{background:var(--good)}
+
+    /* small utility boxes */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .box{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);font-size:13px}
+    .muted{color:var(--muted);font-size:12px}
+    .tiny{font-size:12px;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:780px){.grid{grid-template-columns:1fr}.lead{font-size:12px}thead th{font-size:12px}tbody td{font-size:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">CC</div>
+      <div>
+        <h1>Carney Complex — Quick Board Review</h1>
+        <p class="lead">One-page, high-yield summary for rapid pre-exam review. Memorize the mnemonic <strong>"CARNEY'S SPOTS &amp; BUMPS"</strong>.</p>
+      </div>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:24%">Feature</th>
+          <th style="width:46%">Key Points (Board high-yield)</th>
+          <th style="width:30%">Clinical clues / Screening / Exam tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-card">
+          <td><span class="pill cardiac">Cardiac Myxomas</span></td>
+          <td>
+            • Major cause of morbidity/mortality — can arise in any chamber (common: atria).
+            <br>• Embolic strokes, obstruction (mitral inflow), sudden death possible.
+            <br>• Histology: myxoid stroma, stellate cells (benign but dangerous by location).
+          </td>
+          <td>
+            • Annual/biannual echocardiographic screening from adolescence.
+            <br>• Red flag: positional syncope, new murmur, systemic emboli in young patient.
+            <br class="tiny">Exam tip: cardiac myxoma = most important life-threatening feature.</td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill endocrine">Adrenal — PPNAD</span></td>
+          <td>
+            • Primary Pigmented Nodular Adrenocortical Disease → ACTH‑independent Cushing syndrome.
+            <br>• Findings: weight gain, facial rounding, hypertension, glucose intolerance.
+            <br>• Often microscopic pigmented nodules; may be missed on routine imaging.
+          </td>
+          <td>
+            • Screen: serial cortisol testing; low ACTH, abnormal dexamethasone suppression.
+            <br>• Exam tip: young Cushing with lentigines → think Carney complex.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill endocrine">Reproductive tumors</span></td>
+          <td>
+            • Males: Large-cell calcifying Sertoli cell tumor (LCCSCT) — may be bilateral/multifocal.
+            <br>• Females: Ovarian cysts; rare psammomatous melanotic schwannomas in adnexa.
+          </td>
+          <td>
+            • Testicular mass or endocrine changes in young male → ultrasound and consider LCCSCT.
+            <br>• Exam tip: LCCSCT + lentigines = classic pairing.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill cutaneous">Nevi / Blue nevi</span></td>
+          <td>
+            • Multiple blue nevi (esp. epithelioid blue nevi) — characteristic cutaneous finding.
+            <br>• May co-exist with lentigines; helps clue diagnosis when present with other features.
+          </td>
+          <td>
+            • Dermatologic exam: multiple blue/epithelioid nevi; biopsy if atypical.
+            <br>• Exam tip: blue nevi + lentigines should raise suspicion for Carney complex.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill cutaneous">Lentigines (Spots)</span></td>
+          <td>
+            • Hallmark finding and often first clue: small brown-black macules (lentigines).
+            <br>• Typical distribution: centrofacial (cheeks, nose, vermilion border), conjunctiva, mucosa (genital), flexures (axilla, groin).
+          </td>
+          <td>
+            • Look carefully at lips, eyelids, conjunctiva, and genital mucosa during exam.
+            <br>• Often present in childhood/early adolescence — early clue before tumors manifest.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill myx">Cutaneous &amp; other Myxomas</span></td>
+          <td>
+            • Cutaneous myxomas: small, skin-colored dome-shaped papules/nodules (eyelids, canthi, external auditory canal, nipples).
+            <br>• Breast myxomas/ductal adenomas possible.
+          </td>
+          <td>
+            • Biopsy may show myxoid stroma.
+            <br>• Exam tip: eyelid papules + lentigines = high-yield combination.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><span class="pill endocrine">Psammomatous Melanotic Schwannoma</span></td>
+          <td>
+            • Distinctive nerve-sheath tumor: psammoma bodies + melanotic cells.
+            <br>• Can arise in skin, GI tract, paraspinal region; may be locally aggressive and metastasize.
+          </td>
+          <td>
+            • Any paraspinal mass, neuropathic symptoms, or pigmented schwannoma histology → consider Carney complex.
+            <br>• Exam tip: demonstration of psammoma bodies on pathology is a clue.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><strong>Genetics &amp; inheritance</strong></td>
+          <td>
+            • Usually autosomal dominant with variable expressivity.
+            <br>• Most commonly due to inactivating mutations in <em>PRKAR1A</em> (protein kinase A regulatory subunit).
+            <br>• Genetic testing available; family screening recommended if mutation found.
+          </td>
+          <td>
+            • Exam tip: family history of cardiac myxoma, lentigines, or endocrine tumors suggests screening.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><strong>Management principles</strong></td>
+          <td>
+            • Multidisciplinary: cardiology (screening/operative removal of myxomas), endocrinology (PPNAD/Cushing workup), oncology/dermatology (tumor surveillance), genetics.
+            <br>• Early surgical removal of cardiac myxomas is lifesaving.
+            <br>• Surveillance: echocardiography, endocrine testing, dermatologic and testicular/ovarian surveillance.
+          </td>
+          <td>
+            • Exam tip: immediate action for cardiac myxoma; PPNAD needs biochemical endocrine workup even if imaging negative.
+          </td>
+        </tr>
+
+        <tr class="row-card">
+          <td><strong>Board-style quick bullets</strong></td>
+          <td>
+            • Classic triad: lentigines + myxomas + endocrine tumors.
+            <br>• Most important mortality: cardiac myxoma → screen with echo.
+            <br>• PRKAR1A mutation → AD inheritance; variable expressivity.
+            <br>• PPNAD → ACTH-independent Cushing in young patients.
+          </td>
+          <td>
+            • Rapid recall: "CARNEY'S SPOTS &amp; BUMPS" mnemonic.
+            <br>• When seeing young Cushing or early stroke from embolus, inspect skin for lentigines.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="grid">
+      <div class="box">
+        <strong>High-yield screening</strong>
+        <div class="tiny muted">Echo (yearly), cortisol/DEXA testing for Cushing features, testicular US if male, dermatology exam annually.</div>
+      </div>
+      <div class="box">
+        <strong>Red flags</strong>
+        <div class="tiny muted">New embolic phenomenon, positional syncope, rapid-onset Cushing features, enlarging paraspinal mass, atypical skin tumors.</div>
+      </div>
+      <div class="box">
+        <strong>Exam tricks / confusion</strong>
+        <div class="tiny muted">Do not confuse lentigines with cafe-au-lait; blue nevi are distinctive. Carney complex is AD (not X-linked). Myxomas are benign histologically but life-threatening by location.</div>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:16px">Printable: use browser Print → Save as PDF. For edits (add references, change colors, or compress for A4), request adjustments.</p>
+  </div>
+</body>
+</html>

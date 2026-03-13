@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLEVA/PLC Differential Diagnosis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #2980b9;
+        }
+        
+        td {
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        
+        .condition {
+            background-color: #ecf0f1;
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .pleva-plc {
+            background-color: #e8f5e8;
+        }
+        
+        .differential {
+            background-color: #fdf2e9;
+        }
+        
+        .key-feature {
+            background-color: #fff3cd;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #d4edda;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .warning {
+            background-color: #f8d7da;
+            color: #721c24;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #f1f3f4;
+        }
+        
+        .feature-list {
+            margin: 0;
+            padding-left: 15px;
+        }
+        
+        .feature-list li {
+            margin: 3px 0;
+        }
+        
+        .clinical-tip {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px;
+            margin: 5px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 PLEVA/PLC vs. Main Mimickers - Quick Reference</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Condition</th>
+                    <th style="width: 40%;">Key Histologic Features</th>
+                    <th style="width: 40%;">Main Differentiating Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- PLEVA Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>PLEVA</strong><br>
+                        <small>(Acute)</small>
+                    </td>
+                    <td class="pleva-plc">
+                        <ul class="feature-list">
+                            <li><strong>"Wedge-shaped"</strong> lymphocytic infiltrate</li>
+                            <li><strong>Extensive necrotic keratinocytes</strong></li>
+                            <li>Dense interface dermatitis</li>
+                            <li><strong>Prominent RBC extravasation</strong></li>
+                            <li>Intraepidermal erythrocytes</li>
+                            <li>Adnexal involvement</li>
+                        </ul>
+                    </td>
+                    <td class="highlight">
+                        <strong>BASELINE FEATURES:</strong>
+                        <ul class="feature-list">
+                            <li>Interface process + keratinocyte necrosis</li>
+                            <li>NO true vasculitis (rare fibrinoid necrosis)</li>
+                            <li>NO significant lymphoid atypia</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <!-- PLC Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>PLC</strong><br>
+                        <small>(Chronic)</small>
+                    </td>
+                    <td class="pleva-plc">
+                        <ul class="feature-list">
+                            <li><strong>Milder</strong> lymphocytic infiltrate</li>
+                            <li><strong>Focal, scattered</strong> necrotic keratinocytes</li>
+                            <li><strong>Prominent parakeratosis</strong></li>
+                            <li>Mild interface changes</li>
+                            <li>Mild RBC extravasation</li>
+                        </ul>
+                    </td>
+                    <td class="highlight">
+                        <strong>"PLC TRIAD":</strong>
+                        <ul class="feature-list">
+                            <li>1️⃣ Interface infiltrate</li>
+                            <li>2️⃣ Focal necrotic keratinocytes</li>
+                            <li>3️⃣ Parakeratosis</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <!-- Viral Exanthema Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>Viral Exanthema</strong><br>
+                        <small>(e.g., Varicella)</small>
+                    </td>
+                    <td class="differential">
+                        <ul class="feature-list">
+                            <li><strong>Ballooning degeneration</strong></li>
+                            <li><strong>Multinucleated giant cells</strong></li>
+                            <li>Interface dermatitis</li>
+                            <li>Keratinocyte necrosis</li>
+                        </ul>
+                    </td>
+                    <td class="key-feature">
+                        <strong>🔑 DIFFERENTIATORS:</strong>
+                        <ul class="feature-list">
+                            <li>❌ NO wedge-shaped infiltrate</li>
+                            <li>❌ NO adnexal involvement</li>
+                            <li>✅ Ballooning + giant cells</li>
+                            <li>✅ Positive viral studies (PCR/DFA)</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <!-- Guttate Psoriasis Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>Guttate Psoriasis</strong>
+                    </td>
+                    <td class="differential">
+                        <ul class="feature-list">
+                            <li><strong>Neutrophilic microabscesses</strong> (Munro's)</li>
+                            <li><strong>Regular acanthosis</strong></li>
+                            <li><strong>Dilated papillary capillaries</strong></li>
+                            <li>Parakeratosis</li>
+                            <li>Superficial perivascular infiltrate</li>
+                        </ul>
+                    </td>
+                    <td class="key-feature">
+                        <strong>🔑 DIFFERENTIATORS:</strong>
+                        <ul class="feature-list">
+                            <li>❌ NO interface component</li>
+                            <li>❌ NO necrotic keratinocytes</li>
+                            <li>✅ Neutrophils in stratum corneum</li>
+                            <li>✅ Regular epidermal thickening</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <strong>Clinical:</strong> Small papules with silvery scale vs PLC's individual papules in crops
+                        </div>
+                    </td>
+                </tr>
+                
+                <!-- Small Plaque Parapsoriasis Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>Small Plaque Parapsoriasis</strong><br>
+                        <small>(SPP)</small>
+                    </td>
+                    <td class="differential">
+                        <ul class="feature-list">
+                            <li><strong>"Nonspecific spongiotic dermatitis"</strong></li>
+                            <li><strong>Epidermal edema</strong> (not cell death)</li>
+                            <li>Focal parakeratosis</li>
+                            <li>Mild perivascular infiltrate</li>
+                        </ul>
+                    </td>
+                    <td class="key-feature">
+                        <strong>🔑 DIFFERENTIATORS:</strong>
+                        <ul class="feature-list">
+                            <li>❌ NO true interface dermatitis</li>
+                            <li>❌ NO keratinocyte necrosis</li>
+                            <li>✅ Spongiosis > interface change</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <strong>Clinical:</strong> Persistent stable patches >5cm or "digitate" shape vs PLC's recurrent individual papules
+                        </div>
+                    </td>
+                </tr>
+                
+                <!-- Hypopigmented MF Row -->
+                <tr>
+                    <td class="condition">
+                        <strong>Hypopigmented MF</strong>
+                    </td>
+                    <td class="differential">
+                        <ul class="feature-list">
+                            <li><strong>Cerebriform/atypical lymphocytes</strong></li>
+                            <li><strong>Pautrier microabscesses</strong></li>
+                            <li><strong>Prominent epidermotropism</strong></li>
+                            <li>Interface infiltrate</li>
+                            <li>Pigment incontinence</li>
+                        </ul>
+                    </td>
+                    <td class="warning">
+                        <strong>⚠️ HIGH-YIELD TRAP:</strong>
+                        <ul class="feature-list">
+                            <li>✅ Look for PLC triad first</li>
+                            <li>❌ NO Pautrier microabscesses in PLC</li>
+                            <li>❌ Epidermotropism out of proportion</li>
+                            <li>✅ Clonal T-cell population favors MF</li>
+                        </ul>
+                        <div class="clinical-tip">
+                            <strong>Remember:</strong> Even hypopigmented variant of PLC shows the classic triad!
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="background: #e8f4fd; padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <h3 style="color: #1976d2; margin-top: 0;">💡 Memory Tips:</h3>
+            <ul>
+                <li><strong>PLEVA = "Destructive Wedge"</strong> - Dense, wedge-shaped infiltrate with extensive necrosis</li>
+                <li><strong>PLC = "Smoldering Interface"</strong> - All features are "blunted" versions of PLEVA</li>
+                <li><strong>Interface + Necrosis = Think Pityriasis Lichenoides</strong> - This combo rules out psoriasis and SPP</li>
+                <li><strong>No True Vasculitis</strong> - RBC extravasation ≠ vessel wall necrosis</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Psoriasis - Saudi Dermatology Board Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-size: 90%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .hide-header {
+            top: -120px; /* Adjust if your header is taller/shorter */
+        }
+        body {
+            padding-top: 120px; /* Prevent content from hiding behind header */
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: #34495e;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-item:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .section-header:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .key-fact {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 5px solid #d35400;
+            font-weight: 500;
+        }
+        
+        .mcq-pearl {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 5px solid #7d3c98;
+            position: relative;
+        }
+        
+        .mcq-pearl::before {
+            content: "MCQ";
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: #7d3c98;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .clinical-tip {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 5px solid #1e8449;
+        }
+        
+        .pathogenesis-flow {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border: 2px dashed #3498db;
+        }
+        
+        .flow-step {
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            position: relative;
+        }
+        
+        .flow-step::after {
+            content: "↓";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #3498db;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .flow-step:last-child::after {
+            display: none;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffd54f 0%, #ffd54f 100%);
+            background-size: 100% 0.2em;
+            background-repeat: no-repeat;
+            background-position: 0 88%;
+            font-weight: 600;
+            color: #d84315;
+        }
+        
+        .percentage {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .age-group {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .drug-name {
+            background: #fce4ec;
+            color: #c2185b;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .contraindication {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .contraindication h4 {
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mnemonic-box {
+            background: linear-gradient(135deg, #ff7043, #ff5722);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .collapsible-trigger {
+            cursor: pointer;
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            border: 1px solid #bdc3c7;
+            transition: all 0.3s ease;
+        }
+        
+        .collapsible-trigger:hover {
+            background: #d5dbdb;
+        }
+        
+        .collapsible-content {
+            display: none;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #ecf0f1;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .collapsible-content.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .treatment-algorithm {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .treatment-step {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .pasi-calculator {
+            background: #f1f8e9;
+            border: 2px solid #8bc34a;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .pasi-section {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+            .phototherapy-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+            color: #3a2770;
+        }
+        .phototherapy-subtitle {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 1em;
+            margin-bottom: 0.3em;
+            color: #5a378c;
+        }
+        .flowchart-link {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #ffe082 0%, #ffd54f 100%);
+            border: 2px solid #ffb300;
+            border-radius: 8px;
+            padding: 0.7em 1em;
+            margin: 1em 0 1.5em 0;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.12);
+            color: #4e260e;
+        }
+        .flowchart-link span {
+            font-size: 1.4em;
+            margin-right: 0.7em;
+        }
+        .flowchart-link a {
+            color: #4e260e;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .flowchart-link a:hover {
+            color: #b28704;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="main-header">
+            <h1>Chapter 8: Psoriasis</h1>
+            <p>Comprehensive Study Guide for Saudi Dermatology Board Exam</p>
+        </div>
+        
+        <div class="nav">
+            <a href="#overview" class="nav-item">Overview</a>
+            <a href="#pathogenesis" class="nav-item">Pathogenesis</a>
+            <a href="#clinical" class="nav-item">Clinical Features</a>
+            <a href="#pathology" class="nav-item">Pathology</a>
+            <a href="#treatment" class="nav-item">Treatment</a>
+            <a href="#pasi" class="nav-item">PASI</a>
+            <a href="#arthritis" class="nav-item">Psoriatic Arthritis</a>
+        </div>
+        
+        <div class="content">
+            <div id="overview" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Overview & Epidemiology</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <strong>Psoriasis Definition:</strong> Chronic immune mediated disease
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>Population Prevalence:</strong> <span class="percentage">2%</span> of the population
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>Bimodal Age Distribution:</strong> 
+                        <span class="age-group">20-30s</span> and <span class="age-group">50-60s</span>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>Early Onset:</strong> <span class="percentage">~75%</span> of patients, the onset is before the age of <span class="highlight">40 years</span>
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>Comorbidities:</strong>
+                        <ul style="margin-top: 1rem;">
+                            <li>Increased risk of metabolic syndrome and atherosclerotic cardiovascular disease</li>
+                            <li><span class="percentage">20-30%</span> will develop psoriatic arthritis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pathogenesis" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Pathogenesis</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <strong>Core Concept:</strong> In a genetically predispose individual - trigger → immune mediated response
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🧬 Genetic Factors (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="mcq-pearl">
+                            <strong>Family History:</strong> <span class="percentage">35-90%</span> have a positive FHx
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Both parents: <span class="percentage">41%</span> risk</li>
+                                <li>One parent: <span class="percentage">14%</span> risk</li>
+                                <li>One sibling: <span class="percentage">6%</span> risk</li>
+                            </ul>
+                        </div>
+                        
+                        <table>
+                            <tr>
+                                <th>HLA Type</th>
+                                <th>Associated Conditions</th>
+                            </tr>
+                            <tr>
+                                <td><strong>HLA-CW6</strong></td>
+                                <td>Early onset psoriasis, PSORS1, chromosome 6p</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HLA-B27</strong></td>
+                                <td>Sacroiliitis, psoriatic arthritis, pustular psoriasis, IBD, and reactive arthritis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HLA-B13, -B17</strong></td>
+                                <td>Guttate and erythrodermic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HLA-B8, -BW35, -Cw7, and -DR3</strong></td>
+                                <td>Palmoplantar pustulosis</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="mnemonic-box">
+                        Triggers: "SICK LAB"
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🎯 Detailed Triggers (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Letter</th>
+                                <th>Trigger</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td><strong>S</strong></td>
+                                <td>Stress, smoking, steroid withdrawal</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>I</strong></td>
+                                <td>Infection</td>
+                                <td>Strept pharyngitis, impetigo, dental abscess, HIV</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C</strong></td>
+                                <td>hypoCalcemia</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>K</strong></td>
+                                <td>Koebnerization</td>
+                                <td class="mcq-pearl">2 to 6 week lag time (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>Lithium</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>A</strong></td>
+                                <td>ACEi, Alcohol, Antimalarials</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B</strong></td>
+                                <td>Beta blockers</td>
+                                <td class="mcq-pearl">Most common cause of drug-induced psoriasis (MCQ)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="pathogenesis-flow">
+                        <h3 style="text-align: center; margin-bottom: 1rem; color: #2c3e50;">Immunological Cascade</h3>
+                        
+                        <div class="flow-step">
+                            <strong>Step 1:</strong> Stressed keratinocytes → release of Self DNA/RNA → forms a complex with LL37 (cathelicidin) → activates TLR9 on pDC
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 2:</strong> Activated pDCs produce large amounts of IFN-α
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 3:</strong> IFN-α + cytokines from KCs (TNF-α, IL-1, IL-6) → activates dDCs
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 4:</strong> Activated dDCs move to the lymph nodes → produce IL-12 and IL-23
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 5:</strong> IL-12 and IL-23 → drive naïve T cells into a Th1, Th17, and Th22 cells
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 6:</strong> These T cells migrate into the dermis
+                        </div>
+                        
+                        <div class="flow-step">
+                            <strong>Step 7:</strong> 
+                            <ul>
+                                <li><strong>Th1</strong> produce IFN-γ and TNF-α → more inflammation</li>
+                                <li><strong>Th17</strong> produce IL-17 and TNF-α → stimulate keratinocyte proliferation and inflammation</li>
+                                <li><strong>Th22</strong> produce IL-22 → more T-cell recruitment and acanthosis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>Summary for Biologics:</strong> IL-12 and IL-23 → Th17 → IL-17 and TNF-α (all biologics work on this pathway)
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>IL-22 level correlate with disease activity (MCQ)</strong>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>IL-22 is responsible for acanthosis (MCQ)</strong>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>IL-17 is responsible for pustules in pustular psoriasis (MCQ)</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="clinical" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Clinical Features</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Chronic Plaque Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="mcq-pearl">
+                            <strong>Most common form overall in adults</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Most common form in children as well, followed by guttate (MCQ)</strong>
+                        </div>
+                        <div class="key-fact">
+                            <strong>Genitalia involvement:</strong> Up to <span class="percentage">45%</span>
+                        </div>
+                        <div class="clinical-tip">
+                            <strong>Important:</strong> BSA alone doesn't reflect the severity of the disease, and induration + scale need to be incorporated (PASI, see below)
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Guttate Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-tip">
+                            More commonly seen in children compared to adults
+                        </div>
+                        <div class="key-fact">
+                            <strong>Preceded by:</strong> Group A streptococcal pharyngitis
+                            <ul style="margin-top: 0.5rem;">
+                                <li><span class="percentage">50%</span> have +ve ASO, anti-DNAse, or streptoyzme tests</li>
+                            </ul>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Strongest association with HLA-Cw6 (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Drug-induced forms are most commonly due to beta blockers (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Responds well to phototherapy, BBUVB > NBUVB (MCQ). for guttate most favorable BBUVB , for plaque most suitable NBUVB , however most effective is PUVA but not preferred due to risk of SCC</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Erythrodermic Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <strong>Onset:</strong> May be acute or gradual
+                        </div>
+                        <div class="clinical-tip">
+                            <strong>Clues to diagnosis:</strong> History of psoriatic lesions, nail changes, facial sparing
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Generalized Pustular Psoriasis (GPP) (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <strong>Dominant feature:</strong> Infiltration of neutrophils dominates the clinical picture (all variants have some pustules)
+                        </div>
+                        <div class="clinical-tip">
+                            <strong>Triggers:</strong> Pregnancy, steroid withdrawal, hypocalcemia, infections, or topical irritants
+                        </div>
+                        
+                        <div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border: 2px solid #ff9800;">
+                            <h4 style="color: #e65100; margin-bottom: 1rem;">Pregnancy Dermatoses</h4>
+                            <table style="margin: 0;">
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Risk</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>Impetigo herpetiformis</strong> (If it happens during pregnancy)</td>
+                                    <td>Placental insufficiency and stillbirth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>polymorphic  eruption of pregnancy </strong></td>
+                                    <td class="mcq-pearl">No risk (MCQ)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>atopic eruption of pregnancy</strong></td>
+                                    <td class="mcq-pearl">No risk (MCQ)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PG Pemphigoid Gestationis</strong></td>
+                                    <td>Prematurity, gestational age (small)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Intrahepatic Cholestasis of Pregnancy</strong></td>
+                                    <td>Prematurity, stillbirth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PP</strong></td>
+                                    <td>Placental insufficiency, still birth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>pityriasis rosea</strong></td>
+                                    <td>&lt;14wks abortion, &gt;14 miscarriage/premature delivery</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="clinical-tip">
+                            <strong>Hereditary autoinflammatory disorders resembling GPP:</strong>
+                            <ul>
+                                <li><strong>Deficiency of IL-1 receptor antagonist (DIRA):</strong> AR, IL1RN mx</li>
+                                <li><strong>Deficiency of IL-36 receptor antagonist (DITRA):</strong> AR, IL36RN mx</li>
+                                <li><strong>CARD14-mediated pustular psoriasis (CAMPS)</strong></li>
+                                <li><strong>ADAM17 deletion</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="key-fact">
+                            <strong>Four distinct patterns of generalized pustular psoriasis:</strong>
+                            <ul>
+                                <li><strong>von Zumbusch:</strong> Generalized, fever, ill patient</li>
+                                <li><strong>Annular:</strong> Central clearing</li>
+                                <li><strong>Exanthematic:</strong> Follows an infection or drug, no fever (vs AGEP)</li>
+                                <li><strong>Localized:</strong> Due to irritants</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Pustulosis of Palms and Soles (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <ul>
+                                <li><strong>"Sterile"</strong> pustules of the palmoplantar surfaces</li>
+                                <li>Scaly erythematous plaques may also be seen</li>
+                                <li><strong>Chronic,</strong> in contrast to GPP</li>
+                                <li>Associated with SAPHO syndrome</li>
+                            </ul>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Strong association with smoking (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Can occur with TNF-α inhibitors (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Acrodermatitis Continua of Hallopeau (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <ul>
+                                <li>Pustules are seen on the distal portions of the fingers</li>
+                                <li>Scaling and crust formation</li>
+                                <li>Subungual involvement → shedding of nail plate</li>
+                            </ul>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Often accompanied by annulus migrans of the tongue (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Scalp Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            May co-exist with seborrheic dermatitis
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>#1 cause of pityriasis amiantecea (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Can occur with TNF-α inhibitors (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Higher risk of developing psoriatic arthritis (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Flexural Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <ul>
+                                <li>Less scaly, or lacks scale</li>
+                                <li><strong>Inverse psoriasis</strong> when the flexures are the only involved area</li>
+                                <li>Localized dermatophyte, candidal or bacterial infections can be a trigger</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Oral Mucosa (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <strong>Annulus migrans:</strong> The most common location is the tongue
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Nail Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <span class="percentage">10-80%</span> of psoriatic patients
+                        </div>
+                        <div class="clinical-tip">
+                            The fingernails are more often affected than the toenails
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Most common is pitting (MCQ)</strong>
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Most specific is oil drop/salmon patch (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔸 Cutaneous Signs (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="mcq-pearl">
+                            <strong>Woronoff's ring:</strong> Due to inability to produce PGE2 (MCQ)
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Auspitz sign:</strong> Due to elongation of BVs and suprapapillary thinning (MCQ)
+                        </div>
+                        <div class="mcq-pearl">
+                            <strong>Rupioid psoriasis:</strong> Thick hyperkeratosis associated with hypothyroidism (MCQ)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="arthritis" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Psoriatic Arthritis</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <span class="percentage">20-30%</span> of psoriasis patients develop arthritis
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>5 subtypes exist</strong>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>Mono-and asymmetric oligo arthritis is the most common (MCQ)</strong>
+                    </div>
+                    
+                    <div class="mcq-pearl">
+                        <strong>DIP is the most common site (MCQ)</strong>
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>Associated with:</strong> Severe cutaneous psoriasis, nail, scalp, inverse, high CRP
+                    </div>
+                    
+                    <div class="key-fact">
+                        <ul>
+                            <li>Morning stiffness lasting >1hr</li>
+                            <li>HLA-B27 +ve in <span class="percentage">50%</span></li>
+                            <li>Screening by PEST score, diagnosis CASPAR criteria</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>Poor prognostic factors:</strong>
+                        <ul>
+                            <li>Early age</li>
+                            <li>Female gender</li>
+                            <li>Multiple joints</li>
+                            <li>HLA-B27</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mnemonic-box">
+                        Radiological findings: "PETT"
+                    </div>
+                    
+                    <div class="key-fact">
+                        <strong>PETT Radiological Findings:</strong>
+                        <ul>
+                            <li><strong>P</strong>encil in a cup deformity</li>
+                            <li><strong>E</strong>rosions</li>
+                            <li><strong>T</strong>issue swelling</li>
+                            <li><strong>T</strong>uft resorption</li>
+                        </ul>
+                    </div>
+                    
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Clinical Findings</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Mono- and asymmetric oligoarthritis</strong><br>(most common type)</td>
+                            <td>
+                                • Inflammation of the DIP and PIP joints of the hands and feet<br>
+                                • Involvement of the PIP or both the DIP and PIP joints of a single digit can result in the classic "sausage" digit<br>
+                                • MCP joint involvement unusual (unlike RA)<br>
+                                • May be accompanied by inflammation of larger joints
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arthritis of the distal interphalangeal joints</strong></td>
+                            <td>
+                                • Exclusive involvement of the DIP joints<br>
+                                • Classic but uncommon presentation<br>
+                                • The joints may become fixed in a flexed position
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rheumatoid arthritis-like presentation</strong><br>(difficult to distinguish from RA clinically*)</td>
+                            <td>
+                                • Symmetric polyarthritis that involves small and medium-sized joints, in particular the PIP, MCP, wrist, ankle and elbow<br>
+                                • Most patients are seronegative for RF
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arthritis mutilans**</strong><br>(least common type)</td>
+                            <td>
+                                • Severe, rapidly progressive joint inflammation that results in destruction of the joints and permanent deformity<br>
+                                • Digits become shorter, wider and softer to palpation because of osteolysis and a telescoping phenomenon
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spondylitis and sacroiliitis</strong><br>(also have peripheral joint involvement)</td>
+                            <td>
+                                • Spondylitis resembles that seen in ankylosing spondylitis, with axial arthritis as well as involvement of the knees and sacroiliac joints<br>
+                                • Patients are often HLA-B27-positive and may have associated inflammatory bowel disease and/or uveitis
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                        *Whether some seropositive patients have an overlap of the two disorders is possible.<br>
+                        **Also occurs in multicentric reticulohistiocytosis.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Disorders Related to Psoriasis</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <strong>Related disorders (discussed in their respective chapters):</strong>
+                        <ul>
+                            <li>ILVEN</li>
+                            <li>Reactive arthritis</li>
+                            <li>Sneddon-Wilkinson</li>
+                        </ul>
+                    </div>
+                    
+                
+                    
+                    <div class="key-fact">
+                        <strong>Cutaneous associated with psoriasis:</strong>
+                        <ul>
+                            <li><strong>↓ Allergic diseases</strong></li>
+                            <li><strong>↓ Superinfection</strong> (due to ↓antimicrobial peptides), except candida (MCQ)</li>
+                            <li><strong>↑ Onychomycosis</strong> due to Candida species or dermatophytes</li>
+                            <li><strong>↑ LSC and seb derm</strong> +/- sebopsoriasis</li>
+                            <li><strong>↑ Crohn's and UC</strong></li>
+                            <li><strong>↑ Anterior uveitis</strong></li>
+                            <li><strong>↑ CVS diseases,</strong> Kidney disease, MI, stroke, PAD, HLD, HTN, DM, NASH</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pathology" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Pathology</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <strong>Papulosquamous Lesions</strong>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔬 Initial Lesions (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-tip">
+                            <ul>
+                                <li>Features are not diagnostic</li>
+                                <li><strong>Guttate psoriasis:</strong> Mast cell degranulation</li>
+                                <li><strong>No neutrophils</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔬 Active Lesions (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="pathogenesis-flow">
+                            <div class="flow-step">
+                                <strong>Confluent parakeratosis</strong>
+                            </div>
+                            <div class="flow-step">
+                                <strong>Regular acanthosis</strong> with elongated rete ridges
+                            </div>
+                            <div class="flow-step">
+                                <strong>Thinning of suprapapillary plates</strong>
+                            </div>
+                            <div class="flow-step">
+                                <strong>↓ or absent stratum granulosum</strong>
+                            </div>
+                            <div class="flow-step">
+                                <strong>Edema at the tops of the papillae</strong>
+                            </div>
+                            <div class="flow-step">
+                                <strong>↑ Dilated capillaries in dermal papillae</strong> (tortuous appearance)
+                            </div>
+                            <div class="flow-step">
+                                <strong>Mixed PV infiltrate</strong> of lymphocytes, macrophages and neutrophils
+                            </div>
+                            <div class="flow-step">
+                                <strong>Micropustules of Kogoj</strong> (stratum spinosum)
+                            </div>
+                            <div class="flow-step">
+                                <strong>Microabscesses of Munro</strong> (stratum corneum)
+                            </div>
+                        </div>
+                        
+                        <div class="mnemonic-box">
+                            "Marilyn Munro is always on top (higher in epidermis)"
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔬 Stable Lesions (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <strong>Most importantly:</strong> Hyperproliferative epidermis
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Elongated rete ridges with squared-off appearance</li>
+                                <li>+/- coalescence of rete ridges bases</li>
+                                <li>Parakeratotic foci</li>
+                                <li>Hypogranulosis</li>
+                                <li>+/- micropustules of Kogoj and microabscesses of Munro</li>
+                            </ul>
+                        </div>
+                        <div class="clinical-tip">
+                            Both active areas and chronic nonspecific areas
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🔬 Pustular Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <ul>
+                                <li>Numerous neutrophils between eosinophilic strands of keratinocytes</li>
+                                <li>In the SC ↑↑ neutrophils surrounded by parakeratosis</li>
+                                <li>Exaggerated spongiform pustules of Kogoj and microabscesses of Munro</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>Stains for psoriasis vs eczema:</strong> IL-36, HBD2, P16 protein
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>Stains for psoriasis vs AGEP:</strong> CD1, 2, and 3
+                    </div>
+                </div>
+            </div>
+            
+            <div id="treatment" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Treatment</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="key-fact">
+                        <strong>Treatment depends on the extent of the disease</strong>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Topical Treatments (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="mcq-pearl">
+                            <strong>Corticosteroids: 1st line</strong>
+                        </div>
+                        
+                        <table>
+                            <tr>
+                                <th>Medication</th>
+                                <th>Mechanism/Notes</th>
+                                <th>Important Facts</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Vit D3 (calcipotriol)</strong></td>
+                                <td>Inhibits epidermal proliferation, induces normal differentiation, activating transglutaminase, inhibits several neutrophil functions</td>
+                                <td class="mcq-pearl">Pregnancy category C (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anthralin</strong></td>
+                                <td>Anti-hyperproliferative + inhibits mitogen-induced T-lymphocyte proliferation and neutrophil chemotaxis</td>
+                                <td class="mcq-pearl">Contraindicated in pustular and erythrodermic psoriasis (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>acetylene retinoid (Tazarotene)</strong></td>
+                                <td>-</td>
+                                <td>Maximum applied over 10-20% BSA</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coal tar</strong></td>
+                                <td>Anti-inflammatory and antipruritic</td>
+                                <td>absolute contraindicatied inPregnancy or Lactation.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Calcineurin inhibitors</strong></td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tapinarof</strong></td>
+                                <td>Topical Aryl Hydrocarbon Receptor agonist</td>
+                                <td>S/E folliculitis, nasopharyngitis, and dermatitis </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Roflumilast</strong></td>
+                                <td>PDE4 inhibitor</td>
+                                <td class="mcq-pearl">S/E stinging (MCQ), diarrhea , and headache</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>☀️ Phototherapy (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            <p><strong>Phototherapy</strong> is a cornerstone in the management of moderate to severe psoriasis, especially when topical agents are impractical or ineffective.</p>
+                            <div class="phototherapy-title">I. Ultraviolet B (UVB) Phototherapy</div>
+                            <ul>
+                                <li><strong>Narrowband UVB (NB-UVB)</strong>
+                                    <ul>
+                                        <li>Wavelength: 311 nm</li>
+                                        <li><strong>Optimal irradiation currently available</strong> (superior to Broadband UVB)</li>
+                                        <li>Indications: Moderate to severe psoriasis; phototherapy of choice for adolescents </li>
+                                        <li>Efficacy: ~68% clearance (meta-analysis; slightly below PUVA)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Broadband UVB (BBUVB)</strong>
+                                    <ul>
+                                        <li>Older form, largely superseded by NB-UVB</li>
+                                        <li>Considered less effective, second-choice UVB modality (Excpet for Guttate psoriasis)</li>
+                                    </ul>
+                                </li>
+                            <div class="flowchart-link"><span>🗺️</span> <a href="https://meshal-bukhari.github.io/UVB/" target="_blank">UVB in psoriasis flowchart</a></div>
+
+                            </ul>
+                            <div class="phototherapy-title">II. PUVA (Psoralen + Ultraviolet A Photochemotherapy)</div>
+                            <ul>
+                                <li>Mechanism: Psoralen (oral/topical) + UVA exposure</li>
+                                <li>Efficacy: Highest patient clearance (~70%) among classic systemic and phototherapies</li>
+                                <li><strong>Key Limitation:</strong> Seldom used due to potential for cumulative carcinogenicity</li>
+                                <li><strong>Cancer Risk:</strong>
+                                    <ul>
+                                        <li>&gt;200 PUVA treatments = significantly increased risk of Squamous Cell Carcinoma (SCC)</li>
+                                        <li>Controversial: possible increased risk of cutaneous melanoma</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                            <div class="flowchart-link"><span>🗺️</span> <a href="https://meshal-bukhari.github.io/PUVA/" target="_blank">PUVA in psoriasis flowchart</a></div>
+                            <div class="phototherapy-title">III. Targeted Phototherapy</div>
+                            <ul>
+                                <li>Agent: Monochromatic 308 nm light (excimer laser or equivalent)</li>
+                                <li>Niche: Targets individual psoriatic plaques ("sniper rifle" for recalcitrant plaques; not for widespread disease)</li>
+                            </ul>
+                            <div class="phototherapy-title">Indications and Contraindications (Table 8.9)</div>
+                            <div class="phototherapy-subtitle">Indications:</div>
+                            <ul>
+                                <li>Moderate to severe psoriasis (monotherapy or combination)</li>
+                            </ul>
+                            <div class="phototherapy-subtitle">Contraindications:</div>
+                            <ul>
+                                <li><strong>High Intrinsic Cancer Risk (Absolute/Strong Relative)</strong>
+                                    <ul>
+                                        <li>Genetic disorders with photosensitivity/cancer risk (e.g., xeroderma pigmentosum)</li>
+                                        <li>History of skin cancer (esp. melanoma/SCC)</li>
+                                        <li>High cumulative PUVA treatments (&gt;150-200)</li>
+                                        <li>Previous arsenic exposure or ionizing irradiation</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Increased Photosensitivity (Relative)</strong>
+                                    <ul>
+                                        <li>Photosensitive dermatoses (e.g., lupus, polymorphic light eruption)</li>
+                                        <li>Concurrent unavoidable phototoxic medications</li>
+                                        <li>Skin Type I (requires careful dosing)</li>
+                                        <li>Vitiligo (may need dose adjustment)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Critical Drug Interactions (Absolute)</strong>
+                                    <ul>
+                                        <li>Concurrent Cyclosporine (dramatically increases SCC risk)</li>
+                                        <li>Cyclosporine use after prior PUVA also increases SCC risk</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Patient-Specific Factors (Relative)</strong>
+                                    <ul>
+                                        <li>PUVA-specific: Pregnancy/lactation, reproductive age without contraception, impaired liver function, cataracts</li>
+                                        <li>General: Poor compliance, seizure disorder (risk of injury in phototherapy unit)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>    
+                        <div class="mcq-pearl">
+                            <strong>Ingram regimen:</strong> Anthralin + phototherapy (MCQ)
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>Goekerman regimen:</strong> Coal tar + phototherapy (MCQ)
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>No need to wear goggles when face is treated, just close eyes (MCQ)</strong>
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>Decrease dose by 25% when using photosensitizing drug (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-algorithm">
+                        <h3>Indications for Systemic Therapy</h3>
+                        <div class="treatment-step">
+                            <strong>10, 10, 10 rule:</strong> DLQI, BSA, PASI
+                        </div>
+                        <div class="treatment-step">
+                            <strong>Lesions in cosmetically sensitive areas:</strong> Face, palmoplantar, genital
+                        </div>
+                        <div class="treatment-step">
+                            <strong>Failure of topical and phototherapy</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💉 Systemic Therapy Guidelines (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-fact">
+                            Cyclosporine, MTX, Acitretin, apremilast, and biologics
+                        </div>
+                        
+                        <table>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Treatment Choice</th>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">von Zumbusch and erythrodermic</td>
+                                <td>Acitretin (if stable), cyclosporine, TNF-α, or spesolimab (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Palmoplantar</td>
+                                <td>Acitretin (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Guttate</td>
+                                <td>BBUVB is best (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Psoriasis + uveitis</td>
+                                <td>TNF-α (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Psoriasis + nail</td>
+                                <td>IL-17 (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Axial arthritis</td>
+                                <td>IL-17 (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Peripheral arthritis</td>
+                                <td>TNF-α, IL-17, or IL-23 (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Psoriasis + HCV</td>
+                                <td>TNF-α (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Psoriasis + latent TB</td>
+                                <td>Treat for 1-2months then IL-17 (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td class="mcq-pearl">Psoriasis + HBV</td>
+                                <td>Treat for 1-2months then IL-17 (MCQ)</td>
+                            </tr>
+                            <tr>
+                                <td>Psoriasis + HIV</td>
+                                <td>Acitretin and phototherapy</td>
+                            </tr>
+                            <tr>
+                                <td>Impetigo herpetiformis</td>
+                                <td>Early delivery, systemic steroids, cyclosporine</td>
+                            </tr>
+                            <tr>
+                                <td>Scalp</td>
+                                <td>IL-17</td>
+                            </tr>
+                            <tr>
+                                <td>Skin</td>
+                                <td>IL-23</td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center; margin: 24px 0;">
+                            <img src="https://i.postimg.cc/HsSnr587/image.png" alt="Psoriasis Study Guide Image" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>Cyclosporine + PUVA are contraindicated together (MCQ)</strong>
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>Cyclosporine and acitretin have no effect on joint disease (MCQ)</strong>
+                        </div>
+                        
+                        <div class="mcq-pearl">
+                            <strong>Most common side effect of apremilast is diarrhea (MCQ)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="clinical-tip">
+                        <strong>New systemic medications:</strong>
+                        <ul>
+                            <li><strong>Oral Deucravacitinib:</strong> TYK2 inhibitor</li>
+                            <li><strong>Bimekizumab:</strong> IL-17A & F inhibitor</li>
+                            <li><strong>Spesolimab:</strong> IL-36 inhibitor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pasi" class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>PASI Calculation</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="pasi-calculator">
+                        <h3 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Calculation of the Psoriasis Area and Severity Index</h3>
+                        
+                        <div class="pasi-section">
+                            <div style="text-align:center; margin-bottom: 1rem;">
+                                <img src="https://i.postimg.cc/QxwP4s6C/image.png" alt="Area of psoriatic involvement" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                                <div style="font-size:0.95em; color:#333; margin-top:0.5em; font-style:italic;">Area of psoriatic involvement</div>
+                            </div>
+                            <h4>Severity of psoriatic lesions</h4>
+                            <p><strong>[0, none; 1, slight; 2, moderate; 3, severe; 4, very severe]</strong></p>
+                            
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Head</th>
+                                    <th>Trunk</th>
+                                    <th>Upper limbs</th>
+                                    <th>Lower limbs</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>Erythema</strong></td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Induration</strong></td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scaling</strong></td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                    <td>0 to 4</td>
+                                </tr>
+                                <tr style="background: #e8f5e8;">
+                                    <td><strong>Total score</strong></td>
+                                    <td>Sum of the above</td>
+                                    <td>Sum of the above</td>
+                                    <td>Sum of the above</td>
+                                    <td>Sum of the above</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                     
+                        
+                        <div style="text-align: center; margin-top: 1rem; font-style: italic;">
+                            The PASI ranges from 0 to 72
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Drug Indications & Contraindications</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Topical Corticosteroids (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th style="background: #4CAF50;">Indications</th>
+                                <th style="background: #f44336;">Contraindications</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    • Mild to moderate psoriasis: first-line treatment as monotherapy or in combination<br>
+                                    • Severe psoriasis: often in combination with a vitamin D3 analogue, a topical retinoid, anthralin or tar; also as an adjunct to systemic therapy or photo(chemo)therapy<br>
+                                    • Monotherapy for flexural and facial psoriasis (usually mild strength)<br>
+                                    • Recalcitrant plaques often require occlusion (plastic, hydrocolloid)
+                                </td>
+                                <td>
+                                    • Bacterial, viral, and mycotic infections<br>
+                                    • Atrophy of the skin<br>
+                                    • Allergic contact dermatitis due to corticosteroids or constituents of the formulation<br>
+                                    • Pregnancy or lactation*
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Can consider limited use of mild- to moderate-strength corticosteroids.<br>
+                            Maximal quantities: 50 g/week of a superpotent corticosteroid; 100 g/week of a potent corticosteroid.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Vitamin D3 Analogues (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Property</th>
+                                <th>Calcipotriene/calcipotriol</th>
+                                <th>Calcitriol</th>
+                                <th>Tacalcitol</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Concentration</strong></td>
+                                <td>50 mcg/g</td>
+                                <td>3 mcg/g</td>
+                                <td>2 mcg/g; 4 mcg/g</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Formulations</strong></td>
+                                <td>Ointment, cream, lotion, solution, foam</td>
+                                <td>Ointment</td>
+                                <td>Ointment, lotion</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frequency</strong></td>
+                                <td>BID</td>
+                                <td>BID</td>
+                                <td>BID; daily</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maximum weekly amount*</strong></td>
+                                <td>100 g</td>
+                                <td>200 g</td>
+                                <td>70 g; 70 g†</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chemical structure</strong></td>
+                                <td>26,27-cyclo-vitamin D3<br>22,23 double bond<br>Transposition of the 25-OH to the 24 position</td>
+                                <td>1α, 25-dihydroxy vitamin D (active natural vitamin D3)</td>
+                                <td>1α,24-dihydroxy vitamin D3</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inactivating enzymes</strong></td>
+                                <td>22,23-reductase; 24-oxido-reductase</td>
+                                <td>24-hydroxylase</td>
+                                <td>25-hydroxylase</td>
+                            </tr>
+                        </table>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *To avoid hypercalcemia.<br>
+                            †Maximum weekly amount for 8 weeks of treatment.<br>
+                            These medications should be avoided or limited in patients with abnormalities in bone or calcium metabolism (e.g. sarcoidosis) or renal insufficiency; they are pregnancy category C.<br>
+                            If used in conjunction with phototherapy, need to apply after UV irradiation or at least several hours prior, because they may reduce UV penetration into the skin.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Anthralin (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th style="background: #4CAF50;">Indications</th>
+                                <th style="background: #f44336;">Contraindications</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    • Mild to moderate or severe* psoriasis: second-line treatment as monotherapy or in combination
+                                </td>
+                                <td>
+                                    • Unstable plaque psoriasis in a phase of progression<br>
+                                    • Pustular psoriasis<br>
+                                    • Erythrodermic psoriasis
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Severe psoriasis usually treated in day-care center or inpatient setting.<br>
+                            To minimize irritation, concentration and application time are gradually escalated; neither should be increased more often than once every 3 days, given that peak erythema is seen 3-4 days following application.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Topical Tazarotene (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th style="background: #4CAF50;">Indications</th>
+                                <th style="background: #f44336;">Contraindications</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    • Mild to moderate psoriasis: second-line treatment as monotherapy or in combination
+                                </td>
+                                <td>
+                                    • Unstable plaque psoriasis in a phase of progression<br>
+                                    • Erythrodermic psoriasis<br>
+                                    • Allergic contact dermatitis to tazarotene or constituents of the formulation<br>
+                                    • Pregnancy or lactation
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Systemic Drug Tables</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Methotrexate (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #4CAF50; color: white; padding: 0.5rem; margin: 0;">Indications</h4>
+                                <div style="background: #f1f8e9; padding: 1rem; border: 1px solid #4CAF50;">
+                                    • Severe psoriasis<br>
+                                    - Chronic plaque psoriasis (>10-15% BSA or interference with employment or social functioning)<br>
+                                    - Pustular psoriasis (generalized or localized)<br>
+                                    - Erythrodermic psoriasis<br>
+                                    - Psoriatic arthritis (moderate to severe)<br>
+                                    - Severe nail psoriasis<br>
+                                    • Psoriasis not responding to topical treatments, photo(chemo)therapy and/or systemic retinoids
+                                </div>
+                                                          <img src="https://i.postimg.cc/52qBgRN7/image.png" alt="Methotrexate" style="max-width:70%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+
+                            </div>
+                            
+                        </div>
+                            <img src="https://i.postimg.cc/wMK94FwM/image.png" alt="Methotrexate Mechanism" style="max-width:70%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                       
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Cyclosporine (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #4CAF50; color: white; padding: 0.5rem; margin: 0;">Indications</h4>
+                                <div style="background: #f1f8e9; padding: 1rem; border: 1px solid #4CAF50;">
+                                    • Severe psoriasis<br>
+                                    * Conventional therapies (topical treatments, photo(chemo)therapy, acitretin, methotrexate) ineffective or inappropriate
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #f44336; color: white; padding: 0.5rem; margin: 0;">Contraindications</h4>
+                                <div style="background: #ffebee; padding: 1rem; border: 1px solid #f44336;">
+                                    • Impaired renal function*<br>
+                                    • Uncontrolled hypertension*<br>
+                                    • Past or present* malignancy<br>
+                                    • History of excessive photo(chemo)therapy (>200 PUVA treatments) or concurrent photo(chemo)therapy*<br>
+                                    • Concomitant drugs affecting cyclosporine pharmacokinetics†<br>
+                                    • Radiotherapy*<br>
+                                    • Severe infections* or active infections<br>
+                                    • Hypersensitivity to cyclosporine*<br>
+                                    • Unreliable patient*<br>
+                                    • Primary or secondary immunodeficiency<br>
+                                    • Concomitant immunosuppressive therapy<br>
+                                    • History of arsenic exposure<br>
+                                    • Pregnancy or lactation<br>
+                                    • Significant hepatic disease<br>
+                                    • Hyperuricemia, hyperkalemia<br>
+                                    • Seizure disorder<br>
+                                    • Vaccination with live vaccines<br>
+                                    • Poorly controlled diabetes mellitus<br>
+                                    • Severe chronic organ dysfunction<br>
+                                    • Alcohol and drug abuse<br>
+                                    • Malabsorption
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Absolute contraindications.<br>
+                            †Requires dose adjustment and careful monitoring; cyclosporine is inactivated by the cytochrome P450 3A isoform.<br>
+                            The recommended starting dose is 3 mg/kg/day in two divided doses; at 2-week intervals, dosage can be increased to a maximum of 5 mg/kg/day.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Acitretin (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #4CAF50; color: white; padding: 0.5rem; margin: 0;">Indications</h4>
+                                <div style="background: #f1f8e9; padding: 1rem; border: 1px solid #4CAF50;">
+                                    • Severe psoriasis that cannot be managed by topical treatments or photo(chemo)therapy<br>
+                                    • Monotherapy is indicated for erythrodermic or pustular psoriasis<br>
+                                    • Combination therapy is indicated for chronic plaque psoriasis
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #f44336; color: white; padding: 0.5rem; margin: 0;">Contraindications</h4>
+                                <div style="background: #ffebee; padding: 1rem; border: 1px solid #f44336;">
+                                    • Severe liver dysfunction*<br>
+                                    • Severe kidney dysfunction (elimination reduced)*<br>
+                                    • Pregnancy or lactation*<br>
+                                    • Women of childbearing potential who cannot guarantee adequate contraception during and up to 3 years following discontinuation of acitretin*<br>
+                                    • Hyperlipidemia, especially hypertriglyceridemia, that cannot be controlled*<br>
+                                    • Excessive alcohol intake*<br>
+                                    • Unreliable patient*<br>
+                                    • Concomitant medications that interfere with retinoid bioavailability or whose metabolism is altered<br>
+                                    • Concomitant hepatotoxic drugs, e.g. methotrexate<br>
+                                    • Poorly controlled diabetes mellitus<br>
+                                    • History of pancreatitis<br>
+                                    • Use of contact lenses<br>
+                                    • Atherosclerosis
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-tip" style="margin-top: 2rem;">
+                            <h4>Acitretin - Evaluation Prior to and During Treatment</h4>
+                            <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <strong>Pre-acitretin screening:</strong>
+                                    <ul>
+                                        <li>History to exclude contraindications</li>
+                                        <li>Complete blood count</li>
+                                        <li>Liver function tests (AST, ALT, GGT, alkaline phosphatase, bilirubin)</li>
+                                        <li>Serum triglycerides, cholesterol, HDL</li>
+                                        <li>Glucose</li>
+                                        <li>Serum creatinine</li>
+                                        <li>Pregnancy test</li>
+                                        <li>Consider spinal X-ray (often initially performed during the first 3 months of therapy if long-term treatment is anticipated)</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <strong>Evaluation during acitretin treatment:</strong>
+                                    <ul>
+                                        <li>Monitor mucocutaneous side effects</li>
+                                        <li>Serum triglycerides, cholesterol/HDL, and liver function tests (every month for the first 2 months then every 2-3 months)</li>
+                                        <li>Serum creatinine (elderly patients or patients with mild to moderate renal dysfunction)</li>
+                                        <li>Monitor for development of hyperostosis by history (twice yearly) and by X-ray of spine (e.g. once yearly or every other year in patients receiving long-term treatment)*</li>
+                                        <li>Pregnancy test (twice yearly throughout treatment)*</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Absolute contraindications.<br>
+                            †Requires dose adjustment and careful monitoring, e.g. phenytoin competes for plasma protein binding.<br>
+                            ‡Reserved for treatment-resistant patients.<br>
+                            *Frequency varies amongst clinicians.<br>
+                            †Contraindicated in patients receiving acitretin.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>☀️ Photo(chemo)therapy for Psoriasis (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #4CAF50; color: white; padding: 0.5rem; margin: 0;">Indications</h4>
+                                <div style="background: #f1f8e9; padding: 1rem; border: 1px solid #4CAF50;">
+                                    • Moderate to severe psoriasis: first-line treatment as monotherapy or in combination
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px;">
+                                <h4 style="background: #f44336; color: white; padding: 0.5rem; margin: 0;">Contraindications (absolute or relative)</h4>
+                                <div style="background: #ffebee; padding: 1rem; border: 1px solid #f44336; font-size: 0.9rem;">
+                                    • Genetic disorders characterized by increased photosensitivity or an increased risk of skin cancer (UVB and PUVA)*<br>
+                                    • High cumulative number of PUVA treatments, i.e. >150-200 individual treatments (PUVA)*<br>
+                                    • Concurrent treatment with cyclosporine (UVB and PUVA)*<br>
+                                    • Previous history of skin cancer (UVB and PUVA; * if current skin cancer, especially SCC or melanoma)<br>
+                                    • Pregnancy or lactation (PUVA)*<br>
+                                    • Skin type I (UVB and PUVA)†<br>
+                                    • Photosensitive dermatoses (UVB and PUVA)†<br>
+                                    • Vitiligo (UVB and PUVA)†<br>
+                                    • Unavoidable phototoxic systemic or topical medications (UVB and PUVA)†<br>
+                                    • Previous history of arsenic exposure, ionizing irradiation or excessive photo(chemo)therapy (UVB and PUVA)<br>
+                                    • Immunosuppressive medication (UVB and PUVA)<br>
+                                    • Atypical melanocytic nevi (UVB and PUVA)<br>
+                                    • Seizure disorder (risk of fall/injury; UVB and PUVA)<br>
+                                    • Poor compliance (UVB and PUVA)<br>
+                                    • Men and women in reproductive years without contraception (PUVA)<br>
+                                    • Cataracts (PUVA)<br>
+                                    • Impaired liver function or hepatotoxic medication (PUVA)†
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Absolute contraindication<br>
+                            †Need to adjust the dose and monitor closely
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Biologics & Advanced Therapies</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🧬 Biologics Dosing Schedule (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table style="font-size: 0.9rem;">
+                            <tr>
+                                <th>Treatment</th>
+                                <th>Action</th>
+                                <th>Route</th>
+                                <th>Loading</th>
+                                <th>Maintenance</th>
+                                <th>Effectiveness</th>
+                                <th>FDA Approval</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Etanercept</strong><br>(Enbrel®)*/P≥4y/©:B</td>
+                                <td>Anti-TNF-α & β</td>
+                                <td>SC</td>
+                                <td>50 mg twice per week for 3 months</td>
+                                <td>50 mg qw. in pedia more than 4 years 0.8mg per kg </td>
+                                <td>+3</td>
+                                <td>2004</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Infliximab</strong><br>(Remicade®)*/P≥6y/©:B</td>
+                                <td>Anti-TNF-α</td>
+                                <td>IV</td>
+                                <td>3-5 mg/kg at week 0, 2, 6</td>
+                                <td>3-5 mg/kg q8w</td>
+                                <td>+5</td>
+                                <td>2006</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adalimumab</strong><br>(Humira®)*/P≥4y/©:B</td>
+                                <td>Anti-TNF-α</td>
+                                <td>SC</td>
+                                <td>80 mg at week 0, then 40 mg at week 1</td>
+                                <td>40 mg q2w</td>
+                                <td>+4</td>
+                                <td>2008</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Certolizumab pegol</strong><br>(Cimzia®)*</td>
+                                <td>Anti-TNF-α</td>
+                                <td>SC</td>
+                                <td>100 mg those who weigh < 90kg<br>No need for those who weigh ≥ 90kg</td>
+                                <td>200 mg q2w<br>400 mg q2w</td>
+                                <td>+4</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ustekinumab</strong><br>(Stelara®)*/P≥12y/©:B</td>
+                                <td>Anti-IL 12/23 p40</td>
+                                <td>SC</td>
+                                <td>45 mg at week 0, 4 those who weigh ≤ 100kg<br>90 mg at week 0, 4 those who weigh > 100kg</td>
+                                <td>45 mg q12w<br>90 mg q12w</td>
+                                <td>+4</td>
+                                <td>2009</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Secukinumab</strong><br>(Cosentyx®) */P≥6y</td>
+                                <td>Neutralize IL-17 A</td>
+                                <td>SC</td>
+                                <td>300 mg at week 0, 1, 2, 3, 4</td>
+                                <td>300 mg q4w</td>
+                                <td>+5</td>
+                                <td>2015</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ixekizumab</strong><br>(Taltz®) */P≥6y</td>
+                                <td>Neutralize IL-17 A</td>
+                                <td>SC</td>
+                                <td>160 mg at week 0<br>then 80 mg at week 2, 4, 6, 8, 10, 12</td>
+                                <td>80 mg q4w</td>
+                                <td>+5</td>
+                                <td>2016</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brodalumab</strong><br>(Siliq®) P≥12y</td>
+                                <td>Antagonizes IL-17 RA</td>
+                                <td>SC</td>
+                                <td>210 mg at week 0, 1, 2</td>
+                                <td>210 mg q2w</td>
+                                <td>+5</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Guselkumab</strong><br>(Tremfya®)</td>
+                                <td>Anti-IL-23 p19+p40</td>
+                                <td>SC</td>
+                                <td>100 mg at week 0, 4</td>
+                                <td>100 mg q8w</td>
+                                <td>+5</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tildrakizumab</strong><br>(Ilumya®)</td>
+                                <td>Anti-IL-23 p19+p40</td>
+                                <td>SC</td>
+                                <td>100 mg at week 0, 4</td>
+                                <td>100 mg q12w</td>
+                                <td>+5</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Risankizumab</strong><br>(Skyrizi®)</td>
+                                <td>Anti-IL-23 p19+p40</td>
+                                <td>SC</td>
+                                <td>150 mg at week 0, 4</td>
+                                <td>150 mg q12w</td>
+                                <td>+5</td>
+                                <td>2019</td>
+                            </tr>
+                        </table>
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 1rem;">
+                            (*) Can also be used in Psoriatic Arthritis, (P) Can also be used to treat Pediatric Plaque Psoriasis, (©) Pregnancy Drug Risk Category.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>🧬 Biologics Indications & Contraindications (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="background: #4CAF50; color: white; padding: 0.5rem; margin: 0;">General Indications</h4>
+                            <div style="background: #f1f8e9; padding: 1rem; border: 1px solid #4CAF50;">
+                                • Patients with moderate to severe psoriasis, eligible for a systemic treatment<br>
+                                • Patients with psoriatic arthritis, particularly those who have failed other disease-modifying antirheumatic drugs (DMARDs)
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="background: #ff9800; color: white; padding: 0.5rem; margin: 0;">Restricted Indication</h4>
+                            <div style="background: #fff3e0; padding: 1rem; border: 1px solid #ff9800;">
+                                • Patients with moderate to severe psoriasis who are not candidates for topical treatments, photo(chemo)therapy, or classic systemic treatments because of insufficient efficacy or contraindications
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 style="background: #f44336; color: white; padding: 0.5rem; margin: 0;">Contraindications</h4>
+                            <div style="background: #ffebee; padding: 1rem; border: 1px solid #f44336; font-size: 0.9rem;">
+                                <strong>The exact contraindications vary by agent; some listed below are relative, while others are absolute:</strong><br><br>
+                                • Significant viral, bacterial or fungal infection, including active Salmonella or dimorphic fungal infection*<br>
+                                • Increased risk for developing sepsis*<br>
+                                • Active tuberculosis*<br>
+                                • Allergic reaction to the biologic agent*<br>
+                                • <strong>Selective for TNF-α inhibitors:</strong> ANA+ (especially if high titer) or autoimmune connective tissue disease, blood dyscrasias, congestive heart failure (NYHA grade III or IV), or demyelination disorders (the latter also if in first-degree relative)*<br>
+                                • <strong>Selective for ustekinumab:</strong> BCG vaccination within the past 12 months (mode of action expected to increase susceptibility to mycobacterial infections)<br>
+                                • <strong>Selective for secukinumab, ixekizumab, and brodalumab:</strong> Active Crohn disease (may cause exacerbation of bowel disease)<br>
+                                • History of hepatitis B viral (HBV) infection**<br>
+                                • History of hepatitis C viral infection (risk of activation)***<br>
+                                • Immunosuppressed patient<br>
+                                • Pregnancy (TNF-α inhibitors, ustekinumab and secukinumab are category B; ixekizumab was released after 2015)<br>
+                                • Breastfeeding<br>
+                                • Malignancy within the past 5 years (does not include adequately treated single cutaneous squamous or basal cell carcinoma)<br>
+                                • Excessive chronic sun exposure or photo(chemo)therapy
+                            </div>
+                        </div>
+                        
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 1rem;">
+                            Guttate, pustular, or erythrodermic psoriasis are not established indications, but there is anecdotal evidence for efficacy and safety.<br>
+                            *Absolute contraindications.<br>
+                            **If HBsAg-positive, measure HBV DNA and treat with antiviral agent (e.g. tenofovir, entecavir, telbivudine)) prior to immunosuppressive therapy. Monitor for reactivation in those with anti-HBs or -HBc antibodies who are HBsAg-negative.<br>
+                            ***Need to monitor liver function tests and viral load.
+                        </div>
+                    </div>
+                    
+                    <div class="collapsible-trigger" onclick="toggleCollapsible(this)">
+                        <strong>💊 Additional Systemic Therapies (Click to expand)</strong>
+                    </div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Medication</th>
+                                <th>Side Effects</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Apremilast (30 mg BID)*</strong></td>
+                                <td>Gastrointestinal disturbances, nasopharyngitis, headache, weight loss, depression (up to 1% of patients); see Ch. 130</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fumarates</strong></td>
+                                <td>Renal impairment, flushing, gastrointestinal disturbances, headache, fatigue, Fanconi syndrome, progressive multifocal leukoencephalopathy (rare)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mycophenolate mofetil</strong></td>
+                                <td>See Ch. 130</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oral calcitriol (0.5-3 mcg/day)</strong></td>
+                                <td>Hypercalcemia, hypercalciuria</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6-thioguanine (40-160 mg/day)</strong></td>
+                                <td>Myelosuppression, hepatotoxicity, gastrointestinal disturbances</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hydroxyurea</strong></td>
+                                <td>See Table 130.11</td>
+                            </tr>
+                        </table>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            *Starting with an initial dose of 10 mg/day and then titrated upwards
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Management at Specific Sites</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <table>
+                        <tr>
+                            <th>Specific Sites</th>
+                            <th>Special Considerations and Practical Treatments</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalp</strong></td>
+                            <td>
+                                • Remove scale with topical 10-15% salicylic acid<br>
+                                • Apply potent or ultrapotent corticosteroids in a lotion, gel, foam or shampoo formulation, either alone or in combination with calcipotriene
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Face; groin, axilla, and other body folds</strong></td>
+                            <td>
+                                • First-line: mild topical corticosteroids<br>
+                                • Second-line: topical calcineurin inhibitors or tacalcitol/calcitriol in combination with a mild topical corticosteroid
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nail</strong></td>
+                            <td>
+                                • Differentiate proximal versus distal nail unit pathology due to nail matrix versus nail bed pathology, respectively; consider coexisting onychomycosis<br>
+                                • For distal nail unit pathology: vitamin D3 analogues topically (limited evidence)<br>
+                                • For proximal pathology: intralesional corticosteroids and/or systemic antipsoriatic therapies
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <h2>Contraindicated Combinations</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="section-content">
+                    <div class="contraindication">
+                        <h4>🚫 Five Contraindicated Combinations in Psoriasis</h4>
+                        <table>
+                            <tr>
+                                <th>Combination</th>
+                                <th>Reason</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Cyclosporine + PUVA</strong></td>
+                                <td>NMSCs (Non-melanoma skin cancers)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cyclosporine + Acitretin</strong></td>
+                                <td>Accumulation of cyclosporine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cyclosporine + MTX</strong></td>
+                                <td>BM suppression (Bone marrow suppression)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MTX + Acitretin</strong></td>
+                                <td>Liver toxicity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coal tar + PUVA</strong></td>
+                                <td>Phototoxicity</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.textContent = '+';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('active');
+                icon.textContent = '−';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        function toggleCollapsible(trigger) {
+            const content = trigger.nextElementSibling;
+            content.classList.toggle('show');
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Open first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.querySelector('.section-header');
+            toggleSection(firstSection);
+        });
+    </script>
+<script>
+let lastScrollTop = 0;
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', function() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    header.classList.add('hide-header');
+  } else {
+    // Scrolling up
+    header.classList.remove('hide-header');
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
+</script>
+</body>
+</html>

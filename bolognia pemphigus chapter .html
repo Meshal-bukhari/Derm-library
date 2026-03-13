@@ -1,0 +1,1881 @@
+<div class="artifact" artifactId="pemphigus-guide" artifactType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemphigus: Saudi Board Exam Guide</title>
+    <style>
+        :root {
+            --primary: #3d5a80;
+            --secondary: #ee6c4d;
+            --light: #e0fbfc;
+            --dark: #293241;
+            --accent: #98c1d9;
+            --success: #2a9d8f;
+            --warning: #e9c46a;
+            --danger: #e76f51;
+        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: #f9f9f9;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    
+    /* Navigation */
+    nav {
+        background-color: white;
+        margin: 1rem 0 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .nav-container {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 10px;
+    }
+    
+    .nav-item {
+        padding: 1rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s;
+    }
+    
+    .nav-item:hover {
+        color: var(--secondary);
+        border-bottom: 3px solid var(--secondary);
+    }
+    
+    /* Sections */
+    section {
+        background-color: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    h2 {
+        color: var(--primary);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--accent);
+    }
+    
+    h3 {
+        color: var(--primary);
+        margin: 1.5rem 0 1rem;
+    }
+    
+    h4 {
+        color: var(--secondary);
+        margin: 1rem 0 0.5rem;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    /* Special elements */
+    .key-feature {
+        background-color: var(--light);
+        border-left: 4px solid var(--primary);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .exam-tip {
+        background-color: #fef9c3;
+        border: 1px solid var(--warning);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        position: relative;
+    }
+    
+    .exam-tip::before {
+        content: "EXAM TIP";
+        background-color: var(--warning);
+        color: var(--dark);
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+    
+    .clinical-pearl {
+        background-color: #d1fae5;
+        border: 1px solid var(--success);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        position: relative;
+    }
+    
+    .clinical-pearl::before {
+        content: "CLINICAL PEARL";
+        background-color: var(--success);
+        color: white;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+    
+    .mnemonic {
+        background-color: #ddd6fe;
+        border: 1px solid #a78bfa;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        position: relative;
+    }
+    
+    .mnemonic::before {
+        content: "MNEMONIC";
+        background-color: #a78bfa;
+        color: white;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+    
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 2rem;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    }
+    
+    thead {
+        background-color: var(--primary);
+        color: white;
+    }
+    
+    th, td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+        background-color: #e6f7ff;
+    }
+    
+    /* Memory aids */
+    .comparison-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1.5rem 0;
+        gap: 1rem;
+    }
+    
+    .comparison-item {
+        flex: 1;
+        min-width: 250px;
+        background-color: white;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .comparison-item h4 {
+        background-color: var(--accent);
+        color: var(--dark);
+        padding: 0.5rem;
+        margin: -1rem -1rem 1rem -1rem;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+    }
+    
+    /* Collapsible sections */
+    .collapsible {
+        background-color: var(--light);
+        color: var(--primary);
+        cursor: pointer;
+        padding: 1rem;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        transition: 0.3s;
+        position: relative;
+    }
+    
+    .collapsible:after {
+        content: '\002B';
+        color: var(--primary);
+        font-weight: bold;
+        float: right;
+    }
+    
+    .active:after {
+        content: "\2212";
+    }
+    
+    .collapsible-content {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+    }
+    
+    /* Images */
+    .img-container {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .img-container img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .img-caption {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.5rem;
+    }
+    
+    /* Flashcard system */
+    .flashcard {
+        background-color: white;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        margin: 1rem 0;
+        perspective: 1000px;
+        cursor: pointer;
+    }
+    
+    .flashcard-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    
+    .flashcard.flipped .flashcard-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flashcard-front, .flashcard-back {
+        padding: 1.5rem;
+        backface-visibility: hidden;
+        border-radius: 8px;
+    }
+    
+    .flashcard-front {
+        background-color: var(--light);
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    .flashcard-back {
+        background-color: var(--primary);
+        color: white;
+        transform: rotateY(180deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    /* Quiz */
+    .quiz-container {
+        margin: 2rem 0;
+    }
+    
+    .quiz-question {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+    }
+    
+    .quiz-options {
+        margin-top: 0.5rem;
+    }
+    
+    .quiz-option {
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .quiz-option:hover {
+        background-color: var(--light);
+    }
+    
+    .quiz-option.selected {
+        background-color: var(--accent);
+        color: white;
+    }
+    
+    .quiz-option.correct {
+        background-color: var(--success);
+        color: white;
+    }
+    
+    .quiz-option.incorrect {
+        background-color: var(--danger);
+        color: white;
+    }
+    
+    .quiz-explanation {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #f0f0f0;
+        border-left: 3px solid var(--primary);
+        display: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .comparison-box {
+            flex-direction: column;
+        }
+        
+        .comparison-item {
+            min-width: 100%;
+        }
+        
+        .nav-container {
+            justify-content: flex-start;
+        }
+    }
+    
+    /* Custom diagram styles */
+    .diagram {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    
+    .skin-diagram {
+        display: flex;
+        width: 100%;
+        max-width: 600px;
+        height: 200px;
+        border: 2px solid var(--dark);
+        border-radius: 8px;
+        position: relative;
+        margin: 1rem 0;
+        overflow: hidden;
+    }
+    
+    .epidermis {
+        width: 100%;
+        height: 40%;
+        background-color: #ffddc9;
+        position: relative;
+        border-bottom: 2px dashed var(--dark);
+    }
+    
+    .dermis {
+        width: 100%;
+        height: 60%;
+        background-color: #ffb38a;
+    }
+    
+    .blister {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid var(--secondary);
+        border-radius: 50%;
+    }
+    
+    .pv-blister {
+        top: 40%;
+        left: 30%;
+        width: 40%;
+        height: 30%;
+        transform: translateY(-50%);
+    }
+    
+    .pf-blister {
+        top: 20%;
+        left: 30%;
+        width: 40%;
+        height: 25%;
+        transform: translateY(-50%);
+    }
+    
+    .diagram-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+    }
+    
+    .legend-color {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+        border: 1px solid #333;
+    }
+    
+    /* Treatment ladder */
+    .treatment-ladder {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 2rem 0;
+    }
+    
+    .treatment-step {
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: white;
+        border-left: 5px solid var(--primary);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .step-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .step-title {
+        font-weight: 600;
+        color: var(--primary);
+    }
+    
+    .evidence-level {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        background-color: var(--accent);
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Pemphigus</h1>
+        <p class="subtitle">Comprehensive Study Guide for Saudi Board Exam</p>
+    </header>
+<nav>
+    <div class="nav-container">
+        <a href="#introduction" class="nav-item">Introduction</a>
+        <a href="#classification" class="nav-item">Classification</a>
+        <a href="#pathogenesis" class="nav-item">Pathogenesis</a>
+        <a href="#clinical" class="nav-item">Clinical Features</a>
+        <a href="#histopathology" class="nav-item">Histopathology</a>
+        <a href="#diagnosis" class="nav-item">Diagnosis</a>
+        <a href="#differential" class="nav-item">Differential Dx</a>
+        <a href="#treatment" class="nav-item">Treatment</a>
+        <a href="#quiz" class="nav-item">Quick Quiz</a>
+    </div>
+</nav>
+
+<section id="introduction">
+    <h2>Introduction to Pemphigus</h2>
+    
+    <div class="key-feature">
+        <p><strong>Definition:</strong> Pemphigus is a group of chronic autoimmune blistering diseases of the skin and mucous membranes characterized by intraepidermal acantholysis due to loss of cell-cell adhesion between keratinocytes, caused by autoantibodies directed against cell surface components.</p>
+    </div>
+    
+    <p>The term "pemphigus" stems from the Greek word <em>pemphix</em>, meaning blister or bubble. These are potentially life-threatening conditions that, before the advent of corticosteroids, had a high mortality rate.</p>
+    
+    <div class="exam-tip">
+        <p>For board exams, remember that pemphigus is characterized by <strong>intraepidermal</strong> blistering, which distinguishes it from other autoimmune bullous diseases like bullous pemphigoid (subepidermal blistering).</p>
+    </div>
+
+    <p>The hallmark of pemphigus is the finding of IgG autoantibodies against the cell surface of keratinocytes. The functional inhibition of desmogleins, which play an important role in cell-cell adhesion, by these autoantibodies results in blister formation.</p>
+    
+    <h3>Epidemiology</h3>
+    <ul>
+        <li>Affects men and women equally</li>
+        <li>Mean age of onset: 50-60 years (though can occur at any age)</li>
+        <li>Incidence: 0.76-5 new cases per million per year globally</li>
+        <li>Higher incidence (16-32 cases per million per year) in Jewish ancestry, particularly Ashkenazi Jews</li>
+        <li>In most countries, pemphigus vulgaris is more common than pemphigus foliaceus</li>
+        <li>Regional variations exist (e.g., in Brazil, pemphigus foliaceus is much more common)</li>
+    </ul>
+</section>
+
+<section id="classification">
+    <h2>Classification of Pemphigus</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Major Types</th>
+                <th>Subtypes/Variants</th>
+                <th>Key Characteristics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2"><strong>Pemphigus Vulgaris (PV)</strong></td>
+                <td>Mucosal-dominant type</td>
+                <td>Only anti-Dsg3 IgG; primarily mucosal erosions, minimal skin involvement</td>
+            </tr>
+            <tr>
+                <td>Mucocutaneous type</td>
+                <td>Both anti-Dsg3 and anti-Dsg1 IgG; mucosa + skin involvement</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>Pemphigus Foliaceus (PF)</strong></td>
+                <td>Classic PF</td>
+                <td>Anti-Dsg1 IgG; superficial skin blisters, NO mucosal involvement</td>
+            </tr>
+            <tr>
+                <td>Pemphigus erythematosus<br>(Senear-Usher syndrome)</td>
+                <td>Localized variant of PF with features resembling lupus erythematosus</td>
+            </tr>
+            <tr>
+                <td>Fogo selvagem<br>(Endemic PF)</td>
+                <td>Endemic form in certain regions of Brazil; environmental trigger suspected</td>
+            </tr>
+            <tr>
+                <td><strong>Paraneoplastic Pemphigus</strong></td>
+                <td>-</td>
+                <td>Associated with neoplasms (usually lymphoid); autoantibodies against desmogleins AND plakin family proteins; severe oral and conjunctival erosions</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>IgA Pemphigus</strong></td>
+                <td>Subcorneal pustular dermatosis type</td>
+                <td><strong style="background-color: #f7dc6f;"><em>IgA (not IgG) against desmocollin-1</em></strong>; subcorneal pustules</td>
+            </tr>
+            <tr>
+                <td>Intraepidermal neutrophilic type</td>
+                <td>IgA against unknown antigen; deeper intraepidermal pustules</td>
+            </tr>
+            <tr>
+                <td><strong>Other Variants</strong></td>
+                <td>Pemphigus vegetans<br>Herpetiform pemphigus<br>Drug-induced pemphigus</td>
+                <td>PV variant with vegetative lesions<br>Herpetiform arrangement of lesions<br>Associated with drugs (penicillamine, captopril, etc.)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="clinical-pearl">
+        <p>Pemphigus vegetans is a variant of pemphigus vulgaris, while pemphigus erythematosus and fogo selvagem are variants of pemphigus foliaceus. This relationship is frequently tested on board exams.</p>
+    </div>
+    
+    <h3>Common Drugs Implicated in Drug-Induced Pemphigus</h3>
+    <ul>
+        <li>ACE inhibitors (especially captopril)</li>
+        <li>D-penicillamine</li>
+        <li>Gold</li>
+        <li>Antibiotics (especially β-lactams)</li>
+        <li>Immune checkpoint inhibitors (e.g., pembrolizumab)</li>
+        <li>Other: nifedipine, phenobarbital, piroxicam, propranolol, pyrazolone</li>
+    </ul>
+</section>
+
+<section id="pathogenesis">
+    <h2>Pathogenesis of Pemphigus</h2>
+    
+    <h3>Pathogenic Autoantibodies</h3>
+    <p>The primary pathogenic mechanism in pemphigus involves IgG autoantibodies targeting cell surface components of keratinocytes, specifically desmogleins, which are cadherin-type cell adhesion molecules found in desmosomes.</p>
+    
+    <div class="exam-tip">
+        <p>Remember: Compelling evidence shows that these autoantibodies are directly pathogenic - if they're removed from patient sera by immunoadsorption, the sera no longer cause blisters. When IgG fractions from patients with pemphigus are injected into neonatal mice, they develop blisters resembling human disease.</p>
+    </div>
+    
+    <h3>Target Antigens in Pemphigus</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Pemphigus Type</th>
+                <th>Primary Target Antigen</th>
+                <th>Molecular Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pemphigus vulgaris (mucosal-dominant)</td>
+                <td>Desmoglein 3</td>
+                <td>130 kDa</td>
+            </tr>
+            <tr>
+                <td>Pemphigus vulgaris (mucocutaneous)</td>
+                <td>Desmoglein 3 AND Desmoglein 1</td>
+                <td>130 kDa + 160 kDa</td>
+            </tr>
+            <tr>
+                <td>Pemphigus foliaceus</td>
+                <td>Desmoglein 1</td>
+                <td>160 kDa</td>
+            </tr>
+            <tr>
+                <td>Paraneoplastic pemphigus</td>
+                <td>Desmoglein 3, Desmoglein 1, AND plakin family proteins ( plectin, epiplakin, desmoplakins I and II, bullous pemphigoid antigen 1 (BPAG1), envoplakin, and periplaki)</td>
+                <td>Various</td>
+            </tr>
+            <tr>
+                <td>IgA pemphigus (SPD type)</td>
+                <td>Desmocollin 1</td>
+                <td>110/100 kDa</td>
+            </tr>
+            <tr>
+                <td>IgA pemphigus (IEN type)</td>
+                <td>Unknown</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Desmogleins and Desmosomal Structure</h3>
+    <p>Desmogleins are transmembrane glycoproteins of the cadherin family that form part of desmosomes, which are cell-cell adhesion structures that link the intermediate filament cytoskeleton to the cell membrane. There are four isoforms (Dsg1-4), with Dsg1 and Dsg3 being the primary targets in pemphigus.</p>
+    
+    <div class="img-container">
+        <div style="border: 2px solid #3d5a80; border-radius: 8px; padding: 20px; max-width: 600px; margin: 0 auto;">
+            <h4 style="text-align: center; margin-bottom: 15px;">Desmosome Structure</h4>
+            <div style="display: flex; justify-content: center; position: relative; height: 300px; background-color: #f8f8f8; border-radius: 8px; overflow: hidden;">
+                <!-- Cell membranes -->
+                <div style="position: absolute; top: 120px; width: 100%; height: 20px; background-color: #98c1d9; border-top: 2px solid #333; border-bottom: 2px solid #333;"></div>
+                <div style="position: absolute; top: 160px; width: 100%; height: 20px; background-color: #98c1d9; border-top: 2px solid #333; border-bottom: 2px solid #333;"></div>
+                
+                <!-- Intercellular space text -->
+                <div style="position: absolute; top: 135px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: bold;">Intercellular Space</div>
+                
+                <!-- Desmogleins -->
+                <div style="position: absolute; top: 110px; left: 30%; width: 30px; height: 50px;">
+                    <div style="width: 30px; height: 20px; background-color: #ee6c4d; border-radius: 5px 5px 0 0;"></div>
+                    <div style="width: 5px; height: 30px; background-color: #ee6c4d; margin-left: 12px;"></div>
+                </div>
+                <div style="position: absolute; top: 110px; left: 45%; width: 30px; height: 50px;">
+                    <div style="width: 30px; height: 20px; background-color: #ee6c4d; border-radius: 5px 5px 0 0;"></div>
+                    <div style="width: 5px; height: 30px; background-color: #ee6c4d; margin-left: 12px;"></div>
+                </div>
+                <div style="position: absolute; top: 140px; left: 60%; width: 30px; height: 50px; transform: rotate(180deg);">
+                    <div style="width: 30px; height: 20px; background-color: #ee6c4d; border-radius: 5px 5px 0 0;"></div>
+                    <div style="width: 5px; height: 30px; background-color: #ee6c4d; margin-left: 12px;"></div>
+                </div>
+                <div style="position: absolute; top: 140px; left: 75%; width: 30px; height: 50px; transform: rotate(180deg);">
+                    <div style="width: 30px; height: 20px; background-color: #ee6c4d; border-radius: 5px 5px 0 0;"></div>
+                    <div style="width: 5px; height: 30px; background-color: #ee6c4d; margin-left: 12px;"></div>
+                </div>
+                
+                <!-- Plaque proteins -->
+                <div style="position: absolute; top: 90px; left: 25%; width: 80px; height: 20px; background-color: #2a9d8f; border-radius: 5px;">Plakoglobin</div>
+                <div style="position: absolute; top: 70px; left: 25%; width: 80px; height: 20px; background-color: #e9c46a; border-radius: 5px;">Desmoplakin</div>
+                <div style="position: absolute; top: 190px; left: 70%; width: 80px; height: 20px; background-color: #2a9d8f; border-radius: 5px;">Plakoglobin</div>
+                <div style="position: absolute; top: 210px; left: 70%; width: 80px; height: 20px; background-color: #e9c46a; border-radius: 5px;">Desmoplakin</div>
+                
+                <!-- Intermediate filaments -->
+                <div style="position: absolute; top: 50px; left: 20%; width: 90px; height: 5px; background-color: #333;"></div>
+                <div style="position: absolute; top: 55px; left: 20%; width: 90px; height: 5px; background-color: #333;"></div>
+                <div style="position: absolute; top: 60px; left: 20%; width: 90px; height: 5px; background-color: #333;"></div>
+                <div style="position: absolute; top: 240px; left: 65%; width: 90px; height: 5px; background-color: #333;"></div>
+                <div style="position: absolute; top: 245px; left: 65%; width: 90px; height: 5px; background-color: #333;"></div>
+                <div style="position: absolute; top: 250px; left: 65%; width: 90px; height: 5px; background-color: #333;"></div>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+                <div style="display: flex; align-items: center; margin: 5px 15px;">
+                    <div style="width: 15px; height: 15px; background-color: #ee6c4d; margin-right: 5px;"></div>
+                    <span>Desmoglein</span>
+                </div>
+                <div style="display: flex; align-items: center; margin: 5px 15px;">
+                    <div style="width: 15px; height: 15px; background-color: #2a9d8f; margin-right: 5px;"></div>
+                    <span>Plakoglobin</span>
+                </div>
+                <div style="display: flex; align-items: center; margin: 5px 15px;">
+                    <div style="width: 15px; height: 15px; background-color: #e9c46a; margin-right: 5px;"></div>
+                    <span>Desmoplakin</span>
+                </div>
+                <div style="display: flex; align-items: center; margin: 5px 15px;">
+                    <div style="width: 15px; height: 15px; background-color: #333; margin-right: 5px;"></div>
+                    <span>Intermediate Filaments</span>
+                </div>
+            </div>
+        </div>
+        <p class="img-caption">Simplified structure of a desmosome showing the key components targeted in pemphigus.</p>
+    </div>
+    
+    <h3>Desmoglein Compensation Theory</h3>
+    <p>This critical theory explains the differential localization of blisters in different forms of pemphigus based on the distribution patterns of Dsg1 and Dsg3 in skin and mucosa.</p>
+    
+    <div class="diagram">
+        <h4>Desmoglein Compensation Theory Explained</h4>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+            <!-- PF Panel -->
+            <div style="border: 1px solid #3d5a80; border-radius: 8px; width: 250px; overflow: hidden;">
+                <div style="background-color: #3d5a80; color: white; text-align: center; padding: 10px;">
+                    Pemphigus Foliaceus
+                </div>
+                <div style="padding: 15px;">
+                    <div style="position: relative; height: 180px; border: 1px solid #ddd; margin-bottom: 10px;">
+                        <!-- Skin layers -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60px; background-color: #ffe0b2; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Superficial</span>
+                        </div>
+                        <div style="position: absolute; top: 60px; left: 0; width: 100%; height: 60px; background-color: #ffcc80; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Mid</span>
+                        </div>
+                        <div style="position: absolute; top: 120px; left: 0; width: 100%; height: 60px; background-color: #ffb74d;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Basal</span>
+                        </div>
+                        
+                        <!-- Dsg1 distribution -->
+                        <div style="position: absolute; top: 10px; left: 60px; width: 40px; height: 40px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 15px; left: 110px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 20px; left: 150px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 70px; left: 70px; width: 25px; height: 25px; background-color: #81c784; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 85px; left: 120px; width: 20px; height: 20px; background-color: #81c784; border-radius: 50%; opacity: 0.7;"></div>
+                        <div style="position: absolute; top: 130px; left: 80px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        <div style="position: absolute; top: 145px; left: 130px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        
+                        <!-- Dsg3 distribution -->
+                        <div style="position: absolute; top: 130px; left: 110px; width: 30px; height: 30px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 135px; left: 60px; width: 25px; height: 25px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 140px; left: 160px; width: 20px; height: 20px; background-color: #f06292; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 80px; left: 150px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        <div style="position: absolute; top: 90px; left: 90px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        
+                        <!-- Blister -->
+                        <div style="position: absolute; top: 30px; left: 90px; width: 70px; height: 20px; background-color: white; border: 2px dashed #e76f51; border-radius: 10px;"></div>
+                    </div>
+                    <div style="text-align: center; font-size: 14px; color: #333;">
+                        <p><strong>Anti-Dsg1 IgG only</strong></p>
+                        <p>Superficial skin blisters</p>
+                        <p>No mucosal involvement</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mucosal PV Panel -->
+            <div style="border: 1px solid #3d5a80; border-radius: 8px; width: 250px; overflow: hidden;">
+                <div style="background-color: #3d5a80; color: white; text-align: center; padding: 10px;">
+                    Mucosal-Dominant PV
+                </div>
+                <div style="padding: 15px;">
+                    <div style="position: relative; height: 180px; border: 1px solid #ddd; margin-bottom: 10px;">
+                        <!-- Skin layers -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60px; background-color: #ffe0b2; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Superficial</span>
+                        </div>
+                        <div style="position: absolute; top: 60px; left: 0; width: 100%; height: 60px; background-color: #ffcc80; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Mid</span>
+                        </div>
+                        <div style="position: absolute; top: 120px; left: 0; width: 100%; height: 60px; background-color: #ffb74d;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Basal</span>
+                        </div>
+                        
+                        <!-- Dsg1 distribution -->
+                        <div style="position: absolute; top: 10px; left: 60px; width: 40px; height: 40px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 15px; left: 110px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 20px; left: 150px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 70px; left: 70px; width: 25px; height: 25px; background-color: #81c784; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 85px; left: 120px; width: 20px; height: 20px; background-color: #81c784; border-radius: 50%; opacity: 0.7;"></div>
+                        <div style="position: absolute; top: 130px; left: 80px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        <div style="position: absolute; top: 145px; left: 130px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        
+                        <!-- Dsg3 distribution with X marks -->
+                        <div style="position: absolute; top: 130px; left: 110px; width: 30px; height: 30px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 130px; left: 110px; font-size: 20px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 135px; left: 60px; width: 25px; height: 25px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 135px; left: 60px; font-size: 18px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 140px; left: 160px; width: 20px; height: 20px; background-color: #f06292; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 140px; left: 160px; font-size: 16px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 80px; left: 150px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        <div style="position: absolute; top: 80px; left: 150px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 90px; left: 90px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        <div style="position: absolute; top: 90px; left: 90px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        
+                        <!-- Blister -->
+                        <div style="position: absolute; top: 140px; left: 90px; width: 70px; height: 20px; background-color: white; border: 2px dashed #e76f51; border-radius: 10px;"></div>
+                    </div>
+                    <div style="text-align: center; font-size: 14px; color: #333;">
+                        <p><strong>Anti-Dsg3 IgG only</strong></p>
+                        <p>Limited or no skin lesions</p>
+                        <p>Mucosal erosions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mucocutaneous PV Panel -->
+            <div style="border: 1px solid #3d5a80; border-radius: 8px; width: 250px; overflow: hidden;">
+                <div style="background-color: #3d5a80; color: white; text-align: center; padding: 10px;">
+                    Mucocutaneous PV
+                </div>
+                <div style="padding: 15px;">
+                    <div style="position: relative; height: 180px; border: 1px solid #ddd; margin-bottom: 10px;">
+                        <!-- Skin layers -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60px; background-color: #ffe0b2; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Superficial</span>
+                        </div>
+                        <div style="position: absolute; top: 60px; left: 0; width: 100%; height: 60px; background-color: #ffcc80; border-bottom: 1px dashed #666;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Mid</span>
+                        </div>
+                        <div style="position: absolute; top: 120px; left: 0; width: 100%; height: 60px; background-color: #ffb74d;">
+                            <span style="position: absolute; left: 5px; top: 20px; font-size: 12px;">Basal</span>
+                        </div>
+                        
+                        <!-- Dsg1 distribution with X marks -->
+                        <div style="position: absolute; top: 10px; left: 60px; width: 40px; height: 40px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 10px; left: 60px; font-size: 25px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 15px; left: 110px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 15px; left: 110px; font-size: 20px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 20px; left: 150px; width: 30px; height: 30px; background-color: #81c784; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 20px; left: 150px; font-size: 20px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 70px; left: 70px; width: 25px; height: 25px; background-color: #81c784; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 70px; left: 70px; font-size: 18px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 85px; left: 120px; width: 20px; height: 20px; background-color: #81c784; border-radius: 50%; opacity: 0.7;"></div>
+                        <div style="position: absolute; top: 85px; left: 120px; font-size: 16px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 130px; left: 80px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        <div style="position: absolute; top: 130px; left: 80px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 145px; left: 130px; width: 15px; height: 15px; background-color: #81c784; border-radius: 50%; opacity: 0.5;"></div>
+                        <div style="position: absolute; top: 145px; left: 130px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        
+                        <!-- Dsg3 distribution with X marks -->
+                        <div style="position: absolute; top: 130px; left: 110px; width: 30px; height: 30px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 130px; left: 110px; font-size: 20px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 135px; left: 60px; width: 25px; height: 25px; background-color: #f06292; border-radius: 50%; opacity: 0.9;"></div>
+                        <div style="position: absolute; top: 135px; left: 60px; font-size: 18px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 140px; left: 160px; width: 20px; height: 20px; background-color: #f06292; border-radius: 50%; opacity: 0.8;"></div>
+                        <div style="position: absolute; top: 140px; left: 160px; font-size: 16px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 80px; left: 150px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        <div style="position: absolute; top: 80px; left: 150px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        <div style="position: absolute; top: 90px; left: 90px; width: 15px; height: 15px; background-color: #f06292; border-radius: 50%; opacity: 0.6;"></div>
+                        <div style="position: absolute; top: 90px; left: 90px; font-size: 14px; font-weight: bold; color: red;">X</div>
+                        
+                        <!-- Blisters -->
+                        <div style="position: absolute; top: 30px; left: 90px; width: 70px; height: 20px; background-color: white; border: 2px dashed #e76f51; border-radius: 10px;"></div>
+                        <div style="position: absolute; top: 140px; left: 90px; width: 70px; height: 20px; background-color: white; border: 2px dashed #e76f51; border-radius: 10px;"></div>
+                    </div>
+                    <div style="text-align: center; font-size: 14px; color: #333;">
+                        <p><strong>Anti-Dsg1 AND Dsg3 IgG</strong></p>
+                        <p>Extensive skin blisters</p>
+                        <p>Mucosal erosions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="diagram-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #81c784;"></div>
+                <span>Desmoglein 1</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f06292;"></div>
+                <span>Desmoglein 3</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="border: 2px dashed #e76f51; background-color: white;"></div>
+                <span>Blister</span>
+            </div>
+            <div class="legend-item">
+                <div style="color: red; font-weight: bold; margin-right: 5px;">X</div>
+                <span>Antibody target</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="key-feature">
+        <h4>Desmoglein Compensation Theory - Key Points:</h4>
+        <ul>
+            <li><strong>Distribution of Dsg1 vs Dsg3:</strong>
+                <ul>
+                    <li>In <strong>skin</strong>: Dsg1 is expressed throughout epidermis (more in superficial layers); Dsg3 is restricted to lower epidermis (basal/parabasal)</li>
+                    <li>In <strong>mucosa</strong>: Both Dsg1 and Dsg3 are present, but Dsg1 expression is much lower than Dsg3</li>
+                </ul>
+            </li>
+            <li><strong>Pemphigus foliaceus (anti-Dsg1 only):</strong>
+                <ul>
+                    <li>Superficial epidermal blisters in skin (where only Dsg1 is present)</li>
+                    <li>No mucosal lesions (Dsg3 compensates for compromised Dsg1)</li>
+                </ul>
+            </li>
+            <li><strong>Mucosal-dominant PV (anti-Dsg3 only):</strong>
+                <ul>
+                    <li>No or limited skin lesions (Dsg1 compensates for compromised Dsg3)</li>
+                    <li>Mucosal erosions (low Dsg1 cannot compensate for loss of Dsg3)</li>
+                </ul>
+            </li>
+            <li><strong>Mucocutaneous PV (anti-Dsg1 and anti-Dsg3):</strong>
+                <ul>
+                    <li>Extensive skin AND mucosal involvement (no compensation possible)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="exam-tip">
+        <p>This theory also explains why neonates born to mothers with pemphigus vulgaris develop blisters but those born to mothers with pemphigus foliaceus rarely do: neonatal epidermis expresses Dsg3 throughout all layers (similar to mucosa), so anti-Dsg1 antibodies alone cannot cause significant blistering.</p>
+    </div>
+    
+    <h3>Mechanisms of Blister Formation</h3>
+    <p>Two primary mechanisms contribute to blister formation in pemphigus:</p>
+    <ol>
+        <li><strong>Direct inhibition:</strong> Autoantibodies sterically hinder desmoglein-desmoglein interactions between keratinocytes, especially when they target the functionally important N-terminal domains.</li>
+        <li><strong>Signal transduction:</strong> Antibody binding triggers intracellular signaling leading to internalization/endocytosis of desmogleins and desmosomal disassembly.</li>
+    </ol>
+</section>
+
+<section id="clinical">
+    <h2>Clinical Features</h2>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>Pemphigus Vulgaris</h4>
+            <ul>
+                <li><strong>Oral involvement:</strong> Present in virtually all cases - painful erosions; intact blisters rare. "Although scattered or extensive erosions may be seen anywhere in the oral cavity, <span style="background-color: #F7DC6F">the most common sites are the buccal and palatine mucosae</span>.</li>
+                <li><strong>Cutaneous lesions:</strong> Flaccid, thin-walled, easily ruptured blisters</li>
+                <li><strong>Predilection sites:</strong> Scalp, face, chest, back, axillae, groin, umbilicus</li>
+                <li><strong>Nikolsky sign:</strong> Positive (lateral pressure causes skin slippage)</li>
+                <li><strong>Special features:</strong> Lesions that heal leave hyperpigmentation without scarring</li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>Pemphigus Foliaceus</h4>
+            <ul>
+                <li><strong>Oral involvement:</strong> Absent (critical differential point)</li>
+                <li><strong>Cutaneous lesions:</strong> Scaly, crusted cutaneous erosions on erythematous base</li>
+                <li><strong>Predilection sites:</strong> Seborrheic distribution (face, scalp, upper trunk)</li>
+                <li><strong>Nikolsky sign:</strong> Positive</li>
+                <li><strong>Special features:</strong> May stay localized for years or rapidly progress to exfoliative erythroderma</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>Paraneoplastic Pemphigus</h4>
+            <ul>
+                <li><strong>Oral involvement:</strong> Severe, intractable stomatitis affecting all surfaces of oropharynx and extending onto vermilion lip</li>
+                <li><strong>Cutaneous lesions:</strong> Polymorphic - may resemble PV, bullous pemphigoid, erythema multiforme, or lichenoid eruptions</li>
+                <li><strong>Associated with:</strong> Underlying neoplasms (lymphoma, CLL, Castleman disease, thymoma, sarcoma. <span style="background-color: #F7DC6F">Non-Hodgkin lymphoma and chronic lymphocytic leukemia together account for two-thirds of patient</span>)</li>
+                <li><strong>Special features:</strong> Severe pseudomembranous conjunctivitis; may develop <span style="background-color: #F7DC6F">bronchiolitis obliterans (potentially fatal)</span></li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>IgA Pemphigus</h4>
+            <ul>
+                <li><strong>Oral involvement:</strong> Rare</li>
+                <li><strong>Cutaneous lesions:</strong> Flaccid vesicles or pustules; annular or circinate pattern</li>
+                <li><strong>Predilection sites:</strong> Axilla and groin, trunk, proximal extremities</li>
+                <li><strong>Special features:</strong> Pruritus often significant; two types: subcorneal pustular dermatosis type and intraepidermal neutrophilic type</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h3>Other Clinical Variants</h3>
+    
+    <h4>Pemphigus Vegetans</h4>
+    <p>A rare vegetative variant of pemphigus vulgaris characterized by:</p>
+    <ul>
+        <li>Initial flaccid blisters that become erosions and then form fungoid vegetations or papillomatous proliferations</li>
+        <li>Predilection for intertriginous areas, scalp, and face</li>
+        <li>Two subtypes: severe Neumann type and mild Hallopeau type</li>
+        <li>Histopathology:
+            <ul>
+                <li>Epidermis: Shows features of pemphigus vulgaris (suprabasilar acantholysis) combined with significant reactive changes like papillomatosis, acanthosis, and the <span style="background-color: #F7DC6F">characteristic intraepidermal microabscesses filled with eosinophils</span>.</li>
+                <li>Dermis: Displays an intense inflammatory infiltrate, which is notably rich in eosinophils.</li>
+            </ul>
+        </li>
+
+    </ul>
+    
+    <h4>Pemphigus Erythematosus (Senear-Usher Syndrome)</h4>
+    <p>A localized variant of pemphigus foliaceus characterized by:</p>
+    <ul>
+        <li>Scaly and crusted lesions primarily in the malar region</li>
+        <li>May have immunologic features of both lupus erythematosus and pemphigus</li>
+    </ul>
+    
+    <h4>Herpetiform Pemphigus</h4>
+    <p>Usually a variant of pemphigus foliaceus characterized by:</p>
+    <ul>
+        <li>Erythematous urticarial plaques and tense vesicles in a herpetiform arrangement</li>
+        <li>Eosinophilic spongiosis and subcorneal pustules with minimal acantholysis</li>
+        <li>May evolve into typical pemphigus foliaceus or pemphigus vulgaris</li>
+    </ul>
+    
+   
+    
+    <div class="clinical-pearl">
+        <p>A positive Nikolsky sign is a hallmark of pemphigus, but it is not specific. It can also be seen in other conditions like toxic epidermal necrolysis, Stevens-Johnson syndrome, bullous impetigo, and staphylococcal scalded skin syndrome.</p>
+    </div>
+    
+    <h3>Unusual Clinical Presentations of Pemphigus Vulgaris</h3>
+    <ul>
+        <li>Isolated crusted plaque on face or scalp</li>
+        <li>Paronychia and/or onychomadesis</li>
+        <li>Foot ulcers</li>
+        <li>Dyshidrotic eczema or pompholyx-like lesions</li>
+        <li>Macroglossia</li>
+        <li>Gingival hyperplasia</li>
+    </ul>
+</section>
+
+<section id="histopathology">
+    <h2>Histopathology</h2>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>Pemphigus Vulgaris</h4>
+            <ul>
+                <li>Intraepidermal blister due to acantholysis</li>
+                <li>Split occurs <strong>suprabasally</strong> (just above basal cell layer)</li>
+                <li>"Row of tombstones" appearance of basal cells</li>
+                <li>Acantholytic keratinocytes in blister cavity</li>
+                <li>Acantholytic process may involve hair follicles</li>
+                <li>Dermal papillary outline usually maintained</li>
+                <li>Moderate perivascular mononuclear infiltrate with eosinophils</li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>Pemphigus Foliaceus</h4>
+            <ul>
+                <li>Intraepidermal acantholysis in <strong>upper epidermis</strong></li>
+                <li>Split occurs within or adjacent to the granular layer</li>
+                <li>Acantholytic cells often almond- or spindle-shaped</li>
+                <li>May see only a "missing" horny layer with few acantholytic cells</li>
+                <li>Histologically indistinguishable from staphylococcal scalded skin syndrome and bullous impetigo</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>Paraneoplastic Pemphigus</h4>
+            <ul>
+                <li>Unique combination of PV-like, erythema multiforme-like, and lichen planus-like features</li>
+                <li>Suprabasilar acantholysis</li>
+                <li>Individual keratinocyte necrosis</li>
+                <li>Interface dermatitis (basal cell liquefactive degeneration)</li>
+                <li>Lymphocytes within the epidermis</li>
+                <li>Dense band-like lymphocytic infiltrate in the upper dermis</li>
+                <li>Eosinophils are rare</li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>IgA Pemphigus</h4>
+            <ul>
+                <li>Intraepidermal pustule or vesicle</li>
+                <li>Pustules contain predominantly neutrophils</li>
+                <li>Acantholysis usually not prominent</li>
+                <li>SPD type: subcorneal pustules in the upper epidermis</li>
+                <li>IEN type: suprabasilar pustules involving the lower or entire epidermis</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="exam-tip">
+        <p>For board exams, understand that both pemphigus foliaceus and staphylococcal scalded skin syndrome (SSSS) show superficial acantholysis because they both target Dsg1 (SSSS via exfoliative toxin). The distinction is made by immunofluorescence (positive in PF, negative in SSSS).</p>
+    </div>
+    
+    <style>
+        .es-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 1.05em;
+            background: #f9f9ff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .es-table th, .es-table td {
+            border: 1px solid #b0b0d0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .es-table th {
+            background: #e3e6f9;
+            color: #2d2d5a;
+            font-weight: bold;
+        }
+        .es-table-category {
+            background: #d1e7dd;
+            font-weight: bold;
+            color: #155724;
+            width: 28%;
+        }
+        .es-table ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        </style>
+    
+        <table class="es-table">
+          <tr>
+            <th style="width:28%">Causes of eosinophilic spongiosis</th>
+            <th>Conditions</th>
+          </tr>
+          <tr>
+            <td class="es-table-category">Autoimmune Bullous Diseases &amp; Related Pemphigus Conditions</td>
+            <td>
+              <ul>
+                <li>Pemphigus vulgaris and its variants</li>
+                <li>Pemphigus foliaceus</li>
+                <li>Herpetiform pemphigus (often a variant of PF/PV; shows eosinophilic spongiosis)</li>
+                <li>Bullous pemphigoid and its variants</li>
+                <li>Pemphigoid gestationis (herpes gestationis)</li>
+                <li>Mucous membrane (cicatricial) pemphigoid</li>
+                <li>Linear IgA bullous dermatosis</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="es-table-category">Inflammatory Dermatoses &amp; Reactions</td>
+            <td>
+              <ul>
+                <li>Arthropod-bite reactions (including scabies)</li>
+                <li>Drug eruptions</li>
+                <li>Id reactions</li>
+                <li>Wells syndrome (Eosinophilic cellulitis)</li>
+                <li>Polymorphic eruption of pregnancy</li>
+                <li>Erythema toxicum neonatorum</li>
+                <li>Incontinentia pigmenti (first stage)</li>
+                <li>Atopic dermatitis</li>
+                <li>Contact dermatitis</li>
+                <li>Eosinophilic folliculitis</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="es-table-category">Other Conditions</td>
+            <td>
+              <ul>
+                <li>Prurigo pigmentosa</li>
+                <li>Still disease</li>
+                <li>Mycosis fungoides</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+</section>
+
+<section id="diagnosis">
+    <h2>Diagnosis</h2>
+    
+    <h3>Recommended Biopsy Sites</h3>
+    <div class="img-container">
+        <div style="max-width: 500px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+            <div style="background-color: #3d5a80; color: white; text-align: center; padding: 10px;">
+                Preferred Biopsy Sites in Autoimmune Bullous Diseases
+            </div>
+            <div style="padding: 15px;">
+                <div style="position: relative; margin-bottom: 20px;">
+                    <div style="width: 100%; height: 200px; background-color: #ffb38a; border-radius: 8px; position: relative;">
+                        <!-- Lesion -->
+                        <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100px; height: 100px; background-color: #e76f51; border-radius: 50%; opacity: 0.7;">
+                            <div style="position: absolute; top: 40px; left: 35px; color: white; font-weight: bold;">Blister</div>
+                        </div>
+                        
+                        <!-- Biopsy sites -->
+                        <div style="position: absolute; top: 100px; left: 140px; width: 20px; height: 20px; border: 2px dashed white; border-radius: 50%;">
+                            <div style="position: absolute; top: 30px; color: white; width: 100px; text-align: center; font-size: 12px; font-weight: bold;">Routine Histology</div>
+                            <div style="position: absolute; top: 25px; left: 10px; height: 30px; border-left: 1px dashed white;"></div>
+                        </div>
+                        
+                        <div style="position: absolute; top: 130px; left: 110px; width: 20px; height: 20px; border: 2px dashed white; border-radius: 50%;">
+                            <div style="position: absolute; top: 30px; color: white; width: 100px; text-align: center; font-size: 12px; font-weight: bold;">DIF, Pemphigus & Bullous Pemphigoid</div>
+                            <div style="position: absolute; top: 25px; left: 10px; height: 30px; border-left: 1px dashed white;"></div>
+                        </div>
+                        
+                        <div style="position: absolute; top: 150px; left: 60px; width: 20px; height: 20px; border: 2px dashed white; border-radius: 50%;">
+                            <div style="position: absolute; top: 30px; color: white; width: 100px; text-align: center; font-size: 12px; font-weight: bold;">DIF, Dermatitis Herpetiformis</div>
+                            <div style="position: absolute; top: 25px; left: 10px; height: 30px; border-left: 1px dashed white;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size: 14px; color: #333;">
+                    <p><strong>For Routine Histology:</strong> Edge of a fresh vesicle or bulla plus inflammatory rim</p>
+                    <p><strong>For DIF in Pemphigus:</strong> Perilesional skin (not lesional, to avoid negative staining)</p>
+                    <p><strong>For DIF in Dermatitis Herpetiformis:</strong> Normal-appearing skin</p>
+                </div>
+            </div>
+        </div>
+        <p class="img-caption">Recommended biopsy sites for diagnosis of autoimmune bullous diseases.</p>
+    </div>
+    
+    <h3>Diagnostic Methods</h3>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>Direct Immunofluorescence (DIF)</h4>
+            <ul>
+                <li><strong>Purpose:</strong> Detect in vivo bound autoantibodies in patient's skin</li>
+                <li><strong>Specimen:</strong> Perilesional skin or mucosa</li>
+                <li><strong>Findings in pemphigus:</strong> IgG deposition on cell surfaces of keratinocytes ("chicken wire" or "honeycomb" pattern)</li>
+                <li><strong>Sensitivity:</strong> Nearly 100% in active disease</li>
+                <li><strong>Special patterns:</strong> 
+                    <ul>
+                        <li>PV and PF: IgG (±C3) on keratinocyte cell surfaces</li>
+                        <li>Paraneoplastic pemphigus: IgG and C3 on cell surfaces AND along BMZ</li>
+                        <li>IgA pemphigus: IgA (not IgG) on keratinocyte cell surfaces</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>Indirect Immunofluorescence (IIF)</h4>
+            <ul>
+                <li><strong>Purpose:</strong> Detect circulating autoantibodies in patient's serum</li>
+                <li><strong>Substrate:</strong> Varies by disease (see table below)</li>
+                <li><strong>Finding in pemphigus:</strong> Circulating anti-epithelial cell surface IgG</li>
+                <li><strong>Sensitivity:</strong> 80-90% in active disease</li>
+                <li><strong>Titer correlation:</strong> Often correlates with disease activity; useful for monitoring treatment response</li>
+            </ul>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Type of Pemphigus</th>
+                <th>Recommended IIF Substrate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pemphigus vulgaris</td>
+                <td>Monkey esophagus (for anti-Dsg3)</td>
+            </tr>
+            <tr>
+                <td>Pemphigus foliaceus</td>
+                <td>Human skin or guinea pig esophagus (for anti-Dsg1)</td>
+            </tr>
+            <tr>
+                <td>Paraneoplastic pemphigus</td>
+                <td>Monkey/guinea pig esophagus (for anti-Dsg) AND rat bladder (for anti-plakin)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="comparison-box">
+        <div class="comparison-item">
+            <h4>ELISA</h4>
+            <ul>
+                <li><strong>Purpose:</strong> Detect antigen-specific autoantibodies</li>
+                <li><strong>Method:</strong> Tests serum on plates pre-coated with recombinant Dsg1/Dsg3</li>
+                <li><strong>Value:</strong> Distinguishes PV from PF serologically; monitors disease activity</li>
+                <li><strong>Pattern in PF:</strong> Anti-Dsg1 positive, anti-Dsg3 negative</li>
+                <li><strong>Pattern in Mucosal PV:</strong> Anti-Dsg3 positive, anti-Dsg1 negative</li>
+                <li><strong>Pattern in Mucocutaneous PV:</strong> Both anti-Dsg1 and anti-Dsg3 positive</li>
+            </ul>
+        </div>
+        <div class="comparison-item">
+            <h4>Other Diagnostic Tests</h4>
+            <ul>
+                <li><strong>Tzanck smear:</strong> Rapid visualization of acantholytic cells (preliminary only)</li>
+                <li><strong>Immunoprecipitation:</strong> Detects conformational epitopes; requires radioisotopes</li>
+                <li><strong>Immunoblotting:</strong> Detects linear epitopes; easier to perform than immunoprecipitation</li>
+                <li><strong>CLEIA:</strong> Chemiluminescent enzyme immunoassay; more sensitive and rapid than ELISA</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="differential">
+    <h2>Differential Diagnosis</h2>
+    
+    <h3>Differential Diagnosis of Pemphigus Vulgaris</h3>
+    
+    <h4>Mucosal Lesions</h4>
+    <ul>
+        <li>Acute herpetic stomatitis</li>
+        <li>Aphthous stomatitis</li>
+        <li>Erythema multiforme major/Stevens-Johnson syndrome</li>
+        <li>Lichen planus</li>
+        <li>Systemic lupus erythematosus</li>
+        <li>Mucous membrane (cicatricial) pemphigoid</li>
+    </ul>
+    
+    <h4>Cutaneous Lesions</h4>
+    <ul>
+        <li>Other forms of pemphigus</li>
+        <li>Bullous pemphigoid (subepidermal split with tense blisters)</li>
+        <li>Linear IgA bullous dermatosis</li>
+        <li>Erythema multiforme</li>
+        <li>Hailey-Hailey disease ("dilapidated brick wall" histology)</li>
+        <li>Transient acantholytic dermatosis (Grover disease)</li>
+    </ul>
+    
+    <h3>Differential Diagnosis of Pemphigus Foliaceus</h3>
+    <ul>
+        <li>Other forms of pemphigus</li>
+        <li>Bullous impetigo</li>
+        <li>Staphylococcal scalded skin syndrome</li>
+        <li>Subcorneal pustular dermatosis</li>
+        <li>Subacute cutaneous lupus erythematosus</li>
+        <li>Seborrheic dermatitis</li>
+    </ul>
+    
+    <h3>Differential Diagnosis of Paraneoplastic Pemphigus</h3>
+    <ul>
+        <li>Pemphigus vulgaris</li>
+        <li>Mucous membrane pemphigoid</li>
+        <li>Erythema multiforme/Stevens-Johnson syndrome</li>
+        <li>Lichen planus</li>
+        <li>GVHD</li>
+        <li>Persistent HSV infection</li>
+        <li>Stomatitis due to chemotherapy</li>
+    </ul>
+    
+    <div class="clinical-pearl">
+        <p>Severe intractable stomatitis that extends onto the vermilion lip is a key clinical feature differentiating paraneoplastic pemphigus from PV or mucous membrane pemphigoid. Also, look for involvement of palms and soles, which is rare in PV but common in paraneoplastic pemphigus.</p>
+    </div>
+    
+    <h3>Differential Diagnosis of Pemphigus Vegetans</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Key Distinguishing Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hailey-Hailey disease</td>
+                <td>Vegetative lesions also seen when Darier disease involves intertriginous zones</td>
+            </tr>
+            <tr>
+                <td>Pemphigoid vegetans</td>
+                <td>Especially in major body folds</td>
+            </tr>
+            <tr>
+                <td>Blastomycosis-like pyoderma</td>
+                <td>Vegetating plaques due to inflammatory reaction to bacterial infection, especially <em>S. aureus</em></td>
+            </tr>
+            <tr>
+                <td>Pyodermatitis-pyostomatitis vegetans</td>
+                <td>Form of pyoderma gangrenosum</td>
+            </tr>
+            <tr>
+                <td>Infections</td>
+                <td>Deep fungal, bacterial (granuloma inguinale), or viral (condylomata, herpes)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Disorders with Hemorrhagic Crusts of the Vermilion Lips</h3>
+    <ul>
+        <li>Herpes simplex</li>
+        <li>Herpes zoster</li>
+        <li>Erythema multiforme major</li>
+        <li>Mycoplasma-induced rash and mucositis (MIRM)</li>
+        <li>Stevens-Johnson syndrome/toxic epidermal necrolysis spectrum</li>
+        <li>Pemphigus vulgaris</li>
+        <li>Paraneoplastic pemphigus</li>
+        <li>Contact cheilitis</li>
+    </ul>
+</section>
+
+<section id="severity-assessment">
+    <h2>Severity Assessment Scores in Pemphigus</h2>
+    
+    <h3>Scoring Systems</h3>
+    <ul>
+        <li><strong>PDAI (Pemphigus Disease Area Index)</strong>: Allows standardized assessment of disease extent and response to treatment. Used for objective measurement of pemphigus severity. Ranges from 0-263, with a score of <ul>
+            <li><strong>0-14</strong>: Moderate disease</li>
+            <li><strong>15-44</strong>: Significant disease</li>
+            <li><strong>45 or more</strong>: Extensive disease</li>
+        </ul>
+        <div class="clinical-pearl">
+            <p>The PDAI score is crucial for determining treatment approach. Memorize these thresholds as they dictate first-line therapy choices.</p>
+        </div>
+        </li>
+        <li><strong>ABSI (Autoimmune Bullous Skin Disorder Intensity Score)</strong>: Allows standardized assessment of disease extent and response to treatment. Provides objective criteria for monitoring disease progression.</li>
+    </ul>
+    
+    <h3>Clinical Assessment Parameters</h3>
+    <ul>
+        <li><strong>Traditional Clinical Markers</strong>: 
+            <ul>
+                <li>Number of new blisters per day</li>
+                <li>Rate of healing of new lesions</li>
+                <li>Circulating autoantibody titers (IIF or ELISA)</li>
+            </ul>
+            Used to gauge prednisone dosing adjustments.
+        </li>
+    </ul>
+</section>
+
+
+
+<section id="treatment">
+    <h2>Treatment of Pemphigus</h2>
+    
+    <div class="key-feature">
+        <p>Before the advent of systemic corticosteroids, pemphigus vulgaris was often fatal. The primary goal of therapy is to reduce autoantibody production, not just to suppress local inflammation.</p>
+    </div>
+    
+    <h3>Treatment Guidelines</h3>
+    <h4>For Moderate Disease (PDAI 14 or less)</h4>
+    <ul>
+        <li><strong>First Line</strong>:
+            <ul>
+                <li>Oral steroids 0.5mg/kg + Dapsone/Tetracycline</li>
+            </ul>
+        </li>
+        <li><strong>Second Line</strong>:
+            <ul>
+                <li>Azathioprine</li>
+                <li>Mycophenolate mofetil (MMF)</li>
+            </ul>
+        </li>
+        <li><strong>For Recalcitrant Cases</strong>:
+            <ul>
+                <li>Rituximab</li>
+            </ul>
+        </li>
+    </ul>
+    <h4>For Significant or Extensive Disease (PDAI 15 or more)</h4>
+    <ul>
+        <li><strong>First Line</strong>:
+            <ul>
+                <li>Rituximab + Oral Steroids</li>
+                <li>Rituximab dose: 1g 2 weeks apart, then 0.5-1g q6-12 months</li>
+                <li>Steroids dose:
+                    <ul>
+                        <li>For significant disease: 0.5mg/kg tapered over 3 months</li>
+                        <li>For extensive disease: 1mg/kg tapered over 6 months</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Second Line</strong>:
+            <ul>
+                <li>Other steroid sparing agents:</li>
+                <li>Azathioprine</li>
+                <li>Mycophenolate mofetil (MMF)</li>
+                <li>IVIG</li>
+                <li>Cyclophosphamide</li>
+                <li>Plasmapheresis</li>
+            </ul>
+        </li>
+        <li><strong>Third Line</strong>:
+            <ul>
+                <li>Dapsone</li>
+                <li>Tetracyclines</li>
+                <li>Methotrexate (MTX)</li>
+                <li>Cyclosporine</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Treatment Ladder for Pemphigus Vulgaris</h3>
+    
+    <div class="treatment-ladder">
+        <div class="treatment-step">
+            <div class="step-header">
+                <span class="step-title">First-Line Therapy</span>
+                <span class="evidence-level" style="background-color: #2a9d8f;">Level 1 Evidence</span>
+            </div>
+            <ul>
+                <li><strong>Rituximab:</strong> 375 mg/m² once weekly for 4 weeks OR 1g initially then at two weeks (may need repeated every 3-6 months)</li>
+                <li><strong>Systemic corticosteroids:</strong> Prednisone 1 mg/kg/day as initial dose (usually 60 mg/day)</li>
+            </ul>
+            <p><em>Note: Rituximab is now FDA-approved as first-line therapy for moderate-to-severe pemphigus.</em></p>
+        </div>
+        
+        <div class="treatment-step">
+            <div class="step-header">
+                <span class="step-title">Adjuvant Immunosuppressive Agents</span>
+                <span class="evidence-level" style="background-color: #98c1d9;">Level 1-2 Evidence</span>
+            </div>
+            <p>Used in combination with systemic corticosteroids for steroid-sparing effect:</p>
+            <ul>
+                <li><strong>Azathioprine:</strong> 2-4 mg/kg/day (usually 100-300 mg/day)</li>
+                <li><strong>Mycophenolate mofetil:</strong> 2-3 g/day</li>
+                <li><strong>Cyclophosphamide:</strong> 1-3 mg/kg/day orally or 500-1000 mg/m² IV every 4 weeks</li>
+            </ul>
+        </div>
+        
+        <div class="treatment-step">
+            <div class="step-header">
+                <span class="step-title">Additional Systemic Options</span>
+                <span class="evidence-level" style="background-color: #e76f51;">Level 2-3 Evidence</span>
+            </div>
+            <ul>
+                <li><strong>Pulse methylprednisolone:</strong> 1 g/day over 2-3 hours for 3-5 consecutive days</li>
+                <li><strong>High-dose IVIg:</strong> 400 mg/kg/day for 5 consecutive days (may need monthly repetition)</li>
+                <li><strong>Plasmapheresis:</strong> 1-2 times per week at onset</li>
+                <li><strong>Methotrexate:</strong> 7.5-20 mg/week</li>
+                <li><strong>Extracorporeal photopheresis:</strong> 2 days per month</li>
+            </ul>
+        </div>
+        
+        <div class="treatment-step">
+            <div class="step-header">
+                <span class="step-title">Topical and Intralesional Therapy</span>
+                <span class="evidence-level" style="background-color: #e9c46a;">Adjunctive Treatment</span>
+            </div>
+            <ul>
+                <li><strong>Topical corticosteroids:</strong> Class I for localized persistent sites</li>
+                <li><strong>Topical antibiotics:</strong> For secondary infections</li>
+                <li><strong>Topical immunomodulators:</strong> Cyclosporine, tacrolimus</li>
+                <li><strong>Intralesional corticosteroids</strong></li>
+                <li><strong>Intralesional rituximab:</strong> 5 mg/cm²</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="exam-tip">
+        <p>Several recent studies have shown that rituximab should be considered early in the course of disease rather than just for patients with recalcitrant disease. A 2017 randomized controlled trial showed that first-line rituximab plus short-term prednisone was more effective than prednisone alone for treatment of pemphigus.</p>
+    </div>
+    
+    <h3>Treatment of Other Pemphigus Types</h3>
+    
+    <h4>Pemphigus Foliaceus</h4>
+    <p>Treatment approach is similar to pemphigus vulgaris for widespread disease. For localized disease, superpotent topical corticosteroids may be sufficient. Dapsone can be used when neutrophils are histologically dominant.</p>
+    
+    <h4>Paraneoplastic Pemphigus</h4>
+    <ul>
+        <li>For benign tumors (thymomas, localized Castleman disease): surgical excision</li>
+        <li>For malignant neoplasms: tumor-specific chemotherapy or targeted therapy</li>
+        <li>Cutaneous lesions respond more rapidly to therapy than stomatitis, which is generally refractory</li>
+        <li>Overall prognosis is poor due to resistant nature</li>
+    </ul>
+    
+    <h4>IgA Pemphigus</h4>
+    <ul>
+        <li><strong>First line:</strong> Dapsone (response usually within 24-48 hours)</li>
+        <li><strong>Alternatives:</strong> Sulfapyridine, acitretin</li>
+        <li><strong>Refractory cases:</strong> Low to medium-dose prednisone, photochemotherapy (PUVA), colchicine</li>
+    </ul>
+    
+    <div class="clinical-pearl">
+        <p>When complete remission is achieved with combined immunosuppressive and corticosteroid therapy, maintain the immunosuppressive dose while tapering prednisone. When a dose of 5-10 mg/day of prednisone is reached, careful taper then discontinuation of the immunosuppressive drug can be attempted.</p>
+    </div>
+</section>
+
+<section id="quiz">
+    <h2>Quick Quiz</h2>
+    
+    <div class="quiz-container">
+        <div class="quiz-question" id="q1">
+            <p><strong>Question 1:</strong> A 45-year-old woman presents with painful oral erosions for 3 months. She has recently developed flaccid blisters on her trunk and scalp. Histopathology shows suprabasilar acantholysis. Which autoantibody pattern would you expect?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" data-correct="false">A. Anti-Dsg1 IgG only</div>
+                <div class="quiz-option" data-correct="false">B. Anti-Dsg3 IgG only</div>
+                <div class="quiz-option" data-correct="true">C. Both anti-Dsg1 and anti-Dsg3 IgG</div>
+                <div class="quiz-option" data-correct="false">D. Anti-Dsg1 IgA only</div>
+            </div>
+            <div class="quiz-explanation">
+                <p>The correct answer is C. This patient has mucocutaneous pemphigus vulgaris with both oral and skin involvement. According to the desmoglein compensation theory, patients with this form have antibodies against both Dsg1 and Dsg3. If she had only anti-Dsg3 antibodies, she would have predominantly mucosal disease with minimal skin involvement.</p>
+            </div>
+        </div>
+        
+        <div class="quiz-question" id="q2">
+            <p><strong>Question 2:</strong> Which histopathological feature best distinguishes pemphigus vulgaris from pemphigus foliaceus?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" data-correct="false">A. Presence of acantholysis</div>
+                <div class="quiz-option" data-correct="true">B. Level of intraepidermal split</div>
+                <div class="quiz-option" data-correct="false">C. Presence of eosinophils in the dermis</div>
+                <div class="quiz-option" data-correct="false">D. Positive direct immunofluorescence</div>
+            </div>
+            <div class="quiz-explanation">
+                <p>The correct answer is B. Both diseases show acantholysis and positive DIF, but the level of the split is different: suprabasilar in pemphigus vulgaris vs. subcorneal/intragranular in pemphigus foliaceus.</p>
+            </div>
+        </div>
+        
+        <div class="quiz-question" id="q3">
+            <p><strong>Question 3:</strong> A 60-year-old man with chronic lymphocytic leukemia presents with severe stomatitis extending onto the vermilion lip, conjunctival erosions, and polymorphic cutaneous lesions including tense blisters on his palms. Which is the most likely diagnosis?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" data-correct="false">A. Pemphigus vulgaris</div>
+                <div class="quiz-option" data-correct="false">B. Bullous pemphigoid</div>
+                <div class="quiz-option" data-correct="false">C. Mucous membrane pemphigoid</div>
+                <div class="quiz-option" data-correct="true">D. Paraneoplastic pemphigus</div>
+            </div>
+            <div class="quiz-explanation">
+                <p>The correct answer is D. This clinical presentation is classic for paraneoplastic pemphigus: severe stomatitis extending onto the vermilion lip, conjunctival involvement, polymorphic cutaneous lesions, palm/sole involvement, and association with a lymphoproliferative disorder (CLL in this case).</p>
+            </div>
+        </div>
+        
+        <div class="quiz-question" id="q4">
+            <p><strong>Question 4:</strong> A patient with pemphigus foliaceus has autoantibodies against which of the following?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" data-correct="true">A. Desmoglein 1</div>
+                <div class="quiz-option" data-correct="false">B. Desmoglein 3</div>
+                <div class="quiz-option" data-correct="false">C. Both Desmoglein 1 and 3</div>
+                <div class="quiz-option" data-correct="false">D. Plakin family proteins</div>
+            </div>
+            <div class="quiz-explanation">
+                <p>The correct answer is A. Pemphigus foliaceus is characterized by autoantibodies against Desmoglein 1 only. This explains the superficial epidermal blisters and lack of mucosal involvement according to the desmoglein compensation theory.</p>
+            </div>
+        </div>
+      
+<div class="quiz-question" id="q5">
+            <p><strong>Question 5:</strong> A patient with widespread crusted erosions has no mucosal involvement. Tzanck smear shows acantholytic cells, and the histopathology reveals an intraepidermal split in the upper epidermis. What is the most likely diagnosis?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" data-correct="false">A. Pemphigus vulgaris</div>
+                <div class="quiz-option" data-correct="true">B. Pemphigus foliaceus</div>
+                <div class="quiz-option" data-correct="false">C. Bullous pemphigoid</div>
+                <div class="quiz-option" data-correct="false">D. Dermatitis herpetiformis</div>
+            </div>
+            <div class="quiz-explanation">
+                <p>The correct answer is B. The clinical presentation (crusted erosions, no mucosal involvement) and histopathology (split in upper epidermis) are classic for pemphigus foliaceus. Pemphigus vulgaris has mucosal involvement and a lower intraepidermal split. Bullous pemphigoid and dermatitis herpetiformis have subepidermal splits.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="flashcards">
+    <h2>High-Yield Flashcards</h2>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>Target antigen in pemphigus vulgaris</p>
+            </div>
+            <div class="flashcard-back">
+                <p>Desmoglein 3 (mucosal-dominant type)<br>
+                Desmoglein 3 AND Desmoglein 1 (mucocutaneous type)</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>What is the primary distinguishing clinical feature between pemphigus vulgaris and pemphigus foliaceus?</p>
+            </div>
+            <div class="flashcard-back">
+                <p>Mucosal involvement: Present in pemphigus vulgaris, absent in pemphigus foliaceus</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>Histologic level of split in pemphigus vulgaris vs. pemphigus foliaceus</p>
+            </div>
+            <div class="flashcard-back">
+                <p><strong>Pemphigus vulgaris:</strong> Suprabasilar (just above basal layer)<br>
+                <strong>Pemphigus foliaceus:</strong> Subcorneal/intragranular (upper epidermis)</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>Key clinical features of paraneoplastic pemphigus</p>
+            </div>
+            <div class="flashcard-back">
+                <p>1. Severe intractable stomatitis extending onto vermilion lip<br>
+                2. Conjunctival involvement<br>
+                3. Polymorphic cutaneous lesions<br>
+                4. Association with lymphoproliferative neoplasms<br>
+                5. May develop bronchiolitis obliterans</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>Direct immunofluorescence findings in pemphigus</p>
+            </div>
+            <div class="flashcard-back">
+                <p>IgG deposition on the cell surface of keratinocytes in a "chicken wire" or "honeycomb" pattern</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>First-line therapy for moderate-to-severe pemphigus vulgaris</p>
+            </div>
+            <div class="flashcard-back">
+                <p>Rituximab (anti-CD20 monoclonal antibody) combined with systemic corticosteroids</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p>Explain the Desmoglein Compensation Theory</p>
+            </div>
+            <div class="flashcard-back">
+                <p>When one desmoglein is targeted by autoantibodies, the other can compensate as long as they are coexpressed. The distribution pattern of Dsg1 and Dsg3 in skin vs. mucosa explains the clinical findings in different pemphigus types.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="summary">
+    <h2>Summary of Key Points</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Entity</th>
+                <th>Target Antigen</th>
+                <th>Clinical Features</th>
+                <th>Histopathology</th>
+                <th>Treatment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pemphigus Vulgaris (Mucosal)</td>
+                <td>Dsg3</td>
+                <td>Oral erosions, minimal skin lesions</td>
+                <td>Suprabasilar acantholysis</td>
+                <td rowspan="2">Rituximab + corticosteroids, immunosuppressives</td>
+            </tr>
+            <tr>
+                <td>Pemphigus Vulgaris (Mucocutaneous)</td>
+                <td>Dsg3 + Dsg1</td>
+                <td>Oral + skin involvement</td>
+                <td>Suprabasilar acantholysis</td>
+            </tr>
+            <tr>
+                <td>Pemphigus Foliaceus</td>
+                <td>Dsg1</td>
+                <td>Crusted skin lesions, NO mucosal involvement</td>
+                <td>Subcorneal/intragranular acantholysis</td>
+                <td>Same as PV; localized disease may respond to topical corticosteroids</td>
+            </tr>
+            <tr>
+                <td>Paraneoplastic Pemphigus</td>
+                <td>Dsg1, Dsg3, plakins</td>
+                <td>Severe stomatitis, polymorphic skin lesions, associated neoplasm</td>
+                <td>Acantholysis + interface dermatitis</td>
+                <td>Treat underlying neoplasm; immunosuppression</td>
+            </tr>
+            <tr>
+                <td>IgA Pemphigus</td>
+                <td>Dsc1 (SPD type), unknown (IEN type)</td>
+                <td>Pustules, annular pattern, pruritus</td>
+                <td>Intraepidermal pustules with neutrophils</td>
+                <td>Dapsone, sulfapyridine, acitretin</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<script>
+    // Toggle collapsible sections
+    document.addEventListener('DOMContentLoaded', function() {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+        
+        // Quiz functionality
+        var quizOptions = document.querySelectorAll('.quiz-option');
+        quizOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                var options = this.parentElement.querySelectorAll('.quiz-option');
+                options.forEach(function(opt) {
+                    opt.classList.remove('selected');
+                    opt.classList.remove('correct');
+                    opt.classList.remove('incorrect');
+                });
+                
+                this.classList.add('selected');
+                
+                if (this.getAttribute('data-correct') === 'true') {
+                    this.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                    
+                    // Find and highlight the correct answer
+                    options.forEach(function(opt) {
+                        if (opt.getAttribute('data-correct') === 'true') {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }
+                
+                // Show explanation
+                var explanation = this.parentElement.nextElementSibling;
+                explanation.style.display = 'block';
+            });
+        });
+    });
+</script>
+</body>
+</html>
+</div>

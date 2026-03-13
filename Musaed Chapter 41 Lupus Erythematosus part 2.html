@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 41: Lupus Erythematosus - Board Review (Part 2)</title>
+    <!-- Styles are a continuation from Part 1. For a standalone file, copy all styles from Part 1 here. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --main-text-color: #212529;
+            --secondary-text-color: #495057;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --primary-blue: #0d6efd;
+            --highlight-bg: #e9ecef;
+            --mcq-bg: #cfe2ff;
+            --mcq-text: #052c65;
+            --danger-bg: #fff0f1;
+            --danger-text: #d90429;
+            --warning-bg: #fff9e6;
+            --warning-text: #b38600;
+            --success-bg: #e6f9f0;
+            --success-text: #006d32;
+            --purple-light: #f3e8ff;
+            --purple-dark: #5a189a;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+        body { font-family: var(--font-sans); background-color: var(--bg-color); color: var(--main-text-color); line-height: 1.7; margin: 0; padding: 2rem; }
+        .container { max-width: 1200px; margin: auto; }
+        h1, h2, .chapter-subtitle { text-align: center; }
+        h1 { font-size: 2.8rem; font-weight: 700; color: #000; margin-bottom: 0.5rem; }
+        .chapter-subtitle { font-size: 1.2rem; color: var(--secondary-text-color); margin-top: 0; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; color: var(--main-text-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem; text-align: left; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; }
+        .card-header { background-color: var(--highlight-bg); padding: 1rem 1.5rem; font-weight: 600; font-size: 1.2rem; border-bottom: 1px solid var(--border-color); }
+        .card-body { padding: 1.5rem; }
+        .mcq-tag { display: inline-block; background-color: var(--mcq-bg); color: var(--mcq-text); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-mono); vertical-align: middle; margin-left: 0.5rem; }
+        .prognostic-bad { background-color: var(--danger-bg); color: var(--danger-text); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--danger-text); margin: 1rem 0; }
+        .clinical-pearl { background-color: var(--warning-bg); color: var(--warning-text); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--warning-text); margin: 1rem 0; }
+        details { border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; background-color: var(--card-bg); }
+        summary { padding: 1rem 1.5rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary:after { content: '▼'; font-size: 0.8em; transition: transform 0.2s; }
+        details[open] summary:after { transform: rotate(180deg); }
+        details > div { padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border-color); }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid var(--border-color); }
+        th { background-color: var(--highlight-bg); font-weight: 600; }
+        tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        .comparison-table { table-layout: fixed; }
+        .comparison-table th, .comparison-table td { width: 50%; vertical-align: top; }
+        .treatment-step { border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        .treatment-step h4 { margin-top: 0; color: var(--primary-blue); }
+        .tx-arrow { text-align: center; font-size: 1.5rem; color: var(--secondary-text-color); margin: 0.5rem 0; }
+        .drug-mnemonic { background-color: var(--purple-light); color: var(--purple-dark); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--purple-dark); margin: 1rem 0; }
+        .drug-mnemonic code { font-size: 1.5rem; font-weight: bold; letter-spacing: 0.5rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+            <section id="acle">
+                <h2>Acute Cutaneous LE (ACLE)</h2>
+                <div class="card">
+                    <div class="card-header">ACLE: The Systemic Flare Manifestation</div>
+                    <div class="card-body">
+                        <h4>Key Associations:</h4>
+                        <ul>
+                            <li>Associated with <strong>HLA-DR2</strong>.</li>
+                            <li><strong>+90% of patients will have SLE.</strong></li>
+                            <li>60% of patients with lupus have a malar rash.</li>
+                        </ul>
+
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li><strong>Localized (Malar Rash):</strong>
+                                <ul>
+                                    <li>Sharply bordered erythema in a symmetrical "butterfly" distribution.</li>
+                                    <li><strong>Spares the nasolabial folds.</strong></li>
+                                    <li>Heals without scarring.</li>
+                                    <li>May be accompanied by diffuse hair thinning ("lupus hair").</li>
+                                </ul>
+                            </li>
+                            <li><strong>Generalized:</strong>
+                                <ul>
+                                    <li>Morbilliform, non-specific exanthem.</li>
+                                    <li><strong>Sparing of the knuckles is characteristic</strong> (vs. Gottron's in DM).</li>
+                                    <li>Nailfold erythema and telangiectasia.</li>
+
+                                </ul>
+                            </li>
+                            <li><strong>TEN-like ACLE:</strong>
+                                <ul>
+                                    <li>Also known as Acute Syndrome of Apoptotic Pan-Epidermolysis (ASAP).</li>
+                                    <li>Must be differentiated from drug-induced TEN. Occurs on sun-exposed skin with a more insidious onset.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Mucosal:</strong>
+                                <ul>
+                                    <li>Erythema, erosions, superficial ulcerations, petechiae in 7-45% with an acute flare.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li>Less impressive histologically compared to SCLE & DLE.</li>
+                            <li>Cell-poor interface dermatitis.</li>
+                            <li><strong>Mild lymphohistiocytic infiltrate limited to the upper dermis.</strong> <span class="mcq-tag">MCQ</span></li>
+                            <li>Prominent dermal edema and mucin deposition.</li>
+                            <li>DIF is positive in 60-100% of cases.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="other-forms">
+                <h2>Other Forms of Cutaneous LE</h2>
+                <div class="card">
+                    <div class="card-header">Bullous Systemic Lupus Erythematosus</div>
+                    <div class="card-body">
+                        <ul>
+                           <li>By definition, patient must fulfill criteria for SLE.</li>
+                           <li>Antibodies against <strong>NC1 and NC2 domains of type VII collagen</strong>. <span class="mcq-tag">MCQ</span></li>
+                           <li>Presents with tense, subepidermal bullae.</li>
+                           <li><strong>ANA (+) in ~100%</strong></li>
+
+                           <li><strong>Histo:</strong> Subepidermal bulla with neutrophils at the DEJ and in dermal papillae (mimics dermatitis herpetiformis).</li>
+                           <li><strong>DIF:</strong> Continuous granular to linear deposition of IgG, IgM, IgA and/or C3 along the BMZ.</li>
+                           <li><strong>Salt Split Skin (SSS):</strong> Dermal side staining.</li>
+                           <li><strong>Treatment:</strong> Dramatic response to <strong>dapsone</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Rowell's Syndrome</div>
+                    <div class="card-body">
+                        <p>An erythema multiforme-like eruption that arises in the setting of ACLE, SCLE, or DLE. Typically associated with <strong>anti-Ro/SSA</strong> antibodies.</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-header">Non-Specific Skin Findings Suggestive of SLE</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Diffuse non-scarring alopecia</li>
+                            <li>Periungual telangiectasias and erythema
+                                <div class="clinical-pearl"><strong>Capillaroscopy Pearl:</strong> Lupus shows "wandering" dilated glomeruloid loops. This contrasts with DM and SSc (symmetric dilation and dropout) and Osler-Weber-Rendu (ectasia of half the capillary loop).</div>
+                            </li>
+                            <li>Mucosal ulcers</li>
+                            <li>Vasculitis (cutaneous is most common)</li>
+                            <li>Papulonodular mucinosis (~75% of pts will develop SLE)</li>
+                            <li>Raynaud's phenomenon</li>
+                            <li>Eruptive dermatofibromas (a/w lupus, immunosuppression, and atopic dermatitis) <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="complement">
+                <h2>Complement Deficiency Lupus</h2>
+                <div class="card">
+                    <div class="card-header">SLE associated with Complement Deficiencies</div>
+                    <div class="card-body">
+                        <h4>Pathogenesis:</h4>
+                        <p>Deficiencies in early components of the classical pathway (C1, C4, C2) lead to impaired phagocytic clearance of apoptotic bodies, unmasking autoantigens (like Ro/SSA) and leading to loss of immune tolerance.</p>
+                        <p>Deficiency of any early classical complement component (C1, C2, C4) is associated with an increased risk for SLE and infections with encapsulated bacteria.</p>
+
+                        <h4>Key Deficiency Associations:</h4>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>C2 Deficiency-Associated SLE</th>
+                                    <th>C1q/C4 Deficiency-Associated SLE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li><strong>Most common</strong> hereditary complement disorder.</li>
+                                            <li><strong>Low risk of SLE (10-20%)</strong>, but the most common cause of complement-deficiency SLE due to its high prevalence.</li>
+                                            <li>Adult onset (~30 yo).</li>
+                                            <li>Less severe systemic disease (mild/absent renal disease).</li>
+                                            <li>Prominent photosensitivity and <strong>SCLE lesions</strong>.</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Homozygous deficiencies are rare.</li>
+                                            <li><strong>Very high risk of SLE: C1q (~90%)</strong> > C1r/s > C4 > C2.</li>
+                                            <li>Palmoplantar keratoses (<strong>C4 deficiency only</strong>).</li>
+                                            
+
+                                            <li>Childhood onset.</li>
+                                            <li><strong>Severe, recalcitrant renal disease.</strong></li>
+                                            <li>CCLE or SCLE lesions.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Laboratory Findings:</h4>
+                        <ul>
+                            <li>Screening test: <strong>CH50</strong> (markedly decreased).</li>
+                            <li>Low or absent ANA titers.</li>
+                            <li><strong>Anti-Ro/SSA antibodies</strong> in the majority.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="pregnancy">
+                <h2>Lupus and Pregnancy</h2>
+                <div class="card">
+                    <div class="card-header">Key Considerations</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Course is variable; can improve, worsen, or be stable.</li>
+                            <li><strong>Postpartum period is highest risk</strong> for flares.</li>
+                            <li>Patients with lupus nephritis are at high risk of complications.</li>
+                            <li><strong>Fetal Complications:</strong> Preterm birth, preeclampsia.</li>
+                            <li><strong>Causes of Fetal Death:</strong> Anti-Ro Ab, Antiphospholipid Ab (e.g. anticardiolipin), Hx of previous fetal death.</li>
+                            <li><strong>Management in Pregnancy:</strong>
+                                <ul>
+                                    <li><strong>Continue hydroxychloroquine</strong> (reduces risk of NLE cardiac block).</li>
+                                    <li>Low-dose steroids and azathioprine can be considered.</li>
+                                    <li>Low-dose aspirin for Antiphospholipid Syndrome (APLS).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="diagnosis">
+                <h2>Diagnosis & Workup</h2>
+                <div class="card">
+                    <div class="card-header">Diagnostic Approach</div>
+                    <div class="card-body">
+                         <div class="clinical-pearl">
+                             <strong>High-Yield Biopsy Facts:</strong><br>
+                             <ul>
+                                <li>Skin biopsy for <strong>H&E is the test with the highest diagnostic value</strong> in LE. <span class="mcq-tag">MCQ</span></li>
+                                <li>Sample for <strong>DIF should be from lesional skin</strong>, not perilesional (this is a key difference from Bullous Pemphigoid). <span class="mcq-tag">MCQ</span></li>
+                             </ul>
+                         </div>
+                        <h4>Initial Workup for All Patients:</h4>
+                         <ul>
+                            <li>Thorough history and physical examination.</li>
+                            <li>Skin biopsy (H&E and DIF).</li>
+                            <li><strong>Labs:</strong> CBC, ESR/CRP, LFT/RFT, Serologies (ANA, anti-dsDNA, anti-Sm, etc.), Complement levels (C3, C4, CH50).</li>
+                        </ul>
+                        <h4>Diagnosis of Systemic Lupus (SLE):</h4>
+                        <p>Requires one of the following:</p>
+                        <ol>
+                            <li>Meeting <strong>ACR criteria</strong> (4 of 11).</li>
+                            <li>Meeting <strong>SLICC/EULAR criteria</strong>.</li>
+                            <li><strong>Biopsy-proven nephritis</strong> compatible w/ SLE in the presence of ANA or anti-dsDNA antibodies.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="treatment">
+                <h2>Treatment of Cutaneous Lupus</h2>
+                <div class="card">
+                    <div class="card-header">General Principles & Local Therapy</div>
+                    <div class="card-body">
+                        <h4>1. Sun Protection (Foundation of Therapy)</h4>
+                        <p>Essential because UV light exacerbates cutaneous and systemic disease, increases malignancy risk, and decreases antimalarial efficacy.</p>
+                        <ul>
+                            <li><strong>Avoidance:</strong> Peak hours (11am-3pm), reflective surfaces (sand, water, snow).</li>
+                            <li><strong>Physical Protection:</strong> Protective clothing, hats, UV-blocking window films.</li>
+                            <li><strong>Sunscreens:</strong> Broad-spectrum (UVA/UVB), SPF ≥ 50, applied generously (2 mg/cm²). Physical blockers (Titanium dioxide, Zinc oxide) are excellent.</li>
+                        </ul>
+                        <h4>2. Smoking Cessation</h4>
+                        <p>Crucial for disease control and medication efficacy.</p>
+                        <h4>3. Topical Therapy</h4>
+                        <ul>
+                            <li><strong>Corticosteroids:</strong> Superpotent (e.g., Clobetasol) BID for 2 weeks, often alternated with a TCI.</li>
+                            <li><strong>Calcineurin Inhibitors (TCIs):</strong> Tacrolimus 0.1% or Pimecrolimus 1%. Good for steroid-sparing on the face.</li>
+                            <li><strong>Intralesional Corticosteroids:</strong> Triamcinolone (2.5-10 mg/mL) injected monthly into active lesions.</li>
+                            <li><strong>Topical Retinoids:</strong> Can be useful, especially in hypertrophic DLE.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Systemic Therapy</div>
+                    <div class="card-body">
+                        <p>Indicated for widespread disease, scarring forms, or disease unresponsive to local therapy.</p>
+                        
+                        <div class="treatment-step">
+                            <h4>Step 1: Antimalarials (First-Line)</h4>
+                            <p>The gold standard. Effect may take up to 3 months.</p>
+                            <ul>
+                                <li><strong>Hydroxychloroquine (Plaquenil):</strong> Dose ≤ 5 mg/kg/day (real body weight).</li>
+                                <li><strong>Chloroquine:</strong> Dose ≤ 2.3 mg/kg/day (real body weight). More effective for cutaneous lupus but higher retinal toxicity risk.</li>
+                                <li><strong>Quinacrine:</strong> 100 mg/day. Does not carry retinal risk. Often added to HCQ or CQ if response is partial.</li>
+                            </ul>
+                            <div class="prognostic-bad">
+                                <strong>Ocular Screening:</strong> Baseline exam, then yearly after 5 years of use (or earlier if high-risk factors present).
+                            </div>
+                            <div class="drug-mnemonic">
+                               <p>HCQ Side Effects: <code>DISCOID</code></p>
+                               <ul>
+                                   <li><strong>D</strong>iarrhea (GI upset)</li>
+                                   <li><strong>I</strong>rritability (neuromuscular)</li>
+                                   <li><strong>S</strong>keletal muscle weakness</li>
+                                   <li><strong>C</strong>utaneous (blue-gray pigmentation, psoriasis flare)</li>
+                                   <li><strong>O</strong>cular (retinopathy)</li>
+                                   <li><strong>I</strong>nsufficient cells (blood dyscrasias)</li>
+                                   <li><strong>D</strong>ecreased WBCs/RBCs</li>
+                               </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tx-arrow">▼ If resistant or inadequate response ▼</div>
+                        
+                        <div class="treatment-step">
+                            <h4>Step 2: Add-on / Second-Line Agents</h4>
+                            <p>Choice depends on LE subtype and clinical picture.</p>
+                            <ul>
+                                <li><strong>Systemic Corticosteroids:</strong> Prednisone 0.5-1 mg/kg for short-term control of flares while other agents take effect.</li>
+                                <li><strong>Methotrexate (MTX):</strong> 7.5-25 mg weekly. Good for arthritis and skin.</li>
+                                <li><strong>Retinoids (Acitretin, Isotretinoin):</strong> Excellent for hypertrophic/keratotic DLE. Avoid in SCLE if Sjogren's is present (dryness).</li>
+                                <li><strong>Mycophenolate Mofetil (MMF):</strong> Good for cutaneous disease, less so for systemic.</li>
+                                <li><strong>Dapsone:</strong> Primary choice for <strong>bullous LE</strong>, also useful for vasculitis and oral ulcers.</li>
+                                <li><strong>Thalidomide/Lenalidomide:</strong> Very effective for refractory DLE, but teratogenic and causes neuropathy.</li>
+                                <li><strong>Azathioprine:</strong> Another option for immunosuppression.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tx-arrow">▼ For severe, refractory disease ▼</div>
+
+                        <div class="treatment-step">
+                            <h4>Step 3: Biologics & Novel Therapies</h4>
+                            <ul>
+                                <li><strong>Belimumab (Benlysta):</strong> Anti-BLyS antibody. . It is approved by the FDA for the treatment of SLE in combination with other standard therapies and is part of certain regimens used to treat lupus nephritis. .</li>
+                                <li><strong>Rituximab (Rituxan):</strong> Anti-CD20. Used off-label for severe disease.</li>
+                                <li><strong>IFN Pathway Inhibitors:</strong> Anifrolumab (anti-IFN receptor Ab) is FDA approved for SLE.</li>
+                                <li><strong>JAK Inhibitors:</strong> Tofacitinib, Ruxolitinib (case reports).</li>
+                                <li><strong>IVIG:</strong> For severe, refractory cases.</li>
+                                <li><strong>Cyclophosphamide:</strong> Reserved for severe organ involvement (e.g., lupus nephritis).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="tables">
+                <h2>Reference Tables</h2>
+                
+                <details>
+                    <summary>Table 41.4: ACR 1997 Criteria for SLE (4 of 11 for diagnosis)</summary>
+                    <div>
+                        <ol>
+                            <li><strong>Malar rash:</strong> Fixed erythema over malar eminences, sparing nasolabial folds.</li>
+                            <li><strong>Discoid rash:</strong> Raised patches, adherent scale, follicular plugging, atrophic scarring.</li>
+                            <li><strong>Photosensitivity:</strong> Skin rash from unusual reaction to sunlight.</li>
+                            <li><strong>Oral ulcers:</strong> Oral or nasopharyngeal, usually painless.</li>
+                            <li><strong>Arthritis:</strong> Non-erosive, involving ≥2 peripheral joints.</li>
+                            <li><strong>Serositis:</strong> Pleuritis or Pericarditis.</li>
+                            <li><strong>Renal disorder:</strong> Persistent proteinuria >0.5 g/day OR cellular casts.</li>
+                            <li><strong>Neurologic disorder:</strong> Seizures or psychosis.</li>
+                            <li><strong>Hematologic disorder:</strong> Hemolytic anemia, OR Leukopenia (<4000), OR Lymphopenia (<1500), OR Thrombocytopenia (<100,000).</li>
+                            <li><strong>Immunologic disorder:</strong> Anti-dsDNA, OR Anti-Sm, OR positive Antiphospholipid antibodies.</li>
+                            <li><strong>Antinuclear antibody (ANA):</strong> Abnormal titer.</li>
+                        </ol>
+                    </div>
+                </details>
+                
+                 <details>
+                    <summary>Table 41.5: SLICC 2012 Criteria for SLE</summary>
+                    <div>
+                        <p><strong>Requirement:</strong> Need ≥4 criteria, with at least 1 clinical AND 1 immunologic criterion OR biopsy-proven lupus nephritis with ANA or anti-dsDNA.</p>
+                        <table class="comparison-table">
+                            <thead><tr><th>Clinical Criteria (11)</th><th>Immunologic Criteria (6)</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ol>
+                                            <li>Acute cutaneous lupus</li>
+                                            <li>Chronic cutaneous lupus</li>
+                                            <li>Oral or nasal ulcers</li>
+                                            <li>Nonscarring alopecia</li>
+                                            <li>Synovitis (≥2 joints)</li>
+                                            <li>Serositis</li>
+                                            <li>Renal</li>
+                                            <li>Neurologic</li>
+                                            <li>Hemolytic anemia</li>
+                                            <li>Leukopenia or Lymphopenia</li>
+                                            <li>Thrombocytopenia</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol>
+                                            <li>ANA</li>
+                                            <li>Anti-dsDNA</li>
+                                            <li>Anti-Sm</li>
+                                            <li>Antiphospholipid antibody</li>
+                                            <li>Low complement (C3, C4, CH50)</li>
+                                            <li>Direct Coombs test (in absence of hemolytic anemia)</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+                
+                 <details>
+                    <summary>Table 41.8: Differential Diagnoses of Cutaneous Lupus Subtypes</summary>
+                    <div>
+                        <table class="comparison-table">
+                             <thead><tr><th>Lupus Subtype</th><th>Key Differentials</th></tr></thead>
+                             <tbody>
+                                 <tr>
+                                    <td><strong>Acute Cutaneous Lupus / Malar Rash</strong></td>
+                                    <td>Rosacea, Seborrheic dermatitis, Sunburn, Drug-induced photosensitivity, Dermatomyositis, Erysipelas</td>
+                                 </tr>
+                                 <tr>
+                                    <td><strong>Subacute Cutaneous Lupus</strong></td>
+                                    <td>Psoriasis, Tinea incognito, Granuloma annulare, Polymorphous light eruption (PMLE), Figurate erythemas</td>
+                                 </tr>
+                                 <tr>
+                                    <td><strong>Discoid Lesions</strong></td>
+                                    <td>Tinea faciei/capitis, Lichen planopilaris, Sarcoidosis, Granuloma faciale, Lupus vulgaris, Follicular mucinosis, NMSC</td>
+                                 </tr>
+                                  <tr>
+                                    <td><strong>Tumid Lupus Lesions</strong></td>
+                                    <td>Lymphocytic infiltrate of Jessner, PMLE, Cutaneous lymphoid hyperplasia (pseudolymphoma), Reticular erythematous mucinosis</td>
+                                 </tr>
+                                  <tr>
+                                    <td><strong>Lupus Panniculitis</strong></td>
+                                    <td>Other panniculitides (esp. SPTCL), Erythema nodosum, Pancreatic panniculitis</td>
+                                 </tr>
+                             </tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+</div>
+</body>
+</html>

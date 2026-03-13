@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phytophotodermatitis - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --highlight: #f39c12;
+            --success: #27ae60;
+            --light: #ecf0f1;
+            --light-accent: #eaf2f8;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0 30px;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "☀️";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            top: -20px;
+            right: 30px;
+            transform: rotate(30deg);
+        }
+        
+        header::after {
+            content: "🌿";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: -20px;
+            left: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--secondary);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .sticky-card {
+            background-color: var(--light-accent);
+            border: 2px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sticky-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .memory-box {
+            background-color: #fff8e1;
+            border-left: 5px solid var(--highlight);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .memory-box h4 {
+            color: var(--highlight);
+            margin-top: 0;
+        }
+        
+        .alert-box {
+            background-color: #fdecea;
+            border-left: 5px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .alert-box h4 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tip-box h4 {
+            color: var(--success);
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .key-term {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .two-column > div {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th {
+            background-color: var(--secondary);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--light-accent);
+        }
+        
+        details {
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        summary {
+            padding: 15px;
+            background-color: var(--light);
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        summary:hover {
+            background-color: #e3e8ec;
+        }
+        
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        details div {
+            padding: 15px;
+        }
+        
+        .recall-question {
+            background-color: var(--light-accent);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .recall-question::after {
+            content: "👉 Click to reveal answer";
+            display: block;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .recall-answer {
+            display: none;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .recall-question.active::after {
+            content: "👆 Click to hide answer";
+        }
+        
+        .recall-question.active .recall-answer {
+            display: block;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+            left: -38px;
+            top: 5px;
+        }
+        
+        .timeline-item h4 {
+            margin-top: 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .plant-family {
+            margin-bottom: 30px;
+        }
+        
+        .plant-family-header {
+            background-color: var(--light-accent);
+            padding: 10px 15px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plant-family-content {
+            border: 1px solid #ddd;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            padding: 15px;
+        }
+        
+        .family-icon {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        
+        .print-section {
+            text-align: right;
+            margin: 20px 0;
+        }
+        
+        .print-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .print-btn:hover {
+            background-color: #1e2b38;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column > div {
+                flex: 100%;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            header, footer, .print-section {
+                display: none;
+            }
+            
+            h2 {
+                page-break-before: always;
+            }
+            
+            .sticky-card, .memory-box, .alert-box, .tip-box, .recall-question, details {
+                break-inside: avoid;
+            }
+            
+            .recall-question.active .recall-answer,
+            .recall-answer {
+                display: block;
+            }
+            
+            .recall-question::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Phytophotodermatitis</h1>
+            <p>Saudi Board Dermatology Exam - High-Yield Review</p>
+        </header>
+        
+        <div class="print-section">
+            <button class="print-btn" onclick="window.print()">
+                <span>🖨️</span> Print Study Guide
+            </button>
+        </div>
+        
+        <div class="sticky-card">
+            <h3>🌟 Quick Reference Formula</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.5rem; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <span style="font-size: 2.5rem;">🌿</span>
+                    <div>Furocoumarin<br>(Plant chemical)</div>
+                </div>
+                <div>+</div>
+                <div style="text-align: center;">
+                    <span style="font-size: 2.5rem;">☀️</span>
+                    <div>UVA Light<br>(320-340 nm)</div>
+                </div>
+                <div>=</div>
+                <div style="text-align: center;">
+                    <span style="font-size: 2.5rem;">🔥</span>
+                    <div>Phytophoto-<br>dermatitis</div>
+                </div>
+            </div>
+            <p><strong>Remember:</strong> This is a <span class="highlight">non-immunologic (phototoxic)</span> reaction - no prior sensitization needed!</p>
+        </div>
+
+        <h2>🔹 Definition & Core Concepts</h2>
+        <p class="section-intro">A phototoxic (non-immunologic) inflammatory reaction requiring sequential exposure to a photosensitizing plant chemical and UVA radiation.</p>
+
+        <div class="memory-box">
+            <h4>💡 Memory Hook: The 3 R's of Phytophotodermatitis</h4>
+            <ul>
+                <li><span class="key-term">Reaction:</span> Phototoxic (not allergic), no prior sensitization needed</li>
+                <li><span class="key-term">Rash:</span> Erythema/blisters followed by marked hyperpigmentation</li>
+                <li><span class="key-term">Requirements:</span> Plant furocoumarin + UVA radiation (sequential exposure)</li>
+            </ul>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: What are the three essential elements needed for phytophotodermatitis to occur?</h4>
+            <div class="recall-answer">
+                <ol>
+                    <li>A photosensitizing chemical (primarily furocoumarins from plants)</li>
+                    <li>UVA radiation (peak effectiveness 320-340 nm)</li>
+                    <li>Skin contact (topical exposure, or less commonly oral ingestion)</li>
+                </ol>
+                <p>Unlike allergic contact dermatitis, this is a non-immunologic reaction that requires no prior sensitization.</p>
+            </div>
+        </div>
+
+        <h2>🔹 Pathophysiology</h2>
+        <p class="section-intro">Furocoumarins from plants cause photochemical reactions when exposed to UVA light, leading to cellular damage through multiple mechanisms.</p>
+
+        <h3>Key Furocoumarin Types</h3>
+        <ul>
+            <li><span class="key-term">Psoralens (linear structure):</span> Bergapten (5-MOP), Xanthotoxin (8-MOP) - cause most severe reactions</li>
+            <li><span class="key-term">Angelicins (angular structure):</span> Less potent but still cause photoreactions</li>
+        </ul>
+
+        <div class="two-column">
+            <div>
+                <h4>Oxygen-Dependent Mechanism</h4>
+                <ol>
+                    <li>Furocoumarins absorb UVA</li>
+                    <li>Interaction with molecular oxygen</li>
+                    <li>Formation of reactive oxygen species</li>
+                    <li>Cytoplasmic vacuolization</li>
+                    <li>Cell membrane rupture in keratinocytes</li>
+                </ol>
+            </div>
+            <div>
+                <h4>DNA Damage Mechanism</h4>
+                <ol>
+                    <li>Furocoumarins intercalate into DNA</li>
+                    <li>UVA excites the molecules</li>
+                    <li>Formation of covalent interstrand DNA cross-links</li>
+                    <li>Binding to pyrimidine bases</li>
+                    <li>Keratinocyte apoptosis ("sunburn cells")</li>
+                    <li>Desmosomal detachment → blister formation</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>Enhancing Factors</h4>
+            <ul>
+                <li>Wet skin</li>
+                <li>Sweating</li>
+                <li>Heat</li>
+                <li>Plant stress (e.g., fungal infection like "pink-rot" in celery)</li>
+            </ul>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: What is the mechanism behind the hyperpigmentation seen in phytophotodermatitis?</h4>
+            <div class="recall-answer">
+                <p>The hyperpigmentation results from multiple effects on melanocytes:</p>
+                <ul>
+                    <li>Increased melanocyte mitosis</li>
+                    <li>Enhanced dendricity</li>
+                    <li>Melanocyte hypertrophy</li>
+                    <li>Increased tyrosinase activity</li>
+                    <li>Larger melanosomes</li>
+                    <li>Enhanced melanosome distribution in the epidermis</li>
+                </ul>
+                <p>This can occur even without visible preceding inflammation.</p>
+            </div>
+        </div>
+
+        <h2>🔹 Causative Agents (Plant-Related)</h2>
+        <p class="section-intro">Several plant families contain furocoumarins that can cause phytophotodermatitis, with the Apiaceae and Rutaceae families being most common.</p>
+
+        <div class="plant-family">
+            <div class="plant-family-header">
+                <span class="family-icon">🥕</span>
+                <h3>Apiaceae (Umbelliferae) Family</h3>
+            </div>
+            <div class="plant-family-content">
+                <p><strong>Recognizable by:</strong> Compound umbel flower structures</p>
+                <p><strong>High-Yield Examples:</strong></p>
+                <ul>
+                    <li><span class="key-term">Celery (Apium graveolens)</span> - especially with "pink-rot" fungus</li>
+                    <li><span class="key-term">Giant Hogweed (Heracleum mantegazzianum)</span> - can cause severe reactions</li>
+                    <li><span class="key-term">Parsnip (Pastinaca sativa)</span></li>
+                    <li>Common Hogweed/Cow Parsnip (H. maximum/lanatum/sphondylium)</li>
+                    <li>Wild Chervil/Cow Parsley (Anthriscus sylvestris)</li>
+                    <li>Fennel (Foeniculum vulgare)</li>
+                    <li>Angelica (Angelica archangelica)</li>
+                    <li>Parsley (Petroselinum crispum)</li>
+                </ul>
+                <div class="memory-box">
+                    <h4>💡 Memory Hook: "HOG-CELERY-PARSNIP"</h4>
+                    <p>The three most important Apiaceae family plants to remember: <strong>H</strong>ogweed, <strong>C</strong>elery, <strong>P</strong>arsnip</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-family">
+            <div class="plant-family-header">
+                <span class="family-icon">🍋</span>
+                <h3>Rutaceae (Citrus) Family</h3>
+            </div>
+            <div class="plant-family-content">
+                <p><strong>Recognizable by:</strong> Often shrubs/small trees with fleshy fruit</p>
+                <p><strong>High-Yield Examples:</strong></p>
+                <ul>
+                    <li><span class="key-term">Lime (Citrus latifolia [Persian], C. aurantiifolia [Key])</span> - rind is major source, 10x more 5-MOP than pulp</li>
+                    <li><span class="key-term">Bergamot Orange (Citrus bergamia)</span> - source of 5-MOP, used in colognes</li>
+                    <li><span class="key-term">Rue/Herb-of-Grace (Ruta graveolens)</span> - common garden cause, contains 5-MOP, 8-MOP, angelicins</li>
+                    <li>Bitter Orange (C. aurantium)</li>
+                    <li>Lemon (C. limon)</li>
+                    <li>Grapefruit (C. paradisii)</li>
+                    <li>Sweet Orange (C. sinensis) - can cause cheilitis</li>
+                    <li>Gas Plant/Burning Bush (Dictamnus albus) - seeds pods high in 5/8-MOP</li>
+                </ul>
+                <div class="memory-box">
+                    <h4>💡 Memory Hook: "LIME-BERG-RUE"</h4>
+                    <p>The three most important Rutaceae family plants: <strong>Lime</strong>, <strong>Berg</strong>amot, <strong>Rue</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plant-family">
+            <div class="plant-family-header">
+                <span class="family-icon">🍇</span>
+                <h3>Other Significant Plant Families</h3>
+            </div>
+            <div class="plant-family-content">
+                <div class="two-column">
+                    <div>
+                        <h4>Moraceae (Mulberry) Family</h4>
+                        <ul>
+                            <li><span class="key-term">Fig (Ficus carica)</span> - sap of leaves and shoots (not fruit)</li>
+                            <li>Often misused as tanning agent</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Other Notable Sources</h4>
+                        <ul>
+                            <li>Fabaceae (Pea family) - contains furocoumarins</li>
+                            <li>St John's Wort (Hypericum perforatum) - hypericin can cause systemic phototoxicity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: For each of these plants, identify which part contains the highest concentration of photosensitizers</h4>
+            <div class="recall-answer">
+                <ul>
+                    <li><strong>Lime:</strong> Rind (10x higher concentration than pulp)</li>
+                    <li><strong>Fig:</strong> Leaf and shoot sap (not the fruit)</li>
+                    <li><strong>Hogweed:</strong> Fruit > leaves > stems (highest in autumn)</li>
+                    <li><strong>Celery:</strong> Whole plant, especially when infected with "pink-rot" fungus</li>
+                    <li><strong>Bergamot:</strong> Oil from the rind (used in colognes)</li>
+                    <li><strong>Gas Plant:</strong> Seed pods (highest concentration)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🔹 Epidemiology</h2>
+        <p class="section-intro">Phytophotodermatitis can affect anyone exposed sufficiently (non-immunologic reaction), with certain occupations and activities carrying higher risk.</p>
+
+        <h3>High-Risk Occupations & Activities</h3>
+        <ul>
+            <li><span class="key-term">Bartenders</span> squeezing limes ("lime disease" or "bartender's dermatitis")</li>
+            <li><span class="key-term">Grocery workers</span> stocking celery</li>
+            <li><span class="key-term">Celery harvesters/canners</span> (especially with fungus-infected celery)</li>
+            <li><span class="key-term">Gardeners/Landscapers</span> handling rue, parsnip, hogweed</li>
+            <li>Users of <span class="key-term">weed-whackers/strimmers</span> near phototoxic plants ("strimmer dermatitis")</li>
+            <li>Users of <span class="key-term">cosmetics/perfumes</span> containing bergamot oil ("Berloque dermatitis")</li>
+            <li>Individuals using <span class="key-term">fig leaves as tanning promoters</span></li>
+            <li><span class="key-term">Hikers</span> brushing against Heracleum species</li>
+            <li><span class="key-term">Children playing</span> near causative plants</li>
+            <li><span class="key-term">Accidental transfer</span> via hands (can mimic non-accidental injury)</li>
+        </ul>
+
+        <h2>🔹 Clinical Features</h2>
+        <p class="section-intro">Phytophotodermatitis presents with a characteristic time course and morphologic patterns that provide important diagnostic clues.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Initial Contact</h4>
+                <p>Plant furocoumarin makes contact with skin</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Peak Sensitivity (30-120 minutes)</h4>
+                <p>Skin sensitivity to UVA peaks 30-120 minutes after contact with furocoumarins</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Initial Symptoms (24 hours)</h4>
+                <p>Eruption appears 24 hours after UV exposure</p>
+                <ul>
+                    <li>Erythema</li>
+                    <li>Edema</li>
+                    <li>Vesicles/Bullae</li>
+                    <li>Pain or burning sensation (notably, often NON-pruritic)</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h4>Peak Inflammation (48-72 hours)</h4>
+                <p>Inflammatory phase peaks</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Hyperpigmentation (1-2 weeks)</h4>
+                <p>Marked hyperpigmentation develops and may last months to years</p>
+                <p>Note: Can occur without preceding visible inflammation</p>
+            </div>
+        </div>
+
+        <h3>Characteristic Morphology</h3>
+        <div class="memory-box">
+            <h4>💡 Memory Hook: "The B.I.Z.A.R.R.E. Pattern"</h4>
+            <ul>
+                <li><strong>B</strong>izarre configurations</li>
+                <li><strong>I</strong>rregular borders</li>
+                <li><strong>Z</strong>igzagging lines</li>
+                <li><strong>A</strong>ngular shapes</li>
+                <li><strong>R</strong>andom streaks</li>
+                <li><strong>R</strong>esembling drips/splashes</li>
+                <li><strong>E</strong>xactly matching plant contact areas</li>
+            </ul>
+        </div>
+
+        <h3>Special Distribution Patterns</h3>
+        <div class="two-column">
+            <div>
+                <h4>"Berloque Dermatitis"</h4>
+                <ul>
+                    <li>Pendant-like streaks on neck/chest</li>
+                    <li>From bergamot oil in perfumes/colognes</li>
+                </ul>
+            </div>
+            <div>
+                <h4>"Strimmer Dermatitis"</h4>
+                <ul>
+                    <li>Irregular macules/papules</li>
+                    <li>Less classically linear</li>
+                    <li>On exposed chest, arms, legs</li>
+                </ul>
+            </div>
+        </div>
+        <div class="two-column">
+            <div>
+                <h4>Hand Patterns</h4>
+                <ul>
+                    <li>Dorsal hands/fingers in bartenders</li>
+                    <li>Specific finger patterns depending on handling</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Digitate Patterns</h4>
+                <ul>
+                    <li>Finger-shaped patterns</li>
+                    <li>From transfer by hands</li>
+                    <li>Can raise concerns for child abuse</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ Clinical Alert: Darker Skin Types</h4>
+            <p>Hyperpigmentation may be more pronounced and persistent in individuals with darker skin phototypes (relevant for Saudi population).</p>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: How would you differentiate phytophotodermatitis from bruising in a case of suspected child abuse?</h4>
+            <div class="recall-answer">
+                <ul>
+                    <li>Phytophotodermatitis shows bizarre, sharply demarcated patterns corresponding to plant contact</li>
+                    <li>Unlike bruises, phytophotodermatitis lesions do not change colors over time (don't progress through yellow-green-purple stages)</li>
+                    <li>History of outdoor activity or exposure to causative plants</li>
+                    <li>Restricted to sun-exposed areas</li>
+                    <li>May have other family members with similar patterns</li>
+                    <li>Hyperpigmentation is uniform in color rather than varied like bruising</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🔹 Differential Diagnosis</h2>
+        <p class="section-intro">Distinguishing phytophotodermatitis from other similar conditions is critical for accurate diagnosis.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Key Differentiating Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Allergic Contact Dermatitis</strong><br>(esp. poison ivy/oak)</td>
+                    <td>
+                        <ul>
+                            <li>Immunologic (Type IV) - requires prior sensitization</li>
+                            <li>Intensely pruritic (vs. painful/burning in phytophoto)</li>
+                            <li>Less sharply defined hyperpigmentation</li>
+                            <li>UV not required</li>
+                            <li>Patch test positive</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Chemical Irritant Dermatitis</strong><br>(e.g., Ranunculus)</td>
+                    <td>
+                        <ul>
+                            <li>Immediate irritation</li>
+                            <li>No subsequent hyperpigmentation</li>
+                            <li>No UV requirement</li>
+                            <li>Examples: Buttercup, Euphorbia, calcium oxalate plants</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Toxin-Mediated Contact Urticaria</strong><br>(e.g., Stinging nettle)</td>
+                    <td>
+                        <ul>
+                            <li>Immediate wheals and burning</li>
+                            <li>Caused by histamine/acetylcholine/serotonin in trichomes</li>
+                            <li>Short-lived reaction</li>
+                            <li>No hyperpigmentation</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Photoallergic Contact Dermatitis</strong></td>
+                    <td>
+                        <ul>
+                            <li>Immunologic reaction (requires sensitization)</li>
+                            <li>Much rarer from plants than phytophotodermatitis</li>
+                            <li>Requires photopatch testing for diagnosis</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Thermal or Chemical Burns</strong></td>
+                    <td>
+                        <ul>
+                            <li>History and morphology usually differ</li>
+                            <li>Immediate onset</li>
+                            <li>More uniform pattern</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Cellulitis/Infectious Lymphangitis</strong></td>
+                    <td>
+                        <ul>
+                            <li>Phytophoto (especially lime-induced) can be misdiagnosed as these</li>
+                            <li>Look for exposure history and typical morphology/pigmentation</li>
+                            <li>Systemic symptoms may be present in infection</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Child Abuse (Bruising)</strong></td>
+                    <td>
+                        <ul>
+                            <li>Digitate hyperpigmentation requires careful history</li>
+                            <li>Phytophoto lesions lack the multiple colors of evolving bruises</li>
+                            <li>Distribution often correlates with sun exposure</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="memory-box">
+            <h4>💡 Memory Hook: "PACIFIC" Difference from Allergic Contact Dermatitis</h4>
+            <ul>
+                <li><strong>P</strong>hototoxic (vs. immunologic)</li>
+                <li><strong>A</strong>ny person (no prior sensitization)</li>
+                <li><strong>C</strong>hemicals + UVA required</li>
+                <li><strong>I</strong>ntense pigmentation afterwards</li>
+                <li><strong>F</strong>eel pain/burning (not primarily itch)</li>
+                <li><strong>I</strong>nstant reaction to first exposure</li>
+                <li><strong>C</strong>arefully demarcated patterns</li>
+            </ul>
+        </div>
+
+        <h2>🔹 Investigations</h2>
+        <p class="section-intro">Phytophotodermatitis is primarily a clinical diagnosis based on history and characteristic features.</p>
+
+        <div class="sticky-card">
+            <h3>Diagnostic Approach</h3>
+            <p>Primarily a <span class="key-term">clinical diagnosis</span> based on:</p>
+            <ol>
+                <li>History of exposure to a known photosensitizing plant or substance</li>
+                <li>Subsequent sun exposure</li>
+                <li>Characteristic morphology (bizarre, linear, streaky configuration)</li>
+                <li>Typical distribution (sun-exposed contact areas)</li>
+                <li>Delayed onset (24-72 hours peak inflammation)</li>
+                <li>Eventual marked hyperpigmentation</li>
+            </ol>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ Note on Testing</h4>
+            <p>Patch testing / Photopatch testing: Generally <strong>not indicated or helpful</strong> for diagnosing typical phytophotodermatitis as it's non-immunologic.</p>
+            <p>Photopatch testing is only considered if true photoallergy is suspected (rare for plants per text).</p>
+        </div>
+
+        <h2>🔹 Management</h2>
+        <p class="section-intro">Management focuses on prevention, symptomatic relief during the acute phase, and addressing persistent hyperpigmentation.</p>
+
+        <div class="two-column">
+            <div>
+                <h3>Prevention</h3>
+                <ul>
+                    <li><span class="key-term">Avoidance:</span> Identify and avoid contact with known phototoxic plants</li>
+                    <li><span class="key-term">Protection:</span> Wear protective clothing when gardening or working outdoors</li>
+                    <li><span class="key-term">Washing:</span> Prompt thorough washing with soap and water after suspected contact</li>
+                    <li>Do not plant known phototoxic plants near play areas</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Acute Phase Treatment</h3>
+                <ul>
+                    <li><span class="key-term">Cool compresses</span> (e.g., Burow's solution) to soothe and dry lesions</li>
+                    <li><span class="key-term">Topical corticosteroids</span> for inflammation</li>
+                    <li><span class="key-term">Oral analgesics</span> for pain</li>
+                    <li>Avoid topical sensitizers (e.g., benzocaine, neomycin)</li>
+                    <li>Severe cases: Consider systemic corticosteroids</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Hyperpigmentation Management</h3>
+        <ul>
+            <li><span class="key-term">Sun protection</span> is crucial to prevent further darkening and allow fading</li>
+            <li><span class="key-term">Topical lightening agents</span> (hydroquinone, retinoids, azelaic acid) may be considered</li>
+            <li>Patient education: Fading often takes months to years regardless of treatment</li>
+        </ul>
+
+        <h2>🔹 Prognosis & Complications</h2>
+        <p class="section-intro">Most cases resolve without permanent sequelae, although hyperpigmentation can persist for extended periods.</p>
+
+        <div class="two-column">
+            <div>
+                <h3>Typical Course</h3>
+                <ul>
+                    <li>Acute inflammation resolves within 1-3 weeks</li>
+                    <li>Post-inflammatory hyperpigmentation often lasts months to years</li>
+                    <li>More persistent in darker skin types</li>
+                    <li>Affected areas may remain hypersensitive to UV for years</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Severe Complications</h3>
+                <ul>
+                    <li>Rarely, severe exposure (e.g., giant hogweed) can lead to:</li>
+                    <li>Significant blistering</li>
+                    <li>Intense pain</li>
+                    <li>Scarring</li>
+                    <li>Soft tissue necrosis</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🔹 Must-Memorize Points for the Saudi Board</h2>
+        <div class="memory-box">
+            <h4>💡 Core Concepts</h4>
+            <ul>
+                <li>Phytophotodermatitis = Plant Chemical (Furocoumarin) + UVA Light</li>
+                <li>Mechanism: Phototoxic (NOT allergic). No prior sensitization needed</li>
+                <li>Key Chemicals: Psoralens (5-MOP, 8-MOP) & Angelicins</li>
+                <li>Common Culprits: Limes, Celery, Parsnip, Fig, Rue, Hogweed, Bergamot oil (Apiaceae & Rutaceae families)</li>
+                <li>Clinical Triad: Delayed onset (24-72h peak) → Bizarre/Linear Erythema/Bullae (often painful/burning, NOT initially itchy) → Marked Hyperpigmentation</li>
+                <li>Distribution: Sun-exposed areas of contact</li>
+                <li>"Berloque Dermatitis": Pattern from bergamot in perfumes</li>
+                <li>Hyperpigmentation can occur without prior obvious inflammation</li>
+                <li>Diagnosis: Clinical (History + Morphology). Patch testing usually NOT helpful</li>
+                <li>Management: Prevention (wash!), symptomatic relief (cool compress, topical steroids), sun protection for hyperpigmentation</li>
+            </ul>
+        </div>
+
+        <h2>🔹 Common Confusion Traps in the Exam</h2>
+        <div class="alert-box">
+            <h4>⚠️ Watch Out For These Traps!</h4>
+            <ul>
+                <li><strong>Phytophoto vs. Allergic Contact Dermatitis (ACD):</strong> The BIGGEST trap! Remember: Phytophoto = Non-immunologic, needs UV, initially non-pruritic/painful, prominent pigmentation. ACD = Immunologic (Type IV), no UV needed, intensely pruritic, less distinct/persistent pigmentation.</li>
+                <li><strong>Phytophoto vs. Photoallergy:</strong> Phytophoto is common, non-immunologic. Photoallergy is rare from plants, immunologic, needs photopatch testing.</li>
+                <li><strong>Timing:</strong> The delay (24-72h peak after sun exposure) is crucial. Don't confuse with immediate reactions.</li>
+                <li><strong>Symptom - Itch:</strong> Initial lack of significant pruritus helps distinguish from ACD. Focus on pain or burning initially.</li>
+                <li><strong>Hyperpigmentation:</strong> This is a KEY feature and often the longest-lasting sign. Don't miss the diagnosis if inflammation has resolved.</li>
+                <li><strong>Causative Agent Location:</strong> For limes, it's the rind. For figs, it's the leaf/shoot sap, not the fruit. Details matter.</li>
+                <li><strong>Mimics:</strong> Be aware it can look like streaky ACD, burns, infections, or even child abuse (digitate pattern). History is paramount.</li>
+            </ul>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Final Recall Question: A 28-year-old bartender presents with painful, linear, erythematous lesions on the dorsal aspects of his hands that developed 2 days after working a beach party. The lesions are not itchy. What is the most likely diagnosis, causative agent, and appropriate management?</h4>
+            <div class="recall-answer">
+                <p><strong>Diagnosis:</strong> Phytophotodermatitis</p>
+                <p><strong>Causative Agent:</strong> Lime juice (specifically the psoralens in the rind)</p>
+                <p><strong>Management:</strong></p>
+                <ol>
+                    <li>Cool compresses for symptomatic relief</li>
+                    <li>Topical corticosteroids to reduce inflammation</li>
+                    <li>Analgesics for pain</li>
+                    <li>Sun protection to prevent worsening of hyperpigmentation</li>
+                    <li>Education about wearing gloves when handling limes in the future</li>
+                    <li>Warning that hyperpigmentation may develop and persist for months</li>
+                </ol>
+            </div>
+        </div>
+
+        <footer>
+            <p>Good luck on your Saudi Board Dermatology Exam! Remember to review this material using spaced repetition techniques.</p>
+            <p>Created for: Saudi Board Dermatology Exam Preparation</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const recallQuestions = document.querySelectorAll('.recall-question');
+            
+            recallQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

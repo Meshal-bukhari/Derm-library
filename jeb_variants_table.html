@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEB Variants - Quick Review for Dermatology MCQ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .universal-finding {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(240, 147, 251, 0.3);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        
+        tr:hover {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Color coding for variants */
+        .severe-row {
+            border-left: 8px solid #e53e3e;
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 50%);
+        }
+        
+        .intermediate-row {
+            border-left: 8px solid #d69e2e;
+            background: linear-gradient(135deg, #faf089 0%, #f6e05e 50%);
+        }
+        
+        .special-row {
+            border-left: 8px solid #805ad5;
+            background: linear-gradient(135deg, #e9d8fd 0%, #d6bcfa 50%);
+        }
+        
+        .mild-row {
+            border-left: 8px solid #38a169;
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 50%);
+        }
+        
+        /* Typography emphasis */
+        .pathognomonic {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-block;
+            margin: 5px 0;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .memory-hook {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 10px 0;
+            display: block;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(78, 205, 196, 0.3);
+        }
+        
+        .protein {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+            margin: 2px;
+            box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        .systemic {
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+        
+        .variant-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .former-name {
+            font-size: 12px;
+            color: #718096;
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .triad, .dyad {
+            background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+            color: #702459;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            margin: 5px 0;
+            display: inline-block;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+        }
+        
+        /* Animation for emphasis */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pathognomonic:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🩺 JEB Variants - Quick Review</h1>
+            <p>Junctional Epidermolysis Bullosa for Dermatology MCQ Exam</p>
+        </div>
+        
+        <div class="universal-finding">
+            <strong>🦷 UNIVERSAL FINDING:</strong> Dental Enamel Hypoplasia occurs EXCLUSIVELY in JEB - pitting of teeth surfaces → severe caries & premature tooth loss
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Variant Name</th>
+                        <th style="width: 15%;">Defective Protein(s)</th>
+                        <th style="width: 40%;">Key Clinical Presentation & Systemic</th>
+                        <th style="width: 25%;">Memory Hooks & Figures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="severe-row">
+                        <td>
+                            <div class="variant-name">JEB, Severe</div>
+                            <span class="former-name">(JEB-Herlitz, EB Letalis)</span>
+                        </td>
+                        <td>
+                            <span class="protein">Laminin 332</span>
+                            <br><small>(truncating mutations)</small>
+                        </td>
+                        <td>
+                            <strong>Severe, generalized blistering</strong> from birth. Very poor prognosis, often fatal in infancy.
+                            <br><br>
+                            <span class="pathognomonic">PATHOGNOMONIC: Excessive/Exuberant Granulation Tissue</span>
+                            <br>Located symmetrically in periorificial areas, skin folds (axillae, groin), nape of neck, periungual sites.
+                            <div class="systemic">
+                                <strong>Systemic:</strong> Severe malnutrition, anemia, <strong>tracheolaryngeal stenosis</strong> (fatal airway obstruction)
+                            </div>
+                        </td>
+                        <td>
+                            <span class="memory-hook">"Herlitz Hurts" 💀</span>
+                            Most severe form. The red, raw, "proud flesh" of exuberant granulation tissue is the key visual.
+                            <br><small>(Fig 32.6, 32.9)</small>
+                        </td>
+                    </tr>
+                    
+                    <tr class="intermediate-row">
+                        <td>
+                            <div class="variant-name">JEB, Intermediate</div>
+                            <span class="former-name">(JEB-non-Herlitz, Generalized Atrophic Benign EB)</span>
+                        </td>
+                        <td>
+                            <span class="protein">Laminin 332</span> (milder mutations)
+                            <br>or <span class="protein">Type XVII Collagen</span>
+                        </td>
+                        <td>
+                            <strong>Generalized blistering</strong>, less severe than Herlitz. Patients survive into adulthood. Blistering improves but leaves <strong>atrophic scarring</strong>. 
+                            <br><br>
+                            Does <strong>NOT</strong> feature exuberant granulation tissue.
+                            <div class="systemic">
+                                <strong>Systemic:</strong> Milder complications; corneal scarring can occur
+                            </div>
+                        </td>
+                        <td>
+                            <span class="memory-hook">"Intermediate is In-Between" ⚖️</span>
+                            Not as severe as Herlitz, not as mild as localized. Think "atrophic" scarring as long-term clue.
+                        </td>
+                    </tr>
+                    
+                    <tr class="special-row">
+                        <td>
+                            <div class="variant-name">JEB with Pyloric Atresia</div>
+                            <span class="former-name">(JEB-PA)</span>
+                        </td>
+                        <td>
+                            <span class="protein">α6β4 Integrin</span>
+                        </td>
+                        <td>
+                            <span class="dyad">The Classic Dyad:</span> Generalized blistering at birth + <strong>congenital pyloric atresia</strong> (non-bilious vomiting, feeding intolerance).
+                            <div class="systemic">
+                                <strong>Systemic:</strong> JEB-PA is "much more common than EBS with pyloric atresia." Also: hydroureter and hydronephrosis
+                            </div>
+                        </td>
+                        <td>
+                            <span class="memory-hook">"Pyloric Atresia = α6β4" 🚨</span>
+                            Medical emergency combining dermatology and GI.
+                        </td>
+                    </tr>
+                    
+                    <tr class="special-row">
+                        <td>
+                            <div class="variant-name">JEB-Laryngo-onycho-cutaneous</div>
+                            <span class="former-name">(LOC Syndrome)</span>
+                        </td>
+                        <td>
+                            <span class="protein">Laminin α3 chain</span>
+                            <br><small>(α isoform)</small>
+                        </td>
+                        <td>
+                            <span class="triad">The Triad in the Name:</span>
+                            <br>• Hoarse cry from <strong>laryngeal</strong> involvement (exuberant granulation tissue in larynx)
+                            <br>• Severe <strong>onychodystrophy</strong>
+                            <br>• <strong>Cutaneous</strong> erosions
+                        </td>
+                        <td>
+                            <span class="memory-hook">LOC = Larynx, Onycho, Cutaneous 🗣️</span>
+                            The hoarse cry in a blistering neonate is a major red flag.
+                        </td>
+                    </tr>
+                    
+                    <tr class="severe-row">
+                        <td>
+                            <div class="variant-name">JEB with Interstitial Lung Disease & Nephrotic Syndrome</div>
+                        </td>
+                        <td>
+                            <span class="protein">α3 Integrin subunit</span>
+                        </td>
+                        <td>
+                            Severe, systemic variant defined by combination of blistering with progressive <strong>lung and kidney failure</strong>.
+                        </td>
+                        <td>
+                            <span class="memory-hook">The name describes the devastating systemic involvement 💔</span>
+                        </td>
+                    </tr>
+                    
+                    <tr class="mild-row">
+                        <td>
+                            <div class="variant-name">JEB, Inversa</div>
+                        </td>
+                        <td>
+                            <span class="protein">Laminin 332</span>
+                        </td>
+                        <td>
+                            Disease activity primarily localized to <strong>intertriginous areas</strong> (axillae, groin).
+                        </td>
+                        <td>
+                            <span class="memory-hook">"Inversa = In the Folds" 🔄</span>
+                        </td>
+                    </tr>
+                    
+                    <tr class="mild-row">
+                        <td>
+                            <div class="variant-name">JEB, Localized</div>
+                        </td>
+                        <td>
+                            <span class="protein">Laminin 332</span>, <span class="protein">Collagen XVII</span>, <span class="protein">α6β4 integrin</span>, <span class="protein">α3 integrin</span>
+                        </td>
+                        <td>
+                            Mildest form, with blistering confined mainly to <strong>acral sites</strong> (hands, feet, knees, elbows).
+                        </td>
+                        <td>
+                            <span class="memory-hook">Similar distribution to EBS-localized but different cleavage level 🤲</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

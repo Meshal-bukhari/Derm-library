@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Urticaria: Immunologic & Toxin-Mediated - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --highlight: #f39c12;
+            --success: #27ae60;
+            --light: #ecf0f1;
+            --light-accent: #eaf2f8;
+            --toxin: #9b59b6;
+            --immune: #2980b9;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px 0;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "🌊";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            top: -20px;
+            right: 30px;
+            transform: rotate(30deg);
+        }
+        
+        header::after {
+            content: "🌿";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: -20px;
+            left: 30px;
+        }
+        
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 30px;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background-color: #d6e0e6;
+        }
+        
+        .nav-btn.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .nav-btn.immunologic {
+            border-bottom: 3px solid var(--immune);
+        }
+        
+        .nav-btn.toxin {
+            border-bottom: 3px solid var(--toxin);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+            color: var(--primary);
+        }
+        
+        h2.immunologic {
+            border-bottom-color: var(--immune);
+        }
+        
+        h2.toxin {
+            border-bottom-color: var(--toxin);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--secondary);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .section-intro.immunologic {
+            border-left-color: var(--immune);
+        }
+        
+        .section-intro.toxin {
+            border-left-color: var(--toxin);
+        }
+        
+        .sticky-card {
+            background-color: var(--light-accent);
+            border: 2px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sticky-card.immunologic {
+            background-color: rgba(41, 128, 185, 0.1);
+            border-color: var(--immune);
+        }
+        
+        .sticky-card.toxin {
+            background-color: rgba(155, 89, 182, 0.1);
+            border-color: var(--toxin);
+        }
+        
+        .sticky-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sticky-card.immunologic h3 {
+            color: var(--immune);
+        }
+        
+        .sticky-card.toxin h3 {
+            color: var(--toxin);
+        }
+        
+        .memory-box {
+            background-color: #fff8e1;
+            border-left: 5px solid var(--highlight);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .memory-box h4 {
+            color: var(--highlight);
+            margin-top: 0;
+        }
+        
+        .alert-box {
+            background-color: #fdecea;
+            border-left: 5px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .alert-box h4 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tip-box h4 {
+            color: var(--success);
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .key-term {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .key-term.immunologic {
+            color: var(--immune);
+        }
+        
+        .key-term.toxin {
+            color: var(--toxin);
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .two-column > div {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .comparison-table th {
+            background-color: var(--secondary);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:first-child th:first-child {
+            border-top-left-radius: var(--border-radius);
+        }
+        
+        .comparison-table tr:first-child th:last-child {
+            border-top-right-radius: var(--border-radius);
+        }
+        
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--light-accent);
+        }
+        
+        .comparison-table.vs th:nth-child(2) {
+            background-color: var(--immune);
+        }
+        
+        .comparison-table.vs th:nth-child(3) {
+            background-color: var(--toxin);
+        }
+        
+        details {
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        summary {
+            padding: 15px;
+            background-color: var(--light);
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        summary:hover {
+            background-color: #e3e8ec;
+        }
+        
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        details div {
+            padding: 15px;
+        }
+        
+        .recall-question {
+            background-color: var(--light-accent);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .recall-question::after {
+            content: "👉 Click to reveal answer";
+            display: block;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .recall-answer {
+            display: none;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .recall-question.active::after {
+            content: "👆 Click to hide answer";
+        }
+        
+        .recall-question.active .recall-answer {
+            display: block;
+        }
+        
+        .recall-question.immunologic {
+            background-color: rgba(41, 128, 185, 0.1);
+            border-color: var(--immune);
+        }
+        
+        .recall-question.immunologic::after {
+            color: var(--immune);
+        }
+        
+        .recall-question.toxin {
+            background-color: rgba(155, 89, 182, 0.1);
+            border-color: var(--toxin);
+        }
+        
+        .recall-question.toxin::after {
+            color: var(--toxin);
+        }
+        
+        .visual-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+        }
+        
+        .flow-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .flow-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+        }
+        
+        .flow-icon.immunologic {
+            background-color: var(--immune);
+        }
+        
+        .flow-icon.toxin {
+            background-color: var(--toxin);
+        }
+        
+        .flow-content {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .flow-arrow {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .print-section {
+            text-align: right;
+            margin: 20px 0;
+        }
+        
+        .print-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .print-btn:hover {
+            background-color: #1e2b38;
+        }
+        
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .icon-box.immunologic {
+            background-color: var(--immune);
+        }
+        
+        .icon-box.toxin {
+            background-color: var(--toxin);
+        }
+        
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        .highlight-box.immunologic {
+            background-color: rgba(41, 128, 185, 0.1);
+            border-color: rgba(41, 128, 185, 0.3);
+        }
+        
+        .highlight-box.toxin {
+            background-color: rgba(155, 89, 182, 0.1);
+            border-color: rgba(155, 89, 182, 0.3);
+        }
+        
+        .mnemonic-letter {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .mnemonic-letter.immunologic {
+            background-color: var(--immune);
+        }
+        
+        .mnemonic-letter.toxin {
+            background-color: var(--toxin);
+        }
+        
+        .toggle-section {
+            display: block;
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, var(--immune), var(--toxin));
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        
+        .image-placeholder {
+            background-color: var(--light);
+            border: 1px dashed #ccc;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column > div {
+                flex: 100%;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            header, footer, .print-section, .main-nav {
+                display: none;
+            }
+            
+            h2 {
+                page-break-before: always;
+            }
+            
+            .sticky-card, .memory-box, .alert-box, .tip-box, .recall-question, details {
+                break-inside: avoid;
+            }
+            
+            .recall-question.active .recall-answer,
+            .recall-answer {
+                display: block;
+            }
+            
+            .recall-question::after {
+                display: none;
+            }
+            
+            .toggle-section {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact Urticaria</h1>
+            <p class="subtitle">Saudi Board Dermatology Exam - High-Yield Review</p>
+        </header>
+        
+        <div class="print-section">
+            <button class="print-btn" onclick="window.print()">
+                <span>🖨️</span> Print Study Guide
+            </button>
+        </div>
+        
+        <div class="main-nav">
+            <button class="nav-btn active" onclick="showAll()">Both Types</button>
+            <button class="nav-btn immunologic" onclick="showImmunologic()">Immunologic</button>
+            <button class="nav-btn toxin" onclick="showToxinMediated()">Toxin-Mediated</button>
+        </div>
+        
+        <div class="sticky-card">
+            <h3>🔍 Types of Contact Urticaria</h3>
+            <table class="comparison-table vs">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Immunologic</th>
+                        <th>Toxin-Mediated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mechanism</strong></td>
+                        <td>IgE-mediated (Type I Hypersensitivity)</td>
+                        <td>Direct toxin effect (non-immunologic)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Who's affected</strong></td>
+                        <td>Only sensitized individuals</td>
+                        <td>Everyone exposed to sufficient toxin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Onset</strong></td>
+                        <td>Within 30 minutes</td>
+                        <td>Very rapid (3-5 minutes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key mediators</strong></td>
+                        <td>Histamine (from mast cells)</td>
+                        <td>Histamine, Acetylcholine, Serotonin (directly from plant)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing</strong></td>
+                        <td>Prick/Scratch test (+), Patch test (-)</td>
+                        <td>Open application test</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Typical examples</strong></td>
+                        <td>Foods (celery, tomatoes), PCD in food handlers</td>
+                        <td>Stinging nettle (Urtica dioica)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- IMMUNOLOGIC CONTACT URTICARIA SECTION -->
+        <div id="immunologic-section" class="toggle-section">
+            <h2 class="immunologic">Immunologic Contact Urticaria</h2>
+            <p class="section-intro immunologic">An immune-mediated urticarial reaction to plant contact, distinct from toxin-mediated (non-immunologic) urticaria.</p>
+
+            <div class="sticky-card immunologic">
+                <h3>🔍 Quick Reference Formula</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.2rem; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🌿</span>
+                        <div>Plant Allergen<br>Contact</div>
+                    </div>
+                    <div>+</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🧬</span>
+                        <div>IgE-Mediated<br>Response</div>
+                    </div>
+                    <div>=</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🧪</span>
+                        <div>Histamine<br>Release</div>
+                    </div>
+                    <div>→</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🌊</span>
+                        <div>Urticarial<br>Reaction</div>
+                    </div>
+                </div>
+                <p><strong>Remember:</strong> <span class="highlight">Fast onset (<30 min)</span> + <span class="highlight">Positive prick test</span> + <span class="highlight">Negative patch test</span></p>
+            </div>
+
+            <h3>1️⃣ Definition & Overview</h3>
+            <div class="highlight-box immunologic">
+                <ul>
+                    <li><span class="key-term immunologic">Type:</span> Immune-mediated reaction (IgE/Type I Hypersensitivity)</li>
+                    <li><span class="key-term immunologic">Morphology:</span> Primarily wheals, but can also present as erythema and dermatitis</li>
+                    <li><span class="key-term immunologic">Frequency:</span> Relatively uncommon compared to non-immunologic plant reactions</li>
+                    <li><span class="key-term immunologic">Timing:</span> Rapid onset (<30 minutes)</li>
+                </ul>
+            </div>
+
+            <div class="recall-question immunologic">
+                <h4>💭 Recall Question: What are the key differences between immunologic and non-immunologic contact urticaria?</h4>
+                <div class="recall-answer">
+                    <p><strong>Immunologic Contact Urticaria:</strong></p>
+                    <ul>
+                        <li>IgE-mediated reaction (Type I hypersensitivity)</li>
+                        <li>Requires prior sensitization</li>
+                        <li>Positive prick/scratch tests</li>
+                        <li>Can progress to systemic symptoms</li>
+                        <li>Can develop into chronic eczematous pattern (PCD)</li>
+                    </ul>
+                    <p><strong>Non-Immunologic (Toxin-Mediated) Contact Urticaria:</strong></p>
+                    <ul>
+                        <li>Direct effect of plant toxins/chemicals</li>
+                        <li>No prior sensitization needed</li>
+                        <li>No positive allergy tests</li>
+                        <li>Usually limited to contact site</li>
+                        <li>Does not develop into chronic dermatitis pattern</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2️⃣ Epidemiology & Risk Factors</h3>
+            <div class="memory-box">
+                <h4>💡 Memory Hook: "F.O.O.D" Factors</h4>
+                <ul>
+                    <li><span class="mnemonic-letter immunologic">F</span> <strong>Frequent exposure</strong> to fresh fruits and vegetables</li>
+                    <li><span class="mnemonic-letter immunologic">O</span> <strong>Occupational</strong> - 95% of cases are work-related</li>
+                    <li><span class="mnemonic-letter immunologic">O</span> <strong>Ongoing dermatitis</strong> (pre-existing) increases risk</li>
+                    <li><span class="mnemonic-letter immunologic">D</span> <strong>Dermal barrier disruption</strong> (wet, macerated skin)</li>
+                </ul>
+            </div>
+
+            <h4>Key Risk Groups</h4>
+            <ul>
+                <li><span class="key-term immunologic">Food Handlers:</span> Long-time food handlers, especially with underlying dermatitis</li>
+                <li><span class="key-term immunologic">Atopic Individuals:</span> Atopy is a risk factor (but remember: 50% of PCD patients are NOT atopic)</li>
+                <li><span class="key-term immunologic">Occupational Exposure:</span> Approximately 95% of cases are work-related</li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>🧠 Clinical Pearl: The Atopy Paradox</h4>
+                <p>While atopy is a risk factor for immunologic contact urticaria, fully <strong>half of patients presenting with protein contact dermatitis (PCD) are not atopic</strong>. Don't rule out PCD in non-atopic patients with appropriate occupational exposure and symptoms.</p>
+            </div>
+
+            <h3>3️⃣ Pathogenesis</h3>
+            <div class="visual-flow">
+                <div class="flow-item">
+                    <div class="flow-icon immunologic">1</div>
+                    <div class="flow-content">
+                        <h4>Initial Contact</h4>
+                        <p>Plant allergen contacts skin</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon immunologic">2</div>
+                    <div class="flow-content">
+                        <h4>IgE Recognition</h4>
+                        <p>Allergen binds to IgE antibodies on mast cells</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon immunologic">3</div>
+                    <div class="flow-content">
+                        <h4>Mediator Release</h4>
+                        <p><strong>Primary:</strong> Histamine from mast cells</p>
+                        <p><strong>Secondary:</strong> Prostaglandins, kinins, leukotrienes</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon immunologic">4</div>
+                    <div class="flow-content">
+                        <h4>Clinical Manifestation</h4>
+                        <p>Local: Wheals, pruritus, erythema</p>
+                        <p>Potential progression to systemic symptoms (contact urticaria syndrome)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recall-question immunologic">
+                <h4>💭 Recall Question: What is the main mediator in immunologic contact urticaria and what other mediators are involved?</h4>
+                <div class="recall-answer">
+                    <p><strong>Main mediator:</strong> Histamine (released from mast cells upon IgE-mediated activation)</p>
+                    <p><strong>Augmenting mediators:</strong> Prostaglandins, kinins, and leukotrienes</p>
+                    <p>These mediators collectively produce the inflammatory response, with histamine playing the primary role in the development of urticarial wheals and pruritus.</p>
+                </div>
+            </div>
+
+            <h3>4️⃣ Causative Agents (Plants)</h3>
+            <div class="two-column">
+                <div>
+                    <h4>Common Plant Triggers</h4>
+                    <ul>
+                        <li><span class="key-term immunologic">Vegetables:</span> Celery, onions, potatoes, lettuce</li>
+                        <li><span class="key-term immunologic">Fruits:</span> Tomatoes, bananas, lemons</li>
+                        <li><span class="key-term immunologic">Herbs:</span> Parsley, dill</li>
+                        <li><span class="key-term immunologic">Nuts:</span> Various types</li>
+                        <li><span class="key-term immunologic">Others:</span> Algae, lichens, shrubs, trees, grasses</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Effect of Processing</h4>
+                    <div class="tip-box">
+                        <h4>🔍 Clinical Insight</h4>
+                        <p>Processing methods generally <strong>reduce allergenicity</strong> of plant triggers:</p>
+                        <ul>
+                            <li>Cooking</li>
+                            <li>Deep-freezing</li>
+                            <li>Crushing</li>
+                            <li>Industrial processing</li>
+                        </ul>
+                        <p>This explains why patients may tolerate cooked forms of foods that cause reactions when raw.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>5️⃣ Clinical Features</h3>
+            <div class="two-column">
+                <div>
+                    <h4><span class="icon-box immunologic">⏱️</span>Timing</h4>
+                    <ul>
+                        <li>Rapid onset - typically within 30 minutes of contact</li>
+                        <li>Usually requires contact with fresh plant material/foods</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><span class="icon-box immunologic">🔍</span>Common Symptoms</h4>
+                    <ul>
+                        <li>Pruritus</li>
+                        <li>Erythema</li>
+                        <li>Urticarial swelling (wheals)</li>
+                        <li>Occasionally, dyshidrotic-like vesicles</li>
+                        <li>Sometimes only subjective: burning or tingling without objective findings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="memory-box">
+                <h4>💡 Memory Hook: "PEWS" - Key Clinical Features</h4>
+                <ul>
+                    <li><span class="mnemonic-letter immunologic">P</span> <strong>Pruritus</strong> (itching at contact site)</li>
+                    <li><span class="mnemonic-letter immunologic">E</span> <strong>Erythema</strong> (redness of the skin)</li>
+                    <li><span class="mnemonic-letter immunologic">W</span> <strong>Wheals</strong> (urticarial swelling)</li>
+                    <li><span class="mnemonic-letter immunologic">S</span> <strong>Subjective symptoms</strong> (burning/tingling sometimes without visible changes)</li>
+                </ul>
+            </div>
+
+            <h3>Specific Syndromes</h3>
+            <div class="sticky-card immunologic">
+                <h3>Oral Allergy Syndrome (OAS)</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Mechanism</h4>
+                        <p>Cross-sensitization between pollen allergens and similar allergens in certain fruits or vegetables.</p>
+                        <p><strong>Example:</strong> Birch pollen allergy cross-reacting with apples, celery, potatoes, etc.</p>
+                    </div>
+                    <div>
+                        <h4>Clinical Features</h4>
+                        <ul>
+                            <li>Sudden oral cavity itching, stinging, pain</li>
+                            <li>Edema of lips, tongue, palate, pharynx</li>
+                            <li>Potential progression to gastrointestinal symptoms or anaphylaxis</li>
+                            <li>Typically better tolerance of the same foods when heated</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky-card immunologic">
+                <h3>Protein Contact Dermatitis (PCD)</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Mechanism</h4>
+                        <p>Chronic dermatitis pattern resulting from repeated Type I urticarial reactions to large protein allergens.</p>
+                    </div>
+                    <div>
+                        <h4>Clinical Features</h4>
+                        <ul>
+                            <li>Affects hands and fingertips</li>
+                            <li>Presents as chronic dermatitis</li>
+                            <li><strong>Characteristic sign:</strong> Immediate urtication (wheals/itching) within minutes of contact with the offending allergen</li>
+                            <li><strong>Testing pattern:</strong> Patch tests typically negative, but prick tests positive</li>
+                            <li>50% of patients are NOT atopic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recall-question immunologic">
+                <h4>💭 Recall Question: A 35-year-old chef presents with chronic hand dermatitis that flares with immediate itching and wheals when handling raw tomatoes. What is the likely diagnosis and what tests would you perform?</h4>
+                <div class="recall-answer">
+                    <p><strong>Likely diagnosis:</strong> Protein Contact Dermatitis (PCD)</p>
+                    <p><strong>Key diagnostic tests:</strong></p>
+                    <ul>
+                        <li>Prick test with fresh tomato (expected to be positive)</li>
+                        <li>Patch test with tomato (expected to be negative)</li>
+                    </ul>
+                    <p><strong>Clinical reasoning:</strong></p>
+                    <ul>
+                        <li>Occupational exposure (chef - falls into the 95% occupational association)</li>
+                        <li>Chronic dermatitis pattern on hands (typical location for PCD)</li>
+                        <li>Immediate flare with contact (characteristic of Type I/IgE-mediated reaction)</li>
+                        <li>Development of wheals on contact (urticarial component typical of PCD)</li>
+                    </ul>
+                    <p>Remember: Even if this patient is not atopic, PCD is still possible as 50% of PCD patients have no atopy.</p>
+                </div>
+            </div>
+
+            <h3>6️⃣ Diagnosis</h3>
+            <div class="highlight-box immunologic">
+                <h3>Diagnostic Approach</h3>
+                <ul>
+                    <li><span class="key-term immunologic">Prick tests:</span> Most sensitive for demonstrating IgE-mediated reaction</li>
+                    <li><span class="key-term immunologic">Scratch-chamber tests:</span> Alternative method for confirming Type I reaction</li>
+                    <li><span class="key-term immunologic">Patch testing:</span> Typically negative in Protein Contact Dermatitis (helps differentiate from ACD)</li>
+                    <li><span class="key-term immunologic">Clinical testing pattern:</span> PCD = Prick (+), Patch (-)</li>
+                </ul>
+            </div>
+
+            <div class="memory-box">
+                <h4>💡 Memory Hook: "PIPE" - Differentiating PCD from ACD</h4>
+                <ul>
+                    <li><span class="mnemonic-letter immunologic">P</span> <strong>Prick test positive</strong> in PCD (negative in ACD)</li>
+                    <li><span class="mnemonic-letter immunologic">I</span> <strong>Immediate reaction</strong> in PCD vs. delayed in ACD</li>
+                    <li><span class="mnemonic-letter immunologic">P</span> <strong>Patch test negative</strong> in PCD (positive in ACD)</li>
+                    <li><span class="mnemonic-letter immunologic">E</span> <strong>Eczematous appearance</strong> in both, but PCD urticates on contact</li>
+                </ul>
+            </div>
+
+            <h3>7️⃣ Treatment</h3>
+            <div class="two-column">
+                <div>
+                    <h4>Primary Management</h4>
+                    <ul>
+                        <li><span class="key-term immunologic">Avoidance:</span> Identification and avoidance of the causative plant/food</li>
+                        <li><span class="key-term immunologic">Barrier protection:</span> Gloves, protective clothing for occupational exposure</li>
+                        <li><span class="key-term immunologic">Processing modification:</span> Cooking or processing foods when possible</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Acute Treatment</h4>
+                    <ul>
+                        <li><span class="key-term immunologic">Mild local reactions:</span> Antihistamines, topical steroids</li>
+                        <li><span class="key-term immunologic">Systemic/Anaphylactic reactions:</span> Parenterally administered epinephrine (adrenaline)</li>
+                        <li><span class="key-term immunologic">Chronic PCD:</span> Management of underlying dermatitis with appropriate barrier repair</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>🎯 MUST MEMORIZE (Saudi Board Focus)</h3>
+            <div class="sticky-card immunologic">
+                <h3>High-Yield Points</h3>
+                <ol>
+                    <li><span class="key-term immunologic">Mechanism:</span> IgE-mediated (Type I Hypersensitivity)</li>
+                    <li><span class="key-term immunologic">Onset:</span> Rapid (<30 minutes) after contact with fresh plant material</li>
+                    <li><span class="key-term immunologic">Main Mediator:</span> Histamine (released from mast cells)</li>
+                    <li><span class="key-term immunologic">Key Risk Group:</span> Food handlers (occupational, ~95% of cases)</li>
+                    <li><span class="key-term immunologic">Allergenicity Reduction:</span> Cooking/processing reduces allergenicity</li>
+                    <li><span class="key-term immunologic">Oral Allergy Syndrome (OAS):</span> Pollen cross-reactivity → oral symptoms upon ingestion → often tolerated if heated</li>
+                    <li><span class="key-term immunologic">Protein Contact Dermatitis (PCD):</span> Chronic dermatitis pattern + immediate urtication on contact + Negative Patch Test + Positive Prick Test. Half of PCD patients are NOT atopic.</li>
+                    <li><span class="key-term immunologic">Diagnosis:</span> Prick/Scratch tests are key for demonstrating IgE mediation</li>
+                    <li><span class="key-term immunologic">Treatment:</span> Avoidance; Epinephrine for anaphylaxis</li>
+                </ol>
+            </div>
+
+            <h3>⚠️ POTENTIAL CONFUSION/TRICK AREAS FOR EXAMS</h3>
+            <div class="alert-box">
+                <h4>Watch Out For These Traps!</h4>
+                <ol>
+                    <li><strong>PCD vs. ACD:</strong> This is the biggest trap. PCD looks like chronic eczema (like ACD might) but is caused by repeated Type I reactions. The key differentiator is the immediate urtication upon re-exposure and the testing pattern: PCD = Prick (+), Patch (-); ACD = Prick (-), Patch (+). Don't mistake chronic hand dermatitis in a food handler for simple ACD without considering PCD.</li>
+                    <li><strong>Atopy Role in PCD:</strong> While atopy is a risk factor for immunologic urticaria generally, remember the specific point that 50% of PCD patients are NOT atopic. An exam question might present a non-atopic food handler with chronic hand dermatitis that flares immediately on contact with certain foods – this could still be PCD.</li>
+                    <li><strong>Immediate vs. Delayed:</strong> Immunologic contact urticaria is immediate. Don't confuse it with delayed-type hypersensitivity reactions like standard plant ACD (e.g., poison ivy) or phytophotodermatitis.</li>
+                    <li><strong>Clinical Morphology:</strong> It's not always just wheals. Think erythema, burning/tingling, vesicles, or the chronic eczematous pattern of PCD.</li>
+                    <li><strong>OAS vs. Food Allergy:</strong> OAS is a contact urticaria of the oropharynx due to cross-reactive proteins, usually linked to aeroallergen sensitization (pollen). While it can lead to systemic symptoms, it's often milder than primary food allergy and frequently triggered by raw foods only.</li>
+                    <li><strong>Testing Interpretation:</strong> Know why you'd do a prick test (for IgE/Type I/PCD) versus a patch test (for Type IV/ACD). A negative patch test does not rule out PCD.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- TOXIN-MEDIATED CONTACT URTICARIA SECTION -->
+        <div id="toxin-section" class="toggle-section">
+            <h2 class="toxin">Toxin-Mediated (Non-immunologic) Contact Urticaria</h2>
+            <p class="section-intro toxin">A urticarial reaction caused by direct pharmacological action of plant toxins, affecting anyone exposed to sufficient quantities without requiring prior sensitization.</p>
+
+            <div class="sticky-card toxin">
+                <h3>🔍 Quick Reference Formula</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.2rem; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🌵</span>
+                        <div>Plant Trichome<br>Contact</div>
+                    </div>
+                    <div>→</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">💉</span>
+                        <div>Injection of<br>Chemical Cocktail</div>
+                    </div>
+                    <div>=</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🧪</span>
+                        <div>Histamine + Others<br>(Direct Action)</div>
+                    </div>
+                    <div>→</div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem;">🌊</span>
+                        <div>Urticarial<br>Reaction</div>
+                    </div>
+                </div>
+                <p><strong>Remember:</strong> <span class="highlight">Affects EVERYONE</span> + <span class="highlight">Very rapid onset (3-5 min)</span> + <span class="highlight">No prior sensitization needed</span></p>
+            </div>
+
+            <h3>1️⃣ Definition & Nomenclature</h3>
+            <div class="highlight-box toxin">
+                <ul>
+                    <li><span class="key-term toxin">Type:</span> Non-immunologic reaction (direct pharmacological effect)</li>
+                    <li><span class="key-term toxin">Synonym:</span> "Non-immunologic urticaria = Toxin-mediated urticaria"</li>
+                    <li><span class="key-term toxin">Mechanism:</span> Direct action of pharmacologically active substances (toxins) in the plant</li>
+                    <li><span class="key-term toxin">Sensitization:</span> Does not require prior exposure or sensitization</li>
+                </ul>
+            </div>
+
+            <div class="recall-question toxin">
+                <h4>💭 Recall Question: How do toxin-mediated and immunologic contact urticaria differ in terms of who gets affected and why?</h4>
+                <div class="recall-answer">
+                    <p><strong>Toxin-Mediated (Non-immunologic) Contact Urticaria:</strong></p>
+                    <ul>
+                        <li>Affects anyone exposed to sufficient toxin</li>
+                        <li>No prior sensitization is required</li>
+                        <li>If 10 people touch a stinging nettle, all 10 will develop a reaction</li>
+                        <li>Direct pharmacological action of toxins on skin</li>
+                    </ul>
+                    <p><strong>Immunologic Contact Urticaria:</strong></p>
+                    <ul>
+                        <li>Affects only previously sensitized individuals</li>
+                        <li>Requires prior exposure to develop IgE antibodies</li>
+                        <li>If 10 people touch a food allergen, only those sensitized will react</li>
+                        <li>Immune-mediated (IgE/Type I hypersensitivity)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2️⃣ Epidemiology</h3>
+            <div class="two-column">
+                <div>
+                    <h4>Affected Population</h4>
+                    <ul>
+                        <li>Anyone exposed to sufficient toxin</li>
+                        <li>No predisposing factors required</li>
+                        <li>Far more common than immunologic contact urticaria</li>
+                        <li>True incidence unknown - many don't seek medical attention</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Common Causative Plants</h4>
+                    <ul>
+                        <li><span class="key-term toxin">Most Common (US):</span> Stinging nettle (Urtica dioica)</li>
+                        <li><span class="key-term toxin">Most Severe:</span> Stinging Trees (Dendrocnide species) in Eastern Australia</li>
+                        <li><span class="key-term toxin">Plant Families:</span> Urticaceae, Euphorbiaceae, Hydrophyllaceae</li>
+                        <li><span class="key-term toxin">Genera:</span> Urtica, Laportea, Dendrocnide, Acidoton, Cnidoscolus, Wigandia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>3️⃣ Pathogenesis</h3>
+            <div class="visual-flow">
+                <div class="flow-item">
+                    <div class="flow-icon toxin">1</div>
+                    <div class="flow-content">
+                        <h4>Plant Structure: Trichomes</h4>
+                        <p>Specialized stinging hairs on leaves and stems</p>
+                        <p>Structure: Proximal silicaceous part attached to a distal calcified part with a terminal bulb</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon toxin">2</div>
+                    <div class="flow-content">
+                        <h4>Mechanical Contact</h4>
+                        <p>When rubbed, the bulb breaks off</p>
+                        <p>Reveals a beveled, hollow, hypodermic needle-like structure</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon toxin">3</div>
+                    <div class="flow-content">
+                        <h4>Chemical Injection</h4>
+                        <p><strong>Key Mediators (Stinging Nettle):</strong></p>
+                        <ul>
+                            <li>Histamine</li>
+                            <li>Acetylcholine</li>
+                            <li>Serotonin</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="flow-item">
+                    <div class="flow-icon toxin">4</div>
+                    <div class="flow-content">
+                        <h4>Clinical Effect</h4>
+                        <p>Rapid wheals (3-5 min)</p>
+                        <p>Burning, erythema, pruritus (1-2 hours)</p>
+                        <p>Paresthesia (may last 12+ hours - mechanism unclear)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-placeholder">
+                <h4>Figure: Plant Trichome Structure</h4>
+                <p>(Reference to Figure 17.2 in text - showing trichome with proximal silicaceous part, distal calcified part, and terminal bulb that breaks to reveal hypodermic needle-like structure)</p>
+            </div>
+
+            <div class="memory-box">
+                <h4>💡 Memory Hook: "HASTE" Mechanism</h4>
+                <ul>
+                    <li><span class="mnemonic-letter toxin">H</span> <strong>Hypodermic</strong> needle-like trichomes</li>
+                    <li><span class="mnemonic-letter toxin">A</span> <strong>Acetylcholine</strong> (key mediator)</li>
+                    <li><span class="mnemonic-letter toxin">S</span> <strong>Serotonin</strong> (key mediator)</li>
+                    <li><span class="mnemonic-letter toxin">T</span> <strong>Toxin</strong> directly injected (non-immunologic)</li>
+                    <li><span class="mnemonic-letter toxin">E</span> <strong>Everyone</strong> exposed will react</li>
+                </ul>
+            </div>
+
+            <h3>4️⃣ Clinical Features</h3>
+            <div class="two-column">
+                <div>
+                    <h4><span class="icon-box toxin">⏱️</span>Timing & Duration</h4>
+                    <ul>
+                        <li><strong>Onset:</strong> Very rapid</li>
+                        <li><strong>Wheal Peak:</strong> Maximal size 3-5 minutes after contact</li>
+                        <li><strong>Main Symptoms:</strong> Last 1-2 hours (erythema, burning, pruritus)</li>
+                        <li><strong>Persistent Symptoms:</strong> Paresthesias may last 12+ hours</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><span class="icon-box toxin">🔍</span>Common Symptoms</h4>
+                    <ul>
+                        <li>Wheals (urticaria)</li>
+                        <li>Erythema</li>
+                        <li>Burning</li>
+                        <li>Pruritus</li>
+                        <li>Sometimes only subjective symptoms (burning/tingling without objective findings)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>🧠 Clinical Pearl: Severity Spectrum</h4>
+                <p>Not all toxin-mediated reactions are equal:</p>
+                <ul>
+                    <li><strong>Urtica dioica (Stinging Nettle):</strong> Common, usually benign, self-limited</li>
+                    <li><strong>Dendrocnide species (Stinging Trees):</strong> Can cause severe reactions lasting weeks, reactivated by water/cold, with severe intermittent stabbing pains along lymphatics. Potentially life-threatening in severe cases.</li>
+                </ul>
+            </div>
+
+            <h3>5️⃣ Pathology</h3>
+            <p>Based on studies of Urtica dioica (stinging nettle) reactions:</p>
+            <div class="two-column">
+                <div>
+                    <h4>Early Changes (5 minutes)</h4>
+                    <ul>
+                        <li>Dermal edema</li>
+                        <li>Telangiectasias</li>
+                        <li>Mild spongiosis may or may not be present</li>
+                        <li>Mast cells not prominent at this stage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Later Changes (12 hours)</h4>
+                    <ul>
+                        <li>Edema resolves</li>
+                        <li>Vasodilation persists</li>
+                        <li>Spongiosis with neutrophilic and/or lymphocytic infiltrate may develop</li>
+                        <li>Mast cells observed in the papillary dermis at this later time point</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recall-question toxin">
+                <h4>💭 Recall Question: Why do toxin-mediated reactions sometimes cause prolonged paresthesias that last much longer than the visible skin reaction?</h4>
+                <div class="recall-answer">
+                    <p>According to the text, the mechanism for persistent paresthesias (that may last 12+ hours) is unclear and not fully explained by the known mediators (histamine, acetylcholine, and serotonin) that cause the early urticarial reaction.</p>
+                    <p>This suggests there are likely additional, unidentified neurologically active components in the injected toxin mixture that affect sensory nerve function for a prolonged period.</p>
+                    <p>This is particularly notable in severe reactions to Dendrocnide species (stinging trees), where symptoms can last for weeks and be reactivated by water or cold exposure.</p>
+                </div>
+            </div>
+
+            <h3>6️⃣ Differential Diagnosis & Testing</h3>
+            <div class="highlight-box toxin">
+                <h3>Diagnostic Approach</h3>
+                <ul>
+                    <li><span class="key-term toxin">Open application test:</span> Most reliable test for toxin-mediated urticaria</li>
+                    <li><span class="key-term toxin">Procedure:</span> Apply 0.1 ml samples from dilutions onto 3x3 cm skin areas</li>
+                    <li><span class="key-term toxin">Observation:</span> Every 10-15 minutes for 1 hour</li>
+                    <li><span class="key-term toxin">Result Timing:</span> Maximal erythema/edema typically occurs 30-40 minutes after application</li>
+                </ul>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Toxin-Mediated Urticaria</th>
+                        <th>Immunologic Urticaria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Requires sensitization</strong></td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Who reacts</strong></td>
+                        <td>Everyone exposed to sufficient toxin</td>
+                        <td>Only sensitized individuals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Onset after exposure</strong></td>
+                        <td>Very rapid (3-5 minutes)</td>
+                        <td>Rapid (within 30 minutes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diagnostic testing</strong></td>
+                        <td>Open application test</td>
+                        <td>Prick/scratch tests</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mediators</strong></td>
+                        <td>Histamine, acetylcholine, serotonin (from plant)</td>
+                        <td>Histamine (from mast cells), prostaglandins, kinins, leukotrienes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="memory-box">
+                <h4>💡 Memory Hook: "OPEN" Testing</h4>
+                <ul>
+                    <li><span class="mnemonic-letter toxin">O</span> <strong>Open application</strong> is the test of choice</li>
+                    <li><span class="mnemonic-letter toxin">P</span> <strong>Pharmacologic</strong> direct action (non-immunologic)</li>
+                    <li><span class="mnemonic-letter toxin">E</span> <strong>Everyone</strong> will test positive (no sensitization needed)</li>
+                    <li><span class="mnemonic-letter toxin">N</span> <strong>Nettle</strong> (and similar plants) are typical causes</li>
+                </ul>
+            </div>
+
+            <h3>7️⃣ Treatment</h3>
+            <div class="tip-box">
+                <h4>Treatment Approaches</h4>
+                <ul>
+                    <li><span class="key-term toxin">General approach:</span> Most stings (e.g., from nettles) are benign, self-limited, and require no specific treatment</li>
+                    <li><span class="key-term toxin">Trichome removal:</span> Can be attempted using glue and gauze</li>
+                    <li><span class="key-term toxin">Symptomatic relief:</span>
+                        <ul>
+                            <li>Topical pramoxine (local anesthetic) may help</li>
+                            <li>Oral analgesics may provide some relief</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>🎯 MUST MEMORIZE (Saudi Board Focus)</h3>
+            <div class="sticky-card toxin">
+                <h3>High-Yield Points</h3>
+                <ol>
+                    <li><span class="key-term toxin">Mechanism:</span> NON-immunologic, direct TOXIN effect. Affects EVERYONE.</li>
+                    <li><span class="key-term toxin">Synonym:</span> Toxin-mediated urticaria.</li>
+                    <li><span class="key-term toxin">Plant Structure:</span> Trichomes (specialized stinging hairs).</li>
+                    <li><span class="key-term toxin">Chemicals (Nettle):</span> Histamine, Acetylcholine, Serotonin.</li>
+                    <li><span class="key-term toxin">Onset:</span> Rapid (wheals max 3-5 min).</li>
+                    <li><span class="key-term toxin">Duration:</span> Symptoms mostly 1-2 hours (paresthesias longer).</li>
+                    <li><span class="key-term toxin">Common Cause (US):</span> Stinging Nettle (Urtica dioica).</li>
+                    <li><span class="key-term toxin">Severe Cause:</span> Dendrocnide (Australian stinging trees).</li>
+                    <li><span class="key-term toxin">Testing:</span> Open Application Test.</li>
+                    <li><span class="key-term toxin">Treatment:</span> Usually none needed; symptomatic relief.</li>
+                </ol>
+            </div>
+
+            <h3>⚠️ POTENTIAL CONFUSION/TRICK AREAS FOR EXAMS</h3>
+            <div class="alert-box">
+                <h4>Watch Out For These Traps!</h4>
+                <ol>
+                    <li><strong>Immunologic vs. Non-immunologic:</strong> This is the core distinction. Non-immunologic affects all, no prior sensitization needed, direct toxin effect. Immunologic requires sensitization (usually IgE), affects only sensitized individuals. An exam might describe a group exposure where everyone reacts – points to non-immunologic.</li>
+                    <li><strong>Mediators:</strong> While histamine is involved here (like in allergic reactions), it's directly injected/released by the toxin, not primarily via IgE-mast cell degranulation. Also, acetylcholine and serotonin are key players here, less emphasized in standard allergic urticaria.</li>
+                    <li><strong>Persistent Paresthesias:</strong> Note that the text specifically says histamine/acetylcholine/serotonin don't fully explain the prolonged paresthesias sometimes seen with nettles. Don't assume these mediators account for all symptoms.</li>
+                    <li><strong>Testing:</strong> Open application test for toxin-mediated vs. Prick/Scratch test for immunologic. Don't mix them up.</li>
+                    <li><strong>Trichomes vs. Glochids:</strong> Trichomes (nettles) are stinging hairs containing chemicals. Glochids (cacti) are barbed hairs causing mechanical irritation primarily. Ensure you know the difference.</li>
+                    <li><strong>Severity Spectrum:</strong> Don't assume all non-immunologic urticaria is mild like typical nettle stings. Remember the Dendrocnide example for potentially life-threatening reactions from a toxin-mediated mechanism.</li>
+                </ol>
+            </div>
+
+            <div class="recall-question toxin">
+                <h4>💭 Final Recall Question: A group of hikers walked through a patch of plants and all 5 of them developed immediate wheals, erythema, and burning sensations within minutes, which mostly resolved in 2 hours except for some persistent tingling. What is the most likely diagnosis, causative plant, and appropriate management?</h4>
+                <div class="recall-answer">
+                    <p><strong>Diagnosis:</strong> Toxin-Mediated (Non-immunologic) Contact Urticaria</p>
+                    <p><strong>Likely causative plant:</strong> Stinging Nettle (Urtica dioica)</p>
+                    <p><strong>Key diagnostic features:</strong></p>
+                    <ul>
+                        <li>ALL exposed individuals developed reactions (indicates non-immunologic mechanism)</li>
+                        <li>Very rapid onset (within minutes - characteristic of toxin-mediated reactions)</li>
+                        <li>Self-limited symptoms (mostly resolved in 2 hours)</li>
+                        <li>Persistent paresthesia (tingling) lasting longer than other symptoms</li>
+                    </ul>
+                    <p><strong>Management approach:</strong></p>
+                    <ul>
+                        <li>Usually no specific treatment needed for stinging nettle reactions</li>
+                        <li>For symptomatic relief: topical pramoxine (local anesthetic) and/or oral analgesics</li>
+                        <li>Attempt removal of any remaining trichomes using glue and gauze</li>
+                        <li>Reassurance about benign, self-limited nature of typical nettle reactions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Good luck on your Saudi Board Dermatology Exam! Remember to review this material using spaced repetition techniques.</p>
+            <p>Created for: Saudi Board Dermatology Exam Preparation</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const recallQuestions = document.querySelectorAll('.recall-question');
+            
+            recallQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+        
+        function showAll() {
+            document.getElementById('immunologic-section').style.display = 'block';
+            document.getElementById('toxin-section').style.display = 'block';
+            
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.nav-btn')[0].classList.add('active');
+        }
+        
+        function showImmunologic() {
+            document.getElementById('immunologic-section').style.display = 'block';
+            document.getElementById('toxin-section').style.display = 'none';
+            
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.nav-btn')[1].classList.add('active');
+        }
+        
+        function showToxinMediated() {
+            document.getElementById('immunologic-section').style.display = 'none';
+            document.getElementById('toxin-section').style.display = 'block';
+            
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.nav-btn')[2].classList.add('active');
+        }
+    </script>
+</body>
+</html>

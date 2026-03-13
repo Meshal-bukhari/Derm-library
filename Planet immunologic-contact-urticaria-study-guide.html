@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immunologic Contact Urticaria - Saudi Board Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --highlight: #f39c12;
+            --success: #27ae60;
+            --light: #ecf0f1;
+            --light-accent: #eaf2f8;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px 0;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "🌊";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            top: -20px;
+            right: 30px;
+            transform: rotate(30deg);
+        }
+        
+        header::after {
+            content: "🦠";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            bottom: -20px;
+            left: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--secondary);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .sticky-card {
+            background-color: var(--light-accent);
+            border: 2px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sticky-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .memory-box {
+            background-color: #fff8e1;
+            border-left: 5px solid var(--highlight);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .memory-box h4 {
+            color: var(--highlight);
+            margin-top: 0;
+        }
+        
+        .alert-box {
+            background-color: #fdecea;
+            border-left: 5px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .alert-box h4 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .tip-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tip-box h4 {
+            color: var(--success);
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .key-term {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .two-column > div {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .comparison-table th {
+            background-color: var(--secondary);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:first-child th:first-child {
+            border-top-left-radius: var(--border-radius);
+        }
+        
+        .comparison-table tr:first-child th:last-child {
+            border-top-right-radius: var(--border-radius);
+        }
+        
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--light-accent);
+        }
+        
+        details {
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        summary {
+            padding: 15px;
+            background-color: var(--light);
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        summary:hover {
+            background-color: #e3e8ec;
+        }
+        
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        details div {
+            padding: 15px;
+        }
+        
+        .recall-question {
+            background-color: var(--light-accent);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .recall-question::after {
+            content: "👉 Click to reveal answer";
+            display: block;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .recall-answer {
+            display: none;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .recall-question.active::after {
+            content: "👆 Click to hide answer";
+        }
+        
+        .recall-question.active .recall-answer {
+            display: block;
+        }
+        
+        .visual-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+        }
+        
+        .flow-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .flow-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+        }
+        
+        .flow-content {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .flow-arrow {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .print-section {
+            text-align: right;
+            margin: 20px 0;
+        }
+        
+        .print-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .print-btn:hover {
+            background-color: #1e2b38;
+        }
+        
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        .mnemonic-letter {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column > div {
+                flex: 100%;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            header, footer, .print-section {
+                display: none;
+            }
+            
+            h2 {
+                page-break-before: always;
+            }
+            
+            .sticky-card, .memory-box, .alert-box, .tip-box, .recall-question, details {
+                break-inside: avoid;
+            }
+            
+            .recall-question.active .recall-answer,
+            .recall-answer {
+                display: block;
+            }
+            
+            .recall-question::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Immunologic Contact Urticaria</h1>
+            <p class="subtitle">Saudi Board Dermatology Exam - High-Yield Review</p>
+        </header>
+        
+        <div class="print-section">
+            <button class="print-btn" onclick="window.print()">
+                <span>🖨️</span> Print Study Guide
+            </button>
+        </div>
+        
+        <div class="sticky-card">
+            <h3>🔍 Quick Reference Formula</h3>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.2rem; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">🌿</span>
+                    <div>Plant Allergen<br>Contact</div>
+                </div>
+                <div>+</div>
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">🧬</span>
+                    <div>IgE-Mediated<br>Response</div>
+                </div>
+                <div>=</div>
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">🧪</span>
+                    <div>Histamine<br>Release</div>
+                </div>
+                <div>→</div>
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">🌊</span>
+                    <div>Urticarial<br>Reaction</div>
+                </div>
+            </div>
+            <p><strong>Remember:</strong> <span class="highlight">Fast onset (<30 min)</span> + <span class="highlight">Positive prick test</span> + <span class="highlight">Negative patch test</span></p>
+        </div>
+
+        <h2>1️⃣ Definition & Overview</h2>
+        <p class="section-intro">An immune-mediated urticarial reaction to plant contact, distinct from toxin-mediated (non-immunologic) urticaria.</p>
+
+        <div class="highlight-box">
+            <ul>
+                <li><span class="key-term">Type:</span> Immune-mediated reaction (IgE/Type I Hypersensitivity)</li>
+                <li><span class="key-term">Morphology:</span> Primarily wheals, but can also present as erythema and dermatitis</li>
+                <li><span class="key-term">Frequency:</span> Relatively uncommon compared to non-immunologic plant reactions</li>
+                <li><span class="key-term">Timing:</span> Rapid onset (<30 minutes)</li>
+            </ul>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: What are the key differences between immunologic and non-immunologic contact urticaria?</h4>
+            <div class="recall-answer">
+                <p><strong>Immunologic Contact Urticaria:</strong></p>
+                <ul>
+                    <li>IgE-mediated reaction (Type I hypersensitivity)</li>
+                    <li>Requires prior sensitization</li>
+                    <li>Positive prick/scratch tests</li>
+                    <li>Can progress to systemic symptoms</li>
+                    <li>Can develop into chronic eczematous pattern (PCD)</li>
+                </ul>
+                <p><strong>Non-Immunologic (Toxin-Mediated) Contact Urticaria:</strong></p>
+                <ul>
+                    <li>Direct effect of plant toxins/chemicals</li>
+                    <li>No prior sensitization needed</li>
+                    <li>No positive allergy tests</li>
+                    <li>Usually limited to contact site</li>
+                    <li>Does not develop into chronic dermatitis pattern</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>2️⃣ Epidemiology & Risk Factors</h2>
+        <p class="section-intro">Immunologic contact urticaria is predominantly occupational in nature, with specific risk groups and factors.</p>
+
+        <div class="memory-box">
+            <h4>💡 Memory Hook: "F.O.O.D" Factors</h4>
+            <ul>
+                <li><span class="mnemonic-letter">F</span> <strong>Frequent exposure</strong> to fresh fruits and vegetables</li>
+                <li><span class="mnemonic-letter">O</span> <strong>Occupational</strong> - 95% of cases are work-related</li>
+                <li><span class="mnemonic-letter">O</span> <strong>Ongoing dermatitis</strong> (pre-existing) increases risk</li>
+                <li><span class="mnemonic-letter">D</span> <strong>Dermal barrier disruption</strong> (wet, macerated skin)</li>
+            </ul>
+        </div>
+
+        <h3>Key Risk Groups</h3>
+        <ul>
+            <li><span class="key-term">Food Handlers:</span> Long-time food handlers, especially with underlying dermatitis</li>
+            <li><span class="key-term">Atopic Individuals:</span> Atopy is a risk factor (but remember: 50% of PCD patients are NOT atopic)</li>
+            <li><span class="key-term">Occupational Exposure:</span> Approximately 95% of cases are work-related</li>
+        </ul>
+
+        <div class="tip-box">
+            <h4>🧠 Clinical Pearl: The Atopy Paradox</h4>
+            <p>While atopy is a risk factor for immunologic contact urticaria, fully <strong>half of patients presenting with protein contact dermatitis (PCD) are not atopic</strong>. Don't rule out PCD in non-atopic patients with appropriate occupational exposure and symptoms.</p>
+        </div>
+
+        <h2>3️⃣ Pathogenesis</h2>
+        <p class="section-intro">The underlying mechanism involves IgE-mediated mast cell degranulation upon contact with plant allergens.</p>
+
+        <div class="visual-flow">
+            <div class="flow-item">
+                <div class="flow-icon">1</div>
+                <div class="flow-content">
+                    <h4>Initial Contact</h4>
+                    <p>Plant allergen contacts skin</p>
+                </div>
+            </div>
+            
+            <div class="flow-arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-icon">2</div>
+                <div class="flow-content">
+                    <h4>IgE Recognition</h4>
+                    <p>Allergen binds to IgE antibodies on mast cells</p>
+                </div>
+            </div>
+            
+            <div class="flow-arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-icon">3</div>
+                <div class="flow-content">
+                    <h4>Mediator Release</h4>
+                    <p><strong>Primary:</strong> Histamine from mast cells</p>
+                    <p><strong>Secondary:</strong> Prostaglandins, kinins, leukotrienes</p>
+                </div>
+            </div>
+            
+            <div class="flow-arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-icon">4</div>
+                <div class="flow-content">
+                    <h4>Clinical Manifestation</h4>
+                    <p>Local: Wheals, pruritus, erythema</p>
+                    <p>Potential progression to systemic symptoms (contact urticaria syndrome)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: What is the main mediator in immunologic contact urticaria and what other mediators are involved?</h4>
+            <div class="recall-answer">
+                <p><strong>Main mediator:</strong> Histamine (released from mast cells upon IgE-mediated activation)</p>
+                <p><strong>Augmenting mediators:</strong> Prostaglandins, kinins, and leukotrienes</p>
+                <p>These mediators collectively produce the inflammatory response, with histamine playing the primary role in the development of urticarial wheals and pruritus.</p>
+            </div>
+        </div>
+
+        <h2>4️⃣ Causative Agents (Plants)</h2>
+        <p class="section-intro">Theoretically, any plant can cause immunologic contact urticaria, especially with repeated exposure on compromised skin.</p>
+
+        <div class="two-column">
+            <div>
+                <h3>Common Plant Triggers</h3>
+                <ul>
+                    <li><span class="key-term">Vegetables:</span> Celery, onions, potatoes, lettuce</li>
+                    <li><span class="key-term">Fruits:</span> Tomatoes, bananas, lemons</li>
+                    <li><span class="key-term">Herbs:</span> Parsley, dill</li>
+                    <li><span class="key-term">Nuts:</span> Various types</li>
+                    <li><span class="key-term">Others:</span> Algae, lichens, shrubs, trees, grasses</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Effect of Processing</h3>
+                <div class="tip-box">
+                    <h4>🔍 Clinical Insight</h4>
+                    <p>Processing methods generally <strong>reduce allergenicity</strong> of plant triggers:</p>
+                    <ul>
+                        <li>Cooking</li>
+                        <li>Deep-freezing</li>
+                        <li>Crushing</li>
+                        <li>Industrial processing</li>
+                    </ul>
+                    <p>This explains why patients may tolerate cooked forms of foods that cause reactions when raw.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>5️⃣ Clinical Features</h2>
+        <p class="section-intro">Immunologic contact urticaria has characteristic timing, symptoms, and can present as specific syndromes.</p>
+
+        <h3>General Presentation</h3>
+        <div class="two-column">
+            <div>
+                <h4><span class="icon-box">⏱️</span>Timing</h4>
+                <ul>
+                    <li>Rapid onset - typically within 30 minutes of contact</li>
+                    <li>Usually requires contact with fresh plant material/foods</li>
+                </ul>
+            </div>
+            <div>
+                <h4><span class="icon-box">🔍</span>Common Symptoms</h4>
+                <ul>
+                    <li>Pruritus</li>
+                    <li>Erythema</li>
+                    <li>Urticarial swelling (wheals)</li>
+                    <li>Occasionally, dyshidrotic-like vesicles</li>
+                    <li>Sometimes only subjective: burning or tingling without objective findings</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="memory-box">
+            <h4>💡 Memory Hook: "PEWS" - Key Clinical Features</h4>
+            <ul>
+                <li><span class="mnemonic-letter">P</span> <strong>Pruritus</strong> (itching at contact site)</li>
+                <li><span class="mnemonic-letter">E</span> <strong>Erythema</strong> (redness of the skin)</li>
+                <li><span class="mnemonic-letter">W</span> <strong>Wheals</strong> (urticarial swelling)</li>
+                <li><span class="mnemonic-letter">S</span> <strong>Subjective symptoms</strong> (burning/tingling sometimes without visible changes)</li>
+            </ul>
+        </div>
+
+        <h3>Specific Syndromes</h3>
+        <div class="sticky-card">
+            <h3>Oral Allergy Syndrome (OAS)</h3>
+            <div class="two-column">
+                <div>
+                    <h4>Mechanism</h4>
+                    <p>Cross-sensitization between pollen allergens and similar allergens in certain fruits or vegetables.</p>
+                    <p><strong>Example:</strong> Birch pollen allergy cross-reacting with apples, celery, potatoes, etc.</p>
+                </div>
+                <div>
+                    <h4>Clinical Features</h4>
+                    <ul>
+                        <li>Sudden oral cavity itching, stinging, pain</li>
+                        <li>Edema of lips, tongue, palate, pharynx</li>
+                        <li>Potential progression to gastrointestinal symptoms or anaphylaxis</li>
+                        <li>Typically better tolerance of the same foods when heated</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-card">
+            <h3>Protein Contact Dermatitis (PCD)</h3>
+            <div class="two-column">
+                <div>
+                    <h4>Mechanism</h4>
+                    <p>Chronic dermatitis pattern resulting from repeated Type I urticarial reactions to large protein allergens.</p>
+                </div>
+                <div>
+                    <h4>Clinical Features</h4>
+                    <ul>
+                        <li>Affects hands and fingertips</li>
+                        <li>Presents as chronic dermatitis</li>
+                        <li><strong>Characteristic sign:</strong> Immediate urtication (wheals/itching) within minutes of contact with the offending allergen</li>
+                        <li><strong>Testing pattern:</strong> Patch tests typically negative, but prick tests positive</li>
+                        <li>50% of patients are NOT atopic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Recall Question: A 35-year-old chef presents with chronic hand dermatitis that flares with immediate itching and wheals when handling raw tomatoes. What is the likely diagnosis and what tests would you perform?</h4>
+            <div class="recall-answer">
+                <p><strong>Likely diagnosis:</strong> Protein Contact Dermatitis (PCD)</p>
+                <p><strong>Key diagnostic tests:</strong></p>
+                <ul>
+                    <li>Prick test with fresh tomato (expected to be positive)</li>
+                    <li>Patch test with tomato (expected to be negative)</li>
+                </ul>
+                <p><strong>Clinical reasoning:</strong></p>
+                <ul>
+                    <li>Occupational exposure (chef - falls into the 95% occupational association)</li>
+                    <li>Chronic dermatitis pattern on hands (typical location for PCD)</li>
+                    <li>Immediate flare with contact (characteristic of Type I/IgE-mediated reaction)</li>
+                    <li>Development of wheals on contact (urticarial component typical of PCD)</li>
+                </ul>
+                <p>Remember: Even if this patient is not atopic, PCD is still possible as 50% of PCD patients have no atopy.</p>
+            </div>
+        </div>
+
+        <h2>6️⃣ Diagnosis</h2>
+        <p class="section-intro">Diagnosis relies primarily on history and specific testing methods to confirm IgE-mediated reactions.</p>
+
+        <div class="highlight-box">
+            <h3>Diagnostic Approach</h3>
+            <ul>
+                <li><span class="key-term">Prick tests:</span> Most sensitive for demonstrating IgE-mediated reaction</li>
+                <li><span class="key-term">Scratch-chamber tests:</span> Alternative method for confirming Type I reaction</li>
+                <li><span class="key-term">Patch testing:</span> Typically negative in Protein Contact Dermatitis (helps differentiate from ACD)</li>
+                <li><span class="key-term">Clinical testing pattern:</span> PCD = Prick (+), Patch (-)</li>
+            </ul>
+        </div>
+
+        <div class="memory-box">
+            <h4>💡 Memory Hook: "PIPE" - Differentiating PCD from ACD</h4>
+            <ul>
+                <li><span class="mnemonic-letter">P</span> <strong>Prick test positive</strong> in PCD (negative in ACD)</li>
+                <li><span class="mnemonic-letter">I</span> <strong>Immediate reaction</strong> in PCD vs. delayed in ACD</li>
+                <li><span class="mnemonic-letter">P</span> <strong>Patch test negative</strong> in PCD (positive in ACD)</li>
+                <li><span class="mnemonic-letter">E</span> <strong>Eczematous appearance</strong> in both, but PCD urticates on contact</li>
+            </ul>
+        </div>
+
+        <h2>7️⃣ Differential Diagnosis</h2>
+        <p class="section-intro">Several conditions may mimic immunologic contact urticaria and must be differentiated for proper management.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Key Differentiating Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Toxin-mediated (non-immunologic) contact urticaria</strong></td>
+                    <td>
+                        <ul>
+                            <li>No prior sensitization required</li>
+                            <li>Direct effect of plant chemicals/toxins</li>
+                            <li>No positive allergy tests</li>
+                            <li>Usually limited to contact site</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Allergic Contact Dermatitis (ACD)</strong></td>
+                    <td>
+                        <ul>
+                            <li>Type IV hypersensitivity (cell-mediated)</li>
+                            <li>Delayed onset (24-48 hours)</li>
+                            <li>Positive patch test</li>
+                            <li>Negative prick test</li>
+                            <li>Eczematous morphology without immediate urticarial component</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Primary Food Allergy</strong></td>
+                    <td>
+                        <ul>
+                            <li>Usually presents with systemic symptoms upon ingestion</li>
+                            <li>Not typically occupation-related</li>
+                            <li>Pollen cross-reactivity less common than in OAS</li>
+                            <li>Often affects even well-cooked foods (unlike OAS)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Irritant Contact Dermatitis</strong></td>
+                    <td>
+                        <ul>
+                            <li>Non-immunologic mechanism</li>
+                            <li>No urticarial component</li>
+                            <li>No immediate flare on re-exposure</li>
+                            <li>Negative prick and patch tests</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert-box">
+            <h4>⚠️ Exam Alert: PCD vs. ACD</h4>
+            <p>The biggest trap on exams is confusing Protein Contact Dermatitis (PCD) with Allergic Contact Dermatitis (ACD). Remember:</p>
+            <ul>
+                <li>Both may present as chronic hand dermatitis in food handlers</li>
+                <li>PCD is a Type I (immediate) hypersensitivity reaction; ACD is Type IV (delayed)</li>
+                <li>PCD urticates immediately on contact with the allergen; ACD does not</li>
+                <li>PCD shows positive prick tests and negative patch tests; ACD is the opposite</li>
+                <li>PCD typically involves large protein allergens; ACD typically involves smaller haptens</li>
+            </ul>
+        </div>
+
+        <h2>8️⃣ Treatment</h2>
+        <p class="section-intro">Management focuses primarily on prevention, with emergency measures for severe reactions.</p>
+
+        <div class="two-column">
+            <div>
+                <h3>Primary Management</h3>
+                <ul>
+                    <li><span class="key-term">Avoidance:</span> Identification and avoidance of the causative plant/food</li>
+                    <li><span class="key-term">Barrier protection:</span> Gloves, protective clothing for occupational exposure</li>
+                    <li><span class="key-term">Processing modification:</span> Cooking or processing foods when possible</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Acute Treatment</h3>
+                <ul>
+                    <li><span class="key-term">Mild local reactions:</span> Antihistamines, topical steroids</li>
+                    <li><span class="key-term">Systemic/Anaphylactic reactions:</span> Parenterally administered epinephrine (adrenaline)</li>
+                    <li><span class="key-term">Chronic PCD:</span> Management of underlying dermatitis with appropriate barrier repair</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🎯 MUST MEMORIZE (Saudi Board Focus)</h2>
+        <div class="sticky-card">
+            <h3>High-Yield Points</h3>
+            <ol>
+                <li><span class="key-term">Mechanism:</span> IgE-mediated (Type I Hypersensitivity)</li>
+                <li><span class="key-term">Onset:</span> Rapid (<30 minutes) after contact with fresh plant material</li>
+                <li><span class="key-term">Main Mediator:</span> Histamine (released from mast cells)</li>
+                <li><span class="key-term">Key Risk Group:</span> Food handlers (occupational, ~95% of cases)</li>
+                <li><span class="key-term">Allergenicity Reduction:</span> Cooking/processing reduces allergenicity</li>
+                <li><span class="key-term">Oral Allergy Syndrome (OAS):</span> Pollen cross-reactivity → oral symptoms upon ingestion → often tolerated if heated</li>
+                <li><span class="key-term">Protein Contact Dermatitis (PCD):</span> Chronic dermatitis pattern + immediate urtication on contact + Negative Patch Test + Positive Prick Test. Half of PCD patients are NOT atopic.</li>
+                <li><span class="key-term">Diagnosis:</span> Prick/Scratch tests are key for demonstrating IgE mediation</li>
+                <li><span class="key-term">Treatment:</span> Avoidance; Epinephrine for anaphylaxis</li>
+            </ol>
+        </div>
+
+        <h2>⚠️ POTENTIAL CONFUSION/TRICK AREAS FOR EXAMS</h2>
+        <div class="alert-box">
+            <h4>Watch Out For These Traps!</h4>
+            <ol>
+                <li><strong>PCD vs. ACD:</strong> This is the biggest trap. PCD looks like chronic eczema (like ACD might) but is caused by repeated Type I reactions. The key differentiator is the immediate urtication upon re-exposure and the testing pattern: PCD = Prick (+), Patch (-); ACD = Prick (-), Patch (+). Don't mistake chronic hand dermatitis in a food handler for simple ACD without considering PCD.</li>
+                <li><strong>Atopy Role in PCD:</strong> While atopy is a risk factor for immunologic urticaria generally, remember the specific point that 50% of PCD patients are NOT atopic. An exam question might present a non-atopic food handler with chronic hand dermatitis that flares immediately on contact with certain foods – this could still be PCD.</li>
+                <li><strong>Immediate vs. Delayed:</strong> Immunologic contact urticaria is immediate. Don't confuse it with delayed-type hypersensitivity reactions like standard plant ACD (e.g., poison ivy) or phytophotodermatitis.</li>
+                <li><strong>Clinical Morphology:</strong> It's not always just wheals. Think erythema, burning/tingling, vesicles, or the chronic eczematous pattern of PCD.</li>
+                <li><strong>OAS vs. Food Allergy:</strong> OAS is a contact urticaria of the oropharynx due to cross-reactive proteins, usually linked to aeroallergen sensitization (pollen). While it can lead to systemic symptoms, it's often milder than primary food allergy and frequently triggered by raw foods only.</li>
+                <li><strong>Testing Interpretation:</strong> Know why you'd do a prick test (for IgE/Type I/PCD) versus a patch test (for Type IV/ACD). A negative patch test does not rule out PCD.</li>
+            </ol>
+        </div>
+
+        <div class="recall-question">
+            <h4>💭 Final Recall Question: A 42-year-old non-atopic chef presents with chronic hand dermatitis that worsens when handling raw celery, with immediate itching and small wheals at the contact sites. Patch testing is negative. What is your diagnosis and what would you expect on prick testing?</h4>
+            <div class="recall-answer">
+                <p><strong>Diagnosis:</strong> Protein Contact Dermatitis (PCD) to celery</p>
+                <p><strong>Expected prick test result:</strong> Positive to fresh celery</p>
+                <p><strong>Key diagnostic elements:</strong></p>
+                <ul>
+                    <li>Occupational exposure (chef - high-risk occupation)</li>
+                    <li>Chronic hand dermatitis (typical location)</li>
+                    <li>Immediate reaction with wheals on contact (Type I reaction)</li>
+                    <li>Negative patch test (rules out ACD)</li>
+                    <li>Non-atopic status does not rule out PCD (50% of PCD patients are not atopic)</li>
+                </ul>
+                <p><strong>Management approach:</strong></p>
+                <ul>
+                    <li>Avoidance or wearing gloves when handling raw celery</li>
+                    <li>Possibly using cooked celery instead (reduced allergenicity)</li>
+                    <li>Management of underlying dermatitis with appropriate barrier repair</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Good luck on your Saudi Board Dermatology Exam! Remember to review this material using spaced repetition techniques.</p>
+            <p>Created for: Saudi Board Dermatology Exam Preparation</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const recallQuestions = document.querySelectorAll('.recall-question');
+            
+            recallQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neonatal Dermatology - Saudi Board Exam Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --highlight: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --injury: #e74c3c;
+            --neonatal: #3498db;
+            --birthmark: #9b59b6;
+            --infection: #e67e22;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            border-left: 5px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin: 20px 0 10px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .injury-section { border-top: 5px solid var(--injury); }
+        .neonatal-section { border-top: 5px solid var(--neonatal); }
+        .birthmark-section { border-top: 5px solid var(--birthmark); }
+        .infection-section { border-top: 5px solid var(--infection); }
+        
+        .compare-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .compare-item {
+            flex: 1 1 300px;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .compare-item h3 {
+            color: var(--primary);
+            border-bottom: 2px solid;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .key-feature {
+            font-weight: bold;
+            color: var(--highlight);
+        }
+        
+        .mnemonic {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .mnemonic h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .flashcard {
+            background: white;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .flashcard-question {
+            padding: 15px;
+            background-color: var(--dark-bg);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .flashcard-answer {
+            padding: 15px;
+            display: none;
+            border-top: 1px solid #ddd;
+        }
+        
+        .mcq-alert {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 3px solid var(--highlight);
+            padding: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .high-yield {
+            background-color: #f1c40f;
+            color: #34495e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(236, 240, 241, 0.5);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 11pt;
+                color: black;
+                background: white;
+            }
+            
+            .flashcard-answer {
+                display: block !important;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .compare-container {
+                flex-direction: column;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neonatal Dermatology: High-Yield Board Review</h1>
+        <p>A targeted review of key neonatal dermatologic conditions for the Saudi Board Exam</p>
+    </header>
+    
+    <main>
+        <!-- Newborn Injuries Section -->
+        <section class="section injury-section">
+            <h2>Newborn Injuries <span class="high-yield">HIGH YIELD</span></h2>
+            
+            <div class="mnemonic">
+                <h4>Memory Aid: "CCS" - The Scalp Trio</h4>
+                <p><strong>C</strong>aput Succedaneum: <span class="key-feature">Crosses sutures</span>, above periosteum</p>
+                <p><strong>C</strong>ephalohematoma: <span class="key-feature">Confined by sutures</span>, subperiosteal</p>
+                <p><strong>S</strong>ubgaleal Hematoma: <span class="key-feature">Severe, potentially life-threatening</span>, subgaleal space</p>
+            </div>
+            
+            <div class="compare-container">
+                <div class="compare-item">
+                    <h3>Caput Succedaneum</h3>
+                    <ul>
+                        <li><strong>Location:</strong> <span class="key-feature">Above periosteum</span></li>
+                        <li><strong>Borders:</strong> <span class="key-feature">Crosses suture lines</span></li>
+                        <li><strong>Presentation:</strong> Diffuse swelling, ± ecchymoses</li>
+                        <li><strong>Timing:</strong> Present at birth</li>
+                        <li><strong>Resolution:</strong> Several days</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-item">
+                    <h3>Cephalohematoma</h3>
+                    <ul>
+                        <li><strong>Location:</strong> <span class="key-feature">Subperiosteal</span></li>
+                        <li><strong>Borders:</strong> <span class="key-feature">Does NOT cross suture lines</span></li>
+                        <li><strong>Presentation:</strong> Unilateral, most commonly over parietal bones</li>
+                        <li><strong>Labs:</strong> CBC, bilirubin if severe</li>
+                        <li><strong>Resolution:</strong> Weeks</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-item">
+                    <h3>Subgaleal Hematoma</h3>
+                    <ul>
+                        <li><strong>Location:</strong> <span class="key-feature">Subgaleal space</span></li>
+                        <li><strong>Borders:</strong> <span class="key-feature">Crosses suture lines</span></li>
+                        <li><strong>Risk Factor:</strong> Traumatic/instrumented delivery</li>
+                        <li><strong>Complications:</strong> Anemia, DIC, shock</li>
+                        <li><strong>Management:</strong> Close monitoring, fluids, blood products</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-question">What differentiates Subcutaneous Fat Necrosis (SCFN) from Sclerema Neonatorum histologically?</div>
+                <div class="flashcard-answer">
+                    <p>Both show lipid crystals and needle-shaped clefts, but:</p>
+                    <ul>
+                        <li><strong>SCFN:</strong> Has <span class="key-feature">granulomatous inflammatory infiltrate</span></li>
+                        <li><strong>Sclerema Neonatorum:</strong> <span class="key-feature">Lacks granulomatous inflammation</span></li>
+                    </ul>
+                    <p>Clinically, SCFN occurs in healthy neonates while Sclerema affects debilitated preterm/term infants.</p>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Epidemiology/Pathogenesis</th>
+                        <th>Clinical Features</th>
+                        <th>Histology/Labs</th>
+                        <th>Treatment</th>
+                        <th>Prognosis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Caput Succedaneum</td>
+                        <td>Prolonged labor; extravasation <span class="key-feature">above</span> periosteum</td>
+                        <td>Diffuse scalp swelling; <span class="key-feature">crosses suture lines</span>; ± ecchymoses</td>
+                        <td>None specified</td>
+                        <td>None</td>
+                        <td>Presents at birth; resolves over several days</td>
+                    </tr>
+                    <tr>
+                        <td>Cephalohematoma</td>
+                        <td>Prolonged labor; rupture of emissary/diploic veins</td>
+                        <td>Unilateral swelling over parietal bones; <span class="key-feature">does not cross suture lines</span></td>
+                        <td>CBC; Bilirubin if severe</td>
+                        <td>None</td>
+                        <td>Presents hours to days after birth; resolves over weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Subgaleal Hematoma</td>
+                        <td>Traumatic/instrumented delivery; emissary vein rupture</td>
+                        <td>Large area of edema; ± fluid waves; <span class="key-feature">crosses suture lines</span>; can lead to anemia, DIC, shock</td>
+                        <td>CBC; coagulation studies if severe</td>
+                        <td>Close monitoring; fluids and blood products</td>
+                        <td>Presents shortly after birth</td>
+                    </tr>
+                    <tr>
+                        <td>Halo Scalp Ring</td>
+                        <td>Prolonged labor; soft tissue hypoxia</td>
+                        <td>Annular band of alopecia 1-4 cm wide over vertex; ± necrosis/scarring</td>
+                        <td>None specified</td>
+                        <td>Wound care if necrotic; surgical excision for large areas</td>
+                        <td>Hair regrows in mild cases</td>
+                    </tr>
+                    <tr>
+                        <td>Subcutaneous Fat Necrosis (SCFN)</td>
+                        <td>Full-term/post-term neonates; therapeutic hypothermia</td>
+                        <td>Indurated violaceous/red plaques/nodules on back, cheeks, buttocks, thighs</td>
+                        <td><span class="key-feature">Needle-shaped clefts with granulomatous infiltrate</span>; Screen for hypercalcemia (6 months)</td>
+                        <td>Supportive care; avoid vitamin D; manage hypercalcemia</td>
+                        <td>Resolves in weeks to months; may scar</td>
+                    </tr>
+                    <tr>
+                        <td>Sclerema Neonatorum</td>
+                        <td>Debilitated preterm/term infants; saturated fatty acids</td>
+                        <td>Diffuse hardening of skin sparing palms, soles, genitals; cool, waxy, rigid</td>
+                        <td>Lipid crystals in rosettes but <span class="key-feature">lacks granulomatous inflammation</span></td>
+                        <td>Intensive supportive care; steroids controversial</td>
+                        <td>Poor; ~2/3 succumb to sepsis and shock</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Miscellaneous Neonatal Findings Section -->
+        <section class="section neonatal-section">
+            <h2>Miscellaneous Neonatal Findings</h2>
+            
+            <div class="compare-container">
+                <div class="compare-item">
+                    <h3>Congenital Milia</h3>
+                    <ul>
+                        <li><strong>Prevalence:</strong> 16%-50% of newborns</li>
+                        <li><strong>Origin:</strong> Inclusion cysts from infundibula of vellus hairs</li>
+                        <li><strong>Appearance:</strong> Minute, white, smooth papules</li>
+                        <li><strong>Location:</strong> Face</li>
+                        <li><strong>Treatment:</strong> None</li>
+                        <li><strong>Resolution:</strong> Several months</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-item">
+                    <h3>Epstein Pearls/Bohn's Nodules</h3>
+                    <ul>
+                        <li><strong>Origin:</strong> Microkeratocysts along embryonic fusion lines</li>
+                        <li><strong>Appearance:</strong> 1-2 mm gray-white, smooth papules</li>
+                        <li><strong>Epstein location:</strong> <span class="key-feature">Palatal raphe</span></li>
+                        <li><strong>Bohn location:</strong> <span class="key-feature">Alveolar ridge</span></li>
+                        <li><strong>Treatment:</strong> None</li>
+                        <li><strong>Resolution:</strong> Most by 5 months</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nonvascular Birthmarks Section -->
+        <section class="section birthmark-section">
+            <h2>Nonvascular Birthmarks</h2>
+            
+            <div class="mnemonic">
+                <h4>Memory Aid: "CSND" - Nonvascular Birthmarks</h4>
+                <p><strong>C</strong>onnective Tissue Nevus – Shagreen patch in Tuberous Sclerosis</p>
+                <p><strong>S</strong>mooth Muscle Hamartoma – Back/lumbosacral with hypertrichosis</p>
+                <p><strong>N</strong>evus Simplex – "Salmon Patch" (angel's kiss, stork bite)</p>
+                <p><strong>D</strong>ermal Melanocytosis – Blue color from Tyndall effect</p>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Epidemiology/Pathogenesis</th>
+                        <th>Clinical Features</th>
+                        <th>Histology</th>
+                        <th>Treatment/Prognosis</th>
+                        <th>Key Associations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Connective Tissue Nevus (CTN)</td>
+                        <td>Hamartoma: excessive collagen, elastin, or GAGs</td>
+                        <td>Firm, skin-colored to yellowish nodules/plaques; cobblestone or leather grain texture</td>
+                        <td>Excessive collagen or elastic tissue</td>
+                        <td>No treatment needed; stable over time</td>
+                        <td><span class="key-feature">Shagreen patch</span> in <span class="key-feature">Tuberous Sclerosis</span><br>
+                        Elastic tissue nevi in <span class="key-feature">Buschke-Ollendorff syndrome</span><br>
+                        Cerebriform collagenoma in <span class="key-feature">Proteus syndrome</span></td>
+                    </tr>
+                    <tr>
+                        <td>Congenital Smooth Muscle Hamartoma</td>
+                        <td>Hamartoma of reticular dermis; slight male predominance</td>
+                        <td>Hyperpigmented plaque with overlying hypertrichosis; mostly on lower back/lumbosacral area</td>
+                        <td>Well-defined bundles of smooth muscle in reticular dermis</td>
+                        <td>No treatment needed; no malignant potential</td>
+                        <td>Histologic overlap with <span class="key-feature">Becker's nevus</span> (but Becker's arises peripubertally)</td>
+                    </tr>
+                    <tr>
+                        <td>Nevus Simplex ("Salmon Patch")</td>
+                        <td>Very common (30-80%); vascular ectasia of capillary bed</td>
+                        <td>Ill-defined, pink to light-red, blanchable macules/patches; glabella ("angel's kiss"), eyelids, occiput ("stork's bite")</td>
+                        <td>Superficial capillaries in upper dermis</td>
+                        <td>Most resolve over months to years; occipital lesions often persist</td>
+                        <td>Vs. Port Wine Stain: Simplex is more common (50% vs <1%), lighter pink, transient</td>
+                    </tr>
+                    <tr>
+                        <td>Dermal Melanocytosis (DM)</td>
+                        <td>African American (95%) > Asian (85%) > Latino (65%) > Caucasian (<15%)</td>
+                        <td>Slate blue/gray/black patches; commonly over buttocks/sacrum<br>
+                        <strong>Subtypes:</strong> Nevus of Ota (periocular/cheek/sclera), Nevus of Ito (shoulder)</td>
+                        <td>Melanocytes in <span class="key-feature">non-sclerotic</span> dermal collagen</td>
+                        <td>Sacral lesions often fade; Q-switched lasers for Ota/Ito (90% effective)</td>
+                        <td>Blue color from <span class="key-feature">Tyndall effect</span><br>
+                        Associated with <span class="key-feature">GM1 gangliosidosis</span>, <span class="key-feature">phakomatosis pigmentovascularis</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="flashcard">
+                <div class="flashcard-question">Which birthmark is associated with Tuberous Sclerosis and appears as a "shagreen patch"?</div>
+                <div class="flashcard-answer">
+                    <p><strong>Answer: Connective Tissue Nevus (CTN)</strong></p>
+                    <p>The collagenoma variant of CTN manifests as a "shagreen patch" in Tuberous Sclerosis. It appears as a firm, skin-colored to yellowish plaque with a leather grain texture, typically on the trunk or limbs.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Congenital Infections Section -->
+        <section class="section infection-section">
+            <h2>Congenital Infections <span class="high-yield">HIGH YIELD</span></h2>
+            
+            <div class="mcq-alert">
+                <p>📝 Multiple Choice Alert: CMV is the most common infectious cause of congenital deafness and mental retardation!</p>
+            </div>
+            
+            <div class="mcq-alert">
+                <p>📝 Multiple Choice Alert: Neonatal HSV typically presents at 5-14 days after birth</p>
+            </div>
+            
+            <div class="mnemonic">
+                <h4>Memory Aid: "TORCH" Infections & Findings</h4>
+                <p><strong>T</strong>oxoplasmosis - Intracranial calcifications</p>
+                <p><strong>O</strong>ther (Syphilis) - Hutchinson triad(interstitial keratitis, hutchinson teeth, 8th nerve deafness), snuffles</p>
+                <p><strong>R</strong>ubella - "Blueberry muffin baby" (EMH)</p>
+                <p><strong>C</strong>MV - #1 cause of congenital deafness</p>
+                <p><strong>H</strong>erpes - Vesicles, scarring, high mortality</p>
+            </div>
+            
+            <div class="compare-container">
+                <div class="compare-item">
+                    <h3>"Blueberry Muffin Baby" Causes</h3>
+                    <ul>
+                        <li><strong>Rubella</strong> - EMH: soft spongy erythematous/violaceous papules</li>
+                        <li><strong>CMV</strong> - Most common congenital infection</li>
+                        <li><strong>Toxoplasmosis</strong> - Often with intracranial calcifications</li>
+                        <li>All show <span class="key-feature">extramedullary hematopoiesis (EMH)</span> on biopsy</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-item">
+                    <h3>Congenital vs. Neonatal HSV</h3>
+                    <ul>
+                        <li><strong>Congenital (Intrauterine) HSV:</strong>
+                            <ul>
+                                <li>Present at birth/first few days</li>
+                                <li>Vesicles, widespread erosions, congenital scars</li>
+                                <li>Often affects scalp (aplasia cutis)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Neonatal HSV:</strong>
+                            <ul>
+                                <li><span class="key-feature">Presents at 5-14 days</span></li>
+                                <li>Types: SEM (Skin, Eyes, Mouth), Disseminated, CNS</li>
+                                <li>40% with CNS infection have neurologic sequelae despite treatment</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Infection</th>
+                        <th>Epidemiology</th>
+                        <th>Clinical Features</th>
+                        <th>Diagnosis</th>
+                        <th>Treatment</th>
+                        <th>Key Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Congenital Rubella</td>
+                        <td>Maternal infection (most severe if first 12-16 weeks)</td>
+                        <td><span class="key-feature">"Blueberry muffin baby"</span> (EMH)<br>
+                        SGA, microcephaly, deafness, cataracts, PDA, chorioretinitis</td>
+                        <td>EMH on biopsy; viral culture; serology</td>
+                        <td>No treatment; prevention through vaccination</td>
+                        <td>Manifestations are lifelong</td>
+                    </tr>
+                    <tr>
+                        <td>Congenital Toxoplasmosis</td>
+                        <td>Undercooked meats, cat feces exposure; more severe in 1st trimester</td>
+                        <td>Chorioretinitis, hydrocephalus, microcephaly, <span class="key-feature">intracranial calcifications</span><br>
+                        ± Petechial rash, EMH, seizures</td>
+                        <td>EMH; Serology; PCR of amniotic fluid</td>
+                        <td>Pyrimethamine + Sulfadiazine + Folinic acid × 1 year</td>
+                        <td>70-90% asymptomatic; prognosis improves with therapy</td>
+                    </tr>
+                    <tr>
+                        <td>Congenital CMV</td>
+                        <td>Most common congenital infection (0.5-1.5% of newborns); 90% asymptomatic</td>
+                        <td>"Blueberry muffin" spots, petechiae, IUGR, microcephaly, chorioretinitis<br>
+                        <span class="key-feature">Most common infectious cause of congenital deafness and mental retardation</span></td>
+                        <td>EMH; Culture (urine, saliva); PCR</td>
+                        <td>IV Ganciclovir or Oral Valganciclovir</td>
+                        <td>Cannot be cured, only suppressed</td>
+                    </tr>
+                    <tr>
+                        <td>Congenital Syphilis</td>
+                        <td>Lack of prenatal care (~30%); highest risk with primary/secondary maternal syphilis</td>
+                        <td><strong>Early (<2 yrs):</strong> Condyloma lata, bullae/erosions, rhinitis ("snuffles"), jaundice<br>
+                        <strong>Late (>2 yrs):</strong> <span class="key-feature">Hutchinson Triad:</span> Interstitial keratitis, Hutchinson teeth, 8th nerve deafness</td>
+                        <td>Darkfield; Serologies (infant titer >4× mother's); IgM FTA-ABS most specific</td>
+                        <td>Penicillin (per CDC/AAP guidelines)</td>
+                        <td>False positive VDRL/RPR possible in other infections, malignancies, CTDs</td>
+                    </tr>
+                    <tr>
+                        <td>Congenital Varicella</td>
+                        <td>Maternal infection in first 20 weeks</td>
+                        <td>Stellate deep scars; limb paresis/hypoplasia; chorioretinitis; CNS, eye, limb abnormalities</td>
+                        <td>Intraepidermal blisters, multinucleate cells with inclusions</td>
+                        <td>VZIG, Acyclovir</td>
+                        <td>Zoster in first year possible if exposed in utero</td>
+                    </tr>
+                    <tr>
+                        <td>Neonatal Varicella</td>
+                        <td>Maternal primary VZV 7 days before to 2 days after delivery</td>
+                        <td>Vesicles on erythematous base (same stage); generalized distribution</td>
+                        <td>As above</td>
+                        <td>VZIG, Acyclovir</td>
+                        <td>Fatality up to 30% if onset <5 days; benign if onset >5 days</td>
+                    </tr>
+                    <tr>
+                        <td>Intrauterine HSV</td>
+                        <td>Ascending infection or viremia</td>
+                        <td>Vesicles, pustules, widespread erosions, congenital scars, aplasia cutis; 50-75% mortality if untreated</td>
+                        <td>Tzanck; FA/immunoperoxidase; PCR; viral culture</td>
+                        <td>IV Acyclovir</td>
+                        <td>Present at birth/first few days</td>
+                    </tr>
+                    <tr>
+                        <td>Neonatal HSV</td>
+                        <td>Infection during birth/perinatal period; higher risk with primary maternal infection (30-50%)</td>
+                        <td><span class="key-feature">Presents at 5-14 days</span><br>
+                        Types: SEM (Skin, Eyes, Mouth); Disseminated; CNS</td>
+                        <td>Intraepidermal blisters, multinucleate cells; Tzanck; DFA; PCR</td>
+                        <td>IV Acyclovir (5-14 days)</td>
+                        <td><span class="key-feature">40% have neurologic sequelae despite IV Acyclovir</span></td>
+                    </tr>
+                    <tr>
+                        <td>Congenital/Neonatal Candidiasis</td>
+                        <td>Most common: C. albicans; Risk factors: prematurity, maternal vaginal colonization</td>
+                        <td>Erythema, monomorphous papules, pustules on upper torso, palms, soles; yellow-white umbilical cord papules</td>
+                        <td>Clinical; KOH prep; culture</td>
+                        <td>Topical antifungals; systemic if severe</td>
+                        <td>Presents at birth or first few days/weeks</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="flashcard">
+                <div class="flashcard-question">What is Hutchinson's Triad in congenital syphilis?</div>
+                <div class="flashcard-answer">
+                    <p><strong>Answer: Hutchinson's Triad consists of:</strong></p>
+                    <ol>
+                        <li>Interstitial keratitis</li>
+                        <li>Hutchinson teeth (notched incisors)</li>
+                        <li>8th nerve deafness</li>
+                    </ol>
+                    <p>These are late manifestations (appearing after 2 years of age) in congenital syphilis.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Saudi Board Exam Preparation in Dermatology</p>
+        <p class="no-print">Click on flashcards to reveal answers</p>
+    </footer>
+    
+    <script>
+        // Toggle flashcards
+        document.querySelectorAll('.flashcard-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dermatology Boards: M‑CM & BWS — Quick Review</title>
+  <style>
+    :root {
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #111827ee;      /* gray-900 */
+      --muted: #94a3b8;        /* slate-400 */
+      --text: #e5e7eb;         /* gray-200 */
+      --accent: #22d3ee;       /* cyan-400 */
+      --accent-2: #a78bfa;     /* violet-400 */
+      --accent-3: #f472b6;     /* pink-400 */
+      --good: #34d399;         /* emerald-400 */
+      --warn: #fb923c;         /* orange-400 */
+      --bad: #f87171;          /* red-400 */
+      --ring: #22d3ee55;
+      --card: #0b1220;         /* deep panel */
+      --chip: #1f2937;         /* gray-800 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 500 15px/1.35 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, #1f293755, transparent) ,
+                  radial-gradient(1000px 800px at 90% 10%, #11182755, transparent),
+                  var(--bg);
+      padding: 20px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    header {
+      display: grid; gap: 8px; margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0; font-size: 22px; letter-spacing: 0.2px; font-weight: 800;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .sub { color: var(--muted); font-size: 13px }
+
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      background: linear-gradient(180deg, #0b1220cc, #0b1220f2);
+      border: 1px solid #1f2937;
+      border-radius: 18px; padding: 14px; box-shadow: 0 10px 30px #00000055;
+    }
+
+    .title {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      margin-bottom: 10px;
+    }
+    .title h2 { font-size: 16px; margin: 0; font-weight: 800; letter-spacing: 0.2px; }
+    .badge { font-size: 11px; color: #051014; background: var(--accent); padding: 4px 8px; border-radius: 999px; font-weight: 800; box-shadow: inset 0 -1px 0 #ffffff55; }
+
+    .table {
+      width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; border: 1px solid #273244; background: #0b1220;
+    }
+    .table th, .table td {
+      padding: 10px 12px; vertical-align: top; text-align: left;
+      border-bottom: 1px dashed #243041;
+    }
+    .table th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #a5b4fc; background: #11182799; position: sticky; top: 0; }
+    .table tr:hover td { background: #0e172a; }
+
+    .chip { display:inline-block; padding: 3px 8px; border-radius: 999px; background: var(--chip); color:#cbd5e1; font-size: 12px; border:1px solid #2b3a52; margin:2px 6px 2px 0; }
+    .chip.good { background:#052d23; color:#d1fae5; border-color:#115e59; }
+    .chip.warn { background:#34190a; color:#ffedd5; border-color:#9a3412; }
+    .chip.bad  { background:#3b0a0a; color:#fee2e2; border-color:#7f1d1d; }
+
+    .hl { color: #fbcfe8; font-weight: 700; }
+    .key { font-weight: 800; color: #fde68a; }
+
+    .note {
+      font-size: 12px; color: var(--muted); margin-top: 10px;
+      border-left: 3px solid #334155; padding-left: 10px;
+    }
+
+    .legend { display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 2px; }
+    .legend .chip { font-size: 11px }
+
+    .bar {
+      height: 6px; border-radius: 999px; overflow:hidden; background: #101826; margin: 10px 0 6px;
+      box-shadow: inset 0 0 0 1px #263244;
+    }
+    .bar > i { display:block; height:100%; background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3)); width: 100%; }
+
+    .two-col { columns: 2; column-gap: 16px; }
+    @media (max-width: 680px) { .two-col { columns: 1; } }
+
+    .print { display:flex; gap:8px; align-items:center; justify-content:flex-end; }
+    button {
+      background: #0b1325; color: var(--text); border:1px solid #2b3a52; border-radius: 10px; padding: 8px 10px; font-weight:700; cursor:pointer; box-shadow: 0 6px 18px #00000066;
+    }
+    button:hover { outline: 2px solid var(--ring); }
+
+    @media print {
+      body { background:#fff; color:#111; }
+      .card { box-shadow:none; background:#fff; border:1px solid #ddd; }
+      .table { background:#fff; }
+      .table th { background:#f3f4f6; color:#111; position:static; }
+      .badge { background:#0ea5e9; color:#fff; }
+      .hl, .key { color:#111; }
+      .chip { border-color:#ddd; color:#111; }
+      .note { color:#333; border-color:#ddd; }
+      .bar, .bar > i { display:none; }
+      button { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Derm Boards — Rapid Review Tables</h1>
+      <div class="sub">Designed for last‑minute recall: high‑yield cues, differentiators, and classic imaging/skin findings. (Print‑friendly)</div>
+      <div class="print"><button onclick="window.print()">🖨️ Print</button></div>
+      <div class="bar"><i></i></div>
+    </header>
+
+    <section class="grid">
+
+      <!-- M‑CM CARD -->
+      <div class="card">
+        <div class="title">
+          <h2>Megalencephaly‑Capillary Malformation (M‑CM)</h2>
+          <span class="badge">PIK3CA‑mosaic (post‑zygotic)</span>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 22%">Domain</th>
+              <th>High‑Yield Details</th>
+              <th style="width: 26%">Exam Pearls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="hl">Genetics/Timing</span></td>
+              <td>Activating <b>PIK3CA</b> mutations; <b>mosaic</b>, post‑zygotic. Presentation typically at <b>birth</b>.</td>
+              <td><span class="chip">PI3K‑AKT‑mTOR axis</span> <span class="chip">Mosaic overgrowth</span></td>
+            </tr>
+            <tr>
+              <td><span class="hl">Core Triad</span></td>
+              <td>
+                <div class="two-col">
+                  <p><b class="key">Megalencephaly</b>: progressive; symmetric or asymmetric → <b>macrocephaly</b> with <i>frontal bossing</i>.</p>
+                  <p><b class="key">Capillary malformation (CM)</b>: <i>widespread reticulated</i> CM with <b>sharp midline demarcation</b> (esp. abdomen); persistent <i>midfacial nevus simplex</i> (glabellar “angel kiss”).</p>
+                  <p><b class="key">Asymmetric overgrowth</b>: segmental body overgrowth.</p>
+                </div>
+              </td>
+              <td>
+                <span class="chip good">Triad = name!</span>
+                <span class="chip">Glabellar nevus simplex persists</span>
+                <span class="chip warn">Midline cutoff is classic</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Neurologic</td>
+              <td>
+                <ul>
+                  <li><b>Neonatal hypotonia</b> (floppy baby)</li>
+                  <li>Developmental delay</li>
+                  <li>Possible seizures</li>
+                </ul>
+              </td>
+              <td>
+                <span class="chip bad">Major morbidity driver</span>
+                <span class="chip">Think neuro workup early</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Characteristic MRI</td>
+              <td>
+                <ul>
+                  <li>Ventriculomegaly / hydrocephalus</li>
+                  <li>Acquired cerebellar tonsillar ectopia (Chiari)</li>
+                  <li>Polymicrogyria</li>
+                  <li>Cerebral asymmetry</li>
+                </ul>
+              </td>
+              <td><span class="chip warn">Polymicrogyria + ventriculomegaly</span></td>
+            </tr>
+            <tr>
+              <td>MSK & Skin</td>
+              <td>
+                <ul>
+                  <li><b>Syndactyly</b> (esp. 2nd–3rd toes)</li>
+                  <li>Polydactyly; <i>sandal gap</i></li>
+                  <li>Joint laxity / hypermobility</li>
+                  <li>Hyperelastic, soft, “doughy” skin</li>
+                </ul>
+              </td>
+              <td><span class="chip">Digits: syndactyly is common</span></td>
+            </tr>
+            <tr>
+              <td>Differentiation</td>
+              <td>
+                <b class="key">M‑CM vs KTS/DCMO</b>: Presence of <b>megalencephaly</b> + <b>neurologic findings</b> (hypotonia, DD) points to M‑CM; KTS/DCMO usually have <i>normal intellect & head size</i>.
+              </td>
+              <td>
+                <span class="chip good">Head size + neuro = M‑CM</span>
+                <span class="chip warn">Don’t be fooled by CM alone</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Unique Pearl</td>
+              <td>Hemihypertrophy can occur on the <b>opposite side</b> from the most prominent CM.</td>
+              <td><span class="chip good">Odd‑side hemihypertrophy</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="legend">
+          <span class="chip good">Core concept</span>
+          <span class="chip warn">Exam trap</span>
+          <span class="chip bad">High‑risk morbidity</span>
+        </div>
+        <div class="note">Absolute differentiator: <b>megalencephaly + neurologic involvement</b> (hypotonia) → favors M‑CM over other overgrowth syndromes.</div>
+      </div>
+
+      <!-- BWS CARD -->
+      <div class="card">
+        <div class="title">
+          <h2>Beckwith‑Wiedemann Syndrome (BWS)</h2>
+          <span class="badge">11p15.5 imprinting defects (sporadic & variable)</span>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 13%">Mnemonic</th>
+              <th>Feature</th>
+              <th>High‑Yield Details</th>
+              <th style="width: 28%">Board Tips</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="hl"><b>B</b></td>
+              <td>Big Body & Hemihyperplasia</td>
+              <td>
+                <ul>
+                  <li><b>Macrosomia</b> (LGA at birth)</li>
+                  <li><b>Hemihyperplasia</b> (segmental, asymmetric overgrowth)</li>
+                </ul>
+              </td>
+              <td>
+                <span class="chip good">Key cancer‑risk subgroup</span>
+                <span class="chip warn">Document laterality</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="hl"><b>I</b></td>
+              <td>Insulin (Hyperinsulinism)</td>
+              <td><b>Severe neonatal hypoglycemia</b> requiring urgent management to prevent neurologic injury.</td>
+              <td><span class="chip bad">Most critical neonatal emergency</span></td>
+            </tr>
+            <tr>
+              <td class="hl"><b>G</b></td>
+              <td>Gut (Abdominal Wall)</td>
+              <td><b>Omphalocele</b> (major criterion); also umbilical hernia, diastasis recti.</td>
+              <td><span class="chip warn">Omphalocele screams BWS</span></td>
+            </tr>
+            <tr>
+              <td class="hl"><b>M</b></td>
+              <td>Macroglossia</td>
+              <td>Prominent enlarged tongue → feeding issues, airway obstruction (sleep apnea), speech problems.</td>
+              <td><span class="chip good">Most recognizable feature</span></td>
+            </tr>
+            <tr>
+              <td class="hl"><b>O</b></td>
+              <td>Organomegaly</td>
+              <td>Visceromegaly: kidneys (nephromegaly), liver (hepatomegaly), adrenals.</td>
+              <td><span class="chip">Multiorgan overgrowth</span></td>
+            </tr>
+            <tr>
+              <td class="hl"><b>U</b></td>
+              <td>Unique Ear Creases/Pits</td>
+              <td>Anterior earlobe creases & posterior helical pits.</td>
+              <td><span class="chip warn">Soft sign but classic</span></td>
+            </tr>
+            <tr>
+              <td class="hl"><b>T</b></td>
+              <td>Tumors</td>
+              <td>
+                <ul>
+                  <li>Overall malignancy risk ≈ <b>7.5%</b>, almost all in childhood (&lt;8y)</li>
+                  <li>Hallmark: <b>Wilms tumor</b>, <b>Hepatoblastoma</b></li>
+                  <li>Others: neuroblastoma, rhabdomyosarcoma (less common)</li>
+                  <li>Risk higher with <b>hemihyperplasia</b></li>
+                </ul>
+              </td>
+              <td>
+                <span class="chip bad">Long‑term management focus</span>
+                <span class="chip warn">Think renal & hepatic screening</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="hl"><b>H</b></td>
+              <td>Head & Skin</td>
+              <td>
+                <ul>
+                  <li>Facies: midface hypoplasia, prominent occiput</li>
+                  <li>Skin: <i>nevus flammeus</i> (glabellar/forehead); possible café‑au‑lait macules</li>
+                </ul>
+              </td>
+              <td><span class="chip">“Stork bite on steroids”</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="legend">
+          <span class="chip good">Hallmark</span>
+          <span class="chip warn">Exam clue</span>
+          <span class="chip bad">High‑risk</span>
+        </div>
+        <div class="note">Etiology: complex genetic/epigenetic defects of imprinted genes on <b>11p15.5</b>; presentation is highly variable and often sporadic.</div>
+      </div>
+
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <div class="title">
+        <h2>Exam Traps & Differentiators</h2>
+        <span class="badge">Hit these in MCQs</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width: 28%">Scenario</th>
+            <th>Why It Matters</th>
+            <th style="width: 28%">Answer Anchor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reticulated CM with sharp midline cutoff + macrocephaly at birth</td>
+            <td>Patterned CM alone can suggest many entities; adding <b>megalencephaly</b> is decisive.</td>
+            <td><span class="chip good">M‑CM</span></td>
+          </tr>
+          <tr>
+            <td>Overgrowth + normal intellect & head circumference</td>
+            <td>Absence of neuro/head findings steers away from M‑CM.</td>
+            <td><span class="chip warn">Think KTS / DCMO, not M‑CM</span></td>
+          </tr>
+          <tr>
+            <td>Newborn with severe hypoglycemia and macroglossia</td>
+            <td>Life‑threatening hypoglycemia is a BWS hallmark needing urgent treatment.</td>
+            <td><span class="chip bad">BWS (I = Insulin)</span></td>
+          </tr>
+          <tr>
+            <td>Child with hemihyperplasia</td>
+            <td>Signals increased tumor risk in BWS cohort.</td>
+            <td><span class="chip">BWS tumor surveillance mindset</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSSS vs Strep-TSS: Saudi Board Exam Prep</title>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #ff595e;
+            --tertiary: #8b5cf6;
+            --ssss: #3b82f6;
+            --strep: #f97316;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        
+        .nav-tab {
+            padding: 12px 20px;
+            background: white;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: none;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        
+        .nav-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .nav-tab.ssss {
+            border-bottom: 3px solid var(--ssss);
+        }
+        
+        .nav-tab.strep {
+            border-bottom: 3px solid var(--strep);
+        }
+        
+        .nav-tab.compare {
+            border-bottom: 3px solid var(--tertiary);
+        }
+        
+        .nav-tab.quiz {
+            border-bottom: 3px solid var(--success);
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .card-header i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .card-header.ssss {
+            background: var(--ssss);
+            color: white;
+        }
+        
+        .card-header.strep {
+            background: var(--strep);
+            color: white;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        /* Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .comparison-table .cell-ssss {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid var(--ssss);
+        }
+        
+        .comparison-table .cell-strep {
+            background-color: rgba(249, 115, 22, 0.1);
+            border-left: 3px solid var(--strep);
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            position: relative;
+        }
+        
+        .highlight-box h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-box.pearl {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .highlight-box.warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+        }
+        
+        .highlight-box.danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .highlight-box.info {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--info);
+        }
+        
+        /* Flip Card */
+        .flip-card-container {
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flip-card-container:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .flip-card-front {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+        
+        .flip-card-back {
+            background: white;
+            color: var(--text);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        /* Clinical Feature Icons */
+        .clinical-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .clinical-feature {
+            background: #f8fafc;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .clinical-feature i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        /* Accordion */
+        .accordion {
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .accordion-header {
+            background: #f8fafc;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+        
+        .accordion-header:hover {
+            background: #f1f5f9;
+        }
+        
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+        }
+        
+        .accordion-inner {
+            padding: 15px;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 1000px;
+        }
+        
+        /* Memory Aid */
+        .memory-aid {
+            background: linear-gradient(135deg, #f6f9fc, #eef4fa);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed var(--primary);
+            position: relative;
+        }
+        
+        .memory-aid h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .memory-aid h3 i {
+            margin-right: 10px;
+        }
+        
+        .memory-aid::before {
+            content: "MEMORY AID";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-weight: bold;
+            border-bottom-left-radius: 6px;
+        }
+        
+        /* Quiz Section */
+        .quiz-container {
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            margin-top: 15px;
+        }
+        
+        .quiz-option {
+            display: block;
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: #f8fafc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .quiz-option:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+        
+        .quiz-option input {
+            margin-right: 10px;
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .quiz-next {
+            display: none;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .quiz-progress {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .quiz-progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .quiz-result h2 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Comparison Diagram */
+        .venn-diagram {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+        }
+        
+        .venn-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0.85;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .venn-circle.ssss {
+            background: var(--ssss);
+            left: 25%;
+            transform: translateX(-50%);
+        }
+        
+        .venn-circle.strep {
+            background: var(--strep);
+            right: 25%;
+            transform: translateX(50%);
+        }
+        
+        .venn-overlap {
+            position: absolute;
+            background: #8b5cf6;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            opacity: 0.85;
+        }
+        
+        .venn-item {
+            margin: 5px 0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        /* Mnemonic */
+        .mnemonic-container {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        
+        .mnemonic-letter {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .letter-box {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        .letter-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Flow Diagram */
+        .flow-diagram {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .flow-step {
+            position: relative;
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .flow-step-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .flow-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            width: 2px;
+            height: calc(100% - 15px);
+            background: var(--primary-light);
+            z-index: 1;
+        }
+        
+        .flow-content {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            flex: 1;
+        }
+        
+        .flow-content h3 {
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        /* Tab Content Groups */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Alert Box */
+        .alert-box {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            position: relative;
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .alert-box::before {
+            content: "EXAM ALERT";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-weight: bold;
+            border-bottom-left-radius: 6px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            header {
+                background: none !important;
+                color: black;
+                padding: 10px 0;
+                margin-bottom: 20px;
+            }
+            
+            .header-content h1 {
+                color: black;
+                text-shadow: none;
+            }
+            
+            .nav-tabs {
+                display: none;
+            }
+            
+            .tab-content {
+                display: block !important;
+            }
+            
+            .card {
+                box-shadow: none;
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            
+            .card-header {
+                background: none !important;
+                color: black;
+                border-bottom: 1px solid #333;
+            }
+            
+            .comparison-table {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .comparison-table th {
+                background: none !important;
+                color: black;
+                border-bottom: 2px solid black;
+            }
+            
+            .flip-card-container, .quiz-container {
+                display: none;
+            }
+            
+            .highlight-box, .memory-aid {
+                border: 1px solid #ddd;
+                background: none !important;
+            }
+            
+            .memory-aid::before {
+                display: none;
+            }
+            
+            .highlight-box.pearl, .highlight-box.warning, .highlight-box.danger, .highlight-box.info {
+                border-left: 1px solid #ddd;
+            }
+            
+            .accordion-content {
+                max-height: none !important;
+            }
+            
+            .venn-diagram {
+                display: none;
+            }
+            
+            .flow-step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .flow-step-number {
+                background: none;
+                color: black;
+                border: 1px solid black;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tab {
+                flex-basis: calc(50% - 5px);
+                text-align: center;
+            }
+            
+            .venn-diagram {
+                height: 400px;
+            }
+            
+            .venn-circle {
+                width: 150px;
+                height: 150px;
+                font-size: 0.9rem;
+            }
+            
+            .venn-overlap {
+                width: 100px;
+                height: 100px;
+                font-size: 0.8rem;
+            }
+            
+            .flip-card {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>SSSS vs Strep-TSS</h1>
+                <p>Interactive Study Guide for Saudi Board Exam | Staphylococcal Scalded Skin Syndrome & Streptococcal Toxic Shock Syndrome</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab ssss active" onclick="openTab('ssss-tab')">SSSS</button>
+            <button class="nav-tab strep" onclick="openTab('strep-tab')">Strep-TSS</button>
+            <button class="nav-tab compare" onclick="openTab('compare-tab')">Compare & Contrast</button>
+            <button class="nav-tab quiz" onclick="openTab('quiz-tab')">Self-Assessment</button>
+        </div>
+        
+        <!-- SSSS Tab Content -->
+        <div id="ssss-tab" class="tab-content active">
+            <div class="card">
+                <div class="card-header ssss">
+                    <i>🔬</i> Staphylococcal Scalded Skin Syndrome (SSSS)
+                </div>
+                <div class="card-content">
+                    <div class="highlight-box info">
+                        <h3><i>📌</i> Quick Overview</h3>
+                        <p>SSSS is caused by S. aureus exfoliative toxins (ETA/ETB) that cleave desmoglein 1 (Dsg1) in the superficial epidermis, leading to widespread blistering. Most common in infants/children, but can affect adults with renal failure.</p>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Etiology & Pathophysiology <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><strong>Organism:</strong> Staphylococcus aureus, specifically phage group II (types 55 and 71)</li>
+                                    <li><strong>Toxins:</strong> Exfoliatoxins A (ETA - chromosomally encoded) and B (ETB - plasmid encoded)</li>
+                                    <li><strong>Mechanism:</strong> Toxins act as proteases that specifically cleave desmoglein 1 (Dsg1)</li>
+                                    <li><strong>Pathogenesis:</strong> Primary infection (e.g., nasopharynx, conjunctiva) produces toxins that disseminate hematogenously. This leads to widespread cleavage of Dsg1 in the superficial epidermis and acantholysis at the subcorneal or intragranular level.</li>
+                                    <li><strong>Distinction:</strong> In SSSS, toxins act systemically (hematogenous spread), unlike bullous impetigo where toxins act locally</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Epidemiology <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><strong>Primary Age Group:</strong> Most commonly affects infants and young children (< 5 years old)
+                                        <ul>
+                                            <li>Attributed to lack of neutralizing antibodies and immature renal clearance</li>
+                                            <li>Low mortality in children (<5%)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Adults:</strong> Less common, primarily affects those with:
+                                        <ul>
+                                            <li>Chronic renal failure (CRF)</li>
+                                            <li>Immunosuppression</li>
+                                            <li>Much higher mortality in adults (>50%)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Gender:</strong> May be slightly more common in males (M:F ratio 2-4:1 reported in adults)</li>
+                                    <li><strong>Primary Infection Sites:</strong>
+                                        <ul>
+                                            <li>Children: Nasopharynx or conjunctivae most common</li>
+                                            <li>Adults: Pneumonia and bacteremia are more common primary sources</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Clinical Features <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="clinical-features">
+                                    <div class="clinical-feature"><i>🔥</i> Febrile prodrome</div>
+                                    <div class="clinical-feature"><i>🤕</i> Skin tenderness</div>
+                                    <div class="clinical-feature"><i>😮</i> Periorificial involvement</div>
+                                    <div class="clinical-feature"><i>💧</i> Flaccid bullae</div>
+                                    <div class="clinical-feature"><i>👆</i> Positive Nikolsky sign</div>
+                                    <div class="clinical-feature"><i>❌</i> NO mucosal involvement</div>
+                                </div>
+                                
+                                <div class="alert-box">
+                                    <p><strong>Mucous Membranes are NOT involved!</strong> This is a critical diagnostic feature differentiating SSSS from TEN and other conditions.</p>
+                                </div>
+                                
+                                <p><strong>Eruption Onset & Progression:</strong></p>
+                                <ul>
+                                    <li>Begins on the face with characteristic periorificial radial fissuring/crusting around mouth and eyes</li>
+                                    <li>Also affects intertriginous zones (axillae, groin, neck)</li>
+                                    <li>Generalizes within 48 hours</li>
+                                    <li>Skin appears wrinkled</li>
+                                    <li>Develops flaccid bullae that easily rupture</li>
+                                    <li><strong>Nikolsky sign is positive</strong>, often elicitable even on seemingly uninvolved skin</li>
+                                </ul>
+                                
+                                <p><strong>Desquamation:</strong></p>
+                                <ul>
+                                    <li>Flexural areas often exfoliate first, leaving moist, erythematous skin with thin, varnish-like crusting</li>
+                                    <li>Desquamation continues for up to 1 week</li>
+                                    <li>Healing occurs without scarring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Diagnosis <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Clinical Diagnosis:</strong> Primarily based on characteristic clinical presentation:</p>
+                                <ul>
+                                    <li>Age (infants/children or adults with renal failure)</li>
+                                    <li>Prodrome, skin tenderness</li>
+                                    <li>Characteristic rash morphology/distribution</li>
+                                    <li>Positive Nikolsky sign</li>
+                                    <li>Lack of mucosal involvement</li>
+                                </ul>
+                                
+                                <div class="highlight-box pearl">
+                                    <h3><i>💡</i> Diagnostic Pearl</h3>
+                                    <p><strong>Cultures from intact bullae are typically negative</strong> in SSSS because it is toxin-mediated with bacteria at a distant site. This is in contrast to bullous impetigo, where bullae cultures are positive.</p>
+                                </div>
+                                
+                                <p><strong>Cultures:</strong></p>
+                                <ul>
+                                    <li>Bullae cultures: Typically negative (toxin-mediated, bacteria are at a distant site)</li>
+                                    <li>Blood cultures: Almost always negative in children but often positive in adults</li>
+                                    <li>Cultures from primary site of infection if identifiable (e.g., nasopharynx, conjunctivae)</li>
+                                </ul>
+                                
+                                <p><strong>Histology:</strong></p>
+                                <ul>
+                                    <li>Shows acantholysis (split) high in the epidermis, within the stratum granulosum or subcorneal layer</li>
+                                    <li>Resembles Pemphigus foliaceus histologically</li>
+                                    <li>Crucially, lacks significant inflammatory cells or bacteria within the blister cavity (unlike bullous impetigo)</li>
+                                    <li>Dermis typically lacks significant inflammatory infiltrate</li>
+                                </ul>
+                                
+                                <p><strong>Biopsy:</strong> Can confirm the level of cleavage if diagnosis is uncertain</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Differential Diagnosis <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Toxic Epidermal Necrolysis (TEN):</strong> Key differential</p>
+                                <ul>
+                                    <li>TEN is usually drug-induced, affects adults</li>
+                                    <li>TEN involves mucous membranes (SSSS does not)</li>
+                                    <li>TEN shows full-thickness epidermal necrosis with dermal-epidermal separation</li>
+                                    <li>Nikolsky sign may be harder to elicit/patchy in TEN</li>
+                                    <li>TEN has higher mortality generally</li>
+                                </ul>
+                                
+                                <p><strong>Bullous Impetigo:</strong></p>
+                                <ul>
+                                    <li>Caused by the same toxins but acting locally</li>
+                                    <li>Presents with localized flaccid bullae, often with collarettes of scale after rupture</li>
+                                    <li>Minimal surrounding erythema</li>
+                                    <li>Culture of bullae fluid is positive for S. aureus</li>
+                                    <li>Histology shows neutrophils in the blister</li>
+                                </ul>
+                                
+                                <p><strong>Other differentials:</strong></p>
+                                <ul>
+                                    <li>Severe sunburn</li>
+                                    <li>Other toxin-mediated erythemas (e.g., scarlet fever, TSS)</li>
+                                    <li>Kawasaki disease</li>
+                                    <li>Viral exanthems</li>
+                                    <li>Severe drug reactions other than TEN</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Treatment <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Supportive Care:</strong></p>
+                                <ul>
+                                    <li>Essential, similar to burn care</li>
+                                    <li>Fluid and electrolyte management</li>
+                                    <li>Temperature regulation</li>
+                                    <li>Gentle skin handling</li>
+                                </ul>
+                                
+                                <p><strong>Antibiotics:</strong> Target S. aureus</p>
+                                <ul>
+                                    <li><strong>Mild disease:</strong> Oral β-lactamase resistant penicillin (e.g., dicloxacillin) or first-generation cephalosporin (e.g., cephalexin)</li>
+                                    <li><strong>Severe disease:</strong> Hospitalization with IV antibiotics (e.g., nafcillin, oxacillin). Consider Vancomycin if MRSA is suspected or prevalent</li>
+                                    <li><strong>Clindamycin:</strong> Often added as it may help reduce bacterial toxin production (protein synthesis inhibition)</li>
+                                </ul>
+                                
+                                <div class="highlight-box warning">
+                                    <h3><i>⚠️</i> Important</h3>
+                                    <p><strong>Corticosteroids are generally contraindicated</strong> in SSSS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Prognosis & Complications <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Prognosis:</strong></p>
+                                <ul>
+                                    <li>Generally excellent in children (<5% mortality) with prompt treatment</li>
+                                    <li>Significantly worse in adults (>50% mortality), especially with renal failure</li>
+                                </ul>
+                                
+                                <p><strong>Complications:</strong></p>
+                                <ul>
+                                    <li>Secondary infection</li>
+                                    <li>Sepsis</li>
+                                    <li>Fluid and electrolyte imbalance</li>
+                                    <li>Hypothermia</li>
+                                </ul>
+                                
+                                <p><strong>Healing:</strong> Typically occurs without scarring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-aid">
+                <h3><i>🧠</i> "SCALDED" Mnemonic for SSSS</h3>
+                <div class="mnemonic-container">
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">S</div>
+                        <div class="letter-content">Staphylococcus aureus (phage group II, types 55 & 71)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">C</div>
+                        <div class="letter-content">Children (most common) & Chronic renal failure (in adults)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">A</div>
+                        <div class="letter-content">Acantholysis at subcorneal/granular level (superficial)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">L</div>
+                        <div class="letter-content">Lack of mucosal involvement (critical distinction from TEN)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">D</div>
+                        <div class="letter-content">Desmoglein 1 cleavage by exfoliative toxins A & B</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">E</div>
+                        <div class="letter-content">Exfoliative toxins from distant site (negative bullae cultures)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">D</div>
+                        <div class="letter-content">Desquamation heals without scarring</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <h3>SSSS vs Bullous Impetigo</h3>
+                        <p>Hover to see key differences</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Key Differences</h3>
+                        <table style="width:100%; text-align:left;">
+                            <tr>
+                                <th style="width:50%">SSSS</th>
+                                <th style="width:50%">Bullous Impetigo</th>
+                            </tr>
+                            <tr>
+                                <td>Systemic/widespread</td>
+                                <td>Localized lesions</td>
+                            </tr>
+                            <tr>
+                                <td>Negative bullae cultures</td>
+                                <td>Positive bullae cultures</td>
+                            </tr>
+                            <tr>
+                                <td>No inflammation in biopsy</td>
+                                <td>Neutrophils present</td>
+                            </tr>
+                            <tr>
+                                <td>Distant toxin production</td>
+                                <td>Local toxin action</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Strep-TSS Tab Content -->
+        <div id="strep-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header strep">
+                    <i>🔬</i> Streptococcal Toxic Shock Syndrome (Strep-TSS)
+                </div>
+                <div class="card-content">
+                    <div class="highlight-box info">
+                        <h3><i>📌</i> Quick Overview</h3>
+                        <p>Strep-TSS is caused by Group A Streptococcus (S. pyogenes) producing superantigen toxins (SPEs, SMEZ) that trigger a massive cytokine release. It primarily affects young, previously healthy adults, with a high mortality rate (30-60%).</p>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Etiology & Pathophysiology <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><strong>Organism:</strong> Group A β-hemolytic Streptococcus (Streptococcus pyogenes), particularly M types 1 and 3</li>
+                                    <li><strong>Toxins:</strong> Various toxins acting as superantigens:
+                                        <ul>
+                                            <li>Streptococcal pyrogenic exotoxins (SPEs) A, B, and C</li>
+                                            <li>Streptococcal mitogenic exotoxin Z (SMEZ)</li>
+                                            <li>Streptolysin O</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Mechanism:</strong> Superantigens bypass normal antigen processing. They bind directly to the Vβ region of the T-cell receptor (TCR) and MHC class II molecules on antigen-presenting cells (APCs)</li>
+                                    <li><strong>Pathogenesis:</strong> This leads to nonspecific activation of a large number of T-cells, resulting in a massive release of pro-inflammatory cytokines ("cytokine storm"), including TNF-α, IL-1, IL-6, involving TLR2 and TLR4 signaling. This systemic inflammation causes capillary leak, tissue damage, hypotension, and multi-organ failure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Epidemiology <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><strong>Typical Patient:</strong> Often affects young (20-50 years), previously healthy adults</li>
+                                    <li><strong>Primary Source:</strong> Frequently associated with a florid skin or soft-tissue infection:
+                                        <ul>
+                                            <li>Cellulitis</li>
+                                            <li>Necrotizing fasciitis</li>
+                                            <li>Infected surgical site</li>
+                                            <li>Puerperal sepsis</li>
+                                            <li>Varicella superinfection</li>
+                                            <li>Minor trauma like lacerations, bruises, bug bites</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Contrast to Staph-TSS:</strong> In Strep-TSS, the primary infection site is usually obvious, whereas in Staph-TSS it may be occult</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Clinical Features <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="clinical-features">
+                                    <div class="clinical-feature"><i>⚡</i> Abrupt onset</div>
+                                    <div class="clinical-feature"><i>😣</i> Severe pain</div>
+                                    <div class="clinical-feature"><i>🔥</i> High fever</div>
+                                    <div class="clinical-feature"><i>📉</i> Hypotension (100%)</div>
+                                    <div class="clinical-feature"><i>🫁</i> Multi-organ failure</div>
+                                </div>
+                                
+                                <div class="alert-box">
+                                    <p><strong>Severe localized pain, often out of proportion to visible findings,</strong> is a hallmark early sign of Strep-TSS/Necrotizing Fasciitis.</p>
+                                </div>
+                                
+                                <p><strong>Onset:</strong> Often abrupt</p>
+                                
+                                <p><strong>Pain:</strong> Severe localized pain, often in an extremity, is a hallmark and may be out of proportion to visible skin findings initially. This pain may precede systemic symptoms.</p>
+                                
+                                <p><strong>Local Skin/Soft Tissue:</strong> May show signs of underlying infection such as redness, swelling, or frank necrotizing fasciitis.</p>
+                                
+                                <p><strong>Systemic Symptoms:</strong> Rapid progression (within 24-48 hours) to systemic toxicity:</p>
+                                <ul>
+                                    <li>High fever</li>
+                                    <li>Hypotension (present in 100% of cases by definition)</li>
+                                    <li>Multi-organ involvement (renal impairment, coagulopathy, liver impairment, ARDS are common criteria)</li>
+                                </ul>
+                                
+                                <p><strong>Rash:</strong> A generalized erythematous macular rash (scarlatiniform) is less common than in Staph-TSS. Desquamation may follow 1-2 weeks later if present. Vesicles and bullae are uncommon (5%).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Diagnosis <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Case Definition:</strong> Requires a combination of:</p>
+                                <ol>
+                                    <li><strong>Isolation of Group A Strep (GAS):</strong>
+                                        <ul>
+                                            <li>From a normally sterile site (e.g., blood, CSF, tissue biopsy) = Definite case</li>
+                                            <li>From a non-sterile site (e.g., throat, skin lesion) = Probable case (if other criteria met and no other etiology found)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Hypotension:</strong> Systolic BP <90 mmHg (adults) or <5th percentile (children)</li>
+                                    <li><strong>Multi-organ Involvement:</strong> ≥2 of the following:
+                                        <ul>
+                                            <li>Renal impairment</li>
+                                            <li>Coagulopathy (platelets <100k or DIC)</li>
+                                            <li>Liver impairment</li>
+                                            <li>ARDS</li>
+                                            <li>Generalized erythematous rash +/- desquamation</li>
+                                            <li>Soft tissue necrosis (e.g., necrotizing fasciitis, myositis, gangrene)</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                
+                                <div class="highlight-box pearl">
+                                    <h3><i>💡</i> Diagnostic Pearl</h3>
+                                    <p><strong>Blood cultures are positive in >50% of Strep-TSS cases</strong> - a key difference from Staph-TSS, where blood cultures are usually negative.</p>
+                                </div>
+                                
+                                <p><strong>Cultures:</strong> Blood cultures and culture of the primary infection site are crucial.</p>
+                                
+                                <p><strong>Imaging:</strong> May be needed to assess the extent of soft tissue infection (e.g., MRI for necrotizing fasciitis).</p>
+                                
+                                <p><strong>Labs:</strong> Show evidence of multi-organ dysfunction (elevated creatinine, liver enzymes, low platelets, DIC parameters), marked leukocytosis often.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Differential Diagnosis <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Staphylococcal Toxic Shock Syndrome (Staph-TSS):</strong> Key differential</p>
+                                <ul>
+                                    <li>Staph-TSS often has an occult infection site</li>
+                                    <li>Rash is very common in Staph-TSS</li>
+                                    <li>Blood cultures usually negative in Staph-TSS</li>
+                                    <li>Lower mortality in Staph-TSS (<3-20%)</li>
+                                </ul>
+                                
+                                <p><strong>Other differentials:</strong></p>
+                                <ul>
+                                    <li>Sepsis from other organisms</li>
+                                    <li>Necrotizing fasciitis (without TSS criteria initially)</li>
+                                    <li>Severe cellulitis/erysipelas</li>
+                                    <li>Kawasaki disease (in children)</li>
+                                    <li>Viral exanthems with shock (e.g., dengue)</li>
+                                    <li>Rickettsial diseases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Treatment <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Aggressive Supportive Care:</strong></p>
+                                <ul>
+                                    <li>ICU admission</li>
+                                    <li>Fluid resuscitation for hypotension</li>
+                                    <li>Vasopressors</li>
+                                    <li>Management of organ failure</li>
+                                </ul>
+                                
+                                <div class="highlight-box warning">
+                                    <h3><i>⚠️</i> Critical</h3>
+                                    <p><strong>Surgical Debridement</strong> is crucial and often urgent if necrotizing fasciitis or other deep soft tissue infection is present. May require fasciotomy or amputation.</p>
+                                </div>
+                                
+                                <p><strong>Antibiotics:</strong></p>
+                                <ul>
+                                    <li><strong>Penicillin G (IV):</strong> Drug of choice for GAS</li>
+                                    <li><strong>Clindamycin (IV):</strong> Essential adjunct. It suppresses bacterial toxin production (inhibits protein synthesis) and has activity even against stationary-phase bacteria</li>
+                                    <li>Broad-spectrum coverage may be needed initially if diagnosis is uncertain or polymicrobial infection is suspected</li>
+                                </ul>
+                                
+                                <p><strong>Intravenous Immunoglobulin (IVIG):</strong> May be considered as adjunctive therapy to neutralize circulating toxins, although definitive evidence varies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Prognosis & Complications <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <p><strong>Prognosis:</strong> Severe condition with high mortality (30-60%), even with aggressive treatment. This is significantly higher than Staph-TSS.</p>
+                                
+                                <p><strong>Complications:</strong></p>
+                                <ul>
+                                    <li>Multi-organ failure</li>
+                                    <li>DIC</li>
+                                    <li>Limb loss (due to necrosis or amputation)</li>
+                                    <li>Long-term sequelae from organ damage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-aid">
+                <h3><i>🧠</i> "STREP-TSS" Mnemonic</h3>
+                <div class="mnemonic-container">
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">S</div>
+                        <div class="letter-content">Streptococcus pyogenes (Group A, M types 1 & 3)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">T</div>
+                        <div class="letter-content">Toxic superantigens (SPEs, SMEZ) trigger massive cytokine release</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">R</div>
+                        <div class="letter-content">Rapid progression (24-48 hours) to systemic toxicity</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">E</div>
+                        <div class="letter-content">Extreme pain out of proportion to visible findings</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">P</div>
+                        <div class="letter-content">Previously healthy young adults (20-50 years)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">T</div>
+                        <div class="letter-content">Treatment: Penicillin G + Clindamycin + Surgical Debridement</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">S</div>
+                        <div class="letter-content">Soft tissue infection often present (Necrotizing Fasciitis common)</div>
+                    </div>
+                    <div class="mnemonic-letter">
+                        <div class="letter-box">S</div>
+                        <div class="letter-content">Severe mortality (30-60%) despite treatment</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <h3>Strep-TSS vs Staph-TSS</h3>
+                        <p>Hover to see key differences</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Key Differences</h3>
+                        <table style="width:100%; text-align:left;">
+                            <tr>
+                                <th style="width:50%">Strep-TSS</th>
+                                <th style="width:50%">Staph-TSS</th>
+                            </tr>
+                            <tr>
+                                <td>Obvious skin/soft tissue infection</td>
+                                <td>Often occult infection site</td>
+                            </tr>
+                            <tr>
+                                <td>Blood cultures positive >50%</td>
+                                <td>Blood cultures positive <15%</td>
+                            </tr>
+                            <tr>
+                                <td>Rash less common</td>
+                                <td>Rash very common</td>
+                            </tr>
+                            <tr>
+                                <td>High mortality (30-60%)</td>
+                                <td>Lower mortality (<3-20%)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <h3>Strep-TSS Pathophysiology Cascade</h3>
+                <div class="flow-step">
+                    <div class="flow-step-number">1</div>
+                    <div class="flow-content">
+                        <h3>Infection with Group A Streptococcus</h3>
+                        <p>Often begins with florid skin/soft tissue infection (cellulitis, necrotizing fasciitis, etc.)</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">2</div>
+                    <div class="flow-content">
+                        <h3>Superantigen Production</h3>
+                        <p>SPEs, SMEZ, and other toxins are produced</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">3</div>
+                    <div class="flow-content">
+                        <h3>Non-specific T-Cell Activation</h3>
+                        <p>Superantigens bypass normal processing, binding directly to TCR and MHC-II</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">4</div>
+                    <div class="flow-content">
+                        <h3>Cytokine Storm</h3>
+                        <p>Massive release of TNF-α, IL-1, IL-6, and other inflammatory mediators</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">5</div>
+                    <div class="flow-content">
+                        <h3>Systemic Effects</h3>
+                        <p>Capillary leak, vasodilation, tissue damage, multi-organ failure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Compare Tab Content -->
+        <div id="compare-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header" style="background: linear-gradient(90deg, var(--ssss) 0%, var(--strep) 100%); color: white;">
+                    <i>🔍</i> Side-by-Side Comparison
+                </div>
+                <div class="card-content">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th>SSSS</th>
+                            <th>Strep-TSS</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Causative Organism</strong></td>
+                            <td class="cell-ssss">Staphylococcus aureus (phage group II, types 55 & 71)</td>
+                            <td class="cell-strep">Group A Streptococcus (S. pyogenes), M types 1 & 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Toxins</strong></td>
+                            <td class="cell-ssss">Exfoliative toxins A & B (ETA, ETB)</td>
+                            <td class="cell-strep">Superantigens: SPEs, SMEZ, Streptolysin O</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mechanism</strong></td>
+                            <td class="cell-ssss">Cleavage of desmoglein 1 in superficial epidermis</td>
+                            <td class="cell-strep">Massive T-cell activation → cytokine storm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Typical Patient</strong></td>
+                            <td class="cell-ssss">Infants/young children (<5 years) or adults with renal failure</td>
+                            <td class="cell-strep">Young, previously healthy adults (20-50 years)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Primary Infection Site</strong></td>
+                            <td class="cell-ssss">Usually distant (nasopharynx, conjunctivae)</td>
+                            <td class="cell-strep">Usually obvious skin/soft tissue infection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Clinical Features</strong></td>
+                            <td class="cell-ssss">Widespread tender erythema, flaccid bullae, positive Nikolsky sign, NO mucosal involvement</td>
+                            <td class="cell-strep">Severe pain out of proportion, hypotension (100%), multi-organ failure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skin Findings</strong></td>
+                            <td class="cell-ssss">Periorificial crusting/fissuring, desquamation, wrinkled appearance</td>
+                            <td class="cell-strep">Less common rash, may have necrotizing fasciitis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Culture Results</strong></td>
+                            <td class="cell-ssss">Bullae cultures negative, blood cultures usually negative in children</td>
+                            <td class="cell-strep">Blood cultures positive in >50% of cases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treatment</strong></td>
+                            <td class="cell-ssss">Anti-staph antibiotics + Clindamycin, supportive care</td>
+                            <td class="cell-strep">Surgical debridement + Penicillin G + Clindamycin ± IVIG</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mortality</strong></td>
+                            <td class="cell-ssss">Children: <5%, Adults with renal failure: >50%</td>
+                            <td class="cell-strep">30-60% despite treatment</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header" style="background: var(--danger); color: white;">
+                    <i>⚠️</i> Common Confusion Traps in the Exam
+                </div>
+                <div class="card-content">
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            SSSS vs TEN <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>SSSS</th>
+                                        <th>TEN</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cause</strong></td>
+                                        <td>S. aureus toxin-mediated</td>
+                                        <td>Drug reaction</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Age Group</strong></td>
+                                        <td>Primarily children</td>
+                                        <td>Primarily adults</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mucosal Involvement</strong></td>
+                                        <td>Absent (critical distinction)</td>
+                                        <td>Present</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Level of Split</strong></td>
+                                        <td>Superficial (granular/subcorneal)</td>
+                                        <td>Full-thickness/subepidermal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nikolsky Sign</strong></td>
+                                        <td>Easily elicitable, even on uninvolved skin</td>
+                                        <td>May be patchy/harder to elicit</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            SSSS vs Bullous Impetigo <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="highlight-box pearl">
+                                    <p>Both are caused by S. aureus exfoliatoxins, but differ in presentation and pathogenesis:</p>
+                                </div>
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>SSSS</th>
+                                        <th>Bullous Impetigo</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Distribution</strong></td>
+                                        <td>Widespread</td>
+                                        <td>Localized</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Toxin Action</strong></td>
+                                        <td>Hematogenous spread from distant site</td>
+                                        <td>Local action</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bullae Culture</strong></td>
+                                        <td>Negative</td>
+                                        <td>Positive for S. aureus</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Histology</strong></td>
+                                        <td>No inflammation or bacteria in blister</td>
+                                        <td>Neutrophils and bacteria present</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Strep-TSS vs Staph-TSS <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <div class="highlight-box danger">
+                                    <p>Distinguishing these two syndromes is critical for management and prognosis:</p>
+                                </div>
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Strep-TSS</th>
+                                        <th>Staph-TSS</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Source</strong></td>
+                                        <td>Florid skin/soft tissue infection</td>
+                                        <td>Often occult</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Rash Frequency</strong></td>
+                                        <td>Less common</td>
+                                        <td>Common</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Blood Culture</strong></td>
+                                        <td>Positive in >50% of cases</td>
+                                        <td>Positive in <15% of cases</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mortality</strong></td>
+                                        <td>MUCH higher (30-60%)</td>
+                                        <td>Lower (<3-20%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pain</strong></td>
+                                        <td>Severe, out of proportion</td>
+                                        <td>Variable</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            Other Key Exam Traps <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><strong>Pain in Strep-TSS:</strong> Recognizing severe pain disproportionate to early skin findings as a potential harbinger of Strep-TSS/Necrotizing Fasciitis.</li>
+                                    <li><strong>Nikolsky Sign in SSSS:</strong> Can be positive even in clinically uninvolved skin due to circulating toxin.</li>
+                                    <li><strong>Role of Clindamycin:</strong> Used in both SSSS and Strep-TSS for its toxin-suppressing effects (protein synthesis inhibition), in addition to its antibacterial activity.</li>
+                                    <li><strong>Case Definitions:</strong> Knowing the specific criteria (esp. for Strep-TSS involving organism isolation + hypotension + multi-organ signs) is crucial for scenario-based questions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="venn-diagram">
+                <div class="venn-circle ssss">
+                    <h3>SSSS</h3>
+                    <div class="venn-item">Children & CRF adults</div>
+                    <div class="venn-item">Desmoglein-1 cleavage</div>
+                    <div class="venn-item">No mucosal involvement</div>
+                    <div class="venn-item">Negative bullae cultures</div>
+                </div>
+                <div class="venn-overlap">
+                    <div class="venn-item">Toxin-mediated</div>
+                    <div class="venn-item">Clindamycin adjunct</div>
+                    <div class="venn-item">Potential mortality</div>
+                </div>
+                <div class="venn-circle strep">
+                    <h3>Strep-TSS</h3>
+                    <div class="venn-item">Young healthy adults</div>
+                    <div class="venn-item">Superantigen activity</div>
+                    <div class="venn-item">Florid soft tissue infection</div>
+                    <div class="venn-item">High mortality (30-60%)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quiz Tab Content -->
+        <div id="quiz-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header" style="background: var(--success); color: white;">
+                    <i>📝</i> Self-Assessment Quiz
+                </div>
+                <div class="card-content">
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" id="quiz-progress"></div>
+                    </div>
+                    
+                    <div id="quiz-container" class="quiz-container">
+                        <div class="quiz-question" id="q1">
+                            <p><strong>1. A 3-year-old child presents with fever, widespread painful erythema, and flaccid bullae. The periorificial areas show crusting and radial fissuring. Examination of the oral mucosa is normal. What is the most likely diagnosis?</strong></p>
+                            
+                            <div class="quiz-options">
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a')"> Toxic Epidermal Necrolysis (TEN)
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b')"> Staphylococcal Scalded Skin Syndrome (SSSS)
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c')"> Bullous Impetigo
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" value="d" onclick="checkAnswer('q1', 'd')"> Streptococcal Toxic Shock Syndrome
+                                </label>
+                            </div>
+                            
+                            <div id="feedback-q1-a" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> TEN typically affects adults, not young children, and almost always involves mucous membranes. The lack of mucosal involvement in this case is against TEN.</p>
+                            </div>
+                            <div id="feedback-q1-b" class="quiz-feedback correct">
+                                <p><strong>Correct!</strong> This is classic SSSS in a child - widespread painful erythema, flaccid bullae, periorificial crusting, and importantly, NO mucosal involvement. The age group (young child) is also typical for SSSS.</p>
+                            </div>
+                            <div id="feedback-q1-c" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While bullous impetigo is also caused by S. aureus toxins, it presents with localized lesions rather than widespread involvement. The widespread nature of this eruption points to SSSS.</p>
+                            </div>
+                            <div id="feedback-q1-d" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Strep-TSS typically affects young adults, not children, and presents with severe systemic toxicity including hypotension. The cutaneous findings described are classic for SSSS.</p>
+                            </div>
+                            
+                            <button id="next-q1" class="quiz-next" onclick="nextQuestion('q1', 'q2')">Next Question</button>
+                        </div>
+                        
+                        <div class="quiz-question" id="q2" style="display: none;">
+                            <p><strong>2. Which of the following is TRUE regarding the histopathology of Staphylococcal Scalded Skin Syndrome (SSSS)?</strong></p>
+                            
+                            <div class="quiz-options">
+                                <label class="quiz-option">
+                                    <input type="radio" name="q2" value="a" onclick="checkAnswer('q2', 'a')"> Full-thickness epidermal necrosis with dermal-epidermal separation
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q2" value="b" onclick="checkAnswer('q2', 'b')"> Subcorneal or intragranular split with numerous neutrophils and bacteria in the blister cavity
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q2" value="c" onclick="checkAnswer('q2', 'c')"> Subcorneal or intragranular split WITHOUT significant inflammatory cells or bacteria in the blister cavity
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q2" value="d" onclick="checkAnswer('q2', 'd')"> Subepidermal split with a dense neutrophilic infiltrate
+                                </label>
+                            </div>
+                            
+                            <div id="feedback-q2-a" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Full-thickness epidermal necrosis with dermal-epidermal separation is characteristic of TEN, not SSSS.</p>
+                            </div>
+                            <div id="feedback-q2-b" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While SSSS does show a subcorneal or intragranular split, the blister cavity lacks significant inflammatory cells or bacteria. The presence of neutrophils and bacteria in the blister would be more characteristic of bullous impetigo.</p>
+                            </div>
+                            <div id="feedback-q2-c" class="quiz-feedback correct">
+                                <p><strong>Correct!</strong> SSSS shows acantholysis (split) high in the epidermis, within the stratum granulosum or subcorneal layer, and crucially lacks significant inflammatory cells or bacteria within the blister cavity. This distinguishes it from bullous impetigo histologically.</p>
+                            </div>
+                            <div id="feedback-q2-d" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> A subepidermal split with neutrophilic infiltrate would be more consistent with bullous disorders like bullous pemphigoid, not SSSS.</p>
+                            </div>
+                            
+                            <button id="next-q2" class="quiz-next" onclick="nextQuestion('q2', 'q3')">Next Question</button>
+                        </div>
+                        
+                        <div class="quiz-question" id="q3" style="display: none;">
+                            <p><strong>3. A 32-year-old previously healthy man presents with a 2-day history of severe left leg pain that seems out of proportion to the mild erythema visible on examination. He has developed fever, hypotension, and laboratory findings show acute kidney injury and thrombocytopenia. What is the most likely diagnosis?</strong></p>
+                            
+                            <div class="quiz-options">
+                                <label class="quiz-option">
+                                    <input type="radio" name="q3" value="a" onclick="checkAnswer('q3', 'a')"> Cellulitis
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q3" value="b" onclick="checkAnswer('q3', 'b')"> Staphylococcal Toxic Shock Syndrome
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q3" value="c" onclick="checkAnswer('q3', 'c')"> Streptococcal Toxic Shock Syndrome
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q3" value="d" onclick="checkAnswer('q3', 'd')"> Deep Vein Thrombosis
+                                </label>
+                            </div>
+                            
+                            <div id="feedback-q3-a" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While cellulitis can cause pain and erythema, the severe systemic symptoms (hypotension, organ dysfunction) and pain out of proportion to visible findings suggest a more serious diagnosis like Strep-TSS.</p>
+                            </div>
+                            <div id="feedback-q3-b" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While Staph-TSS can cause hypotension and multi-organ dysfunction, it typically has an occult infection site (rather than obvious skin/soft tissue infection). The severe pain out of proportion to visible findings strongly suggests Strep-TSS.</p>
+                            </div>
+                            <div id="feedback-q3-c" class="quiz-feedback correct">
+                                <p><strong>Correct!</strong> This is classic for Strep-TSS. Key features include: a previously healthy young adult, severe pain out of proportion to visible findings, hypotension, and multi-organ involvement. This presentation strongly suggests necrotizing fasciitis with Strep-TSS.</p>
+                            </div>
+                            <div id="feedback-q3-d" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While DVT can cause leg pain, it would not explain the systemic symptoms of fever, hypotension, and multi-organ dysfunction seen here.</p>
+                            </div>
+                            
+                            <button id="next-q3" class="quiz-next" onclick="nextQuestion('q3', 'q4')">Next Question</button>
+                        </div>
+                        
+                        <div class="quiz-question" id="q4" style="display: none;">
+                            <p><strong>4. Which of the following is TRUE regarding the treatment of Streptococcal Toxic Shock Syndrome?</strong></p>
+                            
+                            <div class="quiz-options">
+                                <label class="quiz-option">
+                                    <input type="radio" name="q4" value="a" onclick="checkAnswer('q4', 'a')"> Antibiotic therapy alone is sufficient if initiated early
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q4" value="b" onclick="checkAnswer('q4', 'b')"> Corticosteroids are the mainstay of therapy to suppress the inflammatory response
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q4" value="c" onclick="checkAnswer('q4', 'c')"> Surgical debridement is crucial if necrotizing fasciitis is present
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q4" value="d" onclick="checkAnswer('q4', 'd')"> Vancomycin is the drug of choice
+                                </label>
+                            </div>
+                            
+                            <div id="feedback-q4-a" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Antibiotic therapy alone is not sufficient for Strep-TSS, especially when necrotizing fasciitis is present. Surgical debridement is crucial, along with supportive care and antibiotics.</p>
+                            </div>
+                            <div id="feedback-q4-b" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Corticosteroids are not recommended for Strep-TSS. They may worsen immunosuppression and mask signs of worsening infection.</p>
+                            </div>
+                            <div id="feedback-q4-c" class="quiz-feedback correct">
+                                <p><strong>Correct!</strong> Surgical debridement is essential and often urgent if necrotizing fasciitis is present in Strep-TSS. It's a critical component of management along with antibiotics (Penicillin G + Clindamycin) and supportive care.</p>
+                            </div>
+                            <div id="feedback-q4-d" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Penicillin G, not Vancomycin, is the drug of choice for GAS. Clindamycin is added as an essential adjunct for its toxin-suppressing effects.</p>
+                            </div>
+                            
+                            <button id="next-q4" class="quiz-next" onclick="nextQuestion('q4', 'q5')">Next Question</button>
+                        </div>
+                        
+                        <div class="quiz-question" id="q5" style="display: none;">
+                            <p><strong>5. Which feature best distinguishes SSSS from bullous impetigo?</strong></p>
+                            
+                            <div class="quiz-options">
+                                <label class="quiz-option">
+                                    <input type="radio" name="q5" value="a" onclick="checkAnswer('q5', 'a')"> Causative organism
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q5" value="b" onclick="checkAnswer('q5', 'b')"> Bullae cultures (positive vs negative)
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q5" value="c" onclick="checkAnswer('q5', 'c')"> Patient age
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q5" value="d" onclick="checkAnswer('q5', 'd')"> Presence of fever
+                                </label>
+                            </div>
+                            
+                            <div id="feedback-q5-a" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Both SSSS and bullous impetigo are caused by the same organism - S. aureus producing exfoliative toxins.</p>
+                            </div>
+                            <div id="feedback-q5-b" class="quiz-feedback correct">
+                                <p><strong>Correct!</strong> In SSSS, bullae cultures are typically negative because the toxin is produced at a distant site and circulates through the bloodstream. In bullous impetigo, bullae cultures are positive for S. aureus because the toxin acts locally at the site of infection.</p>
+                            </div>
+                            <div id="feedback-q5-c" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> While SSSS is more common in children, both conditions can affect similar age groups. Age alone is not the most reliable distinguishing feature.</p>
+                            </div>
+                            <div id="feedback-q5-d" class="quiz-feedback incorrect">
+                                <p><strong>Incorrect.</strong> Fever can be present in both conditions and is not a reliable distinguishing feature.</p>
+                            </div>
+                            
+                            <button id="next-q5" class="quiz-next" onclick="showResults()">See Results</button>
+                        </div>
+                    </div>
+                    
+                    <div id="quiz-result" class="quiz-result">
+                        <h2>Quiz Complete!</h2>
+                        <p>You've completed the SSSS vs Strep-TSS self-assessment.</p>
+                        <p>Score: <span id="quiz-score">0</span>/5</p>
+                        <p id="quiz-feedback"></p>
+                        <button onclick="resetQuiz()" class="quiz-next" style="display:inline-block; margin-top:20px;">Restart Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentScore = 0;
+        let questionCount = 5;
+        
+        // Tab switching function
+        function openTab(tabId) {
+            // Hide all tab content
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            var tabButtons = document.getElementsByClassName("nav-tab");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add("active");
+            
+            // Add active class to the clicked button
+            event.currentTarget.classList.add("active");
+        }
+        
+        // Accordion toggle function
+        function toggleAccordion(element) {
+            element.parentElement.classList.toggle("active");
+            
+            var content = element.nextElementSibling;
+            var icon = element.getElementsByTagName("span")[0];
+            
+            if (element.parentElement.classList.contains("active")) {
+                icon.innerHTML = "-";
+            } else {
+                icon.innerHTML = "+";
+            }
+        }
+        
+        // Quiz functions
+        function checkAnswer(question, selected) {
+            // Hide all feedback for this question
+            var feedbacks = document.querySelectorAll('[id^="feedback-' + question + '"]');
+            for (var i = 0; i < feedbacks.length; i++) {
+                feedbacks[i].style.display = "none";
+            }
+            
+            // Show the feedback for the selected answer
+            var feedback = document.getElementById('feedback-' + question + '-' + selected);
+            feedback.style.display = "block";
+            
+            // Show the next button
+            document.getElementById('next-' + question).style.display = "block";
+            
+            // Update score if correct
+            if (feedback.classList.contains("correct")) {
+                if (!document.getElementById(question).classList.contains("answered")) {
+                    currentScore++;
+                    document.getElementById(question).classList.add("answered");
+                }
+            } else {
+                // If they changed to a wrong answer after getting it right
+                if (document.getElementById(question).classList.contains("answered")) {
+                    currentScore--;
+                    document.getElementById(question).classList.remove("answered");
+                }
+            }
+        }
+        
+        function nextQuestion(current, next) {
+            document.getElementById(current).style.display = "none";
+            document.getElementById(next).style.display = "block";
+            
+            // Update progress bar
+            var currentNumber = parseInt(current.replace("q", ""));
+            updateProgress(currentNumber);
+        }
+        
+        function updateProgress(questionNumber) {
+            var progressBar = document.getElementById("quiz-progress");
+            var percentage = (questionNumber / questionCount) * 100;
+            progressBar.style.width = percentage + "%";
+        }
+        
+        function showResults() {
+            document.getElementById("q5").style.display = "none";
+            document.getElementById("quiz-container").style.display = "none";
+            document.getElementById("quiz-result").style.display = "block";
+            document.getElementById("quiz-score").textContent = currentScore;
+            
+            var feedback = "";
+            if (currentScore === 5) {
+                feedback = "Excellent! You're ready for the exam!";
+            } else if (currentScore >= 3) {
+                feedback = "Good job! Review the areas you missed.";
+            } else {
+                feedback = "Keep studying! Focus on the key differences.";
+            }
+            
+            document.getElementById("quiz-feedback").textContent = feedback;
+            document.getElementById("quiz-progress").style.width = "100%";
+        }
+        
+        function resetQuiz() {
+            // Reset score
+            currentScore = 0;
+            
+            // Hide all questions and show first question
+            var questions = document.getElementsByClassName("quiz-question");
+            for (var i = 0; i < questions.length; i++) {
+                questions[i].style.display = "none";
+                questions[i].classList.remove("answered");
+            }
+            document.getElementById("q1").style.display = "block";
+            
+            // Reset progress bar
+            document.getElementById("quiz-progress").style.width = "0%";
+            
+            // Hide results
+            document.getElementById("quiz-result").style.display = "none";
+            document.getElementById("quiz-container").style.display = "block";
+            
+            // Reset radio buttons
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            for (var i = 0; i < radioButtons.length; i++) {
+                radioButtons[i].checked = false;
+            }
+            
+            // Hide all feedback
+            var allFeedback = document.getElementsByClassName("quiz-feedback");
+            for (var i = 0; i < allFeedback.length; i++) {
+                allFeedback[i].style.display = "none";
+            }
+            
+            // Hide all next buttons
+            var nextButtons = document.getElementsByClassName("quiz-next");
+            for (var i = 0; i < nextButtons.length; i++) {
+                nextButtons[i].style.display = "none";
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retinoids - Saudi Board Dermatology Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tab {
+            padding: 10px 20px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+        
+        .nav-tab:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card h3 {
+            color: #495057;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+            border-left: 4px solid #667eea;
+            padding-left: 10px;
+        }
+        
+        /* High Yield Box */
+        .high-yield {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border: 2px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .high-yield::before {
+            content: "⚡ HIGH YIELD";
+            position: absolute;
+            top: -5px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        .high-yield h4 {
+            color: #c92a2a;
+            margin-bottom: 10px;
+        }
+        
+        /* Clinical Pearl */
+        .clinical-pearl {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .clinical-pearl::before {
+            content: "💎 CLINICAL PEARL";
+            position: absolute;
+            top: -5px;
+            left: 20px;
+            background: #0ea5e9;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffecb3 100%);
+            border: 2px solid #ffa000;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .warning-box::before {
+            content: "⚠️ WARNING";
+            position: absolute;
+            top: -5px;
+            left: 20px;
+            background: #ffa000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        /* Interactive Tables */
+        .interactive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .interactive-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .interactive-table th,
+        .interactive-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .interactive-table tr:hover {
+            background: #f8f9fa;
+            transform: scale(1.01);
+            transition: all 0.2s;
+        }
+        
+        .interactive-table .highlight-cell {
+            background: #fff3cd;
+            font-weight: bold;
+        }
+        
+        /* Memory Aids */
+        .memory-aid {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #9c27b0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .memory-aid::before {
+            content: "🧠 MEMORY AID";
+            position: absolute;
+            top: -5px;
+            right: 20px;
+            background: #9c27b0;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-item {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .comparison-item:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .comparison-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        /* Interactive Features */
+        .toggle-content {
+            cursor: pointer;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .toggle-content:hover {
+            background: #e9ecef;
+        }
+        
+        .toggle-content::after {
+            content: "▼";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+        }
+        
+        .toggle-content.expanded::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .toggle-details {
+            display: none;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            margin-top: -10px;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin: 2px;
+        }
+        
+        .badge-fda {
+            background: #28a745;
+            color: white;
+        }
+        
+        .badge-off-label {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .badge-generation {
+            background: #007bff;
+            color: white;
+        }
+        
+        /* Quick Reference Cards */
+        .quick-ref {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .quick-ref-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .quick-ref-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .quick-ref-card h5 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .quick-ref-card p {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-tabs {
+                justify-content: center;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Retinoids Mastery Guide</h1>
+            <p>Comprehensive Review for Saudi Board Dermatology Exam</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('overview')">Overview & Mechanism</button>
+            <button class="nav-tab" onclick="showSection('classification')">Classification</button>
+            <button class="nav-tab" onclick="showSection('clinical-uses')">Clinical Uses</button>
+            <button class="nav-tab" onclick="showSection('side-effects')">Side Effects</button>
+            <button class="nav-tab" onclick="showSection('pregnancy')">Pregnancy & Monitoring</button>
+            <button class="nav-tab" onclick="showSection('quick-review')">Quick Review</button>
+            <button class="nav-tab" onclick="showSection('protocols')">Treatment Protocols</button>
+            <button class="nav-tab" onclick="showSection('formulations')">Formulations</button>
+            <button class="nav-tab" onclick="showSection('special-populations')">Special Populations</button>
+            <button class="nav-tab" onclick="showSection('controversies')">Controversies</button>
+            <button class="nav-tab" onclick="showSection('memory-palace')">Memory Aids</button>
+            <button class="nav-tab" onclick="showSection('practice')">Practice Questions</button>
+        </div>
+        
+        <!-- Overview Section -->
+        <div id="overview" class="content-section active">
+            <div class="card">
+                <h2>🎯 Core Concepts</h2>
+                
+                <div class="high-yield">
+                    <h4>Essential Facts for Board Exam</h4>
+                    <ul>
+                        <li><strong>Definition:</strong> Structural and functional analogues of vitamin A</li>
+                        <li><strong>Key Receptors:</strong> RARs (α, β, γ) and RXRs (α, β, γ)</li>
+                        <li><strong>Natural Retinoids:</strong> Tretinoin (all-trans RA), Isotretinoin (13-cis RA), Alitretinoin (9-cis RA)</li>
+                        <li><strong>Most Important Side Effect:</strong> TERATOGENICITY (all systemic retinoids)</li>
+                    </ul>
+                </div>
+                
+                <h3>Vitamin A Metabolism Pathway</h3>
+                <div class="memory-aid">
+                    <h4>Remember the Conversion Sequence:</h4>
+                    <p style="font-size: 1.2em; text-align: center; font-weight: bold;">
+                        Retinyl Esters → Retinol → Retinaldehyde → Retinoic Acid
+                    </p>
+                    <p style="text-align: center; color: #6a1b9a;">
+                        "Esters Reach Really Amazing" (E-R-R-A)
+                    </p>
+                </div>
+                
+                <h3>Mechanism of Action</h3>
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Nuclear Receptor Binding & Gene Transcription</strong>
+                </div>
+                <div class="toggle-details">
+                    <ol>
+                        <li><strong>Ligand Binding:</strong> Retinoids bind to nuclear receptors (RARs/RXRs)</li>
+                        <li><strong>Dimerization:</strong> RAR-RXR heterodimers or RXR-RXR homodimers form</li>
+                        <li><strong>DNA Binding:</strong> Dimers bind to hormone response elements (RAREs)</li>
+                        <li><strong>Transcription:</strong> Co-activators recruited → gene transcription modulated</li>
+                        <li><strong>Effects:</strong> Cellular differentiation, proliferation, apoptosis regulated</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🔬 Receptor Specificity</h2>
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Retinoid</th>
+                            <th>RAR Binding</th>
+                            <th>RXR Binding</th>
+                            <th>Key Point</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tretinoin</strong></td>
+                            <td class="highlight-cell">+++</td>
+                            <td>-</td>
+                            <td>RAR-selective</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Isotretinoin</strong></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>No clear receptor affinity!</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alitretinoin</strong></td>
+                            <td class="highlight-cell">+++</td>
+                            <td class="highlight-cell">+++</td>
+                            <td>Pan-agonist (binds both)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bexarotene</strong></td>
+                            <td>+</td>
+                            <td class="highlight-cell">+++</td>
+                            <td>RXR-selective (100x)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Classification Section -->
+        <div id="classification" class="content-section">
+            <div class="card">
+                <h2>📊 Four Generations of Retinoids</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-item" style="border-color: #28a745;">
+                        <h4>1st Generation</h4>
+                        <p><strong>Type:</strong> Non-aromatic</p>
+                        <p><strong>Members:</strong></p>
+                        <ul>
+                            <li>Tretinoin (all-trans RA)</li>
+                            <li>Isotretinoin (13-cis RA)</li>
+                            <li>Alitretinoin (9-cis RA)</li>
+                        </ul>
+                        <p><strong>Key:</strong> Natural retinoids</p>
+                    </div>
+                    
+                    <div class="comparison-item" style="border-color: #ffc107;">
+                        <h4>2nd Generation</h4>
+                        <p><strong>Type:</strong> Mono-aromatic</p>
+                        <p><strong>Members:</strong></p>
+                        <ul>
+                            <li>Acitretin</li>
+                            <li>Etretinate (discontinued)</li>
+                            <li>Motretinide</li>
+                        </ul>
+                        <p><strong>Key:</strong> Better for psoriasis</p>
+                    </div>
+                    
+                    <div class="comparison-item" style="border-color: #17a2b8;">
+                        <h4>3rd Generation</h4>
+                        <p><strong>Type:</strong> Polyaromatic (arotinoids)</p>
+                        <p><strong>Members:</strong></p>
+                        <ul>
+                            <li>Adapalene:</li>
+                            <ul style="list-style: none;">
+                                <li>Exhibits selective affinity for RARs</li>
+                                <li>Higher affinity for RAR-β and RAR-γ than RAR-α</li>
+                                <li>In epidermis (keratinocytes):</li>
+                            
+                                    <li>RAR-β is not expressed</li>
+                                    <li>RAR-γ is the primary target receptor</li>
+                               
+                            </ul>
+                            <li>Tazarotene</li>
+                            <li>Bexarotene</li>
+                        </ul>
+                        <p><strong>Key:</strong> Receptor-selective</p>
+                    </div>
+                    
+                    <div class="comparison-item" style="border-color: #6f42c1;">
+                        <h4>4th Generation</h4>
+                        <p><strong>Type:</strong> Highly selective</p>
+                        <p><strong>Members:</strong></p>
+                        <ul>
+                            <li>Trifarotene</li>
+                            <li>Seletinoid G</li>
+                            <li>Tamibarotene</li>
+                        </ul>
+                        <p><strong>Key:</strong> Increased selectivity</p>
+                    </div>
+                </div>
+                <img src="https://i.postimg.cc/fLxDgtfz/image.png" width="1100" class="center">
+                <img src="https://i.postimg.cc/9XBvFRC7/image.png" width="1100" class="center">
+                
+                
+                
+                <div class="clinical-pearl">
+                    <h4>Remember for Exams:</h4>
+                    <p>• <strong>Isotretinoin</strong> has NO clear receptor affinity but is the ONLY retinoid that suppresses sebum</p>
+                    <p>• <strong>Acitretin</strong> activates RARs despite poor binding (paradox!)</p>
+                    <p>• <strong>Bexarotene</strong> is RXR-selective → causes hypothyroidism</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clinical Uses Section -->
+        <div id="clinical-uses" class="content-section">
+            <div class="card">
+                <h2>💊 FDA-Approved Indications</h2>
+                
+                <h3>Topical Retinoids</h3>
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Drug</th>
+                            <th>FDA-Approved Uses</th>
+                            <th>Formulations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tretinoin</strong></td>
+                            <td>
+                                <span class="badge badge-fda">Acne vulgaris</span>
+                                <span class="badge badge-fda">Photoaging</span>
+                            </td>
+                            <td>0.01%-0.1% (gel, cream, solution)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adapalene</strong></td>
+                            <td><span class="badge badge-fda">Acne vulgaris</span></td>
+                            <td>0.1%, 0.3% (OTC available)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tazarotene</strong></td>
+                            <td>
+                                <span class="badge badge-fda">Acne vulgaris</span>
+                                <span class="badge badge-fda">Psoriasis</span>
+                            </td>
+                            <td>0.045%-0.1%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trifarotene</strong></td>
+                            <td><span class="badge badge-fda">Acne vulgaris</span></td>
+                            <td>0.005% cream</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alitretinoin</strong></td>
+                            <td><span class="badge badge-fda">Kaposi sarcoma</span></td>
+                            <td>0.1% gel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bexarotene</strong></td>
+                            <td><span class="badge badge-fda">CTCL</span></td>
+                            <td>1% gel</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Systemic Retinoids</h3>
+                <div class="high-yield">
+                    <h4>Must-Know FDA Approvals:</h4>
+                    <ul>
+                        <li><strong>Isotretinoin:</strong> Severe nodulocystic acne</li>
+                        <li><strong>Acitretin:</strong> Severe psoriasis</li>
+                        <li><strong>Bexarotene:</strong> CTCL (refractory to ≥1 systemic therapy)</li>
+                        <li><strong>Alitretinoin:</strong> Chronic hand eczema (NOT in USA)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🏥 Clinical Pearls by Condition</h2>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Acne Treatment Strategy</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Isotretinoin for Acne:</strong></p>
+                    <ul>
+                        <li>Standard dose: 0.5-1 mg/kg/day</li>
+                        <li>Cumulative dose target: 120-150 mg/kg</li>
+                        <li>Lower cumulative dose (70 mg/kg) may be effective</li>
+                        <li>Lag period: 1-3 months before improvement</li>
+                        <li>~33% require second course</li>
+                    </ul>
+                    <div class="warning-box">
+                        <p>Initial flare possible in first 3-4 weeks - start low dose!</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Psoriasis Treatment</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Acitretin for Psoriasis:</strong></p>
+                    <ul>
+                        <li><strong>Best for:</strong> Pustular psoriasis (1st line!)</li>
+                        <li><strong>Plaque psoriasis:</strong> 30% clear, 50% improve</li>
+                        <li><strong>Starting dose:</strong> 10 mg/day (avoid initial worsening)</li>
+                        <li><strong>Maintenance:</strong> 25-50 mg/day</li>
+                        <li><strong>Re-PUVA:</strong> Acitretin + PUVA = synergistic</li>
+                    </ul>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>CTCL Treatment</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Bexarotene for CTCL:</strong></p>
+                    <ul>
+                        <li>Starting dose: 150 mg/m²/day</li>
+                        <li>Target dose: 300 mg/m²/day</li>
+                        <li>Response rates: ~50% in advanced disease</li>
+                        <li>ALWAYS give with fenofibrate + levothyroxine!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Side Effects Section -->
+        <div id="side-effects" class="content-section">
+           <!-- ====== Universal Adverse Effects Card ====== -->
+<!-- ====== Universal Adverse Effects Card (Table Layout) ====== -->
+<div class="card">
+    <h2>⚠️ Universal Adverse Effects of Systemic Retinoids</h2>
+  
+    <table class="interactive-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Category</th>
+          <th>Shared Effects</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- I. Mucocutaneous Effects -->
+        <tr>
+          <td><strong>I. Mucocutaneous Effects</strong><br><span style="font-size:0.9em;color:#555;">(Most Universal &amp; Shared)</span></td>
+          <td>
+            <ul>
+              <li>Cheilitis (earliest and most frequent)</li>
+              <li>Xerosis (dry skin)</li>
+              <li>Desquamation/peeling (palms, soles, face)</li>
+              <li>Mucosal dryness:
+                <ul style="margin-top:5px;">
+                  <li>Oral → dryness</li>
+                  <li>Nasal → epistaxis</li>
+                  <li>Ocular → dry eye</li>
+                </ul>
+              </li>
+              <li>Skin fragility</li>
+              <li>Photosensitivity</li>
+              <li>Palmoplantar peeling</li>
+              <li>Retinoid dermatitis (erythema, peeling)</li>
+              <li>Granulation tissue with pyogenic granuloma-like appearance:
+                <ul style="margin-top:5px;">
+                  <li>Periungual sites</li>
+                  <li>Acne cyst sites</li>
+                </ul>
+              </li>
+              <li>Telogen effluvium (diffuse hair thinning)</li>
+              <li>Nail fragility, onycholysis, paronychia</li>
+              <li>Sticky skin sensation (palms/soles)</li>
+              <li>Staphylococcus aureus colonization → secondary infections*</li>
+           
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- II. Laboratory Abnormalities -->
+        <tr>
+          <td><strong>II. Laboratory Abnormalities</strong><br><span style="font-size:0.9em;color:#555;">(Universally Observed)</span></td>
+          <td>
+            <ul>
+              <li>Hypertriglyceridemia</li>
+              <li>↑ Cholesterol (total, LDL, VLDL)</li>
+              <li>↓ HDL</li>
+              <li>↑ Liver enzymes:
+                <ul style="margin-top:5px;">
+                  <li>ALT, AST</li>
+                  <li>Also ALP, LDH, bilirubin</li>
+                </ul>
+              </li>
+              <li style="font-size:0.9em;color:#555; margin-top:6px;">
+                Seen in 20–50% of patients depending on agent, but shared across all retinoids
+              </li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- III. Ocular Effects -->
+        <tr>
+          <td><strong>III. Ocular Effects</strong></td>
+          <td>
+            <ul>
+              <li>Dry eyes (xerophthalmia)</li>
+              <li>Blepharoconjunctivitis</li>
+              <li>Reduced night vision (nyctalopia)</li>
+              <li>Photophobia, glare sensitivity, blurred vision</li>
+              <li style="font-size:0.9em;color:#555; margin-top:6px;">
+                Common due to ↓ Meibomian secretion &amp; inhibition of visual cycle enzymes
+              </li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- IV. Musculoskeletal Effects -->
+        <tr>
+          <td><strong>IV. Musculoskeletal Effects</strong></td>
+          <td>
+            <ul>
+              <li>Muscle pain (myalgia), cramps</li>
+              <li>Elevated creatine kinase (CK)</li>
+              <li>Bone pain (without imaging findings)</li>
+              <li>Hyperostosis (DISH-like changes)</li>
+              <li>Anterior vertebral ligament calcification</li>
+              <li>Extraspinal ligament/tendon calcifications</li>
+              <li>Osteophyte formation</li>
+              <li>Premature epiphyseal closure (rare; with prolonged high-dose use)</li>
+              <li style="font-size:0.9em;color:#555; margin-top:6px;">
+                Pathophysiology tied to retinoid impact on osteoblast/osteoclast activity &amp; long‐term remodeling
+              </li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- V. CNS & Psychiatric Effects -->
+        <tr>
+          <td><strong>V. CNS &amp; Psychiatric Effects</strong></td>
+          <td>
+            <ul>
+              <li>Headache</li>
+              <li>Rare pseudotumor cerebri (especially with tetracyclines)</li>
+              <li>Fatigue, irritability</li>
+              <li>Mood changes (depression, suicidal ideation)</li>
+              <li style="font-size:0.9em;color:#555; margin-top:6px;">
+                Not causally proven; data in both directions exists
+              </li>
+              <li>Visual disturbances (from pseudotumor cerebri or ocular dryness)</li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- VI. GI & Systemic Effects -->
+        <tr>
+          <td><strong>VI. GI &amp; Systemic Effects</strong></td>
+          <td>
+            <ul>
+              <li>Anorexia, nausea, abdominal pain</li>
+              <li>Fatigue, lethargy</li>
+              <li>Dry lips, mouth, nose → altered taste/smell, bleeding</li>
+              <li>Rare pancreatitis (from severe hypertriglyceridemia)</li>
+              <li>Increased susceptibility to <em>Staph aureus</em> infection (cutaneous)</li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- VII. Teratogenicity -->
+        <tr>
+          <td><strong>VII. Teratogenicity</strong><br><span style="font-size:0.9em;color:#555;">(Most Severe Risk)</span></td>
+          <td>
+            <ul>
+              <li>All systemic retinoids are potent teratogens</li>
+              <li>Fetal malformations:
+                <ul style="margin-top:5px;">
+                  <li>Craniofacial defects:
+                    <ul style="margin-top:5px;">
+                      <li>Microtia/anotia</li>
+                      <li>Cleft palate</li>
+                    </ul>
+                  </li>
+                  <li>CNS anomalies:
+                    <ul style="margin-top:5px;">
+                      <li>Hydrocephalus</li>
+                      <li>Microcephaly</li>
+                    </ul>
+                  </li>
+                  <li>Cardiac defects</li>
+                  <li>Thymic &amp; parathyroid hypoplasia</li>
+                  <li>Limb anomalies</li>
+                  <li>Genital/anorectal atresia</li>
+                </ul>
+              </li>
+              <li>Mandatory contraception:
+                <ul style="margin-top:5px;">
+                  <li><strong>Acitretin:</strong> 3 years</li>
+                  <li><strong>Isotretinoin, Alitretinoin, Bexarotene:</strong> 1 month</li>
+                </ul>
+              </li>
+            </ul>
+          </td>
+        </tr>
+  
+        <!-- VIII. Bone & Connective Tissue -->
+        <tr>
+          <td><strong>VIII. Bone &amp; Connective Tissue</strong></td>
+          <td>
+            <ul>
+              <li>Osteoporosis (rare, with long-term use)</li>
+              <li>Periosteal thickening</li>
+              <li>DISH-like axial hyperostosis</li>
+              <li>Ligament &amp; tendon calcification</li>
+              <li style="font-size:0.9em;color:#555; margin-top:6px;">
+                Shared due to retinoid effects on bone remodeling
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+                
+                <h3>Drug-Specific Side Effects</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4 style="color: #dc3545;">Isotretinoin</h4>
+                        <ul>
+                            <li>significantly suppress sebum production via seboatrophy</li>
+                            <li>Depression controversy</li>
+                            <li>Acne fulminans-like presentation, cysts evolving into pyogenic granuloma-like lesions</li>
+                            <li>Hyperuricemia → gout</li>
+                            
+                            
+
+                            <li>Pseudotumor cerebri (rare)</li>
+                            <li>S. aureus colonization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4 style="color: #fd7e14;">Acitretin</h4>
+                        <ul>
+                            <li>Palmoplantar peeling</li>
+                            <li>Re-esterification → etretinate</li>
+                            <li>3-year contraception!</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4 style="color: #6610f2;">Bexarotene</h4>
+                        <ul>
+                            <li>central Hypothyroidism (40%!)</li>
+                            <li>Severe Hypertriglyceridemia (80%)</li>
+                            <li>Leukopenia (30%)</li>
+                            <li>Milder mucocutaneous</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Bexarotene Protocol (MUST KNOW):</h4>
+                    <p>Start BEFORE bexarotene:</p>
+                    <ul>
+                        <li>Day -7: Fenofibrate 145-200 mg daily</li>
+                        <li>Day 0: Levothyroxine 0.05 mg daily</li>
+                        <li>Monitor free T4 (not TSH!) - central hypothyroidism</li>
+                    </ul>
+            </div>
+            
+            <div class="card">
+                <h2>🔬 Laboratory Monitoring</h2>
+                
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Baseline</th>
+                            <th>Follow-up</th>
+                            <th>Action Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Triglycerides</strong></td>
+                            <td>✓</td>
+                            <td>Monthly × 2, then q3mo</td>
+                            <td class="highlight-cell">Stop if >800 mg/dL or 44.4 mmol/l</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LFTs</strong></td>
+                            <td>✓</td>
+                            <td>Monthly × 2, then q3mo</td>
+                            <td class="highlight-cell">Stop if >3× ULN</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pregnancy test</strong></td>
+                            <td>✓ (2 tests)</td>
+                            <td>Monthly (isotretinoin)</td>
+                            <td>Any positive</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Free T4</strong></td>
+                            <td>✓ (bexarotene)</td>
+                            <td>q1-2 weeks initially</td>
+                            <td>Below normal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Pregnancy Section -->
+        <div id="pregnancy" class="content-section">
+            <div class="card">
+                <h2>🚨 Teratogenicity & Pregnancy Management</h2>
+                
+                <div class="warning-box">
+                    <h4>Retinoid Embryopathy Features</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <p><strong>Craniofacial:</strong></p>
+                            <ul>
+                                <li>Microtia/anotia</li>
+                                <li>Micrognathia</li>
+                                <li>Cleft palate</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p><strong>CNS:</strong></p>
+                            <ul>
+                                <li>Hydrocephalus</li>
+                                <li>Microcephaly</li>
+                                <li>Mental retardation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px;"><strong>Cardiovascular:</strong> Conotruncal defects, Tetralogy of Fallot</p>
+                </div>
+                
+                <h3>Contraception Requirements</h3>
+                <div class="quick-ref">
+                    <div class="quick-ref-card" style="background: linear-gradient(135deg, #dc3545, #c82333);">
+                        <h5>Isotretinoin</h5>
+                        <p>1 month</p>
+                        <small>after last dose</small>
+                    </div>
+                    <div class="quick-ref-card" style="background: linear-gradient(135deg, #fd7e14, #e66a00);">
+                        <h5>Acitretin</h5>
+                        <p>3 years</p>
+                        <small>(USA) / 2 years (Europe)</small>
+                    </div>
+                    <div class="quick-ref-card" style="background: linear-gradient(135deg, #6610f2, #520dc2);">
+                        <h5>Bexarotene</h5>
+                        <p>1 month</p>
+                        <small>after last dose</small>
+                    </div>
+                    <div class="quick-ref-card" style="background: linear-gradient(135deg, #20c997, #17a085);">
+                        <h5>Alitretinoin</h5>
+                        <p>1 month</p>
+                        <small>after last dose</small>
+                    </div>
+                </div>
+                
+                <div class="memory-aid">
+                    <h4>Remember: "A-3" Rule</h4>
+                    <p style="text-align: center; font-size: 1.3em;">
+                        <strong>A</strong>citretin = <strong>3</strong> years contraception<br>
+                        (Alcohol converts Acitretin → Etretinate → Adipose storage)
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📋 iPLEDGE Program (USA)</h2>
+                <div class="clinical-pearl">
+                    <h4>Requirements for Isotretinoin:</h4>
+                    <ul>
+                        <li>2 negative pregnancy tests before starting</li>
+                        <li>Monthly pregnancy tests during treatment</li>
+                        <li>2 forms of contraception (or abstinence)</li>
+                        <li>Monthly comprehension tests</li>
+                        <li>30-day prescription limit</li>
+                        <li>7-day window to fill prescription</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Review Section -->
+        <div id="quick-review" class="content-section">
+            <div class="card">
+                <h2>🎯 High-Yield Facts for Board Exam</h2>
+                
+                <div class="high-yield">
+                    <h4>Top 10 Must-Know Facts</h4>
+                    <ol>
+                        <li><strong>Only retinoid that suppresses sebum:</strong> Isotretinoin</li>
+                        <li><strong>Best for pustular psoriasis:</strong> Acitretin (1st line)</li>
+                        <li><strong>Longest contraception required:</strong> Acitretin (3 years)</li>
+                        <li><strong>Causes central hypothyroidism:</strong> Bexarotene (monitor free T4)</li>
+                        <li><strong>Pan-agonist (RAR + RXR):</strong> Alitretinoin</li>
+                        <li><strong>Most common side effect:</strong> Cheilitis</li>
+                        <li><strong>Cumulative dose for acne:</strong> 120-150 mg/kg</li>
+                        <li><strong>Re-esterification risk:</strong> Acitretin + alcohol → etretinate</li>
+                        <li><strong>Contraindicated with tetracyclines:</strong> Pseudotumor cerebri risk</li>
+                        <li><strong>No receptor affinity:</strong> Isotretinoin (paradox!)</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📊 Drug Interactions</h2>
+                <div class="warning-box">
+                    <h4>Avoid These Combinations:</h4>
+                    <ul>
+                        <li><strong>Tetracyclines + Isotretinoin:</strong> ↑ Pseudotumor cerebri</li>
+                        <li><strong>Alcohol + Acitretin:</strong> Re-esterification to etretinate</li>
+                        <li><strong>Vitamin A supplements:</strong> Hypervitaminosis A</li>
+                        <li><strong>Methotrexate:</strong> Synergistic hepatotoxicity</li>
+                        <li><strong>CYP3A4 inhibitors:</strong> ↑ Retinoid levels</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🔄 Quick Comparisons</h2>
+                
+                <h3>Topical Retinoid Potency</h3>
+                <p style="text-align: center; font-size: 1.2em; margin: 20px 0;">
+                    <strong>Irritation:</strong> Tretinoin > Tazarotene > Trifarotene > Adapalene<br>
+                    <strong>Photostability:</strong> Adapalene = Tazarotene > Tretinoin
+                </p>
+                
+                <h3>Systemic Retinoid Selection</h3>
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>First Choice</th>
+                            <th>Alternative</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Severe acne</td>
+                            <td class="highlight-cell">Isotretinoin</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Pustular psoriasis</td>
+                            <td class="highlight-cell">Acitretin</td>
+                            <td>Isotretinoin</td>
+                        </tr>
+                        <tr>
+                            <td>CTCL</td>
+                            <td class="highlight-cell">Bexarotene</td>
+                            <td>Isotretinoin/Acitretin</td>
+                        </tr>
+                        <tr>
+                            <td>Chronic hand eczema</td>
+                            <td class="highlight-cell">Alitretinoin</td>
+                            <td>Acitretin</td>
+                        </tr>
+                        <tr>
+                            <td>Ichthyosis</td>
+                            <td class="highlight-cell">Acitretin</td>
+                            <td>Isotretinoin</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Detailed Protocols Section -->
+        <div id="protocols" class="content-section">
+            <div class="card">
+                <h2>📋 Detailed Treatment Protocols</h2>
+                
+                <h3>Isotretinoin for Acne - Complete Protocol</h3>
+                <div class="clinical-pearl">
+                    <h4>Pre-Treatment Checklist:</h4>
+                    <ul>
+                        <li>✓ 2 negative pregnancy tests (if applicable)</li>
+                        <li>✓ Baseline labs: CBC, LFTs, lipids</li>
+                        <li>✓ iPLEDGE registration</li>
+                        <li>✓ Contraception counseling</li>
+                        <li>✓ Screen for depression history</li>
+                    </ul>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Dosing Strategies</strong>
+                </div>
+                <div class="toggle-details">
+                    <table class="interactive-table">
+                        <thead>
+                            <tr>
+                                <th>Approach</th>
+                                <th>Starting Dose</th>
+                                <th>Target</th>
+                                <th>Pros/Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Standard</strong></td>
+                                <td>0.5 mg/kg/day</td>
+                                <td>120-150 mg/kg total</td>
+                                <td>Balance of efficacy/side effects</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Low-Dose</strong></td>
+                                <td>20 mg/day</td>
+                                <td>70 mg/kg total</td>
+                                <td>Fewer side effects, may need longer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High-Dose</strong></td>
+                                <td>1 mg/kg/day</td>
+                                <td>120-150 mg/kg total</td>
+                                <td>Faster clearance, more side effects</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="memory-aid">
+                    <h4>Cumulative Dose Calculation:</h4>
+                    <p style="text-align: center; font-size: 1.2em;">
+                        <strong>Example:</strong> 70 kg patient × 120 mg/kg = 8,400 mg total<br>
+                        At 40 mg/day = 210 days (7 months)
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🎯 Off-Label Uses Guide</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Rosacea</h4>
+                        <p><strong>Drug:</strong> Isotretinoin</p>
+                        <p><strong>Dose:</strong> 10-20 mg/day</p>
+                        <p><strong>Duration:</strong> 4-6 months</p>
+                        <p><strong>Note:</strong> Better for papulopustular</p>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4>Hidradenitis Suppurativa</h4>
+                        <p><strong>Drug:</strong> Isotretinoin</p>
+                        <p><strong>Dose:</strong> 0.5-1 mg/kg/day</p>
+                        <p><strong>Duration:</strong> Variable</p>
+                        <p><strong>Note:</strong> Limited efficacy</p>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4>Darier Disease</h4>
+                        <p><strong>Drug:</strong> Acitretin</p>
+                        <p><strong>Dose:</strong> Start 10 mg/day</p>
+                        <p><strong>Duration:</strong> Long-term</p>
+                        <p><strong>Note:</strong> Maintenance 20 mg/day</p>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4>Pityriasis Rubra Pilaris</h4>
+                        <p><strong>Drug:</strong> Acitretin/Isotretinoin</p>
+                        <p><strong>Dose:</strong> 0.5-1 mg/kg/day</p>
+                        <p><strong>Duration:</strong> Until clear</p>
+                        <p><strong>Note:</strong> May add MTX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Formulations Section -->
+        <div id="formulations" class="content-section">
+            <div class="card">
+                <h2>💊 Complete Formulations Guide</h2>
+                
+                <h3>Topical Retinoids - All Strengths</h3>
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Drug</th>
+                            <th>Strengths Available</th>
+                            <th>Vehicles</th>
+                            <th>Special Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tretinoin</strong></td>
+                            <td>0.01%, 0.02%, 0.025%, 0.04%, 0.05%, 0.06%, 0.08%, 0.1%</td>
+                            <td>Gel, Cream, Solution</td>
+                            <td>Photolabile - night use</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adapalene</strong></td>
+                            <td>0.1%, 0.3%</td>
+                            <td>Gel, Cream, Lotion</td>
+                            <td>0.1% OTC available</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tazarotene</strong></td>
+                            <td>0.045%, 0.05%, 0.1%</td>
+                            <td>Gel, Cream, Foam, Lotion</td>
+                            <td>Most irritating</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trifarotene</strong></td>
+                            <td>0.005%</td>
+                            <td>Cream only</td>
+                            <td>Newest, body acne approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Combination Products</h3>
+                <div class="warning-box">
+                    <h4>Available Combinations:</h4>
+                    <ul>
+                        <li><strong>Tretinoin + Clindamycin 1.2%:</strong> For inflammatory acne</li>
+                        <li><strong>Tretinoin + Fluocinolone 0.01% + Hydroquinone 4%:</strong> For melasma (Tri-Luma)</li>
+                        <li><strong>Adapalene 0.1%/0.3% + Benzoyl Peroxide 2.5%:</strong> For acne</li>
+                        <li><strong>Tazarotene 0.045% + Halobetasol 0.01%:</strong> For psoriasis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📊 Systemic Retinoids - Capsule Sizes</h2>
+                
+                <div class="quick-ref">
+                    <div class="quick-ref-card">
+                        <h5>Isotretinoin</h5>
+                        <p style="font-size: 1.2em;">8, 10, 16, 20, 24, 25, 30, 35, 40 mg</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h5>Acitretin</h5>
+                        <p style="font-size: 1.2em;">10, 17.5, 22.5, 25 mg</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h5>Bexarotene</h5>
+                        <p style="font-size: 1.2em;">75 mg only</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h5>Alitretinoin</h5>
+                        <p style="font-size: 1.2em;">10, 30 mg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Populations Section -->
+        <div id="special-populations" class="content-section">
+            <div class="card">
+                <h2>👥 Special Populations</h2>
+                
+                <h3>Pediatric Considerations</h3>
+                <div class="clinical-pearl">
+                    <h4>Key Points:</h4>
+                    <ul>
+                        <li><strong>Isotretinoin:</strong> Safe in adolescents, monitor growth</li>
+                        <li><strong>Concern:</strong> Premature epiphyseal closure (rare)</li>
+                        <li><strong>Required:</strong> Only with high doses (>1 mg/kg) for >4-6 years</li>
+                        <li><strong>No routine X-rays needed</strong> for standard acne treatment</li>
+                    </ul>
+                </div>
+                
+                <h3>Pregnancy Categories (Historical)</h3>
+                <div class="high-yield">
+                    <h4>All Systemic Retinoids = Category X</h4>
+                    <p>Topical Retinoids:</p>
+                    <ul>
+                        <li>Tretinoin, Adapalene: Category C</li>
+                        <li>Tazarotene, Bexarotene: Category X</li>
+                    </ul>
+                </div>
+                
+                <h3>Renal/Hepatic Impairment</h3>
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Dosing Adjustments</strong>
+                </div>
+                <div class="toggle-details">
+                    <ul>
+                        <li><strong>Renal disease:</strong> No dose adjustment needed (isotretinoin safe in hemodialysis)</li>
+                        <li><strong>Hepatic disease:</strong> Use with caution, monitor LFTs closely</li>
+                        <li><strong>Avoid:</strong> Concurrent hepatotoxic drugs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controversies Section -->
+        <div id="controversies" class="content-section">
+            <div class="card">
+                <h2>🔍 Controversies & Updates</h2>
+                
+                <div class="warning-box">
+                    <h4>Isotretinoin & Depression</h4>
+                    <ul>
+                        <li><strong>Current Evidence:</strong> No causal link established</li>
+                        <li><strong>Studies show:</strong> Depression often IMPROVES with treatment</li>
+                        <li><strong>Still monitor</strong> for psychiatric symptoms</li>
+                        <li><strong>Document:</strong> Pre-existing psychiatric history</li>
+                    </ul>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h4>Isotretinoin & IBD</h4>
+                    <ul>
+                        <li><strong>Meta-analysis:</strong> No increased risk of IBD</li>
+                        <li><strong>Confounders:</strong> Severe acne itself, antibiotic use</li>
+                        <li><strong>Recommendation:</strong> Can use, but document discussion</li>
+                    </ul>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Surgery & Isotretinoin - Updated Guidelines</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Current Recommendations:</strong></p>
+                    <ul>
+                        <li><strong>Most procedures:</strong> NO need to delay</li>
+                        <li><strong>Safe:</strong> Minor surgery, superficial procedures</li>
+                        <li><strong>Delay 6-12 months:</strong>
+                            <ul>
+                                <li>Fully ablative laser resurfacing</li>
+                                <li>Mechanical dermabrasion</li>
+                                <li>Deep chemical peels</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memory Palace Section -->
+        <div id="memory-palace" class="content-section">
+            <div class="card">
+                <h2>🏛️ Memory Palace - Retinoids</h2>
+                
+                <div class="memory-aid">
+                    <h4>Room 1: The Generation Gallery</h4>
+                    <p style="font-size: 1.1em; line-height: 1.8;">
+                        <strong>1st Gen:</strong> "TIA" (Tretinoin, Isotretinoin, Alitretinoin) - Natural<br>
+                        <strong>2nd Gen:</strong> "AE" (Acitretin, Etretinate) - Aromatic<br>
+                        <strong>3rd Gen:</strong> "TAB" (Tazarotene, Adapalene, Bexarotene) - Polyaromatic<br>
+                        <strong>4th Gen:</strong> "TST" (Trifarotene, Seletinoid, Tamibarotene) - Selective
+                    </p>
+                </div>
+                
+                <div class="memory-aid">
+                    <h4>Room 2: The Side Effect Statue</h4>
+                    <p style="text-align: center; font-size: 1.2em;">
+                        <strong>Head:</strong> Cheilitis, Headache<br>
+                        <strong>Eyes:</strong> Dry eyes, Night vision ↓<br>
+                        <strong>Skin:</strong> Xerosis, Photosensitivity<br>
+                        <strong>Blood:</strong> ↑ TG, ↑ LFTs<br>
+                        <strong>Bones:</strong> DISH-like changes
+                    </p>
+                </div>
+                
+                <div class="memory-aid">
+                    <h4>Room 3: The Contraception Clock</h4>
+                    <p style="text-align: center; font-size: 1.3em;">
+                        <strong>1 month:</strong> Isotretinoin, Bexarotene, Alitretinoin<br>
+                        <strong>3 years:</strong> Acitretin (A-3 rule)
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Practice Questions Section -->
+        <div id="practice" class="content-section">
+            <div class="card">
+                <h2>🎓 Board-Style Practice Points</h2>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Q1: Which retinoid requires monitoring of free T4?</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Bexarotene</p>
+                    <p><strong>Explanation:</strong> Causes central hypothyroidism by suppressing TSH β-subunit. Monitor free T4, not TSH!</p>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Q2: Best retinoid for pustular psoriasis?</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Acitretin</p>
+                    <p><strong>Explanation:</strong> First-line for all forms of pustular psoriasis (palmoplantar, generalized von Zumbusch)</p>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Q3: Only retinoid that suppresses sebum production?</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Isotretinoin</p>
+                    <p><strong>Explanation:</strong> Despite having no clear receptor affinity! Mechanism involves sebocyte apoptosis.</p>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Q4: Which combination increases pseudotumor cerebri risk?</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Isotretinoin + Tetracyclines</p>
+                    <p><strong>Explanation:</strong> Both can cause intracranial hypertension independently</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RAMBAs Section -->
+        <div id="rambas" class="content-section">
+            <div class="card">
+                <h2>🔬 RAMBAs (Retinoic Acid Metabolism Blocking Agents)</h2>
+                
+                <div class="clinical-pearl">
+                    <h4>Mechanism:</h4>
+                    <p>Inhibit CYP26 enzymes → ↑ endogenous retinoic acid levels</p>
+                </div>
+                
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>RAMBA</th>
+                            <th>Type</th>
+                            <th>Specificity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Liarozole</strong></td>
+                            <td>Imidazole</td>
+                            <td>Low (also inhibits steroid synthesis)</td>
+                            <td>Orphan drug for ichthyosis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talarozole</strong></td>
+                            <td>Triazole</td>
+                            <td>High CYP26 selectivity</td>
+                            <td>Investigational</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DX314</strong></td>
+                            <td>-</td>
+                            <td>CYP26B1-selective</td>
+                            <td>Investigational</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="memory-aid">
+                    <h4>Remember:</h4>
+                    <p>RAMBAs don't add retinoids - they block breakdown of your own!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detailed Disease Management -->
+        <div id="disease-specific" class="content-section">
+            <div class="card">
+                <h2>🎯 Disease-Specific Management</h2>
+                
+                <h3>Photoaging Protocol</h3>
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Complete Photoaging Treatment Guide</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Histologic Changes with Tretinoin:</strong></p>
+                    <ul>
+                        <li>↑ Epidermal thickness (acanthosis)</li>
+                        <li>Compaction of stratum corneum</li>
+                        <li>Correction of atypia</li>
+                        <li>↑ Dermal collagen synthesis</li>
+                        <li>↑ Hyaluronic acid (CD44-mediated)</li>
+                        <li>↓ Matrix metalloproteinases</li>
+                        <li>Melanin dispersion</li>
+                        <li>Angiogenesis</li>
+                    </ul>
+                    <p><strong>Treatment Timeline:</strong></p>
+                    <ul>
+                        <li>Week 1-4: Irritation phase</li>
+                        <li>Month 2-3: Tolerance develops</li>
+                        <li>Month 3-6: Visible improvement</li>
+                    </ul>
+                </div>
+                
+                <h3>Ichthyosis Management</h3>
+                <div class="high-yield">
+                    <h4>Key Points:</h4>
+                    <ul>
+                        <li><strong>Best retinoid:</strong> Acitretin > Isotretinoin</li>
+                        <li><strong>ARCI:</strong> Excellent response</li>
+                        <li><strong>X-linked:</strong> Good response (but mild disease)</li>
+                        <li><strong>Strategy:</strong> Intermittent courses due to lifelong nature</li>
+                        <li><strong>Monitoring:</strong> Growth in children, bones if long-term</li>
+                    </ul>
+                </div>
+                
+                <h3>Lupus Erythematosus</h3>
+                <div class="clinical-pearl">
+                    <h4>Retinoids in LE:</h4>
+                    <ul>
+                        <li><strong>Effective for:</strong> Hypertrophic LE, chronic cutaneous LE</li>
+                        <li><strong>Dose:</strong> 0.2-1.0 mg/kg/day (isotretinoin or acitretin)</li>
+                        <li><strong>Comparable to:</strong> Hydroxychloroquine efficacy</li>
+                        <li><strong>Limitation:</strong> High recurrence after stopping</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Monitoring Schedules -->
+        <div id="monitoring" class="content-section">
+            <div class="card">
+                <h2>📅 Complete Monitoring Schedule</h2>
+                
+                <h3>Isotretinoin Monitoring</h3>
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Timepoint</th>
+                            <th>Tests Required</th>
+                            <th>iPLEDGE Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pre-treatment</strong></td>
+                            <td>
+                                • CBC<br>
+                                • LFTs<br>
+                                • Lipids<br>
+                                • 2 pregnancy tests
+                            </td>
+                            <td>
+                                • Registration<br>
+                                • Education module<br>
+                                • Contraception counseling
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 1</strong></td>
+                            <td>
+                                • Lipids<br>
+                                • LFTs<br>
+                                • Pregnancy test
+                            </td>
+                            <td>
+                                • Monthly quiz<br>
+                                • Confirm contraception
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 2+</strong></td>
+                            <td>
+                                • Pregnancy test<br>
+                                • Lipids/LFTs if abnormal
+                            </td>
+                            <td>
+                                • Monthly requirements<br>
+                                • 7-day pickup window
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Acitretin Monitoring</h3>
+                <div class="warning-box">
+                    <h4>Special Considerations:</h4>
+                    <ul>
+                        <li>No iPLEDGE but document contraception</li>
+                        <li>Avoid ALL alcohol (re-esterification risk)</li>
+                        <li>Monitor lipids more closely (higher risk)</li>
+                        <li>Consider bone X-rays if >2 years treatment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clinical Scenarios -->
+        <div id="scenarios" class="content-section">
+            <div class="card">
+                <h2>🏥 Clinical Scenarios</h2>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Scenario 1: Acne patient wants laser hair removal</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Safe to proceed!</p>
+                    <p><strong>Explanation:</strong> Updated guidelines - no need to delay laser hair removal, IPL, or fractional lasers. Only delay fully ablative procedures.</p>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Scenario 2: Psoriasis patient drinks alcohol occasionally</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Avoid acitretin, use isotretinoin instead</p>
+                    <p><strong>Explanation:</strong> Alcohol + acitretin → etretinate (stored in fat, 120-day half-life). For women of childbearing age, this extends contraception to 3 years!</p>
+                </div>
+                
+                <div class="toggle-content" onclick="toggleDetails(this)">
+                    <strong>Scenario 3: CTCL patient with triglycerides 600 mg/dL on bexarotene</strong>
+                </div>
+                <div class="toggle-details">
+                    <p><strong>Answer:</strong> Continue bexarotene, optimize lipid management</p>
+                    <p><strong>Explanation:</strong> Add/increase fenofibrate dose. Only stop if TG >800 mg/dL. Most patients need lipid-lowering drugs with bexarotene.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final Summary Card -->
+        <div id="final-summary" class="content-section">
+            <div class="card">
+                <h2>🎓 Ultimate Board Review Summary</h2>
+                
+                <div class="high-yield">
+                    <h4>If You Remember Nothing Else:</h4>
+                    <ol>
+                        <li><strong>Teratogenicity</strong> is #1 concern - know contraception periods</li>
+                        <li><strong>Isotretinoin</strong> = only sebum suppressor, no receptor affinity</li>
+                        <li><strong>Acitretin</strong> = best for psoriasis, longest contraception</li>
+                        <li><strong>Bexarotene</strong> = RXR-selective, causes hypothyroidism</li>
+                        <li><strong>Most common side effect</strong> = cheilitis (all retinoids)</li>
+                        <li><strong>Stop if:</strong> TG >800, LFTs >3× ULN</li>
+                        <li><strong>Cumulative dose:</strong> 120-150 mg/kg for isotretinoin</li>
+                        <li><strong>Drug interactions:</strong> No tetracyclines, no alcohol with acitretin</li>
+                        <li><strong>Photostable topicals:</strong> Adapalene, tazarotene</li>
+                        <li><strong>Depression link:</strong> Not established, studies show improvement</li>
+                    </ol>
+                </div>
+                
+                <div class="memory-aid">
+                    <h4>Final Memory Tool - "RETINOIDS":</h4>
+                    <p style="font-size: 1.2em; line-height: 2;">
+                        <strong>R</strong>eceptors: RAR & RXR<br>
+                        <strong>E</strong>mbryopathy: Major concern<br>
+                        <strong>T</strong>eratogenic: All systemic<br>
+                        <strong>I</strong>sotretinoin: Sebum suppressor<br>
+                        <strong>N</strong>ight vision: Can be affected<br>
+                        <strong>O</strong>ral: Monitor labs<br>
+                        <strong>I</strong>nteractions: Avoid tetracyclines<br>
+                        <strong>D</strong>ryness: Most common effect<br>
+                        <strong>S</strong>ide effects: Dose-dependent
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function toggleDetails(element) {
+            element.classList.toggle('expanded');
+            const details = element.nextElementSibling;
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+            } else {
+                details.style.display = 'block';
+            }
+        }
+        
+        // Add interactive hover effects to table rows
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableRows = document.querySelectorAll('.interactive-table tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.cursor = 'pointer';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

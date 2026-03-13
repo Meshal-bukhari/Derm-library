@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritable Disorders of Connective Tissue - Interactive Study Guide</title>
+    <style>
+        :root {
+            --eds-color: #2980b9;
+            --pxe-color: #8e44ad;
+            --cutis-color: #d35400;
+            --other-color: #27ae60;
+            --mcq-highlight: #f39c12;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --highlight: #f1c40f;
+            --success: #27ae60;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--eds-color), var(--pxe-color), var(--cutis-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid;
+            padding-bottom: 10px;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            border-left: 5px solid;
+            padding-left: 10px;
+        }
+
+        .eds h2, .eds h3 {
+            border-color: var(--eds-color);
+        }
+
+        .pxe h2, .pxe h3 {
+            border-color: var(--pxe-color);
+        }
+
+        .cutis h2, .cutis h3 {
+            border-color: var(--cutis-color);
+        }
+        
+        .other h2, .other h3 {
+            border-color: var(--other-color);
+        }
+
+        .nav-tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+            margin-right: 5px;
+            transition: background-color 0.3s;
+            margin-bottom: 5px;
+        }
+
+        .nav-tab:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tab.active {
+            border: 1px solid #ddd;
+            border-bottom: none;
+            background-color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            padding: 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .eds .card-header {
+            background-color: var(--eds-color);
+        }
+
+        .pxe .card-header {
+            background-color: var(--pxe-color);
+        }
+
+        .cutis .card-header {
+            background-color: var(--cutis-color);
+        }
+        
+        .other .card-header {
+            background-color: var(--other-color);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .mnemonic {
+            background-color: #fff8e1;
+            border-left: 4px solid var(--highlight);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .pearl {
+            background-color: #e1f5fe;
+            border-left: 4px solid #03a9f4;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .eds-bg {
+            background-color: rgba(41, 128, 185, 0.1);
+        }
+
+        .pxe-bg {
+            background-color: rgba(142, 68, 173, 0.1);
+        }
+
+        .cutis-bg {
+            background-color: rgba(211, 84, 0, 0.1);
+        }
+        
+        .other-bg {
+            background-color: rgba(39, 174, 96, 0.1);
+        }
+
+        .highlight {
+            background-color: var(--highlight);
+            padding: 0 3px;
+            font-weight: bold;
+        }
+        
+        .mcq {
+            background-color: var(--mcq-highlight);
+            padding: 0 3px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .flashcard {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flashcard-front {
+            background-color: white;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        .flashcard-back {
+            background-color: var(--text-dark);
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .comparison-table th:first-child {
+            background-color: #f5f5f5;
+        }
+
+        .comparison-table th.eds-header {
+            background-color: var(--eds-color);
+            color: white;
+        }
+
+        .comparison-table th.marfan-header {
+            background-color: #16a085;
+            color: white;
+        }
+
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .toggle-btn {
+            background-color: #f1f1f1;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.4s;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ddd;
+        }
+
+        .toggle-btn.active {
+            background-color: #ccc;
+        }
+
+        .toggle-btn::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .toggle-btn.active::after {
+            content: '-';
+        }
+
+        .toggle-content.show {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* Interactive Features */
+        .quiz-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .quiz-options label {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-options label:hover {
+            background-color: #e0e0e0;
+        }
+
+        .quiz-options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .quiz-submit {
+            background-color: var(--eds-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .diagnostic-pathway {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .pathway-step {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .pathway-step::after {
+            content: "↓";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: #888;
+        }
+
+        .pathway-step:last-child::after {
+            display: none;
+        }
+
+        .key-feature {
+            background-color: #f8f8f8;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #555;
+        }
+
+        .memory-anchor {
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,240,1), rgba(255,255,255,0));
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            .nav-tab {
+                margin-bottom: 5px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Heritable Disorders of Connective Tissue</h1>
+            <p>Interactive Study Guide for Saudi Board Exam Preparation</p>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="openTab(event, 'overview')">Overview</div>
+            <div class="nav-tab" onclick="openTab(event, 'eds-tab')">Ehlers-Danlos Syndrome</div>
+            <div class="nav-tab" onclick="openTab(event, 'pxe-tab')">Pseudoxanthoma Elasticum</div>
+            <div class="nav-tab" onclick="openTab(event, 'cutis-tab')">Cutis Laxa</div>
+            <div class="nav-tab" onclick="openTab(event, 'other-tab')">Other Connective Tissue Disorders</div>
+            <div class="nav-tab" onclick="openTab(event, 'comparison-tab')">Comparison & Differential</div>
+            <div class="nav-tab" onclick="openTab(event, 'quiz-tab')">Self-Assessment</div>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <h2>Connective Tissue Disorders Overview</h2>
+            
+            <div class="memory-anchor">
+                "ECM Trio: EDS breaks, PXE calcifies, Cutis Laxa loses elasticity"
+            </div>
+            
+            <div class="card">
+                <div class="card-header" style="background: linear-gradient(90deg, var(--eds-color), var(--pxe-color), var(--cutis-color));">
+                    Quick Reference Guide
+                </div>
+                <div class="card-body">
+                    <p><strong>Key Distinguishing Features:</strong></p>
+                    <ul>
+                        <li><strong style="color: var(--eds-color);">Ehlers-Danlos Syndrome:</strong> Skin hyperextensibility, joint hypermobility, tissue fragility</li>
+                        <li><strong style="color: var(--pxe-color);">Pseudoxanthoma Elasticum:</strong> Calcification of elastic fibers, angioid streaks, cardiovascular complications</li>
+                        <li><strong style="color: var(--cutis-color);">Cutis Laxa:</strong> Loose, sagging skin with reduced elasticity and resilience</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>High-Yield Points for Board Exam</h3>
+            <div class="pearl">
+                <ul>
+                    <li>All three conditions have specific genetic mutations affecting extracellular matrix proteins</li>
+                    <li>Distinguish between skin manifestations: hyperextensible (EDS), yellowish papules/plaques (PXE), or loose/sagging (Cutis Laxa)</li>
+                    <li>Know key diagnostic features: Beighton score for EDS, angioid streaks for PXE</li>
+                    <li>Most dangerous form: <span class="mcq">Vascular EDS</span> (arterial/bowel ruptures) with <span class="mcq">median survival of 50 years</span></li>
+                    <li>Life-threatening complications: Pulmonary in Cutis Laxa, Cardiovascular in PXE</li>
+                    <li><span class="mcq">Tenascin-X deficiency (EDS-Hypermobility type) is associated with Congenital Adrenal Hyperplasia (CAH)</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="background-color: #555;">
+                    At-a-Glance: Pathogenesis Comparison
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Disorder</th>
+                            <th>Primary Defect</th>
+                            <th>Key Protein/Gene</th>
+                            <th>Main Inheritance</th>
+                        </tr>
+                        <tr class="eds-bg">
+                            <td>Ehlers-Danlos Syndrome</td>
+                            <td>Disruption of collagen fibrils</td>
+                            <td>Various (<span class="mcq">COL5A1</span>, COL3A1, etc.)</td>
+                            <td>Mostly AD (except some types)</td>
+                        </tr>
+                        <tr class="pxe-bg">
+                            <td>Pseudoxanthoma Elasticum</td>
+                            <td>Calcification of elastic fibers</td>
+                            <td><span class="mcq">ABCC6</span></td>
+                            <td>AR</td>
+                        </tr>
+                        <tr class="cutis-bg">
+                            <td>Cutis Laxa</td>
+                            <td>Sparse/fragmented elastic fibers</td>
+                            <td>Multiple (ELN, FBLN4/5, etc.)</td>
+                            <td>AD, AR, XLR</td>
+                        </tr>
+                        <tr class="other-bg">
+                            <td>Buschke-Ollendorf Syndrome</td>
+                            <td>↑TGF-β signaling</td>
+                            <td><span class="mcq">LEMD3/MAN1</span></td>
+                            <td>AD</td>
+                        </tr>
+                        <tr class="other-bg">
+                            <td>Homocystinuria</td>
+                            <td>Increased plasma homocysteine</td>
+                            <td><span class="mcq">CBS</span> (cystathionine β-synthase)</td>
+                            <td>AR</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDS Tab -->
+        <div id="eds-tab" class="tab-content eds">
+            <h2>Ehlers-Danlos Syndrome (EDS)</h2>
+            
+            <div class="memory-anchor">
+                "Collagen Crisis: Stretched skin, Stretched joints, Stressed vessels"
+            </div>
+            
+            <div class="pearl">
+                <strong>HIGH YIELD:</strong> 2017 International Classification recognizes 13 subtypes of EDS. Know the 6 main types, especially classical, <span class="mcq">hypermobile (most common)</span>, and <span class="mcq">vascular (most life-threatening)</span>.
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <div class="card">
+                <div class="card-header">
+                    Collagen Structure and Defects
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Most EDS variants result from <span class="highlight">disruption of collagen fibrils</span></li>
+                        <li>The collagen family includes <span class="highlight">28 distinct proteins</span></li>
+                        <li>Each collagen consists of <span class="highlight">three α-chain polypeptides</span></li>
+                        <li>There are <span class="highlight">45 distinct α-chains</span></li>
+                    </ul>
+                    
+                    <div class="mnemonic">
+                        <strong>Mnemonic for Collagen Structure:</strong> "3-28-45"
+                        <ul>
+                            <li><strong>3</strong> α-chains per collagen molecule</li>
+                            <li><strong>28</strong> distinct collagen proteins</li>
+                            <li><strong>45</strong> distinct α-chain types</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Clinical Assessment</h3>
+            <div class="card">
+                <div class="card-header">
+                    Diagnostic Criteria and Tests
+                </div>
+                <div class="card-body">
+                    <div class="toggle-btn">Beighton Scale for Joint Hypermobility</div>
+                    <div class="toggle-content">
+                        <p>A score of ≥5/9 indicates hypermobility in adults:</p>
+                        <ul>
+                            <li>Passive dorsiflexion of little fingers beyond 90° (1 point for each hand)</li>
+                            <li>Passive apposition of thumbs to flexor forearm (1 point for each hand)</li>
+                            <li>Hyperextension of knees beyond 10° (1 point for each knee)</li>
+                            <li>Hyperextension of elbows beyond 10° (1 point for each elbow)</li>
+                            <li>Forward flexion of trunk with knees fully extended and palms flat on floor (1 point)</li>
+                        </ul>
+                    </div>
+
+                    <div class="toggle-btn">Skin Hyperextensibility Assessment</div>
+                    <div class="toggle-content">
+                        <p>Assessed on the volar surface of distal forearm/wrist</p>
+                        <p><span class="mcq">Upper limit of normal extensibility: 1-1.5 cm</span></p>
+                    </div>
+
+                    <div class="toggle-btn">Other Clinical Signs</div>
+                    <div class="toggle-content">
+                        <ul>
+                            <li><strong>Gorlin sign</strong>: Touching nose tip with tongue (present in 50% of classical EDS vs 10% in normal population)</li>
+                            <li><strong>Spheroids</strong>: Fat lobules that have calcified after losing blood supply, most commonly found over bony prominences (ulnar and tibial)</li>
+                            <li><strong>Atrophic scars</strong>: "Fish mouth" or "cigarette paper" widened scars from poor wound healing</li>
+                        </ul>
+                    </div>
+
+                    <div class="toggle-btn">Diagnostic Tests</div>
+                    <div class="toggle-content">
+                        <ul>
+                            <li><strong>Histopathology</strong>: Usually noncontributory in routine examination</li>
+                            <li><strong>Electron microscopy</strong>: Classic EDS shows collagen fibrils with variable diameters and occasional "cauliflower" fibrils</li>
+                            <li><strong>Genetic testing</strong>: Available for all major forms <span class="highlight">except hypermobile type</span></li>
+                            <li><strong>Protein electrophoresis</strong> of collagens from cultured dermal fibroblasts: Helps demonstrate specific collagen defects (vascular, arthrochalasia, dermatosparaxis)</li>
+                            <li><strong>Urine analysis</strong>: Increased deoxypyridinoline:pyridinoline ratio for kyphoscoliotic type</li>
+                            <li><strong>Serum ELISA</strong>: Detects Tenascin-X deficiency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>EDS Classification and Types</h3>
+            <div class="card">
+                <div class="card-header">
+                    Major EDS Variants
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Gene/Inheritance</th>
+                            <th>Skin Findings</th>
+                            <th>Joint Changes</th>
+                            <th>Other Features</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Classical</strong><br>(formerly Types I "gravis" & II "mitis")</td>
+                            <td><span class="mcq">COL5A1</span>, COL5A2<br>AD</td>
+                            <td>Hyperextensibility, easy bruising, fragile skin, widened atrophic scars, molluscoid pseudotumors (fleshy nodules composed of redundant skin and fibrous tissue), spheroids</td>
+                            <td>Hypermobility and joint dislocations</td>
+                            <td>Gorlin's sign, absence of lingual frenulum</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Classical-like Type 1 (EDSCL1)</strong></td>
+                            <td><span class="mcq">TNXB</span><br>AR (Biallelic null mutations)</td>
+                            <td>Hyperextensibility, easy bruising, <span class="highlight">normal scarring</span> (distinguishes from classical)</td>
+                            <td>Hypermobility</td>
+                            <td>Tenascin-X deficiency (serum ELISA). Variable muscle weakness, foot deformities, bowel rupture risk. Occasional association with <span class="mcq">Congenital Adrenal Hyperplasia (CAH)</span> </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hypermobile</strong><br>(formerly Type III)</td>
+                            <td><span class="mcq">unkown</span><br>AD</td>
+                            <td>Mild</td>
+                            <td>Hypermobility, chronic joint pain/arthritis, recurrent dislocations</td>
+                            <td><span class="mcq">Hypermobile EDS is the most common variant</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vascular</strong><br>(formerly Type IV)</td>
+                            <td>COL3A1<br>AD</td>
+                            <td>Thin, translucent skin, extensive bruising, early varicosities, acrogeria</td>
+                            <td>Small joint hypermobility</td>
+                            <td><span class="mcq">Most life-threatening form</span>. Mnemonic: "IV = blood vessels"<br>Rupture of bowel, uterus, or arteries<br><span class="mcq">Median survival: 50 years</span><br><span class="mcq">5% risk of fatal uterine/arterial rupture during pregnancy</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kyphoscoliotic</strong><br>(formerly Type VI)</td>
+                            <td>Lysyl hydroxylase 1 (PLOD1)<br>AR</td>
+                            <td>Mild</td>
+                            <td>Hypermobility, severe scoliosis</td>
+                            <td>Severe muscle hypotonia, ruptured globe, blindness, marfanoid features. <span class="mcq">Ascorbic acid may help</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arthrochalasic</strong><br>(formerly Types VIIa, VIIb)</td>
+                            <td>COL1A1, COL1A2<br>AD</td>
+                            <td>Mild</td>
+                            <td><span class="highlight">Most severe hypermobility</span> with recurrent subluxations</td>
+                            <td>Congenital hip dislocation, short stature</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dermatosparaxis</strong><br>(formerly Type VIIc)</td>
+                            <td>Procollagen N-proteinase (ADAMTS2)<br>AR</td>
+                            <td>Severe fragility, sagging redundant skin, bruising</td>
+                            <td>Mild</td>
+                            <td>Umbilical/inguinal hernia, premature rupture of fetal membranes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Periodontal</strong><br>(formerly Type VIII)</td>
+                            <td>Unclear<br>AD</td>
+                            <td>Hyperextensible skin with scarring and bruising</td>
+                            <td>Mild</td>
+                            <td>Severe periodontitis → teeth loss</td>
+                        </tr>
+                        <
+                    </table>
+                    
+                    <div class="pearl">
+                        <strong>Board Tip:</strong> All EDS types are Autosomal Dominant EXCEPT Kyphoscoliotic, Dermatosparaxis, CLASSIC LIKE and some Hypermobility cases which are Autosomal Recessive.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Treatment Approaches</h3>
+            <div class="card">
+                <div class="card-header">
+                    Management Strategies
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="highlight">Prevention of trauma to the skin</span> is the most important intervention</li>
+                        <li>Delay suture removal for up to twice as long as usual</li>
+                        <li>Use sutures with prolonged tensile strength</li>
+                        <li>For vascular EDS: <span class="mcq">Celiprolol</span> (β1-antagonist with partial β2-agonist properties) may reduce arterial dissection risk</li>
+                        <li>For pregnant women with vascular EDS (<span class="mcq">5% risk of fatal uterine/arterial rupture</span>): Unclear if elective C-section reduces risk</li>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>CAUTION:</strong> Patients with vascular EDS are at high risk for arterial and bowel ruptures - know celiprolol as the medication that may reduce arterial complications.
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagnostic-pathway">
+                <h3>Diagnostic Approach to Suspected EDS</h3>
+                <div class="pathway-step">
+                    <strong>Step 1: Evaluate Cardinal Features</strong>
+                    <ul>
+                        <li>Marked/generalized joint hypermobility vs. limited to digits vs. minimal</li>
+                        <li>Skin hyperextensibility</li>
+                        <li>Tissue fragility (history of abnormal scarring, easy bruising)</li>
+                    </ul>
+                </div>
+                <div class="pathway-step">
+                    <strong>Step 2: Look for Type-Specific Features</strong>
+                    <div class="key-feature">Congenital bilateral hip dislocation or recurrent subluxations → Arthrochalasia</div>
+                    <div class="key-feature">Scoliosis at birth, progressive hypotonia, ocular fragility → Kyphoscoliotic</div>
+                    <div class="key-feature">Recurrent joint dislocations and chronic limb joint pain → Hypermobile</div>
+                    <div class="key-feature">Thin translucent skin, arterial/intestinal/uterine fragility → Vascular</div>
+                    <div class="key-feature">Gaping "fish-mouth" wounds from minor trauma → Classical</div>
+                </div>
+                <div class="pathway-step">
+                    <strong>Step 3: Genetic Testing</strong>
+                    <p>Available for all major types <span class="mcq">except Hypermobile EDS</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PXE Tab -->
+        <div id="pxe-tab" class="tab-content pxe">
+            <h2>Pseudoxanthoma Elasticum (PXE)</h2>
+            
+            <div class="memory-anchor">
+                "ABCC6 Missing: Calcification Kissing Arteries, Eyes, and Skin"
+            </div>
+            
+            <div class="pearl">
+                <strong>HIGH YIELD:</strong> PXE is characterized by calcification of elastic fibers affecting primarily the <span class="highlight">skin, eyes, and cardiovascular system</span>. Angioid streaks are the classic ocular finding, while <span class="mcq">"peau d'orange" changes are the most common</span>.
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <div class="card">
+                <div class="card-header">
+                    Molecular Mechanisms
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Autosomal recessive inheritance due to mutations in <span class="mcq">ABCC6 gene</span></li>
+                        
+                        </li>
+                        <li>Absence of functional ABCC6 results in reduced ATP secretion from hepatocytes</li>
+                        <li>Leads to reduced plasma concentrations of mineralization inhibitor – <span class="highlight">inorganic pyrophosphate (PPi)</span></li>
+                        <li>Serum levels of <span class="highlight">fetuin A</span> (anti-mineralization protein) are significantly reduced</li>
+                        <li>Mineralization-promoting <span class="highlight">alkaline phosphatase</span> is increased</li>
+                    </ul>
+                    
+                    <div class="mnemonic">
+                        <strong>Mnemonic for PXE Pathogenesis:</strong> "ABCC6 FAP"
+                        <ul>
+                            <li><strong>A</strong>BCC6 mutation</li>
+                            <li><strong>F</strong>etuin A decreased</li>
+                            <li><strong>A</strong>lkaline phosphatase increased</li>
+                            <li><strong>P</strong>Pi (inorganic pyrophosphate) decreased</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toggle-btn">Related Conditions</div>
+                    <div class="toggle-content">
+                        <ul>
+                            <li>
+                                <span class="mcq"><strong>ENPP1 mutations</strong>: Can cause Generalized Arterial Calcification of Infancy (GACI) or occasionally PXE.</span>
+                                <ul>
+                                    <li><strong>Generalized Arterial Calcification of Infancy (GACI):</strong>
+                                        <ul>
+                                            <li>Inheritance: <span>Autosomal Recessive (caused by biallelic mutations in ENPP1)</span>.</li>
+                                            <li>Severity: <span>Usually lethal during the first six months of life</span>.</li>
+                                            <li>Pathology: <span>Severe arterial calcification and endothelial proliferation leading to myocardial ischemia, hypertension, and heart failure</span>.</li>
+                                            <li>Features in Survivors (children with ENPP1 mutations who survive may develop):
+                                                <ul>
+                                                    <li><span>Skin changes of Pseudoxanthoma Elasticum (PXE)</span>.</li>
+                                                    <li><span>Angioid streaks</span>.</li>
+                                                    <li><span>Hypophosphatemic rickets due to elevated fibroblast growth factor 23 (FGF23)</span>.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="mcq"><strong>ABCC6 mutations</strong>: Can underlie subset of GACI cases, showing pathogenic overlap</span></li>
+                            <li><span class="mcq"><strong>γ-glutamyl carboxylase gene (GGCX) mutations</strong>: Cause PXE-like skin changes plus deficiency in vitamin K-dependent coagulation factors</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Epidemiology</h3>
+            <div class="card">
+                <div class="card-header">
+                    Demographics
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Autosomal recessive disorder</li>
+                        <li>Slight female preponderance</li>
+                        <li>Skin changes usually appear during childhood</li>
+                        <li>Diagnosis frequently not made until serious systemic/ocular complications develop in 3rd or 4th decade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Clinical Manifestations</h3>
+            <div class="card">
+                <div class="card-header">
+                    Skin Manifestations
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="highlight">Thin, yellowish papules</span> begin in flexural areas during 1st or 2nd decade</li>
+                        <li>Papules coalesce to form <span class="highlight">cobblestone-like plaques</span> ("plucked chicken skin" or "cobblestone" appearance)</li>
+                        <li><span class="highlight">Lateral neck often affected first</span>, followed by antecubital/popliteal fossae, wrists, axillae, and groin</li>
+                        <li>Periumbilical area may be affected in multiparous women (distinguish from perforating calcific elastosis)</li>
+                        <li>Severe disease: extension to non-flexural sites, "perforating PXE", secondary cutis laxa</li>
+                        <li>Mucosal involvement: yellow papules most commonly on lower lip</li>
+                        <li>Prominent chin creases</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Ocular Manifestations
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Angioid streaks</strong>: Classic finding, may be evident in first decade, found in virtually all patients by age 30</li>
+                        <li>Usually asymptomatic, reflect breaks in calcified elastic lamina of Bruch's membrane</li>
+                        <li>Can lead to choroidal neovascularization and hemorrhage with subsequent scarring</li>
+                        <li>Results in progressive vision loss, especially central fields, after age 40</li>
+                        <li><span class="mcq"><strong>"Peau d'orange" changes</strong>: Mottling of retinal pigment epithelium, actually the most common ophthalmologic finding</span></li>
+                        <li>Less common: macular degeneration, optic drusen, "owl's eyes" (paired hyperpigmented spots)</li>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>CAUTION:</strong> <span class="mcq">Angioid streaks are characteristic but not pathognomonic of PXE. Also seen in Paget's disease of bone, sickle cell anemia, thalassemia, EDS, lead poisoning, and age-related degeneration.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Cardiovascular Manifestations
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>May result in early death</li>
+                        <li>Primarily affects <span class="highlight">mid-sized arteries</span>, especially of extremities</li>
+                        <li>Progressive calcification leads to atheromatous plaques</li>
+                        <li>Sequelae: intermittent claudication, loss of peripheral pulses, renovascular hypertension, angina, MI, stroke early in life</li>
+                        <li>Calcified gastric and intestinal mucosal vessels have increased propensity for hemorrhage, particularly from stomach</li>
+                        <li>Increased prevalence of mitral valve prolapse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Pathology</h3>
+            <div class="card">
+                <div class="card-header">
+                    Histopathologic Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="highlight">Distorted, fragmented elastic fibers</span> in mid and deep reticular dermis</li>
+                        <li>Advanced cases: calcium deposits visible as purple clumps in routine staining</li>
+                        <li>Special stains: Verhoeff-van Gieson (elastin) and von Kossa (calcium)</li>
+                        <li>In patients without skin manifestations, biopsy of pre-existing scar can confirm diagnosis</li>
+                        <li>Normal serum calcium and phosphate levels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Differential Diagnosis</h3>
+            <div class="card">
+                <div class="card-header">
+                    Similar Conditions
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>D-penicillamine-induced PXE-like changes</strong>: No calcification of abnormal fibers</li>
+                        <li><strong>Saltpeter (potassium nitrate) exposure</strong>: Shows calcification</li>
+                        <li><strong>Chronic kidney disease</strong>: Shows calcification</li>
+                        <li><strong>Beta-thalassemia/sickle cell anemia</strong>: PXE-like phenotype in up to 20% of patients</li>
+                        <li><strong>L-tryptophan-induced eosinophilia myalgia syndrome</strong> (historical)</li>
+                    </ul>
+                    
+                    <div class="pearl">
+                        <strong>Key Distinction:</strong> In secondary PXE-like conditions, ophthalmologic and cardiovascular findings are typically absent, and skin lesions may resolve after cessation of causative exposure.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Management</h3>
+            <div class="card">
+                <div class="card-header">
+                    Multidisciplinary Approach
+                </div>
+                <div class="card-body">
+                    <strong>Skin:</strong>
+                    <ul>
+                        <li>No specific treatment available</li>
+                        <li>Surgical intervention for excessive skin folds</li>
+                    </ul>
+                    
+                    <strong>Eyes - Prevention and Early Detection:</strong>
+                    <ul>
+                        <li><span class="highlight">Biannual funduscopic examination</span></li>
+                        <li>Regular use of Amsler grid to assess central visual field defects</li>
+                        <li>Use of sunglasses</li>
+                        <li>Diet/vitamins rich in antioxidants</li>
+                        <li>Avoidance of head trauma, heavy straining, and smoking</li>
+                    </ul>
+                    
+                    <strong>Eyes - Treatment:</strong>
+                    <ul>
+                        <li><span class="highlight">Intravitreal injections of VEGF antagonists</span> (bevacizumab, ranibizumab)</li>
+                        <li>Laser photocoagulation or photodynamic therapy (high recurrence rates)</li>
+                        <li>Macular translocation (for extensive neovascularization)</li>
+                    </ul>
+                    
+                    <strong>Cardiovascular - Prevention and Monitoring:</strong>
+                    <ul>
+                        <li>Baseline ECG and echocardiogram</li>
+                        <li>Annual cardiovascular examination</li>
+                        <li>Healthy lifestyle, balanced diet, regular exercise, no smoking</li>
+                        <li><span class="mcq">Magnesium supplementation</span> (may reduce connective tissue mineralization)</li>
+                        <li>Moderate calcium intake</li>
+                        <li>Low-dose aspirin if not contraindicated</li>
+                    </ul>
+                    
+                    <strong>Cardiovascular - Treatment:</strong>
+                    <ul>
+                        <li>Correction of hyperlipidemia and hypertension</li>
+                        <li>Low-dose aspirin, pentoxifylline, cilostazol, or clopidogrel for claudication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cutis Laxa Tab -->
+        <div id="cutis-tab" class="tab-content cutis">
+            <h2>Cutis Laxa</h2>
+            
+            <div class="memory-anchor">
+                "Elastic Absence: The Skin That Stretched and Never Returned"
+            </div>
+            
+            <div class="pearl">
+                <strong>HIGH YIELD:</strong> Cutis Laxa is characterized by <span class="highlight">loose, sagging skin with reduced elasticity</span> due to sparse and fragmented elastic fibers. <span class="mcq">Pulmonary complications are the most serious and can cause significant morbidity and mortality.</span>
+            </div>
+
+            <h3>Pathogenesis</h3>
+            <div class="card">
+                <div class="card-header">
+                    Mechanisms
+                </div>
+                <div class="card-body">
+                    <div class="toggle-btn">Inherited Forms</div>
+                    <div class="toggle-content">
+                        <ul>
+                            <li>Sparse and fragmented elastic fibers</li>
+                            <li>Multiple inheritance patterns: autosomal dominant, autosomal recessive, X-linked recessive</li>
+                            <li><span class="mcq">AR forms (most common): Mutations in FBLN5, EFEMP2/FBLN4, LTBP4, ATPase, ATP6V0A2, PYCR1, and ALDH18A1</span></li>
+                            <li>Affects both skin and systemic manifestations</li>
+                            <li>PYCR1 mutations can lead to features of both Cutis Laxa and EDS or osteogenesis imperfecta</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toggle-btn">Acquired Forms</div>
+                    <div class="toggle-content">
+                        <ul>
+                            <li><span class="highlight">Enhanced degradation of elastic fibers</span> is key mechanism</li>
+                            <li>Often follows inflammatory skin conditions (drug reactions, urticaria, Sweet syndrome)</li>
+                            <li>Release of elastases by inflammatory cells (neutrophils, monocytes, macrophages) leads to proteolytic degradation</li>
+                            <li><span class="mcq">Marshall syndrome: Cutis Laxa following Sweet syndrome-like neutrophilic dermatosis</span></li>
+                            <li>α1-antitrypsin deficiency may increase susceptibility to proteolysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toggle-btn">D-Penicillamine-Induced</div>
+                    <div class="toggle-content">
+                        <p>Two mechanisms:</p>
+                        <ol>
+                            <li>Copper chelation → reduced lysyl oxidase activity</li>
+                            <li>Chemical blockade of allysine and lysine residues that form desmosine crosslinks</li>
+                        </ol>
+                        <p>Results in CL-like changes, elastosis perforans serpiginosa, and PXE-like findings</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Clinical Manifestations</h3>
+            <div class="card">
+                <div class="card-header">
+                    Cutaneous Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="highlight">Loose, sagging skin with reduced elasticity and resilience</span></li>
+                        <li>"Aged" facial appearance with down-slanting palpebral fissures and long philtrum</li>
+                        <li>Present at birth in most heritable forms; may develop later in autosomal dominant or acquired variants</li>
+                        <li>Usually progressive, though improvement with age noted in ARCL type 2A</li>
+                        <li>Distribution often generalized; can be primarily acral in ARCL type 2B or acquired forms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Extracutaneous Manifestations
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Emphysema</span> - can cause considerable morbidity and mortality</li>
+                        <li>Umbilical and inguinal hernias</li>
+                        <li>Gastrointestinal and genitourinary tract diverticula</li>
+                        <li>Cardiac or arterial abnormalities</li>
+                        <li>Skeletal or joint involvement</li>
+                        <li>Delayed growth and development</li>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>CAUTION:</strong> <span class="mcq">Pulmonary complications are the most serious feature of Cutis Laxa and can cause significant morbidity and mortality.</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Classification of Cutis Laxa</h3>
+            <div class="card">
+                <div class="card-header">
+                    Heritable Forms
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Inheritance</th>
+                            <th>Gene/Protein</th>
+                            <th>Distribution</th>
+                            <th>Notable Features</th>
+                        </tr>
+                        <tr>
+                            <td>Autosomal Dominant (ADCL)</td>
+                            <td>AD</td>
+                            <td>ELN (Elastin), FBLN5 (Fibulin 5)</td>
+                            <td>Generalized</td>
+                            <td>Cardiac valve abnormalities, aortic dilatation, emphysema (uncommon), hernias</td>
+                        </tr>
+                        <tr>
+                            <td>ARCL type 1A/1B</td>
+                            <td>AR</td>
+                            <td>FBLN5 (1A), FBLN4/EFEMP2 (1B)</td>
+                            <td>Generalized</td>
+                            <td>Arterial/aortic tortuosity/aneurysms, emphysema (more severe in 1A), bladder diverticula, hernias</td>
+                        </tr>
+                        <tr>
+                            <td>ARCL type 1C (Urban-Rifkin-Davis syndrome)</td>
+                            <td>AR</td>
+                            <td>LTBP4 (Latent TGF-β binding protein-4)</td>
+                            <td>Generalized</td>
+                            <td>Severe emphysema (often fatal), pulmonary arterial stenosis, GI/GU malformations, joint laxity</td>
+                        </tr>
+                        <tr>
+                            <td>ARCL type 2A (Debré type)</td>
+                            <td>AR</td>
+                            <td>ATP6V0A2 (Vacuolar H+-ATPase)</td>
+                            <td>Generalized; improves over time</td>
+                            <td>Translucent skin, ocular abnormalities, developmental delays</td>
+                        </tr>
+                        <tr>
+                            <td>ARCL type 2B</td>
+                            <td>AR</td>
+                            <td>PYCR1 (Pyrroline-5-carboxylate reductase)</td>
+                            <td>Generalized; may favor dorsal hands/feet</td>
+                            <td>Progeroid appearance, developmental delay, joint laxity</td>
+                        </tr>
+                        <tr>
+                            <td>X-linked (Occipital Horn Syndrome)</td>
+                            <td>XLR</td>
+                            <td>ATP7A (Cu²⁺-transporting ATPase)</td>
+                            <td>Generalized; most pronounced on face and neck</td>
+                            <td>Arterial tortuosity, bladder diverticula, wedge-shaped occipital calcifications, joint laxity</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Acquired Cutis Laxa: Associated Conditions
+                </div>
+                <div class="card-body">
+                    <strong>Skin Disorders:</strong>
+                    <ul>
+                        <li>Urticaria and/or angioedema</li>
+                        <li>Drug eruptions</li>
+                        <li><span class="mcq">Sweet syndrome-like eruptions (Marshall syndrome)</span></li>
+                        <li>Arthropod bite reactions</li>
+                        <li>Other inflammatory dermatoses (erythema multiforme, dermatitis herpetiformis, etc.)</li>
+                    </ul>
+                    
+                    <strong>Extracutaneous Disorders:</strong>
+                    <ul>
+                        <li>Rheumatoid arthritis, SLE</li>
+                        <li>Nephrotic syndrome</li>
+                        <li>Celiac disease</li>
+                        <li>Sarcoidosis</li>
+                        <li>Monoclonal gammopathy (especially acral CL with plasma cell dyscrasia)</li>
+                        <li>Infectious diseases (febrile viral syndromes, Lyme disease, syphilis)</li>
+                    </ul>
+                    
+                    <strong>Drug-Induced:</strong>
+                    <ul>
+                        <li>Penicillamine</li>
+                        <li>Isoniazid</li>
+                    </ul>
+                    
+                    <div class="pearl">
+                        <strong>Board Tip:</strong> <span class="mcq">Marshall syndrome refers to Cutis Laxa associated with Sweet syndrome-like neutrophilic dermatosis, occurring primarily in infants and young children</span>.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Pathology and Diagnosis</h3>
+            <div class="card">
+                <div class="card-header">
+                    Histologic Features and Differential
+                </div>
+                <div class="card-body">
+                    <strong>Histopathology:</strong>
+                    <ul>
+                        <li>Characteristic feature: <span class="mcq">sparse and/or fragmented elastic fibers</span></li>
+                    </ul>
+                    
+                    <strong>Differential Diagnosis:</strong>
+                    <ul>
+                        <li><strong>Ehlers-Danlos Syndrome</strong>: Hyperextensible skin retains elasticity and recoil (except dermatosparaxis type); also shows skin fragility and bruising</li>
+                        <li><strong>Mid-dermal elastolysis</strong></li>
+                        <li><strong>Anetoderma</strong>: Focal areas of flaccid skin (1-2 cm) with loss of elastic tissue; histologically identical to CL but more circumscribed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other Connective Tissue Disorders Tab -->
+        <div id="other-tab" class="tab-content other">
+            <h2>Other Heritable Connective Tissue Disorders</h2>
+            
+            <div class="memory-anchor">
+                "Beyond the Big Three: Rare but Board Exam Worthy"
+            </div>
+            
+            <h3>Buschke-Ollendorf Syndrome</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Autosomal Dominant (AD) disorder due to mutation in LEMD3/MAN1 gene → ↑TGF-β signaling</span></li>
+                        <li><strong>Cutaneous Finding:</strong> Dermatofibrosis lenticularis disseminata (collagen-type nevus)</li>
+                        <li>Symmetric, small, uniform, yellow to skin-colored dermal papules coalescing into plaques</li>
+                        <li>Typically appear on buttocks, proximal trunk, and limbs</li>
+                        <li>Onset in childhood (typically in 1st year of life)</li>
+                        <li><strong>Radiographic Finding:</strong> <span class="mcq">Osteopoikilosis ("spotted bones")</span></li>
+                        <li>Asymptomatic circular densities in carpal bones, tarsal bones, phalanges, pelvis, and epiphyses/metaphyses of long bones</li>
+                        <li><span class="mcq">Often noted incidentally on plain films (1- to 10-mm round opacities)</span></li>
+                    </ul>
+                    
+                    <div class="pearl">
+                        <strong>Board Tip:</strong> Know the association between Buschke-Ollendorf syndrome and osteopoikilosis ("spotted bones"), which is almost pathognomonic.
+                    </div>
+                    
+                    <strong>Histology:</strong> Abundant thickened collagen fibers and elastic fibers (often fragmented and clustered into nets)
+                </div>
+            </div>
+            
+            <h3>Congenital Contractural Arachnodactyly (Beals Syndrome)</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Autosomal Dominant (AD) mutation in the fibrillin 2 (FBN2) gene</span></li>
+                        <li><span class="mcq">Characteristic Feature: Crumpled ears</span> - the distinguishing feature from Marfan syndrome</li>
+                        <li>Marfanoid habitus with arachnodactyly</li>
+                        <li>Congenital contractures of small and large joints that usually improve over time</li>
+                        <li>Kyphoscoliosis and pectus excavatum</li>
+                        <li>Characteristic facial features:</li>
+                        <ul>
+                            <li>High forehead</li>
+                            <li>Down-slanting palpebral fissures</li>
+                            <li>Hypertelorism</li>
+                            <li>Anteverted nostrils</li>
+                            <li>Low-set and abnormal auricles</li>
+                            <li>Retromicrognathia</li>
+                            <li>Short neck</li>
+                        </ul>
+                        <li>Cardiac manifestations: mitral valve prolapse and aortic root dilation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Focal Dermal Hypoplasia (Goltz Syndrome)</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">X-linked Dominant (XLD) disorder due to mutations in the PORCN (porcupine) gene</span> (regulator of Wnt signaling proteins)</li>
+                        <li><span class="mcq">Majority of patients are heterozygous females (90%); males are usually postzygotic mosaics (10%)</span></li>
+                        <li>Cutaneous manifestations:</li>
+                        <ul>
+                            <li>Widely distributed linear/Blaschkoid areas of hypoplasia/atrophy of the skin, with telangiectasias</li>
+                            <li>Soft, yellow to reddish-yellow nodular outpouchings caused by herniation of subcutaneous fat through thinned dermis</li>
+                            <li>Large cutaneous ulcers that heal with atrophic scarring</li>
+                            <li>Red ("raspberry-like") papillomas, favoring lips, anogenital region, larynx and acral skin</li>
+                            <li>Thin or absent hair</li>
+                            <li>Dystrophic or completely absent nails</li>
+                        </ul>
+                        <li>Skeletal manifestations:</li>
+                        <ul>
+                            <li>Oligodactyly, syndactyly, ectrodactyly (lobster claw deformity), and polydactyly</li>
+                            <li>Asymmetric development of skull, pointed mandible</li>
+                            <li>Scoliosis, kyphosis, spina bifida occulta</li>
+                            <li><span class="mcq">Osteopathia striata: vertical striations in long bone metaphyses on X-ray</span></li>
+                        </ul>
+                        <li>Intelligence usually normal</li>
+                    </ul>
+                    
+                    <div class="mnemonic">
+                        <strong>Mnemonic "FOCAL" for Key Features:</strong>
+                        <ul>
+                            <li><strong>F</strong>emale predominance, X-linked Dominant</li>
+                            <li><strong>O</strong>steopathia striata</li>
+                            <li><strong>C</strong>olobomas (of iris/choroid/retina/optic disc)</li>
+                            <li><strong>A</strong>plasia of ectodermal elements</li>
+                            <li><strong>L</strong>obster claw deformity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pearl">
+                        <strong>Board Tip:</strong> Remember the FOCAL acronym for the key features of Goltz syndrome.
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Homocystinuria</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Autosomal Recessive (AR) disorder most commonly due to CBS (cystathionine β-synthase) enzyme deficiency</span></li>
+                        <li>Results in increased plasma homocysteine levels</li>
+                        <li>Cutaneous findings:</li>
+                        <ul>
+                            <li>Malar flush</li>
+                            <li>Livedo reticularis</li>
+                            <li>Diffuse pigmentary dilution</li>
+                            <li>Tissue paper-like scars</li>
+                        </ul>
+                        <li>Extracutaneous manifestations:</li>
+                        <ul>
+                            <li>Marfanoid habitus (similar to Marfan syndrome)</li>
+                            <li><span class="mcq">Lens subluxations (typically downward)</span> - distinguishes from Marfan syndrome where lens displacement is upward</li>
+                            <li><span class="mcq">Venous and arterial thrombosis</span> - a major cause of mortality</li>
+                            <li>Mental retardation</li>
+                        </ul>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>CAUTION:</strong> Distinguishing homocystinuria from Marfan syndrome: both have Marfanoid habitus, but lens subluxation is <span class="mcq">downward</span> in homocystinuria and upward in Marfan syndrome. Homocystinuria patients are also at high risk for thrombosis.
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Infantile Systemic Hyalinosis (ISH) / Juvenile Hyaline Fibromatosis (JHF)</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Allelic Autosomal Recessive (AR) diseases caused by mutations in ANTXR2/CMG2 gene</span> (capillary morphogenesis protein-2)</li>
+                        <li><span class="mcq">ANTXR2 (transmembrane protein) binds to Laminin and Collagen IV</span></li>
+                        <li>ISH presents within first 6 months of life with cutaneous, mucosal, skeletal, and internal organ involvement with death in early childhood</li>
+                        <li>JHF presents during early childhood with cutaneous, mucosal, and skeletal/joint involvement only, survival into adulthood</li>
+                        <li>Cutaneous manifestations:</li>
+                        <ul>
+                            <li>Thickened skin and hyperpigmentation overlying bony prominences (ISH)</li>
+                            <li>Perianal nodules</li>
+                            <li>Small pearly papules on ears and face</li>
+                            <li>Scalp nodules are characteristic of JHF</li>
+                        </ul>
+                        <li>Musculoskeletal manifestations:</li>
+                        <ul>
+                            <li>Debilitating joint contractures and tumors</li>
+                            <li>Osteolytic bone lesions (characteristic of JHF)</li>
+                        </ul>
+                        <li><span class="mcq">Normal intelligence</span></li>
+                        <li>Prognosis:</li>
+                        <ul>
+                            <li><span class="mcq">ISH: Poor prognosis with death by 2 years of age</span></li>
+                            <li><span class="mcq">JHF: Survival into adulthood</span> (often death by 4th decade)</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Lipoid Proteinosis (Urbach-Wiethe Disease)</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Autosomal Recessive (AR) disorder due to mutations in the extracellular matrix protein 1 (ECM1) gene</span></li>
+                        <li><span class="mcq">Higher prevalence in South Africa</span></li>
+                        <li>Thickening of basement membrane and deposition of hyaline material in dermis</li>
+                        <li><span class="mcq">Hoarse cry or weak cry from infiltrated vocal cords is the first clinical sign</span> (occurs in infancy and persists for life)</li>
+                        <li>Cutaneous lesions develop during first 2 years of life in two overlapping stages:</li>
+                        <ul>
+                            <li>First stage: vesicles and hemorrhagic crusts that resolve with "ice-pick" scars</li>
+                            <li>Second stage: yellow, waxy, coalescing papules/nodules on the face/neck and extremities</li>
+                            <li>Beaded eyelid papules resembling "string of pearls" (50%)</li>
+                            <li>Verrucous nodules on elbows/knees/hands</li>
+                        </ul>
+                        <li>Oral manifestations:</li>
+                        <ul>
+                            <li>Thickened oral mucosa</li>
+                            <li>Infiltration of mucosa by yellow papules/plaques</li>
+                            <li>Thickened "woody" tongue with inability to protrude</li>
+                        </ul>
+                        <li><span class="mcq">Neurologic manifestations: seizures, neuropsychiatric symptoms associated with pathognomonic sickle or "bean-shaped" calcifications in temporal lobes or hippocampus/amygdala</span></li>
+                    </ul>
+                    
+                    <div class="pearl">
+                        <strong>Board Tip:</strong> <span class="mcq">The combination of hoarse cry since infancy and "bean-shaped" calcifications in temporal lobes is virtually pathognomonic for lipoid proteinosis.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Marfan Syndrome (MFS)</h3>
+            <div class="card">
+                <div class="card-header">
+                    Key Features
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="mcq">Autosomal Dominant (AD) mutations in FBN1 gene</span> (encoding fibrillin-1)</li>
+                        <li>Manifestations may not present until adolescence or later</li>
+                        <li>Cutaneous findings:</li>
+                        <ul>
+                            <li><span class="mcq">Striae on upper chest, arms, thighs, and abdomen</span></li>
+                            <li>Lack of subcutaneous fat</li>
+                            <li><span class="mcq">Increased risk of elastosis perforans serpiginosa</span></li>
+                        </ul>
+                        <li>Skeletal manifestations:</li>
+                        <ul>
+                            <li>Tall with long extremities (marfanoid habitus)</li>
+                            <li>Arm span greater than height</li>
+                            <li>Arachnodactyly</li>
+                            <li>Kyphoscoliosis, pectus excavatum, dolichocephaly</li>
+                        </ul>
+                        <li>Ocular manifestations:</li>
+                        <ul>
+                            <li><span class="mcq">Ectopia lentis (upward lens displacement) in 60% of patients</span></li>
+                            <li>Ocular globe elongation leading to myopia (~40%)</li>
+                            <li>Retinal detachment, cataracts, glaucoma</li>
+                        </ul>
+                        <li>Cardiovascular manifestations (70%):</li>
+                        <ul>
+                            <li>Dilatation of ascending aorta → regurgitation, CHF, dissection/aneurysm, rupture</li>
+                            <li>Mitral valve prolapse</li>
+                            <li>Left ventricular dilation</li>
+                        </ul>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>CAUTION:</strong> <span class="mcq">The key difference between Marfan syndrome and homocystinuria is the direction of lens subluxation - upward in Marfan and downward in homocystinuria.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Tab -->
+        <div id="comparison-tab" class="tab-content">
+            <h2>Comparison & Differential Diagnosis</h2>
+            
+            <h3>EDS vs. Marfan Syndrome</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th class="eds-header">Ehlers-Danlos Syndrome</th>
+                            <th class="marfan-header">Marfan Syndrome</th>
+                        </tr>
+                        <tr>
+                            <td>Molluscoid pseudotumors</td>
+                            <td>Common (++)</td>
+                            <td>Not a feature (-)</td>
+                        </tr>
+                        <tr>
+                            <td>Skin findings</td>
+                            <td>Hyperextensibility, "fish-mouth" atrophic scars</td>
+                            <td>Striae</td>
+                        </tr>
+                        <tr>
+                            <td>Joint hypermobility</td>
+                            <td>Often severe (++)</td>
+                            <td>Mild-moderate (+)</td>
+                        </tr>
+                        <tr>
+                            <td>Easy bruising</td>
+                            <td>Present (++)</td>
+                            <td>Not a feature (-)</td>
+                        </tr>
+                        <tr>
+                            <td>Pectus excavatum</td>
+                            <td>Not a feature (-)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Scoliosis</td>
+                            <td>Occasional (+)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>High-arched palate</td>
+                            <td>Not a feature (-)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Ectopia lentis</td>
+                            <td>Occasional (+)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Myopia</td>
+                            <td>Occasional (+)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Mitral valve abnormalities</td>
+                            <td>Occasional (+)</td>
+                            <td>Common (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Stature</td>
+                            <td>Variable</td>
+                            <td>Tall</td>
+                        </tr>
+                        <tr>
+                            <td>Genetic basis</td>
+                            <td>Various collagen genes (COL5A1, COL3A1, etc.)</td>
+                            <td>FBN1 (fibrillin-1)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>Marfan Syndrome vs. Homocystinuria</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th class="marfan-header">Marfan Syndrome</th>
+                            <th style="background-color: #9b59b6; color: white;">Homocystinuria</th>
+                        </tr>
+                        <tr>
+                            <td>Lens subluxation</td>
+                            <td><span class="mcq">Upward</span></td>
+                            <td><span class="mcq">Downward</span></td>
+                        </tr>
+                        <tr>
+                            <td>Thrombotic tendency</td>
+                            <td>Not a feature (-)</td>
+                            <td>Severe, major cause of morbidity (++)</td>
+                        </tr>
+                        <tr>
+                            <td>Intelligence</td>
+                            <td>Normal</td>
+                            <td>Often impaired</td>
+                        </tr>
+                        <tr>
+                            <td>Genetic basis</td>
+                            <td>FBN1 (fibrillin-1)</td>
+                            <td>CBS (cystathionine β-synthase)</td>
+                        </tr>
+                        <tr>
+                            <td>Inheritance</td>
+                            <td>AD</td>
+                            <td>AR</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>PXE Differential Diagnosis</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Disorder</th>
+                            <th>Patient Characteristics</th>
+                            <th>Clinical Features</th>
+                            <th>Histologic Features</th>
+                        </tr>
+                        <tr>
+                            <td>Actinic elastosis</td>
+                            <td>History of chronic sun exposure; lightly pigmented skin; middle-aged and older adults</td>
+                            <td>Yellow to gray, thickened, lax, wrinkled skin; photodistribution</td>
+                            <td>Masses of basophilic, degenerated elastic fibers in papillary and upper reticular dermis</td>
+                        </tr>
+                        <tr>
+                            <td>Late-onset focal dermal elastosis</td>
+                            <td>7th-9th decades</td>
+                            <td>Multiple 1-3 mm yellow papules; may coalesce; neck, axillae, groin, flexural areas</td>
+                            <td>Increased elastic fibers in mid and deep reticular dermis</td>
+                        </tr>
+                        <tr>
+                            <td>Perforating calcific elastosis</td>
+                            <td>Multiparous dark-skinned women; 5th-8th decades</td>
+                            <td>Keratotic papules coalescing to form plaque; periumbilical area</td>
+                            <td>Transepidermal elimination of calcified, distorted elastic fibers</td>
+                        </tr>
+                        <tr>
+                            <td>PXE-like conditions</td>
+                            <td>History of D-penicillamine use, saltpeter exposure, chronic kidney disease, β-thalassemia, sickle cell anemia</td>
+                            <td>Similar to PXE but often lacking cardiovascular/ocular findings</td>
+                            <td>D-penicillamine: no calcification of fibers; Saltpeter/CKD: calcification present</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>Cutis Laxa vs. Ehlers-Danlos Syndrome</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Cutis Laxa</th>
+                            <th>Ehlers-Danlos Syndrome</th>
+                        </tr>
+                        <tr>
+                            <td>Skin elasticity</td>
+                            <td>Reduced elasticity, doesn't return to original position</td>
+                            <td>Hyperextensible with preserved recoil (except dermatosparaxis type)</td>
+                        </tr>
+                        <tr>
+                            <td>Bruising tendency</td>
+                            <td>Not a prominent feature</td>
+                            <td>Easy bruising is characteristic</td>
+                        </tr>
+                        <tr>
+                            <td>Skin fragility</td>
+                            <td>Not typically fragile</td>
+                            <td>Fragile skin with poor wound healing</td>
+                        </tr>
+                        <tr>
+                            <td>Major systemic concern</td>
+                            <td>Emphysema, arterial aneurysms</td>
+                            <td>Vascular rupture, bowel perforation</td>
+                        </tr>
+                        <tr>
+                            <td>Histopathology</td>
+                            <td>Sparse/fragmented elastic fibers</td>
+                            <td>Collagen abnormalities</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>Other Heritable Disorders of Connective Tissue</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Disease</th>
+                            <th>Cutaneous Findings</th>
+                            <th>Extracutaneous Manifestations</th>
+                            <th>Inheritance/Gene</th>
+                        </tr>
+                        <tr>
+                            <td>Marfan Syndrome</td>
+                            <td>Striae, elastosis perforans serpiginosa, decreased subcutaneous fat on extremities</td>
+                            <td>Skeletal abnormalities (long limbs, arachnodactyly, scoliosis), lens subluxations (upward), aortic dilation/dissection</td>
+                            <td>AD; FBN1 (fibrillin 1)</td>
+                        </tr>
+                        <tr>
+                            <td>Homocystinuria</td>
+                            <td>Malar flush, livedo reticularis, diffuse pigmentary dilution, tissue paper-like scars</td>
+                            <td>Marfanoid habitus, lens subluxations (downward), thrombosis, mental retardation</td>
+                            <td>AR; CBS (cystathionine synthase)</td>
+                        </tr>
+                        <tr>
+                            <td>Osteogenesis Imperfecta</td>
+                            <td>Thin skin</td>
+                            <td>Bone fragility, blue sclerae, dentinogenesis imperfecta</td>
+                            <td>AD; COL1A1, COL1A2 (type I collagen)</td>
+                        </tr>
+                        <tr>
+                            <td>Buschke-Ollendorf Syndrome</td>
+                            <td>Dermatofibrosis lenticularis disseminata (collagen-type nevus)</td>
+                            <td><span class="mcq">Osteopoikilosis ("spotted bones")</span></td>
+                            <td>AD; LEMD3/MAN1</td>
+                        </tr>
+                        <tr>
+                            <td>Congenital Contractural Arachnodactyly</td>
+                            <td><span class="mcq">Crumpled ears</span></td>
+                            <td>Marfanoid habitus, contractures, kyphoscoliosis</td>
+                            <td>AD; FBN2 (fibrillin 2)</td>
+                        </tr>
+                        <tr>
+                            <td>Focal Dermal Hypoplasia</td>
+                            <td>Linear hypoplasia/atrophy, fat herniation, papillomas</td>
+                            <td>Skeletal defects (lobster claw), <span class="mcq">osteopathia striata</span></td>
+                            <td>XLD; PORCN</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Tab -->
+        <div id="quiz-tab" class="tab-content">
+            <h2>Self-Assessment Quiz</h2>
+            
+            <div class="quiz-container">
+                <div id="question1">
+                    <div class="quiz-question">1. Which of the following is the most life-threatening type of Ehlers-Danlos Syndrome?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="a"> A. Classical type</label>
+                        <label><input type="radio" name="q1" value="b"> B. Hypermobile type</label>
+                        <label><input type="radio" name="q1" value="c"> C. Vascular type</label>
+                        <label><input type="radio" name="q1" value="d"> D. Kyphoscoliotic type</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(1, 'c')">Submit</button>
+                    <div id="feedback1" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question2">
+                    <div class="quiz-question">2. Which ocular finding is highly characteristic but NOT pathognomonic of Pseudoxanthoma Elasticum?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="a"> A. Angioid streaks</label>
+                        <label><input type="radio" name="q2" value="b"> B. "Peau d'orange" changes</label>
+                        <label><input type="radio" name="q2" value="c"> C. "Owl's eyes"</label>
+                        <label><input type="radio" name="q2" value="d"> D. Optic drusen</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(2, 'a')">Submit</button>
+                    <div id="feedback2" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question3">
+                    <div class="quiz-question">3. What is the most important intervention for patients with Ehlers-Danlos Syndrome?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="a"> A. Vitamin C supplementation</label>
+                        <label><input type="radio" name="q3" value="b"> B. Prevention of trauma to the skin</label>
+                        <label><input type="radio" name="q3" value="c"> C. Physical therapy</label>
+                        <label><input type="radio" name="q3" value="d"> D. Genetic counseling</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(3, 'b')">Submit</button>
+                    <div id="feedback3" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question4">
+                    <div class="quiz-question">4. In Pseudoxanthoma Elasticum, which system complications can cause early death?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q4" value="a"> A. Cutaneous</label>
+                        <label><input type="radio" name="q4" value="b"> B. Ocular</label>
+                        <label><input type="radio" name="q4" value="c"> C. Cardiovascular</label>
+                        <label><input type="radio" name="q4" value="d"> D. Neurological</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(4, 'c')">Submit</button>
+                    <div id="feedback4" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question5">
+                    <div class="quiz-question">5. What is the most serious complication of Cutis Laxa that can cause significant morbidity and mortality?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q5" value="a"> A. Skin laxity</label>
+                        <label><input type="radio" name="q5" value="b"> B. Emphysema</label>
+                        <label><input type="radio" name="q5" value="c"> C. Hernias</label>
+                        <label><input type="radio" name="q5" value="d"> D. Growth delays</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(5, 'b')">Submit</button>
+                    <div id="feedback5" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question6">
+                    <div class="quiz-question">6. A 30-year-old patient presents with thin, translucent skin, easy bruising, and history of a bowel perforation. Which condition should you suspect?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q6" value="a"> A. Classical EDS</label>
+                        <label><input type="radio" name="q6" value="b"> B. Vascular EDS</label>
+                        <label><input type="radio" name="q6" value="c"> C. Cutis Laxa</label>
+                        <label><input type="radio" name="q6" value="d"> D. Pseudoxanthoma Elasticum</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(6, 'b')">Submit</button>
+                    <div id="feedback6" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question7">
+                    <div class="quiz-question">7. Which is the most common ophthalmologic finding in Pseudoxanthoma Elasticum?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q7" value="a"> A. Angioid streaks</label>
+                        <label><input type="radio" name="q7" value="b"> B. "Peau d'orange" changes</label>
+                        <label><input type="radio" name="q7" value="c"> C. Optic drusen</label>
+                        <label><input type="radio" name="q7" value="d"> D. "Owl's eyes"</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(7, 'b')">Submit</button>
+                    <div id="feedback7" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question8">
+                    <div class="quiz-question">8. What diagnostic test may be used as a screening test for kyphoscoliotic-type EDS?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q8" value="a"> A. Genetic testing for COL5A1</label>
+                        <label><input type="radio" name="q8" value="b"> B. Skin biopsy</label>
+                        <label><input type="radio" name="q8" value="c"> C. Urine analysis for increased deoxypyridinoline:pyridinoline ratio</label>
+                        <label><input type="radio" name="q8" value="d"> D. Beighton scale assessment</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(8, 'c')">Submit</button>
+                    <div id="feedback8" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question9">
+                    <div class="quiz-question">9. Which medication may reduce the incidence of arterial dissection in vascular EDS?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q9" value="a"> A. Losartan</label>
+                        <label><input type="radio" name="q9" value="b"> B. Celiprolol</label>
+                        <label><input type="radio" name="q9" value="c"> C. Ascorbic acid</label>
+                        <label><input type="radio" name="q9" value="d"> D. Doxycycline</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(9, 'b')">Submit</button>
+                    <div id="feedback9" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question10">
+                    <div class="quiz-question">10. What is the characteristic histologic feature in Cutis Laxa?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q10" value="a"> A. Collagen fibrils with variable diameters</label>
+                        <label><input type="radio" name="q10" value="b"> B. Calcification of elastic fibers</label>
+                        <label><input type="radio" name="q10" value="c"> C. Sparse and/or fragmented elastic fibers</label>
+                        <label><input type="radio" name="q10" value="d"> D. Normal histology with clinical correlation required</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(10, 'c')">Submit</button>
+                    <div id="feedback10" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question11">
+                    <div class="quiz-question">11. Which of the following is associated with Congenital Adrenal Hyperplasia?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q11" value="a"> A. COL5A1 mutations</label>
+                        <label><input type="radio" name="q11" value="b"> B. TNXB deficiency</label>
+                        <label><input type="radio" name="q11" value="c"> C. COL3A1 mutations</label>
+                        <label><input type="radio" name="q11" value="d"> D. PLOD1 mutations</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(11, 'b')">Submit</button>
+                    <div id="feedback11" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question12">
+                    <div class="quiz-question">12. What is the characteristic feature that distinguishes Beals syndrome from Marfan syndrome?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q12" value="a"> A. Crumpled ears</label>
+                        <label><input type="radio" name="q12" value="b"> B. Blue sclerae</label>
+                        <label><input type="radio" name="q12" value="c"> C. Arachnodactyly</label>
+                        <label><input type="radio" name="q12" value="d"> D. Pectus excavatum</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(12, 'a')">Submit</button>
+                    <div id="feedback12" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question13">
+                    <div class="quiz-question">13. What is the pathognomonic neurologic finding in lipoid proteinosis?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q13" value="a"> A. Cortical atrophy</label>
+                        <label><input type="radio" name="q13" value="b"> B. Bean-shaped calcifications in temporal lobes</label>
+                        <label><input type="radio" name="q13" value="c"> C. Subcortical infarcts</label>
+                        <label><input type="radio" name="q13" value="d"> D. Periventricular leukomalacia</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(13, 'b')">Submit</button>
+                    <div id="feedback13" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question14">
+                    <div class="quiz-question">14. In which direction do lens subluxations occur in homocystinuria?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q14" value="a"> A. Upward</label>
+                        <label><input type="radio" name="q14" value="b"> B. Downward</label>
+                        <label><input type="radio" name="q14" value="c"> C. Lateral</label>
+                        <label><input type="radio" name="q14" value="d"> D. Medial</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(14, 'b')">Submit</button>
+                    <div id="feedback14" class="quiz-feedback"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="question15">
+                    <div class="quiz-question">15. What is the radiographic finding characteristic of Buschke-Ollendorf syndrome?</div>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q15" value="a"> A. Osteopathia striata</label>
+                        <label><input type="radio" name="q15" value="b"> B. Osteopoikilosis</label>
+                        <label><input type="radio" name="q15" value="c"> C. Occipital horns</label>
+                        <label><input type="radio" name="q15" value="d"> D. Osteolytic lesions</label>
+                    </div>
+                    <button class="quiz-submit" onclick="checkAnswer(15, 'b')">Submit</button>
+                    <div id="feedback15" class="quiz-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabContent, navTabs;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            navTabs = document.getElementsByClassName("nav-tab");
+            for (i = 0; i < navTabs.length; i++) {
+                navTabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleButtons = document.getElementsByClassName("toggle-btn");
+            
+            for (var i = 0; i < toggleButtons.length; i++) {
+                toggleButtons[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.classList.contains("show")) {
+                        content.classList.remove("show");
+                    } else {
+                        content.classList.add("show");
+                    }
+                });
+            }
+        });
+        
+        // Quiz functionality
+        function checkAnswer(questionNumber, correctAnswer) {
+            var selectedOption = document.querySelector('input[name="q' + questionNumber + '"]:checked');
+            var feedbackElement = document.getElementById('feedback' + questionNumber);
+            
+            if (!selectedOption) {
+                feedbackElement.innerHTML = "Please select an answer.";
+                feedbackElement.style.display = "block";
+                feedbackElement.className = "quiz-feedback";
+                return;
+            }
+            
+            if (selectedOption.value === correctAnswer) {
+                feedbackElement.innerHTML = "Correct! Great job.";
+                feedbackElement.className = "quiz-feedback correct";
+            } else {
+                feedbackElement.innerHTML = "Incorrect. Try again!";
+                feedbackElement.className = "quiz-feedback incorrect";
+            }
+            
+            feedbackElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>

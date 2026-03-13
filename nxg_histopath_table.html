@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXG Histopathology - Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+            line-height: 1.4;
+        }
+        
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .subcategory-header {
+            background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 10px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: top;
+            font-size: 13px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f5e8;
+            transition: background-color 0.2s;
+        }
+        
+        .feature-name {
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #ecf0f1;
+            padding: 8px;
+            border-left: 4px solid #e74c3c;
+            width: 25%;
+        }
+        
+        .buzzword {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            font-weight: bold;
+        }
+        
+        .high-yield {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .differential {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .key-feature {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .positive-stain {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .negative-stain {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .description {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            
+            table {
+                font-size: 11px;
+            }
+            
+            th, td {
+                padding: 6px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔬 Necrobiotic Xanthogranuloma (NXG)</h1>
+        <p>Histopathology Quick Reference | MCQ Board Exam Review</p>
+    </div>
+
+    <table>
+        <tr class="category-header">
+            <td colspan="2">I. ARCHITECTURAL FEATURES (Low Power)</td>
+        </tr>
+        <tr>
+            <th style="width: 30%;">Feature</th>
+            <th style="width: 70%;">Description</th>
+        </tr>
+        <tr class="high-yield">
+            <td class="feature-name">Pattern</td>
+            <td><span class="key-feature">Palisading granulomatous</span> infiltrate with necrobiotic zones</td>
+        </tr>
+        <tr>
+            <td class="feature-name">Location</td>
+            <td><span class="key-feature">Mid-dermis extending into panniculus</span> (deeper than many other granulomas)</td>
+        </tr>
+        
+        <tr class="category-header">
+            <td colspan="2">II. CELLULAR FEATURES (High Power)</td>
+        </tr>
+        <tr class="subcategory-header">
+            <td colspan="2">A. Granulomatous Infiltrate</td>
+        </tr>
+        <tr class="buzzword">
+            <td class="feature-name">Histiocytes</td>
+            <td>• <span class="key-feature">Foam cells</span> (xanthoma cells) - lipid-laden, bubbly cytoplasm<br>
+                • Standard histiocytes</td>
+        </tr>
+        <tr class="buzzword">
+            <td class="feature-name">🏆 Touton Giant Cells</td>
+            <td><span class="key-feature">CLASSIC BUZZWORD:</span> Multinucleated with <strong>"wreath-like" ring of nuclei</strong> surrounding central eosinophilic cytoplasm + peripheral foamy rim</td>
+        </tr>
+        <tr class="buzzword">
+            <td class="feature-name">🏆 Bizarre Foreign Body Giant Cells</td>
+            <td><span class="key-feature">PROMINENT FEATURE:</span> Large, pleomorphic giant cells with <strong>haphazardly arranged nuclei</strong></td>
+        </tr>
+        <tr>
+            <td class="feature-name">Lymphoid Component</td>
+            <td>• Lymphoid follicles with germinal centers<br>
+                • Lymphoplasmacytic nodules<br>
+                • In CLL patients: clonal leukemic infiltrates</td>
+        </tr>
+        <tr>
+            <td class="feature-name">Plasma Cells</td>
+            <td><span class="key-feature">Common component</span> - often abundant and forming aggregates/nodules</td>
+        </tr>
+        
+        <tr class="subcategory-header">
+            <td colspan="2">B. Stromal Features</td>
+        </tr>
+        <tr class="high-yield">
+            <td class="feature-name">Necrobiosis</td>
+            <td>Zones of <span class="key-feature">degenerated, altered collagen</span> - appears blurred, eosinophilic, and "smudgy"</td>
+        </tr>
+        <tr class="buzzword">
+            <td class="feature-name">🏆 Cholesterol Clefts</td>
+            <td><span class="key-feature">CLASSIC FINDING:</span> Empty, <strong>needle-shaped clefts</strong> within necrobiotic areas (space from dissolved cholesterol crystals)</td>
+        </tr>
+        
+        <tr class="category-header">
+            <td colspan="2">III. IMMUNOHISTOCHEMISTRY</td>
+        </tr>
+        <tr>
+            <td class="feature-name">Positive Stains</td>
+            <td><span class="positive-stain">CD68+</span>, <span class="positive-stain">CD163+</span><br>
+                <span class="description">Confirms non-Langerhans cell, macrophage lineage</span></td>
+        </tr>
+        <tr>
+            <td class="feature-name">Negative Stains</td>
+            <td><span class="negative-stain">Factor XIIIa-</span><br>
+                <span class="description">Also negative: S100, CD1a, CD207</span></td>
+        </tr>
+        
+        <tr class="category-header">
+            <td colspan="2">IV. KEY DIFFERENTIALS</td>
+        </tr>
+        <tr class="differential">
+            <td class="feature-name">vs. Necrobiosis Lipoidica (NL)</td>
+            <td><strong>NXG has:</strong><br>
+                • <span class="key-feature">Prominent Touton giant cells</span> (NL typically lacks)<br>
+                • <span class="key-feature">Cholesterol clefts</span> (absent in NL)<br>
+                • <span class="key-feature">More abundant plasma cell aggregates</span><br>
+                • <span class="key-feature">Nodular pattern</span> vs NL's "tiered/layered" pattern<br>
+                • <span class="key-feature">Extends deeper into panniculus</span></td>
+        </tr>
+        <tr class="differential">
+            <td class="feature-name">vs. Granuloma Annulare (GA)</td>
+            <td><strong>NXG has:</strong><br>
+                • <span class="key-feature">Necrobiosis + cholesterol clefts</span> (GA has central mucin)<br>
+                • <span class="key-feature">Prominent foam cells + Touton giant cells</span> (absent in GA)<br>
+                • <span class="key-feature">No mucin deposition</span> (GA is mucin+)<br>
+                <span class="description">GA stains with colloidal iron/Alcian blue for mucin</span></td>
+        </tr>
+    </table>
+    
+    <div class="header" style="background: linear-gradient(135deg, #f39c12, #e67e22); font-size: 14px;">
+        🎯 <strong>High-Yield Board Pearls:</strong><br>
+        Touton Giant Cells + Bizarre Giant Cells + Cholesterol Clefts = NXG | CD68+/CD163+ | No mucin (vs GA) | Deeper location (vs NL)
+    </div>
+    
+    <div class="header" style="background: linear-gradient(135deg, #9b59b6, #8e44ad); font-size: 12px;">
+        🚨 <strong>MCQ Trap Alert:</strong> Look for palisading granuloma → Check for Touton cells + cholesterol clefts + deeper location to distinguish from NL/GA
+    </div>
+</body>
+</html>

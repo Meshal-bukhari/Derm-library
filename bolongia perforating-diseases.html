@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perforating Diseases - Saudi Board Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent1: #3498db;
+            --accent2: #e74c3c;
+            --accent3: #2ecc71;
+            --accent4: #9b59b6;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --rpc: #3498db;
+            --eps: #2ecc71;
+            --apd: #e74c3c;
+            --pcf: #9b59b6;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .key-points {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent1);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 0.25rem;
+            border-radius: 3px;
+        }
+        
+        .mnemonic {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .clinical-pearl {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #00bcd4;
+        }
+        
+        .board-tip {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .treatment-section {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .collapsible {
+            background-color: #f8f9fa;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            transition: 0.4s;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .active, .collapsible:hover {
+            background-color: #e9ecef;
+        }
+        
+        .content {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .condition-card {
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .rpc {
+            border-left: 5px solid var(--rpc);
+            background: linear-gradient(to right, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.02));
+        }
+        
+        .eps {
+            border-left: 5px solid var(--eps);
+            background: linear-gradient(to right, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.02));
+        }
+        
+        .apd {
+            border-left: 5px solid var(--apd);
+            background: linear-gradient(to right, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.02));
+        }
+        
+        .pcf {
+            border-left: 5px solid var(--pcf);
+            background: linear-gradient(to right, rgba(155, 89, 182, 0.1), rgba(155, 89, 182, 0.02));
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        
+        .tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            border: 1px solid #dee2e6;
+            border-bottom: none;
+            background-color: #f8f9fa;
+            margin-right: 0.25rem;
+        }
+        
+        .tab.active {
+            background-color: white;
+            border-bottom: 2px solid white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0 4px 4px 4px;
+            background-color: white;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .quiz-container {
+            margin: 2rem 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-options {
+            list-style-type: none;
+        }
+        
+        .quiz-option {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .quiz-option.selected {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        
+        .quiz-option.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        
+        .quiz-option.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            display: block;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .quiz-feedback.incorrect {
+            display: block;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        .badge-rpc {
+            background-color: var(--rpc);
+            color: white;
+        }
+        
+        .badge-eps {
+            background-color: var(--eps);
+            color: white;
+        }
+        
+        .badge-apd {
+            background-color: var(--apd);
+            color: white;
+        }
+        
+        .histology-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .histology-card {
+            flex: 1;
+            min-width: 250px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .histology-header {
+            padding: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .rpc-header {
+            background-color: var(--rpc);
+            color: white;
+        }
+        
+        .eps-header {
+            background-color: var(--eps);
+            color: white;
+        }
+        
+        .apd-header {
+            background-color: var(--apd);
+            color: white;
+        }
+        
+        .histology-body {
+            padding: 1rem;
+        }
+        
+        .histology-features {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .histology-comparison {
+                flex-direction: column;
+            }
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+            height: 200px;
+            margin: 1rem 0;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .flip-card-front {
+            background-color: var(--accent1);
+            color: white;
+        }
+        
+        .flip-card-back {
+            background-color: var(--accent3);
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Perforating Diseases of the Skin</h1>
+        <div class="subtitle">High-Yield Review for Saudi Board Exam</div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Introduction & Key Features
+            </div>
+            <div class="card-body">
+                <div class="key-points">
+                    <p><strong>Definition:</strong> Group of papulonodular skin disorders characterized by transepidermal elimination of dermal connective tissue through the epidermis.</p>
+                    <p><strong>Common Features:</strong> Papules or nodules with keratotic plugs or crusts.</p>
+                </div>
+                
+                <p><strong>Prototypic Primary Perforating Diseases:</strong></p>
+                <ul>
+                    <li><strong>Reactive Perforating Collagenosis (RPC):</strong> Primarily collagen fibers extruded.</li>
+                    <li><strong>Elastosis Perforans Serpiginosa (EPS):</strong> Primarily elastic fibers extruded.</li>
+                    <li><strong>Acquired Perforating Dermatosis:</strong> Often associated with diabetes mellitus and/or chronic kidney disease.</li>
+                </ul>
+                
+                <div class="mnemonic">
+                    <h3>💡 Mnemonic: "PEC"</h3>
+                    <p><strong>P</strong>erforating Diseases: <strong>P</strong>apules with <strong>P</strong>lugs</p>
+                    <p><strong>E</strong>lastosis Perforans Serpiginosa: <strong>E</strong>lastic fibers</p>
+                    <p><strong>C</strong>ollagenosis: <strong>C</strong>ollagen fibers</p>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h3>Clinical Pearl: Why "Perforating"?</h3>
+                    <p>The term "transepidermal elimination" is more accurate, as dermal connective tissue doesn't actively perforate the epithelium. The epithelium becomes hyperplastic and surrounds the abnormal connective tissue, similar to how it would with foreign bodies like wood splinters.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Comparison of Major Perforating Diseases
+            </div>
+            <div class="card-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Reactive Perforating Collagenosis (RPC)</th>
+                                <th>Elastosis Perforans Serpiginosa (EPS)</th>
+                                <th>Acquired Perforating Dermatosis</th>
+                                <th>Perforating Calcific Elastosis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Material Perforating</td>
+                                <td>Collagen</td>
+                                <td>Elastic tissue</td>
+                                <td>Necrotic material, collagen, or elastic tissue</td>
+                                <td>Calcified elastic tissue</td>
+                            </tr>
+                            <tr>
+                                <td>Incidence</td>
+                                <td>Very rare</td>
+                                <td>Very rare</td>
+                                <td>Common (10% of dialysis patients)</td>
+                                <td>Rare</td>
+                            </tr>
+                            <tr>
+                                <td>Sex Predilection</td>
+                                <td>M = F</td>
+                                <td>M > F (4:1)</td>
+                                <td>M = F</td>
+                                <td>F > M</td>
+                            </tr>
+                            <tr>
+                                <td>Age of Onset</td>
+                                <td>Childhood (familial) or adulthood (acquired)<br>Diabetes mellitus (often with nephropathy)<br>• Chronic kidney disease (Stages 4‑5) / end‑stage renal disease → hemodialysis & uremic pruritus<br>Endocrine<br>• Hypothyroidism<br>• Hyperparathyroidism (reported but usually alongside CKD/diabetes)</td>
+                                <td>Childhood/early adulthood</td>
+                                <td>Adulthood</td>
+                                <td>Middle-aged</td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>Arms, hands, sites of trauma</td>
+                                <td>Neck, face, arms, flexural areas</td>
+                                <td>Legs or generalized</td>
+                                <td>Abdomen, periumbilical</td>
+                            </tr>
+                            <tr>
+                                <td>Associations</td>
+                                <td>Trauma (childhood form)</td>
+                                <td>40% associated with genetic disorders:
+                                    - Down syndrome
+                                    - Ehlers-Danlos
+                                    - Osteogenesis imperfecta
+                                    - Marfan syndrome
+                                    - PXE
+                                    - Rothmund-Thomson
+                                    - Acrogeria
+                                    - Scleroderma
+                                    Also occurs with D-penicillamine use</td>
+                                <td>Diabetes, CKD stages 4-5, pruritus</td>
+                                <td>Multiparity, obesity, hypertension</td>
+                            </tr>
+                            <tr>
+                                <td>Clinical Appearance</td>
+                                <td>Keratotic papules (5-8mm)</td>
+                                <td>Keratotic papules (2-5mm) in annular/serpiginous pattern</td>
+                                <td>Keratotic papules/nodules with central core</td>
+                                <td>Plaques with keratotic papules at periphery</td>
+                            </tr>
+                            <tr>
+                                <td>Koebner Phenomenon</td>
+                                <td>Common</td>
+                                <td>Can occur</td>
+                                <td>Can occur</td>
+                                <td>Not typically</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="board-tip">
+                    <h3>Board Exam Tip:</h3>
+                    <p>Remember the associations between perforating disorders and systemic conditions:</p>
+                    <ul>
+                        <li>EPS + Down syndrome, Ehlers-Danlos, Marfan, osteogenesis imperfecta</li>
+                        <li>Acquired perforating dermatosis + diabetes mellitus and/or CKD (especially dialysis)</li>
+                        <li>Perforating calcific elastosis + multiparity, obesity in Black women</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Detailed Clinical Features
+            </div>
+            <div class="card-body">
+                <button class="collapsible">Reactive Perforating Collagenosis <span>+</span></button>
+                <div class="content">
+                    <div class="condition-card rpc">
+                        <h3>Reactive Perforating Collagenosis (RPC)</h3>
+                        <p><strong>Types:</strong> Familial (childhood onset, rare) and Acquired (adult onset, associated with: 
+                            <ul>
+                                <li>Diabetes&nbsp;mellitus (often with nephropathy)</li>
+                                <li>Chronic kidney disease&nbsp;(Stages&nbsp;4‑5) / end‑stage renal disease&nbsp;→ hemodialysis &amp; uremic pruritus</li>
+                                <li>Endocrine: Hypothyroidism, Hyperparathyroidism (reported but usually alongside CKD/diabetes)</li>
+                            </ul>
+                        )</p>
+                        <p><strong>Pathogenesis:</strong> Superficial trauma → keratotic papules</p>
+                        <p><strong>Clinical Features:</strong></p>
+                        <ul>
+                            <li>Erythematous papules with a central scale-crust core</li>
+                            <li>Size: 5-8mm</li>
+                            <li>Develop over 3-4 weeks following trauma</li>
+                            <li>Koebner phenomenon common (lesions at sites of trauma)</li>
+                            <li>Predilection for arms and hands</li>
+                            <li>Spontaneously resolve over 6-10 weeks</li>
+                        </ul>
+                        <p><strong>Variant:</strong> Verrucous perforating collagenoma - very rare non-familial variant where severe trauma results in verrucous papules with transepidermal elimination of collagen</p>
+                        <p><strong>Note:</strong> Acquired RPC beginning in adulthood is usually associated with diabetes mellitus and/or chronic kidney disease, and is best classified as acquired perforating dermatosis</p>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Elastosis Perforans Serpiginosa <span>+</span></button>
+                <div class="content">
+                    <div class="condition-card eps">
+                        <h3>Elastosis Perforans Serpiginosa (EPS)</h3>
+                        <p><strong>Onset:</strong> Childhood or early adulthood</p>
+                        <p><strong>Associated Conditions:</strong></p>
+                        <ul>
+                            <li>40% of cases associated with genetic disorders:
+                                <ul>
+                                    <li>Down syndrome</li>
+                                    <li>Ehlers-Danlos syndrome</li>
+                                    <li>Osteogenesis imperfecta</li>
+                                    <li>Marfan syndrome</li>
+                                    <li>Pseudoxanthoma elasticum (PXE)</li>
+                                    <li>Rothmund-Thomson syndrome</li>
+                                    <li>Acrogeria</li>
+                                </ul>
+                            </li>
+                            <li>Penicillamine treatment (especially for Wilson disease, cystinuria, rheumatoid arthritis)</li>
+                        </ul>
+                        <p><strong>Clinical Features:</strong></p>
+                        <ul>
+                            <li>Keratotic 2-5mm papules arranged in serpiginous or annular pattern</li>
+                            <li>Predilection for lateral neck</li>
+                            <li>Also seen on face, arms, other flexural areas</li>
+                            <li>Rings may reach several centimeters in diameter</li>
+                            <li>Usually asymptomatic or mildly pruritic</li>
+                            <li>May spontaneously resolve but generally persist for several years</li>
+                        </ul>
+                        <p><strong>Special Note:</strong> Penicillamine-induced EPS is due to disruption of desmosine cross-links in elastin</p>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Acquired Perforating Dermatosis <span>+</span></button>
+                <div class="content">
+                    <div class="condition-card apd">
+                        <h3>Acquired Perforating Dermatosis</h3>
+                        <p><strong>Definition:</strong> Catch-all term for perforating diseases arising in adults, usually associated with diabetes mellitus and/or the pruritus of chronic kidney disease (stages 4-5)</p>
+                        <p><strong>Epidemiology:</strong></p>
+                        <ul>
+                            <li>Most common of the perforating disorders</li>
+                            <li>Affects approximately 4.5-11% of dialysis patients</li>
+                            <li>Most patients have diabetes mellitus with associated nephropathy</li>
+                        </ul>
+                        <p><strong>Risk Factors in Dialysis Patients:</strong></p>
+                        <ul>
+                            <li>Diabetes mellitus</li>
+                            <li>Reduced circulating levels of intact parathyroid hormone</li>
+                            <li>Hypoalbuminemia</li>
+                            <li>Elevated serum levels of high-sensitivity C-reactive protein</li>
+                        </ul>
+                        <p><strong>Other Associations:</strong></p>
+                        <ul>
+                            <li>Other causes of pruritus (insect bites, scabies, lymphoma, hepatobiliary diseases)</li>
+                            <li>Healing herpes zoster</li>
+                            <li>Various medications:
+                                <ul>
+                                    <li>TNF inhibitors</li>
+                                    <li>Epidermal growth factor receptor inhibitors</li>
+                                    <li>Kinase inhibitors</li>
+                                    <li>Dipeptidyl peptidase-4 inhibitors</li>
+                                    <li>Antivirals</li>
+                                    <li>Monoclonal antibodies</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p><strong>Clinical Features:</strong></p>
+                        <ul>
+                            <li>Most commonly on legs but can be generalized</li>
+                            <li>Extensor surfaces favored over flexures</li>
+                            <li>Mucous membranes spared</li>
+                            <li>Hyperpigmented papules and nodules with central keratotic core (often removed by patient)</li>
+                            <li>Occasionally giant variant (up to 2cm)</li>
+                            <li>Koebner phenomenon can occur (linear arrangement)</li>
+                        </ul>
+                        <p><strong>Note on Terminology:</strong> "Kyrle disease" sometimes used synonymously but controversial; some consider it to represent end-stage, excoriated prurigo nodules or folliculitis</p>
+                    </div>
+                </div>
+                
+                <button class="collapsible">Perforating Calcific Elastosis <span>+</span></button>
+                <div class="content">
+                    <div class="condition-card pcf">
+                        <h3>Perforating Calcific Elastosis</h3>
+                        <p><strong>Demographics:</strong> Middle-aged, obese, hypertensive, multiparous Black women</p>
+                        <p><strong>Clinical Features:</strong></p>
+                        <ul>
+                            <li>Plaques that favor the abdomen, especially periumbilical region</li>
+                            <li>May involve breast in patients with chronic kidney disease</li>
+                            <li>Plaques may be verrucous or have keratotic papules at periphery</li>
+                            <li>Resistance felt during biopsy with grinding sound</li>
+                        </ul>
+                        <p><strong>Histopathology:</strong> Calcified elastic fibers (identical to those in pseudoxanthoma elasticum) undergoing transepidermal elimination</p>
+                        <p><strong>Note:</strong> Patients do not manifest other clinical findings of PXE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Pathogenesis
+            </div>
+            <div class="card-body">
+                <p>The precise pathogenesis of perforating disorders is not fully understood, but several mechanisms have been proposed:</p>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Key Pathogenesis Question: What happens first?</h3>
+                            <p>(Hover to reveal)</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Epithelium becomes hyperplastic and surrounds abnormal connective tissue, just as it would with foreign bodies. The dermal connective tissue does not actively "perforate" the epithelium.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Proposed Mechanisms:</h3>
+                <ol>
+                    <li><strong>Enhanced expression of elastin receptors</strong> in the epidermis surrounding elastic material (in EPS and some cases of acquired perforating dermatosis)</li>
+                    <li><strong>Advanced glycation end products (AGEs):</strong> Scratching exposes keratinocytes to AGE-modified extracellular matrix proteins (collagen types I and III), leading to terminal differentiation of keratinocytes via the AGE receptor (CD36)</li>
+                    <li><strong>Fibronectin involvement:</strong> Elevated plasma fibronectin levels in diabetes and uremia may play a role in epithelial cell signaling, locomotion, and differentiation</li>
+                    <li><strong>Type IV collagen transepidermal elimination</strong> demonstrated in RPC</li>
+                    <li><strong>Increased expression</strong> of TGF-β3, MMP-1, and TIMP-1 observed in lesional skin of acquired RPC</li>
+                    <li>Other proposed mechanisms:
+                        <ul>
+                            <li>Abnormal vitamin A or D metabolism</li>
+                            <li>Enzyme release from neutrophils</li>
+                            <li>Microangiopathy related to diabetes</li>
+                            <li>Deposition of uric acid, hydroxyapatite, or silicon</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="clinical-pearl">
+                    <h3>Understanding the "Perforation" Process</h3>
+                    <p>The perforation may be caused by the enlargement of a hyperkeratotic plug that penetrates through the base of the hyperplastic epidermis – the perforation is caused by the plug above rather than being due to the abnormal connective tissue below.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Pathology & Histological Features
+            </div>
+            <div class="card-body">
+                <p>Common histological features in all perforating diseases:</p>
+                <ul>
+                    <li>Plug of crusting or hyperkeratosis with variable parakeratosis</li>
+                    <li>Epithelial hyperplasia around the plug</li>
+                    <li>Characteristic "elephant snout" or "crab claw" appearance at site of perforation</li>
+                    <li>Different stages may show different inflammatory infiltrates:
+                        <ul>
+                            <li>Early: Neutrophils within dermis</li>
+                            <li>Later (especially EPS): Lymphocytes, macrophages, multinucleated giant cells</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="histology-comparison">
+                    <div class="histology-card">
+                        <div class="histology-header rpc-header">
+                            Reactive Perforating Collagenosis
+                        </div>
+                        <div class="histology-body">
+                            <ul class="histology-features">
+                                <li>Basophilic (degenerative) collagen fibers, some vertically oriented</li>
+                                <li>Collagen fibers seen within plug or epidermis</li>
+                                <li>Dermal connective tissue adjacent to plug appears unremarkable</li>
+                                <li>Collagen fibers appear <strong>red</strong> with Verhoeff-van Gieson stain</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="histology-card">
+                        <div class="histology-header eps-header">
+                            Elastosis Perforans Serpiginosa
+                        </div>
+                        <div class="histology-body">
+                            <ul class="histology-features">
+                                <li>Elastic fibers seen within plug or epidermis</li>
+                                <li>Increased amount of brightly eosinophilic elastic tissue in superficial dermis</li>
+                                <li>Elastic fibers appear <strong>black</strong> with Verhoeff-van Gieson stain</li>
+                                <li>In penicillamine-induced EPS: "Lumpy-bumpy" elastic fibers with lateral buds resembling a "bramble bush" (in both lesional and non-lesional skin)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="histology-card">
+                        <div class="histology-header apd-header">
+                            Acquired Perforating Dermatosis
+                        </div>
+                        <div class="histology-body">
+                            <ul class="histology-features">
+                                <li>Variable findings based on stage of evolution</li>
+                                <li>May resemble RPC, EPS, or perforating folliculitis</li>
+                                <li>Often has amorphous degenerated material within perforations</li>
+                                <li>Sometimes both collagen and elastic fibers are present</li>
+                                <li>Material often cannot be clearly identified as collagen or elastic fibers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-tip">
+                    <h3>Histopathology Board Tip:</h3>
+                    <p>Verhoeff-van Gieson stain is the most useful special stain for differentiating perforating diseases:</p>
+                    <ul>
+                        <li>Collagen fibers = <strong>RED</strong></li>
+                        <li>Elastic fibers = <strong>BLACK</strong></li>
+                    </ul>
+                    <p>However, elastic fibers higher in the epidermis may lose their ability to stain black in EPS.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Differential Diagnosis
+            </div>
+            <div class="card-body">
+                <p>The differential diagnosis includes other disorders characterized by papules or nodules with central keratotic plugs or crusts:</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Differential Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Prurigo simplex/nodularis</td>
+                                <td>More excoriated appearance, intense pruritus</td>
+                            </tr>
+                            <tr>
+                                <td>Folliculitis</td>
+                                <td>Centered on hair follicles, may have pustules</td>
+                            </tr>
+                            <tr>
+                                <td>Arthropod bites</td>
+                                <td>Acute onset, history of exposure, different distribution</td>
+                            </tr>
+                            <tr>
+                                <td>Multiple keratoacanthomas</td>
+                                <td>Larger, dome-shaped with central crater</td>
+                            </tr>
+                            <tr>
+                                <td>Verrucous lupus erythematosus/lichen planus</td>
+                                <td>Different clinical and histopathological features</td>
+                            </tr>
+                            <tr>
+                                <td>Perforation of exogenous foreign material</td>
+                                <td>History of foreign body exposure</td>
+                            </tr>
+                            <tr>
+                                <td>Perforation of endogenous substances</td>
+                                <td>Underlying specific disease process</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><strong>For EPS specifically (annular lesions), consider:</strong></p>
+                <ul>
+                    <li>Annular elastolytic giant cell granuloma (actinic granuloma)</li>
+                    <li>Perforating pseudoxanthoma elasticum</li>
+                    <li>Granuloma annulare</li>
+                    <li>Tinea</li>
+                    <li>Sarcoidosis</li>
+                    <li>Discoid lupus erythematosus</li>
+                    <li>Porokeratosis</li>
+                </ul>
+                
+                <p><strong>With Koebner phenomenon, consider:</strong></p>
+                <ul>
+                    <li>Psoriasis</li>
+                    <li>Lichen planus</li>
+                    <li>Verrucae (autoinoculation)</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <h3>Diagnostic Challenge:</h3>
+                    <p>Since many patients with acquired perforating dermatosis have coexisting folliculitis and prurigo nodularis, there may be several different types of lesions at different stages of development. Histologic findings in a single biopsy specimen may not be representative of the entire process.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Treatment Approaches
+            </div>
+            <div class="card-body">
+                <div class="treatment-section">
+                    <p><strong>General Considerations:</strong></p>
+                    <ul>
+                        <li>Well-designed, placebo-controlled treatment studies are lacking</li>
+                        <li>Most treatments are anecdotal or based on small case series</li>
+                        <li>Inherited forms (RPC and EPS) generally remain mild and localized</li>
+                        <li>Acquired perforating dermatosis is often difficult to treat</li>
+                    </ul>
+                    
+                    <p><strong>First-Line Approaches:</strong></p>
+                    <ol>
+                        <li>Address contributing factors:
+                            <ul>
+                                <li>Optimize management of diabetes mellitus</li>
+                                <li>If end-stage chronic kidney disease, renal transplantation may lead to improvement</li>
+                                <li>Discontinue culprit medications if possible</li>
+                            </ul>
+                        </li>
+                        <li>Control pruritus:
+                            <ul>
+                                <li>Sedating antihistamines (e.g., doxepin)</li>
+                                <li>Other anti-pruritic treatments</li>
+                                <li>Avoid trauma and scratching (wearing gloves, trimming fingernails)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Phototherapy:</strong> Broadband or narrowband UVB (level 2 evidence) - particularly good for patients with chronic kidney disease as it often relieves coexisting pruritus</li>
+                    </ol>
+                    
+                    <p><strong>Topical Treatments:</strong></p>
+                    <ul>
+                        <li>Retinoids (e.g., tretinoin, tazarotene)</li>
+                        <li>Corticosteroids</li>
+                        <li>Menthol, salicylic acid, sulfur, benzoyl peroxide</li>
+                        <li>Imiquimod</li>
+                        <li>Cantharidin</li>
+                    </ul>
+                    
+                    <p><strong>Systemic Treatments:</strong></p>
+                    <ul>
+                        <li>Corticosteroids (intralesional, intramuscular, oral)</li>
+                        <li>Retinoids (vitamin A, acitretin, isotretinoin)</li>
+                        <li>Antibiotics (doxycycline, clindamycin, erythromycin, rifampin)</li>
+                        <li>Dupilumab (reported to improve acquired RPC in setting of atopic dermatitis)</li>
+                        <li>Others: Colchicine, methotrexate, charcoal, allopurinol</li>
+                    </ul>
+                    
+                    <p><strong>Procedural Treatments:</strong></p>
+                    <ul>
+                        <li>Cryotherapy</li>
+                        <li>Photodynamic therapy</li>
+                        <li>Electrosurgical destruction</li>
+                        <li>Laser ablation (CO2, Er:YAG, excimer, pulsed dye)</li>
+                        <li>Excision of larger bothersome lesions</li>
+                        <li>For EPS: Cellophane-tape stripping, tangential excision</li>
+                    </ul>
+                </div>
+                
+                <div class="board-tip">
+                    <h3>Treatment Success by Condition:</h3>
+                    <ul>
+                        <li><strong>RPC (childhood):</strong> May spontaneously resolve; avoid trauma</li>
+                        <li><strong>EPS:</strong> Local cryotherapy, laser therapy, or cellophane tape stripping (aggressive treatment may cause scarring)</li>
+                        <li><strong>Acquired perforating dermatosis:</strong> UVB phototherapy, intralesional corticosteroids, oral antibiotics, retinoids</li>
+                    </ul>
+                </div>
+                
+                <div class="clinical-pearl">
+                    <h3>Treatment Pearl:</h3>
+                    <p>Some dialysis patients with acquired perforating dermatosis have reported rapid improvement following a change in dialysis tubing or equipment, or alterations in dialysis procedure.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Secondary Perforating Diseases
+            </div>
+            <div class="card-body">
+                <p>Secondary perforating disorders are those in which transepidermal elimination occurs as a secondary component of a primary dermatosis:</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="7">Endogenous substances</td>
+                                <td>Chondrodermatitis nodularis helicis</td>
+                            </tr>
+                            <tr>
+                                <td>Hematomas</td>
+                            </tr>
+                            <tr>
+                                <td>Perforating pseudoxanthoma elasticum</td>
+                            </tr>
+                            <tr>
+                                <td>Perforating calcinosis</td>
+                            </tr>
+                            <tr>
+                                <td>Osteoma cutis</td>
+                            </tr>
+                            <tr>
+                                <td>Gout (urate crystals)</td>
+                            </tr>
+                            <tr>
+                                <td>Papular mucinosis (mucin)</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">Granulomas</td>
+                                <td>Perforating granuloma annulare</td>
+                            </tr>
+                            <tr>
+                                <td>Necrobiosis lipoidica</td>
+                            </tr>
+                            <tr>
+                                <td>Sarcoidosis</td>
+                            </tr>
+                            <tr>
+                                <td>Rheumatoid nodule</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">Exogenous foreign material</td>
+                                <td>Silica</td>
+                            </tr>
+                            <tr>
+                                <td>Wood splinters</td>
+                            </tr>
+                            <tr>
+                                <td>Tattoo</td>
+                            </tr>
+                            <tr>
+                                <td>Sutures, injectable soft tissue fillers</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Infectious diseases</td>
+                                <td>Chromoblastomycosis</td>
+                            </tr>
+                            <tr>
+                                <td>Leprosy</td>
+                            </tr>
+                            <tr>
+                                <td>Schistosomiasis</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Tumor cells</td>
+                                <td>Melanoma</td>
+                            </tr>
+                            <tr>
+                                <td>Spitz nevus</td>
+                            </tr>
+                            <tr>
+                                <td>Pilomatricoma</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="board-tip">
+                    <h3>Board Exam Note:</h3>
+                    <p>While secondary perforating diseases are important to be aware of, most board questions will focus on the four major perforating diseases. Remember that perforation of tumor cells is often a nonspecific finding due to "perforation" of the epidermis by complexes of neoplastic cells.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Quick Review & Memory Aids
+            </div>
+            <div class="card-body">
+                <div class="mnemonic">
+                    <h3>Remember "PERFORATING"</h3>
+                    <p><strong>P</strong>apules with keratotic plugs</p>
+                    <p><strong>E</strong>lastic fibers (EPS) vs. collagen (RPC)</p>
+                    <p><strong>R</strong>eactive process following trauma (RPC)</p>
+                    <p><strong>F</strong>ollicular and parafollicular lesions</p>
+                    <p><strong>O</strong>bese Black women (perforating calcific elastosis)</p>
+                    <p><strong>R</strong>enal disease (acquired perforating dermatosis)</p>
+                    <p><strong>A</strong>nnular arrangement (EPS)</p>
+                    <p><strong>T</strong>reatment with UVB often effective</p>
+                    <p><strong>I</strong>nitial diagnosis requires biopsy</p>
+                    <p><strong>N</strong>eck predilection (EPS)</p>
+                    <p><strong>G</strong>enetic diseases associated with EPS</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>High-Yield Clinical Images to Remember:</h3>
+                    <ul>
+                        <li>RPC: Erythematous papules with central scale-crust on arms/hands</li>
+                        <li>EPS: Serpiginous or annular keratotic papules on neck</li>
+                        <li>Acquired perforating dermatosis: Hyperpigmented papules/nodules with central keratotic core on legs</li>
+                        <li>Perforating calcific elastosis: Periumbilical plaques in multiparous Black women</li>
+                    </ul>
+                </div>
+                
+                <div class="board-tip">
+                    <h3>Key Diagnostic Clues:</h3>
+                    <ul>
+                        <li>Diabetic/CKD patient with itchy papules on extensor surfaces → Acquired perforating dermatosis</li>
+                        <li>Annular keratotic papules on neck in young patient → EPS (look for associated genetic disorders)</li>
+                        <li>History of trauma followed by keratotic papules → RPC</li>
+                        <li>Grinding sound during biopsy of periumbilical plaque → Perforating calcific elastosis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Self-Assessment Quiz
+            </div>
+            <div class="card-body">
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h3>1. A 45-year-old diabetic man on hemodialysis presents with pruritic hyperpigmented papules with central keratotic cores on his legs. The most likely diagnosis is:</h3>
+                        <ul class="quiz-options">
+                            <li class="quiz-option" data-correct="true">Acquired perforating dermatosis</li>
+                            <li class="quiz-option">Elastosis perforans serpiginosa</li>
+                            <li class="quiz-option">Reactive perforating collagenosis</li>
+                            <li class="quiz-option">Perforating calcific elastosis</li>
+                        </ul>
+                        <div class="quiz-feedback" data-for="1">
+                            <p><strong>Correct!</strong> Acquired perforating dermatosis is the most common perforating disorder and is strongly associated with diabetes mellitus and chronic kidney disease requiring hemodialysis. The leg distribution and patient demographics strongly support this diagnosis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>2. Which special stain is most useful for differentiating between different types of perforating disorders?</h3>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">PAS</li>
+                            <li class="quiz-option" data-correct="true">Verhoeff-van Gieson</li>
+                            <li class="quiz-option">Alcian blue</li>
+                            <li class="quiz-option">Masson trichrome</li>
+                        </ul>
+                        <div class="quiz-feedback" data-for="2">
+                            <p><strong>Correct!</strong> Verhoeff-van Gieson stain is most helpful because collagen fibers appear red and elastic fibers appear black, allowing differentiation between RPC and EPS.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>3. A 21-year-old man with Down syndrome presents with keratotic papules arranged in an annular pattern on his neck. What is the most likely diagnosis?</h3>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">Granuloma annulare</li>
+                            <li class="quiz-option">Reactive perforating collagenosis</li>
+                            <li class="quiz-option" data-correct="true">Elastosis perforans serpiginosa</li>
+                            <li class="quiz-option">Perforating folliculitis</li>
+                        </ul>
+                        <div class="quiz-feedback" data-for="3">
+                            <p><strong>Correct!</strong> Elastosis perforans serpiginosa (EPS) is associated with genetic disorders including Down syndrome. The annular arrangement of keratotic papules on the neck is classic for EPS.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>4. In a patient with acquired perforating dermatosis, which treatment has the strongest evidence of efficacy?</h3>
+                        <ul class="quiz-options">
+                            <li class="quiz-option" data-correct="true">UVB phototherapy</li>
+                            <li class="quiz-option">Imiquimod</li>
+                            <li class="quiz-option">Salicylic acid</li>
+                            <li class="quiz-option">Allopurinol</li>
+                        </ul>
+                        <div class="quiz-feedback" data-for="4">
+                            <p><strong>Correct!</strong> UVB phototherapy (broadband or narrowband) has level 2 evidence for efficacy in acquired perforating dermatosis and is particularly good for patients with chronic kidney disease as it often relieves coexisting pruritus.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h3>5. A 38-year-old obese Black woman presents with periumbilical plaques with keratotic papules at the periphery. A grinding sound is noted during biopsy. What is the most likely diagnosis?</h3>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">Pseudoxanthoma elasticum</li>
+                            <li class="quiz-option">Necrobiosis lipoidica</li>
+                            <li class="quiz-option" data-correct="true">Perforating calcific elastosis</li>
+                            <li class="quiz-option">Elastosis perforans serpiginosa</li>
+                        </ul>
+                        <div class="quiz-feedback" data-for="5">
+                            <p><strong>Correct!</strong> Perforating calcific elastosis typically affects middle-aged, obese, hypertensive, multiparous Black women with characteristic periumbilical plaques. The grinding sound during biopsy is due to calcified elastic fibers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Saudi Board Dermatology Review - Perforating Diseases</p>
+    </footer>
+    
+    <script>
+        // Collapsible sections
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    this.querySelector("span").textContent = "+";
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    this.querySelector("span").textContent = "-";
+                }
+            });
+        }
+        
+        // Tabs
+        function openTab(event, tabId) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabLinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+        
+        // Quiz
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Get parent question
+                const question = this.closest('.quiz-question');
+                
+                // Remove selected class from all options in this question
+                question.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('selected', 'correct', 'incorrect');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Check if correct
+                if (this.hasAttribute('data-correct')) {
+                    this.classList.add('correct');
+                    // Show feedback for this question
+                    const feedbackId = question.querySelector('.quiz-feedback').getAttribute('data-for');
+                    const feedback = question.querySelector('.quiz-feedback');
+                    feedback.classList.add('correct');
+                    feedback.style.display = 'block';
+                } else {
+                    this.classList.add('incorrect');
+                    // Show correct answer
+                    question.querySelector('[data-correct]').classList.add('correct');
+                    // Show feedback
+                    const feedback = question.querySelector('.quiz-feedback');
+                    feedback.classList.add('incorrect');
+                    feedback.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

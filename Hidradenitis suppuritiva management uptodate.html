@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidradenitis Suppurativa: A Clinical Masterclass</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #f8f9fa;
+            --main-text: #212529;
+            --primary-blue: #005A9C;
+            --secondary-blue: #e7f1f9;
+            --accent-green: #28a745;
+            --accent-yellow: #ffc107;
+            --accent-red: #dc3545;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            background-color: var(--bg-color);
+            color: var(--main-text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #004170);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+        .section:last-child {
+            border-bottom: none;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--secondary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .alert-box {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .alert-box-red {
+            background-color: #fbebee;
+            border-left: 5px solid var(--accent-red);
+            color: #5c2121;
+        }
+        .alert-box-yellow {
+            background-color: #fff9e6;
+            border-left: 5px solid var(--accent-yellow);
+            color: #664d03;
+        }
+        .alert-box-green {
+            background-color: #eaf6ec;
+            border-left: 5px solid var(--accent-green);
+            color: #155724;
+        }
+        .alert-box-icon {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .alert-box p {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+            font-size: 1.3em;
+        }
+        .card ul {
+            padding-left: 20px;
+            margin: 10px 0 0 0;
+        }
+        .card li {
+            margin-bottom: 8px;
+        }
+        
+        .hurley-stages {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        .stage-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--secondary-blue);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--primary-blue);
+            position: relative;
+        }
+        .stage-card .stage-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            border: 3px solid white;
+        }
+        .stage-card h3 {
+            margin-top: 25px;
+            color: var(--primary-blue);
+        }
+        .stage-card p {
+            font-size: 0.95em;
+            margin: 0;
+        }
+        .key-differentiator {
+            font-weight: bold;
+            color: var(--accent-red);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .treatment-flow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .flow-column {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+        .flow-column h3 {
+            text-align: center;
+            background-color: var(--secondary-blue);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 0;
+        }
+
+        .treatment-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .step-1 { border-color: var(--accent-green); background-color: #f0fff4; }
+        .step-2 { border-color: var(--accent-yellow); background-color: #fffbeb; }
+        .step-3 { border-color: var(--accent-red); background-color: #fff5f5; }
+        
+        .treatment-step h4 {
+            margin: 0 0 10px 0;
+        }
+
+        .drug-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .drug-card .drug-name {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        .drug-card .pearl {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .drug-card .precaution {
+            color: var(--accent-red);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        .drug-card .dosing {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9em;
+            background-color: #f1f3f5;
+            padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        details {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: #f1f3f5;
+            color: var(--primary-blue);
+            list-style: none; /* For Webkit */
+        }
+        summary::-webkit-details-marker { display: none; } /* For Webkit */
+        summary:before {
+            content: '►';
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+        details[open] summary:before {
+            transform: rotate(90deg);
+        }
+        .details-content {
+            padding: 20px;
+        }
+
+        .comorbidity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .comorbidity-table th, .comorbidity-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .comorbidity-table th {
+            background-color: var(--secondary-blue);
+            color: var(--primary-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .treatment-flow {
+                grid-template-columns: 1fr;
+            }
+            body { padding: 10px; }
+            main { padding: 15px; }
+            header { padding: 20px; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hidradenitis Suppurativa</h1>
+            <p>A Board-Focused Clinical Management Masterclass</p>
+        </header>
+
+        <main>
+            <!-- SECTION: CORE CONCEPTS & STAGING -->
+            <section class="section">
+                <h2>Core Concepts & Staging</h2>
+                <p>HS is a chronic, painful, follicular occlusive disease of intertriginous skin. Management goals are threefold:</p>
+                <div class="grid-container">
+                    <div class="alert-box alert-box-green"><span class="alert-box-icon">1</span> <p>Reduce new lesions, tunnels, & scarring.</p></div>
+                    <div class="alert-box alert-box-yellow"><span class="alert-box-icon">2</span> <p>Treat existing lesions & symptoms (pain, drainage).</p></div>
+                    <div class="alert-box alert-box-red"><span class="alert-box-icon">3</span> <p>Minimize impact on Quality of Life (QoL) & psychological morbidity.</p></div>
+                </div>
+
+                <h3 style="margin-top: 30px; text-align: center;">Clinical Staging: The Hurley System is Key</h3>
+                <div class="hurley-stages">
+                    <div class="stage-card">
+                        <div class="stage-number">I</div>
+                        <h3>Stage I (Mild)</h3>
+                        <p>Single or multiple abscesses (nodules).<br><span class="key-differentiator">NO skin tunnels.<br>NO scarring.</span></p>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-number">II</div>
+                        <h3>Stage II (Moderate)</h3>
+                        <p>Recurrent abscesses with widely separated lesions.<br><span class="key-differentiator">YES, skin tunnels.<br>YES, scarring.</span></p>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-number">III</div>
+                        <h3>Stage III (Severe)</h3>
+                        <p>Diffuse or near-diffuse involvement.<br><span class="key-differentiator">MULTIPLE interconnected tunnels & abscesses.</span></p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION: FOUNDATION OF CARE (ALL PATIENTS) -->
+            <section class="section">
+                <h2>Foundation of Care: Interventions for ALL Patients</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3><span style="font-size:1.5em; vertical-align:middle;">💡</span> Patient Education & Support</h3>
+                        <ul>
+                            <li><strong>Reassure:</strong> It is chronic, inflammatory, NOT contagious, and NOT due to poor hygiene.</li>
+                            <li><strong>Assess Impact:</strong> Inquire about QoL, screen for depression/anxiety.</li>
+                            <li><strong>Provide Resources:</strong> HS Foundation, support groups.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span style="font-size:1.5em; vertical-align:middle;">🩹</span> Wound & Skin Care</h3>
+                        <ul>
+                            <li><strong>Dressings:</strong> Use non-adherent dressings (apply petrolatum). Avoid adhesive tape; use fishnet dressings.</li>
+                            <li><strong>Cleansing:</strong> Topical antiseptic washes (chlorhexidine 4%, benzoyl peroxide) may be helpful for some patients but are not routinely prescribed to avoid stigma.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span style="font-size:1.5em; vertical-align:middle;">💊</span> Pain Management</h3>
+                        <ul>
+                            <li><strong>First-line:</strong> NSAIDs for pain and inflammation.</li>
+                            <li><strong>Severe Pain:</strong> Opioid analgesia may be needed, but requires conscientious selection and a multidisciplinary approach for chronic pain.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><span style="font-size:1.5em; vertical-align:middle;">⚖️</span> Lifestyle Factors</h3>
+                        <ul>
+                            <li><strong>Smoking Cessation & Weight Loss:</strong> Advise routinely due to potential HS benefit and proven general health benefits. Obesity-related friction, occlusion, and hormonal changes are proposed contributors.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="alert-box alert-box-red" style="margin-top:30px;">
+                    <span class="alert-box-icon">!</span>
+                    <div>
+                        <p>BOARD ALERT: Screen for Comorbidities Annually!</p>
+                        <small>HS is a systemic inflammatory disease. Look for associated conditions.</small>
+                    </div>
+                </div>
+                 <details>
+                    <summary>Click to View Key Associated Disorders</summary>
+                    <div class="details-content">
+                        <table class="comorbidity-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Associated Disorders</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Metabolic & CV</strong></td>
+                                    <td>Metabolic Syndrome, Obesity, Diabetes, Dyslipidemia, Hypertension, MI, CVA</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Autoimmune/Inflammatory</strong></td>
+                                    <td>Crohn's, Ulcerative Colitis, Spondyloarthropathy, Pyoderma Gangrenosum, Psoriasis, SAPHO, PASH, PAPASH</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Follicular Occlusion</strong></td>
+                                    <td>Acne Conglobata, Dissecting Cellulitis, Pilonidal Sinus</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Endocrine</strong></td>
+                                    <td>Polycystic Ovary Syndrome (PCOS)</td>
+                                </tr>
+                                 <tr>
+                                    <td><strong>Psychiatric</strong></td>
+                                    <td>Depression, Anxiety, Substance Use Disorders</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Malignancy Risk</strong></td>
+                                    <td><strong>Cutaneous Squamous Cell Carcinoma (SCC)</strong>, especially in chronic perianal disease.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+            
+            <!-- SECTION: TREATMENT ALGORITHM -->
+            <section class="section">
+                <h2>Treatment Algorithm: A Step-Wise Approach</h2>
+                <div class="treatment-flow">
+                    <!-- COLUMN 1: MILD DISEASE -->
+                    <div class="flow-column">
+                        <h3>HURLEY I: Inflammatory Lesions <u>WITHOUT</u> Tunnels or Scarring</h3>
+                        
+                        <div class="treatment-step step-1">
+                            <h4>First-Line Therapy</h4>
+                            <div class="drug-card">
+                                <span class="drug-name">Oral Tetracyclines</span>
+                                <p class="pearl">Initial choice for reducing disease burden. Anti-inflammatory effects are key.</p>
+                                <span class="dosing">Doxycycline 100mg QD-BID</span>
+                                <p class="precaution">Precautions: GI distress, photosensitivity.</p>
+                            </div>
+                        </div>
+
+                        <div class="treatment-step step-1">
+                            <h4>Adjunctive / Alternative First-Line Options</h4>
+                             <div class="drug-card">
+                                <span class="drug-name">Antiandrogenic Agents (Females)</span>
+                                <p class="pearl">Consider early for menstrual flares or PCOS. Use OCPs or Spironolactone.</p>
+                                <span class="dosing">Spironolactone 50-100mg daily</span>
+                                <p class="precaution">Precautions: Menstrual irregularities, breast tenderness, hyperkalemia. Contraindicated in pregnancy.</p>
+                            </div>
+                             <div class="drug-card">
+                                <span class="drug-name">Metformin</span>
+                                <p class="pearl">Consider early in patients with obesity/metabolic syndrome. Promotes modest weight loss.</p>
+                                <span class="dosing">Titrate up to 1500mg/day (e.g., 500mg TID)</span>
+                                <p class="precaution">Precautions: GI side effects are common. Contraindicated in severe renal dysfunction.</p>
+                            </div>
+                             <div class="drug-card">
+                                <span class="drug-name">Topical Clindamycin 1%</span>
+                                <p class="pearl">Often used as adjunct. Monotherapy is rarely sufficient.</p>
+                                <span class="dosing">Apply BID to affected areas</span>
+                            </div>
+                        </div>
+
+                        <div class="treatment-step step-2">
+                            <h4>Refractory Mild Disease (Failure of above)</h4>
+                            <p>For patients who fail to improve after ~3 months.</p>
+                            <div class="drug-card">
+                                <span class="drug-name">Clindamycin + Rifampin</span>
+                                <p class="pearl">A potent combination for more resistant disease.</p>
+                                <span class="dosing">See Hurley II/III dosing</span>
+                            </div>
+                             <div class="drug-card">
+                                <span class="drug-name">Dapsone</span>
+                                <p class="pearl">Good for early, neutrophil-mediated lesions.</p>
+                                <span class="dosing">50-100mg daily</span>
+                                <p class="precaution">Precautions: Hemolysis (check G6PD!), methemoglobinemia, agranulocytosis.</p>
+                            </div>
+                            <div class="drug-card">
+                                <span class="drug-name">Acitretin</span>
+                                <p class="pearl">Systemic retinoid option.</p>
+                                <p class="precaution"><strong>Absolute Contraindication:</strong> Patients of childbearing potential. 3-year washout period post-treatment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 2: MODERATE/SEVERE DISEASE -->
+                    <div class="flow-column">
+                        <h3>HURLEY II/III: Inflammatory Lesions <u>WITH</u> Tunnels or Scarring</h3>
+
+                        <div class="treatment-step step-1">
+                            <h4>Initial Therapy</h4>
+                            <div class="drug-card">
+                                <span class="drug-name">Oral Tetracyclines</span>
+                                <p class="pearl">For less severe end of this spectrum (Hurley II).</p>
+                                <span class="dosing">Doxycycline 100mg QD-BID</span>
+                            </div>
+                             <div class="drug-card">
+                                <span class="drug-name">Clindamycin + Rifampin</span>
+                                <p class="pearl"><strong>Preferred initial regimen for extensive, inflammatory disease (Hurley III).</strong></p>
+                                <span class="dosing">Clinda 300mg BID + Rifampin 300mg BID for 10-12 weeks</span>
+                                <p class="precaution">Precautions: Rifampin causes orange secretions & reduces OCP efficacy. Multiple drug interactions.</p>
+                            </div>
+                            <p style="text-align:center; margin-top:15px; font-weight:bold;">+ Adjuncts (Antiandrogens/Metformin) as needed</p>
+                        </div>
+                        
+                        <div class="treatment-step step-2">
+                            <h4>Failure of Initial Therapy → Biologics!</h4>
+                            <p>Assess after ~3 months. If response is poor, move to biologics or acitretin.</p>
+                            <details>
+                                <summary><strong>🥇 Preferred First Biologic: Adalimumab (TNF-α)</strong></summary>
+                                <div class="details-content">
+                                    <div class="drug-card">
+                                        <span class="drug-name">Adalimumab (Humira)</span>
+                                        <p class="pearl">FDA-approved for moderate-to-severe HS. Supported by high-quality trial data (PIONEER I & II).</p>
+                                        <span class="dosing">Adults: 160mg Day 1 → 80mg Day 15 → 40mg weekly starting Day 29</span>
+                                        <p class="precaution">Precautions: Standard TNF-α inhibitor risks (infection, etc). Screen for latent TB before starting.</p>
+                                    </div>
+                                </div>
+                            </details>
+                            
+                             <div class="alert-box alert-box-yellow" style="margin-top:15px; padding:10px;">
+                                <span class="alert-box-icon">💡</span>
+                                <p><strong>Non-Biologic Alternative: Acitretin</strong><br><small>Reserved for patients who cannot use or prefer to avoid biologics. <strong>Remember the teratogenicity!</strong></small></p>
+                            </div>
+                        </div>
+
+                        <div class="treatment-step step-3">
+                            <h4>Failure of Adalimumab</h4>
+                            <p>Assess after 12-16 weeks. If poor response, switch biologic agent.</p>
+                            <details>
+                                <summary><strong>🥈 Next-Line Biologic Options</strong></summary>
+                                <div class="details-content">
+                                    <div class="drug-card">
+                                        <span class="drug-name">Secukinumab (IL-17A)</span>
+                                        <p class="pearl">Strong trial data (SUNSHINE/SUNRISE). FDA Approved.</p>
+                                        <p class="precaution">Caution: May exacerbate or trigger IBD (rare).</p>
+                                    </div>
+                                    <div class="drug-card">
+                                        <span class="drug-name">Bimekizumab (IL-17A & IL-17F)</span>
+                                        <p class="pearl">Strong trial data (BE HEARD I/II). Shows rapid response.</p>
+                                        <p class="precaution">Risk of oral candidiasis. Similar IBD caution as other IL-17i.</p>
+                                    </div>
+                                    <div class="drug-card">
+                                        <span class="drug-name">Infliximab (TNF-α)</span>
+                                        <p class="pearl">IV infusion. Some evidence suggests higher/more frequent dosing than for psoriasis may be needed.</p>
+                                        <p class="precaution">Precautions: Infusion reactions, standard TNF-α inhibitor risks.</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION: TARGETED INTERVENTIONS -->
+            <section class="section">
+                <h2>Targeted Interventions & Procedures</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>Acute, Symptomatic Lesions</h3>
+                        <p>For rapid relief of a single painful, inflamed nodule:</p>
+                        <ul>
+                            <li>✅ <strong>Intralesional Corticosteroids:</strong> Triamcinolone 10 mg/mL (0.2-1 mL). Reduces pain/inflammation in 1-2 days.</li>
+                            <li>✅ <strong>Punch Debridement:</strong> Minor "unroofing" to evacuate an acute nodule.</li>
+                            <li>✅ <strong>Topical Resorcinol 15%:</strong> Peeling agent applied directly to new nodule BID.</li>
+                            <li style="color:red; font-weight:bold;">❌ <strong>Routine Incision & Drainage (I&D):</strong> NOT recommended. Promotes recurrence and tunnel formation. Reserve only for immediate relief of a large, painful fluctuant abscess when other options aren't feasible.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Skin Tunnels & Recurrent Nodules</h3>
+                        <p>These persistent structures do not respond well to medical therapy alone and require a procedural approach.</p>
+                        <ul>
+                            <li>✅ <strong>Surgical Unroofing (Deroofing):</strong> The gold standard. The skin overlying the tunnel is removed, and the wound heals by secondary intention. High success rate for preventing local recurrence.</li>
+                        </ul>
+                    </div>
+                     <div class="card">
+                        <h3>Severe, Refractory Disease (Hurley III)</h3>
+                        <p>For extensive, end-stage disease refractory to medical therapy.</p>
+                        <ul>
+                            <li>✅ <strong>Wide Local Excision:</strong> Offers the greatest chance for resolution in the treated area. A major procedure with significant recovery time. Best performed when inflammation is controlled medically.</li>
+                            <li>✅ <strong>Rescue Medical Therapies:</strong> For patients failing multiple biologics, consider IV Ertapenem, Ustekinumab, or Anakinra based on small studies and expert opinion.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION: BOARD EXAM SPOTLIGHT -->
+            <section class="section">
+                <h2>Board Exam Spotlight & Clinical Traps</h2>
+                 <details>
+                    <summary><strong>Trap:</strong> HS patient with new, rapidly growing ulcer in a chronic perianal plaque.</summary>
+                    <div class="details-content alert-box alert-box-red">
+                        <p><strong>Answer:</strong> Suspect <strong>Squamous Cell Carcinoma (SCC)</strong>. Long-standing inflammation is a major risk factor. Biopsy is mandatory.</p>
+                    </div>
+                </details>
+                 <details>
+                    <summary><strong>Trap:</strong> Which common acne medication is generally INEFFECTIVE for HS and may worsen it?</summary>
+                    <div class="details-content alert-box alert-box-yellow">
+                        <p><strong>Answer:</strong> <strong>Isotretinoin</strong>. While a mainstay for severe acne, it provides limited benefit for HS and should be avoided as monotherapy.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary><strong>Trap:</strong> A 25-year-old female with Hurley II HS fails doxycycline. What is a key contraindication for the next-line oral option, acitretin?</summary>
+                    <div class="details-content alert-box alert-box-red">
+                        <p><strong>Answer:</strong> Its potent <strong>teratogenicity</strong>. It is contraindicated in patients of childbearing potential. Pregnancy must be avoided for <strong>3 years</strong> after stopping the drug.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary><strong>Trap:</strong> Patient on clindamycin + rifampin is starting hormonal birth control. What is the critical counseling point?</summary>
+                    <div class="details-content alert-box alert-box-yellow">
+                        <p><strong>Answer:</strong> <strong>Rifampin is a potent enzyme inducer</strong> and will significantly <strong>reduce the effectiveness</strong> of hormonal contraception. An alternative, non-hormonal method of birth control is required.</p>
+                    </div>
+                </details>
+                 <details>
+                    <summary><strong>Trap:</strong> What is the primary management for persistent, draining skin tunnels?</summary>
+                    <div class="details-content alert-box alert-box-green">
+                        <p><strong>Answer:</strong> <strong>Surgical Unroofing (Deroofing)</strong>. Medical therapy alone is insufficient to resolve established tunnels.</p>
+                    </div>
+                </details>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IFM for EB — Quick MCQ Review</title>
+  <style>
+    :root {
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22d3ee;
+      --accent-2:#a78bfa;
+      --roof:#f59e0b;
+      --floor:#34d399;
+      --danger:#fb7185;
+      --ok:#60a5fa;
+      --warn:#fbbf24;
+      --chip:#1f2937;
+      --green:#10b981;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin:0; padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+
+    .page { max-width:1100px; margin:0 auto; padding:20px; }
+
+    header.top {
+      position: sticky; top:0; z-index:50;
+      background: linear-gradient(180deg, rgba(15,23,42,.95), rgba(15,23,42,.75));
+      border-bottom:1px solid #1f2937;
+      backdrop-filter: blur(6px);
+    }
+    header.top .wrap {
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+      padding:10px 20px;
+    }
+    .title { display:flex; flex-direction:column; }
+    .title h1 { margin:0; font-size:20px; letter-spacing:.2px; }
+    .title .sub { color:var(--muted); font-size:12px; }
+
+    .legend {
+      display:flex; align-items:center; gap:10px;
+      color:var(--muted); font-size:12px;
+    }
+    .legend .box {
+      width:14px; height:14px; border-radius:3px; display:inline-block;
+    }
+    .roof { background:var(--roof); }
+    .floor { background:var(--floor); }
+
+    .container {
+      display:grid; gap:18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 960px){
+      .container { grid-template-columns: 1.2fr 1fr; }
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid #1f2937;
+      border-radius:12px;
+      padding:16px;
+    }
+
+    h2 { margin:0 0 10px 0; font-size:18px; }
+    h3 { margin:14px 0 8px 0; font-size:16px; color:var(--accent); }
+    p { margin:8px 0; color:#d1d5db; }
+    ul { margin:8px 0 8px 18px; }
+    li { margin:6px 0; }
+
+    .summary-grid {
+      display:grid; grid-template-columns: 1fr; gap:10px;
+    }
+    @media (min-width: 720px){
+      .summary-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .summary .tag {
+      font-size:12px; color:var(--muted);
+      text-transform:uppercase; letter-spacing:.12em;
+    }
+    .highlight { color:var(--accent-2); }
+
+    .table { width:100%; border-collapse: collapse; margin-top:8px; }
+    .table th, .table td {
+      border-bottom:1px solid #1f2937;
+      padding:10px; vertical-align: top;
+    }
+    .table th {
+      text-align:left; color:#cbd5e1; font-weight:600;
+      background:#0b1222; position:sticky; top:46px; z-index:1;
+    }
+
+    .badge {
+      display:inline-block; padding:2px 8px;
+      border-radius:999px; font-size:12px;
+      color:#0b1222; font-weight:600;
+    }
+    .b-ebs { background:var(--floor); }
+    .b-jeb { background:var(--accent); color:#0a0a0a; }
+    .b-deb { background:var(--roof); }
+    .b-kindler { background:var(--warn); }
+
+    .callout {
+      background: #0b1222; border:1px solid #1f2937;
+      border-left:4px solid var(--accent);
+      padding:12px; border-radius:8px;
+    }
+    .danger { border-left-color: var(--danger); }
+    .ok { border-left-color: var(--ok); }
+
+    .grid-2 {
+      display:grid; grid-template-columns:1fr; gap:14px;
+    }
+    @media (min-width: 960px){
+      .grid-2 { grid-template-columns:1fr 1fr; }
+    }
+
+    .kvs { display:flex; gap:10px; flex-wrap:wrap; }
+    .kvs .kv {
+      background:#0b1222; border:1px solid #1f2937;
+      border-radius:8px; padding:10px;
+      flex:1 1 220px;
+    }
+
+    .sticky-takeaways {
+      position: sticky; bottom: 14px; z-index:20;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .take {
+      background:#0b1222;
+      border:1px dashed var(--accent);
+      color:#c7f9ff;
+      padding:10px 12px; border-radius:10px; font-size:13px;
+    }
+
+    details {
+      background:#0b1222; border:1px solid #1f2937;
+      border-radius:10px; padding:10px 12px;
+    }
+    details summary { cursor:pointer; color:#cbd5e1; font-weight:600; }
+
+    .small { font-size:12px; color: var(--muted); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    .divider { height:1px; background:#1f2937; margin:10px 0; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="title">
+        <h1>Immunofluorescence Antigen Mapping (IFM) — Epidermolysis Bullosa</h1>
+        <div class="sub">Rapid MCQ Review - Fig. 32.14 (pg. 9) - Kindler (pg. 12)</div>
+      </div>
+      <div class="legend">
+        <span class="box roof"></span> Roof (epidermal side)
+        <span class="box floor"></span> Floor (dermal side)
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- Quick Summary -->
+    <section class="container">
+      <div class="card summary">
+        <h2>Quick Summary Box</h2>
+        <div class="summary-grid">
+          <div>
+            <div class="tag">Purpose</div>
+            <p>Map the precise level of skin cleavage in a blister by locating known BMZ proteins.</p>
+          </div>
+          <div>
+            <div class="tag">Principle</div>
+            <p>Fluorescent monoclonal antibodies bind BMZ proteins (e.g., collagen VII, laminin 332). Fluorescence on the <span class="roof">roof</span> or <span class="floor">floor</span> reveals the split plane.</p>
+          </div>
+          <div>
+            <div class="tag">Key Diagnostic Use</div>
+            <ul>
+              <li><span class="badge b-ebs">EBS</span> BMZ antigens on <strong>floor</strong> only.</li>
+              <li><span class="badge b-jeb">JEB</span> BMZ antigens split between <strong>roof & floor</strong>.</li>
+              <li><span class="badge b-deb">DEB</span> BMZ antigens on <strong>roof</strong> only.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="tag">Additional Utility</div>
+            <p>Absent/markedly reduced expression pinpoints recessive forms (e.g., absent laminin 332 in severe JEB).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>High-Yield Exam Facts</h2>
+        <ul>
+          <li>Best test requires biopsy of a <strong>freshly induced blister</strong>, not an old or spontaneous blister.</li>
+          <li><strong>"Roof vs. Floor"</strong> is the key pattern recognition for EBS/JEB/DEB.</li>
+          <li>Image cues:
+            <ul>
+              <li>Green line on floor only → <span class="badge b-ebs">EBS</span></li>
+              <li>Green line on roof only → <span class="badge b-deb">DEB</span></li>
+              <li>Green lines split roof & floor → <span class="badge b-jeb">JEB</span></li>
+            </ul>
+          </li>
+          <li><strong>Absent staining</strong> indicates severe recessive disease:
+            <ul>
+              <li>Absent laminin 332 → severe JEB (Herlitz), watch for exuberant granulation tissue.</li>
+              <li>Absent collagen VII → severe RDEB (Hallopeau–Siemens).</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Definition & Technique -->
+    <section class="container">
+      <div class="card">
+        <h2>Definition & Technique</h2>
+        <p>IFM is performed on a biopsy from the edge of a <strong>freshly induced</strong> blister to localize BMZ antigens and infer the plane of cleavage.</p>
+        <div class="grid-2">
+          <div>
+            <h3>Inducing a Blister</h3>
+            <ul>
+              <li>Site: Intact, non-acral skin (e.g., inner arm).</li>
+              <li>Method: Firm pressure with a pencil eraser, applied and rotated to create a mechanical split.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Biopsy & Transport</h3>
+            <ul>
+              <li>Biopsy: 3–4 mm punch at the blister edge.</li>
+              <li>Medium: Place in Michel’s/Zeus medium to preserve antigens.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout ok" style="margin-top:8px;">
+          Panel: Stain sections with fluorescently labeled monoclonal antibodies to key BMZ proteins (e.g., collagen IV, VII, XVII; laminin 332).
+        </div>
+        <div class="small">Reference: Fig. 32.14, pg. 9.</div>
+      </div>
+
+      <div class="card">
+        <h2>Interpretation — Plane of Cleavage</h2>
+        <p>Ask: Where are the BMZ antigens relative to the split?</p>
+        <table class="table mono">
+          <thead>
+            <tr>
+              <th>EB Type</th>
+              <th>Plane of Cleavage</th>
+              <th>BMZ Antigen Location</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge b-ebs">EBS</span></td>
+              <td>Intra-epidermal (basal cell)</td>
+              <td><span class="floor">Floor only</span></td>
+              <td>Split is above BMZ in keratinocytes; entire BMZ remains attached to dermis.</td>
+            </tr>
+            <tr>
+              <td><span class="badge b-jeb">JEB</span></td>
+              <td>Lamina lucida</td>
+              <td>Split between <span class="roof">roof</span> and <span class="floor">floor</span></td>
+              <td>Within BM itself: proteins above split (e.g., collagen XVII) on roof; below (e.g., collagen VII, collagen IV) on floor.</td>
+            </tr>
+            <tr>
+              <td><span class="badge b-deb">DEB</span></td>
+              <td>Sublamina densa</td>
+              <td><span class="roof">Roof only</span></td>
+              <td>Entire BMZ including lamina densa lifts with epidermis; split is below BMZ in dermis.</td>
+            </tr>
+            <tr>
+              <td><span class="badge b-kindler">Kindler</span></td>
+              <td>Mixed planes</td>
+              <td>Variable patterns</td>
+              <td>BMZ reduplication with multiple potential cleavage planes.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="small">Kindler reference: pg. 12.</div>
+      </div>
+    </section>
+
+    <!-- Protein Expression -->
+    <section class="container">
+      <div class="card">
+        <h2>Interpretation — Protein Expression</h2>
+        <div class="kvs">
+          <div class="kv">
+            <h3>Absent/Reduced (Recessive)</h3>
+            <ul>
+              <li>Absent laminin 332 → severe JEB (Herlitz).</li>
+              <li>Absent collagen VII → severe RDEB (Hallopeau–Siemens).</li>
+              <li>Absent plectin → EBS with muscular dystrophy.</li>
+              <li>Absent α6β4 integrin → JEB with pyloric atresia.</li>
+            </ul>
+          </div>
+          <div class="kv">
+            <h3>Normal Intensity (Dominant)</h3>
+            <ul>
+              <li>DDEB: Collagen VII present at BMZ but defective.</li>
+              <li>Dominant EBS: Keratins 5/14 staining usually normal.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <details>
+          <summary>Abnormal Distribution</summary>
+          <p>Self-improving DDEB (active phase): Collagen VII shows granular, intracellular staining in basal keratinocytes with reduced/absent BMZ staining, indicating a transport defect (pg. 9).</p>
+        </details>
+      </div>
+
+      <div class="card">
+        <h2>Diagnostic Algorithm</h2>
+        <p>IFM is used alongside TEM and followed by genetic testing for confirmation.</p>
+        <ol>
+          <li><strong>Primary screening panel</strong> (e.g., laminin γ2 chain, collagen IV, VII, XVII) to determine cleavage plane.</li>
+          <li><strong>Pattern recognition</strong> for EBS vs JEB vs DEB based on roof/floor distribution.</li>
+          <li><strong>Secondary targeted panel</strong> to pinpoint specific protein deficiency.</li>
+          <li><strong>Correlate</strong> with clinical phenotype; proceed to <strong>genetic analysis</strong> for definitive typing.</li>
+        </ol>
+        <div class="callout">
+          Tip: Always verify the specimen is from a <strong>freshly induced blister</strong> to avoid misleading staining.
+        </div>
+      </div>
+    </section>
+
+    <!-- Image & Specimen Essentials -->
+    <section class="container">
+      <div class="card">
+        <h2>Image-to-Answer Cues</h2>
+        <ul>
+          <li>Single green BMZ line on floor → <span class="badge b-ebs">EBS</span></li>
+          <li>Single green BMZ line on roof → <span class="badge b-deb">DEB</span></li>
+          <li>Two green lines (roof and floor) → <span class="badge b-jeb">JEB</span></li>
+          <li>Report says “absent laminin 332” → severe JEB (Herlitz); think exuberant granulation tissue.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Specimen Essentials</h2>
+        <ul>
+          <li>Site selection: intact, non-acral skin (inner arm preferred).</li>
+          <li>Induction: pencil eraser pressure + rotation.</li>
+          <li>Biopsy: 3–4 mm punch at blister edge.</li>
+          <li>Transport: Michel’s/Zeus medium.</li>
+        </ul>
+        <div class="small">Fig. 32.14, pg. 9.</div>
+      </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="sticky-takeaways">
+      <div class="take">EBS → floor | JEB → split | DEB → roof</div>
+      <div class="take">Absent laminin 332 → severe JEB</div>
+      <div class="take">Absent collagen VII → severe RDEB</div>
+      <div class="take">Freshly induced blister only</div>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 41: Lupus Erythematosus - Board Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --main-text-color: #212529;
+            --secondary-text-color: #495057;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --primary-blue: #0d6efd;
+            --highlight-bg: #e9ecef;
+            --mcq-bg: #cfe2ff;
+            --mcq-text: #052c65;
+            --danger-bg: #fff0f1;
+            --danger-text: #d90429;
+            --warning-bg: #fff9e6;
+            --warning-text: #b38600;
+            --success-bg: #e6f9f0;
+            --success-text: #006d32;
+            --purple-light: #f3e8ff;
+            --purple-dark: #5a189a;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--main-text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            align-self: start;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .sidebar h3 {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.95rem;
+        }
+        
+        .sidebar-nav li a:hover, .sidebar-nav li a.active {
+            background-color: var(--highlight-bg);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .sidebar-nav .sub-menu {
+            padding-left: 1rem;
+        }
+        .sidebar-nav .sub-menu a {
+            font-size: 0.85rem;
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+        .chapter-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-text-color);
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--main-text-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: var(--highlight-bg);
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .fact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-blue);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .fact-card .fact-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .fact-card .fact-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--main-text-color);
+        }
+
+        .mcq-tag {
+            display: inline-block;
+            background-color: var(--mcq-bg);
+            color: var(--mcq-text);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+        
+        .prognostic-bad {
+            background-color: var(--danger-bg);
+            color: var(--danger-text);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--danger-text);
+            margin: 0.5rem 0;
+        }
+        
+        .clinical-pearl {
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--warning-text);
+            margin: 1rem 0;
+        }
+        .clinical-pearl strong {
+            color: var(--warning-text);
+        }
+        
+        .drug-mnemonic {
+            background-color: var(--purple-light);
+            color: var(--purple-dark);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--purple-dark);
+            margin: 1rem 0;
+        }
+        .drug-mnemonic code {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.5rem;
+        }
+
+        details {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background-color: var(--card-bg);
+        }
+        summary {
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary:after {
+            content: '▼';
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+        details[open] summary:after {
+            transform: rotate(180deg);
+        }
+        details > div {
+            padding: 0 1.5rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--highlight-bg);
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .comparison-table th {
+            width: 50%;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-right: 0.5rem;
+            vertical-align: -0.125em;
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                max-height: none;
+                overflow-y: visible;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Chapter 41: Lupus</h3>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#intro">Introduction & Epi</a></li>
+                    <li><a href="#pathogenesis">Pathogenesis</a></li>
+                    <li><a href="#classification">Classification</a></li>
+                    <li><a href="#ccle">Chronic Cutaneous LE (CCLE)</a>
+                        <ul class="sub-menu">
+                            <li><a href="#dle">Discoid LE (DLE)</a></li>
+                            <li><a href="#chilblain">Chilblain LE</a></li>
+                            <li><a href="#tumid">Tumid Lupus</a></li>
+                            <li><a href="#panniculitis">Lupus Panniculitis</a></li>
+                            <li><a href="#overlap">DLE/LP Overlap</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#scle">Subacute Cutaneous LE (SCLE)</a></li>
+                    <li><a href="#nle">Neonatal LE (NLE)</a></li>
+                    <li><a href="#acle">Acute Cutaneous LE (ACLE)</a></li>
+                    <li><a href="#other-forms">Other Forms</a></li>
+                    <li><a href="#complement">Complement Deficiency LE</a></li>
+                    <li><a href="#pregnancy">LE & Pregnancy</a></li>
+                    <li><a href="#diagnosis">Diagnosis & Workup</a></li>
+                    <li><a href="#treatment">Treatment</a></li>
+                    <li><a href="#tables">Reference Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>Lupus Erythematosus</h1>
+            <p class="chapter-subtitle">A multisystem disorder with frequent cutaneous involvement.</p>
+
+            <section id="intro">
+                <h2>Introduction & High-Yield Epidemiology</h2>
+                <div class="dashboard">
+                    <div class="fact-card">
+                        <div class="fact-title">Strongest Risk Factor</div>
+                        <div class="fact-value">Gender <span class="mcq-tag">MCQ</span></div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-title">SLE Gender Ratio (F:M)</div>
+                        <div class="fact-value">At least 9:1</div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-title">Cutaneous LE Ratio (F:M)</div>
+                        <div class="fact-value">Closer to 3:1</div>
+                    </div>
+                     <div class="fact-card">
+                        <div class="fact-title">Ethnicity Risk (Black:Caucasian)</div>
+                        <div class="fact-value">4:1</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                         <p>80% of patients with Systemic Lupus Erythematosus (SLE) will have cutaneous involvement.</p>
+                         <div class="prognostic-bad">
+                            <strong>Bad Prognostic Factor:</strong> Black race is associated with earlier age of onset and a higher mortality rate.
+                         </div>
+                         <h4>Mortality Causes:</h4>
+                         <ul>
+                            <li><strong>First 5 years:</strong> Infection of cutaneous lesions</li>
+                            <li><strong>Thereafter:</strong> Thrombosis</li>
+                         </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pathogenesis">
+                <h2>Pathogenesis: Genes, Triggers, & Immunity</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="clinical-pearl">
+                            <strong>Central Pathway:</strong> Genetically predisposed individuals + Environmental Trigger → Defective clearance of apoptotic bodies → Loss of immune tolerance → Immune-mediated response.
+                        </p>
+
+                        <details>
+                            <summary>Genetic Factors</summary>
+                            <div>
+                                <h4>HLA Subtypes (High-Yield Associations)</h4>
+                                <ul>
+                                    <li><strong>SCLE:</strong> HLA-B8 and -DR3 <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>ACLE:</strong> HLA-DR2</li>
+                                    <li><strong>Drug-induced SLE (Hydralazine):</strong> HLA-DR4 <span class="mcq-tag">MCQ</span></li>
+                                </ul>
+                                <h4>Complement Deficiencies</h4>
+                                <ul>
+                                    <li>Associated with C1, C2, C4 deficiencies.</li>
+                                    <li><strong>Highest Risk: C1q deficiency</strong>. ~90% of patients develop SLE. <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>Most Common Deficiency Overall: C2 deficiency</strong>. However, risk is lower (10-20% develop SLE) compared to C1/C4. <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>Screening Test: CH50</strong> <span class="mcq-tag">MCQ</span></li>
+                                </ul>
+                                <h4>Other Genes</h4>
+                                <ul>
+                                    <li><strong>TREX1 (DNA exonuclease):</strong> Associated with familial chilblain lupus.</li>
+                                    <li><strong> TYK2, IRF5, CTLA4</strong> also confe an increased risk for developing DLE and SCLE</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Environmental Triggers</summary>
+                            <div>
+                                <ul>
+                                    <li><strong>UV Radiation:</strong> UVB > UVA</li>
+                                    <li><strong>Smoking:</strong> Also decreases antimalarial efficacy.</li>
+                                    <li><strong>Viral Infections</strong></li>
+                                    <li><strong>Drugs:</strong>
+                                        <div class="drug-mnemonic">
+                                            <p>Classic Drug-Induced SLE (anti-histone): <code>SHIPP</code></p>
+                                            <ul>
+                                                <li><strong>S</strong>ulfasalazine</li>
+                                                <li><strong>H</strong>ydralazine</li>
+                                                <li><strong>I</strong>soniazid</li>
+                                                <li><strong>P</strong>rocainamide / <strong>P</strong>henytoin</li>
+                                                <li><strong>P</strong>enicillamine</li>
+                                            </ul>
+                                        </div>
+                                        <div class="clinical-pearl">
+                                            <strong>Dermatologic Triggers:</strong>
+                                            <ul>
+                                                <li><strong>Minocycline:</strong> Causes P-ANCA positive DILE.</li>
+                                                <li><strong>TNF-α inhibitors:</strong> Cause anti-dsDNA positive DILE (Infliximab 48%, Etanercept/Adalimumab 20%).</li>
+                                            </ul>
+                                        </div>
+                                        <p><strong>Others:</strong> OCPs, chlorpromazine, methyldopa, and <strong>hydrochlorothiazide (MC overall)</strong>.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>Immune Dysfunction</summary>
+                            <div>
+                                <ul>
+                                    <li>Increased type I interferons (IFNs)</li>
+                                    <li>Defective immune complex clearance</li>
+                                    <li>Activation of B- and T-lymphocytes</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="classification">
+                <h2>Classification of Lupus Erythematosus</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="clinical-pearl">This classification is based on the presence of lupus features on <strong>histopathology</strong>. "Lupus specific" findings have an interface dermatitis.</p>
+                        
+                        <h4>Lupus Specific Findings</h4>
+                        <ul>
+                            <li><strong>Acute Cutaneous LE (ACLE)</strong>
+                                <ul>
+                                    <li>Localized ACLE (malar rash)</li>
+                                    <li>Generalized ACLE (morbilliform rash)</li>
+                                    <li>TEN-like ACLE</li>
+                                </ul>
+                            </li>
+                            <li><strong>Subacute Cutaneous LE (SCLE)</strong>
+                                <ul>
+                                    <li>Annular SCLE</li>
+                                    <li>Psoriasiform/papulosquamous SCLE</li>
+                                    <li>Drug-induced SCLE</li>
+                                    <li>Neonatal LE</li>
+                                </ul>
+                            </li>
+                            <li><strong>Chronic Cutaneous LE (CCLE)</strong>
+                                <ul>
+                                    <li>Discoid LE (DLE) - Localized, Generalized, Hypertrophic/verrucous, Mucosal</li>
+                                    <li>Chilblain LE</li>
+                                    <li>Lupus panniculitis/profundus</li>
+                                    <li>Tumid lupus</li>
+                                </ul>
+                            </li>
+                            <li><strong>Other Specific Forms</strong>
+                                <ul>
+                                    <li>Rowell's syndrome</li>
+                                    <li>LE/LP overlap</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Lupus Non-Specific Findings</h4>
+                        <p>These findings (e.g., vasculitis, periungual telangiectasias) do not have lupus-specific histology. See table at end of chapter.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ccle">
+                <h2>Chronic Cutaneous LE (CCLE)</h2>
+                
+                <div id="dle" class="card">
+                    <div class="card-header">Discoid Lupus Erythematosus (DLE)</div>
+                    <div class="card-body">
+                        <p>Accounts for the majority of CCLE cases.</p>
+                        <h4>Key Associations & Risks:</h4>
+                        <ul>
+                            <li><strong>Risk of progressing to SLE:</strong>
+                                <ul>
+                                    <li>Localized DLE: 5-10%</li>
+                                    <li>Generalized DLE: 15-28% <span class="mcq-tag">MCQ (20%)</span></li>
+                                    <li>Overall: 10-20% will develop SLE within 5 years <span class="mcq-tag">MCQ</span></li>
+                                </ul>
+                            </li>
+                            <li>40-70% of SLE patients will have discoid lesions.</li>
+                            <li>Childhood DLE is associated with increased risk of developing SLE. <span class="mcq-tag">MCQ</span></li>
+                            <li>More common in African descent.</li>
+                            <li><strong>Increased risk of:</strong> Photosensitivity and leukopenia. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Decreased risk of:</strong> Serositis and arthritis. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Drug-Induced DLE:</strong> "3 Hyphens" -> 5-FU, IFN-α, TNF-α inhibitors.</li>
+                        </ul>
+                        
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Well-defined erythematous scaly papules and plaques with <strong>follicular plugging</strong>.</li>
+                            <li><strong>"Carpet tack" sign:</strong> Removing adherent scale reveals keratotic spikes on the undersurface.</li>
+                            <li>Heals with peripheral hyperpigmentation, central scarring, atrophy, and hypopigmentation.</li>
+                            <li>Common sites: Face, scalp, and <strong>external ear (characteristic)</strong>.</li>
+                            <li>Can cause irreversible scarring alopecia (1/3 of patients).</li>
+                            <li>Can show Koebner phenomenon.</li>
+                            <li>Chronic inflammation and scarring → increased risk of <strong>SCC</strong>.</li>
+                            <li><strong>Mucosal involvement (25%):</strong> Buccal mucosa most common. Lip involvement → SCC risk. Nasal involvement → higher SLE risk.</li>
+                        </ul>
+
+                        <h4>Pathology (H&E):</h4>
+                        <ul>
+                            <li>Compact orthohyperkeratosis, epidermal atrophy, follicular plugging.</li>
+                            <li><strong>Vacuolar interface dermatitis</strong> with necrotic keratinocytes.</li>
+                            <li>BMZ thickening.</li>
+                            <li>Superficial and deep perivascular and <strong>periadnexal (isthmus level)</strong> lymphohistiocytic infiltrate. <span class="mcq-tag">MCQ</span></li>
+                            <li>Mucin deposition.</li>
+                            <li><strong>Hypertrophic DLE:</strong> Shows pseudoepitheliomatous hyperplasia.</li>
+                        </ul>
+                        <h4>Pathology (DIF):</h4>
+                        <p>Positive in 75%. Ideal to biopsy a lesion present for a few months. <span class="mcq-tag">MCQ</span></p>
+                    </div>
+                </div>
+
+                <div id="chilblain" class="card">
+                    <div class="card-header">Chilblain LE</div>
+                    <div class="card-body">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>Familial cases associated with <strong>TREX1</strong> and <strong>SAMHD1</strong> mutations.</li>
+                            <li><strong>Least photosensitive</strong> form of cutaneous LE. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Aicardi-Goutières syndrome:</strong> sterile fever, SLE, chilblains, progressive neurologic disease.</li>
+                        </ul>
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Tender, red/dusky papules and plaques on cold-exposed acral areas.</li>
+                            <li>Often persist year-round (vs. idiopathic pernio which is seasonal).</li>
+                        </ul>
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li><strong>Papillary edema</strong>. <span class="mcq-tag">MCQ</span></li>
+                            <li>Superficial and deep lymphocytic vascular reaction.</li>
+                        </ul>
+                        <h4>Treatment:</h4>
+                        <ul>
+                            <li>Does NOT respond well to antimalarials.</li>
+                            <li><strong>Nifedipine + cold avoidance</strong> is first-line. <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="tumid" class="card">
+                    <div class="card-header">Tumid Lupus</div>
+                    <div class="card-body">
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li><strong>Most photosensitive</strong> form of cutaneous LE. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>0% risk of developing SLE.</strong></li>
+                            <li>On a spectrum with Jessner's lymphocytic infiltrate and reticular erythematous mucinosis.</li>
+                        </ul>
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Edematous, indurated, smooth erythematous plaques with <strong>no epidermal involvement</strong>.</li>
+                            <li>Often annular or arcuate. Located on face and trunk.</li>
+                            <li><strong>Heals without scarring.</strong></li>
+                        </ul>
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li><strong>Marked mucin deposition</strong> in the dermis.</li>
+                            <li>Perivascular and periadnexal lymphocytic infiltrate.</li>
+                            <li><strong>Epidermis and DEJ are spared.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="panniculitis" class="card">
+                    <div class="card-header">Lupus Erythematosus Panniculitis / Profundus</div>
+                    <div class="card-body">
+                        <p><strong>Panniculitis:</strong> Involves subcutaneous fat only. <br> <strong>Profundus:</strong> Involves overlying dermis/epidermis (often DLE lesions).</p>
+                        <h4>Key Points:</h4>
+                        <ul>
+                            <li>5-10% risk of SLE.</li>
+                            <li>Must differentiate from Subcutaneous Panniculitis-like T-cell Lymphoma (SPTCL).</li>
+                        </ul>
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li>Indurated, non-tender, subcutaneous nodules/plaques that heal with <strong>lipoatrophy</strong>.</li>
+                            <li>Involves fatty areas of the <strong>upper part of the body</strong> (proximal extremities, trunk, head, neck).</li>
+                        </ul>
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li><strong>Lobular panniculitis.</strong></li>
+                            <li><strong>Hyaline necrosis of fat lobules.</strong> <span class="mcq-tag">MCQ</span></li>
+                            <li>Nodular lymphocytic aggregates or lymphoid follicles.</li>
+                            <li>Mucin deposition.</li>
+                            <li>Dystrophic calcifications may be seen. <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+                        <div class="clinical-pearl">
+                            <strong>LE Panniculitis vs. SPTCL:</strong> LE Panniculitis has plasma cells, lymphoid follicles, and hyaline fat necrosis. SPTCL shows atypical lymphocytes rimming adipocytes and may have "bean bag" cells (cytophagia).
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="overlap" class="card">
+                    <div class="card-header">Discoid Lupus-Lichen Planus Overlap</div>
+                    <div class="card-body">
+                        <p>Coexisting DLE and LP with overlap lesions. <strong>Palmoplantar involvement is characteristic.</strong></p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="scle">
+                <h2>Subacute Cutaneous LE (SCLE)</h2>
+                <div class="card">
+                    <div class="card-header">SCLE: Key Facts & Features</div>
+                    <div class="card-body">
+                        <h4>Key Associations:</h4>
+                        <ul>
+                            <li>More common in Caucasians.</li>
+                            <li>Strongly a/w <strong>HLA-B8 and HLA-DR3</strong>. <span class="mcq-tag">MCQ</span></li>
+                            <li>Strongly a/w early complement pathway deficiencies.</li>
+                            <li>Antibodies: <strong>Anti-Ro/SSA (75-90%)</strong>, Anti-La/SSB (30-50%).</li>
+                            <li>Drug-induced: Anti-histone.</li>
+                            <li><strong>Increased risk of:</strong> Photosensitivity and arthritis. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Decreased risk of:</strong> Nephritis. <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+
+                        <div class="clinical-pearl">
+                            <strong>The Rule of 50s for SCLE:</strong><br>
+                            ~50% have positive ANA <span class="mcq-tag">MCQ</span><br>
+                            ~50% will develop SLE <span class="mcq-tag">MCQ</span><br>
+                            ~50% have positive DIF <br>
+                            ~50% have photosensitivity
+                        </div>
+                        
+                        <h4>Drug-Induced SCLE</h4>
+                        <div class="drug-mnemonic">
+                           <p>Common Causes: <code>THANG</code></p>
+                           <ul>
+                               <li><strong>T</strong>erbinafine</li>
+                               <li><strong>H</strong>ydrochlorothiazide (most common)</li>
+                               <li><strong>A</strong>CEI</li>
+                               <li><strong>N</strong>SAIDS</li>
+                               <li><strong>G</strong>riseofulvin <span class="mcq-tag">MCQ</span></li>
+                               <li>Also: TNF-α inhibitors (esp. etanercept), PPIs</li>
+                           </ul>
+                        </div>
+                        
+                        <h4>Clinical Features:</h4>
+                        <ul>
+                            <li><strong>Annular</strong> or <strong>Psoriasiform/papulosquamous</strong> plaques.</li>
+                            <li>Sun-exposed areas (V of neck, shoulders, trunk, lateral face).</li>
+                            <li><strong>Spares the central face (vs. ACLE).</strong></li>
+                            <li><strong>Non-scarring</strong>, but may cause dyspigmentation.</li>
+                            <li><strong>Psoriasiform variant</strong> has a higher risk of developing SLE. <span class="mcq-tag">MCQ</span></li>
+                            <li>Most common systemic finding is <strong>arthritis</strong> (in both idiopathic and drug-induced forms). <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Risk factors for the development of SLE:</strong>
+                                <ul>
+                                    <li>Psoriasiform variant</li>
+                                    <li>Leukopenia</li>
+                                    <li>High ANA titer</li>
+                                    <li>Presence of localized ACLE</li>
+                                    <li>Anti-dsDNA</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        
+                        <h4>Pathology:</h4>
+                        <ul>
+                            <li>Hyperkeratosis + parakeratosis, <strong>epidermal atrophy</strong>. <span class="mcq-tag">MCQ</span></li>
+                            <li>Vacuolar interface dermatitis.</li>
+                            <li>Dermal edema & mucin.</li>
+                            <li><strong>DIF: Granular deposition in basal keratinocytes</strong> (dust-like), indicates binding of anti-Ro/La. <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="nle">
+                <h2>Neonatal LE (NLE)</h2>
+                <div class="card">
+                    <div class="card-header">NLE: Maternal Antibodies & Infant Risk</div>
+                    <div class="card-body">
+                        <p>Results from transplacental passage of maternal <strong>anti-Ro/SSA</strong> antibodies.</p>
+                        
+                        <h4>Key Points & Risks:</h4>
+                        <ul>
+                            <li>Infants have an increased risk of developing SLE later in life. <span class="mcq-tag">MCQ</span></li>
+                            <li><strong>Risk of child having NLE:</strong>
+                                <ul>
+                                    <li>Mother w/ Abx but no CTD: 1-2%</li>
+                                    <li>Mother w/ Abx and CTD: 15%</li>
+                                    <li>Mother w/ 1 previous child w/ NLE: <strong>25%</strong> <span class="mcq-tag">MCQ</span></li>
+                                    <li>Mother w/ 2 previous children w/ NLE: 75%</li>
+                                </ul>
+                            </li>
+                            <li>50% of mothers are asymptomatic at time of diagnosis.</li>
+                             <li class="clinical-pearl"><strong>U1RNP antibodies:</strong> Associated with CNS manifestations but <strong>protective against cardiac manifestations</strong> (good prognosis). the function of U1RNP is to splice pre-mRNA into mRNA (MCQ) <span class="mcq-tag">MCQ</span></li>
+                        </ul>
+                        
+                        <h4>Clinical Manifestations</h4>
+                        <details>
+                            <summary>Cutaneous Features</summary>
+                            <div>
+                                <ul>
+                                    <li>Annular erythematous scaly plaques.</li>
+                                    <li>Typically face and periorbital area: <strong>"Racoon eyes"</strong>. <span class="mcq-tag">MCQ</span></li>
+                                    <li>Resolve without scarring by 6 months (as maternal antibodies disappear).</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details open>
+                            <summary>Cardiac Features (CRITICAL)</summary>
+                            <div class="prognostic-bad">
+                                <ul>
+                                    <li><strong>30% develop congenital third-degree heart block</strong>. <span class="mcq-tag">MCQ</span></li>
+                                    <li>Cardiac block develops in utero, typically between <strong>18-20 weeks gestation</strong>. <span class="mcq-tag">MCQ</span></li>
+                                    <li>Cardiac manifestations are <strong>non-reversible</strong>. <span class="mcq-tag">MCQ</span></li>
+                                    <li>Once <strong>COMPLETE</strong> heart block occurs, it is irreversible. <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>30% mortality</strong> for infants with cardiac involvement. <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>2/3 will require a pacemaker</strong>. <span class="mcq-tag">MCQ</span></li>
+                                    <li><strong>Mothers with Sjogren or undifferentiated autoimmune syndrome:</strong> higher risk of developing complete heart block compared to mothers with SLE. </li>
+                                    
+
+
+                                </ul>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>Other Systemic Features</summary>
+                            <div>
+                                <ul>
+                                    <li><strong>Hematological:</strong> Thrombocytopenia (MCQ), hemolytic anemia, neutropenia. Resolve by 2-6 months.</li>
+                                    <li><strong>Liver:</strong> Hepatomegaly with elevated enzymes. Usually resolves.</li>
+                                    <li><strong>CNS:</strong> Hydrocephalus, macrocephaly (a/w U1RNP).</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <h4>Workup</h4>
+                        <ul>
+                            <li><strong>Labs:</strong>
+                                <ul>
+                                    <li>CBC and LFTs</li>
+                                    <li>Mother and baby serologies (including U1RNP)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Imaging:</strong>
+                                <ul>
+                                    <li>U/S CTG of fetal heart rate from 16-24 weeks of pregnancy</li>
+                                    <li>ECG and cardiac monitor after birth</li>
+                                    <li>Echo</li>
+                                    <li>Cerebral U/S</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pathology:</strong> Same as SCLE</li>
+                        </ul>
+                        <h4>Treatment</h4>
+                        <ul>
+                            <li><strong>Skin disease:</strong> TCS and sun-protection</li>
+                            <li><strong>Hematological and liver:</strong> no need</li>
+                            <li><strong>Cardiac disease:</strong>
+                                <ul>
+                                    <li>Prenatal systemic steroids -> <strong>↓risk of cardiac but no effect on skin</strong></li>
+                                    <li>Hydroxychloroquine throughout pregnancy -> <strong>↓risk of cardiac, indicated for women with a previous child with NLE</strong></li>
+                                    <li>Once <strong>COMPLETE</strong> cardiac block occurs -> <strong>irreversible</strong> <span class="mcq-tag">MCQ</span></li>
+                                    <li>Low-grade AV blocks are reversible</li>
+                                    <li><strong>2/3 of patients with cardiac disease will require pacemaker</strong> <span class="mcq-tag">MCQ</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script>
+        // Simple script for active navigation link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -80% 0px' });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

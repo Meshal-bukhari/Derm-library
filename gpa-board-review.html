@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granulomatosis with Polyangiitis (GPA) - Saudi Board Review</title>
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --primary-light: #ffcdd2;
+            --primary-dark: #b71c1c;
+            --secondary: #455a64;
+            --secondary-light: #cfd8dc;
+            --accent: #ff9800;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --info: #2196f3;
+            --dark: #263238;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            bottom: -20px;
+            left: -20px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .formerly {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        
+        .badge-high-yield {
+            background-color: var(--warning);
+            color: white;
+        }
+        
+        .badge-board-fav {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-header .icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Classic Triad Section */
+        .triad-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .triad-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .triad-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .triad-title {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        /* Clinical Findings Section */
+        .system-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .system-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .system-title {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .system-title i {
+            margin-right: 8px;
+        }
+        
+        /* Diagnostic Criteria */
+        .diagnostic-criteria {
+            background-color: var(--secondary-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .criteria-title {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .criteria-title i {
+            margin-right: 10px;
+        }
+        
+        .criteria-list {
+            list-style-type: none;
+        }
+        
+        .criteria-item {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .criteria-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .criteria-note {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--secondary);
+        }
+        
+        /* Alert Boxes */
+        .alert {
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 5px solid;
+        }
+        
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 152, 0, 0.1);
+            border-color: var(--warning);
+        }
+        
+        .alert-danger {
+            background-color: rgba(244, 67, 54, 0.1);
+            border-color: var(--danger);
+        }
+        
+        .alert-info {
+            background-color: rgba(33, 150, 243, 0.1);
+            border-color: var(--info);
+        }
+        
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            border-color: var(--success);
+        }
+        
+        /* Mnemonic */
+        .mnemonic-container {
+            background-color: #f3e5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #9c27b0;
+        }
+        
+        .mnemonic-title {
+            display: flex;
+            align-items: center;
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .mnemonic-title i {
+            margin-right: 10px;
+        }
+        
+        .mnemonic-item {
+            margin-bottom: 10px;
+        }
+        
+        .mnemonic-letter {
+            font-weight: bold;
+            color: #7b1fa2;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        /* Differential Diagnosis Table */
+        .diff-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .diff-table th,
+        .diff-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .diff-table th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .diff-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .diff-table td:first-child {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        /* Flashcard */
+        .flashcard-container {
+            perspective: 1000px;
+            margin: 30px 0;
+        }
+        
+        .flashcard {
+            position: relative;
+            height: 200px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front,
+        .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: var(--secondary-light);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        /* Treatment Section */
+        .treatment-level {
+            margin-bottom: 25px;
+            border-left: 4px solid var(--info);
+            padding-left: 15px;
+        }
+        
+        .treatment-title {
+            font-weight: bold;
+            color: var(--info);
+            margin-bottom: 10px;
+        }
+        
+        /* Accordion */
+        .accordion {
+            background-color: #f5f5f5;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.4s;
+            margin-bottom: 5px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .accordion:after {
+            content: '\002B';
+            color: var(--primary);
+            font-weight: bold;
+            float: right;
+        }
+        
+        .accordion.active:after {
+            content: "\2212";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 15px;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        /* Quiz */
+        .quiz-container {
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .quiz-options {
+            list-style-type: none;
+        }
+        
+        .quiz-option {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .quiz-option.selected {
+            background-color: var(--primary-light);
+        }
+        
+        .quiz-option.correct {
+            background-color: rgba(76, 175, 80, 0.2);
+            border-left: 3px solid var(--success);
+        }
+        
+        .quiz-option.incorrect {
+            background-color: rgba(244, 67, 54, 0.2);
+            border-left: 3px solid var(--danger);
+        }
+        
+        .quiz-feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            display: block;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-left: 3px solid var(--success);
+            color: var(--success);
+        }
+        
+        .quiz-feedback.incorrect {
+            display: block;
+            background-color: rgba(244, 67, 54, 0.1);
+            border-left: 3px solid var(--danger);
+            color: var(--danger);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .triad-container, .system-container {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Granulomatosis with Polyangiitis (GPA)</h1>
+                <p class="formerly">Formerly known as Wegener Granulomatosis</p>
+                <p>A multisystem disease characterized by vasculitis and necrotizing granulomatous inflammation of small arteries and veins</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" style="margin-top: 30px;">
+        <!-- Classic Triad Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔍</span> Classic Triad <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <div class="alert-title">Board Exam Focus:</div>
+                    <p>The classic triad of GPA is a high-yield concept for board exams. Remember that not all patients present with the complete triad, but recognizing these elements is essential for diagnosis.</p>
+                </div>
+                
+                <div class="triad-container">
+                    <div class="triad-item">
+                        <div class="triad-number">1</div>
+                        <div class="triad-title">Upper & Lower Respiratory Tract</div>
+                        <p>Necrotizing granulomas affecting sinuses, nasal passages, trachea, and lungs</p>
+                    </div>
+                    <div class="triad-item">
+                        <div class="triad-number">2</div>
+                        <div class="triad-title">Systemic Vasculitis</div>
+                        <p>Necrotizing small vessel granulomatous vasculitis affecting multiple organ systems</p>
+                    </div>
+                    <div class="triad-item">
+                        <div class="triad-number">3</div>
+                        <div class="triad-title">Glomerulonephritis</div>
+                        <p>Usually focal segmental glomerulonephritis with renal involvement</p>
+                    </div>
+                </div>
+                
+                <div class="mnemonic-container">
+                    <div class="mnemonic-title">
+                        <i>🧠</i> Memory Aid: "WEG-ener's" Mnemonic
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">W</span> - Wegener's (historical name) affects small vessels
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">E</span> - ENT involvement (Ear, Nose, Throat) is characteristic
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">G</span> - Granulomas & Glomerulonephritis
+                    </div>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">
+                            <p>What is the classic triad of GPA?</p>
+                            <small>(Click to reveal)</small>
+                        </div>
+                        <div class="flashcard-back">
+                            <ol>
+                                <li>Necrotizing granulomas of the upper and lower respiratory tract</li>
+                                <li>Systemic necrotizing small vessel granulomatous vasculitis</li>
+                                <li>Glomerulonephritis (usually focal segmental)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Demographics & Overview Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📊</span> Demographics & Overview
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Demographics:</strong> Most common in middle-aged patients of Northern European descent (80-90% of cases), but can occur in children and older adults</li>
+                    <li><strong>Disease Course:</strong> Presents on a continuum from limited involvement to generalized form</li>
+                    <li><strong>Prognosis:</strong> Untreated generalized form is fatal in less than 2 years</li>
+                    <li><strong>With Treatment:</strong> Long-term remissions possible in more than 90% of patients with cytotoxic therapy</li>
+                </ul>
+                
+                <div class="alert alert-danger">
+                    <div class="alert-title">Critical Concept:</div>
+                    <p>GPA can present with varying severity from limited disease (which may remain limited for variable periods) to a generalized form with multi-organ involvement. The limited form may progress to the generalized form if not treated appropriately.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagnostic Criteria Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📋</span> Diagnostic Criteria <span class="badge badge-board-fav">BOARD FAVORITE</span>
+            </div>
+            <div class="card-body">
+                <div class="diagnostic-criteria">
+                    <div class="criteria-title">
+                        <i>🔍</i> American College of Rheumatology (ACR) Criteria
+                    </div>
+                    <p>The presence of 2 or more of the following 4 criteria has a diagnostic sensitivity of 88% and specificity of 92%:</p>
+                    <ul class="criteria-list">
+                        <li class="criteria-item">Nasal or oral manifestation (painful or painless oral ulcers, or purulent or bloody nasal discharge)</li>
+                        <li class="criteria-item">Abnormal chest radiograph with nodules, fixed infiltrates, or cavities</li>
+                        <li class="criteria-item">Abnormal urinary sediment (microscopic hematuria with or without red cell casts)</li>
+                        <li class="criteria-item">Granulomatous inflammation on biopsy of an artery or perivascular area</li>
+                    </ul>
+                    <div class="criteria-note">Note: These criteria are the most widely accepted but not perfect. Diagnosis may be challenging without a confirmatory biopsy.</div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">Diagnostic Pearl:</div>
+                    <p>Consider GPA diagnosis for any patient presenting with necrotic ulcers on the lower extremities or palpable purpura. The saddle-nose deformity (from granulomatous involvement of the nasal septum) and "strawberry" gingivitis are hallmark signs.</p>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">
+                            <p>What laboratory finding is most specific for GPA?</p>
+                            <small>(Click to reveal)</small>
+                        </div>
+                        <div class="flashcard-back">
+                            <p><strong>c-ANCA / PR3-ANCA</strong> is positive in:</p>
+                            <ul>
+                                <li>80-95% of generalized GPA cases</li>
+                                <li>40-75% of localized GPA cases</li>
+                            </ul>
+                            <p>p-ANCA / MPO-ANCA is positive in only up to 10% of GPA cases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clinical Manifestations Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🩺</span> Clinical Manifestations <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <div class="alert-title">Typical Presentation:</div>
+                    <p>GPA typically presents with upper airway disease and nonspecific complaints such as malaise, arthralgias, fever, and weight loss.</p>
+                </div>
+                
+                <div class="system-container">
+                    <div class="system-item">
+                        <div class="system-title"><i>👁️</i> Ocular (30-50%)</div>
+                        <ul>
+                            <li>Scleritis and orbital disease most common</li>
+                            <li>Decreased vision, eye pain, foreign body sensation</li>
+                            <li>Proptosis, visual disturbance, diplopia</li>
+                            <li>Conjunctivitis, episcleritis, uveitis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>👄</i> Oral (up to 60%)</div>
+                        <ul>
+                            <li>Oral ulcerations</li>
+                            <li>Palatal perforation</li>
+                            <li><strong>"Strawberry" gingivitis</strong> - pathognomonic</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>👃</i> ENT</div>
+                        <ul>
+                            <li>Sinusitis, rhinorrhea, rhinitis, epistaxis</li>
+                            <li>Otitis media, hearing loss</li>
+                            <li><strong>Saddle-nose deformity</strong> - hallmark sign</li>
+                            <li>Nasal mucosal ulceration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>🫁</i> Pulmonary</div>
+                        <ul>
+                            <li>Cough, hemoptysis, dyspnea, pleuritic pain</li>
+                            <li>Wheezing, stridor</li>
+                            <li>Parenchymal lung nodules, pulmonary vasculitis</li>
+                            <li>Pulmonary fibrosis and hypertension</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>🧠</i> Neurologic</div>
+                        <ul>
+                            <li>Cranial nerve disorders</li>
+                            <li>Mononeuritis multiplex</li>
+                            <li>Sensory neuropathy</li>
+                            <li>Pachymeningitis</li>
+                            <li>CNS mass lesions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>🦿</i> Musculoskeletal</div>
+                        <ul>
+                            <li>Myalgias</li>
+                            <li>Polyarthralgias / asymmetric polyarthritis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>🫀</i> Cardiovascular</div>
+                        <ul>
+                            <li>Chest pain, myocarditis, pericarditis</li>
+                            <li>Ischemia, cerebrovascular accident</li>
+                            <li>Deep venous thrombosis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="system-item">
+                        <div class="system-title"><i>🧪</i> Renal</div>
+                        <ul>
+                            <li>Hematuria, proteinuria</li>
+                            <li>Glomerulonephritis</li>
+                            <li>Renal failure</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button class="accordion">Cutaneous Manifestations (50% of GPA patients) <span class="badge badge-high-yield">HIGH YIELD</span></button>
+                <div class="panel">
+                    <p><strong>Initial presentation in about 10% of cases.</strong> Activity of skin lesions often correlates with activity of other organ systems.</p>
+                    
+                    <h4>Common Manifestations:</h4>
+                    <ul>
+                        <li><strong>Most common:</strong> Palpable purpura and nodules</li>
+                        <li><strong>Second most common:</strong> Necrotic ulcerations (most commonly on lower extremities) - may resemble pyoderma gangrenosum</li>
+                        <li>Ulcerated papules symmetrically on extensor extremities (especially elbows) or buttocks</li>
+                    </ul>
+                    
+                    <h4>Less Common Manifestations:</h4>
+                    <ul>
+                        <li>Vesicles, bullae, urticarial plaques</li>
+                        <li>Petechiae, subcutaneous nodules, subungual purpura</li>
+                        <li>Panniculitis, pyoderma gangrenosum-like ulcers</li>
+                        <li>Acute febrile neutrophilic dermatosis (Sweet syndrome)</li>
+                        <li>Erythema elevatum diutinum</li>
+                    </ul>
+                    
+                    <h4>Presentation in Different Skin Tones:</h4>
+                    <ul>
+                        <li><strong>Lighter skin:</strong> Erythema of macules, urticarial plaques, and panniculitic nodules more readily appreciated</li>
+                        <li><strong>Darker skin:</strong> Erythema may be subtle; edematous papules/plaques or firm, tender nodules may be the sole clinical finding; deep red, maroon, or violaceous hue may be seen</li>
+                        <li><strong>Postinflammatory hyperpigmentation:</strong> More marked and persistent in darker skin tones</li>
+                    </ul>
+                </div>
+                
+                <button class="accordion">Radiographic Findings</button>
+                <div class="panel">
+                    <h4>Chest X-ray and CT Findings:</h4>
+                    <ul>
+                        <li>Bilateral, multiple, randomly distributed pulmonary nodules</li>
+                        <li>Airspace consolidation or ground glass opacities (due to pulmonary hemorrhage)</li>
+                        <li>Cavitation develops in approximately 50% of cases</li>
+                        <li>Pleural effusions present in approximately 10% of cases</li>
+                        <li>Hilar or mediastinal lymphadenopathy in 2-15% of cases</li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">Clinical Pearl:</div>
+                    <p>Laryngotracheal stenosis with stridor can be a complication of GPA and initially may be misdiagnosed as asthma.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Differential Diagnosis Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔄</span> Differential Diagnosis <span class="badge badge-high-yield">HIGH YIELD</span>
+            </div>
+            <div class="card-body">
+                <table class="diff-table">
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Key Differentiating Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Microscopic Polyangiitis (MPA)</td>
+                            <td>
+                                <ul>
+                                    <li>Absence of granulomatous inflammation</li>
+                                    <li>Sparing of upper respiratory tract</li>
+                                    <li>Overlap of clinical phenotypes is common</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Eosinophilic Granulomatosis with Polyangiitis</td>
+                            <td>
+                                <ul>
+                                    <li>Associated with peripheral eosinophilia</li>
+                                    <li>History of asthma</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cocaine/Levamisole Toxicity</td>
+                            <td>
+                                <ul>
+                                    <li>Can present with positive ANCA studies</li>
+                                    <li>History of cocaine use</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drug-induced Vasculitis</td>
+                            <td>
+                                <ul>
+                                    <li>Positive ANCA studies</li>
+                                    <li>History of exposure to propylthiouracil, hydralazine, anti-TNF-α, sulfasalazine, D-penicillamine, or minocycline</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Deep Fungal/Mycobacterial Infections</td>
+                            <td>
+                                <ul>
+                                    <li>May have pulmonary symptoms mimicking GPA</li>
+                                    <li>Biopsy should demonstrate causative organisms</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pyoderma Gangrenosum</td>
+                            <td>
+                                <ul>
+                                    <li>Lack of systemic involvement</li>
+                                    <li>Absence of ANCA</li>
+                                    <li>Characteristic histology</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mnemonic-container">
+                    <div class="mnemonic-title">
+                        <i>🧠</i> Memory Aid: "ACTIVE" Differential for GPA
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">A</span> - ANCA-associated vasculitides (MPA, EGPA)
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">C</span> - Cocaine/drug-induced vasculitis
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">T</span> - Tuberculosis and fungal infections
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">I</span> - Infections (deep fungi, mycobacteria)
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">V</span> - Vasculitis (other forms)
+                    </div>
+                    <div class="mnemonic-item">
+                        <span class="mnemonic-letter">E</span> - Embolic phenomena
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagnostic Workup Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">🔬</span> Diagnostic Workup
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <div class="alert-title">Definitive Diagnosis:</div>
+                    <p>Histologic confirmation showing granulomatous changes of the affected organ(s) is necessary for definitive diagnosis. However, granulomas can be distributed sparsely, and sampling may not always yield granulomas.</p>
+                </div>
+                
+                <h3>Key Laboratory Studies:</h3>
+                <ul>
+                    <li><strong>ANCA Testing:</strong>
+                        <ul>
+                            <li>c-ANCA / PR3-ANCA: Positive in 80-95% of generalized GPA and 40-75% of localized GPA</li>
+                            <li>p-ANCA / MPO-ANCA: Positive in up to 10% of GPA</li>
+                        </ul>
+                    </li>
+                    <li><strong>CBC with differential:</strong> May show normocytic normochromic anemia, leukocytosis, and/or thrombocytosis</li>
+                    <li><strong>Inflammatory markers:</strong> Elevated ESR and CRP</li>
+                    <li><strong>Renal function tests:</strong> Elevated serum creatinine</li>
+                    <li><strong>Urinalysis:</strong> May show proteinuria, hematuria, red cell casts, and dysmorphic red cells</li>
+                </ul>
+                
+                <h3>Additional Investigations:</h3>
+                <ul>
+                    <li>Liver function tests / enzymes</li>
+                    <li>Haptoglobin, iron studies, coagulation tests</li>
+                    <li>Serum protein electrophoresis, immunoglobulins, complement</li>
+                    <li>Antinuclear antibodies, rheumatoid factor, cryoglobulins</li>
+                    <li>Antiphospholipid antibodies, antiglomerular basement membrane</li>
+                    <li>Viral serologies (HIV, hepatitis B, and hepatitis C)</li>
+                    <li>Chest radiography and CT of the paranasal sinuses and chest</li>
+                    <li>Electromyogram, ECG, echocardiogram, renal ultrasound (if indicated)</li>
+                </ul>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">Diagnostic Tip:</div>
+                    <p>If clinical and laboratory criteria are suggestive of GPA and biopsy is nonconfirmatory, consider repeating the biopsy to decrease the likelihood of sampling error.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Treatment Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">💊</span> Treatment Approach <span class="badge badge-board-fav">BOARD FAVORITE</span>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <div class="alert-title">Management Pearl:</div>
+                    <p>Consultation with rheumatology, and possibly ophthalmology, pulmonology, or nephrology depending on end-organ involvement, is recommended for diagnosis and treatment.</p>
+                </div>
+                
+                <div class="treatment-level">
+                    <div class="treatment-title">Induction Therapy for Systemic GPA</div>
+                    <ul>
+                        <li>Systemic glucocorticoids plus cyclophosphamide or rituximab</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-level">
+                    <div class="treatment-title">Maintenance Therapy</div>
+                    <ul>
+                        <li>Azathioprine (check TPMT activity before starting)</li>
+                        <li>Methotrexate</li>
+                        <li>Rituximab</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-level">
+                    <div class="treatment-title">For Non-Organ-Threatening Disease</div>
+                    <ul>
+                        <li>Systemic glucocorticoids plus methotrexate or mycophenolate mofetil</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-level">
+                    <div class="treatment-title">Milder Cases</div>
+                    <ul>
+                        <li>Trimethoprim-sulfamethoxazole (may help maintain remission but not for primary treatment)</li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-success">
+                    <div class="alert-title">New FDA-Approved Treatment:</div>
+                    <p>Avacopan is FDA approved as an adjunctive treatment for adult patients with severe active ANCA-associated vasculitis (GPA and MPA) in combination with standard therapy including glucocorticoids.</p>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">Important Note:</div>
+                    <p>Relapses with a different presenting manifestation from the initial presentation are common. Careful monitoring is required for all systemic therapies.</p>
+                </div>
+                
+                <div class="alert alert-info">
+                    <div class="alert-title">Pediatric Treatment:</div>
+                    <p>Rituximab is the first drug approved by the FDA for GPA in children (aged 2 years and older); its safety profile in children was shown to be similar to that of adults.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quiz Card -->
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📝</span> Board Exam Practice Questions
+            </div>
+            <div class="card-body">
+                <div class="quiz-container">
+                    <div class="quiz-question">1. A 52-year-old woman presents with hemoptysis, bilateral pulmonary infiltrates on chest X-ray, and microscopic hematuria. Which laboratory test would be most helpful in diagnosing granulomatosis with polyangiitis?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="checkAnswer(this, true, 1)">c-ANCA / PR3-ANCA</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 1)">Anti-glomerular basement membrane antibodies</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 1)">Antinuclear antibodies (ANA)</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 1)">Rheumatoid factor</li>
+                    </ul>
+                    <div class="quiz-feedback" id="feedback1">
+                        Correct! c-ANCA / PR3-ANCA is positive in 80-95% of generalized GPA cases and is the most specific laboratory test for diagnosing GPA.
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">2. Which of the following is considered pathognomonic for granulomatosis with polyangiitis?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 2)">Oral ulcerations</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, true, 2)">"Strawberry" gingivitis</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 2)">Palpable purpura</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 2)">Scleritis</li>
+                    </ul>
+                    <div class="quiz-feedback" id="feedback2">
+                        Correct! "Strawberry" gingivitis (hyperplastic gingival tissues and petechial hemorrhage resembling a strawberry) is essentially pathognomonic for GPA.
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">3. According to American College of Rheumatology (ACR) criteria, how many criteria are needed for the diagnosis of GPA?</div>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 3)">1 out of 4</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, true, 3)">2 out of 4</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 3)">3 out of 4</li>
+                        <li class="quiz-option" onclick="checkAnswer(this, false, 3)">4 out of 4</li>
+                    </ul>
+                    <div class="quiz-feedback" id="feedback3">
+                        Correct! The presence of 2 or more of the 4 ACR criteria has a diagnostic sensitivity of 88% and specificity of 92% for GPA.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Accordion functionality
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        
+        // Quiz functionality
+        function checkAnswer(option, isCorrect, questionNum) {
+            // Get all options in this quiz
+            var parent = option.parentElement;
+            var options = parent.getElementsByClassName("quiz-option");
+            
+            // Reset all options
+            for (var i = 0; i < options.length; i++) {
+                options[i].classList.remove("selected", "correct", "incorrect");
+            }
+            
+            // Mark this option as selected
+            option.classList.add("selected");
+            
+            // Show correct/incorrect and feedback
+            if (isCorrect) {
+                option.classList.add("correct");
+                document.getElementById("feedback" + questionNum).classList.add("correct");
+                document.getElementById("feedback" + questionNum).classList.remove("incorrect");
+                document.getElementById("feedback" + questionNum).style.display = "block";
+            } else {
+                option.classList.add("incorrect");
+                document.getElementById("feedback" + questionNum).classList.add("incorrect");
+                document.getElementById("feedback" + questionNum).classList.remove("correct");
+                document.getElementById("feedback" + questionNum).textContent = "Incorrect. Try again!";
+                document.getElementById("feedback" + questionNum).style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Review: Cutaneous Dermatomyositis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .card { background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 24px; margin-bottom: 24px; }
+        .card-header { font-size: 1.5rem; font-weight: 700; color: #1a2a6c; border-bottom: 2px solid #e9ecef; padding-bottom: 12px; margin-bottom: 16px; }
+        .pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-weight: 600; font-size: 0.8rem; }
+        .pill-purple { background-color: #e9d5ff; color: #5b21b6; }
+        .pill-red { background-color: #fee2e2; color: #b91c1c; }
+        .pill-green { background-color: #dcfce7; color: #166534; }
+        .pill-blue { background-color: #dbeafe; color: #1e40af; }
+        .pill-amber { background-color: #fef3c7; color: #92400e; }
+        .key-point { border-left: 4px solid #b32160; padding: 16px; background-color: #fdf2f8; border-radius: 8px; margin: 16px 0; }
+        .key-point strong { color: #831843; }
+        .accordion-item { border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+        .accordion-header { background-color: #f1f3f5; padding: 16px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-content { padding: 16px; display: none; border-top: 1px solid #dee2e6; }
+        .accordion-header .icon::before { content: '+'; font-size: 1.5rem; font-weight: bold; }
+        .accordion-item.active .accordion-header .icon::before { content: '−'; }
+        .algorithm-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .algorithm-box { border: 2px solid #ced4da; border-radius: 8px; padding: 1.5rem; text-align: center; position: relative; }
+        .algorithm-box.decision { border-color: #f59e0b; background-color: #fffbeb; }
+        .algorithm-box.action { border-color: #1d4ed8; background-color: #eef2ff; }
+        .arrow { font-size: 2rem; color: #6c757d; font-weight: bold; text-align: center; margin: 1rem 0; }
+        .vignette { background-color: #e6f7ff; border: 1px solid #91d5ff; border-radius: 8px; padding: 16px; margin: 20px 0; }
+        .vignette-title { font-weight: bold; color: #0050b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Cutaneous Dermatomyositis</h1>
+        <p class="text-xl text-gray-600 mt-2">A High-Yield Board Review for the Dermatology Resident</p>
+    </header>
+
+    <!-- HIGH-YIELD FIRST -->
+    <div class="card bg-gradient-to-br from-indigo-50 to-purple-50">
+        <h2 class="card-header border-indigo-200 text-indigo-800">High-Yield First: Don't Miss These on Exam Day</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-lg mb-2">Pathognomonic Signs 🎯</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>Gottron's Papules:</strong> Violaceous papules over IP/MCP joints.</li>
+                    <li><strong>Heliotrope Eruption:</strong> Pink-violaceous erythema +/- edema of periorbital skin.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-lg mb-2">The "Must Screen For" Associations 🚨</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>Internal Malignancy:</strong> ~14% in adults with CADM.</li>
+                    <li><strong>Interstitial Lung Disease (ILD):</strong> ~13% in adults with CADM.</li>
+                    <li>(Juvenile DM is NOT associated with these risks).</li>
+                </ul>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-lg mb-2">Key Symptom & DDx Pearl 🔑</h3>
+                <p><strong>Overwhelming Pruritus:</strong> Often debilitating, a key feature distinguishing it from lupus, which is typically not as intensely pruritic.</p>
+                <p class="mt-2"><strong>DM vs. Lupus Face Rash:</strong> DM rash <strong class="text-red-600">INVOLVES</strong> the nasolabial folds. ACLE malar rash traditionally <strong class="text-green-600">SPARES</strong> them.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-lg mb-2">Core Treatment Principle 💡</h3>
+                <p>Skin disease is often resistant to therapy. Most patients require <strong class="text-blue-700">systemic agents</strong>; photoprotection and topicals alone are rarely sufficient.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLINICAL FEATURES & CLASSIFICATION -->
+    <div class="card">
+        <h2 class="card-header">The Clinical Picture: Presentation and Classification</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="font-semibold text-lg mb-2">Cutaneous Findings</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong>Gottron's Sign:</strong> Macular violaceous erythema over joints (elbows, knees).</li>
+                    <li><strong>"Shawl" and "V-sign":</strong> Confluent, violaceous erythema on upper back/shoulders and anterior neck/chest.</li>
+                    <li><strong>Scalp:</strong> Intensely pruritic, violaceous erythema with prominent scale and diffuse alopecia.</li>
+                    <li><strong>Periungual:</strong> Telangiectasias and cuticular hypertrophy are common.</li>
+                    <li><strong>Photosensitivity:</strong> Reduced Minimal Erythema Doses (MEDs) to UVB are common, suggesting UV light as a trigger.</li>
+                    <li><strong>Calcinosis Cutis & Panniculitis:</strong> Less common but known manifestations.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg mb-2">Impact & Course</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong>Quality of Life:</strong> Impairment is significant, often greater than in psoriasis or atopic dermatitis due to severe, disabling pruritus and burning.</li>
+                    <li><strong>Disease Course:</strong> Often chronic, can persist for years. Mean duration of skin disease in one review was 4.5 years.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-8">
+            <h3 class="font-semibold text-lg mb-2 text-center">Classifying Cutaneous DM: Know the Subtypes</h3>
+            <div id="accordion-container-classification" class="space-y-2">
+                <div class="accordion-item">
+                    <div class="accordion-header"><span>Classic Dermatomyositis (DM)</span><span class="icon"></span></div>
+                    <div class="accordion-content">
+                        <p>The most common presentation. Features both characteristic cutaneous disease AND muscle weakness. Skin findings can precede myositis by months (~30% of cases).</p>
+                        <p class="mt-2"><strong class="pill pill-amber">Term to Know:</strong> "Premyopathic DM" = skin findings <6 months, no clinical muscle disease yet.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header"><span>Clinically Amyopathic DM (CADM)</span><span class="icon"></span></div>
+                    <div class="accordion-content">
+                        <p>An umbrella term for patients with characteristic skin findings for at least 6 months WITHOUT clinical muscle weakness. Comprises two subgroups:</p>
+                        <ul class="list-decimal list-inside mt-2 space-y-1">
+                            <li><strong>Amyopathic DM ("DM sine myositis"):</strong> No clinical weakness AND no laboratory/radiologic/EMG evidence of myositis.</li>
+                            <li><strong>Hypomyopathic DM:</strong> No clinical weakness, BUT subclinical evidence of myositis is present (e.g., elevated muscle enzymes, abnormal MRI/EMG/biopsy).</li>
+                        </ul>
+                        <div class="key-point mt-4"><strong>Clinical Pearl:</strong> About 9-13% of patients with CADM for >6 months will eventually develop classic DM. Watch them closely!</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header"><span>Postmyopathic Dermatomyositis</span><span class="icon"></span></div>
+                    <div class="accordion-content">
+                        <p>Describes the common clinical scenario where muscle disease resolves with immunosuppressive therapy, but cutaneous symptoms persist.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PATIENT EVALUATION -->
+    <div class="card">
+        <h2 class="card-header">Patient Evaluation: Workup & Diagnosis</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="font-semibold text-lg mb-2">Skin Biopsy: When & Why?</h3>
+                <p><strong>Perform a skin biopsy if:</strong></p>
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li>Cutaneous findings are ambiguous.</li>
+                    <li>Skin findings suggest DM but there are no signs of muscle disease (to confirm CADM).</li>
+                </ul>
+                <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                    <h4 class="font-bold">Typical Histopathology:</h4>
+                    <ul class="list-disc list-inside mt-1">
+                        <li>Interface dermatitis (vacuolar change).</li>
+                        <li>Superficial lymphocytic infiltrate.</li>
+                        <li><strong>Dermal mucin.</strong></li>
+                    </ul>
+                    <p class="mt-2 text-sm text-red-700 font-semibold">⚠️ Exam Trap: Histopathology is indistinguishable from acute/subacute cutaneous lupus erythematosus (ACLE/SCLE).</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold text-lg mb-2">Essential Investigations</h3>
+                <p>For any patient with cutaneous findings of DM, you must investigate for associated systemic disease.</p>
+                <ul class="list-disc list-inside mt-2 space-y-2">
+                    <li>
+                        <strong>Myopathy Screen:</strong>
+                        <ul class="list-circle list-inside ml-4">
+                            <li>Muscle examination.</li>
+                            <li>Serum creatinine kinase (CK) and aldolase.</li>
+                            <li><strong class="pill pill-amber">Follow-up:</strong> If no myositis initially, repeat labs every 2-3 months.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Malignancy Screen:</strong> Age- and sex-appropriate screening is crucial in adults.
+                    </li>
+                    <li>
+                        <strong>Pulmonary Disease Screen:</strong> Evaluate for ILD, especially in CADM patients.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TREATMENT -->
+    <div class="card">
+        <h2 class="card-header text-center">Treatment Strategy: A Step-by-Step Approach</h2>
+        
+        <!-- FOUNDATIONAL THERAPIES -->
+        <div class="mb-8">
+            <h3 class="font-bold text-xl mb-4 text-center text-gray-700">Foundational Therapy for ALL Patients</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-4 bg-blue-50 rounded-lg text-center">
+                    <h4 class="font-semibold">☀️ Aggressive Photoprotection</h4>
+                    <p class="text-sm">Broad-spectrum SPF 30+, reapply q3-4h, sun-protective clothing. Consider Vitamin D supplementation.</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg text-center">
+                    <h4 class="font-semibold">♨️ Antipruritic Agents</h4>
+                    <p class="text-sm">Treat debilitating pruritus. Sedating antihistamines (hydroxyzine, doxepin) or gabapentin are often needed. Non-sedating are not helpful.</p>
+                </div>
+                <div class="p-4 bg-purple-50 rounded-lg text-center">
+                    <h4 class="font-semibold">🧴 Topical Therapies</h4>
+                    <p class="text-sm">High-potency steroids for trunk/extremities. Low-potency for face. Topical calcineurin inhibitors (tacrolimus) are steroid-sparing options, especially for the face.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERACTIVE ALGORITHM -->
+        <h3 class="font-bold text-xl mb-4 text-center text-gray-700">Interactive Treatment Algorithm</h3>
+        <div class="algorithm-grid">
+            <div class="algorithm-box decision">
+                <h4 class="text-lg font-semibold mb-2">ASSESS DISEASE SEVERITY</h4>
+                <p>After initiating foundational therapies, is the skin disease mild or severe?</p>
+                <p class="text-sm mt-1">(Mild = limited BSA, minimal pruritus. Severe = widespread, intolerable pruritus, disabling).</p>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- MILD PATH -->
+                <div>
+                    <div class="algorithm-box action">
+                        <h4 class="text-lg font-semibold mb-2"><span class="pill pill-green">MILD Disease</span></h4>
+                        <p class="font-bold">First-Line Systemic: Hydroxychloroquine</p>
+                        <p class="text-sm">Assess response after 3 months.</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="algorithm-box decision">
+                        <h4 class="text-lg font-semibold mb-2">Response to HCQ?</h4>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                         <div class="text-center">
+                            <div class="arrow text-green-500">✔<br/>Sufficient</div>
+                             <div class="algorithm-box">Taper to lowest effective dose.</div>
+                         </div>
+                         <div class="text-center">
+                            <div class="arrow text-red-500">✘<br/>Insufficient</div>
+                             <div class="algorithm-box action">
+                                 <p class="font-bold">Add Methotrexate OR Quinacrine</p>
+                                 <p class="text-xs mt-2">MTX is often more potent. Choice depends on severity & comorbidities.</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+                <!-- SEVERE PATH -->
+                <div>
+                    <div class="algorithm-box action">
+                        <h4 class="text-lg font-semibold mb-2"><span class="pill pill-red">SEVERE Disease</span></h4>
+                        <p class="font-bold">First-Line Systemic: Methotrexate</p>
+                        <p class="text-sm">May be used alone or started simultaneously with Hydroxychloroquine. Assess response after 3 months.</p>
+                    </div>
+                     <div class="arrow">↓</div>
+                    <div class="algorithm-box decision">
+                        <h4 class="text-lg font-semibold mb-2">Response to MTX +/- HCQ?</h4>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                         <div class="text-center">
+                            <div class="arrow text-green-500">✔<br/>Sufficient</div>
+                             <div class="algorithm-box">Taper to lowest effective dose.</div>
+                         </div>
+                         <div class="text-center">
+                            <div class="arrow text-red-500">✘<br/>Insufficient</div>
+                             <div class="algorithm-box action">
+                                 <p class="font-bold">Refractory Disease</p>
+                                 <p class="text-xs mt-2">Proceed to therapies like IVIG or Mycophenolate Mofetil (MMF).</p>
+                                 <p class="text-xs mt-1">(See Refractory DM topic).</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="key-point mt-8">
+            <strong>⚠️ A Note on Systemic Glucocorticoids:</strong> While used for myositis or ILD, long-term systemic glucocorticoids are <span class="font-bold">NOT</span> advised for treating isolated cutaneous DM due to their significant side effect profile and unpredictable efficacy for skin disease.
+        </div>
+    </div>
+    
+    <!-- SYSTEMIC DRUG CARDS -->
+    <div class="card">
+        <h2 class="card-header">The Systemic Armamentarium: Drug Pearls</h2>
+        <div id="accordion-container-drugs" class="space-y-3">
+            
+            <!-- Hydroxychloroquine -->
+            <div class="accordion-item">
+                <div class="accordion-header bg-green-100"><span>Hydroxychloroquine (HCQ)</span><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p><span class="pill pill-green">Role:</span> First-line for <strong>mild</strong> cutaneous DM.</p>
+                    <p class="mt-2"><strong>Dosing Pearl:</strong> ≤ 5 mg/kg/day (based on <strong>real</strong> body weight) to minimize retinopathy risk.</p>
+                    <p class="mt-2"><strong>Time to Effect:</strong> Slow onset. Counsel patient that it may take 6-12 weeks. Give a 3-month trial.</p>
+                    <div class="vignette mt-4">
+                        <p class="vignette-title">🚨 Board Exam Trap</p>
+                        <p>A patient with DM started on HCQ develops a widespread morbilliform rash. What's going on? This is a known adverse effect! Cutaneous drug eruptions to HCQ are surprisingly common in DM (~30% of patients).</p>
+                    </div>
+                    <p class="mt-2"><strong>Key Monitoring:</strong> Baseline and annual ophthalmologic exam.</p>
+                    <p class="mt-2"><strong>Pro-Tip:</strong> Smoking can decrease efficacy. Encourage cessation.</p>
+                </div>
+            </div>
+            
+            <!-- Methotrexate -->
+            <div class="accordion-item">
+                <div class="accordion-header bg-amber-100"><span>Methotrexate (MTX)</span><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p><span class="pill pill-amber">Role:</span> First-line for <strong>severe</strong> cutaneous DM, or add-on for HCQ failure in mild disease.</p>
+                    <p class="mt-2"><strong>Administration:</strong> Given <strong>WEEKLY</strong>. Can titrate up to 25 mg/week. Onset of action is 2-3 months at target dose.</p>
+                    <p class="mt-2"><strong>Dosing Pearl:</strong> Consider splitting oral doses >15mg/week to improve absorption.</p>
+                    <p class="mt-2"><strong>Supplementation:</strong> Prescribe Folic Acid 1mg daily to reduce side effects (GI upset, stomatitis).</p>
+                    <div class="vignette mt-4">
+                        <p class="vignette-title">🚨 Board Exam Trap</p>
+                        <p>A patient with DM has concomitant ILD. Why is MTX a poor choice for their skin disease? MTX carries a risk of pulmonary toxicity/fibrosis and is a relative contraindication in patients with pre-existing significant lung disease.</p>
+                    </div>
+                     <p class="mt-2"><strong>Key Monitoring:</strong> Baseline and periodic CBC, LFTs, renal function. Screen for Hep B/C. Teratogenic.</p>
+                </div>
+            </div>
+            
+            <!-- Quinacrine -->
+            <div class="accordion-item">
+                <div class="accordion-header bg-blue-100"><span>Quinacrine</span><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p><span class="pill pill-blue">Role:</span> Add-on therapy to HCQ for patients with an insufficient response.</p>
+                    <p class="mt-2"><strong>Dosing:</strong> Typically 100 mg per day.</p>
+                    <p class="mt-2"><strong>Key Advantage:</strong> Does <strong>NOT</strong> cause retinopathy, so it can be safely combined with HCQ.</p>
+                    <p class="mt-2"><strong>Common Side Effect:</strong> Reversible yellow discoloration of the skin.</p>
+                    <p class="mt-2"><strong>Availability Issue:</strong> Must be obtained from a compounding pharmacy in the US.</p>
+                </div>
+            </div>
+
+            <!-- Chloroquine -->
+            <div class="accordion-item">
+                <div class="accordion-header bg-gray-200"><span>Chloroquine</span><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p class="pill bg-gray-300 text-gray-800">Role:</p> An alternative for patients who fail HCQ, though data for superior efficacy is lacking.
+                    <p class="mt-2"><strong>Dosing Pearl:</strong> Dose should not exceed 3 mg/kg/day based on <strong>ideal</strong> body weight.</p>
+                    <p class="mt-2"><strong>⚠️ Key Disadvantage:</strong> Higher risk of retinopathy compared to hydroxychloroquine. Not a preferred first-line agent.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- FINAL SUMMARY -->
+    <div class="card bg-gray-800 text-white">
+        <h2 class="card-header text-white border-gray-600">Final Summary: Core Concepts</h2>
+        <ul class="space-y-3 mt-4 list-disc list-inside">
+            <li><strong>Diagnosis is Clinical:</strong> Based on pathognomonic findings (Gottron's, Heliotrope). Biopsy helps in ambiguous cases but histology mimics lupus. The key clinical differentiator is nasolabial fold involvement.</li>
+            <li><strong>Always Screen:</strong> All adult patients need evaluation for myositis, ILD, and internal malignancy.</li>
+            <li><strong>Treatment is Multifaceted:</strong> Photoprotection, antipruritics, and topicals are foundational for all, but systemic therapy is almost always required.</li>
+            <li><strong>Treatment is Stratified by Severity:</strong>
+                <ul class="list-circle list-inside ml-6 mt-1">
+                    <li><strong>Mild:</strong> Start with Hydroxychloroquine.</li>
+                    <li><strong>Severe:</strong> Start with Methotrexate (+/- HCQ).</li>
+                </ul>
+            </li>
+             <li><strong>Key Drug Contraindications:</strong> Avoid MTX in significant liver/lung disease. Remember the high rate of skin eruptions with HCQ in DM patients.</li>
+            <li><strong>Patience is Key:</strong> Systemic therapies take 2-3 months to show full effect. Counsel your patients accordingly.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            accordionItem.classList.toggle('active');
+            const accordionContent = header.nextElementSibling;
+            if (accordionContent.style.display === 'block') {
+                accordionContent.style.display = 'none';
+            } else {
+                accordionContent.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

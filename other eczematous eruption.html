@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eczematous Eruptions - Chapter 13 Study Guide</title>
+    <style>
+        :root {
+            --seborrheic: #ffd6a5;
+            --asteatotic: #caffbf; 
+            --disseminated: #9bf6ff;
+            --nummular: #bdb2ff;
+            --dyshidrotic: #ffc6ff;
+            --juvenile: #fdffb6;
+            --stasis: #a0c4ff;
+            --infectious: #ff9e7a;
+            --diaper: #ffadad;
+            --htlv: #c4f5cb;
+            --pityriasis: #e7c6ff;
+            --dark-text: #333;
+            --light-text: #fff;
+            --header-bg: #2b2d42;
+            --accent: #4361ee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            color: var(--light-text);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            font-weight: 300;
+        }
+        
+        nav {
+            background-color: #edf2f4;
+            padding: 0.75rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            position: sticky;
+            top: 9rem;
+            z-index: 99;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .nav-button {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+        
+        .nav-button.seborrheic { background-color: var(--seborrheic); }
+        .nav-button.asteatotic { background-color: var(--asteatotic); }
+        .nav-button.disseminated { background-color: var(--disseminated); }
+        .nav-button.nummular { background-color: var(--nummular); }
+        .nav-button.dyshidrotic { background-color: var(--dyshidrotic); }
+        .nav-button.juvenile { background-color: var(--juvenile); }
+        .nav-button.stasis { background-color: var(--stasis); }
+        .nav-button.infectious { background-color: var(--infectious); }
+        .nav-button.diaper { background-color: var(--diaper); }
+        .nav-button.htlv { background-color: var(--htlv); }
+        .nav-button.pityriasis { background-color: var(--pityriasis); }
+        
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            padding: 1rem;
+            color: var(--dark-text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .card-header.seborrheic { background-color: var(--seborrheic); }
+        .card-header.asteatotic { background-color: var(--asteatotic); }
+        .card-header.disseminated { background-color: var(--disseminated); }
+        .card-header.nummular { background-color: var(--nummular); }
+        .card-header.dyshidrotic { background-color: var(--dyshidrotic); }
+        .card-header.juvenile { background-color: var(--juvenile); }
+        .card-header.stasis { background-color: var(--stasis); }
+        .card-header.infectious { background-color: var(--infectious); }
+        .card-header.diaper { background-color: var(--diaper); }
+        .card-header.htlv { background-color: var(--htlv); }
+        .card-header.pityriasis { background-color: var(--pityriasis); }
+        
+        .card-header h2 {
+            font-size: 1.3rem;
+        }
+        
+        .card-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 500;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .card-body {
+            padding: 1rem 1.2rem;
+            display: none;
+        }
+        
+        .card.active .card-body {
+            display: block;
+        }
+        
+        .collapse-indicator {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+        }
+        
+        .collapse-indicator::after {
+            content: "▼";
+            font-size: 0.8rem;
+        }
+        
+        .card.active .collapse-indicator::after {
+            content: "▲";
+        }
+        
+        .section {
+            margin-bottom: 1.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            display: inline-block;
+            margin-right: 0.4rem;
+            border-radius: 50%;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 0.5rem;
+            border: 1px solid #e5e5e5;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            background-color: rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .key-list {
+            list-style: none;
+        }
+        
+        .key-list li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .key-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2rem;
+            margin-left: -1.2rem;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 247, 0, 0.2);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        
+        .sublist {
+            list-style: none;
+            margin-left: 1.2rem;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .sublist li {
+            margin-bottom: 0.2rem;
+            position: relative;
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .sublist li::before {
+            content: "◦";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2rem;
+            margin-left: -1.2rem;
+        }
+        
+        .memory-tip {
+            background-color: #f1f1f1;
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .memory-tip strong {
+            color: var(--accent);
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            text-decoration: underline dotted;
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 250px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -125px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            font-style: normal;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Search bar styling */
+        .search-container {
+            position: sticky;
+            top: 5rem;
+            z-index: 100;
+            background-color: #fff;
+            padding: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .search-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 0 8px rgba(67, 97, 238, 0.5);
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            max-width: 600px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 101;
+            display: none;
+        }
+        
+        .search-result-item {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .search-result-item:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .highlight-text {
+            background-color: #ffed8a;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                top: 8rem;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .search-container {
+                top: 4.5rem;
+            }
+            
+            .card-header {
+                padding: 0.8rem;
+            }
+            
+            .card-body {
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chapter 13: Other Eczematous Eruptions</h1>
+        <p class="subtitle">A Comprehensive Study Guide</p>
+    </header>
+    
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search conditions, symptoms, treatments...">
+        <div class="search-results"></div>
+    </div>
+    
+    <nav>
+        <a href="#seborrheic" class="nav-button seborrheic">Seborrheic Dermatitis</a>
+        <a href="#asteatotic" class="nav-button asteatotic">Asteatotic Eczema</a>
+        <a href="#disseminated" class="nav-button disseminated">Disseminated Eczema</a>
+        <a href="#nummular" class="nav-button nummular">Nummular Dermatitis</a>
+        <a href="#dyshidrotic" class="nav-button dyshidrotic">Dyshidrotic Eczema</a>
+        <a href="#juvenile" class="nav-button juvenile">Juvenile Plantar Dermatosis</a>
+        <a href="#stasis" class="nav-button stasis">Stasis Dermatitis</a>
+        <a href="#infectious" class="nav-button infectious">Infectious Eczematous Dermatitis</a>
+        <a href="#diaper" class="nav-button diaper">Diaper Dermatitis</a>
+        <a href="#htlv" class="nav-button htlv">HTLV-Associated Dermatitis</a>
+        <a href="#pityriasis" class="nav-button pityriasis">Pityriasis Alba</a>
+    </nav>
+    
+    <main>
+        <div id="seborrheic" class="card">
+            <div class="card-header seborrheic">
+                <h2>1. Seborrheic Dermatitis</h2>
+                <span class="card-badge">Common Condition</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis and Malassezia's Role</h3>
+                    <ul class="key-list">
+                        <li><i>Malassezia</i> (lipophilic yeast) acts as opportunistic pathogen</li>
+                        <li>No direct relationship between yeast quantity and disease severity</li>
+                        <li>Altered sebum composition more significant than quantity (↑triglycerides, ↓free fatty acids)</li>
+                        <li>Imbalance of skin microbiome: reduced <i>Cutibacterium acnes</i> population</li>
+                        <li>Inflammation possibly caused by fungal metabolites, lipase, and reactive oxygen species</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> Think "Malassezia SALTS" - <strong>S</strong>ebum composition altered, <strong>A</strong>ctive sebaceous glands, <strong>L</strong>ipophilic yeast, <strong>T</strong>riglycerides increased, <strong>S</strong>ebum-rich areas affected.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Clinical Features: Infantile vs Adult</h3>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th>Infantile</th>
+                                <th>Adult</th>
+                            </tr>
+                            <tr>
+                                <td>Begins ~1 week after birth, persists several months</td>
+                                <td>Chronic with peak in 4th-6th decades</td>
+                            </tr>
+                            <tr>
+                                <td>"Cradle cap": thick adherent yellow scale on vertex/fontanelle</td>
+                                <td>Strikingly symmetric distribution</td>
+                            </tr>
+                            <tr>
+                                <td>Can involve axillae, inguinal creases, neck, retroauricular folds</td>
+                                <td>Affects scalp, eyebrows, nasolabial folds, ears, presternal area</td>
+                            </tr>
+                            <tr>
+                                <td>Possible disseminated psoriasiform eruption on trunk/extremities</td>
+                                <td>Ranges from dandruff to inflammatory plaques with yellow-red, bran-like scales</td>
+                            </tr>
+                            <tr>
+                                <td>Generally resolves spontaneously</td>
+                                <td>Men affected more often than women</td>
+                            </tr>
+                        </table>
+                    <div class="differential-diagnosis">
+                        <h4>🧠 DIFFERENTIAL DIAGNOSIS</h4>
+                        
+                        <div class="diagnosis-section">
+                            <h5>🧒 Infantile Seborrheic Dermatitis vs. Other Diaper/Scalp Conditions</h5>
+                            <table>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Key Differentiating Features</th>
+                                </tr>
+                                <tr>
+                                    <td>Atopic Dermatitis</td>
+                                    <td>Later onset, intense pruritus, irritability, poor sleep</td>
+                                </tr>
+                                <tr>
+                                    <td>Irritant Diaper Dermatitis</td>
+                                    <td>Spares folds, more localized</td>
+                                </tr>
+                                <tr>
+                                    <td>Candidiasis</td>
+                                    <td>Satellite pustules, intense erythema, frequent in folds</td>
+                                </tr>
+                                <tr>
+                                    <td>Infantile Psoriasis</td>
+                                    <td>May resemble psoriasiform SD; may evolve into psoriasis elsewhere</td>
+                                </tr>
+                                <tr>
+                                    <td>Langerhans Cell Histiocytosis</td>
+                                    <td>Rare, may mimic SD in folds</td>
+                                </tr>
+                                <tr>
+                                    <td>Acrodermatitis Enteropathica</td>
+                                    <td>Look for periorificial dermatitis, diarrhea, alopecia</td>
+                                </tr>
+                                <tr>
+                                    <td>Leiner Disease</td>
+                                    <td>Now considered erythroderma in immunocompromised infants</td>
+                                </tr>
+                            </table>
+                            
+                            <div class="memory-tip">
+                                <strong>Mnemonic for Cradle Cap DDx:</strong> "SCALP Can Peel Like Leaves" - <strong>S</strong>D, <strong>C</strong>andidiasis, <strong>P</strong>soriasis, <strong>L</strong>angerhans, <strong>L</strong>einer
+                            </div>
+                        </div>
+                        
+                        <div class="diagnosis-section">
+                            <h5>🧔 Adult Seborrheic Dermatitis vs. Other Facial/Scalp Conditions</h5>
+                            <table>
+                                <tr>
+                                    <th>Condition</th>
+                                    <th>Clues</th>
+                                </tr>
+                                <tr>
+                                    <td>Psoriasis</td>
+                                    <td>Thicker plaques, silvery scale, more discrete, less greasy, may involve elbows/knees</td>
+                                </tr>
+                                <tr>
+                                    <td>Rosacea</td>
+                                    <td>Papules, pustules, telangiectasia; spares nasolabial folds</td>
+                                </tr>
+                                <tr>
+                                    <td>Lupus Erythematosus</td>
+                                    <td>Spares nasolabial folds, photodistribution, systemic signs</td>
+                                </tr>
+                                <tr>
+                                    <td>Tinea Capitis (in children)</td>
+                                    <td>Especially Black children, consider T. tonsurans</td>
+                                </tr>
+                                <tr>
+                                    <td>Pityriasis Amiantacea</td>
+                                    <td>Thick asbestos-like scalp scales; may progress to psoriasis</td>
+                                </tr>
+                                <tr>
+                                    <td>Dermatomyositis</td>
+                                    <td>Occipital erythema, scalp scaling + hair loss</td>
+                                </tr>
+                                <tr>
+                                    <td>Facial Dermatitis from Dupilumab</td>
+                                    <td>Mimics SD, assess history</td>
+                                </tr>
+                                <tr>
+                                    <td>Inverse Psoriasis</td>
+                                    <td>In folds, more shiny and less greasy</td>
+                                </tr>
+                                <tr>
+                                    <td>Erythrasma</td>
+                                    <td>Coral-red under Wood's lamp, intertriginous, flat patches</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="treatment-section">
+                            <h4>💊 TREATMENT</h4>
+                            
+                            <div class="treatment-subsection">
+                                <h5>👶 Infantile SD</h5>
+                                <table>
+                                    <tr>
+                                        <th>Approach</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                    <tr>
+                                        <td>General</td>
+                                        <td>Bathing + emollients</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Topical antifungals</td>
+                                        <td>Ketoconazole 2% cream – for persistent cases</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Low-potency topical steroids</td>
+                                        <td>For inflamed or extensive disease</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scalp</td>
+                                        <td>Gentle shampoo; avoid harsh keratolytics or mechanical removal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Superinfection</td>
+                                        <td>Add topical/oral antifungals or antibiotics as needed</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="treatment-subsection">
+                                <h5>👨‍🦰 Adult SD</h5>
+                                <table>
+                                    <tr>
+                                        <th>Treatment Category</th>
+                                        <th>Examples</th>
+                                    </tr>
+                                    <tr>
+                                        <td>First-line (Antifungals)</td>
+                                        <td>Ketoconazole, ciclopirox (shampoo or cream) – efficacy: 75–90%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Low-potency steroids</td>
+                                        <td>Short-term, e.g., hydrocortisone – avoid long-term use</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adjunctive</td>
+                                        <td>Emollients, zinc pyrithione, selenium sulfide, tar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Second-line</td>
+                                        <td>Topical calcineurin inhibitors (tacrolimus, pimecrolimus) – useful for facial areas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Systemic antifungals</td>
+                                        <td>Reserved for severe/recalcitrant cases – e.g., weekly fluconazole</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maintenance</td>
+                                        <td>Essential – relapse likely without it; use antifungal intermittently (e.g., once weekly)</td>
+                                    </tr>
+                                </table>
+                                
+                                <div class="warning-tip">
+                                    <strong>❗</strong> Avoid strong corticosteroids on the face or prolonged use to prevent perioral dermatitis, atrophy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Association with HIV/Neurological Conditions</h3>
+                    <ul class="key-list">
+                        <li>Extensive/therapy-resistant seborrheic dermatitis can indicate HIV infection</li>
+                        <li>2% of patients with seborrheic dermatitis tested HIV-positive</li>
+                        <li>Parkinson's disease: facial immobility leads to sebum accumulation</li>
+                        <li>Other associations: cerebrovascular accidents, immunosuppression</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="asteatotic" class="card">
+            <div class="card-header asteatotic">
+                <h2>2. Asteatotic Eczema</h2>
+                <span class="card-badge">Age-related</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>"Dried riverbed" or "crazy-paving" pattern of superficial skin cracks</li>
+                        <li>Predilection: shins, lower flanks, posterior axillary line</li>
+                        <li>Initially dry, dull with fine scaling; progresses to pink/red with fissures</li>
+                        <li>Can develop pseudoichthyosis appearance</li>
+                        <li>Painful cracks, occasionally with hemorrhage</li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis/Predisposing Factors</h3>
+                    <ul class="key-list">
+                        <li>Aging-related stratum corneum dysfunction (not sebum deficiency)</li>
+                        <li>Decreased intercellular lipids and altered ceramide ratio</li>
+                        <li>Reduced water-binding capacity (decreased natural moisturizing factor)</li>
+                        <li>Exacerbating factors: low humidity, frequent bathing, soaps, xerosis</li>
+                        <li>Associated with: malnutrition, renal disease, hypothyroidism, HIV</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Topical corticosteroid ointments for acute inflammation</li>
+                        <li>Regular emollients (petrolatum, water-in-oil formulations)</li>
+                        <li>Moisturizers containing urea, ceramides, or lactic acid</li>
+                        <li>Bath oils and reduction of irritating factors</li>
+                        <li>Treatment of underlying conditions</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">Common Traps in Board Questions</h3>
+                    <div class="alert alert-warning">
+                        <ul class="key-list">
+                            <li>❌ <strong>Patient with cracked skin and edema:</strong> If edema present, think stasis dermatitis, not just asteatotic eczema</li>
+                            <li>❌ <strong>Asteatotic eczema that doesn't respond to treatment:</strong> Think malignancy (e.g. lymphoma) or contact dermatitis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="disseminated" class="card">
+            <div class="card-header disseminated">
+                <h2>3. Disseminated Eczema (Autosensitization)</h2>
+                <span class="card-badge">Secondary reaction</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Pathophysiology</h3>
+                    <ul class="key-list">
+                        <li>Secondary eczematous eruption distant from primary site</li>
+                        <li>Inflammatory processes lower irritancy threshold of distant skin</li>
+                        <li>Circulating activated memory T cells likely involved</li>
+                        <li>Possible hematogenous dissemination of allergens</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Symmetric distribution of eczematous patches</li>
+                        <li>Appears days to weeks after primary lesion</li>
+                        <li>Predilection for analogous sites (extensor extremities, palms, soles)</li>
+                        <li>Common with allergic contact dermatitis associated with stasis dermatitis</li>
+                    </ul>
+
+                    <div class="section">
+                        <h3 class="section-title">Risk Factors / Triggers</h3>
+                        <ul class="key-list">
+                            <li>Allergic contact dermatitis (esp. with stasis dermatitis)</li>
+                            <li>Stasis dermatitis alone</li>
+                            <li>Tinea pedis</li>
+                            <li>Venous ulcers with superinfection</li>
+                            <li>Patch testing reactions ("angry back syndrome")</li>
+                        </ul>
+                        
+                        <div class="memory-tip">
+                            <strong>🧠 Important:</strong> The inciting dermatosis may even be subtle or missed.
+                        </div>
+                    </div>
+                    
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Topical corticosteroids and systemic antihistamines</li>
+                        <li>Short courses of systemic corticosteroids for severe cases</li>
+                        <li>Identification and treatment of inciting dermatosis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="nummular" class="card">
+            <div class="card-header nummular">
+                <h2>4. Nummular Dermatitis</h2>
+                <span class="card-badge">Coin-shaped</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Coin-shaped (discoid), well-demarcated eczematous patches</li>
+                        <li>Primarily on extremities (lower legs in men, forearms/hands in women)</li>
+                        <li>Size: 1-3cm diameter</li>
+                        <li>Acute: vesicular, weeping; Chronic: lichenified, hyperkeratotic</li>
+                        <li>Intense pruritus with excoriations</li>
+                        <li>Chronic relapsing course</li>
+                        <li>Resistant form called "oid-oid" (aka Sulzberger-Garbe syndrome, exudative discoid, lichenoid chronic dermatitis)</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "COINS" - <strong>C</strong>ircular lesions, <strong>O</strong>n extremities, <strong>I</strong>ntense pruritus, <strong>N</strong>ickel/chromate sensitization common, <strong>S</strong>ize 1-3cm.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Histopathology</h3>
+                    <ul class="key-list">
+                        <li>Spongiosis, irregular acanthosis</li>
+                        <li>Parakeratotic scale and crust</li>
+                        <li>Lymphohistiocytic infiltrate</li>
+                        <li>Resembles other forms of eczematous dermatitis</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Medium to high-potency topical corticosteroid ointments</li>
+                        <li>Topical calcineurin inhibitors</li>
+                        <li>Tar preparations</li>
+                        <li>Phototherapy for resistant cases</li>
+                        <li>Methotrexate for persistent cases in children</li>
+                        <li>Dupilumab for recalcitrant disease</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="dyshidrotic" class="card">
+            <div class="card-header dyshidrotic">
+                <h2>5. Dyshidrotic Eczema</h2>
+                <span class="card-badge">Vesicular</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Symmetric, firm, deep-seated vesicles on palms, lateral/medial fingers, soles</li>
+                        <li>When clustered resembles "tapioca pudding"</li>
+                        <li>Intensely pruritic</li>
+                        <li>Resolves with thick desquamation</li>
+                        <li>Chronic relapsing course</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "PALMS" - <strong>P</strong>alms/soles affected, <strong>A</strong>cutepruritus, <strong>L</strong>ateral/medial fingers, <strong>M</strong>isnomer (not related to sweat), <strong>S</strong>mall firm vesicles.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis</h3>
+                    <ul class="key-list">
+                        <li>Not related to sweat gland dysfunction (despite the name)</li>
+                        <li>Often manifestation of atopic dermatitis or contact dermatitis</li>
+                        <li>Aggravated by hyperhidrosis</li>
+                        <li>Potential triggers: emotional stress, heat, ingested allergens</li>
+                        <li>Can follow <span class="highlight-text">IVIg administration</span></li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Differential Diagnosis</h3>
+                    <ul class="key-list">
+                        <li>Tinea manuum/pedis</li>
+                        <li>Scabies</li>
+                        <li>Palmoplantar pustular psoriasis</li>
+                        <li>Dyshidrosiform pemphigoid</li>
+                        <li>Vesicular T-cell lymphoma</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Topical corticosteroids and emollients</li>
+                        <li>Calcineurin inhibitors</li>
+                        <li>Botulinum toxin for associated hyperhidrosis</li>
+                        <li>Phototherapy (PUVA)</li>
+                        <li>Systemic therapy for severe cases: retinoids, corticosteroids, cyclosporine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <div id="juvenile" class="card">
+            <div class="card-header juvenile">
+                <h2>6. Juvenile Plantar Dermatosis</h2>
+                <span class="card-badge">Pediatric</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Symmetrical glazed, erythematous, fissured plantar surface of forefoot</li>
+                        <li><span class="highlight-text">Toe pads and balls of feet affected; dorsal of the feet and interdigital spaces spared</span></li>
+                        <li>Prepubertal children (age 3+)</li>
+                        <li>Worse in winter, slightly more common in boys</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis</h3>
+                    <ul class="key-list">
+                        <li>Atopic predisposition plus exogenous factors</li>
+                        <li>Occlusive plastic/rubber footwear creates humid environment</li>
+                        <li>Hydration of stratum corneum followed by drying and fissuring</li>
+                        <li>Mechanical friction removes protective layers</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "SHOES" - <strong>S</strong>weaty environment, <strong>H</strong>ydration-drying cycle, <strong>O</strong>cclusive footwear, <strong>E</strong>rythematous glazed skin, <strong>S</strong>pares toe webs.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Avoid impermeable footwear and socks</li>
+                        <li>Emollients, keratolytics, paraffin-based ointments</li>
+                        <li>Change damp socks immediately</li>
+                        <li>Self-limiting condition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="stasis" class="card">
+            <div class="card-header stasis">
+                <h2>7. Stasis Dermatitis</h2>
+                <span class="card-badge">Venous</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Epidemiology & Pathophysiology</h3>
+                    <ul class="key-list">
+                        <li>Affects ~15% of adults with chronic venous insufficiency</li>
+                        <li>~1% of adults develop venous ulcers; prevalence increases with age</li>
+                        <li>Caused by venous hypertension from valvular incompetence</li>
+                        <li>Capillary distension leads to extravasation of fluid, proteins, and RBCs</li>
+                        <li>Fibrin cuffs form around vessels causing microangiopathy</li>
+                        <li>Reduced oxygen diffusion and tissue hypoxia</li>
+                        <li>Elevated plasma homocysteine levels often present</li>
+                        <li>Contact sensitization to topical agents is a common complication</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "VEINS" - <strong>V</strong>enous hypertension primary cause, <strong>E</strong>dema precedes dermatitis, <strong>I</strong>ncompetent valves, <strong>N</strong>ear medial malleoli, <strong>S</strong>econdary autoeczematization common.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Clinical Features & Progression</h3>
+                    <ul class="key-list">
+                        <li>First sign: cushion-like pitting edema of medial aspect of shin and calf</li>
+                        <li>Early stage: confined to MEDIAL ankle and calf around communicating veins</li>
+                        <li>Hemosiderin deposition (stasis purpura) from RBC extravasation</li>
+                        <li>Pruritic erythema and scaling around inner malleoli</li>
+                        <li>Later stage: edema extends to distal third of leg with inflammation</li>
+                        <li>Advanced: lipodermatosclerosis ("inverted champagne bottle" appearance)</li>
+                        <li>Atrophie blanche: white stellate scars in supramalleolar region</li>
+                        <li>Venous ulcers develop, especially on medial malleolus</li>
+                        <li>Episodes of vesiculation may trigger autosensitization (ID reaction)</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Compression therapy (cornerstone of treatment)</li>
+                        <li>Leg elevation and calf muscle exercises</li>
+                        <li>Topical corticosteroids for acute inflammation</li>
+                        <li>Emollients for skin barrier repair</li>
+                        <li>Patch testing to identify contact allergens(if treatment resistant)</li>
+                        <li>Avoid sensitizing topical agents (neomycin, lanolin)</li>
+                        <li>Surgical intervention for severe venous insufficiency</li>
+                        <li>Wound care for ulcers with appropriate dressings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="infectious" class="card">
+            <div class="card-header infectious">
+                <h2>8. Infectious Eczematous Dermatitis</h2>
+                <span class="card-badge">Bacterial</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Definition & Etiology</h3>
+                    <ul class="key-list">
+                        <li>Eczematous reaction to a localized infection with purulent drainage</li>
+                        <li>Most often due to <i>Staphylococcus</i> or <i>Streptococcus</i> species</li>
+                        <li>Results from sensitization to bacterial antigens</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Pustules and vesicles spread from an infectious nidus</li>
+                        <li>Advanced stages characterized by crusting, scaling, and oozing</li>
+                        <li>In children: nares, ears, and face are most common sites</li>
+                        <li>In adults: distal lower extremities most often affected</li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "SPREAD" - <strong>S</strong>taph/Strep bacteria, <strong>P</strong>urulent drainage, <strong>R</strong>eaction to bacterial antigens, <strong>E</strong>czematous lesions, <strong>A</strong>ge-dependent distribution, <strong>D</strong>istal extremities in adults.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Milder forms: open wet dressings, topical antibiotics</li>
+                        <li>Topical corticosteroids to manage inflammation</li>
+                        <li>Emollients to restore skin barrier</li>
+                        <li>Severe disease: oral antibiotics targeted at causative bacteria</li>
+                        <li>Oral corticosteroids sometimes needed for extensive disease</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Differential Diagnosis</h3>
+                    <ul class="key-list">
+                        <li>Eczema due to autosensitization (lesions develop at a distance from primary site)</li>
+                        <li>HTLV-associated infective dermatitis (involves specific serology)</li>
+                        <li>Impetigo (more discrete lesions, less eczematous reaction)</li>
+                        <li>Contact dermatitis (exposure history, different distribution)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="diaper" class="card">
+            <div class="card-header diaper">
+                <h2>9. Diaper Dermatitis</h2>
+                <span class="card-badge">Infantile</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Types and Clinical Features</h3>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th>Type</th>
+                                <th>Key Features</th>
+                            </tr>
+                            <tr>
+                                <td>Irritant Contact Dermatitis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Glazed erythema, erosions on convex surfaces</li>
+                                        <li>Spares skin folds</li>
+                                        <li>Due to prolonged exposure to urine/feces</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Candidal Infection</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Erythema with satellite pustules</li>
+                                        <li>Favors folds and genitalia</li>
+                                        <li>Often follows antibiotic use</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Seborrheic Dermatitis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Salmon-colored to red patches</li>
+                                        <li>Favors folds</li>
+                                        <li>Other flexural sites and scalp often involved</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jacquet Erosive Dermatitis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>"Punched out" erosions</li>
+                                        <li>Associated with chronic irritation, especially diarrhea</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Atopic Dermatitis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Pruritic, erythematous patches and plaques</li>
+                                        <li>May involve extensor surfaces in infants</li>
+                                        <li>Often associated with personal or family history of atopy</li>
+                                        <li>relative sparing of diaper area </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Allergic Contact Dermatitis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Well-demarcated erythema matching exposure pattern</li>
+                                        <li>Often from diaper components, wipes, or topical products</li>
+                                        <li>May spread beyond diaper area</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Psoriasis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Well-demarcated erythematous plaques</li>
+                                        <li>Minimal scale in moist areas</li>
+                                        <li>Family history often present</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Langerhans Cell Histiocytosis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Persistent purpuric papules</li>
+                                        <li>Resistant to conventional treatment</li>
+                                        <li>May have systemic involvement</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Acrodermatitis Enteropathica</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Erosive dermatitis around body orifices</li>
+                                        <li>Associated with zinc deficiency</li>
+                                        <li>Perioral and acral dermatitis often present</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kawasaki Disease</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Erythematous rash in perineal region</li>
+                                        <li>Accompanied by fever, conjunctivitis, and lymphadenopathy</li>
+                                        <li>Desquamation of fingers and toes in later stages</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Granuloma Gluteale Infantum</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Reddish-purple nodules in diaper area</li>
+                                        <li>Associated with prolonged topical steroid use</li>
+                                        <li>Rare complication of diaper dermatitis</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Congenital Syphilis</td>
+                                <td>
+                                    <ul class="sublist">
+                                        <li>Copper-colored papulosquamous lesions</li>
+                                        <li>Involves palms and soles</li>
+                                        <li>Other systemic manifestations present</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis</h3>
+                    <ul class="key-list">
+                        <li>Fecal enzymes and alkaline environment from bacterial ureases</li>
+                        <li>Breakdown of skin barrier from prolonged moisture</li>
+                        <li>Secondary infection with <i>Candida albicans</i></li>
+                        <li>Friction between skin and diaper</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Frequent diaper changes using highly absorbent disposables</li>
+                        <li>Protective barriers (zinc oxide, petrolatum)</li>
+                        <li>Mild corticosteroids for acute inflammation</li>
+                        <li>Antifungals for candidal infection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="htlv" class="card">
+            <div class="card-header htlv">
+                <h2>10. HTLV-Associated Infective Dermatitis</h2>
+                <span class="card-badge">Rare</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Definition</h3>
+                    <p>A rare childhood/adolescent chronic eczema associated with HTLV-1 (Human T-cell lymphotropic virus type I), a retrovirus that dysregulates the immune system.</p>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Etiology & Pathogenesis</h3>
+                    <ul class="key-list">
+                        <li>HTLV-1 retrovirus </li>
+                        <li>Transmission routes:
+                            <ul class="sublist">
+                                <li>Breastfeeding (primary route)</li>
+                                <li>Sexual intercourse</li>
+                                <li>Blood transfusion</li>
+                                <li>Needle sharing</li>
+                            </ul>
+                        </li>
+                        
+                        <li>Immunosuppression → susceptibility to <i>S. aureus</i>, β-hemolytic streptococci, parasitosis (scabies, strongyloidiasis)</li>
+                        <li>Genetic, socioeconomic, and nutritional factors contribute</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Epidemiology</h3>
+                    <ul class="key-list">
+                        <li>Endemic in sub-Saharan Africa, Caribbean, South Japan, South America, Iran</li>
+                        <li>Only ~2% of infected children develop infective dermatitis</li>
+                        <li>Usually appears after loss of maternal antibodies in infancy/early childhood</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Age: Early childhood</li>
+                        <li>Sites involved (at least 2 of):
+                            <ul class="sublist">
+                                <li>Scalp</li>
+                                <li>Ears</li>
+                                <li>Eyelid margins</li>
+                                <li>Paranasal skin</li>
+                                <li>Axillae</li>
+                                <li>Groin</li>
+                            </ul>
+                        </li>
+                        <li>Exudative, crusty eczematous dermatosis</li>
+                        <li>Chronic watery nasal discharge/crusting of anterior nares</li>
+                        <li>Blepharoconjunctivitis</li>
+                        <li>Generalized fine papular rash (sometimes)</li>
+                        <li>Almost always infected with <i>S. aureus</i> or β-hemolytic streptococci</li>
+                        <li>Rapidly responds to antibiotics but promptly relapses</li>
+                        <li>Complications:
+                            <ul class="sublist">
+                                <li>Corneal opacities</li>
+                                <li>Progression to HTLV-1–associated adult T-cell leukemia/lymphoma (ATLL)</li>
+                                <li>Tropical spastic paraparesis (HAM/TSP): progressive neurological disorder</li>
+                                <li>Increased risk of developing HTLV-1 associated myelopathy</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Diagnostic Criteria</h3>
+                    <div class="criteria-box">
+                        <h4>Major ( 4 required, with HTLV-1 one of them):</h4>
+                        <ul class="key-list">
+                            <li>Eczema in ≥2 areas (scalp, ears, eyelids, paranasal, axillae, groin)</li>
+                            <li>Chronic watery nasal discharge/crusting</li>
+                            <li>Chronic relapsing dermatitis that responds to antibiotics but relapses after stopping</li>
+                            <lI>onest early childhood</lI>
+                            <li>HTLV-1 seropositivity</li>
+                        </ul>
+                        
+                        <h4>Minor (supportive):</h4>
+                        <ul class="key-list">
+                            <li>Positive cultures for <i>S. aureus</i> or β-hemolytic streptococci</li>
+                            <li>Generalized fine papular rash</li>
+                            <li>Anemia, elevated ESR</li>
+                            <li>Hyperimmunoglobulinemia</li>
+                            <li>Increased CD4+ and CD8+ counts, elevated CD4/CD8 ratio</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Differential Diagnosis</h3>
+                    <ul class="key-list">
+                        <li>Atopic dermatitis:
+                            <ul class="sublist">
+                                <li>HTLV dermatitis: more exuberant, visibly infected, less pruritic</li>
+                                <li>No personal/family history of atopy</li>
+                                <li>Prominent nasal crusting, blepharoconjunctivitis</li>
+                            </ul>
+                        </li>
+                        <li>Seborrheic dermatitis (not associated with blepharoconjunctivitis)</li>
+                        <li>Impetigo</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Antibiotics:
+                            <ul class="sublist">
+                                <li>TMP-SMX, cephalexin, erythromycin</li>
+                                <li>Quick improvement but frequent relapses</li>
+                            </ul>
+                        </li>
+                        <li>Topical therapies:
+                            <ul class="sublist">
+                                <li>Antibiotics (including intranasal)</li>
+                                <li>Corticosteroids</li>
+                                <li>Bleach baths</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="memory-tip">
+                    <strong>Memory Aid:</strong> "VIRAL" - <strong>V</strong>irus HTLV-1 positive, <strong>I</strong>nfected appearance, <strong>R</strong>elapses after antibiotics, <strong>A</strong>ntibiotics temporarily effective, <strong>L</strong>ymphotropic virus association.
+                </div>
+                
+                <div class="exam-tips">
+                    <h4>⚠️ Exam Traps & Tricks</h4>
+                    <ul class="key-list">
+                        <li>HTLV-D vs Atopic Dermatitis: Less itchy, superinfected, +HTLV serology</li>
+                        <li>Treatment response: Quick but non-curative</li>
+                        <li>Not just dermatitis: Remember systemic complications</li>
+                        <li>Diagnosis requires HTLV-1 serology (mandatory)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="pityriasis" class="card">
+            <div class="card-header pityriasis">
+                <h2>11. Pityriasis Alba</h2>
+                <span class="card-badge">Hypopigmented</span>
+            </div>
+            <div class="card-body">
+                <div class="section">
+                    <h3 class="section-title">Clinical Features</h3>
+                    <ul class="key-list">
+                        <li>Hypopigmented, slightly scaly patches</li>
+                        <li>Common on face, upper arms, shoulders</li>
+                        <li>More noticeable in darker skin phototypes</li>
+                        <li>Often follows mild inflammation</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Pathogenesis</h3>
+                    <ul class="key-list">
+                        <li>Mild form of eczema with post-inflammatory hypopigmentation</li>
+                        <li><span class="highlight-text">Impaired transfer of melanosomes to keratinocytes</span></li>
+                    </ul>
+                    
+                    <div class="memory-tip">
+                        <strong>Memory Aid:</strong> "WHITE" - <strong>W</strong>hite patches, <strong>H</strong>ypopigmentation post-inflammation, <strong>I</strong>n children common, <strong>T</strong>reated with mild corticosteroids, <strong>E</strong>vident in darker skin types.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Treatment</h3>
+                    <ul class="key-list">
+                        <li>Emollients and mild topical corticosteroids</li>
+                        <li>Sun protection</li>
+                        <li>Typically self-resolving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Add smooth scrolling to navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Open the target card
+                activateCard(targetElement);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 120,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Make disease cards collapsible
+        document.querySelectorAll('.card').forEach(card => {
+            // Add collapse indicator to each card header
+            const indicator = document.createElement('span');
+            indicator.className = 'collapse-indicator';
+            card.querySelector('.card-header').appendChild(indicator);
+            
+            // Add click event to toggle collapse
+            card.querySelector('.card-header').addEventListener('click', () => {
+                activateCard(card);
+            });
+        });
+        
+        // Function to activate a card and deactivate others
+        function activateCard(card) {
+            // If card is already active, close it
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                return;
+            }
+            
+            // Deactivate all cards
+            document.querySelectorAll('.card').forEach(c => {
+                c.classList.remove('active');
+            });
+            
+            // Activate the target card
+            card.classList.add('active');
+        }
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+        
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('keydown', function(e) {
+            // Open first result on Enter key press
+            if (e.key === 'Enter') {
+                const firstResult = searchResults.querySelector('.search-result-item');
+                if (firstResult) {
+                    firstResult.click();
+                }
+            }
+        });
+        
+        function performSearch() {
+            const searchTerms = searchInput.value.trim().toLowerCase().split(/\s+/);
+            
+            // Clear previous results
+            searchResults.innerHTML = '';
+            
+            if (searchTerms.length === 0 || (searchTerms.length === 1 && searchTerms[0] === '')) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            // Perform search across all cards
+            const resultsMap = new Map();
+            
+            document.querySelectorAll('.card').forEach(card => {
+                const cardId = card.id;
+                const cardTitle = card.querySelector('.card-header h2').textContent;
+                const cardContent = card.querySelector('.card-body').textContent;
+                
+                // Check if all search terms match
+                const allTermsMatch = searchTerms.every(term => 
+                    cardTitle.toLowerCase().includes(term) || 
+                    cardContent.toLowerCase().includes(term)
+                );
+                
+                if (allTermsMatch) {
+                    // Find specific sections that match
+                    const sections = Array.from(card.querySelectorAll('.section'));
+                    
+                    sections.forEach(section => {
+                        const sectionTitle = section.querySelector('.section-title')?.textContent || '';
+                        const sectionContent = section.textContent;
+                        
+                        const allTermsMatchSection = searchTerms.every(term => 
+                            sectionContent.toLowerCase().includes(term)
+                        );
+                        
+                        if (allTermsMatchSection) {
+                            // Create a result entry with context
+                            let resultText = cardTitle + ' - ' + sectionTitle;
+                            let context = '';
+                            
+                            // Extract a snippet of text containing the search term
+                            searchTerms.forEach(term => {
+                                if (term.length > 2) {
+                                    const termIndex = sectionContent.toLowerCase().indexOf(term);
+                                    if (termIndex !== -1) {
+                                        const start = Math.max(0, termIndex - 30);
+                                        const end = Math.min(sectionContent.length, termIndex + term.length + 30);
+                                        const snippet = sectionContent.substring(start, end);
+                                        context += '...' + snippet + '...';
+                                    }
+                                }
+                            });
+                            
+                            if (context) {
+                                // Highlight search terms in context
+                                searchTerms.forEach(term => {
+                                    if (term.length > 2) {
+                                        const regex = new RegExp('(' + term + ')', 'gi');
+                                        context = context.replace(regex, '<span class="highlight-text">$1</span>');
+                                    }
+                                });
+                                
+                                const resultKey = cardId + '-' + sectionTitle;
+                                resultsMap.set(resultKey, {
+                                    cardId,
+                                    title: resultText,
+                                    context,
+                                    section
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+            
+            // Display results
+            if (resultsMap.size > 0) {
+                searchResults.style.display = 'block';
+                
+                resultsMap.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.innerHTML = `
+                        <div><strong>${result.title}</strong></div>
+                        <div>${result.context}</div>
+                    `;
+                    
+                    resultItem.addEventListener('click', () => {
+                        // Navigate to the card and open it
+                        const targetCard = document.getElementById(result.cardId);
+                        activateCard(targetCard);
+                        
+                        // Scroll to the section
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        
+                        // Highlight the section briefly
+                        result.section.style.backgroundColor = 'rgba(255, 247, 0, 0.2)';
+                        setTimeout(() => {
+                            result.section.style.backgroundColor = '';
+                        }, 2000);
+                        
+                        // Hide search results
+                        searchResults.style.display = 'none';
+                        searchInput.value = '';
+                    });
+                    
+                    searchResults.appendChild(resultItem);
+                });
+            } else {
+                searchResults.style.display = 'block';
+                const noResults = document.createElement('div');
+                noResults.className = 'search-result-item';
+                noResults.textContent = 'No results found.';
+                searchResults.appendChild(noResults);
+            }
+        }
+        
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+

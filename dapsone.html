@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapsone Mastery - Saudi Board Dermatology</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --warning: #f97316;
+            --success: #16a34a;
+            --purple: #9333ea;
+            --dark: #1e293b;
+            --light: #f1f5f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            font-weight: 600;
+        }
+        
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .mechanism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .mechanism-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mechanism-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        .mechanism-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+        
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            border-left: 5px solid;
+        }
+        
+        .alert-danger {
+            background: #fef2f2;
+            border-color: var(--danger);
+            color: #991b1b;
+        }
+        
+        .alert-warning {
+            background: #fffbeb;
+            border-color: var(--warning);
+            color: #92400e;
+        }
+        
+        .alert-success {
+            background: #f0fdf4;
+            border-color: var(--success);
+            color: #14532d;
+        }
+        
+        .alert-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dosing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .dosing-table th, .dosing-table td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .dosing-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .dosing-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        .dosing-table tr:hover {
+            background: #e0f2fe;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .memory-box {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border: 2px solid #ec4899;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-box::before {
+            content: '💡';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 40px;
+            opacity: 0.2;
+        }
+        
+        .memory-box h4 {
+            color: #be185d;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .side-effect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .side-effect-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .side-effect-card:hover {
+            border-color: var(--danger);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        
+        .side-effect-card h4 {
+            color: var(--danger);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .monitoring-timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: #e2e8f0;
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .methemoglobin-scale {
+            background: linear-gradient(90deg, 
+                #16a34a 0%, 
+                #22c55e 15%, 
+                #fbbf24 30%, 
+                #f97316 50%, 
+                #dc2626 70%, 
+                #7c2d12 100%);
+            height: 40px;
+            border-radius: 20px;
+            position: relative;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .scale-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .interactive-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .interactive-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .quiz-container {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .quiz-container.active {
+            display: block;
+        }
+        
+        .treatment-algorithm {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .algorithm-step {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .algorithm-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+        }
+        
+        .mnemonic {
+            background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .mnemonic h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-tab {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DAPSONE</h1>
+            <p class="subtitle">Complete Mastery Guide for Saudi Board Dermatology</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showSection('mechanism')">Mechanism</div>
+            <div class="nav-tab" onclick="showSection('pharmacology')">Pharmacology</div>
+            <div class="nav-tab" onclick="showSection('dosing')">Dosing</div>
+            <div class="nav-tab" onclick="showSection('monitoring')">Monitoring</div>
+            <div class="nav-tab" onclick="showSection('toxicity')">Toxicity</div>
+            <div class="nav-tab" onclick="showSection('interactions')">Interactions</div>
+            <div class="nav-tab" onclick="showSection('methemoglobinemia')">Methemoglobinemia</div>
+            <div class="nav-tab" onclick="showSection('pearls')">Clinical Pearls</div>
+        </div>
+        
+        <div id="mechanism" class="content-section active">
+            <div class="card">
+                <h2>🎯 Mechanism of Action</h2>
+                
+                <div class="mechanism-grid">
+                    <div class="mechanism-card">
+                        <h3><span class="icon">🔥</span> Anti-Inflammatory Actions</h3>
+                        <ul>
+                            <li><strong>Inhibit neutrophil MPO</strong> - Myeloperoxidase & Hydrogen peroxidase</li>
+                            <li><strong>Inhibit neutrophil chemotaxis</strong> - Lowers IL-8</li>
+                            <li><strong>Reduce respiratory burst</strong> - Higher doses >300mg</li>
+                            <li><strong>Affect MPO</strong> of eosinophils/monocytes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mechanism-card">
+                        <h3><span class="icon">🦠</span> Other Mechanisms</h3>
+                        <ul>
+                            <li><strong>Inhibit Dihydropteroate synthase</strong> → Used for <span class="highlight">LEPROSY</span></li>
+                            <li><strong>N-acetylation</strong> → Causes idiosyncratic reactions</li>
+                            <li><strong>N-Hydroxylation</strong> → Hydroxylamine metabolite (causes hematological side effects except agranulocytosis & leukopenia)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="memory-box">
+                    <h4>🧠 Memory Anchor: "DAPSONE HITS"</h4>
+                    <p><strong>D</strong>ihydropteroate synthase inhibition<br>
+                    <strong>A</strong>nti-inflammatory (neutrophils)<br>
+                    <strong>P</strong>eroxidase inhibition<br>
+                    <strong>S</strong>uppresses IL-8<br>
+                    <strong>O</strong>xidative burst reduction<br>
+                    <strong>N</strong>-hydroxylation toxicity<br>
+                    <strong>E</strong>osinophil/monocyte effects</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pharmacology" class="content-section">
+            <div class="card">
+                <h2>💊 Pharmacokinetics</h2>
+                
+                <div class="alert alert-success">
+                    <div class="alert-title">
+                        <span class="icon">✓</span>
+                        Key Pharmacological Properties
+                    </div>
+                    <ul>
+                        <li><strong>Lipid soluble</strong> - Excellent tissue penetration</li>
+                        <li><strong>Well absorbed from GI tract (70-80%)</strong></li>
+                        <li><strong>Half-life: 24-36 hours</strong> (can last up to 30 days!)</li>
+                        <li><strong>NO dose adjustment in liver failure</strong> ⚡</li>
+                    </ul>
+                </div>
+                
+                <div class="card" style="background: #f0f9ff; border: 2px solid var(--primary);">
+                    <h3>📋 Formulations Available</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
+                            <h4 style="color: var(--primary);">Oral</h4>
+                            <p style="font-size: 1.2rem; font-weight: bold;">25mg & 100mg tablets</p>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
+                            <h4 style="color: var(--primary);">Topical</h4>
+                            <p style="font-size: 1.2rem; font-weight: bold;">5% & 7.5% gel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="dosing" class="content-section">
+            <div class="card">
+                <h2>💉 Dosing Guidelines</h2>
+                
+                <table class="dosing-table">
+                    <thead>
+                        <tr>
+                            <th>Dosing Phase</th>
+                            <th>Standard Dose</th>
+                            <th>Clinical Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Starting Dose</strong></td>
+                            <td>25-50mg OD</td>
+                            <td>Start low to assess tolerance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Effective Dose</strong></td>
+                            <td>100-400mg OD</td>
+                            <td>Titrate based on response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maintenance Dose</strong></td>
+                            <td>100mg OD</td>
+                            <td>Long-term management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pediatric Dose</strong></td>
+                            <td>2mg/kg OD</td>
+                            <td>Weight-based dosing</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">
+                        <span class="icon">⚡</span>
+                        Special Dosing: Leprosy
+                    </div>
+                    <ul>
+                        <li><strong>Multibacillary:</strong> 100mg for 12 months</li>
+                        <li><strong>Paucibacillary:</strong> 100mg for 6 months</li>
+                    </ul>
+                </div>
+                
+                <div class="mnemonic">
+                    <h4>FDA Approved Indications</h4>
+                    <p><strong>"DAL"</strong><br>
+                    <strong>D</strong>ermatitis Herpetiformis (response 1-2 days, recurs 1-2 days after discontinuation)<br>
+                    <strong>A</strong>cne (topical 5% and 7.5%)<br>
+                    <strong>L</strong>eprosy</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="monitoring" class="content-section">
+            <div class="card">
+                <h2>🔬 Monitoring Requirements</h2>
+                
+                <div class="alert alert-danger">
+                    <div class="alert-title">
+                        <span class="icon">!</span>
+                        Baseline Testing Required
+                    </div>
+                    <p>CBC • LFT • Renal Function • <strong>G6PD</strong> ⚠️</p>
+                </div>
+                
+                <div class="monitoring-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div>
+                            <h4>CBC Monitoring</h4>
+                            <p><strong>Weekly</strong> for first month → <strong>Every 2 weeks</strong> for 3 months → <strong>Every 3-4 months</strong> thereafter</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div>
+                            <h4>LFT & Renal Function</h4>
+                            <p><strong>Every 3-4 months</strong></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div>
+                            <h4>Methemoglobin</h4>
+                            <p>If clinically indicated (headache, fatigue) - use <strong>co-oximetry</strong></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div>
+                            <h4>Reticulocyte Count</h4>
+                            <p>If patient presents with anemia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="toxicity" class="content-section">
+            <div class="card">
+                <h2>⚠️ Side Effects & Toxicity</h2>
+                
+                <div class="side-effect-grid">
+                    <div class="side-effect-card">
+                        <h4><span class="icon" style="background: var(--danger);">🩸</span> Hematologic</h4>
+                        <ul>
+                            <li><strong>Hemolytic anemia</strong> (G6PD patients - affects old RBCs)</li>
+                            <li><strong>Methemoglobinemia</strong> (ALL patients, dose-dependent)</li>
+                            <li><strong>Agranulocytosis</strong> (Most serious! 3-12 weeks, avg 7 weeks)</li>
+                            <li>Hb drop 10% or 2g/dL is acceptable</li>
+                            <li>Low HbA1c (false negative in DM)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4><span class="icon" style="background: var(--purple);">🧠</span> Neurologic</h4>
+                        <ul>
+                            <li><strong>Peripheral motor neuropathy</strong> (predominantly distal motor + some sensory)</li>
+                            <li>Cumulative dose: 25g-500g</li>
+                            <li>Reversible but takes weeks to 2 years</li>
+                            <li>Permanent retinal damage with optic atrophy</li>
+                            <li>Photosensitivity</li>
+                            <li>Acute psychosis (mainly leprosy patients)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4><span class="icon" style="background: var(--warning);">🎭</span> Skin</h4>
+                        <ul>
+                            <li><strong>Hypersensitivity syndrome</strong> (3-12 weeks)</li>
+                            <li><strong>DRESS</strong> with liver failure</li>
+                            <li>Maculopapular, EM, SJS/TEN</li>
+                            <li>Predict with: HLA-B*1301 → HLA-DRB1</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="side-effect-card">
+                        <h4><span class="icon" style="background: var(--success);">🔄</span> Other</h4>
+                        <ul>
+                            <li>Nausea, gastritis</li>
+                            <li>Reversible cholestasis and hepatitis</li>
+                            <li>Pregnancy Category C</li>
+                            <li>Excreted in breast milk</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger" style="margin-top: 30px;">
+                    <div class="alert-title">
+                        <span class="icon">🚨</span>
+                        Agranulocytosis - Most Serious Reaction
+                    </div>
+                    <p><strong>Timing:</strong> 3-12 weeks (average 7 weeks)<br>
+                    <strong>Symptoms:</strong> Fever, sore throat, occasionally sepsis<br>
+                    <strong>Management:</strong> Discontinue immediately + Give G-CSF → Recovers quickly</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="interactions" class="content-section">
+            <div class="card">
+                <h2>💊 Drug Interactions</h2>
+                
+                <div class="alert alert-danger">
+                    <div class="alert-title">
+                        <span class="icon">⚠️</span>
+                        Avoid Combining With
+                    </div>
+                    <ul>
+                        <li><strong>Probenecid</strong> - Increased dapsone levels</li>
+                        <li><strong>Methotrexate (MTX)</strong> - More hematological side effects</li>
+                        <li><strong>Trimethoprim (TMP)</strong> - More hematological side effects</li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-success">
+                    <div class="alert-title">
+                        <span class="icon">✓</span>
+                        Good News
+                    </div>
+                    <p><strong>No cross-reaction with TMP/SMX!</strong> ✨</p>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <div class="alert-title">
+                        <span class="icon">📉</span>
+                        Reduced Absorption
+                    </div>
+                    <p><strong>Antacids</strong> lower dapsone absorption</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="methemoglobinemia" class="content-section">
+            <div class="card">
+                <h2>🩸 Methemoglobinemia Management</h2>
+                
+                <div class="alert alert-danger">
+                    <div class="alert-title">
+                        <span class="icon">⚠️</span>
+                        Dapsone-Induced Methemoglobinemia
+                    </div>
+                    <p>Dapsone is one of the most common causes of drug-induced methemoglobinemia. The hydroxylamine metabolite is responsible for this effect.</p>
+                </div>
+                
+                <div class="card" style="background: #fef2f2; border: 2px solid var(--danger);">
+                    <h3>📊 Methemoglobin Levels & Clinical Presentation</h3>
+                    
+                    <div class="methemoglobin-scale"></div>
+                    <div class="scale-markers">
+                        <span>&lt;3%</span>
+                        <span>3-15%</span>
+                        <span>15-30%</span>
+                        <span>30-50%</span>
+                        <span>50-70%</span>
+                        <span>&gt;70%</span>
+                    </div>
+                    
+                    <table class="dosing-table" style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Clinical Features</th>
+                                <th>Management</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&lt;3%</td>
+                                <td>Normal range - no symptoms</td>
+                                <td>No treatment needed</td>
+                            </tr>
+                            <tr>
+                                <td>3-15%</td>
+                                <td>Blue-gray skin discoloration, minimal symptoms</td>
+                                <td>Observation</td>
+                            </tr>
+                            <tr>
+                                <td>10%</td>
+                                <td>May have mild symptoms</td>
+                                <td><strong>Cimetidine 400mg TID</strong> (for chronic lowering)</td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td>Cyanosis becomes apparent</td>
+                                <td><strong>Vitamin E 800mg OD</strong></td>
+                            </tr>
+                            <tr>
+                                <td>15-30%</td>
+                                <td>Cyanosis + chocolate brown blood</td>
+                                <td>Consider treatment if symptomatic</td>
+                            </tr>
+                            <tr>
+                                <td>20-30%</td>
+                                <td>Headache, dizziness, fatigue</td>
+                                <td>Treatment indicated if symptomatic</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;30%</td>
+                                <td>Dyspnea, altered mental status</td>
+                                <td><strong>Immediate treatment required</strong></td>
+                            </tr>
+                            <tr>
+                                <td>50-70%</td>
+                                <td>Tachypnea, metabolic acidosis, seizures, coma</td>
+                                <td>Intensive care required</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;70%</td>
+                                <td>Death</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="treatment-algorithm">
+                    <h3>🔄 Treatment Algorithm</h3>
+                    
+                    <div class="algorithm-step" data-step="1">
+                        <h4>Initial Assessment</h4>
+                        <ul>
+                            <li>Discontinue dapsone immediately</li>
+                            <li>Check methemoglobin level (co-oximetry)</li>
+                            <li>Assess for symptoms: cyanosis, headache, dyspnea</li>
+                            <li>Note: Pulse oximetry reads ~85% regardless of actual O2 saturation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="algorithm-step" data-step="2">
+                        <h4>Decision Point: Methemoglobin Level</h4>
+                        <p><strong>&lt;20% and asymptomatic:</strong> Observation + supportive care</p>
+                        <p><strong>20-30% with symptoms OR &gt;30%:</strong> Immediate treatment</p>
+                    </div>
+                    
+                    <div class="algorithm-step" data-step="3">
+                        <h4>First-Line Treatment</h4>
+                        <div class="alert alert-success">
+                            <div class="alert-title">
+                                <span class="icon">💊</span>
+                                Methylene Blue (MB)
+                            </div>
+                            <ul>
+                                <li><strong>Dose:</strong> 1-2 mg/kg IV over 5 minutes</li>
+                                <li><strong>Response:</strong> Rapid improvement within 10-60 minutes</li>
+                                <li><strong>May repeat:</strong> Once in 1 hour if needed</li>
+                                <li><strong>Maximum:</strong> 7 mg/kg total (risk of hemolysis)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="algorithm-step" data-step="4">
+                        <h4>Contraindications to Methylene Blue</h4>
+                        <div class="alert alert-danger">
+                            <div class="alert-title">
+                                <span class="icon">⚠️</span>
+                                Do NOT use MB if:
+                            </div>
+                            <ul>
+                                <li><strong>G6PD deficiency</strong> → Use Vitamin C instead</li>
+                                <li><strong>Taking SSRIs/SNRIs</strong> → Risk of serotonin syndrome</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="algorithm-step" data-step="5">
+                        <h4>Alternative Treatment</h4>
+                        <div class="alert alert-warning">
+                            <div class="alert-title">
+                                <span class="icon">🍊</span>
+                                Ascorbic Acid (Vitamin C)
+                            </div>
+                            <ul>
+                                <li><strong>When:</strong> G6PD deficiency or MB contraindicated</li>
+                                <li><strong>Dose:</strong> 1000mg PO TID or 1.5-2g IV</li>
+                                <li><strong>Response:</strong> Slower (24-72 hours)</li>
+                                <li><strong>Severe cases:</strong> Up to 10g IV</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="algorithm-step" data-step="6">
+                        <h4>Refractory Cases</h4>
+                        <ul>
+                            <li><strong>Exchange transfusion</strong></li>
+                            <li><strong>Hyperbaric oxygen</strong></li>
+                            <li><strong>Hemodialysis</strong> (removes dapsone)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="memory-box" style="margin-top: 20px;">
+                    <h4>🧠 Clinical Pearls for Methemoglobinemia</h4>
+                    <ul>
+                        <li>💡 <strong>Chocolate brown blood</strong> that doesn't turn red with O2 = pathognomonic</li>
+                        <li>💡 Pulse ox stuck at <strong>85%</strong> regardless of actual oxygenation</li>
+                        <li>💡 <strong>Cimetidine</strong> can prevent methemoglobinemia in chronic dapsone use</li>
+                        <li>💡 <strong>Local anesthetics</strong> worsen methemoglobinemia - use Vitamin C</li>
+                        <li>💡 <strong>G6PD deficiency</strong> + MB = hemolysis + worse methemoglobinemia</li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-success">
+                    <div class="alert-title">
+                        <span class="icon">✓</span>
+                        Prevention Strategies
+                    </div>
+                    <ul>
+                        <li><strong>Start low, go slow:</strong> Begin with 25-50mg daily</li>
+                        <li><strong>Consider prophylaxis:</strong> Cimetidine 400mg TID for high-risk patients</li>
+                        <li><strong>Monitor symptoms:</strong> Educate patients about headache, fatigue, cyanosis</li>
+                        <li><strong>Check G6PD:</strong> Before starting dapsone in at-risk populations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pearls" class="content-section">
+            <div class="card">
+                <h2>💎 High-Yield Clinical Pearls</h2>
+                
+                <div class="memory-box">
+                    <h4>🎯 Board Exam Pearls</h4>
+                    <ol>
+                        <li><strong>DH Response:</strong> 1-2 days (recurs 1-2 days after stopping)</li>
+                        <li><strong>Agranulocytosis timing:</strong> Average 7 weeks (3-12 week range)</li>
+                        <li><strong>NO dose adjustment in liver failure</strong></li>
+                        <li><strong>Pregnancy Category C</strong> - Excreted in breast milk</li>
+                        <li><strong>Absolute CI:</strong> Hypersensitivity only</li>
+                        <li><strong>No cancer risk</strong></li>
+                        <li><strong>Methylene blue contraindicated in G6PD</strong> - Use Vitamin C instead</li>
+                    </ol>
+                </div>
+                
+                <div class="card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid var(--success);">
+                    <h3>✅ Quick Reference: Contraindications & Warnings</h3>
+                    
+                    <h4>Contraindications:</h4>
+                    <ul>
+                        <li>Hypersensitivity to dapsone or components of formulation</li>
+                    </ul>
+                    
+                    <h4>Boxed Warnings:</h4>
+                    <p><strong>None listed</strong></p>
+                    
+                    <h4>Warnings & Precautions:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div>
+                            <strong>Hematologic:</strong>
+                            <ul>
+                                <li>Blood dyscrasias</li>
+                                <li>Hemolytic anemia</li>
+                                <li>Methemoglobin reductase deficiency</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Hypersensitivity:</strong>
+                            <ul>
+                                <li>DRESS</li>
+                                <li>EM, SJS/TEN</li>
+                                <li>Sulfonamide cross-reaction</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Other:</strong>
+                            <ul>
+                                <li>Peripheral motor neuropathy</li>
+                                <li>Drug-induced liver injury</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="interactive-btn" onclick="toggleQuiz()" style="margin-top: 20px;">Test Your Knowledge 🧠</button>
+                
+                <div id="quiz-container" class="quiz-container">
+                    <h3>Quick Review Questions</h3>
+                    <div style="margin-top: 20px;">
+                        <p><strong>1. A patient on dapsone for 8 weeks presents with fever and sore throat. What's your primary concern?</strong></p>
+                        <p style="color: var(--danger); margin-top: 10px;">→ Agranulocytosis (peaks at 7 weeks)</p>
+                        
+                        <p style="margin-top: 20px;"><strong>2. Which metabolite causes most hematological side effects?</strong></p>
+                        <p style="color: var(--danger); margin-top: 10px;">→ Hydroxylamine metabolite (from N-hydroxylation)</p>
+                        
+                        <p style="margin-top: 20px;"><strong>3. Patient with G6PD deficiency and 25% methemoglobin. Treatment?</strong></p>
+                        <p style="color: var(--danger); margin-top: 10px;">→ Vitamin C 1000mg OD (NOT methylene blue!)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function toggleQuiz() {
+            const quiz = document.getElementById('quiz-container');
+            quiz.classList.toggle('active');
+        }
+        
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add interactive hover effects
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

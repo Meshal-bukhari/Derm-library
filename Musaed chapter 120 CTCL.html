@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musaed's Guide to CTCL | Board Prep Power-Up</title>
+    <script src="https://kit.fontawesome.com/6a2b29f4ba.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #343a40;
+            --primary-color: #007bff;
+            --header-color: #343a40;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --border-color: #dee2e6;
+            --highlight-bg: #fff3cd;
+            --alert-red-bg: #f8d7da;
+            --alert-red-text: #721c24;
+            --alert-green-bg: #d4edda;
+            --alert-green-text: #155724;
+            --alert-blue-bg: #cce5ff;
+            --alert-blue-text: #004085;
+            --alert-yellow-bg: #fff3cd;
+            --alert-yellow-text: #856404;
+            --font-main: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .main-title {
+            text-align: center;
+            color: var(--header-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #495057;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .callout {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+            position: relative;
+        }
+        
+        .callout-icon {
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            transform: translateY(-50%);
+            background: var(--card-bg);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .callout.info {
+            background-color: var(--alert-blue-bg);
+            color: var(--alert-blue-text);
+            border-color: #0056b3;
+        }
+
+        .callout.pearl {
+            background-color: var(--alert-yellow-bg);
+            color: var(--alert-yellow-text);
+            border-color: #ffc107;
+        }
+        
+        .callout.aggressive {
+            background-color: var(--alert-red-bg);
+            color: var(--alert-red-text);
+            border-color: #dc3545;
+        }
+
+        .callout.indolent {
+            background-color: var(--alert-green-bg);
+            color: var(--alert-green-text);
+            border-color: #28a745;
+        }
+        
+        .mcq-highlight {
+            background-color: var(--highlight-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #ffeeba;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: '\f105'; /* FontAwesome chevron-right */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .details-toggle > summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--header-color);
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+            list-style: none; /* Hide default marker */
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .details-toggle > summary::before {
+            content: '\f078'; /* FontAwesome chevron-down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            transition: transform 0.3s ease;
+        }
+
+        .details-toggle[open] > summary::before {
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        .details-toggle > summary:hover {
+            background-color: #ced4da;
+        }
+
+        .details-toggle > div {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #e9ecef;
+            color: var(--header-color);
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .comparison-box {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .comparison-box > div {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .prognosis-good {
+            color: var(--alert-green-text);
+            font-weight: bold;
+        }
+        
+        .prognosis-bad {
+            color: var(--alert-red-text);
+            font-weight: bold;
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 3px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c7254e;
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            padding: 10px 15px;
+            background-color: var(--alert-blue-bg);
+            border-radius: 8px;
+            border: 1px solid var(--alert-blue-text);
+            text-align: center;
+        }
+
+        .flow-arrow {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .tab-container {
+            margin-top: 20px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #6c757d;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px; /* Align with container border */
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            background-color: var(--card-bg);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .author-footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .html-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        .html-table th, .html-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .html-table th {
+            background-color: #e9ecef;
+            color: #333;
+            font-weight: bold;
+        }
+        .html-table tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+        .html-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .shaded {
+            background-color: var(--highlight-bg) !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-title"><i class="fa-solid fa-microscope"></i> Musaed Chapter 120: Cutaneous T-Cell Lymphoma</h1>
+        <p class="subtitle">A High-Yield Review for the Saudi Board Exam</p>
+
+        <!-- General Notes Section -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-notes-medical"></i> General Notes: The Foundation</h2>
+            <ul>
+                <li>CTCL describes a group of neoplasms of skin homing T-cells</li>
+                <li>~80% of primary cutaneous lymphomas</li>
+                <li>*65% of them are mycosis fungoides and its variants</li>
+                <li>CTCLs are classified into indolent and aggressive clinical behaviors (see table below)</li>
+            </ul>
+
+            <div class="callout info">
+                <i class="fa-solid fa-magnifying-glass callout-icon"></i>
+                <strong>Diagnostic Triad:</strong> For the diagnosis of CTCL, clinical, histologic, and immunophenotyping are needed. One is not enough!
+            </div>
+            
+            <h3><i class="fa-solid fa-vials"></i> Immunophenotyping & Antigen Loss</h3>
+            <ul>
+                <li>Loss of one of the T-cell associated antigens like <code>CD2</code>, <code>CD3</code>, <code>CD4</code>, and <code>CD5</code> is considered an important finding on immunophenotyping.</li>
+                <li>Loss of <code>CD7</code> is less specific, as it can happen with any disease with chronic T cell stimulation and is not a reliable marker.</li>
+                <li>However, <code>CD7</code> is the <span class="mcq-highlight">earliest marker to be lost (MCQ)</span>.</li>
+            </ul>
+
+            <div class="callout pearl">
+                <i class="fa-solid fa-brain callout-icon"></i>
+                <strong>Board Pearl:</strong> While <code>CD7</code> loss is non-specific, they love asking which T-cell marker is lost *first* in the neoplastic process. The answer is <code>CD7</code>.
+            </div>
+
+            <h3><i class="fa-solid fa-stethoscope"></i> General Guidelines for Diagnosis</h3>
+            
+            <details class="details-toggle">
+                <summary><i class="fa-solid fa-syringe"></i> Biopsy Strategy</summary>
+                <div>
+                    <ul>
+                        <li>Deep punch biopsies 4-6 mm or incisional/excisional are preferred.</li>
+                        <li>May need to repeat biopsies many times before reaching a conclusion.</li>
+                        <li>Difficult to get a definite diagnosis based on biopsy alone.</li>
+                        <li>Therefore, clinical, histologic, and immunophenotyping are needed.</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary><i class="fa-solid fa-palette"></i> Immunophenotyping (= markers)</summary>
+                <div>
+                    <ul>
+                        <li>Done by immunohistochemistry on skin samples.</li>
+                        <li>Or flow cytometry on blood samples (to check for blood involvement).</li>
+                        <li>Each CTCL entity has a specific immunophenotype, which helps differentiate between them.</li>
+                        <li>Loss of one of the T-cell associated antigens like <code>CD2</code>, <code>CD3</code>, <code>CD4</code>, and <code>CD5</code> is considered an important finding.</li>
+                        <li>Loss of <code>CD7</code> is less specific, as it can happen with any disease with chronic T cell stimulation and is not a reliable marker.</li>
+                        <li><code>CD7</code> is the <span class="mcq-highlight">earliest marker to be lost (MCQ)</span>.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary><i class="fa-solid fa-dna"></i> T-cell receptor (TCR) rearrangement analysis</summary>
+                <div>
+                    <ul>
+                        <li>Used to check the <span class="mcq-highlight">clonality of T cells (MCQ)</span>.</li>
+                        <li>Done by either <span class="mcq-highlight">PCR or Southern plot (MCQ)</span>.</li>
+                        <li>PCR has higher sensitivity and specificity.</li>
+                        <li>It basically measures if the cells are one clone or multiple clones.</li>
+                        <li>Can be done on skin samples, lymph nodes, and peripheral blood.</li>
+                        <li>Peripheral blood involvement -> poor prognosis.</li>
+                        <li><span class="mcq-highlight">Gamma and beta TCR</span> are the most common <span class="mcq-highlight">(MCQ)</span>.</li>
+                        <li>Monoclonality may not be evident in early lesions.
+                            <ul><li>50% of patch - 73% of plaque - 83% to 100% of tumor/erythrodermic</li></ul>
+                        </li>
+                        <li>If one clone -> consistent with CTCL.</li>
+                        <li>However, some benign conditions may show clonality as well (PLEVA, LyP, parapsoriasis), so it's not reliable on its own and needs to be combined with the other tests.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <!-- Classification and Management Strategy -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-sitemap"></i> Classification and Practical Management</h2>
+            <p>Once clinical, histological, immunophenotyping, and TCRR studies are consistent with a CTCL, the type of CTCL should be determined.</p>
+            <div class="callout info">
+                <i class="fa-solid fa-question-circle callout-icon"></i>
+                <strong>Three Key Questions to Answer:</strong>
+                <ol>
+                    <li>
+                        <strong>Is it MF or its variant?</strong>
+                        <ul>
+                            <li>65% of CTCLs are in this group.</li>
+                            <li>Managed by a dermatologist alone in most cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Is it one of the CD30-positive lymphoproliferative disorders?</strong>
+                        <ul>
+                            <li>25% of CTCLs are in this group.</li>
+                            <li><span class="prognosis-good">Excellent prognosis.</span></li>
+                            <li>Managed by a dermatologist alone.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Is it another rare variant of CTCL?</strong>
+                        <ul>
+                            <li>10% of CTCLs are in this group.</li>
+                            <li>Most lymphomas in this group have an <span class="prognosis-bad">aggressive behavior.</span></li>
+                            <li>Needs to be managed in collaboration with a hemato-oncologist.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <h3><i class="fa-solid fa-clipboard-list"></i> Staging and Workup</h3>
+            <ul>
+                <li>Staging procedure will depend on the type of CTCL + the clinical stage of the disease.</li>
+                <li>Staging is not worthwhile in early patch/plaque MF and pagetoid reticulosis.</li>
+                <li>Also not needed for lymphomatoid papulosis.</li>
+                <li>If Sezary syndrome is suspected, staging + special emphasis on assessment of peripheral blood involvement is essential.</li>
+                <li>In all the other CTCLs, CBC & D, LFT/RFT, CT/PET of chest and abdomen, and BMBx are required.</li>
+            </ul>
+        </section>
+
+        <!-- WHO-EORTC Classification Table -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-table-list"></i> WHO-EORTC Classification for Cutaneous T-Cell Lymphomas</h2>
+            <div style="overflow-x:auto;">
+                <table class="html-table">
+                    <thead>
+                        <tr>
+                            <th>WHO-EORTC classification</th>
+                            <th>Frequency (%)*</th>
+                            <th>5-year survival rate (%)*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="3" style="background-color: var(--alert-green-bg); color: var(--alert-green-text); font-weight:bold;"><strong>Indolent clinical behavior</strong></td></tr>
+                        <tr><td>Mycosis fungoides (MF)</td><td>54</td><td>88</td></tr>
+                        <tr><td style="padding-left: 30px;">• Folliculotropic MF</td><td></td><td>80</td></tr>
+                        <tr><td style="padding-left: 30px;">• Pagetoid reticulosis</td><td></td><td>100</td></tr>
+                        <tr><td style="padding-left: 30px;">• Granulomatous slack skin</td><td><1</td><td>100</td></tr>
+                        <tr><td>Primary cutaneous CD30-positive lymphoproliferative disorders</td><td></td><td></td></tr>
+                        <tr><td style="padding-left: 30px;">• Primary cutaneous anaplastic large cell lymphoma (C-ALCL)</td><td>10</td><td>95</td></tr>
+                        <tr><td style="padding-left: 30px;">• Lymphomatoid papulosis (LyP)</td><td>16</td><td>100</td></tr>
+                        <tr><td>Subcutaneous panniculitis-like T-cell lymphoma (SPTCL)</td><td></td><td>82</td></tr>
+                        <tr><td>Primary cutaneous CD4-positive small/medium T-cell lymphoproliferative disorder</td><td>3</td><td>75#</td></tr>
+                        <tr><td>Primary cutaneous acral CD8-positive T-cell lymphoma"</td><td><1</td><td>100</td></tr>
+                        <tr><td colspan="3" style="background-color: var(--alert-red-bg); color: var(--alert-red-text); font-weight:bold;"><strong>Aggressive clinical behavior</strong></td></tr>
+                        <tr><td>Sézary syndrome (SS)</td><td>4</td><td>24</td></tr>
+                        <tr><td>Adult T-cell leukemia/lymphoma (ATLL)</td><td>NDA</td><td>NDA</td></tr>
+                        <tr><td>Extranodal NK/T-cell lymphoma, nasal type</td><td><5</td><td></td></tr>
+                        <tr><td>Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma||</td><td></td><td>18</td></tr>
+                        <tr><td>Primary cutaneous gamma/delta T-cell lymphoma (PCGD-TCL)</td><td><5</td><td></td></tr>
+                        <tr><td>Primary cutaneous peripheral T-cell lymphoma (PTCL), NOS</td><td>3</td><td>16</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="3" style="font-size: 0.9em; color: #6c757d;">
+                            *Data are based on 1476 CTCL patients registered by the Dutch and Austrian Cutaneous Lymphoma Groups?.<br>
+                            #Virtually 100% for patients presenting with a solitary lesion.<br>
+                            "Provisional entities in the 2016 update of the WHO classification.<br>
+                            Table 120.1 WHO-EORTC classification for cutaneous T-cell lymphomas?. NDA, no data available; NOS, not otherwise specified.
+                        </td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Algorithm for Classification -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-route"></i> Algorithm for the Classification of CTCL</h2>
+            <p>Fig. 120.1 Algorithm for the classification of cutaneous T-cell lymphoma (CTCL). NOS, not otherwise specified. See also Table 120.1. Adapted from Willemze R, Beljaards RC, Meijer CJLM. Classification of primary cutaneous T-cell lymphoma. Histopathology. 1994;24:405-15.</p>
+            <table class="html-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Frequency</th>
+                        <th>Entities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="vertical-align: middle;"><strong>CTCL <br>(More common)</strong></td>
+                        <td rowspan="2" style="vertical-align: middle;"><strong>65% of CTCL</strong></td>
+                        <td>• Mycosis fungoides (MF) and variants</td>
+                    </tr>
+                    <tr>
+                        <td>• Sézary syndrome (SS)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spectrum of cutaneous CD30+ lymphoproliferative disorders (LPD)</strong> (See Fig. 120.10)</td>
+                        <td><strong>25% of CTCL</strong></td>
+                        <td>• Lymphomatoid papulosis<br>• Cutaneous anaplastic large cell lymphoma</td>
+                    </tr>
+                     <tr>
+                        <td rowspan="2"><strong>CTCL, other (non-MF/SS/CD30+ LPD)</strong></td>
+                        <td rowspan="2"><strong>10% of CTCL</strong></td>
+                        <td>• Adult T-cell leukemia/lymphoma<br>• Subcutaneous panniculitis-like T-cell lymphoma<br>• Extranodal NK/T-cell lymphoma, nasal type<br>• Aggressive epidermotropic CD8+ CTCL<br>• Cutaneous y/delta T-cell lymphoma<br>• Cutaneous CD4-positive small/medium T-cell lymphoproliferative disorder</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rare:</strong><br>• Primary cutaneous acral CD8-positive T-cell lymphoma<br>• Peripheral T-cell lymphoma, NOS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Mycosis Fungoides Section -->
+        <section class="section-card" id="mf">
+            <h2><i class="fa-solid fa-user-doctor"></i> Mycosis Fungoides (MF)</h2>
+            <div class="callout indolent">
+                <i class="fa-solid fa-shield-halved callout-icon"></i>
+                <strong>Most Common & Indolent:</strong> MF is the most common cutaneous lymphoma, representing ~50% of all primary cutaneous lymphomas. Median age at diagnosis is 55-60 years.
+            </div>
+
+            <h3><i class="fa-solid fa-seedling"></i> Pathogenesis</h3>
+            <div class="flow-diagram">
+                <div class="flow-step">Genetically susceptible individual</div>
+                <div class="flow-arrow"><i class="fa-solid fa-plus"></i></div>
+                <div class="flow-step">Environmental trigger</div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="flow-step">Chronic antigenic stimulation of T cells</div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="flow-step" style="background-color: var(--alert-red-bg); border-color: var(--alert-red-text);">Neoplastic cells</div>
+            </div>
+            <ul>
+                <li>The cause for chronic antigenic stimulation is not known.</li>
+                <li>Exposure to paper, glass and wood may play a role but it's controversial.</li>
+                <li>Downregulation of the CD8+ T cells leads to decreased antitumor activity.</li>
+                <li>The neoplastic T cells in MF are of the <strong>Th2 type</strong>.</li>
+            </ul>
+
+            <div class="comparison-box">
+                <div>
+                    <h4><i class="fa-solid fa-house-user"></i> Tissue resident T cells (Trm)</h4>
+                    <ul>
+                        <li><code>CCR7-</code> and <code>E-selectin-</code></li>
+                        <li>Unable to migrate out of the skin in most cases.</li>
+                        <li>Involved in <strong>Mycosis Fungoides</strong>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fa-solid fa-plane-departure"></i> Central memory cells (Tcm)</h4>
+                    <ul>
+                        <li><code>CCR7+</code> and <code>E-selectin+</code></li>
+                        <li>Able to migrate out of the skin and access the peripheral blood/lymphatics.</li>
+                        <li>Involved in <strong>Sézary syndrome</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3><i class="fa-solid fa-user-md"></i> Clinical Features & Staging</h3>
+            <p>Progress from patch, plaque, and tumors stages but not always. Clinical course takes years and possibly decades.</p>
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="openTab(event, 'patch-plaque')">Patch and Plaque Stage</button>
+                    <button class="tab-button" onclick="openTab(event, 'tumor')">Tumor Stage</button>
+                    <button class="tab-button" onclick="openTab(event, 'variants')">Variants</button>
+                </div>
+
+                <div id="patch-plaque" class="tab-content active">
+                    <h4>Patch and Plaque Stage</h4>
+                    <ul>
+                        <li>Non-specific eczematous or psoriasiform morphology.</li>
+                        <li><strong>Atrophy and poikiloderma</strong> are clues to the diagnosis.</li>
+                        <li>Hypopigmentation may occur especially in darkly pigmented individuals.</li>
+                        <li>Involves the buttocks and covered areas of the trunk.</li>
+                        <li>Most patients do not progress past the plaque stage, but ~10% of patients may develop nodules or tumors.</li>
+                    </ul>
+                </div>
+
+                <div id="tumor" class="tab-content">
+                    <h4>Tumor Stage</h4>
+                    <ul>
+                        <li>Concurrently have patches, plaques, and tumors.</li>
+                        <li>If tumors are present alone, MF is not likely.</li>
+                        <li>Ulceration is common.</li>
+                        <li>High risk of extracutaneous disease.</li>
+                        <li>Extracutaneous disease first involves the regional lymph nodes followed by visceral dissemination.</li>
+                        <li>The bone marrow is rarely involved.</li>
+                    </ul>
+                </div>
+                
+                <div id="variants" class="tab-content">
+                    <h4>Variants</h4>
+                    <ul>
+                        <li><strong>Folliculotropic:</strong> a/w alopecia and mucin on histo (alopecia mucinosa).</li>
+                        <li><strong>GSS (Granulomatous Slack Skin):</strong> sagging of the axillary and inguinal skin.</li>
+                        <li><strong>Pagetoid reticulosis:</strong> extensive epidermotropism.</li>
+                        <li><strong>Poikilodermic, hypopigmented, interstitial, verrucous, pustular, bullous</strong>, all are just morphological variants.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3><i class="fa-solid fa-path"></i> Pathology</h3>
+             <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="openTab(event, 'path-patch')">Patch Stage</button>
+                    <button class="tab-button" onclick="openTab(event, 'path-plaque')">Plaque Stage</button>
+                    <button class="tab-button" onclick="openTab(event, 'path-tumor')">Tumor Stage</button>
+                </div>
+
+                <div id="path-patch" class="tab-content active">
+                    <h4>Patch stage:</h4>
+                    <ul>
+                        <li>Superficial band-like lichenoid interface dermatitis.</li>
+                        <li>Consists of lymphocytes.</li>
+                        <li>Atypical cells in the epidermis (epidermotropism).</li>
+                    </ul>
+                </div>
+
+                <div id="path-plaque" class="tab-content">
+                    <h4>Plaque stage:</h4>
+                    <ul>
+                        <li>Psoriasiform hyperplasia.</li>
+                        <li><strong>Pautrier microabscesses:</strong> nests of atypical lymphocytes in the epidermis.</li>
+                        <li>More extensive epidermotropism.</li>
+                        <li>Atypical cells in both the dermis and epidermis.</li>
+                        <li>Rarely, interstitial infiltrate is present that resembles granuloma annulare (called interstitial MF).</li>
+                    </ul>
+                </div>
+                
+                <div id="path-tumor" class="tab-content">
+                    <h4>Tumor stage:</h4>
+                    <ul>
+                        <li>Dermal infiltrate involving the whole dermis.</li>
+                        <li><strong>No epidermotropism</strong> (cells become so undifferentiated that they lose the ability to move to the epidermis).</li>
+                        <li>Large cells with cerebriform nuclei, blast cells.</li>
+                    </ul>
+                    <div class="callout aggressive">
+                         <i class="fa-solid fa-triangle-exclamation callout-icon"></i>
+                        <strong>Large cell transformation:</strong>
+                        <ul>
+                            <li>Defined as more than 25% of the cells are large (x4 normal lymphocyte).</li>
+                            <li>a/w <span class="prognosis-bad">poor prognosis</span>.</li>
+                            <li>These cells may be positive for <code>CD30</code> or negative for <code>CD30</code>.</li>
+                            <li><code>CD30</code> positive patients have a better prognosis.</li>
+                            <li><span class="mcq-highlight"><code>CD30</code> should be done to screen for large cell transformation (MCQ)</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3><i class="fa-solid fa-tags"></i> Immunophenotyping</h3>
+            <p>Classic MF Phenotype: <span class="mcq-highlight"><code>CD3+</code>, <code>CD4+</code>, <code>CD7-</code>, <code>CD8-</code>, <code>CD45RO+</code> (MCQ)</span></p>
+            <ul>
+                <li><code>CD8+</code> may occur rarely, especially with hypopigmented variant.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-list-ol"></i> Staging and Workup</h3>
+            <ul>
+                <li>Based on the TNM classification + peripheral blood involvement.</li>
+                <li>Clinical examination of the skin and lymph nodes, skin biopsies, CBC and chemistry should be done for all patients.</li>
+                <li>Patients with limited patch/plaque MF (Stage 1A or 1B) -> no further workup is needed.</li>
+                <li>CT scan of the chest and abdomen are indicated when extracutaneous involvement is suspected.</li>
+            </ul>
+
+            <!-- TNMB Tables -->
+            <h4>TNMB CLASSIFICATION OF MYCOSIS FUNGOIDES AND SEZARY SYNDROME</h4>
+            <p>Table 120.3 TNMB classification of mycosis fungoides and Sézary syndrome.</p>
+            <table class="html-table">
+                <thead><tr><th>Category</th><th>Code</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td rowspan="4"><strong>T (skin)</strong></td><td>T1</td><td>Limited patch/plaque (involving <10% of total skin surface)</td></tr>
+                    <tr><td>T2</td><td>Generalized patch/plaque (involving ≥10% of total skin surface)</td></tr>
+                    <tr><td>T3</td><td>Tumor(s)</td></tr>
+                    <tr><td>T4</td><td>Erythroderma</td></tr>
+                    <tr><td rowspan="4"><strong>N (lymph node)</strong></td><td>N0</td><td>No enlarged lymph nodes</td></tr>
+                    <tr><td>N1</td><td>Enlarged lymph nodes, histologically uninvolved</td></tr>
+                    <tr><td>N2</td><td>Enlarged lymph nodes, histologically involved (nodal architecture uneffaced)</td></tr>
+                    <tr><td>N3</td><td>Enlarged lymph nodes, histologically involved (nodal architecture [partially] effaced)</td></tr>
+                    <tr><td rowspan="2"><strong>M (viscera)</strong></td><td>M0</td><td>No visceral involvement</td></tr>
+                    <tr><td>M1</td><td>Visceral involvement</td></tr>
+                    <tr><td rowspan="3"><strong>B (blood)</strong></td><td>B0</td><td>No circulating atypical (Sézary) cells (or <5% of lymphocytes)</td></tr>
+                    <tr><td>B1</td><td>Low blood tumor burden (≥5% of lymphocytes are Sézary cells, but not B2)</td></tr>
+                    <tr><td>B2</td><td>High blood tumor burden (≥1000/mcL Sézary cells + positive clone)</td></tr>
+                </tbody>
+            </table>
+            
+            <!-- Note: The provided text has different B1 definitions on page 4 vs page 17. I have used the one from page 17 as it seems more official, but I will include the one from page 4 for completeness. -->
+
+
+            <h4>CLINICAL STAGING SYSTEM FOR MYCOSIS FUNGOIDES AND SÉZARY SYNDROME</h4>
+            <p>Table 120.4 Clinical staging system for mycosis fungoides and Sezary syndrome. The shaded boxes highlight the required features for the three subdivisions of stage IV disease.</p>
+            <table class="html-table">
+                <thead><tr><th>Clinical stage</th><th>T</th><th>N</th><th>M</th><th>B</th></tr></thead>
+                <tbody>
+                    <tr><td>IA</td><td>T1</td><td>N0</td><td>M0</td><td>B0-1</td></tr>
+                    <tr><td>IB</td><td>T2</td><td>N0</td><td>M0</td><td>B0-1</td></tr>
+                    <tr><td>IIA</td><td>T1-2</td><td>N1-2</td><td>M0</td><td>B0-1</td></tr>
+                    <tr><td>IIB</td><td>T3</td><td>N0-1</td><td>M0</td><td>B0-1</td></tr>
+                    <tr><td>III</td><td>T4</td><td>N0-2</td><td>M0</td><td>B0-1</td></tr>
+                    <tr class="shaded"><td>IVA1</td><td>T1-4</td><td>N0-2</td><td>M0</td><td>B2</td></tr>
+                    <tr class="shaded"><td>IVA2</td><td>T1-4</td><td>N3</td><td>M0</td><td>B0-2</td></tr>
+                    <tr class="shaded"><td>IVB</td><td>T1-4</td><td>N0-3</td><td>M1</td><td>B0-2</td></tr>
+                </tbody>
+            </table>
+
+            <h3><i class="fa-solid fa-circle-info"></i> Recommended evaluation/initial staging of the patient with mycosis fungoides/Sézary syndrome</h3>
+            <ul>
+                <li><strong>Complete physical examination, including:</strong>
+                    <ul>
+                        <li>Determination of type(s) of skin lesions</li>
+                        <li>Estimate percentage of BSA involved by patches, plaques, and tumor lesions and note any ulceration or folliculocentricity of lesions. The patient's palm (including all fingers) is approximately 1 percent of BSA*.</li>
+                        <li>Identification of any palpable lymph node, especially those ≥1.5 cm in largest diameter or firm, irregular, clustered, or fixed</li>
+                        <li>Identification of any organomegaly</li>
+                    </ul>
+                </li>
+                <li><strong>Skin biopsy</strong>
+                    <ul>
+                        <li>Essential: At least two skin biopsies should be obtained of different anatomic areas and morphology for H&E evaluation. If only one biopsy can be obtained, then the lesion that has the most scaling and induration should be chosen.</li>
+                        <li>If needed: Immunophenotyping to include at least the following markers: <code>CD2, CD3, CD4, CD5, CD7, and CD8</code>, <code>beta-F1</code> (to confirm alpha-beta TCR), and a B-cell marker, such as <code>CD20</code>; <code>CD30</code> may also be indicated in cases where lymphomatoid papulosis, anaplastic lymphoma, or large-cell transformation is considered. <span class="callout pearl" style="display:inline-block; padding: 2px 5px;">Beta-F1 -> Alpha&beta TCR</span></li>
+                        <li>If needed: Evaluation for clonality of TCR gene rearrangement</li>
+                    </ul>
+                </li>
+                 <li><strong>Blood tests</strong>
+                    <ul>
+                        <li>CBC with manual differential (assess for Sezary cells), comprehensive chemistries, LDH</li>
+                        <li>Analysis for abnormal lymphocytes by either Sezary cell count with determination of the absolute number of Sezary cells and/or flow cytometry (including <code>CD4+/CD7-</code> or <code>CD4+/CD26-</code>)</li>
+                        <li>If needed: TCR gene rearrangement and relatedness to any clone in skin</li>
+                    </ul>
+                </li>
+                <li><strong>Radiologic tests</strong>
+                    <ul>
+                        <li>In stage IA patients with T1a disease who are otherwise in excellent health, without adenopathy, organomegaly, or abnormal blood tests, no further studies are needed. In stage IB patients without suspicious adenopathy or abnormal blood work, a chest x-ray is sufficient, rather than a CT scan, to exclude chest or systemic involvement; and in all other patients, contrast-enhanced CT scan of chest, abdomen, and pelvis (neck included if clinically indicated) or whole body integrated PET-CT is recommended to further evaluate any potential lymphadenopathy, visceral involvement, or abnormal laboratory tests; in patients unable to safely undergo CT scans, MRI may be substituted.</li>
+                    </ul>
+                </li>
+                 <li><strong>Lymph node biopsy</strong>
+                    <ul>
+                        <li>Excisional biopsy is indicated in those patients with a node that is at least 1.5 cm (confirmed by imaging) in diameter; and/or is firm, irregular, clustered, or fixed; and/or significantly PET avid.</li>
+                        <li>Site of biopsy: Preference is given to the largest lymph node draining an involved area of the skin or if FDG-PET scan data are available, the node with highest standardized uptake value.</li>
+                        <li>Analysis: Pathologic assessment by light microscopy, flow cytometry, and TCR gene rearrangement</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3><i class="fa-solid fa-chart-line"></i> Prognosis</h3>
+            <ul>
+                <li>Depends on the stage of the disease.</li>
+                <li>Early MF patients have survival comparable to the general population.</li>
+            </ul>
+            <div class="callout aggressive">
+                 <i class="fa-solid fa-arrow-trend-down callout-icon"></i>
+                <strong>Factors predictive of disease progression:</strong>
+                <ul>
+                    <li>Advanced skin involvement (Bullous MF)</li>
+                    <li>Extracutaneous disease</li>
+                    <li>Older age, male gender, blacks</li>
+                    <li>Folliculotropic MF</li>
+                    <li>Large cell transformation</li>
+                    <li>High LDH</li>
+                    <li>Blood involvement</li>
+                </ul>
+            </div>
+            
+            <h3><i class="fa-solid fa-pills"></i> Treatment</h3>
+            <p>Depends on the stage. (See also Table 120.5 Treatment of Mycosis Fungoides)</p>
+            <details class="details-toggle">
+                <summary>Stage 1A, 1B, and 2A (and sometimes 2B)</summary>
+                <div>
+                    <h4>Skin directed therapy</h4>
+                    <ul>
+                        <li>Topical or intralesional steroids</li>
+                        <li>Topical nitrogen mustard=mechlorethamine : Topical mechlorethamine gel 0.016% is FDA-approved for early-stage Mycosis Fungoides (MF), particularly stage IA–IB (patch/plaque stage) in non-ulcerated lesions.</li>
+                        <li>Topical bexarotene if <15 BSA</li>
+                        <li>Phototherapy</li>
+                        <li>Radiotherapy:  can be used, typically 36 Gy in 1.5–2 Gy fractions over 8–10 weeks; lower-dose regimens (10–12 Gy) permit retreatment and remain effective, especially for stages IA–IIA</li>
+                    </ul>
+                    <p>If SDT is not enough -> add IFN-a or systemic retinoid</p>
+                    <p>If still not enough -> add Denileukin (IL-2 inhibitor) or vorinostat/romidepsin (histone deacetylase inhibitors; HDACi) <span class="mcq-highlight">(MCQ about option for refractory MF -> vorinostat)</span></p>
+                    <p>If still not enough -> add systemic chemotherapy</p>
+                </div>
+            </details>
+             <details class="details-toggle" style="margin-top:10px;">
+                <summary>Stage 2B</summary>
+                <div>
+                    <p>Start with a combination of skin directed therapy + systemic therapy</p>
+                    <p>Systemic therapies as above</p>
+                    <p>NBUVB used only if patch stage</p>
+                    
+                </div>
+            </details>
+             <details class="details-toggle" style="margin-top:10px;">
+                <summary>Stage 3 (erythrodermic MF)</summary>
+                <div>
+                    <ul>
+                        <li>Extracorporeal photopheresis:recommended as the main therapy</li>
+                        <li>Systemic retinoids</li>
+                        <li>IFN-a</li>
+                        <li><strong>Monoclonal antibodies:</strong>
+                            <ul>
+                                <li>Alemtuzumab</li>
+                                <li>Brentuximab</li>
+                        <li>Mogamulizumab:
+                            <ul>
+                                <li>Mechanism: Anti-CCR4 monoclonal antibody</li>
+                                <li>Targets CCR4+ malignant T-cells (expressed on most Sézary/MF cells)</li>
+                                <li>Also depletes regulatory T cells, enhancing immune surveillance</li>
+                                <li>Indication:</li>
+                                <li>FDA-approved for:</li>
+                                <ul>
+                                    <li>Relapsed/refractory MF</li>
+                                    <li>Sézary syndrome (SS) – preferred</li>
+                                </ul>
+                                <li>Effective in erythrodermic MF, especially with B2 blood involvement</li>
+                            </ul>
+
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary>Stage 4</summary>
+                <div>
+                    <ul>
+                        <li>Should be managed by a hemato-oncologist</li>
+                        <li>Six cycles of CHOP chemotherapy</li>
+                        <li>HSCT</li>
+                    </ul>
+                </div>
+            </details>
+
+            <h3 style="margin-top:20px;"><i class="fa-solid fa-syringe"></i> Additional notes on treatment: Biologics for CTCL</h3>
+            
+            <div class="comparison-box">
+                <div style="border-left: 4px solid #007bff;">
+                    <h4>Alemtuzumab</h4>
+                    <p><strong>Mechanism:</strong> Anti-<code>CD52</code>CD52 is expressed on T and B lymphocytes, monocytes, eosinophils
+
+                        Causes profound lymphodepletion</p>
+                    <p><strong>Indication:</strong> Off-label for erythrodermic MF</p>
+                    <p><strong>Side Effect:</strong> <span class="mcq-highlight">Reactivation of CMV infection (MCQ)</span></p>
+                </div>
+                <div style="border-left: 4px solid #28a745;">
+                    <h4>Denileukin diftitox</h4>
+                    <p><strong>Mechanism:</strong> Anti-IL-2</p>
+                    <p><strong>Indication:</strong> FDA-approved for refractory MF</p>
+                    <p><strong>Side Effect:</strong> <span class="mcq-highlight">capillary leak syndrome, fever, and fluid retention (MCQ), thyrotoxicosis following by long term hypothyroidism </span></p>
+                </div>
+            </div>
+             <div class="comparison-box">
+                <div style="border-left: 4px solid #ffc107;">
+                    <h4>Brentuximab</h4>
+                    <p><strong>Mechanism:</strong> Anti-<code>CD30</code></p>
+                    <p><strong>Indication:</strong> FDA-approved for ALCL, can be used in <code>CD30+</code> MF</p>
+                    <p><strong>Side Effect:</strong> <span class="mcq-highlight">peripheral neuropathy (MCQ)</span></p>
+                    <p><strong>Warning:</strong> <span class="mcq-highlight">Blackbox warning for progressive multifocal leukoencephalopathy (just like Rituximab) (MCQ)</span></p>
+                </div>
+                <div style="border-left: 4px solid #dc3545;">
+                    <h4>Mogamulizumab</h4>
+                    <p><strong>Mechanism:</strong> Anti-<code>CCR4</code></p>
+                    <p><strong>Indication:</strong> FDA-approved for <code>relapsed/refractory MF</code> and <code>Sézary syndrome (SS)</code> - preferred</p>
+                    <p><strong>Side Effect:</strong> <span class="mcq-highlight">Infusion reactions (Common)</span> - premedication often needed, skin rash (GVHD-like) - key exam point - can mimic MF flare; histology helps, <span class="mcq-highlight">Hepatotoxicity</span> - monitor LFTs, <span class="mcq-highlight">Infections</span> - HSV, CMV, PJP risk - consider prophylaxis</p>
+
+                </div>
+            </div>
+
+            <div class="callout pearl">
+                <i class="fa-solid fa-star callout-icon"></i>
+                <strong>High-Yield MF MCQs:</strong>
+                <ul>
+                    <li>Cure is defined as disease free without treatment for <span class="mcq-highlight">8 years (MCQ)</span>.</li>
+                    <li>Folliculotropic MF is <span class="prognosis-bad">worst prognosis</span>, pagetoid reticulosis is <span class="prognosis-good">best (MCQ)</span>.</li>
+                    <li>Folliculotropic MF is equivalent to tumor stage MF (stage 3), even if no tumors are present <span class="mcq-highlight">(MCQ)</span>.</li>
+                    <li>Folliculotropic is the most common variant of MF <span class="mcq-highlight">(MCQ)</span>.</li>
+                    <li>Best phototherapy option for folliculotropic MF -> <span class="mcq-highlight">PUVA (MCQ)</span>.</li>
+                    <li>Gold standard for screening for blood involvement is <span class="mcq-highlight">flow cytometry (MCQ)</span>.</li>
+                    <li>Earliest test to detect MF -> <span class="mcq-highlight">immunoGENOtyping (MCQ)</span>.</li>
+                    <li>Topical retinoids can be used only if <span class="mcq-highlight">< 15% BSA</span>.</li>
+                    <li>Please see the other file, treatment section.</li>
+                </ul>
+            </div>
+
+        </section>
+        
+        <!-- Treatment of MF Table -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-kit-medical"></i> Table 120.5 Treatment of Mycosis Fungoides</h2>
+            <table class="html-table">
+                <thead>
+                    <tr><th>Stage</th><th>Treatment Strategy</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Premycotic phase</strong></td>
+                        <td>• Topical or intralesional corticosteroids; narrowband UVB§<br>• If former not effective, PUVA§</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stage IA-IIA (patches/plaques)</strong></td>
+                        <td>• PUVA§; HN2 (see Ch. 129)<br>• Narrowband UVB§ (if only patches)<br>• Topical corticosteroids or topical retinoids^ (if only limited patches/thin plaques as second-line therapy)<br>• RT (if single lesion)<br>• TSEB (if generalized thick plaques)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stage IIB (skin tumors)</strong></td>
+                        <td>• PUVA or HN2 + RT (if only a few tumors)<br>• TSEB (followed by skin-directed therapies)<br>• Relapse: PUVA + IFN-a; PUVA + retinoids (acitretin; oral bexarotene*); second-line therapy: denileukin diftitox* ,1; HDACi (vorinostat, romidepsin)*<br>• Add RT (if persistent tumors); consider second course of TSEB (10-20 Gy)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stage III (erythroderma)</strong></td>
+                        <td>• ECP; if not effective, add IFN-a.<br>• Low-dose chlorambucil and prednisone; low-dose methotrexate<br>• Add skin-directed therapies (PUVA; HN2; RT), if necessary<br>• Second-line therapy: oral bexarotene*; denileukin diftitox*,1; HDACi*; low-dose alemtuzumab</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stage IV (nodal, visceral involvement)</strong></td>
+                        <td>• Multi-agent chemotherapy (e.g. CHOP)<br>• Biological response modifiers (denileukin diftitox; IFN-a; oral retinoids)<br>• Add skin-directed therapies (PUVA; HN2), if necessary<br>• Allogeneic hematopoietic stem cell transplantation (utilizing non-myeloablative reduced-intensity conditioning regimens), in selected cases</td>
+                    </tr>
+                </tbody>
+                 <tfoot>
+                    <tr><td colspan="2" style="font-size: 0.9em; color: #6c757d;">
+                        §Address UV-shielded areas (e.g. upper inner thighs) via positioning.<br>
+                        ^Bexarotene 1% gel, tazarotene 0.1% gel, alitretinoin 0.1% gel.<br>
+                        *Efficacy compared to traditional treatments yet to be determined.<br>
+                        "At the time of writing, not commercially available.<br>
+                        Table 120.5 Treatment of mycosis fungoides. Topical bis-chloronitrosourea.
+                    </td></tr>
+                </tfoot>
+            </table>
+        </section>
+		        <!-- Sézary Syndrome Section -->
+        <section class="section-card" id="ss">
+            <h2><i class="fa-solid fa-droplet"></i> Sézary Syndrome (SS)</h2>
+            <div class="callout aggressive">
+                <i class="fa-solid fa-biohazard callout-icon"></i>
+                <strong>Leukemic Variant:</strong> Defined by the triad of <strong>erythroderma</strong>, <strong>generalized lymphadenopathy</strong>, and presence of <strong>Sézary cells</strong> in the peripheral blood.
+            </div>
+
+            <h3><i class="fa-solid fa-wind"></i> Pathogenesis</h3>
+            <p>Explained earlier (involves Central memory cells (Tcm) that are <code>CCR7+</code> and <code>E-selectin+</code>, allowing access to peripheral blood/lymphatics).</p>
+            
+            <h3><i class="fa-solid fa-user-injured"></i> Clinical Features</h3>
+            <ul>
+                <li><strong>Erythroderma</strong>: Intensely pruritic.</li>
+                <li>Lymphadenopathy, alopecia, onychodystrophy, and palmoplantar hyperkeratosis are common findings.</li>
+                <li>5-year survival of ~25%.</li>
+                <li>Most patients die of opportunistic infections.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-skin-tone"></i> Cutaneous Findings</h3>
+            <ul>
+                <li><strong>Erythroderma</strong> and <strong>generalized lymphadenopathy</strong>. Associated features:</li>
+                <ul>
+                    <li>Extreme <strong>pruritus</strong>.</li>
+                    <li><strong>Palmoplantar hyperkeratosis</strong>, <strong>lichenification</strong>, <strong>edema</strong>, and <strong>exfoliation</strong>.</li>
+                    <li>Alternating bands of <strong>pigment</strong> and <strong>erythema</strong> with uninvolved skin around <strong>flexural areas</strong> known as the <strong>"deck chair" sign</strong> or <strong>"folded luggage" sign</strong>.</li>
+                    <li>Infiltrative plaques occurring on the <strong>face</strong> may result in exaggeration of normal skin folds, known as a <strong>lion-like face</strong>, or <strong>leonine facies</strong>.</li>
+                    <li>Multiple <strong>nail defects</strong>, including <strong>yellowing</strong>.</li>
+                </ul>
+            </ul>
+
+
+            <h3><i class="fa-solid fa-path"></i> Pathology & Immunophenotyping</h3>
+            <ul>
+                <li>Similar to MF.</li>
+                <li>May be non-specific in 1/3 of cases.</li>
+                <li><strong>Immunophenotyping:</strong>
+                    <ul>
+                        <li><code>CD3+</code>, <code>CD4+</code>, <code>CD8-</code> phenotype.</li>
+                        <li>Characteristically lack <code>CD7</code> and <code>CD26</code> expression.</li>
+                        <li>Express programmed death-1 (<code>PD-1</code>; <code>CD279</code>) in almost all cases.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="callout pearl">
+                <i class="fa-solid fa-check-double callout-icon"></i>
+                <strong>Criteria for Diagnosis:</strong>
+                <ul>
+                    <li>Erythroderma >80% <span class="mcq-highlight">(MCQ)</span></li>
+                    <li>Monoclonality in the blood (and preferentially the skin) <strong>PLUS one of the following</strong>:
+                        <ul>
+                            <li>Sézary cell* count ≥1000 cells/mcL. Sezary are abnormal lymphocytes are characterized by their distinctive cerebriform (brain-shaped) nucleus, which appears grooved or convoluted under microscopic examinatio</li>
+                            <li><span class="mcq-highlight">CD4:CD8 >10:1 (MCQ)</span> </li>
+                            <li>Percentage of T cells with abnormal phenotype (>40% loss of <code>CD7</code> or >30% loss of <code>CD26</code>)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3><i class="fa-solid fa-pills"></i> Treatment</h3>
+            <ul>
+                <li>Being a leukemia, systemic treatment is needed.</li>
+                <li>CHOP or CHOP-like regimens.</li>
+                <li><span class="mcq-highlight">ECP for erythroderma (MCQ)</span>.</li>
+                <li>Skin-directed therapies as adjuvant therapy.</li>
+                <li>Other options as above in stage 3-4 MF.</li>
+            </ul>
+        </section>
+
+        <!-- Adult T-cell Leukemia/Lymphoma Section -->
+        <section class="section-card" id="atll">
+            <h2><i class="fa-solid fa-virus"></i> Adult T-cell leukemia/lymphoma (ATLL)</h2>
+            <div class="callout aggressive">
+                 <i class="fa-solid fa-triangle-exclamation callout-icon"></i>
+                <p>Caused by <span class="mcq-highlight">Human T-lymphotropic virus 1, a retrovirus (MCQ)</span>.</p>
+                <p>HTLV-1 is transmitted via <span class="mcq-highlight">body fluids (MCQ)</span>.</p>
+            </div>
+            
+            <h3><i class="fa-solid fa-layer-group"></i> Subtypes</h3>
+            <ul>
+                <li><strong>Acute:</strong> most common and <span class="prognosis-bad">worst prognosis</span>.</li>
+                <li><strong>Chronic:</strong> <span class="prognosis-good">good prognosis</span>.</li>
+                <li><strong>Smoldering:</strong> <span class="prognosis-good">best prognosis</span>.</li>
+                <li><strong>Lymphomatous:</strong> <span class="prognosis-bad">bad prognosis</span>.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-clinic-medical"></i> Clinical & Pathologic Features</h3>
+            <ul>
+                <li>Nonspecific presentation.</li>
+                <li>Typically erythroderma or scaly patches and plaques (resembling MF).</li>
+                <li>The acute type is a/w leukemia, lymphadenopathy, organomegaly, and hypercalcemia.</li>
+                <li><strong>Pathology:</strong>
+                    <ul>
+                        <li>Diffuse infiltration of small, medium-sized or large pleomorphic T cells, which often display marked epidermotropism.</li>
+                        <li>Indistinguishable from MF.</li>
+                        <li>Differentiated by immunophenotyping: <code>CD3+</code>, <code>CD4+</code>, <code>CD8-</code>, <code class="mcq-highlight">CD25+</code>, <code>PD-1+</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Peripheral blood morphology:</strong>
+                    <ul>
+                        <li><span class="mcq-highlight">"Flower cells" "Clover leaf cells"</span>: buzzwords for ATLL <span class="mcq-highlight">(MCQ)</span>.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3><i class="fa-solid fa-pills"></i> Treatment</h3>
+            <ul>
+                <li>Combination of zidovudine and IFN-a.</li>
+                <li>Systemic chemotherapy is required in most cases.</li>
+                <li>Mogamulizumab is approved for ATLL in Japan.</li>
+                <li>For smoldering and chronic types, skin directed therapy as in MF.</li>
+            </ul>
+        </section>
+
+        <!-- CD30+ Section -->
+        <section class="section-card" id="cd30">
+            <h2><i class="fa-solid fa-star-of-life"></i> CD30+ lymphoproliferative disorders</h2>
+            <p>Second most common CTCL, ~25%.</p>
+            <div class="flow-diagram">
+                <div class="flow-step" style="background-color: var(--alert-green-bg); border-color: var(--alert-green-text);">Low-grade CTCL / Premalignant (LyP)</div>
+                <div class="flow-arrow"><i class="fa-solid fa-right-left"></i></div>
+                <div class="flow-step" style="background-color: #e9ecef;">Spectrum</div>
+                <div class="flow-arrow"><i class="fa-solid fa-right-left"></i></div>
+                <div class="flow-step" style="background-color: var(--alert-red-bg); border-color: var(--alert-red-text);">Malignant CTCL (ALCL)</div>
+            </div>
+            
+            <ul>
+                <li>Includes anaplastic large cell lymphoma (ALCL) and lymphomatoid papulosis (LyP).</li>
+                <li>They have the same histology.</li>
+                <li>Differentiation is based on clinical features (self-regressing in LyP vs non-self-regressing in ALCL).</li>
+                <li>When unable to differentiate between the two, "borderline case" is designated.</li>
+                <li>With time, borderline cases will show their true nature (like some people I know!).</li>
+                <li>Mutations in ALCL: <span class="mcq-highlight">MUM1/IRF4, DUSP22/IRF4 (MCQ)</span>.</li>
+                <li>Risk factors for ALCL: <span class="mcq-highlight">breast implant (MCQ)</span>.</li>
+            </ul>
+
+            <details class="details-toggle">
+                <summary>Differential for CD30+ Disorders</summary>
+                <div>
+                    <ul>
+                        <li>Primary cutaneous ALCL or LyP</li>
+                        <li>MF with large cell transformation and CD30+ cells</li>
+                        <li>Secondary cutaneous ALCL from extracutaneous site</li>
+                        <li>Pseudolymphoma with CD30+ cells</li>
+                        <li>Other CTCLs with CD30+ cells</li>
+                    </ul>
+                </div>
+            </details>
+
+            <h3><i class="fa-solid fa-user-md"></i> Clinical Features: ALCL vs. LyP</h3>
+            <div class="comparison-box">
+                <div style="border-left: 4px solid #dc3545;">
+                    <h4><i class="fa-solid fa-shield-virus"></i> Anaplastic Large Cell Lymphoma (ALCL)</h4>
+                    <ul>
+                        <li>Solitary or grouped nodules or tumors that often ulcerate.</li>
+                        <li>Extracutaneous involvement in ~10%, mainly lymph nodes.</li>
+                        <li>Good prognosis (>85% at 5 years).</li>
+                    </ul>
+                </div>
+                <div style="border-left: 4px solid #28a745;">
+                    <h4><i class="fa-solid fa-leaf"></i> Lymphomatoid Papulosis (LyP)</h4>
+                    <ul>
+                        <li>Chronic, recurrent, self-healing, papulonecrotic or papulonodules.</li>
+                        <li>They disappear spontaneously within 3 to 12 weeks.</li>
+                        <li>Characteristically, skin lesions in different stages of evolution coexist.</li>
+                        <li>Heals with dyspigmentation or atrophy.</li>
+                        <li>Most commonly trunk and extremities.</li>
+                        <li>Duration of the disease ranges from several months to more than 40 years.</li>
+                        <li>A/W MF, C-ALCL, and Hodgkin lymphoma.</li>
+                        <li><span class="prognosis-good">Excellent prognosis.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3><i class="fa-solid fa-path"></i> Pathology: ALCL vs. LyP</h3>
+            <div class="comparison-box">
+                <div>
+                    <h4>ALCL</h4>
+                    <ul>
+                        <li>Diffuse non-epidermotropic infiltrate with sheets of large <code>CD30+ve</code> cells.</li>
+                        <li>Cells have a characteristic morphology of anaplastic cells with irregularly shaped nuclei.</li>
+                        <li>20-25% will have Reed-Sternberg-like cells.</li>
+                        <li><strong>Immunophenotyping:</strong> <code>CD4+</code>, <code>CD30+</code>, <code>MUM1/IRF4+</code>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>LyP</h4>
+                    <ul>
+                        <li>Multiple types. The most common is <span class="mcq-highlight">type A (MCQ)</span>.</li>
+                        <li><strong>Type A:</strong> wedge-shaped infiltrate of CD30+ lymphocytes (plevA-like).</li>
+                        <li><strong>Type B:</strong> eBidermotropism.</li>
+                        <li><strong>Type C:</strong> alCI-like.</li>
+                        <li><strong>Type D:</strong> cD8 positive.</li>
+                        <li><strong>Type E:</strong> angioinvasive (engioinvasive).</li>
+                        <li><strong>Type F:</strong> Folliculotropic.</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="comparison-box" style="margin-top: 10px;">
+                <div style="background-color: var(--alert-blue-bg); padding: 15px; border-radius: 8px;">
+                    <h4 style="margin-top:0;">Pleva vs LyP: Key Differentiators</h4>
+                    <p><strong>Age:</strong> Adolescents/children vs Adults</p>
+                    <p><strong>Histo:</strong> No Eosinophils vs Eosinophils</p>
+                    <p><strong>IHC:</strong> CD30-ve vs CD30+ve</p>
+                </div>
+            </div>
+
+            <h3><i class="fa-solid fa-table-cells"></i> LyP Histologic Subtypes (High-Yield Table)</h3>
+            <p>There are multiple MCQs about which type of LyP & know them and see table below.</p>
+            <p><strong>Ddx:</strong> folliculitis, arthropod bites, PLEVA are the main differentials.</p>
+            <table class="html-table">
+                <thead>
+                    <tr><th>LyP type</th><th>Characteristic histologic features</th><th>Primary differential diagnosis</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Type A<sup>66</sup></strong></td><td>Wedge-shaped infiltrate with scattered or small clusters of large, atypical, sometimes multinucleated or Reed-Sternberg-like, CD30* T cells. The T cells are within an extensive inflammatory infiltrate composed of small lymphocytes, histiocytes, neutrophils, and/or eosinophils. Neutrophils may be scattered within the epidermis</td><td>C-ALCL<br>Tumor stage MF<br>Hodgkin lymphoma</td></tr>
+                    <tr><td><strong>Type B<sup>66</sup></strong></td><td>Epidermotropic, with a superficial perivascular to band-like and sometimes wedge-shaped infiltrate of small to medium-sized, atypical CD4*, CD30* or CD30- T cells^</td><td>Patch/plaque stage MF</td></tr>
+                    <tr><td><strong>Type C<sup>66</sup></strong></td><td>Diffuse infiltrates or large clusters of large CD30* T cells, with relatively few admixed inflammatory cells</td><td>C-ALCL<br>Transformed MF (CD30*)</td></tr>
+                    <tr><td><strong>Type D<sup>103</sup></strong></td><td>Marked epidermotropism of atypical, small to medium-sized, CD8*, CD30* pleomorphic T cells. Necrotic keratinocytes may be present</td><td>CD8* aggressive epidermotropic T-cell lymphoma<br>Pityriasis lichenoides et varioliformis acuta</td></tr>
+                    <tr><td><strong>Type E<sup>104</sup></strong></td><td>Prominent angioinvasion and angiodestruction by medium-sized CD8*, CD30* pleomorphic T cells. Vascular occlusion and/or thrombi; hemorrhage, extensive necrosis, and ulceration</td><td>Extranodal NK/T-cell lymphoma</td></tr>
+                    <tr><td><strong>Type F<sup>105</sup></strong></td><td>Perifollicular infiltrates with variable degree of folliculotropism of atypical CD30* T cells</td><td>Folliculotropic MF</td></tr>
+                    <tr><td><strong>DUSP-IRF4 type<sup>106*</sup></strong></td><td>Extensive epidermotropism by weakly CD30* small to medium-sized T cells with cerebriform nuclei. Strongly CD30* medium-sized to large blast cells in the dermis</td><td>Transformed MF<br>C-ALCL</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="3" style="font-size: 0.9em; color: #6c757d;">
+                        ^if proper immunohistochemical method is used, CD30- cases should be regarded critically.<br>
+                        *Chromosomal rearrangements involving the DUSP-IRF4 locus on 6p25.3; localized skin lesions in older individuals.<br>
+                        Table 120.6 Lymphomatoid papulosis (LyP) - histologic subtypes and their differential diagnoses. C-ALCL, cutaneous anaplastic large cell lymphoma; MF, mycosis fungoides. Adapted from Kempf W. Cutaneous CD30-positive lymphoproliferative disorders. Surg Pathol Clin. 2014;7:203-28.
+                    </td></tr>
+                </tfoot>
+            </table>
+
+            <h3><i class="fa-solid p-pills"></i> Treatment</h3>
+            <div class="comparison-box">
+                <div>
+                    <h4>ALCL</h4>
+                    <ul>
+                        <li>Surgical excision for solitary or a few localized lesions.</li>
+                        <li>Radiotherapy for disseminated disease.</li>
+                        <li>Low dose methotrexate, retinoids, or interferon-a are systemic options.</li>
+                        <li>Doxorubicin based multi-agent chemotherapy for extracutaneous involvement.</li>
+                        <li>Patients presenting with leg lesions need aggressive therapy because it's a/w worse prognosis.</li>
+                        <li>Brentuximab gives nearly 100% response. The FDA  approved brentuximab vedotin for adults with primary cutaneous anaplastic large cell lymphoma (pcALCL) who have received prior systemic therapy. also approve for  CD30+ Mycosis Fungoides</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>LyP</h4>
+                    <ul>
+                        <li>Treatment is often unsatisfactory.</li>
+                        <li>Topical or systemic steroids are not useful.</li>
+                        <li>For a few lesions -> no need for treatment.</li>
+                        <li>If cosmetically disturbing -> low-dose oral methotrexate (5-20 mg/week) is the most effective therapy.</li>
+                        <li>Chemotherapy and radiation therapy are effective but the disease relapses once they are stopped, so active treatment should be balanced carefully against potential side effects.</li>
+                        <li>Long-term followup is recommended for these patients because of risk of developing lymphomas.</li>
+                    </ul>
+                </div>
+            </div>
+            
+             <h3><i class="fa-solid fa-project-diagram"></i> Algorithm for Diagnosis and Treatment of Cutaneous CD30+ Lymphoproliferations</h3>
+            <div style="border: 2px solid var(--primary-color); padding: 15px; border-radius: 8px; text-align: center;">
+                <h4>Cutaneous CD30+ lymphoproliferation</h4>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                <div class="flow-step" style="background-color: var(--alert-yellow-bg); border-color: var(--alert-yellow-text); padding: 10px 20px;">
+                    <strong>Step 1: Exclude</strong>
+                    <ul style="text-align: left; padding-left: 10px; margin-top: 10px;">
+                        <li>CD30+ large cell lymphoma secondary to mycosis fungoides (Treat as mycosis fungoides)</li>
+                        <li>HIV-associated or post-transplant lymphoma</li>
+                        <li>Benign skin diseases with CD30+ cells such as:- Various viral infections -Arthropod bite reactions -Scabies -Atopic dermatitis -Drug reactions </li>
+                        <li>Skin manifestation of systemic ALCL (Standard protocol by hemato-oncologist)</li>
+                    </ul>
+                </div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                <p><strong>Staging procedures</strong></p>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                <h4>Spectrum of primary CD30+ lymphoproliferative disorders</h4>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                <div class="flow-step" style="background-color: var(--alert-blue-bg); border-color: var(--alert-blue-text); padding: 10px 20px;">
+                    <strong>Step 2: Clinical Assessment</strong>
+                    <p>(Solitary, Multifocal, Waxing/Waning?)</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                        <div style="border: 1px solid black; padding: 5px; background: white;"><strong>Solitary or localized lesion(s) (C-ALCL)</strong><br>↓<br>Excision, Radiotherapy</div>
+                        <div style="border: 1px solid black; padding: 5px; background: white;"><strong>Multifocal lesions, No waxing and waning (C-ALCL)</strong><br>↓<br>Methotrexate, Radiotherapy</div>
+                        <div style="border: 1px solid black; padding: 5px; background: white;"><strong>Multifocal lesions, Clinical behavior unknown</strong><br>↓<br>Expectative 4-8 weeks</div>
+                        <div style="border: 1px solid black; padding: 5px; background: white;"><strong>Multifocal lesions, Waxing and waning (Lymphomatoid papulosis)</strong><br>↓<br>No treatment, Methotrexate, PUVA/UVB</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- Other CTCLs -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-flask-vial"></i> Other CTCL Entities</h2>
+
+            <details class="details-toggle">
+                <summary>Subcutaneous panniculitis-like T-cell lymphoma (SPLTCL)</summary>
+                <div>
+                    <ul>
+                        <li>Defined as a <code>CD8+</code> with subcutaneous infiltrates of pleomorphic T cells with an <span class="mcq-highlight">a/B+ T-cell phenotype</span>.</li>
+                        <li>Should be differentiated from gamma/delta T-cell lymphoma with subcutaneous involvement because the prognosis is different (<span class="prognosis-good">good in SPLTCL</span>, <span class="prognosis-bad">bad in GDTCL</span>).</li>
+                        <li>Rare, less than 1% of CTCLs.</li>
+                        <li>20% of patients have an associated autoimmune disease, most commonly SLE.</li>
+                        <li><strong>Clinical features:</strong>
+                            <ul>
+                                <li>Solitary or multiple subcutaneous nodules.</li>
+                                <li>Primarily the extremities and the trunk.</li>
+                                <li>Lesions heal with lipoatrophy.</li>
+                                <li>Ulcerations is uncommon.</li>
+                                <li>Systemic symptoms such as fever, fatigue, and weight loss may be present.</li>
+                                <li>Cytopenias and elevated LFTs are common.</li>
+                                <li><strong>Hemophagocytic syndrome (HLH)</strong> is observed in only ~15% of patients = <span class="prognosis-bad">bad prognostic factor</span>. (HLH: Phagocytosis by macrophages of erythrocytes, leukocytes, platelets, and their precursors -> very bad prognosis)</li>
+                                <li>Rare extracutaneous involvement.</li>
+                                <li>May be preceded by seemingly benign panniculitis for years.</li>
+                                <li>5 years survival 80%.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathology:</strong>
+                            <ul>
+                                <li>Simulates a lobular panniculitis.</li>
+                                <li>Pleomorphic T cells with hyperchromatic nuclei are present with many macrophages.</li>
+                                <li>Epidermis and dermis are spared.</li>
+                                <li><strong>Rimming of individual fat cells</strong> -> characteristic finding.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Immunophenotyping:</strong>
+                            <ul>
+                                <li>TCR <code>a/B+</code> (vs GDTCL which gamma/delta)</li>
+                                <li><code>CD3+</code>, <code>CD4-</code>, <code>CD8+</code>, <code>CD56-</code></li>
+                                <li><code>BF1+</code> (vs GDTCL which ßF1-)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Treatment:</strong>
+                            <ul>
+                                <li>Solitary lesion - radiotherapy.</li>
+                                <li>Systemic: Doxorubicin-based chemotherapy has traditionally been used. Recent studies suggest less aggressive immunosuppression (cyclosporine or prednisone), especially if not associated with HLH.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+            
+            <div class="callout info" style="margin-top:20px;">
+                <i class="fa-solid fa-exchange-alt callout-icon"></i>
+                <strong>Key Differentiator: SPLTCL vs GDTCL</strong>
+                <table class="html-table">
+                    <thead><tr><th>Feature</th><th>SPTCL</th><th>PCGD-TCL with subcutaneous involvement</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Phenotype</strong></td><td>a/ß T-cell phenotype</td><td>gamma/delta T-cell phenotype</td></tr>
+                        <tr><td><strong>T-cell receptor</strong></td><td>BF1+, TCRy1-</td><td>BF1-, TCRy1+</td></tr>
+                        <tr><td><strong>T-cell phenotype</strong></td><td>CD3*, CD4-, CD8+</td><td>CD3*, CD4-, CD8-</td></tr>
+                        <tr><td><strong>Coexpression of CD56</strong></td><td>Absent</td><td>Common</td></tr>
+                        <tr><td><strong>Architecture</strong></td><td>Subcutaneous</td><td>Subcutaneous and epidermal/dermal</td></tr>
+                        <tr><td><strong>Clinical features</strong></td><td>Nodules and plaques, Rarely ulceration</td><td>Nodules and plaques, Ulceration common</td></tr>
+                        <tr><td><strong>Hemophagocytic syndrome</strong></td><td>Uncommon</td><td>Common</td></tr>
+                        <tr><td><strong>Survival (5-year)</strong></td><td>>80%</td><td><10%</td></tr>
+                        <tr><td><strong>Treatment</strong></td><td>Systemic corticosteroids</td><td>Systemic chemotherapy</td></tr>
+                        <tr><td><strong>WHO-EORTC classification (2004)3</strong></td><td>Subcutaneous panniculitis-like T-cell lymphoma</td><td>Primary cutaneous gamma/delta T-cell lymphoma</td></tr>
+                        <tr><td><strong>WHO classification (2008)/20164</strong></td><td>Subcutaneous panniculitis-like T-cell lymphoma</td><td>Primary cutaneous gamma/delta T-cell lymphoma</td></tr>
+                    </tbody>
+                </table>
+                 <p style="font-size: 0.8em; color: #6c757d;">Table 120.7 Comparison of subcutaneous panniculitis-like T-cell lymphoma (SPTCL) and primary cutaneous gamma/delta T-cell lymphoma (PCGD-TCL) with subcutaneous involvement ,2. ßF1, positivity reflects a/ß T-cell origin; TCR, T-cell receptor.</p>
+            </div>
+
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary>Extranodal NK/T-cell lymphoma</summary>
+                <div>
+                    <ul>
+                        <li>Almost always a/w with <span class="mcq-highlight">EBV infection (MCQ)</span>.</li>
+                        <li>Can be an NK-cell lymphoma or a CD8+ lymphoma.</li>
+                        <li>Most commonly affects the nasal cavity or nasopharynx.</li>
+                        <li>The skin is the second most common site.</li>
+                        <li>The classic exam picture is an ulcerative lesion in the nasal area.</li>
+                        <li><strong>Clinical features:</strong>
+                            <ul>
+                                <li>Midfacial destructive tumor -> "nasal type" ENKTL.</li>
+                                <li>Tumors on the trunk and extremities can be involved.</li>
+                                <li>Ulceration common.</li>
+                                <li>Has a very aggressive course, even if no extracutaneous manifestations at presentation.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathology:</strong>
+                            <ul>
+                                <li>Dense infiltrate of the dermis and subcutaneous tissue.</li>
+                                <li>Angiocentricity and angiodestruction.</li>
+                                <li>Extensive necrosis.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Immunophenotyping:</strong>
+                            <ul>
+                                <li><span class="mcq-highlight"><code>CD2+</code>, <code>CD56+</code> (MCQ)</span>.</li>
+                                <li>Surface CD3 is negative.</li>
+                                <li>Detection of EBV by in situ hybridization and expression of cytotoxic proteins is required for diagnosis.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Treatment:</strong>
+                            <ul>
+                                <li>Radiotherapy for localized disease.</li>
+                                <li>Chemotherapy for extensive disease (SMILE regimen), though even with chemo it has a very bad prognosis.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary>CD8+ aggressive epidermotropic cytotoxic T-cell lymphoma</summary>
+                <div>
+                    <ul>
+                        <li>Long name.</li>
+                        <li>Tumors characterized by epidermotropic CD8+ cells.</li>
+                        <li>Aggressive behavior.</li>
+                        <li>Differentiation between them vs other CTCLs with CD8+ cells is based on clinical presentation and clinical behavior.</li>
+                        <li><strong>Clinical features:</strong>
+                            <ul>
+                                <li>Localized or disseminated eruptive papules, nodules, and tumors.</li>
+                                <li>Central ulceration and necrosis.</li>
+                                <li>Can also present as superficial scaly patches or plaques.</li>
+                                <li>Can metastasize to visceral organs, but lymph nodes are typically spared.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathology:</strong>
+                            <ul>
+                                <li>Extensive epidermotropism.</li>
+                                <li>Band-like or diffuse infiltration of atypical lymphocytes.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Immunophenotyping:</strong> <code>CD3+</code>, <code>CD4-</code>, <code>CD8+</code>, <code>CD7-/+</code>, <code>CD45RA+</code>.</li>
+                        <li><strong>Treatment:</strong> systemic chemotherapy.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary>Gamma/Delta T-cell lymphoma</summary>
+                <div>
+                    <ul>
+                        <li>Gamma/delta T-cells with cytotoxic phenotype (CD8+).</li>
+                        <li>When involving the subcutis, should be differentiated from SPLTCL (see above).</li>
+                        <li>Involvement of the subcutaneous fat is a bad prognostic factor.</li>
+                        <li>TCRy is not only expressed by GDTL, but also in rare cases of MF and other CTCLs.</li>
+                        <li>This makes differentiation difficult sometimes.</li>
+                        <li>Aggressive course and often fatal.</li>
+                        <li><strong>Clinical features:</strong>
+                            <ul>
+                                <li>Disseminated ulceronecrotic nodules or tumors.</li>
+                                <li>On the extremities.</li>
+                                <li>Mucosal involvement common.</li>
+                                <li>Lymph nodes, spleen, and bone marrow -> often spared.</li>
+                                <li>HLH may occur especially when it involves the subcutaneous fat.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathology:</strong>
+                            <ul>
+                                <li>Can be epidermotropic, dermal, or subcutaneous.</li>
+                                <li>Angiocentricity and angiodestruction are commonly seen.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Immunophenotyping:</strong>
+                            <ul>
+                                <li><code>TCRy+</code>, <code>ßF1-</code></li>
+                                <li><code>CD3+</code>, <code>CD2+</code>, <code>CD4-</code>, <code>CD5-</code>, <code>CD7+/-</code>, <code>CD8-</code>, <code>CD56+</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Treatment:</strong> usually resistant to chemotherapy.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-toggle" style="margin-top:10px;">
+                <summary>CD4+ small/medium T-cell lymphoma</summary>
+                <div>
+                    <ul>
+                        <li>Similar phenotype to MF.</li>
+                        <li>Distinguished from MF by the lack of patches and plaques.</li>
+                        <li><span class="prognosis-good">Good prognosis</span>.</li>
+                        <li><strong>Clinical features:</strong>
+                            <ul>
+                                <li>Solitary plaque or tumor.</li>
+                                <li>Generally on the head and neck.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathology:</strong>
+                            <ul>
+                                <li>Dense infiltrate in the dermis.</li>
+                                <li>May involve the subcutis or show epidermotropism.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Immunophenotyping:</strong>
+                            <ul>
+                                <li><code>CD3+</code>, <code>CD4+</code>, <code>CD8-</code>, <code>CD30-</code> (MF phenotype).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Treatment:</strong> surgical excision, intralesional steroids, or local radiotherapy.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <!-- Final Notes Section -->
+        <section class="section-card">
+            <h2><i class="fa-solid fa-book-open"></i> Final Notes & Exam Strategy</h2>
+            <ul>
+                <li>Know the staging of MF.</li>
+                <li>Read as review from the other file.</li>
+                <li>Some of the entities are low yield, the most important is knowing the typical presentation if present, and the immunophenotyping.</li>
+                <li>Know the difference between SPLTCL vs lupus panniculitis and GDTCL (see tables).</li>
+            </ul>
+        </section>
+        
+        <!-- Histologic Patterns Table -->
+        <section class="section-card">
+             <h2><i class="fa-solid fa-vials"></i> Differential Diagnosis of Common Histologic Patterns in CTCL (Table 120.2)</h2>
+             <div style="overflow-x:auto;">
+                <table class="html-table">
+                    <thead>
+                        <tr><th>Histologic category</th><th>Differential diagnosis</th><th>Diagnostic criteria/clues</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="6" style="vertical-align: top;"><strong>Epidermotropic CTCL (simulating or consistent with plaque stage MF)</strong></td>
+                            <td>Mycosis fungoides (MF)</td>
+                            <td>• Characteristic patches and plaques<br>• Most atypical cells within the epidermis (basal layer)</td>
+                        </tr>
+                        <tr>
+                            <td>Pagetoid reticulosis. Plaques or tumors often show a CD3+, CD4‑, CD8+ phenotype with frequent CD30 expression </td>
+                            <td>• Solitary plaque, commonly on distal extremities<br>• Neoplastic cells confined to an often acanthotic epidermis<br>• Often CD8* phenotype; CD30 expression common</td>
+                        </tr>
+                        <tr>
+                            <td>Lymphomatoid papulosis (LyP), type B or type D. CD8+ , CD30+ </td>
+                            <td>• Recurrent, self-healing papular eruption<br>• Sometimes extension of infiltrate into lower dermis<br>• In some cases, admixture with large atypical cells as in type A LyP (mixed type A)<br>• LyP type D is CD8+</td>
+                        </tr>
+                         <tr>
+                            <td>Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma. CD4- , CD8+</td>
+                            <td>• Infiltrated plaques, but often eruptive nodules and tumors with ulceration<br>• Intrepidermal accumulation of medium-sized pleomorphic T cells or small blast cells; no typical cerebriform appearance<br>• Phenotype: CD8*, TIA-1*, granzyme B*, CD45RA*, CD7**</td>
+                        </tr>
+                         <tr>
+                            <td>Sézary syndrome. CD4+ , CD7- , CD8- , CD26- </td>
+                            <td>• Often more monotonous infiltrate histologically<br>• Erythroderma<br>• Peripheral blood involvement<br>• Same T-cell clone in the skin and blood</td>
+                        </tr>
+                         <tr>
+                            <td>Adult T-cell leukemia/lymphoma. CD3+, CD4+, CD8-, CD25+, PD-1+</td>
+                            <td>• Often clinically and histologically identical to MF<br>• Check HTLV-1 status in patients from endemic areas</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" style="vertical-align: top;"><strong>CTCL with diffuse pleomorphic infiltrates (CD30-) (simulation of or consistent with tumor stage MF; few CD30* tumor cells may be present)</strong></td>
+                            <td>Tumor stage MF</td>
+                            <td>• Concurrent patches and plaques<br>• Variable numbers of small, medium-sized, and/or large cerebriform T cells and/or blast cells<br>• Variable admixture with inflammatory cells</td>
+                        </tr>
+                         <tr>
+                            <td>Primary cutaneous peripheral T-cell lymphoma, NOS</td>
+                            <td>• Histologically, often indistinguishable from MF with blastic transformation<br>• No prior or concurrent patches and plaques</td>
+                        </tr>
+                         <tr>
+                            <td>Primary cutaneous CD4-positive small/medium T-cell lymphoproliferative disorder (and/or nodular pseudo-T-cell lymphoma [see text])</td>
+                            <td>• Presents as solitary plaque or tumor (2-3 cm)<br>• No prior or concurrent patches and plaques<br>• Scattered medium-sized to large pleomorphic T cells (<30% of cells; express PD-1)<br>• Many admixed CD8* T cells, B cells, and histiocytes<br>• No aberrant phenotype (i.e. no "marker loss")<br>• Clonal T-cell population in most cases</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4" style="vertical-align: top;"><strong>CD30-positive CTCL (see Fig. 120.10)</strong></td>
+                            <td>Lymphomatoid papulosis, type A/C<br>Primary cutaneous anaplastic large cell lymphoma (C-ALCL)</td>
+                            <td>• Recurrent self-healing papules and nodules<br>• Histologic spectrum (from typical LyP to identical to C-ALCL)<br>• Generally, solitary or localized nodules or tumors<br>• No evidence of prior or concurrent MF or another type of CTCL<br>• No extracutaneous disease (staging negative)<br>• Histologic spectrum (from typical C-ALCL to similar to LyP)<br>• Phenotype: CLA*(Indicates skin-homing T-cell origin; supports cutaneous not systemic disease), EMA- (Lack of EMA helps distinguish primary cutaneous ALCL from systemic ALCL, which is often EMA positive), ALK-</td>
+                        </tr>
+                         <tr>
+                            <td>Systemic ALCL with secondary skin involvement</td>
+                            <td>• Prior or concurrent extracutaneous involvement (exception: involvement of one regional lymph node basin which has same prognosis as C-ALCL)<br>• Often generalized skin lesions<br>• Phenotype: CLA', EMA*, ALK* (mainly in pediatric subgroup)</td>
+                        </tr>
+                         <tr>
+                            <td>MF with blastic transformation</td>
+                            <td>• Histologically, an admixture with typical cerebriform cells, but sometimes indistinguishable from C-ALCL<br>• Prior or concurrent patches and plaques</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><em>This section in the source table seems to have merged LyP and C-ALCL. I've presented it as written.</em></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="vertical-align: top;"><strong>CTCL with subcutaneous involvement</strong></td>
+                            <td>Subcutaneous panniculitis-like T-cell lymphoma</td>
+                            <td>• Infiltrates confined to subcutis<br>• Characteristic rimming of individual fat cells by neoplastic T cells<br>• Deeply seated nodules and plaques, mainly involving the legs and trunk<br>• Characteristic CD3*, CD4-, CD8*, CD56- , BF1+ T-cell phenotype</td>
+                        </tr>
+                        <tr>
+                            <td>Other types of CTCL</td>
+                            <td>• Subcutaneous infiltrates represent extension from dermal infiltrates<br>• For specific features: see text</td>
+                        </tr>
+                    </tbody>
+                     <tfoot>
+                        <tr><td colspan="3" style="font-size: 0.9em; color: #6c757d;">ALK, anaplastic lymphoma kinase; BF1, positivity reflects a/B T-cell origin; CLA, cutaneous lymphocyte antigen; C-ALCL, cutaneous anaplastic large cell lymphoma; EMA, epithelial membrane antigen; PD-1, programmed death-1 (CD279); TIA, T-cell restricted intracellular antigen.</td></tr>
+                    </tfoot>
+                </table>
+             </div>
+        </section>
+
+        <p class="author-footer">Musaed Alsebayel - 2024</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            var parent = evt.currentTarget.closest('.tab-container');
+            
+            tabcontent = parent.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            tablinks = parent.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            parent.querySelector('#' + tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
+

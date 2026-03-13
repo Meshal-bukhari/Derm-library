@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Arthritis (ReA) Board Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --primary-card-bg: #ffffff;
+            --text-color: #212529;
+            --heading-color: #003366;
+            --primary-accent: #005a9c;
+            --highlight-bg: #fff3cd;
+            --highlight-border: #ffeeba;
+            --pearl-bg: #e0f2fe;
+            --pearl-border: #b3e5fc;
+            --danger-bg: #f8d7da;
+            --danger-border: #f5c6cb;
+            --danger-text: #721c24;
+            --success-bg: #d4edda;
+            --success-border: #c3e6cb;
+            --success-text: #155724;
+            --border-radius: 8px;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Slab', serif;
+            color: var(--heading-color);
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-accent);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        
+        h1 + .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: var(--primary-card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid #dee2e6;
+        }
+
+        .clinical-pearl, .board-trap, .diagnostic-pearl {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            border-left: 5px solid;
+        }
+
+        .clinical-pearl {
+            background-color: var(--pearl-bg);
+            border-color: var(--pearl-border);
+        }
+        .clinical-pearl h3 { color: #0284c7; }
+
+        .board-trap {
+            background-color: var(--danger-bg);
+            border-color: var(--danger-border);
+            color: var(--danger-text);
+        }
+        .board-trap h3 { color: var(--danger-text); }
+
+        .diagnostic-pearl {
+            background-color: var(--highlight-bg);
+            border-color: var(--highlight-border);
+        }
+        .diagnostic-pearl h3 { color: #856404; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #e9ecef;
+        }
+        .card h4 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-accent);
+            padding-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: '✓ ';
+        }
+
+        li::marker {
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--primary-accent);
+        }
+        
+        details {
+            background: #f1f3f5;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+        }
+        
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--heading-color);
+            font-size: 1.1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #e9ecef;
+            color: var(--heading-color);
+            font-family: 'Roboto Slab', serif;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .management-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            padding: 15px;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Reactive Arthritis (ReA)</h1>
+        <p class="subtitle">Formerly Reiter Syndrome: A High-Yield Board Review</p>
+
+        <div class="diagnostic-pearl">
+            <h3>The Classic Board Vignette</h3>
+            <p>An acute presentation of an <strong>asymmetric, predominantly lower extremity, painful arthritis</strong> in a <strong>young male</strong> should make you highly suspicious for ReA. Always look for conjunctivitis and palpate for lower extremity joint and tendon insertion pain. Remember, the triad may be incomplete or present sequentially.</p>
+        </div>
+
+        <div class="section">
+            <h2>Synopsis: The Core Concept</h2>
+            <p>Reactive Arthritis (ReA) is a type of <strong>spondyloarthropathy</strong> that occurs 1-4 weeks after a gastrointestinal or genitourinary infection. The joint fluid is <strong>sterile</strong>, but bacterial antigens in the synovium are thought to induce the immune response.</p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>The Trigger: Infection</h4>
+                    <p><strong>Classic Pathogens:</strong></p>
+                    <ul>
+                        <li>Chlamydia trachomatis</li>
+                        <li>Shigella</li>
+                        <li>Salmonella</li>
+                        <li>Yersinia</li>
+                        <li>Campylobacter</li>
+                    </ul>
+                    <p><strong>Other Implicated Triggers:</strong></p>
+                    <ul>
+                        <li>Clostridioides difficile</li>
+                        <li>Giardia</li>
+                        <li>Other atypical infections</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>The Host: Demographics</h4>
+                    <ul>
+                        <li><strong>Age:</strong> Onset commonly 20-40 years</li>
+                        <li><strong>Genetics:</strong> Associated with <strong>HLA-B27</strong> (like other spondyloarthropathies)</li>
+                        <li><strong>Descent:</strong> Northern European</li>
+                        <li><strong>Gender:</strong>
+                            <ul>
+                                <li><strong>Post-GI Infection:</strong> Males = Females</li>
+                                <li><strong>Post-GU (C. trachomatis):</strong> Males > Females</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="board-trap">
+                <h3>Board Trap: The "Classic Triad"</h3>
+                <p>The famous mnemonic "Can't see, can't pee, can't climb a tree" refers to the triad of <strong>Conjunctivitis, Urethritis, and Arthritis</strong>.</p>
+                <p><strong>HOWEVER, BEWARE:</strong> Only a minority of patients present with the complete, classic triad. The most common presentation is an acute, painful oligoarthritis.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Look For: Clinical Manifestations</h2>
+            <p>ReA is a systemic disease. Look for findings across multiple organ systems.</p>
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Rheumatologic (The "Arthritis")</h4>
+                    <ul>
+                        <li><strong>Asymmetric, oligoarticular arthritis</strong> (fewer than 5 joints).</li>
+                        <li>Predilection for <strong>lower extremities</strong> (knees, ankles).</li>
+                        <li><strong>Enthesitis:</strong> Inflammation at tendon/ligament insertion points is common (Patellar/Achilles tendons, plantar fascia).</li>
+                        <li><strong>Dactylitis:</strong> "Sausage digits."</li>
+                        <li><strong>Low back pain:</strong> Stiffness and pain, sacroiliac joint tenderness.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Ocular (The "Can't See")</h4>
+                    <ul>
+                        <li><strong>Most Common:</strong> Bilateral, mucopurulent <strong>conjunctivitis</strong>. Often resolves in 2 weeks.</li>
+                        <li><strong>Less Common (Refer to Ophthalmology!):</strong>
+                            <ul>
+                                <li>Keratitis</li>
+                                <li>Iritis</li>
+                                <li>Uveitis (usually unilateral)</li>
+                                <li>Corneal ulceration</li>
+                                <li>Optic neuritis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>GU / Oral (The "Can't Pee")</h4>
+                    <ul>
+                        <li><strong>Genitourinary:</strong> Urethritis, cervicitis, dysuria.</li>
+                        <li><strong>Oral Ulcers:</strong> Often painless.</li>
+                        <li><strong>Geographic tongue.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Dermatologic Manifestations</h2>
+            <p>The skin findings are high-yield for dermatology boards and can be pathognomonic.</p>
+            <div class="grid-container">
+                 <div class="card">
+                    <h4>Keratoderma Blenorrhagicum</h4>
+                    <p>Affects palms and soles. Starts as pustules, which become <strong>hyperkeratotic and scaly</strong>. May coalesce into psoriatic-like plaques.</p>
+                    <div class="diagnostic-pearl" style="margin-top: 10px; padding: 10px;">
+                        <p><strong>CRITICAL POINT:</strong> This is clinically and histologically <strong>indistinguishable from pustular psoriasis</strong>. The diagnosis is made by the clinical context (post-infection, arthritis pattern, associated findings).</p>
+                    </div>
+                 </div>
+                 <div class="card">
+                    <h4>Circinate Balanitis / Vulvitis</h4>
+                    <ul>
+                        <li><strong>Circinate Balanitis:</strong>
+                            <ul>
+                                <li><strong>Uncircumcised males:</strong> Vesicles/pustules rupture to form serpiginous, asymptomatic erosions.</li>
+                                <li><strong>Circumcised males:</strong> Presents as hyperkeratotic plaques.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Circinate Vulvitis:</strong> Similar presentation with erythematous, crusted plaques on the perineum and vulva.</li>
+                    </ul>
+                 </div>
+                 <div class="card">
+                    <h4>Nail & Other Skin Findings</h4>
+                    <ul>
+                        <li><strong>Generalized Psoriasiform Eruption:</strong> May occur with ostraceous or limpet-like scales.</li>
+                        <li><strong>Nail Involvement (Common):</strong>
+                            <ul>
+                                <li><strong>Most Prominent:</strong> Paronychia.</li>
+                                <li><strong>Other:</strong> Onycholysis, ridging, splitting, elkonyxis, brown-red discoloration, subungual hyperkeratosis.</li>
+                                <li><strong>NOTE:</strong> Pitting, characteristic of psoriasis, is typically <strong>NOT</strong> seen but can occur.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Differential Diagnosis & Workup</h2>
+            <p>The diagnosis is clinical, supported by a careful history and exclusion of other conditions.</p>
+            
+            <div class="clinical-pearl">
+                <h3>High-Yield DDx Comparison</h3>
+                <p>For board purposes, you must be able to differentiate ReA from these key mimics.</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Reactive Arthritis (ReA)</th>
+                            <th>Psoriatic Arthritis (PsA)</th>
+                            <th>Gonococcal Arthritis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Preceding Hx</strong></td>
+                            <td>GI/GU infection (1-4 wks prior)</td>
+                            <td>Often psoriasis (skin/nails) precedes</td>
+                            <td>Recent sexual contact, pharyngitis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arthritis Pattern</strong></td>
+                            <td>Asymmetric oligoarthritis (lower > upper)</td>
+                            <td>Variable (asymmetric, symmetric, DIP, mutilans)</td>
+                            <td>Migratory polyarthralgia -> tenosynovitis -> purulent monoarthritis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skin Findings</strong></td>
+                            <td>Keratoderma blenorrhagicum, circinate balanitis</td>
+                            <td>Plaque psoriasis, nail pitting</td>
+                            <td>Pustules/vesicles on erythematous base, often on distal extremities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Urethritis</strong></td>
+                            <td>Common, sterile pyuria</td>
+                            <td>Uncommon</td>
+                            <td>Common, purulent discharge</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Joint Fluid</strong></td>
+                            <td>Sterile culture, high WBC (inflammatory)</td>
+                            <td>Sterile culture, inflammatory</td>
+                            <td><strong>Positive Gram stain & culture for <em>N. gonorrhoeae</em></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <details>
+                <summary>Click to Expand Full Differential Diagnosis List</summary>
+                <div class="grid-container" style="margin-top: 15px;">
+                    <div class="card">
+                        <h4>Joint Presentation DDx</h4>
+                        <ul>
+                            <li>Lofgren syndrome</li>
+                            <li>Post-streptococcal reactive arthritis</li>
+                            <li>Acute rheumatic fever</li>
+                            <li>Gonococcal arthritis</li>
+                            <li>Psoriatic arthritis</li>
+                            <li>IBD-associated arthritis (Crohn, UC)</li>
+                            <li>Rheumatoid arthritis</li>
+                            <li>Septic arthritis</li>
+                            <li>Viral-associated arthritis</li>
+                            <li>Gout / Pseudogout</li>
+                            <li>Behçet syndrome</li>
+                            <li>SLE / Vasculitis / Trauma / Lyme arthritis</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Skin Presentation DDx</h4>
+                        <ul>
+                            <li>Psoriasis with psoriatic arthritis</li>
+                            <li>Palmoplantar keratoderma</li>
+                            <li>Candidal balanitis</li>
+                            <li>Herpes simplex virus (HSV)</li>
+                            <li>Primary syphilis</li>
+                            <li>Amebiasis</li>
+                            <li>Lymphogranuloma venereum (LGV)</li>
+                            <li>Granuloma inguinale (donovanosis)</li>
+                            <li>Chancroid</li>
+                            <li>Lichen sclerosus</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="section">
+            <h2>Best Tests & Prognosis</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Diagnostic Approach</h4>
+                    <p>There is <strong>no specific diagnostic test panel</strong>. Diagnosis is clinical, based on history and exam, guided by criteria (ACR, International Workshop).</p>
+                    <ul>
+                        <li><strong>Labs:</strong> Leukocytosis, elevated ESR/CRP. <strong>ANA and RF are negative.</strong></li>
+                        <li><strong>Joint Fluid:</strong> Sterile culture is key to rule out septic arthritis.</li>
+                        <li><strong>Urine:</strong> Mildly abnormal urinalysis is common.</li>
+                        <li><strong>ECG:</strong> May show minor changes (subclinical carditis).</li>
+                        <li><strong>Imaging:</strong> Often normal early. May show soft tissue swelling, then bony erosions adjacent to bony proliferation later.</li>
+                        <li><strong>HLA-B27:</strong> Not routinely recommended (associated with other spondyloarthropathies).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Prognosis & Systemic Features</h4>
+                    <ul>
+                        <li><strong>Prognosis:</strong> For most, it's a self-limited disease with complete recovery in <strong>2-6 months</strong>.</li>
+                        <li><strong>Chronic Arthritis:</strong> May persist in a minority, usually in HLA-B27 positive patients.</li>
+                        <li><strong>Recurrence:</strong> Possible upon re-exposure to the same organism.</li>
+                        <li><strong>Systemic Features:</strong> Fever, weight loss, fatigue.</li>
+                        <li><strong>Rare Complications:</strong> Cardiac conduction abnormalities, aortic insufficiency, pericarditis, pleuritis, nephropathy.</li>
+                        <li><strong>HIV/AIDS Context:</strong> Cutaneous involvement reported to be more frequent and severe.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Management Pearls & Therapy</h2>
+            <p>Treatment is multi-faceted, targeting the trigger, inflammation, and specific symptoms.</p>
+            
+            <h4>Stepwise Management of Arthritis</h4>
+            <div class="management-flow">
+                <div class="flow-step"><strong>1. NSAIDs</strong><br>(Initial Step)</div>
+                <div class="flow-arrow">➡️</div>
+                <div class="flow-step"><strong>2. Sulfasalazine</strong><br>(Effective, esp. non-axial)</div>
+                <div class="flow-arrow">➡️</div>
+                <div class="flow-step"><strong>3. Other DMARDs/Biologics</strong><br>(Methotrexate, Azathioprine, TNF-α inhibitors)</div>
+            </div>
+            <hr style="margin: 20px 0;">
+
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Treating the Trigger & Skin</h4>
+                    <ul>
+                        <li><strong>Active Infection:</strong> Treat if still active. For <em>C. trachomatis</em>, use Azithromycin 1g single dose OR Doxycycline 100mg BID x 7 days. (GI infections may not need antibiotics).</li>
+                        <li><strong>Cutaneous Disease:</strong>
+                            <ul>
+                                <li><strong>Trunk/Limbs:</strong> Mid-potency topical corticosteroids (e.g., Triamcinolone, Mometasone).</li>
+                                <li><strong>Face/Intertriginous:</strong> Low-potency topical corticosteroids (e.g., Hydrocortisone 1-2.5%, Desonide). Use for max 14 days.</li>
+                                <li><strong>Resistant Skin:</strong> Methotrexate or Cyclosporine.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Special Considerations & Referrals</h4>
+                    <ul>
+                        <li><strong>HIV/AIDS:</strong> ReA can be treatment-resistant. Antiretroviral therapy (ART) itself may lead to improvement. <strong>Acitretin</strong> has shown success in challenging cases. Consult an HIV/Infectious Disease specialist.</li>
+                        <li><strong>Physical Therapy:</strong> Helpful adjunct for joint issues.</li>
+                        <li><strong>Referrals:</strong>
+                            <ul>
+                                <li><strong>Ophthalmologist:</strong> For iritis, uveitis, keratitis, optic neuritis.</li>
+                                <li><strong>Rheumatologist, Cardiologist, Nephrologist:</strong> As needed for systemic involvement.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

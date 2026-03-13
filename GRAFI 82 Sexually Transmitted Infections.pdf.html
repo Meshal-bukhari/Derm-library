@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STI Master: Board Exam Review Tool</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --highlight: #e74c3c;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --mcq: #e74c3c;
+            --mcq-bg: #fdedec;
+            --mcq-border: #c0392b;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        nav {
+            width: 250px;
+            background: var(--dark);
+            color: white;
+            padding: 1rem;
+        }
+        
+        nav h3 {
+            border-bottom: 1px solid var(--light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        main {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        h4 {
+            color: var(--dark);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .collapsible {
+            background: var(--light);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .collapsible-header {
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            font-weight: bold;
+        }
+        
+        .collapsible-content {
+            padding: 1rem;
+            display: none;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .mcq-box {
+            background-color: var(--mcq-bg);
+            border-left: 5px solid var(--mcq);
+            padding: 1rem;
+            margin: 1rem 0;
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .mcq-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: var(--mcq);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .stage-box {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .stage-header {
+            padding: 0.75rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .stage-content {
+            padding: 1rem;
+        }
+        
+        .primary-stage {
+            background-color: #3498db;
+        }
+        
+        .secondary-stage {
+            background-color: #9b59b6;
+        }
+        
+        .latent-stage {
+            background-color: #f39c12;
+        }
+        
+        .tertiary-stage {
+            background-color: #e74c3c;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .flowchart {
+            margin: 1.5rem 0;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .flowchart-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .flowchart-box {
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            text-align: center;
+            background: white;
+        }
+        
+        .flowchart-arrow {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+        
+        .tab-container {
+            margin: 1rem 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            padding: 0.75rem 1rem;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            margin-right: 0.25rem;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+        }
+        
+        .tab-button.active {
+            background: white;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .tab-content {
+            border: 1px solid #ddd;
+            border-top: none;
+            padding: 1rem;
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        
+        .compare-table th, .compare-table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+        }
+        
+        .compare-table th {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -120px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .memory-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        
+        .memory-question {
+            font-weight: bold;
+        }
+        
+        .memory-answer {
+            margin-top: 0.5rem;
+            display: none;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            nav {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>STI Master: Board Exam Review Tool</h1>
+        <div class="subtitle">Chapter 82: Sexually Transmitted Infections</div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#syphilis">Syphilis</a></li>
+                <li><a href="#gonorrhea">Gonorrhea</a></li>
+                <li><a href="#chancroid">Chancroid</a></li>
+                <li><a href="#lgv">Lymphogranuloma Venereum</a></li>
+                <li><a href="#donovanosis">Donovanosis</a></li>
+                <li><a href="#compare">Comparison Table</a></li>
+                <li><a href="#mcq-review">MCQ Review Points</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section id="syphilis" class="section">
+                <h2>Syphilis</h2>
+                
+                <div class="mcq-box">
+                    <div class="mcq-badge">Previous Exam Question</div>
+                    <p><strong>Key MCQ Point:</strong> Syphilis can involve every organ <strong>except</strong> ovaries.</p>
+                </div>
+                
+                <h3>Definition & Etiology</h3>
+                <p>Sexually acquired infection caused by <strong>Treponema pallidum</strong> (gram-negative spirochete)</p>
+                <p>Highest risk in homosexual males</p>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header">Characteristics of Treponema pallidum</div>
+                    <div class="collapsible-content">
+                        <ul>
+                            <li>6-20 microns in length, 0.1-0.18 microns in diameter</li>
+                            <li>Regular tight spirals</li>
+                            <li>Inability to survive outside an animal host</li>
+                            <li>Limited capacity for DNA repair</li>
+                            <li>Outer membrane:
+                                <ul>
+                                    <li>Lipid-rich</li>
+                                    <li>Contains uniform-sized transmembrane rare outer membrane proteins (TROMP)</li>
+                                    <li>Lacks lipopolysaccharide</li>
+                                </ul>
+                            </li>
+                            <li>Periplasmic flagella</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Pathogenesis</h3>
+                <p>Syphilis progresses through active and latent stages:</p>
+                
+                <div class="flowchart">
+                    <div class="flowchart-title">Natural History of Untreated Syphilis</div>
+                    <div class="flowchart-box">Inoculation<br>(10-90 days incubation, average 3 weeks)</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Primary Syphilis</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Hematogenous Dissemination<br>(3-10 weeks after chancre)</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Secondary Syphilis<br>(Lesions disappear spontaneously after 3-12 weeks)</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Latent Syphilis<br>(Up to 25% relapse within first 1-2 years)</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <div style="width: 45%;">
+                            <div class="flowchart-box">No Recurrence (Cure*)</div>
+                            <div style="font-size: 0.8rem; text-align: center;">*Or clinically asymptomatic</div>
+                        </div>
+                        <div style="width: 45%;">
+                            <div class="flowchart-box">Tertiary Syphilis<br>(2-20 years later)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stage-box">
+                    <div class="stage-header primary-stage">Primary Stage</div>
+                    <div class="stage-content">
+                        <ul>
+                            <li>Occurs ~3 weeks after infection</li>
+                            <li>Chancre and enlarged lymph nodes</li>
+                            <li>Th1 immune response</li>
+                            <li>Attachment and multiplication after contact with abraded skin</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-box">
+                    <div class="stage-header secondary-stage">Secondary Stage</div>
+                    <div class="stage-content">
+                        <ul>
+                            <li>Occurs ~3 months after chancre</li>
+                            <li>Dissemination and multiplication in different tissues</li>
+                            <li>Happens in ~100% of untreated patients</li>
+                            <li>Circulating immune complexes, human anti-fibronectin antibodies, and complement contribute to lesions</li>
+                            <li>Lasts weeks to months</li>
+                            <li>Relapse after clearance in ~25% of patients</li>
+                            <li>Only "wet" lesions are infectious (condyloma lata and mucous patches)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-box">
+                    <div class="stage-header latent-stage">Latency</div>
+                    <div class="stage-content">
+                        <ul>
+                            <li>Period between healing of primary/secondary syphilis and appearance of late stages</li>
+                            <li>Can last for many years</li>
+                            <li>~70% will remain in this stage for life</li>
+                            <li>Positive antibodies</li>
+                            <li>Can be early latent (≤1 year) or late latent (>1 year)</li>
+                            <li>90% of relapse occur in the 1st year of latency</li>
+                            <li>Intermittent infectivity, especially mother to fetus</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-box">
+                    <div class="stage-header tertiary-stage">Tertiary Stage</div>
+                    <div class="stage-content">
+                        <ul>
+                            <li>Also known as late syphilis</li>
+                            <li>Small number of organisms but high immune-complexes</li>
+                            <li>Occurs in 1/3 of untreated patients</li>
+                            <li>Gummas in the skin, cardiovascular system, or CNS</li>
+                            <li>Neurosyphilis can happen during any stage</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mcq-box">
+                    <div class="mcq-badge">Previous Exam Question</div>
+                    <p><strong>Syphilis and HIV:</strong> Patients with syphilis have an increased risk of having HIV</p>
+                </div>
+                
+                <h3>Clinical Features</h3>
+                
+                <h4>Classification</h4>
+                <p>Syphilis is divided into two subsets:</p>
+                <ul>
+                    <li><strong>Early syphilis:</strong> includes primary, secondary, and early latent</li>
+                    <li><strong>Late syphilis:</strong> includes late latent and tertiary</li>
+                </ul>
+                <p>The definition of early vs. latent syphilis differs between organizations:</p>
+                <ul>
+                    <li><strong>CDC:</strong> 1 year is the cutoff</li>
+                    <li><strong>WHO:</strong> 2 years is the cutoff</li>
+                </ul>
+                <p>This division is important for treatment purposes.</p>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <div class="tab-button active" onclick="openTab(event, 'primary')">Primary</div>
+                        <div class="tab-button" onclick="openTab(event, 'secondary')">Secondary</div>
+                        <div class="tab-button" onclick="openTab(event, 'latent')">Latent</div>
+                        <div class="tab-button" onclick="openTab(event, 'tertiary')">Tertiary</div>
+                        <div class="tab-button" onclick="openTab(event, 'neuro')">Neurosyphilis</div>
+                        <div class="tab-button" onclick="openTab(event, 'congenital')">Congenital</div>
+                    </div>
+                    
+                    <div id="primary" class="tab-content active">
+                        <ul>
+                            <li>Well-demarcated painless ulcer with indurated border</li>
+                            <li>Regional lymphadenopathy</li>
+                            <li>Appears ~3 weeks after sexual contact</li>
+                            <li>Can be unrecognized especially in women with intravaginal ulcers</li>
+                            <li><strong>Diagnosis:</strong>
+                                <ul>
+                                    <li>Darkfield microscopy in this stage → most sensitive and specific method of diagnosis <span class="mcq-badge">MCQ</span></li>
+                                    <li>Positive VDRL/RPR in 80%</li>
+                                    <li>Positive TPHA/FTA-ABS in 90%</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="secondary" class="tab-content">
+                        <ul>
+                            <li>Mucocutaneous + systemic manifestations</li>
+                            <li>Fever, malaise, sore throat, adenopathy, weight loss, muscle aches</li>
+                            <li>Cutaneous manifestation are variable ("great imitator")</li>
+                            <li>80% of patients → generalized papulosquamous eruption</li>
+                            <li>Characteristic locations: Trunk, palms, soles</li>
+                            <li>The presence of hyperpigmented macules with a collarette of scales on palms (Biett's sign)</li>
+                            <li>Mucosal lesions: small ulcers or large gray plaques (mucous patches)</li>
+                            <li>Condyloma lata in moist parts of anogenital area</li>
+                            <li>Moth-eaten alopecia</li>
+                            <li>Split papules at oral commissures</li>
+                            <li>Necklace of Venus: hyperpigmented macules around the neck</li>
+                            <li>Corona veneris: papulosquamous lesions on the forehead at the hairline</li>
+                            <li>Malignant syphilis (lues maligna): variant with crusted necrotic ulcers resembling primary chancres - associated with HIV</li>
+                            <li>Appears ~3 months after infection</li>
+                            <li>Lesions resolve spontaneously with possible relapse (20% within first year)</li>
+                            <li><strong>Diagnosis:</strong>
+                                <ul>
+                                    <li>Darkfield microscopy can be done on wet lesions</li>
+                                    <li>RPR and VDRL much more sensitive compared to primary syphilis</li>
+                                    <li>All patients should be screened for HIV</li>
+                                    <li>Patients with neurological or ophthalmological symptoms - do lumbar puncture</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="latent" class="tab-content">
+                        <ul>
+                            <li>Asymptomatic</li>
+                            <li>With time, patients are divided into three categories:
+                                <ul>
+                                    <li>1/3 will have negative RPR/VDRL</li>
+                                    <li>1/3 will have positive RPR/VDRL but no signs or symptoms for life</li>
+                                    <li>1/3 will progress to tertiary syphilis</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tertiary" class="tab-content">
+                        <ul>
+                            <li>Rare</li>
+                            <li>Involvement of skin, bones, CNS, heart, and great vessels</li>
+                            <li>Distribution of manifestations:
+                                <ul>
+                                    <li>1/2 develop gummas</li>
+                                    <li>1/4 develop CNS involvement</li>
+                                    <li>1/4 develops cardiovascular involvement</li>
+                                </ul>
+                            </li>
+                            <li><strong>Gummas:</strong> locally destructive lesions in skin, bones, liver, and other organs
+                                <ul>
+                                    <li>In skin: nodular or noduloulcerative lesions, often with arciform pattern</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cardiovascular:</strong> 15-30 years after infection, endarteritis of vessels</li>
+                            <li><strong>Systemic involvement:</strong> Syphilis can involve almost every organ, with the ovaries often cited as an exception.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="neuro" class="tab-content">
+                        <div class="mcq-box">
+                            <div class="mcq-badge">Previous Exam Question</div>
+                            <p><strong>Indications for lumbar puncture in syphilis:</strong></p>
+                            <ul>
+                                <li>Tertiary syphilis</li>
+                                <li>Neurological or ophthalmological symptoms</li>
+                                <li>Treatment failure</li>
+                                <li>Neonates with proven or highly probable congenital syphilis: CSF analysis should be performed prior to therapy</li>
+
+                            </ul>
+                        </div>
+                        <ul>
+                            <li>Can occur at any stage</li>
+                            <li>Variable neurological symptoms</li>
+                            <li>Tabes dorsalis: associated with Argyll Robertson pupils (abnormal pupillary light reflexes: loss of direct and consensual; retention of accommodation)</li>
+                            <li>All patients have high titers of RPR/VDRL and TPHA</li>
+                            <li>All patients should undergo lumbar puncture</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="congenital" class="tab-content">
+                        <div class="mcq-box">
+                            <div class="mcq-badge">Previous Exam Question</div>
+                            <p>Know the difference between early vs late manifestations</p>
+                        </div>
+                        
+                        <p>Congenital syphilis is divided into early and late (less than and greater than 2 years of age)</p>
+                        
+                        <h4>Early Congenital Syphilis</h4>
+                        <ul>
+                            <li>Manifestations within first 3 months (max within first 2 years)</li>
+                            <li>Marasmic syphilis (cachexia)</li>
+                            <li>Resembles the secondary stage of acquired syphilis</li>
+                            <li>Pemphigus syphiliticus: variant with bullous lesions</li>
+                            <li>Snuffles: bloody or purulent mucinous nasal discharge</li>
+                            <li>Perioral/perianal fissures, lymphadenopathy, hepatosplenomegaly</li>
+                            <li>Pseudoparalysis of Parrot: reduced movement of extremities due to pain</li>
+                            <li>Anemia, thrombocytopenia</li>
+                        </ul>
+                        
+                        <h4>Late Congenital Syphilis</h4>
+                        <ul>
+                            <li>Syphilis "stigmata"</li>
+                            <li>Delayed consequences of localized inflammation at sites of treponemal infection</li>
+                            <li>Mulberry molars</li>
+                            <li>Rhagades: perioral fissures</li>
+                            <li>Higoumenakis sign <span class="mcq-badge">MCQ</span></li>
+                            <li>Clutton's joints</li>
+                            <li>Saddle nose deformity</li>
+                            <li>Hutchinson triad: interstitial keratitis, SNHL, and Hutchinson teeth</li>
+                        </ul>
+                        
+                        <div class="flowchart">
+                            <div class="flowchart-title">Mother-to-Child Transmission of Untreated Syphilis</div>
+                            <div style="padding: 1rem; background: #f8f9fa;">
+                                <h4>Risk</h4>
+                                <ul>
+                                    <li>Infection from conception to 7th month: nearly 100% transmission (often fetal demise or severe congenital syphilis)</li>
+                                    <li>Infection at least 2 years before pregnancy: reduced risk to 50%</li>
+                                    <li>Infection during 7th, 8th, or early 9th month: reduced risk</li>
+                                    <li>Infection 3-6 weeks before labor: no placental transmission; risk of perinatal transmission</li>
+                                </ul>
+                                
+                                <h4>Consequences</h4>
+                                <ul>
+                                    <li>Spontaneous abortion (second or third trimester): 10%</li>
+                                    <li>Stillbirth: 10%</li>
+                                    <li>Infant death: 20%</li>
+                                    <li>Congenital syphilis: 20%</li>
+                                    <li>Healthy child: 40%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Diagnosis</h3>
+                <p>Diagnosis is made by either direct detection of treponemes/treponemal DNA or by serology</p>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <div class="tab-button active" onclick="openTab(event, 'direct')">Direct Detection</div>
+                        <div class="tab-button" onclick="openTab(event, 'serology')">Serology</div>
+                        <div class="tab-button" onclick="openTab(event, 'pathology')">Pathology</div>
+                    </div>
+                    
+                    <div id="direct" class="tab-content active">
+                        <h4>Direct Detection Tests</h4>
+                        <ul>
+                            <li><strong>Darkfield microscopy</strong>
+                                <ul>
+                                    <li>Visual detection of motile spirochetes from skin lesions</li>
+                                    <li>Should not be done on oral lesions (spirochetes are part of normal oral flora)</li>
+                                </ul>
+                            </li>
+                            <li><strong>PCR</strong>
+                                <ul>
+                                    <li>Especially useful for neurosyphilis (lumbar puncture)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="serology" class="tab-content">
+                        <h4>Non-treponemal Tests</h4>
+                        <ul>
+                            <li>VDRL and RPR</li>
+                            <li>Used as screening tests</li>
+                            <li>Titers correlate with disease activity</li>
+                            <li>Can be used to monitor treatment response (4-fold decrease)</li>
+                            <li>Can be false negative due to:
+                                <ul>
+                                    <li><strong>Prozone phenomenon:</strong> Very high antibody levels paradoxically inhibit the test reaction (flocculation); requires serum dilution to overcome</li>
+                                    <li><strong>HIV coinfection:</strong> Temporary negative result in secondary syphilis associated with HIV infection; may become reactive on subsequent testing</li>
+                                    <li><strong>Early primary syphilis:</strong> Lack of reactivity before sufficient antibody response has developed, even with chancre positive by darkfield microscopy or PCR</li>
+                                </ul>
+                            </li>
+                            <li>Can be false positive (SLAP HIM mnemonic)</li>
+                            <li>False positive causes (SLAP HIM mnemonic):
+                                <ul>
+                                    <li><strong>S</strong>SLE</li>
+                                    <li><strong>L</strong>LEPROSY</li>
+                                    <li><strong>A</strong>ntiphospholipid syndrome/ACUTe Febrle ilness </li>
+                                    <li><strong>P</strong>regnancy</li>
+                                    <li><strong>H</strong>epatic cirrhosis</li>
+                                    <li><strong>I</strong>nfectious diseases (e.g., malaria)</li>
+                                    <li><strong>M</strong>iscellaneous:
+                                        <ul>
+                                            <li>Illicit drug abuse</li>
+                                            <li>Lymphomas</li>
+                                            <li>Vaccinations</li>
+                                            <li>Idiopathic, familial</li>
+                                            <li>Endemic treponematoses (yaws, pinta, bejel - caused by related Treponema species)</li>
+                                            <li>Borreliosis (Lyme disease - caused by Borrelia species, another type of spirochete)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h4>Treponemal Tests</h4>
+                        <ul>
+                            <li>TPHA, ELISA, and FTA-ABS</li>
+                            <li>Used as confirmatory tests</li>
+                            <li>Stay positive for life - not useful for disease monitoring</li>
+                            <li><strong>Cross-reactivity:</strong> Cross-reactivity with other treponematoses</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="pathology" class="tab-content">
+                        <h4>Primary Syphilis</h4>
+                        <ul>
+                            <li>Ulceration</li>
+                            <li>Diffuse dermal infiltrate of plasma cells, lymphocytes, and histiocytes</li>
+                            <li>Spirochetes usually detected with Warthin-Starry stain</li>
+                        </ul>
+                        
+                        <h4>Secondary Syphilis</h4>
+                        <ul>
+                            <li>Less specific</li>
+                            <li>Psoriasiform hyperplasia</li>
+                            <li>Dermal infiltrate of plasma cells, lymphocytes, and histiocytes</li>
+                            <li>Think of it as two reaction patterns in the same sample (e.g., psoriasiform + lichenoid)</li>
+                            <li>Vasculitis in lues maligna</li>
+                            <li>Spirochetes detected in most cases</li>
+                        </ul>
+                        
+                        <h4>Tertiary Syphilis</h4>
+                        <ul>
+                            <li>Tuberculoid granulomas with or without caseation</li>
+                            <li>Spirochetes rarely detected</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Treatment</h3>
+                <ul>
+                    <li><strong>First-line:</strong> Penicillin G
+                        <ul>
+                            <li>Benzathine penicillin, 2.4 million units IM as a single dose (early) or weekly for three doses (late)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Second-line:</strong> Tetracyclines</li>
+                    <li><strong>Special case:</strong> If pregnant with penicillin allergy → desensitize then give penicillin <span class="mcq-badge">MCQ</span></li>
+                </ul>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header">Detailed Treatment Recommendations</div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Recommended Treatment</th>
+                                <th>Alternative for Penicillin Allergy</th>
+                            </tr>
+                            <tr>
+                                <td>Early syphilis (primary, secondary, early latent &lt;1 year)</td>
+                                <td>
+                                    <ul>
+                                        <li>Benzathine penicillin, 2.4 million units IM as single dose</li>
+                                        <li>OR Procaine penicillin, 1.2 million units IM daily for 10 days</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Doxycycline, 100 mg PO BID for 14 days</li>
+                                        <li>OR Tetracycline, 500 mg PO four times daily for 14 days</li>
+                                        <li>OR Ceftriaxone, 1-2 g IM or IV daily for 10-14 days</li>
+                                        <li>OR Azithromycin, 2 g PO as single dose</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Late latent (&gt;1 year), cardiovascular, gummatous syphilis</td>
+                                <td>
+                                    <ul>
+                                        <li>Benzathine penicillin, 2.4 million units IM weekly for three doses</li>
+                                        <li>OR Procaine penicillin, 1.2 million units IM daily for 20 days</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Doxycycline, 100 mg PO BID for 28 days</li>
+                                        <li>OR Tetracycline, 500 mg PO four times daily for 28 days</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Neurosyphilis and ocular syphilis</td>
+                                <td>
+                                    <ul>
+                                        <li>Aqueous penicillin G, 3-4 million units IV q4h (18-24 million units daily) for 10-14 days</li>
+                                        <li>OR Procaine penicillin, 2.4 million units IM daily plus probenecid, 500 mg PO four times daily, both for 10-14 days</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Ceftriaxone, 2 g IM or IV daily for 10-14 days</li>
+                                        <li>OR Consider desensitization</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pregnancy</td>
+                                <td>
+                                    <ul>
+                                        <li>Benzathine penicillin, 2.4 million units IM weekly for two (early) or three (late) doses</li>
+                                        <li>OR Procaine penicillin, regimen appropriate for stage</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li><strong>Desensitization to penicillin</strong></li>
+                                        <li>Alternative regimens (limited data):
+                                            <ul>
+                                                <li>Azithromycin, 500 mg daily for 10 days</li>
+                                                <li>OR Ceftriaxone, 1 g IM or IV daily for 10-14 days</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <h3>Monitoring</h3>
+                <ul>
+                    <li>VDRL or RPR should be done at 6 and 12 months for uncomplicated cases (CDC)</li>
+                    <li>More frequent evaluation for patients with HIV (every 3 months)</li>
+                </ul>
+                
+                <h3>Differential Diagnosis</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header">Differential Diagnoses for Syphilis by Stage</div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Differential Diagnoses</th>
+                            </tr>
+                            <tr>
+                                <td>Primary syphilis</td>
+                                <td>
+                                    <ul>
+                                        <li>Genital herpes</li>
+                                        <li>Genital trauma</li>
+                                        <li>Fixed drug eruption</li>
+                                        <li>Ulcerative genital carcinoma (e.g., squamous cell carcinoma)</li>
+                                        <li>Chancroid: jagged border, yellow exudate, painful</li>
+                                        <li>Lymphogranuloma venereum: transient, indurated, painless</li>
+                                        <li>Primary EBV infection</li>
+                                        <li>Behçet disease</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Secondary syphilis</td>
+                                <td>
+                                    <ul>
+                                        <li><strong>Cutaneous:</strong> pityriasis rosea, guttate psoriasis, viral exanthems, lichen planus, pityriasis lichenoides chronica, primary HIV infection, drug eruption, nummular eczema, folliculitis</li>
+                                        <li><strong>Mucous membranes:</strong> lichen planus, chronic aphthae, hand-foot-and-mouth disease, herpangina, perlèche</li>
+                                        <li><strong>Condylomata lata:</strong> warts due to HPV, bowenoid papulosis, squamous cell carcinoma</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tertiary syphilis</td>
+                                <td>
+                                    <ul>
+                                        <li><strong>Cutaneous:</strong> lupus vulgaris, chromoblastomycosis, dimorphic fungal infections, leishmaniasis, lupus erythematosus, mycosis fungoides, sarcoidosis, tumors, venous ulcer</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="gonorrhea" class="section">
+                <h2>Gonorrhea</h2>
+                
+                <h3>Definition & Epidemiology</h3>
+                <ul>
+                    <li>Most common reportable STI in high-income countries (the most common STI overall is HPV, but sources differ)</li>
+                    <li>Caused by Neisseria gonorrhoeae (gram-negative diplococci)</li>
+                </ul>
+                
+                <h3>Pathogenesis</h3>
+                <ul>
+                    <li>Pili → motility</li>
+                    <li>Pili and Opa ligands → adhesion</li>
+                    <li>Proteases → break down IgA</li>
+                    <li>Lipopolysaccharide - endotoxin</li>
+                </ul>
+                
+                <h3>Clinical Features</h3>
+                <ul>
+                    <li>Can be asymptomatic (10% men and 50% women)</li>
+                    <li>Acute anterior urethritis with dysuria and urethral discharge in men</li>
+                    <li>Ascension may lead to epididymitis, prostatitis, and vesiculitis</li>
+                    <li>"Bull head clap": swelling of the distal penile shaft</li>
+                    <li>Increased vaginal discharge, dysuria, intermenstrual bleeding, and menorrhagia in women</li>
+                    <li>Ascension may lead to pelvic inflammatory disease (PID)</li>
+                    <li>Gonorrheic perihepatitis (Fitz-Hugh-Curtis syndrome): complication leading to pain in right upper quadrant mimicking acute cholecystitis</li>
+                    <li>Extracutaneous involvement:
+                        <ul>
+                            <li>Pharynx</li>
+                            <li>Rectal mucosa (MSM)</li>
+                            <li>Eye (ophthalmia neonatorum, mother to neonate)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="mcq-box">
+                    <div class="mcq-badge">Previous Exam Question</div>
+                    <p><strong>Disseminated Gonorrhea</strong></p>
+                    <ul>
+                        <li>Leads to arthritis-dermatosis syndrome</li>
+                        <li>Associated with C5-C9 complement deficiency</li>
+                        <li>Triad of fever, joint pain, and cutaneous eruption of hemorrhagic pustules (due to vasculitis)</li>
+                    </ul>
+                </div>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header">Clinical Manifestations of Gonorrhea (Comprehensive)</div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Category</th>
+                                <th>Manifestations</th>
+                            </tr>
+                            <tr>
+                                <td>Disseminated infection</td>
+                                <td>
+                                    <ul>
+                                        <li>Arthritis</li>
+                                        <li>Fever</li>
+                                        <li>Tenosynovitis</li>
+                                        <li>Acral cutaneous pustules</li>
+                                        <li>Scalp abscesses (in neonates at sites of fetal scalp monitor electrodes)</li>
+                                        <li>Endocarditis</li>
+                                        <li>Meningitis</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Direct mucosal infection</td>
+                                <td>
+                                    <ul>
+                                        <li>Urethritis</li>
+                                        <li>Cervicitis</li>
+                                        <li>Proctitis</li>
+                                        <li>Pharyngitis</li>
+                                        <li>Vulvovaginitis (children)</li>
+                                        <li>Ophthalmia neonatorum</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Local extension</td>
+                                <td>
+                                    <ul>
+                                        <li>Prostatitis</li>
+                                        <li>Vesiculitis</li>
+                                        <li>Epididymitis</li>
+                                        <li>Salpingitis</li>
+                                        <li>Oophoritis</li>
+                                        <li>Pelvic inflammatory disease</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <h3>Diagnosis</h3>
+                <ul>
+                    <li>Smears</li>
+                    <li>PCR</li>
+                    <li>Culture</li>
+                </ul>
+                
+                <div class="flowchart">
+                    <div class="flowchart-title">Diagnostic Algorithm for Urethral Discharge or Dysuria</div>
+                    <div class="flowchart-box">Urethral discharge, dysuria</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Physical examination</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Gram stain</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <div style="width: 45%;">
+                            <div class="flowchart-box">PMNs with diplococci</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Diagnosis: Gonorrhea</div>
+                        </div>
+                        <div style="width: 45%;">
+                            <div class="flowchart-box">PMNs without diplococci</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Diagnosis: Gonorrhea? NGU?</div>
+                        </div>
+                    </div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Gonococcal culture / Neisseria gonorrhoeae/Chlamydia molecular test</div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div style="display: flex; justify-content: space-around;">
+                        <div style="width: 30%;">
+                            <div class="flowchart-box">GC culture/test positive<br>Chlamydia positive</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Diagnosis: Co-infection with GC and Ct</div>
+                        </div>
+                        <div style="width: 30%;">
+                            <div class="flowchart-box">GC culture/test negative<br>Chlamydia positive</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Diagnosis: Chlamydia infection</div>
+                        </div>
+                        <div style="width: 30%;">
+                            <div class="flowchart-box">GC culture/test negative<br>Chlamydia negative</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Diagnosis: NGU?</div>
+                            <div class="flowchart-arrow">↓</div>
+                            <div class="flowchart-box">Repeat GC culture, N.gonorrhoeae/Chlamydia test</div>
+                        </div>
+                    </div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="flowchart-box">Appropriate treatment<br>Partner notification and treatment<br>Confirm response to treatment</div>
+                </div>
+                
+                <h3>Pathology</h3>
+                <p>In the cutaneous lesions of disseminated gonorrhea:</p>
+                <ul>
+                    <li>Shows septic neutrophilic vasculitis</li>
+                </ul>
+                
+                <h3>Treatment</h3>
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <div class="tab-button active" onclick="openTab(event, 'uncomplicated')">Uncomplicated</div>
+                        <div class="tab-button" onclick="openTab(event, 'conjunctivitis')">Conjunctivitis</div>
+                        <div class="tab-button" onclick="openTab(event, 'disseminated')">Disseminated</div>
+                        <div class="tab-button" onclick="openTab(event, 'neonatal')">Neonatal</div>
+                    </div>
+                    
+                    <div id="uncomplicated" class="tab-content active">
+                        <h4>Uncomplicated gonococcal infections of the urethra, cervix, rectum or pharynx</h4>
+                        <p><strong>Recommended regimens:</strong></p>
+                        <ul>
+                            <li>Ceftriaxone, 250 mg IM as single dose, PLUS azithromycin, 1 g PO as single dose</li>
+                        </ul>
+                        <p><strong>Alternative regimen:</strong></p>
+                        <ul>
+                            <li>Cefixime, 400 mg PO as single dose, PLUS azithromycin, 1 g PO as single dose</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="conjunctivitis" class="tab-content">
+                        <h4>Gonococcal conjunctivitis</h4>
+                        <ul>
+                            <li>Ceftriaxone, 1 g IM as single dose, PLUS azithromycin, 1 g PO as single dose</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="disseminated" class="tab-content">
+                        <h4>Disseminated gonococcal infection</h4>
+                        <p><strong>Recommended regimen:</strong></p>
+                        <ul>
+                            <li>Ceftriaxone, 1 g IM or IV q24h, PLUS azithromycin, 1 g PO as single dose</li>
+                            <li>Ceftriaxone administered until 24-48 hours after improvement begins, then cefixime, 400 mg PO BID, to complete at least 1 week of therapy</li>
+                        </ul>
+                        <p><strong>Alternative regimens:</strong></p>
+                        <ul>
+                            <li>Cefotaxime or ceftizoxime, 1 g IV q24h, PLUS azithromycin, 1 g PO as single dose</li>
+                            <li>Cephalosporin administered until 24-48 hours after improvement begins, then cefixime as above</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="neonatal" class="tab-content">
+                        <h4>Neonatal infections</h4>
+                        <p><strong>Disseminated gonococcal infection and gonococcal scalp abscesses in newborns:</strong></p>
+                        <ul>
+                            <li>Ceftriaxone, 25-50 mg/kg IV or IM daily for 7 days (10-14 if meningitis)</li>
+                            <li>OR Cefotaxime, 25 mg/kg IV or IM q12h for 7 days (10-14 if meningitis)</li>
+                        </ul>
+                        <p><strong>Ophthalmia neonatorum or asymptomatic neonate born to mother with untreated gonorrhea:</strong></p>
+                        <ul>
+                            <li>Ceftriaxone, 25-50 mg/kg IV or IM as single dose, not to exceed 125 mg</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="chancroid" class="section">
+                <h2>Chancroid</h2>
+                
+                <h3>Definition & Etiology</h3>
+                <ul>
+                    <li>Also known as soft chancre</li>
+                    <li>Acute genital ulcer + inguinal adenitis</li>
+                    <li>Caused by Haemophilus ducreyi (gram-negative anaerobic bacilli)</li>
+                    <li>Risk factor for HIV, as with all genital ulcers</li>
+                </ul>
+                
+                <h3>Clinical Features</h3>
+                <ul>
+                    <li>Painful ulcer with purulent base and soft, undermined edges (vs syphilis)</li>
+                    <li>Several ulcers may develop</li>
+                    <li>Usually co-infection with other STDs (HSV, syphilis)</li>
+                    <li>Painful inguinal lymphadenitis may accompany genital lesions, usually unilateral</li>
+                    <li>Inguinal buboes may rupture → ulcers</li>
+                    <li>Buboes are painful adenitis that form sinuses and produce pus</li>
+                </ul>
+                
+                <h3>Diagnosis</h3>
+                <ul>
+                    <li>A "school-of-fish" or "railroad track" appearance on smears</li>
+                </ul>
+                
+                <h3>Treatment</h3>
+                <ul>
+                    <li>Ceftriaxone + azithromycin single dose</li>
+                </ul>
+            </section>
+            
+            <section id="lgv" class="section">
+                <h2>Lymphogranuloma Venereum (LGV)</h2>
+                
+                <h3>Definition & Etiology</h3>
+                <ul>
+                    <li>Caused by Chlamydia trachomatis serovars L1-3</li>
+                </ul>
+                
+                <h3>Clinical Features</h3>
+                <h4>Three Stages:</h4>
+                <ol>
+                    <li>Infection of the genital mucosa</li>
+                    <li>Inguinal lymphadenopathy (unilateral)</li>
+                    <li>Buboes formation accompanied by proctocolitis and involvement of perirectal or perianal lymphatic tissue</li>
+                </ol>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header">Detailed Clinical Manifestations of LGV</div>
+                    <div class="collapsible-content">
+                        <table>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Manifestations</th>
+                            </tr>
+                            <tr>
+                                <td>Initial manifestations: 3-12 days</td>
+                                <td>
+                                    <ul>
+                                        <li>Papule</li>
+                                        <li>Erosion or ulcer</li>
+                                        <li>Herpetiform vesicle</li>
+                                        <li>Nonspecific urethritis or cervicitis</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Inguinal syndrome: 10-30 days up to 6 months</td>
+                                <td>
+                                    <ul>
+                                        <li>Regional lymphadenopathy (mostly inguinal and femoral; also perirectal, deep iliac)</li>
+                                        <li>Overlying erythema</li>
+                                        <li>Constitutional symptoms</li>
+                                        <li>Eruption of buboes</li>
+                                        <li>Pelvic inflammatory disease (PID), back pain</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ano-genito-rectal syndrome: months to years</td>
+                                <td>
+                                    <ul>
+                                        <li>Proctocolitis</li>
+                                        <li>Hyperplasia of intestinal and perirectal lymphatic tissue</li>
+                                        <li>Perirectal abscesses</li>
+                                        <li>Ischiorectal and rectovaginal fistulas</li>
+                                        <li>Anal fistulas</li>
+                                        <li>Rectal strictures and stenoses</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Other manifestations</td>
+                                <td>
+                                    <ul>
+                                        <li>Urethro-genito-perineal syndrome</li>
+                                        <li>Peno-scrotal elephantiasis</li>
+                                        <li>Erythema nodosum</li>
+                                        <li>Submaxillary or cervical lymphadenopathy associated with oropharyngeal lesions</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <ul>
+                    <li>Herpetiform lesion develops at site of exposure and heals rapidly without a scar</li>
+                    <li>Most common location: coronal sulcus in men and posterior vaginal wall in women</li>
+                    <li>Usually accompanied by local lymphangitis</li>
+                    <li>The <strong>groove sign</strong>: lymph node enlargement on both sides of the inguinal ligament (pathognomonic for LGV)</li>
+                    <li>Co-infection with other STDs</li>
+                    <li>Inguinal syndrome: unilateral lymphadenopathy → buboes → rupture → sinus tracts</li>
+                    <li>Ano-genito-rectal syndrome: local abscesses with anal fistulas → rectal strictures and stenoses</li>
+                </ul>
+                
+                <h3>Diagnosis</h3>
+                <ul>
+                    <li>H&E: Gamna-Favre bodies inside histiocytes</li>
+                    <li>PCR: chlamydia DNA</li>
+                </ul>
+                
+                <h3>Treatment</h3>
+                <ul>
+                    <li><strong>First-line:</strong> Doxycycline</li>
+                    <li><strong>Second-line:</strong> Azithromycin</li>
+                </ul>
+            </section>
+            
+            <section id="donovanosis" class="section">
+                <h2>Donovanosis (Granuloma Inguinale)</h2>
+                
+                <h3>Definition & Etiology</h3>
+                <ul>
+                    <li>Caused by Klebsiella granulomatis (gram-negative bacilli)</li>
+                </ul>
+                
+                <h3>Clinical Features</h3>
+                <ul>
+                    <li>Small papule or nodule that eventually ulcerates</li>
+                    <li>Painless or mildly painful</li>
+                    <li>Beefy red appearance with tendency to bleed</li>
+                    <li>Foul-smelling exudate is characteristic</li>
+                    <li>Bone is the most common extracutaneous site of involvement</li>
+                </ul>
+                
+                <h3>Diagnosis</h3>
+                <ul>
+                    <li><strong>Pathology:</strong> Donovan bodies in histiocytes ("safety pin" appearance)</li>
+                    <li><strong>Smear:</strong> Giemsa, Wright, or Leishman stains</li>
+                </ul>
+                
+                <h3>Treatment</h3>
+                <ul>
+                    <li><strong>First-line:</strong> Azithromycin 1 g weekly or 500 mg daily for at least 3 weeks and until all lesions have completely healed</li>
+                    <li><strong>Second-line:</strong> Doxycycline</li>
+                </ul>
+            </section>
+            
+            <section id="compare" class="section">
+                <h2>Genital Ulcer Disease Comparison</h2>
+                
+                <table class="compare-table">
+                    <tr>
+                        <th>Disease</th>
+                        <th>Incubation Time</th>
+                        <th>Clinical Lesion</th>
+                        <th>Diagnosis</th>
+                        <th>Organism</th>
+                    </tr>
+                    <tr>
+                        <td>Genital herpes</td>
+                        <td>3-7 days</td>
+                        <td>Vesicles, erosions, ulcers; history of herpes viral infection; painful</td>
+                        <td>PCR, culture, DFA, Tzanck (if vesicles)</td>
+                        <td>HSV 2 > 1</td>
+                    </tr>
+                    <tr>
+                        <td>Primary syphilis</td>
+                        <td>30-90 days, average 3 weeks</td>
+                        <td>Non-purulent; usually single ulcer; indurated; relatively painless</td>
+                        <td>Darkfield microscopy, serology, PCR</td>
+                        <td>Treponema pallidum</td>
+                    </tr>
+                    <tr>
+                        <td>Chancroid</td>
+                        <td>3-10 days</td>
+                        <td>Purulent; often multiple ulcers; soft, undermined edges; painful</td>
+                        <td>Culture, PCR</td>
+                        <td>Haemophilus ducreyi</td>
+                    </tr>
+                    <tr>
+                        <td>LGV</td>
+                        <td>3-12 days</td>
+                        <td>Transient ulcer; indurated; painless</td>
+                        <td>PCR, culture, serology</td>
+                        <td>Chlamydia trachomatis serovars L1-3</td>
+                    </tr>
+                    <tr>
+                        <td>Donovanosis</td>
+                        <td>2-12 weeks</td>
+                        <td>Chronic ulcer; indurated, beefy red, friable</td>
+                        <td>Smears, histology</td>
+                        <td>Klebsiella (Calymmatobacterium) granulomatis</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <section id="mcq-review" class="section">
+                <h2>MCQ Review Points</h2>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">Which organ is NOT involved in syphilis?</div>
+                    <div class="memory-answer">Ovaries</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What is the most sensitive and specific method for diagnosing primary syphilis?</div>
+                    <div class="memory-answer">Darkfield microscopy</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What are the indications for lumbar puncture in syphilis?</div>
+                    <div class="memory-answer">
+                        <ol>
+                            <li>Tertiary syphilis</li>
+                            <li>Neurological or ophthalmological symptoms</li>
+                            <li>Treatment failure</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">How should you treat a pregnant patient with syphilis who has a penicillin allergy?</div>
+                    <div class="memory-answer">Desensitize then give penicillin</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What is the pathognomonic finding in lymphogranuloma venereum?</div>
+                    <div class="memory-answer">The groove sign: lymph node enlargement on both sides of the inguinal ligament</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What is Higoumenakis sign?</div>
+                    <div class="memory-answer">Thickening of the medial clavicle (a stigmata of congenital syphilis)</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What is the classic triad of disseminated gonorrhea?</div>
+                    <div class="memory-answer">Fever, joint pain, and cutaneous eruption of hemorrhagic pustules (due to vasculitis)</div>
+                </div>
+                
+                <div class="memory-card" onclick="toggleAnswer(this)">
+                    <div class="memory-question">What deficiency is associated with disseminated gonorrhea?</div>
+                    <div class="memory-answer">C5-C9 complement deficiency</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        // Toggle collapsible sections
+        const collapsibles = document.querySelectorAll('.collapsible-header');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+        
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Memory card functionality
+        function toggleAnswer(card) {
+            const answer = card.querySelector('.memory-answer');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

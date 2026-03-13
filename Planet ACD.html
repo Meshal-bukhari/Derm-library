@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Canvas: Plant ACD Mastery</title>
+    <style>
+        /* --- Core Cognitive & Creative Styling --- */
+        :root {
+            --bg-main: #f8f9fa; /* Slightly off-white, clean */
+            --text-main: #212529;
+            --header-bg: linear-gradient(135deg, #4a00e0, #8e2de2); /* Vibrant Purple/Violet gradient */
+            --header-text: #ffffff;
+            --section-border: #dee2e6;
+            --anacardiaceae-bg: #fff0f6; /* Light Pink/Rose for Anacardiaceae */
+            --asteraceae-bg: #e6f7ff;   /* Light Sky Blue for Asteraceae */
+            --other-bg: #f8f0fc;       /* Light Lavender for Other Families */
+            --takeaway-bg: #e8f5e9;     /* Consistent Light Green for Recall */
+            --pitfall-bg: #ffebee;      /* Consistent Light Red/Pink for Caution */
+            --accent-color: #7b2cbf;    /* Deep Purple accent */
+            --highlight-critical: #ffc107; /* Yellow for critical details like taper/gloves */
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+            --family-border-width: 5px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            padding-bottom: 40px;
+        }
+
+        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 45px 25px;
+            text-align: center;
+            margin-bottom: 35px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+        header h1 { font-size: 2.6em; margin-bottom: 10px; font-weight: 600; }
+        header p { font-size: 1.15em; opacity: 0.9; }
+
+        section {
+            background-color: #fff;
+            margin-bottom: 30px;
+            padding: 30px;
+            border: 1px solid var(--section-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        section:hover { box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12); }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+        h4 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        ul, ol { list-style-position: outside; padding-left: 25px; margin-bottom: 18px; }
+        li { margin-bottom: 10px; }
+        dl { margin-bottom: 18px; }
+        dt { font-weight: 700; margin-top: 12px; color: #000; }
+        dd { margin-left: 25px; margin-bottom: 12px; }
+
+        strong, .critical { /* Use a class for specific critical highlights */
+            font-weight: 600;
+        }
+        .critical {
+             background-color: var(--highlight-critical);
+             padding: 1px 4px;
+             border-radius: 3px;
+             color: #333; /* Ensure text contrast on yellow */
+        }
+
+        code { /* Plant names/chemicals */
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            background-color: #e9ecef;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #430f58; /* Dark purple for code elements */
+        }
+
+        /* --- Section Specific Styling (Visual Chunking & Categorization) --- */
+        #intro { border-top: var(--family-border-width) solid var(--accent-color); }
+        #anacardiaceae { background-color: var(--anacardiaceae-bg); border-left: var(--family-border-width) solid #f783ac; } /* Pink border */
+        #asteraceae { background-color: var(--asteraceae-bg); border-left: var(--family-border-width) solid #5caddf; }     /* Blue border */
+        #other-families { background-color: var(--other-bg); border-left: var(--family-border-width) solid #b19cd9; } /* Lavender border */
+        #board-focus { background-color: var(--takeaway-bg); border-left: var(--family-border-width) solid #81c784; }
+        #pitfalls { background-color: var(--pitfall-bg); border-left: var(--family-border-width) solid #e57373; }
+
+        .clinical-pattern { font-style: italic; color: #555; }
+        .glove-info { border: 1px dashed var(--accent-color); padding: 5px; display: inline-block; margin-top: 5px; background-color: #fff; }
+
+        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #6c757d; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cognitive Canvas: Plant ACD Mastery</h1>
+        <p>Deep Dive into Plant Allergic Contact Dermatitis (Type IV Hypersensitivity)</p>
+    </header>
+
+    <main class="container">
+
+        <section id="intro">
+            <h2>The Basics of Plant ACD</h2>
+            <p>Allergic Contact Dermatitis (ACD) from plants is a <strong>Type IV (delayed) hypersensitivity reaction</strong>. It requires prior sensitization to a plant allergen (hapten). The reaction typically occurs hours to days after re-exposure in a sensitized individual.</p>
+            <p>Two plant families dominate plant ACD:</p>
+            <ul>
+                <li><strong>Anacardiaceae:</strong> The most frequent cause, primarily via <strong>Urushiol</strong>.</li>
+                <li><strong>Asteraceae (Compositae):</strong> The second major cause, primarily via <strong>Sesquiterpene Lactones (SQLs)</strong>.</li>
+            </ul>
+        </section>
+
+        <section id="anacardiaceae">
+            <h2>I. Anacardiaceae Family Dermatitis (The Urushiol Group)</h2>
+            <p>Causes more plant ACD than all other families combined.</p>
+
+            <h3>Key Allergen: Urushiol</h3>
+            <dl>
+                <dt>Composition</dt>
+                <dd>An oleoresin mix of <strong>catechols</strong> and <strong>resorcinols</strong> with long (C15/C17) alkyl side chains. Unsaturation (double bonds) in the side chain dramatically increases allergenicity.</dd>
+                <dt>Mechanism</dt>
+                <dd>Acts as a <strong>hapten</strong>, binding skin proteins. Requires plant damage to be released (except late fall). Very stable; persists on fomites, in smoke.</dd>
+            </dl>
+
+            <h3>Important Allergenic Anacardiaceae:</h3>
+            <ul>
+                <li><strong><code>Toxicodendron spp.</code>:</strong>
+                    <ul>
+                        <li><code>T. radicans</code> (Eastern Poison Ivy - vine), <code>T. rydbergii</code> (Western Poison Ivy - shrub)</li>
+                        <li><code>T. pubescens</code> (Eastern Poison Oak - shrub), <code>T. diversilobum</code> (Western Poison Oak - shrub/vine)</li>
+                        <li><code>T. vernix</code> (Poison Sumac - shrub/tree in wet areas)</li>
+                    </ul>
+                </li>
+                <li><code>Anacardium occidentale</code> (<strong>Cashew Nut Tree</strong>): Allergen in nut shell oil (CNSO). Note: Shell oil also has irritant phenolic components causing immediate vesication.</li>
+                <li><code>Mangifera indica</code> (<strong>Mango Tree</strong>): Allergen (resorcinols) in leaves, bark, stem, <strong>fruit skin</strong>. Pulp is usually safe regarding ACD.</li>
+                <li><code>Schinus terebinthifolius</code> (Brazilian Pepper Tree): Common in Florida; allergen in sap, crushed berries.</li>
+                <li><code>Toxicodendron verniciflua</code> (Japanese Lacquer Tree): Urushiol in sap used for lacquer; polymerized form remains allergenic.</li>
+                <li>Others: <code>Metopium toxiferum</code> (Poisonwood), <code>Semecarpus anacardium</code> (Marking Nut), etc.</li>
+            </ul>
+
+            <h3>Cross-Reactors (Outside Anacardiaceae):</h3>
+            <ul>
+                <li><code>Ginkgo biloba</code> (Ginkgo Tree): Allergen (ginkgolic acid) in <strong>outer seed pulp/covering only</strong>. Leaves/kernel likely only irritant.</li>
+                <li><code>Grevillea spp.</code> (e.g., Silk Oak): Allergen is pentadecylresorcinol (structurally related, less allergenic).</li>
+            </ul>
+
+            <h3>Clinical Features:</h3>
+            <ul>
+                <li><strong>Onset:</strong> Typically 1-2 days post-exposure (range hours to weeks for primary sensitization). Peaks 1-14 days.</li>
+                <li><strong>Morphology:</strong> Intensely pruritic, erythematous eruption. <span class="clinical-pattern">Classic linear streaks</span> of papules progressing to vesicles/bullae (from brushing).</li>
+                <li><span class="clinical-pattern">"Black-Spot" Dermatitis:</span> Oxidized urushiol stains skin black within lesion; acts as <strong>both ICD and ACD</strong>. Stain permanent on clothing (retains allergenicity).</li>
+                <li><strong>Distribution:</strong> Any exposed site. Transfer via fomites (clothes, tools, pets), sawdust, smoke (can cause severe respiratory/ocular issues).</li>
+                <li><strong>No Spread from Blister Fluid:</strong> Fluid itself is non-allergenic. Apparent spread is due to varying absorption/reaction times.</li>
+                <li><strong>Complications:</strong> Erythema Multiforme-like reactions (~2 weeks later), rare nephritis, other systemic rashes.</li>
+                <li><strong>Course:</strong> Untreated lasts 2-3 weeks. Post-inflammatory hyperpigmentation common.</li>
+            </ul>
+
+             <h3>Diagnosis & Treatment:</h3>
+             <ul>
+                 <li><strong>Diagnosis:</strong> Clinical presentation & history. Patch testing not standard for urushiol.</li>
+                 <li><strong>Decontamination:</strong> Prompt (<30 min ideal), thorough washing (3x) with soap (dish soap good), warm water, unidirectional strokes.</li>
+                 <li><strong>Symptomatic Relief:</strong> Cool compresses, Burow's soaks, calamine. Avoid topical sensitizers (antihistamines, benzocaine).</li>
+                 <li><strong>Topical Steroids:</strong> Potent/superpotent useful ONLY if applied very early.</li>
+                 <li><strong>Systemic Corticosteroids:</strong> Highly effective for moderate/severe cases. Crucial point: <span class="critical">Requires gradual taper over 2-3 weeks</span> (e.g., Prednisone 1-2 mg/kg/day) to prevent rebound. Short packs (6-day) are INADEQUATE. IM depot steroid is an option.</li>
+                 <li><strong>Antihistamines (Oral):</strong> Primarily for sedation; itch is not histamine-driven.</li>
+                 <li><strong>Prevention:</strong> Avoidance! Protective clothing. <span class="glove-info">Use heavy-duty <strong class="critical">VINYL</strong> gloves (rubber is permeable).</span> Wash contaminated items carefully.</li>
+             </ul>
+        </section>
+
+        <section id="asteraceae">
+            <h2>II. Asteraceae (Compositae) Family Dermatitis (The SQL Group)</h2>
+            <p>Second major cause of plant ACD. Includes weeds, ornamentals, vegetables.</p>
+
+            <h3>Key Allergen: Sesquiterpene Lactones (SQLs)</h3>
+            <dl>
+                <dt>Composition</dt>
+                <dd>C15 compounds with sesquiterpene + lactone ring. >4000 types exist. Found in leaves, stems, flowers, pollen (bound to airborne parts).</dd>
+                <dt>Mechanism</dt>
+                <dd>Act as haptens. Allergenicity varies.</dd>
+            </dl>
+
+             <h3>Important Allergenic Asteraceae:</h3>
+             <ul>
+                 <li><code>Parthenium hysterophorus</code> (Congress Grass): Major global cause, esp. India. High SQL levels.</li>
+                 <li><code>X Dendranthema cultivars</code> (<strong>Chrysanthemums</strong>): Very common garden/florist cause, often from "dead-heading".</li>
+                 <li><code>Ambrosia spp.</code> (Ragweed): SQLs in plant parts (<strong>not</strong> the pollen protein <code>Amb a 1</code> causing hayfever) cause ACD, often ABCD pattern.</li>
+                 <li>Others: <code>Arnica montana</code>, <code>Tanacetum parthenium</code> (Feverfew), <code>Taraxacum officinale</code> (Dandelion - ABCD from mowing), <code>Helianthus annuus</code> (Sunflower - ABCD from trichomes), <code>Lactuca sativa</code> (Lettuce), <code>Cynara scolymus</code> (Artichoke).</li>
+             </ul>
+
+            <h3>Cross-Reactors (Outside Asteraceae):</h3>
+             <ul>
+                 <li><code>Frullania spp.</code> (<strong>Liverworts</strong>): Cause "woodcutter's eczema" (SQLs) in Pacific NW.</li>
+                 <li><code>Magnolia spp.</code> (Magnolia)</li>
+                 <li><code>Laurus nobilis</code> (Bay Laurel leaves)</li>
+             </ul>
+
+            <h3>Clinical Features:</h3>
+            <ul>
+                <li><strong>Variable Presentation:</strong> Can be typical eczematous ACD (e.g., Chrysanthemum handling).</li>
+                <li><span class="clinical-pattern">Airborne Contact Dermatitis (ABCD):</span> Common pattern (Parthenium, Ragweed, Dandelion). SQLs on airborne particles affect exposed skin (face, neck, V-chest, arms). Initially seasonal, becomes chronic/lichenified. <strong>Classic ABCD involves eyelids, melolabial folds, retroauricular areas</strong> (unlike photodermatitis which spares folds).</li>
+                <li><span class="clinical-pattern">Photosensitivity / Chronic Actinic Dermatitis (CAD):</span> SQLs are NOT photoallergens, but many SQL-allergic patients develop photosensitivity or CAD (up to 85% of CAD patients are Asteraceae-allergic). Mechanism might involve UV-induced neoantigens.</li>
+                <li><span class="clinical-pattern">"Woodcutter's Eczema" (<code>Frullania</code>):</span> Pseudo-photodistribution (worse in wet winter), involves upper eyelids, spares submental area.</li>
+            </ul>
+
+            <h3>Diagnosis & Treatment:</h3>
+             <ul>
+                 <li><strong>Diagnosis:</strong> History, clinical pattern (ABCD). Patch testing is key but <span class="critical">CHALLENGING</span>:
+                    <ul>
+                        <li>SQL Mix: High false negative rate (35-65%).</li>
+                        <li>Compositae Mix: False negative rate >15%.</li>
+                        <li><strong>Recommended Combo: SQL mix + Compositae Mix II + Parthenolide</strong> detects ~96%.</li>
+                        <li>Testing to suspect plant parts may be needed (use caution).</li>
+                    </ul>
+                 </li>
+                 <li><strong>Treatment:</strong>
+                    <ul>
+                        <li><strong>Avoidance is paramount.</strong></li>
+                        <li>Acute ACD: Similar to Anacardiaceae (steroids).</li>
+                        <li>Chronic/ABCD/CAD: Difficult. May need PUVA, azathioprine, mycophenolate mofetil.</li>
+                    </ul>
+                 </li>
+             </ul>
+        </section>
+
+        <section id="other-families">
+            <h2>III. Other Plant Families Causing ACD</h2>
+
+            <h3>Alliaceae (Onion Family)</h3>
+            <ul>
+                <li><code>Allium sativum</code> (<strong>Garlic</strong>): Frequent fingertip dermatitis in cooks (hyperkeratosis, fissures). Allergen: <strong>diallyl disulfide</strong> (also an irritant). Patch testing to whole garlic = irritant. <span class="glove-info">Disposable gloves (vinyl, latex, nitrile) are NOT protective; use reusable domestic <strong class="critical">RUBBER</strong> gloves.</span></li>
+            </ul>
+
+             <h3>Alstroemeriaceae / Liliaceae (Lily/Tulip Families)</h3>
+             <ul>
+                 <li><code>Tulipa spp.</code> (<strong>Tulips</strong>): Cause "Tulip Fingers" (ACD + ICD). Fingertips, periungual. Allergen: <strong>Tulipalin A</strong>.</li>
+                 <li><code>Alstroemeria spp.</code> (<strong>Peruvian Lily</strong>): Common florist ACD. Fingertips (erythema, fissures, hyperkeratosis). Allergens: <strong>Tulipalin A & B</strong>. <span class="glove-info">Allergen penetrates <strong class="critical">VINYL</strong> gloves; use <strong class="critical">NITRILE</strong> gloves.</span></li>
+             </ul>
+
+            <h3>Myrtaceae</h3>
+            <ul>
+                 <li><code>Melaleuca alternifolia</code> (<strong>Tea Tree Oil</strong>): Increasingly common ACD. Sensitizers often <strong>degradation products</strong> (light/heat/moisture exposure).</li>
+             </ul>
+
+             <h3>Primulaceae</h3>
+             <ul>
+                 <li><code>Primula obconica</code> (Primula): Common houseplant ACD. Allergen: <strong>Primin</strong>. Often from "dead-heading".</li>
+             </ul>
+
+             <h3>Botanical Products in Cosmetics/Topicals</h3>
+             <ul>
+                 <li>Common source of ACD. Culprits include Tea Tree Oil, Feverfew (Asteraceae), Lichen acids. Asteraceae most common in herbal remedies.</li>
+                 <li>Standard patch test screens often miss relevant botanical allergies. ROAT or testing to patient's products may be needed.</li>
+             </ul>
+        </section>
+
+        <section id="board-focus">
+            <h2>Key Takeaways for Board Exam Memorization</h2>
+            <ul>
+                <li><strong>Top 2 ACD Families:</strong> <strong>Anacardiaceae</strong> (<code>Toxicodendron</code>, Mango skin, Cashew shell) & <strong>Asteraceae</strong> (<code>Chrysanthemum</code>, <code>Parthenium</code>, Ragweed parts).</li>
+                <li><strong>Key Allergens:</strong>
+                    <ul>
+                        <li><strong>Urushiol</strong> (Anacardiaceae): Catechol/Resorcinol mix. Cross-reacts: Ginkgo seed pulp, Grevillea. Stable on fomites/smoke.</li>
+                        <li><strong>Sesquiterpene Lactones (SQLs)</strong> (Asteraceae): Cause direct ACD & ABCD. Associated with CAD. Cross-reacts: Liverworts (Frullania), Magnolia.</li>
+                        <li><strong>Diallyl disulfide:</strong> Garlic (<code>Allium sativum</code>).</li>
+                        <li><strong>Tulipalin A:</strong> Tulips (<code>Tulipa</code>), Peruvian Lily (<code>Alstroemeria</code>).</li>
+                        <li><strong>Primin:</strong> Primrose (<code>Primula obconica</code>).</li>
+                        <li><strong>Tea Tree Oil Degradation Products:</strong> <code>Melaleuca alternifolia</code>.</li>
+                    </ul>
+                </li>
+                 <li><strong>Classic Clinical Patterns:</strong>
+                    <ul>
+                        <li><span class="clinical-pattern">Linear Streaks:</span> Urushiol (Poison Ivy/Oak).</li>
+                        <li><span class="clinical-pattern">Airborne Contact Dermatitis (ABCD):</span> SQLs (Ragweed parts, Parthenium, Dandelion). Involves folds.</li>
+                        <li><span class="clinical-pattern">Fingertip Dermatitis:</span> Garlic, Tulip, Alstroemeria.</li>
+                        <li><span class="clinical-pattern">Black-Spot Dermatitis:</span> Urushiol (ICD + ACD).</li>
+                        <li><span class="clinical-pattern">Woodcutter's Eczema:</span> Frullania (Liverwort) SQLs.</li>
+                        <li>Association with <strong>CAD:</strong> SQLs (Asteraceae).</li>
+                    </ul>
+                 </li>
+                 <li><strong>Treatment & Prevention Pearls:</strong>
+                    <ul>
+                        <li>Urushiol ACD Steroid Taper: <strong class="critical">Must be 2-3 WEEKS</strong> to prevent rebound.</li>
+                        <li>Glove Specifics:
+                            <ul>
+                                <li>Urushiol (Poison Ivy): Heavy-Duty <strong class="critical">VINYL</strong> (Rubber permeable).</li>
+                                <li>Alstroemeria (Tulipalin A): <strong class="critical">NITRILE</strong> (Vinyl permeable).</li>
+                                <li>Garlic (Diallyl disulfide): Domestic <strong class="critical">RUBBER</strong> (Disposables permeable).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Patch Testing Caveats:</strong> Urushiol not standard. SQL/Compositae mixes have high false negatives. Garlic is irritant. Testing to specific items often needed.</li>
+            </ul>
+        </section>
+
+        <section id="pitfalls">
+            <h2>Potential Areas of Confusion / Exam Pitfalls</h2>
+            <ul>
+                <li><strong>ICD vs. ACD Overlap:</strong> Know plants causing both (<strong>Garlic</strong>, <strong>Tulips</strong>, <strong>Toxicodendron Black-Spot</strong>). Distinguish primary mechanism if asked.</li>
+                <li><strong>ACD vs. PPD vs. Protoanemonin ICD:</strong>
+                    <ul>
+                        <li>ACD (Urushiol): No light needed. Can cause PIH later. Linear streaks common.</li>
+                        <li>PPD: Requires UV light. Leaves marked hyperpigmentation. Can be linear/bizarre.</li>
+                        <li>Protoanemonin ICD (Buttercup): No light needed. Linear vesicles. Leaves <strong>NO</strong> hyperpigmentation.</li>
+                    </ul>
+                </li>
+                <li><strong>Urushiol Sources Beyond Toxicodendron:</strong> Remember <strong>Mango SKIN</strong> (not pulp), <strong>Cashew Nut Shell Oil</strong>, <strong>Ginkgo SEED PULP</strong> (not leaf), Lacquer.</li>
+                <li><strong>SQL Patterns:</strong> Differentiate direct contact vs. <strong>ABCD</strong> (know distribution - involves folds) vs. <strong>CAD association</strong> (SQLs not photoallergens themselves).</li>
+                <li><strong>Ragweed Confusion:</strong> Type I hayfever (pollen protein <code>Amb a 1</code>) vs. Type IV ACD/ABCD (SQLs in plant parts).</li>
+                <li><strong>Patch Testing Limits:</strong> Standard screens insufficient for many botanicals/SQLs. Garlic = irritant.</li>
+                <li><strong>Glove Permeability:</strong> <strong class="critical">MEMORIZE: Vinyl for Urushiol, Nitrile for Alstroemeria, Rubber for Garlic.</strong></li>
+                <li><strong>Steroid Taper Duration:</strong> The <strong class="critical">2-3 week taper</strong> for systemic steroids in poison ivy is high-yield.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Cognitive Canvas Design &copy; 2023 - Architecting Knowledge for Allergy Expertise.</p>
+    </footer>
+
+</body>
+</html>

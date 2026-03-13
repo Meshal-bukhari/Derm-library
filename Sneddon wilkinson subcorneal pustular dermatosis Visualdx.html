@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneddon-Wilkinson (SPD) - High-Yield Board Review</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --primary-text: #2c3e50;
+            --secondary-text: #5a6a7a;
+            --accent-color: #3498db;
+            --accent-dark: #2980b9;
+            --highlight-bg: #fff3cd;
+            --alert-bg: #ffebee;
+            --alert-border: #e57373;
+            --success-bg: #e8f5e9;
+            --success-border: #81c784;
+            --border-color: #e1e8ed;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--primary-text);
+            margin: 0 0 5px 0;
+            font-size: 2.2em;
+        }
+
+        h1 .aka {
+            color: var(--secondary-text);
+            font-size: 0.7em;
+            font-weight: 400;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: var(--accent-dark);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .key-pearl {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid #f1c40f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        
+        .key-pearl strong {
+            color: #c0392b;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .flex-item ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        .flex-item li {
+            margin-bottom: 8px;
+        }
+
+        .alert-box {
+            background-color: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            border-left: 5px solid #c0392b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .alert-box h3 {
+            margin: 0 0 10px 0;
+            color: #c0392b;
+        }
+        
+        .alert-box ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        /* Interactive Accordion for Differentials and Histo */
+        details {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        details[open] {
+            background-color: var(--card-bg);
+        }
+
+        summary {
+            font-weight: 600;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none; /* Remove default marker */
+            position: relative;
+            color: var(--accent-dark);
+        }
+        
+        summary::before {
+            content: '►';
+            position: absolute;
+            left: 15px;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+        
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary {
+            padding-left: 35px; /* space for the arrow */
+        }
+        
+        .details-content {
+            padding: 0px 20px 15px 35px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .differentiator {
+            background-color: var(--success-bg);
+            border: 1px solid var(--success-border);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .differentiator strong {
+            color: #2e7d32;
+        }
+        
+        .drug-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .drug-table th, .drug-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .drug-table th {
+            background-color: #eaf4fc;
+            color: var(--accent-dark);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 0.8em;
+            font-weight: bold;
+            border-radius: 12px;
+            color: #fff;
+        }
+        .badge.flexural { background-color: #8e44ad; }
+        .badge.truncal { background-color: #27ae60; }
+        .badge.annular { background-color: #e67e22; }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: var(--secondary-text);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Subcorneal Pustular Dermatosis <br><span class="aka">(Sneddon-Wilkinson Disease)</span></h1>
+            <p class="tagline">A High-Yield Board Review</p>
+        </header>
+
+        <!-- Synopsis Card -->
+        <div class="card">
+            <h2>At a Glance: The Core Concept</h2>
+            <p>Subcorneal pustular dermatosis (SPD) is a rare, chronic, relapsing dermatosis characterized by crops of <strong>sterile subcorneal vesicles or pustules</strong> occurring in an annular configuration on normal to slightly erythematous flexural skin.</p>
+            <div class="key-pearl">
+                <strong>Board Exam Crux:</strong> SPD is distinguished from pustular psoriasis by <strong>(1)</strong> histology showing subcorneal pustules <strong>without spongiform pustules</strong> and <strong>(2)</strong> a notable response to <strong>dapsone</strong>.
+            </div>
+            <h4>Demographics & Nature</h4>
+            <ul>
+                <li><strong>Prevalence:</strong> Rare, no racial or ethnic predilection.</li>
+                <li><strong>Population:</strong> More common in women, typically over the age of 40.</li>
+                <li><strong>Nature:</strong> A benign condition, though its presentation may look severe.</li>
+                <li><strong>Symptoms:</strong> Lesions are often asymptomatic, but patients may report itching or a burning skin sensation.</li>
+            </ul>
+        </div>
+
+        <!-- Clinical Presentation Card -->
+        <div class="card">
+            <h2>Clinical Picture: What to Look For</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h4>Key Lesion Morphology</h4>
+                    <ul>
+                        <li>Small, discrete, <strong>flaccid</strong> pustules or pustulovesicles.</li>
+                        <li>Arise in crops on clinically normal skin.</li>
+                        <li>Tendency to coalesce into <span class="badge annular">Annular</span>, polycyclic, or serpiginous patterns.</li>
+                        <li><strong>Classic Buzzword: "Fluid level"</strong> may be seen (sterile pus on lower half, clear fluid on top).</li>
+                    </ul>
+                </div>
+                <div class="flex-item">
+                    <h4>Distribution & Symmetry</h4>
+                    <ul>
+                        <li>Primarily affects <span class="badge truncal">truncal</span> and <span class="badge flexural">flexural</span> areas.</li>
+                        <li><strong>Common sites:</strong> Axillae, groin, abdomen, inframammary skin, flexural extremities.</li>
+                        <li>Distribution is usually widespread and bilaterally symmetrical.</li>
+                    </ul>
+                </div>
+            </div>
+            <h4>Evolution of Lesions</h4>
+            <p>Pustules dry up after a few days, forming scaly annular plaques and crusts (may resemble impetigo). New crops develop at the periphery of older lesions, reinforcing the annular or polycyclic shapes. The cycle repeats every few days or weeks if untreated. Lesions heal without scarring but may leave postinflammatory hyperpigmentation.</p>
+        </div>
+
+        <!-- Systemic Associations Card -->
+        <div class="card">
+            <h2>Beyond the Skin: Associated Conditions</h2>
+            <p>The etiology of SPD is unknown, but it has critical systemic associations. Always screen for these.</p>
+            <div class="alert-box">
+                <h3>⚠️ High-Yield Association: Don't Miss!</h3>
+                <p>SPD is strongly associated with <strong>IgA monoclonal gammopathy</strong> (paraproteinemia) and can be a presenting sign of <strong>IgA myeloma</strong>. This can develop years after the initial skin diagnosis.</p>
+            </div>
+            <h4>Other Reported Associations:</h4>
+            <ul>
+                <li><strong>Inflammatory Bowel Disease:</strong> Ulcerative colitis, Crohn disease</li>
+                <li><strong>Rheumatologic:</strong> Rheumatoid arthritis, Systemic Lupus Erythematosus (SLE)</li>
+                <li><strong>Autoinflammatory:</strong> SAPHO syndrome (synovitis, acne, pustulosis, hyperostosis, osteitis), Pyoderma gangrenosum</li>
+                <li><strong>Hematologic/Endocrine:</strong> Polycythemia vera, thyroid dysfunction, endocrine tumors</li>
+            </ul>
+        </div>
+
+        <!-- Workup & Histo Card -->
+        <div class="card">
+            <h2>Confirming the Diagnosis: Workup & Histology</h2>
+            <p>A <strong>punch biopsy</strong> for routine histopathology and direct immunofluorescence (DIF) is the best diagnostic test. Always perform a KOH, bacterial Gram stain, and culture from a pustule to rule out infectious mimics.</p>
+            
+            <details>
+                <summary>Click to Reveal Key Histopathology Findings</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Location:</strong> A strictly <strong>subcorneal pustule</strong>.</li>
+                        <li><strong>Contents:</strong> Filled primarily with <strong>neutrophils</strong> (rarely eosinophils).</li>
+                        <li><strong>Key Negative:</strong> No spongiform pustules (this points away from psoriasis).</li>
+                        <li><strong>Epidermis:</strong> Surrounding epidermis is normal. Secondary acantholysis may occur.</li>
+                        <li><strong>Dermis:</strong> Perivascular infiltrate of neutrophils, with occasional mononuclear cells or eosinophils.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Click to Reveal Direct Immunofluorescence (DIF) Results</summary>
+                <div class="details-content">
+                    <p>In <strong>classic SPD</strong>, DIF is typically <strong>NEGATIVE</strong>.</p>
+                    <div class="differentiator">
+                        <strong>Clinical Pitfall:</strong> If DIF shows intraepidermal IgA deposits (especially against desmocollins), the diagnosis shifts to <strong>SPD-type IgA pemphigus</strong>, not classic SPD.
+                    </div>
+                </div>
+            </details>
+        </div>
+        
+        <!-- Differential Diagnosis Card -->
+        <div class="card">
+            <h2>Differential Diagnosis: Don't Get Fooled!</h2>
+            <p>Click on each condition to reveal the key differentiating feature.</p>
+
+            <details>
+                <summary>Pustular Psoriasis</summary>
+                <div class="details-content"><div class="differentiator"><strong>Histology:</strong> Shows intraepidermal <strong>spongiform pustules</strong>. <br><strong>Systemics:</strong> Can present with fever/malaise, which are typically absent in SPD.</div></div>
+            </details>
+            <details>
+                <summary>SPD-type IgA Pemphigus</summary>
+                <div class="details-content"><div class="differentiator"><strong>DIF is key:</strong> Shows <strong>intraepidermal IgA deposits</strong> on immunofluorescence.</div></div>
+            </details>
+            <details>
+                <summary>Bacterial Impetigo</summary>
+                <div class="details-content"><div class="differentiator"><strong>Asymmetrical</strong> distribution. <br><strong>Gram stain/culture:</strong> Positive for bacteria (e.g., Staph). <br><strong>Response:</strong> Responds to antistaphylococcal antibiotics.</div></div>
+            </details>
+            <details>
+                <summary>Dermatitis Herpetiformis</summary>
+                <div class="details-content"><div class="differentiator"><strong>Location:</strong> Favors <strong>extensor</strong> surfaces. <br><strong>Histology:</strong> Sub<strong>epidermal</strong> neutrophils (not subcorneal).</div></div>
+            </details>
+            <details>
+                <summary>Pemphigus Foliaceus</summary>
+                <div class="details-content"><div class="differentiator"><strong>Histology:</strong> Shows <strong>acantholysis</strong> in the granular layer.</div></div>
+            </details>
+            <details>
+                <summary>Acute Generalized Exanthematous Pustulosis (AGEP)</summary>
+                <div class="details-content"><div class="differentiator">Widespread eruption on a background of <strong>erythroderma</strong>, often with associated systemic symptoms and a clear drug history.</div></div>
+            </details>
+            <details>
+                <summary>Tinea Corporis</summary>
+                <div class="details-content"><div class="differentiator"><strong>KOH prep:</strong> Positive for hyphae. Hyphae also seen on biopsy.</div></div>
+            </details>
+            <details>
+                <summary>Necrolytic Migratory Erythema (Glucagonoma Syndrome)</summary>
+                <div class="details-content"><div class="differentiator">Lacks true pustules. Patients have <strong>oral mucous membrane erosions</strong>. <br><strong>Histology:</strong> Necrobiosis of the upper epidermis.</div></div>
+            </details>
+             <details>
+                <summary>Eosinophilic Folliculitis of Ofuji</summary>
+                <div class="details-content"><div class="differentiator">This is a common distractor but not explicitly detailed in the source text. Key features would be perifollicular pustules, often in HIV patients or infants, with prominent eosinophils on biopsy.</div></div>
+            </details>
+        </div>
+
+        <!-- Management Card -->
+        <div class="card">
+            <h2>Management Strategy & Pearls</h2>
+            <h4>Screening & Monitoring</h4>
+            <p>Given the strong associations, a detailed review of systems is required. Focus on rheumatologic, hematologic, and GI symptoms.</p>
+            <div class="alert-box">
+                <h3>ACTIONABLE PEARL: Long-Term Surveillance</h3>
+                <p>Screen for urine and serum paraproteins (SPEP, UPEP) <strong>at diagnosis</strong> and repeat <strong>periodically</strong> during active disease. Myeloma can develop years later. Positive cases usually show IgA paraprotein (kappa or lambda light chains). IgG/IgM are rare.</p>
+            </div>
+            
+            <h4>Therapeutic Ladder (for Adult Patients)</h4>
+            <ol>
+                <li><strong>First-Line Therapy:</strong>
+                    <p><strong>Dapsone (50-200 mg PO once daily)</strong>. This is the treatment of choice. Note: The response is slower than in dermatitis herpetiformis. Most patients achieve remission and are maintained on a minimal effective dose.</p>
+                </li>
+                <li><strong>Other Reported Therapies:</strong>
+                    <ul>
+                        <li>Topical and systemic corticosteroids</li>
+                        <li>Sulfapyridine (compounding) or Sulfasalazine</li>
+                        <li>Colchicine</li>
+                        <li>Systemic Retinoids (Acitretin, Isotretinoin)</li>
+                        <li>Phototherapy (Broad/Narrowband UVB, PUVA)</li>
+                    </ul>
+                </li>
+                 <li><strong>Recalcitrant / Severe Cases:</strong>
+                    <ul>
+                        <li><strong>Immunosuppressants:</strong> Cyclosporine, Methotrexate, Mycophenolate Mofetil (weigh risks vs. benefits in this benign condition).</li>
+                        <li><strong>Biologic Agents:</strong> Infliximab, Etanercept, Adalimumab have been tried with success.</li>
+                    </ul>
+                </li>
+                <li><strong>Topical Adjuncts:</strong>
+                    <p>Topical vitamin D3 analogs and topical dapsone have been postulated to be beneficial.</p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Drug Reaction Data -->
+        <div class="card">
+            <h2>Potential Drug Triggers</h2>
+            <p>Below is a list of drugs with literature evidence indicating an adverse association with SPD.</p>
+            <table class="drug-table">
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Citations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>adalimumab</td><td>1</td></tr>
+                    <tr><td>bucillamine</td><td>1</td></tr>
+                    <tr><td>propylthiouracil</td><td>1</td></tr>
+                    <tr><td>sorafenib</td><td>1</td></tr>
+                    <tr><td>TNF-alpha inhibitor</td><td>1</td></tr>
+                    <tr><td>Tyrosine kinase inhibitor</td><td>1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>Content adapted from VisualDx for Saudi Board Dermatology Exam preparation. This is a learning tool and not a substitute for clinical judgment.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

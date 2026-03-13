@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tufted Angioma: Clinical Alert & Diagnostic Pathway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f5; /* Light cool grey background */
+            color: #34495e; /* Dark blue-grey text */
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #3498db, #2980b9); /* Blue gradient */
+            color: #ffffff;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .page-header h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.4em;
+            font-weight: 800;
+        }
+        .page-header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        .page-header .contributors {
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .info-card {
+            background-color: #f8f9fa;
+            border: 1px solid #d6dde3;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .info-card-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50; /* Darker blue */
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+        }
+        .info-card-title i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+
+        .key-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .key-stat {
+            background-color: #e9f3fb;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        .key-stat .stat-value {
+            display: block;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2980b9;
+        }
+        .key-stat .stat-label {
+            font-size: 0.85em;
+            color: #566573;
+        }
+
+        .alert-box {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .alert-box i {
+            font-size: 1.5em;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        .alert-box-warning {
+            background-color: #fff3cd; /* Light yellow */
+            border-left: 5px solid #ffc107; /* Amber */
+            color: #856404;
+        }
+        .alert-box-warning i { color: #ffc107; }
+        .alert-box-danger {
+            background-color: #f8d7da; /* Light red */
+            border-left: 5px solid #dc3545; /* Red */
+            color: #721c24;
+        }
+        .alert-box-danger i { color: #dc3545; }
+        .alert-box-info {
+            background-color: #d1ecf1; /* Light cyan */
+            border-left: 5px solid #17a2b8; /* Cyan */
+            color: #0c5460;
+        }
+        .alert-box-info i { color: #17a2b8; }
+
+        .list-styled ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-styled ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .list-styled ul li::before {
+            content: "\f138"; /* fa-angle-right */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #3498db;
+        }
+
+        .histology-highlight {
+            background-color: #e6f7ff; /* Very light blue */
+            border: 1px solid #91d5ff; /* Light blue border */
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .histology-highlight strong { color: #0050b3; } /* Dark blue */
+        .histology-feature {
+            display: block;
+            margin: 5px 0 10px 15px;
+            font-style: italic;
+        }
+        .cannonball-text::before {
+            content: "\f1e2"; /* fa-bomb icon for cannonball */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+            color: #595959;
+        }
+        .glut-negative {
+            color: #c41d7f; /* Magenta for negative */
+            font-weight: bold;
+        }
+        .glut-positive {
+            color: #389e0d; /* Green for positive */
+            font-weight: bold;
+        }
+
+        .ddx-item {
+            background-color: #fdfefe;
+            border: 1px solid #e0e6ed;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .ddx-item:hover { background-color: #e9f3fb; }
+        .ddx-title {
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ddx-title i.main-icon { margin-right: 8px; color: #5DADE2; }
+        .ddx-details {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #c5d6e0;
+            font-size: 0.9em;
+            color: #4A6572;
+        }
+
+        .code-block {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #2d3748; /* Dark background for code */
+            color: #e2e8f0; /* Light text */
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .code-block strong { color: #63b3ed; } /* Light blue for labels */
+
+        .references-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 0.9em;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .references-section li { margin-bottom: 5px; }
+
+        .kmp-section {
+            background-color: #fff0f0; /* Very light red */
+            border: 2px solid #ff7875; /* Red border */
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .kmp-section .info-card-title {
+            color: #cf1322; /* Dark red */
+            border-bottom-color: #ff4d4f; /* Lighter red */
+        }
+        .kmp-section .info-card-title i { color: #cf1322; }
+        .kmp-triad {
+            font-weight: bold;
+            color: #a8071a; /* Darker red */
+            margin: 10px 0;
+        }
+
+        /* For single column layout on smaller screens */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 { font-size: 2em; }
+            .info-card-title { font-size: 1.2em; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="page-header">
+            <h1>Tufted Angioma</h1>
+            <p class="subtitle">(Angioblastoma of Nakagawa)</p>
+            <p class="contributors">Key Insights from: Erin X. Wei MD, Shilpa S. Sawardekar MD, Susan Burgin MD</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Synopsis & Core Features -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-notes-medical"></i>Core Synopsis</h3>
+                <p>A rare vascular tumor characterized by histologic "tufted" capillary infiltration of the dermis, admixed with dilated lymphatic vessels. Theorized to have a lymphatic origin.</p>
+                <div class="key-stat-grid">
+                    <div class="key-stat">
+                        <span class="stat-value">15%</span>
+                        <span class="stat-label">Present at Birth</span>
+                    </div>
+                    <div class="key-stat">
+                        <span class="stat-value">50%</span>
+                        <span class="stat-label">By Age 5</span>
+                    </div>
+                    <div class="key-stat">
+                        <span class="stat-value"><i class="fas fa-male"></i> > <i class="fas fa-female"></i></span>
+                        <span class="stat-label">Slight Male Predominance</span>
+                    </div>
+                </div>
+                <p><strong>Natural History:</strong> Initial growth period, then stabilizes. Usually persists, but may spontaneously regress (partially or completely) in some patients.</p>
+                <div class="image-placeholder" style="text-align:center; padding:10px; border:1px dashed #ccc; margin:10px 0; border-radius:4px;">
+                    <i class="fas fa-image" style="font-size: 2em; color: #bbb;"></i>
+                    <p style="font-size:0.8em; color:#777;">VisualDx®: Vascular plaque, Dusky red to violaceous, Painful skin lesion (Trunk/Extremities)</p>
+                </div>
+            </div>
+
+            <!-- Clinical Presentation -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-eye"></i>Clinical Presentation "Look For"</h3>
+                <div class="list-styled">
+                    <ul>
+                        <li>Solitary, dusky red-violaceous plaque or nodule.</li>
+                        <li>Predilection: Trunk & extremities.</li>
+                        <li>Often poorly defined and indurated.</li>
+                        <li>Associated: Nodularity (angiomatous papules), hypertrichosis, hyperhidrosis.</li>
+                        <li>Pain: Initially painless, becomes painful in a significant proportion.</li>
+                    </ul>
+                </div>
+                <div class="alert-box alert-box-info">
+                    <i class="fas fa-palette"></i>
+                    <div>
+                        <strong>Impact of Skin Color:</strong> Erythema may be harder to see in darker skin (appears hyperpigmented/duskier). Lighter skin: pink, red, or maroon.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kasabach-Merritt Phenomenon (KMP) - CRITICAL -->
+            <div class="info-card kmp-section" style="grid-column: 1 / -1;"> <!-- Span full width -->
+                <h3 class="info-card-title"><i class="fas fa-exclamation-triangle"></i>KASABACH-MERRITT PHENOMENON (KMP) ALERT!</h3>
+                <p>A <strong>potentially life-threatening complication</strong> associated with Tufted Angioma (and Kaposiform Hemangioendothelioma).</p>
+                <p class="kmp-triad"><i class="fas fa-biohazard"></i> KMP is characterized by:</p>
+                <ul class="list-styled" style="margin-left: 20px;">
+                    <li>Enlarging vascular lesion.</li>
+                    <li>Profound thrombocytopenia.</li>
+                    <li>Consumptive coagulopathy.</li>
+                    <li>Often, microangiopathic hemolytic anemia.</li>
+                </ul>
+                <div class="alert-box alert-box-danger">
+                    <i class="fas fa-heartbeat"></i>
+                    <div>
+                        <strong>Board Pearl / Clinical Red Flag:</strong> Worsening pain in a tufted angioma may signify platelet consumption and herald the <strong>onset of KMP</strong>. Act fast!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinical Patterns -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-sitemap"></i>Clinical Patterns Described</h3>
+                <ol style="padding-left: 20px;">
+                    <li>Tufted angioma <strong>without complications</strong>.</li>
+                    <li>Tufted angioma complicated with <strong>chronic coagulopathy WITHOUT thrombocytopenia</strong>.</li>
+                    <li>Tufted angioma associated with <strong>Kasabach-Merritt Phenomenon (KMP)</strong>.</li>
+                </ol>
+            </div>
+
+             <!-- Diagnostic Pearls -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-lightbulb"></i>Diagnostic Pearls</h3>
+                 <div class="list-styled">
+                    <ul>
+                        <li>Tufted angiomas are generally <strong>darker and more indurated</strong> compared with infantile hemangiomas.</li>
+                        <li>They are <strong>often painful</strong> (a key differentiator from many infantile hemangiomas).</li>
+                        <li><strong>Worsening pain:</strong> Suspect KMP! (Reiterated for emphasis)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Best Tests: Laboratory -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-vials"></i>Best Tests: Laboratory Workup</h3>
+                <p>Due to common association with coagulopathy, initial labs are crucial:</p>
+                <div class="list-styled">
+                    <ul>
+                        <li>CBC with platelet count</li>
+                        <li>Fibrinogen</li>
+                        <li>D-dimer</li>
+                        <li>Prothrombin Time (PT)</li>
+                        <li>Activated Prothrombin Time (aPTT)</li>
+                        <li>International Normalized Ratio (INR)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Best Tests: Biopsy & Histology -->
+            <div class="info-card" style="grid-column: span 2;"> <!-- Make biopsy section wider -->
+                <h3 class="info-card-title"><i class="fas fa-microscope"></i>Best Tests: Biopsy & Histology</h3>
+                <div class="alert-box alert-box-warning">
+                    <i class="fas fa-procedures"></i>
+                    <div>
+                        <strong>Biopsy Caution:</strong> Perform in an OR with blood products readily available due to high risk of associated coagulopathy.
+                    </div>
+                </div>
+                <p><strong>Definitive diagnosis. Key features:</strong></p>
+                <div class="histology-highlight">
+                    <ul>
+                        <li>Small, round lobules of capillaries in mid/deep dermis.</li>
+                        <li><strong class="cannonball-text">"Cannonball"</strong> or <strong>"tufted"</strong> distribution of these lobules.</li>
+                        <li>Surrounding fibrosis in the dermis.</li>
+                        <li>Characteristic <strong>crescent-like shapes</strong> (slit-like vascular spaces) often noted within the round lobules of densely packed capillaries.</li>
+                    </ul>
+                </div>
+                <p style="margin-top:15px;"><strong>Immunohistochemistry (IHC) - CRITICAL FOR DIFFERENTIATION:</strong></p>
+                <ul class="list-styled">
+                    <li><strong>Lymphatic Markers (D2-40, POX-1):</strong> <span class="glut-positive">POSITIVE</span> in both Tufted Angioma & Kaposiform Hemangioendothelioma (KHE).</li>
+                    <li><strong>Vascular Marker (GLUT-1):</strong>
+                        <ul>
+                            <li>Tufted Angioma: <span class="glut-negative">NEGATIVE</span></li>
+                            <li>Infantile Hemangioma: <span class="glut-positive">POSITIVE</span> (Key differentiator!)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><em>Note: Tufted angiomas can be difficult to distinguish histologically from KHE. Clinical correlation and full IHC panel are vital.</em></p>
+            </div>
+
+            <!-- Best Tests: Imaging -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-x-ray"></i>Best Tests: Imaging</h3>
+                <p><strong>MRI:</strong> To evaluate the extent of the tufted angioma and to help differentiate from other tumors.</p>
+            </div>
+            
+            <!-- Differential Diagnosis -->
+            <div class="info-card" style="grid-column: span 2;">
+                <h3 class="info-card-title"><i class="fas fa-random"></i>Differential Diagnosis & Pitfalls</h3>
+                <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-baby main-icon"></i>Infantile Hemangioma<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Asymptomatic and soft; rapidly grows before a slow involution; NO associated coagulopathy. GLUT-1 POSITIVE.</div>
+                </div>
+                <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-project-diagram main-icon"></i>Vascular Malformation (e.g., AVM, PWS, KTS)<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Present at birth, grow proportionally with child, do not involute. Different histology. KTS has limb overgrowth & varicosities.</div>
+                </div>
+                 <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-disease main-icon"></i>Kaposiform Hemangioendothelioma (KHE)<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Histologically very similar (D2-40+, POX-1+). Also associated with KMP. Often more aggressive/infiltrative. GLUT-1 NEGATIVE. Distinction can be challenging.</div>
+                </div>
+                <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-circle-notch main-icon"></i>Congenital Hemangioma (RICH/NICH)<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Fully formed at birth. RICH involutes rapidly, NICH persists. GLUT-1 NEGATIVE.</div>
+                </div>
+                 <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-shield-virus main-icon"></i>Infantile Myofibromatosis<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Firm, fibrous tumor. Different histology (spindle cells).</div>
+                </div>
+                <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-radiation main-icon"></i>Congenital Dermatofibrosarcoma Protuberans<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Firm plaque, locally aggressive. Different histology (storiform pattern, CD34+).</div>
+                </div>
+                 <div class="ddx-item" onclick="toggleDdx(this)">
+                    <div class="ddx-title"><i class="fas fa-ring main-icon"></i>Hemangiopericytoma (now part of Solitary Fibrous Tumor spectrum)<i class="fas fa-chevron-down"></i></div>
+                    <div class="ddx-details">Rare in infancy. Different histology (staghorn vessels, spindle cells).</div>
+                </div>
+                <!-- Add other DDx from list if space/need -->
+            </div>
+
+            <!-- Management Pearls & Therapy -->
+            <div class="info-card" style="grid-column: span 2;">
+                <h3 class="info-card-title"><i class="fas fa-medkit"></i>Management & Therapy</h3>
+                <p><strong>Management Pearls:</strong></p>
+                <ul class="list-styled">
+                    <li>Grows slowly (months to a decade) then stabilizes. Lateral extension typical (vs. vertical in Infantile Hemangiomas).</li>
+                    <li><strong>KMP Event:</strong> Prompt referral to Pediatric Hematologist. Surgical consult (Pediatric/Vascular surgeon) if amenable to excision.</li>
+                </ul>
+                <p><strong>Therapy:</strong> No consensus. Guided by symptomatology, thrombotic complications, patient age, lesion size/location.</p>
+                <div style="display:flex; gap: 15px; margin-top:15px;">
+                    <div style="flex:1; padding:15px; background-color:#e9f3fb; border-radius:4px;">
+                        <h5 style="color:#2980b9; margin-top:0;"><i class="fas fa-notes-medical"></i>Tufted Angioma WITHOUT KMP:</h5>
+                        <ul>
+                            <li>Low-dose aspirin</li>
+                            <li>Sirolimus</li>
+                            <li>Pulsed Dye Laser (PDL)</li>
+                            <li>Surgical removal (depending on location/size)</li>
+                            <li>Observation (for asymptomatic lesions in non-vital areas)</li>
+                        </ul>
+                    </div>
+                    <div style="flex:1; padding:15px; background-color:#f8d7da; border-radius:4px;">
+                        <h5 style="color:#721c24; margin-top:0;"><i class="fas fa-hospital-user"></i>Tufted Angioma WITH KMP:</h5>
+                        <ul>
+                            <li><strong>Serious condition.</strong></li>
+                            <li>Typically requires <strong>hospital admission</strong> for monitoring and treatment.</li>
+                            <li>Multidisciplinary approach (Heme/Onc, Derm, Surgery).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Codes -->
+            <div class="info-card">
+                <h3 class="info-card-title"><i class="fas fa-barcode"></i>Diagnostic Codes</h3>
+                <div class="code-block"><strong>ICD10CM:</strong> D18.01 - Hemangioma of skin and subcutaneous tissue</div>
+                <div class="code-block"><strong>SNOMEDCT:</strong> 254786000 - Tufted angioma of skin</div>
+            </div>
+
+            <!-- References -->
+            <div class="info-card references-section">
+                <h3 class="info-card-title"><i class="fas fa-book-open"></i>References</h3>
+                <div class="toggle-title" onclick="toggleDdx(this.nextElementSibling)" style="cursor:pointer; background-color:#f0f0f0; padding:8px; border-radius:3px; display:flex; justify-content:space-between; align-items:center;">
+                    <span>Show/Hide Full Reference List</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul style="display:none;">
+                    <li>Angioma, tufted. OMIM. Accessed 2022 Jan 11.</li>
+                    <li>North PE. Vascular neoplasms... In: Bolognia JL, et al. Dermatology. 4th ed. 2017.</li>
+                    <li>Liu XH, et al. Treatment of kaposiform hemangioendothelioma and tufted angioma. Int J Cancer. 2016.</li>
+                    <li>Javaji S, Frieden IJ. Response of tufted angiomas to low-dose aspirin. Pediatr Dermatol. 2013.</li>
+                    <li>Lee JJ, et al. Successful treatment of Kasabach-Merritt phenomenon... Ann Plast Surg. 2012.</li>
+                    <li>Chiu YE, et al. Variable response to propranolol treatment of KHE, TA, and KMP. Pediatr Blood Cancer. 2012.</li>
+                    <li>Maguiness SM, Frieden IJ. Vascular birthmarks... In: Schachner LA, et al. Pediatric Dermatology. 4th ed. 2011.</li>
+                    <li>Osio A, et al. Clinical spectrum of tufted angiomas in childhood... Arch Dermatol. 2010.</li>
+                    <li>Lee B, et al. Adult-onset tufted angioma... Cutis. 2006.</li>
+                    <li>Arai E, et al. Usefulness of D2-40 immunohistochemistry for differentiation between KHE and TA. J Cutan Pathol. 2006.</li>
+                    <li>Mahendran R, et al. Response of childhood tufted angioma to the pulsed-dye laser. J Am Acad Dermatol. 2002.</li>
+                    <li>Suarez SM, et al. Response of deep tufted angioma to interferon alfa. J Am Acad Dermatol. 1995.</li>
+                    <li>Munn SE, et al. Tufted haemangioma responding to high-dose systemic steroids... Clin Exp Dermatol. 1994.</li>
+                    <li>Hebeda CL, et al. Tufted angioma of late onset. Histopathology. 1993.</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer style="text-align:center; padding:15px; background-color:#34495e; color:#bdc3c7; font-size:0.85em;">
+            <p>Last Reviewed: 08/11/2021 | Last Updated: 01/25/2022</p>
+            <p>Content derived from ParsedResult (1).txt. Educational transformation for board review.</p>
+            <p>Original content source: Copyright © 2025 VisualDx®. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDdx(element) {
+            const details = element.querySelector ? element.querySelector('.ddx-details') : element; // Handles direct element or parent
+            const icon = element.querySelector ? element.querySelector('.ddx-title i.fas.fa-chevron-down, .ddx-title i.fas.fa-chevron-up') : null;
+
+            if (details) {
+                 if (details.style.display === "none" || details.style.display === "") {
+                    details.style.display = "block";
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                } else {
+                    details.style.display = "none";
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

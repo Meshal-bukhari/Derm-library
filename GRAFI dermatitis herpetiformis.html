@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH & LABD - Saudi Board Exam Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 1.2em;
+        }
+        
+        .pathogenesis-flow {
+            background: #f0f3ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            border: 2px solid #667eea;
+        }
+        
+        .flow-step {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 50px;
+            transition: all 0.3s;
+        }
+        
+        .flow-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .flow-step::before {
+            content: '→';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #667eea;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .remember-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .remember-box::before {
+            content: '💡 REMEMBER';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .clinical-pearl {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .clinical-pearl::before {
+            content: '⚕️ CLINICAL PEARL';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #2196f3;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .drug-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .drug-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .drug-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .drug-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .drug-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .drug-card li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .drug-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        .treatment-protocol {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .treatment-protocol h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .dosing-info {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .warning-box {
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box::before {
+            content: '⚠️ WARNING: ';
+            font-weight: bold;
+            color: #f44336;
+        }
+        
+        .expandable {
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .expandable::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: transform 0.3s;
+        }
+        
+        .expandable.expanded::after {
+            transform: rotate(180deg);
+        }
+        
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .expandable-content.show {
+            max-height: 1000px;
+        }
+        
+        .quiz-section {
+            background: #f0f3ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .quiz-answer {
+            background: #e8f5e9;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .quiz-answer.show {
+            display: block;
+        }
+        
+        .reveal-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .reveal-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .mnemonic {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .key-point {
+            background: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        
+        .percentage {
+            background: #d4edda;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 2px;
+            color: #155724;
+        }
+        
+        .association-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .association-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .association-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        @media (max-width: 768px) {
+            .quick-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            .drug-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 DH & LABD Master Guide</h1>
+            <p>Saudi Board Exam - High-Yield Review</p>
+        </header>
+        
+        <nav class="quick-nav">
+            <a href="#dh-section" class="nav-btn">Dermatitis Herpetiformis</a>
+            <a href="#labd-section" class="nav-btn">LABD</a>
+            <a href="#comparison" class="nav-btn">DH vs LABD vs BP</a>
+            <a href="#treatment" class="nav-btn">Treatment Protocols</a>
+            <a href="#quiz" class="nav-btn">Quick Quiz</a>
+        </nav>
+        
+        <!-- DERMATITIS HERPETIFORMIS SECTION -->
+        <section id="dh-section" class="section">
+            <h2 class="section-title">
+                <span class="icon">🔬</span>
+                Dermatitis Herpetiformis (DH)
+            </h2>
+            
+            <div class="remember-box">
+                <strong>Core Facts:</strong>
+                <ul>
+                    <li><span class="percentage">90%</span> are HLA-DQ2 positive (others DQ8)</li>
+                    <li><span class="percentage">90%</span> have gluten-sensitive enteropathy on biopsy</li>
+                    <li><span class="percentage">20%</span> develop symptomatic malabsorption</li>
+                    <li><span class="key-point">50%</span> have thyroid disease (especially Hashimoto)</li>
+                </ul>
+            </div>
+            
+            <div class="pathogenesis-flow">
+                <h3>🧬 Pathogenesis Cascade</h3>
+                <div class="flow-step">
+                    <strong>Step 1:</strong> Gliadin (alcohol-soluble fraction of gluten) enters small bowel
+                </div>
+                <div class="flow-step">
+                    <strong>Step 2:</strong> Deamidation occurs in small bowel
+                </div>
+                <div class="flow-step">
+                    <strong>Step 3:</strong> Th1 + NK cell activation
+                </div>
+                <div class="flow-step">
+                    <strong>Step 4:</strong> Crypt hyperplasia + villous atrophy + B-cells produce IgA anti-TG2
+                </div>
+                <div class="flow-step">
+                    <strong>Step 5:</strong> IgA anti-TG3 forms via epitope spreading
+                </div>
+                <div class="flow-step">
+                    <strong>Step 6:</strong> IgA/TG3 immune complexes deposit in papillary dermis
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Key Antibodies:</strong>
+                <ul>
+                    <li><strong>IgA anti-TG2:</strong> Correlates with enteropathy degree (pathogenic marker for celiac)</li>
+                    <li><strong>IgA anti-TG3:</strong> Specific for DH, useful for monitoring gluten-free diet response</li>
+                    <li>⚠️ IgA anti-TG2 antibodies are NOT responsible for skin IgA deposition!</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                Triggers: Iodide (both systemic and local) can precipitate DH flares!
+            </div>
+            
+            <h3 class="expandable" onclick="toggleExpand(this)">
+                Associated Autoimmune Conditions
+            </h3>
+            <div class="expandable-content">
+                <div class="association-list">
+                    <div class="association-item"><strong>Common:</strong> Hashimoto thyroiditis, Type 1 DM</div>
+                    <div class="association-item"><strong>Uncommon:</strong> Pernicious anemia</div>
+                    <div class="association-item"><strong>Rare:</strong> Addison disease, Systemic sclerosis, Sjögren syndrome, SLE, Vitiligo, Myasthenia gravis, Sarcoidosis, Alopecia areata, Autoimmune hepatitis</div>
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Clinical Presentation:</strong>
+                <ul>
+                    <li>📍 <strong>Distribution:</strong> Symmetric on elbows, knees, extensor forearms, back, buttocks</li>
+                    <li>🔍 <strong>Primary lesions:</strong> Pleomorphic - urticarial plaques, papules, vesicles</li>
+                    <li>🎯 <strong>Pathognomonic:</strong> Grouped/"herpetiform" papulovesicles on erythematous base</li>
+                    <li>🔥 <strong>Symptom:</strong> INTENSE pruritus → secondary excoriation and crusting</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Less Common Presentations:</strong>
+                • Isolated scalp involvement
+                • Isolated facial involvement
+                • Exclusively macular lesions
+                • Hemorrhagic acral macules (usually palmoplantar)
+            </div>
+            
+            <h3>🔬 Pathology & Diagnosis</h3>
+            <div class="treatment-protocol">
+                <h4>Biopsy Technique:</h4>
+                <ul>
+                    <li>✅ <strong>Best site:</strong> Intact vesicle > erythema</li>
+                    <li>✅ <strong>DIF site:</strong> Normal-appearing skin immediately adjacent to lesion</li>
+                </ul>
+                
+                <h4>Histopathology:</h4>
+                <ul>
+                    <li>Dermal papillae filled with neutrophils (Papillary microabscesses)</li>
+                    <li>Sparing of lowermost tips of intervening rete ridges (characteristic!)</li>
+                    <li>Subepidermal blister with predominantly neutrophils</li>
+                </ul>
+                
+                <h4>DIF Pattern (Required for diagnosis):</h4>
+                <ul>
+                    <li><span class="percentage">85%</span> - Granular IgA1 localized at papillae</li>
+                    <li><span class="percentage">10%</span> - Continuous granular at BMZ</li>
+                    <li><span class="percentage">Rare</span> - Fibrillar pattern</li>
+                </ul>
+            </div>
+            
+            <div class="remember-box">
+                <strong>Laboratory Findings:</strong>
+                <ul>
+                    <li>Anti-endomysial antibodies: ~80% in DH, >95% in active celiac disease</li>
+                    <li>IgA anti-reticulin antibodies: High sensitivity/specificity in DH with villous atrophy</li>
+                    <li>💡 The endomysium = connective tissue covering smooth muscle of esophagus, stomach, small intestine</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- LABD SECTION -->
+        <section id="labd-section" class="section">
+            <h2 class="section-title">
+                <span class="icon">🔬</span>
+                Linear IgA Bullous Dermatosis (LABD)
+            </h2>
+            
+            <div class="remember-box">
+                <strong>Age Distribution:</strong>
+                <ul>
+                    <li><strong>Adults:</strong> >60 years, F > M</li>
+                    <li><strong>Children:</strong> Peak at 4 years old</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Clinical Presentations:</strong>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <div>
+                        <h4>Adults:</h4>
+                        <ul>
+                            <li>BP-like with herpetiform arrangement</li>
+                            <li>DH-like presentation</li>
+                            <li>MMP-like variant</li>
+                            <li>Ocular MMP-like</li>
+                            <li>TEN-like (with vancomycin)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Children:</h4>
+                        <ul>
+                            <li>🎯 "Crown of jewels" - annular erythema with peripheral blisters</li>
+                            <li>Predominantly flexural areas</li>
+                            <li>Lower trunk, thigh, groin preference</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pathogenesis-flow">
+                <h3>Two Distinct Types:</h3>
+                <div class="flow-step">
+                    <strong>Lamina lucida type (majority):</strong> Target antigen = LAD-1 and LABD97
+                </div>
+                <div class="flow-step">
+                    <strong>Sublamina densa type:</strong> Target antigen = Collagen VII
+                </div>
+            </div>
+            
+            <h3>Associated Conditions</h3>
+            <div class="association-list">
+                <div class="association-item"><strong>GI:</strong> UC, Crohn's, gastric hypochlorhydria</div>
+                <div class="association-item"><strong>Autoimmune:</strong> SLE, DM, RA, thyrotoxicosis, autoimmune hemolytic anemia, glomerulonephritis</div>
+                <div class="association-item"><strong>Malignancy:</strong> B-cell lymphoma, CLL, bladder, thyroid, colon, esophagus, plasmacytoma, hydatidiform mole, RCC, ocular melanoma</div>
+                <div class="association-item"><strong>Infections:</strong> VZV, antibiotic-treated tetanus, URTI</div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🏆 Drug-Induced LABD</h3>
+                <p><strong>Most Common Culprit:</strong> <span class="key-point">VANCOMYCIN</span></p>
+            </div>
+            
+            <div class="drug-grid">
+                <div class="drug-card">
+                    <h4>Common Causes</h4>
+                    <ul>
+                        <li>Vancomycin (can cause TEN-like variant)</li>
+                    </ul>
+                </div>
+                <div class="drug-card">
+                    <h4>Less Common</h4>
+                    <ul>
+                        <li>Penicillins</li>
+                        <li>Cephalosporins</li>
+                        <li>Captopril > other ACE inhibitors</li>
+                        <li>NSAIDs (diclofenac, naproxen, oxaprozin, piroxicam)</li>
+                    </ul>
+                </div>
+                <div class="drug-card">
+                    <h4>Uncommon</h4>
+                    <ul>
+                        <li>Phenytoin</li>
+                        <li>Sulfonamide antibiotics</li>
+                    </ul>
+                </div>
+                <div class="drug-card">
+                    <h4>Rare</h4>
+                    <ul>
+                        <li>Allopurinol, Amiodarone</li>
+                        <li>ARBs, Atorvastatin</li>
+                        <li>Carbamazepine, Cyclosporine</li>
+                        <li>Furosemide, Gemcitabine</li>
+                        <li>And many others...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Histopathology:</strong>
+                <ul>
+                    <li>Usually indistinguishable from DH by light microscopy</li>
+                    <li>💡 Features favoring LABD over DH:
+                        <ul>
+                            <li>Linear distribution of neutrophils along BMZ</li>
+                            <li>Neutrophils at very tips of dermal papillae</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="remember-box">
+                <strong>Laboratory:</strong>
+                <ul>
+                    <li>Circulating anti-BMZ IgA antibodies: 60-70% positive</li>
+                    <li>💡 DH patients do NOT have circulating antibodies that bind to skin!</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- COMPARISON TABLE -->
+        <section id="comparison" class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                DH vs LABD vs BP Comparison
+            </h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>DH</th>
+                        <th>LABD</th>
+                        <th>BP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cutaneous Lesions</strong></td>
+                        <td>Grouped papules and small vesicles, often excoriated</td>
+                        <td>Small vesicles and/or large bullae</td>
+                        <td>Large tense bullae</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distribution</strong></td>
+                        <td>Extensor surfaces, symmetrical</td>
+                        <td>Similar to DH or BP</td>
+                        <td>Trunk, flexural extremities, occasionally mucosal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Histology</strong></td>
+                        <td>Subepidermal bullae with neutrophilic infiltrate</td>
+                        <td>Subepidermal bullae with neutrophilic infiltrate</td>
+                        <td>Subepidermal bullae with eosinophilic infiltrate (sometimes eosinophils predominate)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direct IF</strong></td>
+                        <td>Granular IgA in dermal papillae</td>
+                        <td>Linear IgA at BMZ, possibly also IgG</td>
+                        <td>Linear IgG and C3 at BMZ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DIF Biopsy Site</strong></td>
+                        <td>Adjacent normal-appearing skin</td>
+                        <td>Perilesional</td>
+                        <td>Perilesional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indirect IF</strong></td>
+                        <td>Negative</td>
+                        <td>Circulating anti-Basement Membrane Zone (BMZ) antibodies of the IgA class can be demonstrated in 60%-70% of LABD sera.</td>
+                        <td>circulating IgG autoantibodies (against BP180 and BP230) against BMZ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enteropathy</strong></td>
+                        <td><span class="percentage">>90% have evidence of of a gluten-sensitive enteropathy (GSE) when a small bowel biopsy is performed but only about 20% of DH patients have intestinal symptoms of celiac disease.</span></td>
+                        <td>Rare</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HLA-DQ2</strong></td>
+                        <td><span class="percentage">>90%</span></td>
+                        <td>30%</td>
+                        <td>Normal (20%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dapsone Response</strong></td>
+                        <td>Excellent</td>
+                        <td>Good, may need systemic corticosteroids</td>
+                        <td>Minimal to moderate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- TREATMENT SECTION -->
+        <section id="treatment" class="section">
+            <h2 class="section-title">
+                <span class="icon">💊</span>
+                Treatment Protocols
+            </h2>
+            
+            <div class="treatment-protocol">
+                <h3>DH Treatment: Dual Approach</h3>
+                <div class="mnemonic">
+                    "GLUTEN-FREE + DAPSONE = DH CONTROL"
+                </div>
+                
+                <h4>1. Gluten-Free Diet</h4>
+                <div class="highlight-box">
+                    <strong>AVOID:</strong> Wheat, rye, barley, and hybrids (kamut, spelt, triticale)<br>
+                    <strong>SAFE:</strong> Corn, rice, oats
+                </div>
+                <ul>
+                    <li>Takes several months to improve DH</li>
+                    <li>⚠️ <strong>ONLY way to prevent MALT lymphoma</strong></li>
+                </ul>
+                
+                <h4>2. Dapsone Protocol</h4>
+                <div class="dosing-info">
+                    <strong>Starting dose:</strong> 25-50mg/day (0.5mg/kg in pediatrics)<br>
+                    <strong>Maintenance:</strong> 100mg/day typical<br>
+                    <strong>Response:</strong> Pruritus resolves in 48-72 hours<br>
+                    <strong>Relapse:</strong> Within 24 hours if discontinued
+                </div>
+                
+                <div class="warning-box">
+                    <strong>Pre-treatment Screening:</strong>
+                    <ul>
+                        <li>G6PD screen (MANDATORY)</li>
+                        <li>CBC baseline</li>
+                        <li>LFT baseline</li>
+                    </ul>
+                </div>
+                
+                <h4>Monitoring Schedule:</h4>
+                <ul>
+                    <li><strong>CBC:</strong> Weekly for 1st month, twice monthly for 2nd month, monthly for next 4 months, then semiannually.</li>
+                    <li><strong>LFT:</strong> At 6 months → Yearly</li>Wee
+                    <li><strong>Acceptable:</strong> 1-2 lesions/week on optimal treatment</li>
+                </ul>
+                
+                <div class="clinical-pearl">
+                    <strong>Refractory Facial/Scalp Lesions:</strong>
+                    Break vesicles + apply potent corticosteroid gel
+                </div>
+                
+                <h4>Dapsone Side Effects:</h4>
+                <div class="drug-grid">
+                    <div class="drug-card">
+                        <h4>Expected</h4>
+                        <ul>
+                            <li>Hemolysis in ALL patients (1-2g Hgb drop expected),Dapsone is secreted in breast milk and can cause hemolytic anemia in breastfed infants</li>
+                            <li>Methemoglobinemia (most on 100mg/day)</li>
+                            <li>Arterial desaturation on pulse ox (okay if asymptomatic)</li>
+                        </ul>
+                    </div>
+                    <div class="drug-card">
+                        <h4>Serious</h4>
+                        <ul>
+                            <li><strong>Fatal agranulocytosis:</strong> Rare, 2-12 weeks, D/C if fever/sore throat</li>
+                            <li><strong>Dapsone hypersensitivity:</strong> 2-7 weeks, fever + rash + hepatitis</li>
+                            <li><strong>Peripheral neuropathy:</strong> Motor > sensory, with high doses, reversible</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Alternative: Sulfapyridine</h4>
+                    <ul>
+                        <li>Less hemolysis and agranulocytosis than dapsone</li>
+                        <li>Dose: 500mg TID up to 2g TID</li>
+                        <li>Side effect: Nephrolithiasis → increase fluids + alkalinization</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Sulfasalazine</h4>
+                    <ul>
+                        <li><strong>Use:</strong> Second alternative if sulfapyridine is unavailable/ineffective</li>
+                        <li><strong>Metabolism:</strong> Metabolized to sulfapyridine and 5-aminosalicylate by intestinal bacteria, making dosing less predictable</li>
+                        <li><strong>Dosage (Adults):</strong> Standard starting dose 500 mg QID</li>
+                        <li><strong>Monitoring:</strong> Similar to dapsone/sulfapyridine</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="treatment-protocol">
+                <h3>LABD Treatment</h3>
+                <ol>
+                    <li><strong>First:</strong> Discontinue culprit medications</li>
+                    <li><strong>Primary:</strong> Dapsone or sulfapyridine ± systemic corticosteroids</li>
+                    <li><strong>Alternatives:</strong> Dicloxacillin, erythromycin, tetracycline (age >9), Bactrim</li>
+                    <li><strong>Refractory cases:</strong> MMF, azathioprine, IVIG</li>
+                </ol>
+                
+                <div class="remember-box">
+                    <strong>Prognosis:</strong>
+                    <ul>
+                        <li><strong>Adults:</strong> Several years, then remission in 30-60%</li>
+                        <li><strong>Children:</strong> Remits within 2-4 years</li>
+                        <li><strong>Drug-induced:</strong> Usually remits within 2-6 weeks (may persist for months)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="quiz-section">
+            <h2 class="section-title">
+                <span class="icon">🧠</span>
+                Quick Board Review Quiz
+            </h2>
+            
+            <div class="quiz-question">
+                <p><strong>Q1:</strong> A 45-year-old presents with intensely pruritic grouped vesicles on elbows and knees. DIF shows granular IgA in dermal papillae. What percentage likely has gluten-sensitive enteropathy?</p>
+                <button class="reveal-btn" onclick="toggleAnswer(this)">Reveal Answer</button>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> >90% have gluten-sensitive enteropathy (though only 20% are symptomatic)
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Q2:</strong> What is the MOST COMMON drug cause of LABD?</p>
+                <button class="reveal-btn" onclick="toggleAnswer(this)">Reveal Answer</button>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Vancomycin (can cause TEN-like variant)
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Q3:</strong> A child with "crown of jewels" pattern bullae in flexural areas. What's the most likely diagnosis and prognosis?</p>
+                <button class="reveal-btn" onclick="toggleAnswer(this)">Reveal Answer</button>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Childhood LABD - typically remits within 2-4 years
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Q4:</strong> DH patient on dapsone develops fever and sore throat at week 3. What's your concern?</p>
+                <button class="reveal-btn" onclick="toggleAnswer(this)">Reveal Answer</button>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Fatal agranulocytosis (rare hypersensitivity reaction, occurs 2-12 weeks) - STOP dapsone immediately!
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <p><strong>Q5:</strong> What's the ONLY way to prevent enteropathy-associated T-cell lymphoma in DH?</p>
+                <button class="reveal-btn" onclick="toggleAnswer(this)">Reveal Answer</button>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Gluten-free diet (dapsone only controls skin manifestations, not GI complications)
+                </div>
+            </div>
+        </section>
+        
+        <!-- DIAGNOSTIC FLOWCHART -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🔄</span>
+                Diagnostic Approach to Suspected DH
+            </h2>
+            
+            <div class="pathogenesis-flow">
+                <div class="flow-step">
+                    <strong>Step 1:</strong> DIF of normal-appearing skin adjacent to lesion
+                </div>
+                <div class="flow-step">
+                    <strong>Step 2:</strong> Check total serum IgA level
+                </div>
+                <div class="flow-step">
+                    <strong>If IgA Normal:</strong>
+                    <ul>
+                        <li>IgA anti-TG2 Ab</li>
+                        <li>IgA anti-endomysial Ab</li>
+                        <li>Consider IgA anti-TG3 Ab (limited availability)</li>
+                    </ul>
+                </div>
+                <div class="flow-step">
+                    <strong>If IgA Deficient:</strong>
+                    <ul>
+                        <li>IgG anti-TG2 Ab</li>
+                        <li>IgG anti-endomysial Ab</li>
+                        <li>Consider small bowel biopsy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                Do NOT recommend anti-gliadin antibody testing - high false-positive rates!
+            </div>
+        </section>
+        
+        <!-- DIFFERENTIAL DIAGNOSIS PEARLS -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                Differential Diagnosis Pearls
+            </h2>
+            
+            <div class="clinical-pearl">
+                <strong>Bullous LE:</strong>
+                <ul>
+                    <li>Can mimic LABD and DH clinically and histologically</li>
+                    <li>Key: Patients have clinical + serologic findings of SLE</li>
+                    <li>DIF is crucial for differentiation</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Crusted papules on elbows/knees also seen in:</strong>
+                <ul>
+                    <li>Wegener granulomatosis</li>
+                    <li>Churg-Strauss syndrome</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        function toggleExpand(element) {
+            element.classList.toggle('expanded');
+            const content = element.nextElementSibling;
+            content.classList.toggle('show');
+        }
+        
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Reveal Answer';
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add interactive highlighting on hover
+        document.querySelectorAll('.key-point, .percentage').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.2s';
+            });
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

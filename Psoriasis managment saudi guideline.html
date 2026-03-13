@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Psoriasis Guidelines - Board Exam Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tab {
+            padding: 15px 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+        
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .content-section {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .high-yield {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e17055;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .high-yield h3 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .clinical-pearl {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #00b894;
+        }
+        
+        .drug-class {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tnf-inhibitors {
+            background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+        }
+        
+        .il17-inhibitors {
+            background: linear-gradient(135deg, #70e1f5 0%, #ffd194 100%);
+        }
+        
+        .il23-inhibitors {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .il1223-inhibitors {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+        
+        .drug-header {
+            padding: 15px 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .drug-content {
+            background: white;
+            padding: 20px;
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .criteria-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+        }
+        
+        .memory-trick {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .algorithm-flow {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        .step {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #00b894;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+        
+        tr:hover td {
+            background: #f8f9fa;
+        }
+        
+        .warning {
+            background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .success {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .board-tip {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e84393 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #e84393;
+        }
+        
+        .board-tip::before {
+            content: "🎯 BOARD TIP: ";
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        h2 {
+            color: #2d3436;
+            margin: 25px 0 15px 0;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #636e72;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        .section-summary {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #03a9f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇸🇦 Saudi Psoriasis Guidelines</h1>
+            <div class="subtitle">Biologic Treatment of Chronic Plaque Psoriasis (2020) - Board Exam Review</div>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+            <button class="nav-tab" onclick="showSection('eligibility')">Eligibility</button>
+            <button class="nav-tab" onclick="showSection('screening')">Screening</button>
+            <button class="nav-tab" onclick="showSection('biologics')">Biologics</button>
+            <button class="nav-tab" onclick="showSection('algorithm')">Algorithm</button>
+            <button class="nav-tab" onclick="showSection('special')">Special Populations</button>
+        </div>
+        
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <h2>📋 Overview & Key Concepts</h2>
+            
+            <div class="high-yield">
+                <h3>🎯 High-Yield Board Facts</h3>
+                <ul>
+                    <li><strong>Prevalence:</strong> ~2% worldwide, lower in Asian/African, up to 11% in Caucasian/Scandinavian</li>
+                    <li><strong>Peak ages:</strong> 20-30 and 50-69 years</li>
+                    <li><strong>80% mild-moderate:</strong> Topicals, vitamin D analogues, phototherapy</li>
+                    <li><strong>20% severe:</strong> Requires systemic therapy (acitretin, MTX, biologics)</li>
+                </ul>
+            </div>
+            
+            <div class="memory-trick">
+                💡 <strong>Memory Trick:</strong> "2-80-20 Rule" - 2% prevalence, 80% mild (topicals), 20% severe (systemics)
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Clinical Pearl:</strong> Psoriasis is a T-cell mediated systemic inflammatory disease affecting skin, nails, scalp, joints with cardiovascular, metabolic, IBD, and psychological comorbidities.
+            </div>
+            
+            <h3>🎯 Biologic Pathways (Board Favorite!)</h3>
+            <div class="criteria-grid">
+                <div class="criteria-card">
+                    <h4>IL-23/Th17 Axis</h4>
+                    <p>Primary pathway in psoriatic plaque development and chronicity</p>
+                </div>
+                <div class="criteria-card">
+                    <h4>TNF-α Signaling</h4>
+                    <p>Secondary inflammatory pathway targeted by biologics</p>
+                </div>
+            </div>
+            
+            <div class="board-tip">
+                Biologics are different from conventional systemics because they target SPECIFIC inflammatory pathways, not general immunosuppression.
+            </div>
+            
+            <h3>📚 Guidelines Development</h3>
+            <p>These 2020 Saudi guidelines were developed by:</p>
+            <ul>
+                <li>8 dermatologists + 5 pharmacists</li>
+                <li>Based on 6 international guidelines (European S3, BAD, AAD/NPF, NICE, French)</li>
+                <li>Delphi consensus methodology (≥75% agreement required)</li>
+            </ul>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> Psoriasis affects 2% globally, peaks at 20-30 and 50-69 years. 80% mild (topicals), 20% severe (systemics). Biologics target specific pathways (IL-23/Th17, TNF-α). Saudi guidelines based on international consensus.
+            </div>
+        </div>
+        
+        <!-- Eligibility Section -->
+        <div class="content-section" id="eligibility">
+            <h2>✅ Eligibility & Treatment Goals</h2>
+            
+            <div class="high-yield">
+                <h3>🎯 Who Gets Biologics? (Memorize This!)</h3>
+                <p><strong>Prescribers:</strong> Dermatologists with extensive systemic therapy experience only</p>
+            </div>
+            
+            <h3>📊 Moderate-to-Severe Disease Criteria</h3>
+            <div class="criteria-grid">
+                <div class="criteria-card">
+                    <h4>≥10% BSA</h4>
+                    <p>Body Surface Area involvement</p>
+                </div>
+                <div class="criteria-card">
+                    <h4>≥10 PASI</h4>
+                    <p>Psoriasis Area & Severity Index</p>
+                </div>
+                <div class="criteria-card">
+                    <h4>≥10 DLQI</h4>
+                    <p>Dermatology Life Quality Index</p>
+                </div>
+            </div>
+            
+            <div class="memory-trick">
+                💡 <strong>"Rule of 10s":</strong> BSA ≥10%, PASI ≥10, DLQI ≥10
+            </div>
+            
+            <h3>🎯 Special Circumstances (Limited Disease)</h3>
+            <div class="clinical-pearl">
+                <strong>Even with limited disease, consider biologics if:</strong>
+                <ul>
+                    <li>Large scalp areas</li>
+                    <li>Visible areas (hands, face)</li>
+                    <li>Intertriginous areas and genitalia</li>
+                    <li>Palms and/or soles</li>
+                    <li>Treatment-resistant areas</li>
+                    <li>Psoriatic arthritis present</li>
+                </ul>
+            </div>
+            
+            <h3>🎯 Treatment Goals (Board Loves This!)</h3>
+            <div class="success">
+                <strong>Choose ONE of these treatment goals:</strong>
+                <ul>
+                    <li><strong>Absolute PASI ≤3</strong></li>
+                    <li><strong>PASI 90 response</strong></li>
+                    <li><strong>PGA score 0-1</strong></li>
+                    <li><strong>DLQI &lt;5</strong></li>
+                </ul>
+            </div>
+            
+            <div class="algorithm-flow">
+                <h4>📈 Treatment Goal Evaluation Timeline</h4>
+                <div class="step">
+                    <strong>Weeks 12-16:</strong> Evaluate treatment goals
+                </div>
+                <div class="step">
+                    <strong>PGA 0-1 or PASI ≤3 or ΔPASI ≥90:</strong> Continue treatment
+                </div>
+                <div class="step">
+                    <strong>PGA 2 or PASI 3-6 or ΔPASI 75-89:</strong> Evaluate nails, face, scalp, palms/soles, genitalia, joints
+                </div>
+                <div class="step">
+                    <strong>PGA 3-5 or PASI &gt;6 or ΔPASI &lt;75:</strong> Modify treatment regimen
+                </div>
+            </div>
+            
+            <div class="board-tip">
+                Assessment tools (PASI, PGA, BSA, DLQI) should be used in daily practice to establish and monitor treatment goals.
+            </div>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> Biologics for moderate-severe disease (Rule of 10s: BSA≥10%, PASI≥10, DLQI≥10) or limited disease with functional impairment. Goals: PASI≤3, PASI90, PGA 0-1, or DLQI<5. Evaluate at 12-16 weeks.
+            </div>
+        </div>
+        
+        <!-- Screening Section -->
+        <div class="content-section" id="screening">
+            <h2>🔍 Screening & Monitoring</h2>
+            
+            <div class="warning">
+                <strong>⚠️ Critical Safety Point:</strong> TB is common in Saudi Arabia - most cases are LTBI reactivation!
+            </div>
+            
+            <h3>🦠 TB Screening (High-Yield!)</h3>
+            <div class="high-yield">
+                <h3>TB Screening Protocol</h3>
+                <ul>
+                    <li><strong>Baseline:</strong> TST or IGRA-QuantiFERON + Chest X-ray</li>
+                    <li><strong>Annual screening:</strong> Medical history + TST or IGRA</li>
+                    <li><strong>Post-biologic:</strong> Maintain suspicion for 6 months after discontinuation</li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>IGRA vs TST:</strong> IGRA is highly specific/sensitive, not affected by prior BCG vaccination. Either can be used for LTBI testing.
+            </div>
+            
+            <h3>🦠 Hepatitis B & C Screening</h3>
+            <div class="criteria-card">
+                <h4>Required Tests</h4>
+                <ul>
+                    <li>Anti-HBc (IgM/IgG)</li>
+                    <li>Anti-HBsAg</li>
+                    <li>HBsAg</li>
+                    <li>Anti-HCV</li>
+                </ul>
+                <p><strong>If positive:</strong> Collaborate with hepatologist before and during therapy</p>
+            </div>
+            
+            <h3>📊 Laboratory Monitoring</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Baseline</th>
+                        <th>Follow-up</th>
+                        <th>Annual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CBC with differential</td>
+                        <td>✅</td>
+                        <td>6 months</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>RFT (Renal function)</td>
+                        <td>✅</td>
+                        <td>6 months</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>LFT (Liver function)</td>
+                        <td>✅</td>
+                        <td>6 months</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>HBV/HCV</td>
+                        <td>✅</td>
+                        <td>-</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>HIV</td>
+                        <td>✅</td>
+                        <td>-</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Pregnancy Test</td>
+                        <td>✅</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TST or IGRA</td>
+                        <td>✅</td>
+                        <td>-</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Chest X-ray</td>
+                        <td>✅</td>
+                        <td>-</td>
+                        <td>✅</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>💉 Vaccination Guidelines</h3>
+            <div class="warning">
+                <strong>LIVE VACCINES CONTRAINDICATED:</strong> BCG, measles, mumps, rubella, yellow fever, oral polio, oral typhoid, varicella zoster, nasal influenza
+            </div>
+            
+            <div class="success">
+                <strong>SAFE VACCINES:</strong> Inactivated influenza (yearly), pneumococcal, hepatitis A & B
+            </div>
+            
+            <div class="board-tip">
+                Live vaccines contraindicated in infants up to 6 months if mother received biologics beyond 16 weeks gestation.
+            </div>
+            
+            <div class="clinical-pearl">
+                <strong>Hajj Preparation:</strong> Patients planning Hajj should be up to date on all routine vaccines per MOH requirements.
+            </div>
+            
+            <h3>🦠 Infection Management</h3>
+            <div class="algorithm-flow">
+                <div class="step">
+                    <strong>Mild infections:</strong> Continue biologic therapy
+                </div>
+                <div class="step">
+                    <strong>Severe infections:</strong> Temporary interruption of biologic
+                </div>
+                <div class="step">
+                    <strong>After treatment:</strong> Reintroduce biologic after sufficient anti-infective therapy
+                </div>
+            </div>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> TB screening crucial (TST/IGRA + CXR). Monitor CBC/RFT/LFT every 6 months. Live vaccines contraindicated. Pause biologics for severe infections only.
+            </div>
+        </div>
+
+        <!-- Biologics Section -->
+        <div class="content-section" id="biologics">
+            <h2>💊 Biologic Agents</h2>
+            
+            <div class="high-yield">
+                <h3>🎯 SFDA-Approved Biologics for Psoriasis</h3>
+                <p>All agents listed are registered and approved by SFDA for moderate-to-severe plaque psoriasis treatment</p>
+            </div>
+            
+            <div class="drug-class tnf-inhibitors">
+                <div class="drug-header">🔴 TNF-α Inhibitors</div>
+                <div class="drug-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Drug</th>
+                                <th>Brand</th>
+                                <th>Dosing</th>
+                                <th>PASI 90 (Induction)</th>
+                                <th>Half-life</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Adalimumab</strong></td>
+                                <td>Humira</td>
+                                <td>80mg SubQ W0, 40mg W1, then 40mg EOW</td>
+                                <td>45% (W16)</td>
+                                <td>14 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Certolizumab</strong></td>
+                                <td>Cimzia</td>
+                                <td>400mg SubQ W0,2,4, then 200-400mg EOW</td>
+                                <td>35.8-43.6% (W16)</td>
+                                <td>14 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Etanercept</strong></td>
+                                <td>Enbrel</td>
+                                <td>50mg BIW x12w, then 50mg weekly</td>
+                                <td>21% (W12)</td>
+                                <td>3.5 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Infliximab</strong></td>
+                                <td>Remicade</td>
+                                <td>5mg/kg IV W0,2,6, then q8w</td>
+                                <td>57% (W10)</td>
+                                <td>10-15 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="drug-class il17-inhibitors">
+                <div class="drug-header">🔵 IL-17 Inhibitors</div>
+                <div class="drug-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Drug</th>
+                                <th>Brand</th>
+                                <th>Dosing</th>
+                                <th>PASI 90 (Induction)</th>
+                                <th>Half-life</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ixekizumab</strong></td>
+                                <td>Taltz</td>
+                                <td>160mg W0, 80mg q2w x3mo, then q4w</td>
+                                <td>59.7-65.3% (W12)</td>
+                                <td>13 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Secukinumab</strong></td>
+                                <td>Cosentyx</td>
+                                <td>300mg SubQ W0,1,2,3,4, then q4w</td>
+                                <td>54.2-59.2% (W12)</td>
+                                <td>27 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="drug-class il23-inhibitors">
+                <div class="drug-header">🟢 IL-23 Inhibitors</div>
+                <div class="drug-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Drug</th>
+                                <th>Brand</th>
+                                <th>Dosing</th>
+                                <th>PASI 90 (Induction)</th>
+                                <th>Half-life</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Guselkumab</strong></td>
+                                <td>Tremfya</td>
+                                <td>100mg SubQ W0,4, then q8w</td>
+                                <td>70-73.3% (W16)</td>
+                                <td>18 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Risankizumab</strong></td>
+                                <td>Skyrizi</td>
+                                <td>150mg SubQ W0,4, then q12w</td>
+                                <td>74.8-75.3% (W16)</td>
+                                <td>28 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="drug-class il1223-inhibitors">
+                <div class="drug-header">🟡 IL-12/23 Inhibitor</div>
+                <div class="drug-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Drug</th>
+                                <th>Brand</th>
+                                <th>Dosing</th>
+                                <th>PASI 90 (Induction)</th>
+                                <th>Half-life</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ustekinumab</strong></td>
+                                <td>Stelara</td>
+                                <td>&lt;100kg: 45mg W0,4, then q12w<br>&gt;100kg: 90mg W0,4, then q12w</td>
+                                <td>57.6% (W16)</td>
+                                <td>21 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="memory-trick">
+                💡 <strong>Efficacy Memory Trick:</strong> IL-23 inhibitors > IL-17 inhibitors > TNF inhibitors for PASI 90 response
+            </div>
+            
+            <div class="board-tip">
+                Infliximab and ustekinumab are weight-based dosing. All others are fixed dosing.
+            </div>
+            
+            <h3>📊 Safety Comparison</h3>
+            <div class="clinical-pearl">
+                <strong>Key Safety Points:</strong>
+                <ul>
+                    <li><strong>Infections:</strong> All biologics increase infection risk, but severe infections are rare</li>
+                    <li><strong>Malignancy:</strong> Monitor for NMSC and other malignancies</li>
+                    <li><strong>MACE:</strong> Major adverse cardiac events possible</li>
+                    <li><strong>IBD:</strong> Some drugs may worsen, others may improve</li>
+                </ul>
+            </div>
+            
+            <h3>🏥 Apremilast (Non-biologic option)</h3>
+            <div class="criteria-card">
+                <h4>Apremilast (PDE4 inhibitor)</h4>
+                <ul>
+                    <li><strong>PASI 75:</strong> 33.1% at 16 weeks</li>
+                    <li><strong>Advantages:</strong> Oral, no infection risk, safe in malignancy</li>
+                    <li><strong>Indications:</strong> Select patients, palmoplantar/scalp/nail psoriasis</li>
+                    <li><strong>MOH status:</strong> Non-formulary</li>
+                </ul>
+            </div>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> IL-23 inhibitors most effective (PASI 90: 70-75%), followed by IL-17 (55-65%), then TNF inhibitors (21-57%). Weight-based dosing for infliximab/ustekinumab only.
+            </div>
+        </div>
+
+        <!-- Algorithm Section -->
+        <div class="content-section" id="algorithm">
+            <h2>🔄 Treatment Algorithm</h2>
+            
+            <div class="high-yield">
+                <h3>🎯 First-Line: Conventional Systemics</h3>
+                <p><strong>Try first (if appropriate):</strong> Methotrexate, Cyclosporine, Acitretin</p>
+                <p><strong>Duration:</strong> 12-16 weeks before switching to biologics</p>
+            </div>
+            
+            <div class="algorithm-flow">
+                <h4>📊 Criteria for Systemic/Biologic Therapy</h4>
+                <div class="step">
+                    <strong>Any ONE of the following:</strong>
+                    <ul>
+                        <li>DLQI ≥10, PASI ≥10, or BSA ≥10%</li>
+                        <li>Severe localized psoriasis with functional impairment (nails, face, scalp, palms, soles, genitalia)</li>
+                        <li>Presence of psoriatic arthritis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🥇 Second-Line: Biologic Selection</h3>
+            
+            <div class="drug-class il23-inhibitors">
+                <div class="drug-header">🟢 PREFERRED: IL-23 Antagonists (PSO only)</div>
+                <div class="drug-content">
+                    <ul>
+                        <li><strong>Guselkumab</strong> (Tremfya)</li>
+                        <li><strong>Risankizumab</strong> (Skyrizi)</li>
+                    </ul>
+                    <div class="memory-trick">
+                        💡 <strong>For PSO only:</strong> IL-23 inhibitors are first choice
+                    </div>
+                </div>
+            </div>
+            
+            <div class="drug-class il17-inhibitors">
+                <div class="drug-header">🔵 PREFERRED: IL-17 Antagonists (PSO + PSA)</div>
+                <div class="drug-content">
+                    <ul>
+                        <li><strong>Secukinumab</strong> (Cosentyx)</li>
+                        <li><strong>Ixekizumab</strong> (Taltz)</li>
+                    </ul>
+                    <div class="memory-trick">
+                        💡 <strong>For PSO + PSA:</strong> IL-17 inhibitors are first choice
+                    </div>
+                </div>
+            </div>
+            
+            <h3>🥉 Third-Line Options</h3>
+            <div class="algorithm-flow">
+                <div class="step">
+                    <strong>After 16-24 weeks of suboptimal control:</strong>
+                    <ul>
+                        <li>16 weeks for skin disease</li>
+                        <li>24 weeks for joint disease</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <strong>Switch to:</strong>
+                    <ul>
+                        <li>IL-17 antagonists</li>
+                        <li>TNF antagonists</li>
+                        <li>IL-12/23 antagonist (for peripheral arthritis only)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="board-tip">
+                After 28 weeks of suboptimal control with IL-23 inhibitors, consider dose optimization at physician discretion.
+            </div>
+            
+            <h3>🔄 Transitioning Between Therapies</h3>
+            
+            <div class="warning">
+                <strong>⚠️ Key Principle:</strong> No evidence-based studies exist for transition intervals - use clinical judgment!
+            </div>
+            
+            <h4>📋 Conventional to Biologic Transition</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Washout Period</th>
+                        <th>Special Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cyclosporine</td>
+                        <td>TNF inhibitors/Ustekinumab</td>
+                        <td>No washout needed</td>
+                        <td>Can overlap 2-8 weeks, taper CSA ASAP</td>
+                    </tr>
+                    <tr>
+                        <td>Methotrexate</td>
+                        <td>TNF inhibitors/Ustekinumab</td>
+                        <td>No washout needed</td>
+                        <td>Can overlap or use concurrently</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>🔄 Biologic to Biologic Transition</h4>
+            <div class="clinical-pearl">
+                <strong>General Rule:</strong> Try dose optimization before switching biologics
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>Timing</th>
+                        <th>Dose Optimization Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Adalimumab</td>
+                        <td>At next scheduled dose (2 weeks)</td>
+                        <td>40mg EOW → 40mg weekly</td>
+                    </tr>
+                    <tr>
+                        <td>Etanercept</td>
+                        <td>At next scheduled dose (1 week)</td>
+                        <td>50mg weekly → 50mg BIW</td>
+                    </tr>
+                    <tr>
+                        <td>Infliximab</td>
+                        <td>2-4 weeks after last dose</td>
+                        <td>Q8w → Q6w; 5mg/kg → up to 10mg/kg</td>
+                    </tr>
+                    <tr>
+                        <td>Ustekinumab</td>
+                        <td>At next scheduled dose</td>
+                        <td>45mg → 90mg; Q12w → Q8w</td>
+                    </tr>
+                    <tr>
+                        <td>Secukinumab</td>
+                        <td>At next scheduled dose</td>
+                        <td>Q4w → Q2w</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="memory-trick">
+                💡 <strong>Transition Memory:</strong> "Wait longer for longer half-lives" - Infliximab needs 2-4 weeks, others can switch immediately
+            </div>
+            
+            <h3>📉 Dose Reduction & Discontinuation</h3>
+            
+            <div class="warning">
+                <strong>⚠️ Generally NOT Recommended:</strong> Discontinuation due to recurrence risk and failure to recapture response
+            </div>
+            
+            <div class="success">
+                <strong>Consider discontinuation if:</strong>
+                <ul>
+                    <li>Patient preference</li>
+                    <li>Clear/almost clear for minimum 1 year</li>
+                    <li>History of disease-free intervals</li>
+                    <li>Absence of PsA</li>
+                    <li>Low QoL impact</li>
+                    <li>No worsening after previous dose reductions</li>
+                </ul>
+            </div>
+            
+            <div class="board-tip">
+                Up to 20% of patients fail to regain PASI 75 response after re-initiation of the same biologic monotherapy.
+            </div>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> First-line: conventional systemics 12-16 weeks. Second-line: IL-23 (PSO only) or IL-17 (PSO+PSA). Try dose optimization before switching. Discontinuation generally not recommended.
+            </div>
+        </div>
+        
+        <!-- Special Populations Section -->
+        <div class="content-section" id="special">
+            <h2>👥 Special Patient Populations</h2>
+            
+            <div class="high-yield">
+                <h3>🎯 Board-Critical Special Populations</h3>
+                <p>Choosing the right therapy based on patient characteristics and comorbidities is frequently tested!</p>
+            </div>
+            
+            <h3>🤰 Pregnancy & Lactation</h3>
+            
+            <div class="clinical-pearl">
+                <strong>Pregnancy Effect on Psoriasis:</strong> 55% improve, 23% worsen during pregnancy
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ General Rule:</strong> Avoid all medications unless benefits outweigh risks. Discontinue biologics before pregnancy or at 16-26 weeks.
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug Class</th>
+                        <th>Pregnancy</th>
+                        <th>Lactation</th>
+                        <th>Male Conception</th>
+                        <th>Key Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>TNF-α Inhibitors</strong></td>
+                        <td>⚠️ Higher risk in 3rd trimester</td>
+                        <td>✅ Safe</td>
+                        <td>✅ Safe</td>
+                        <td>Transplacental transfer concern</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Certolizumab</strong></td>
+                        <td>✅ Most Preferred</td>
+                        <td>✅ Safe</td>
+                        <td>✅ Safe</td>
+                        <td>Minimal placental transfer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Etanercept</strong></td>
+                        <td>⚠️ Alternative to certolizumab</td>
+                        <td>✅ Safe</td>
+                        <td>✅ Safe</td>
+                        <td>If certolizumab unavailable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IL-12/23 Inhibitors</strong></td>
+                        <td>❓ Uncertain</td>
+                        <td>❓ Uncertain</td>
+                        <td>✅ Acceptable</td>
+                        <td>Limited data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IL-17 Inhibitors</strong></td>
+                        <td>❓ Uncertain</td>
+                        <td>❓ Unknown</td>
+                        <td>✅ Acceptable</td>
+                        <td>No human pregnancy studies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IL-23 Inhibitors</strong></td>
+                        <td>❓ Unknown</td>
+                        <td>❓ Unknown</td>
+                        <td>✅ Acceptable</td>
+                        <td>Antibodies secreted in milk</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="memory-trick">
+                💡 <strong>Pregnancy Memory:</strong> "Certolizumab = Clearly best choice" (minimal placental transfer)
+            </div>
+            
+            <div class="board-tip">
+                Infants born to mothers who received biologics beyond 16 weeks gestation should NOT receive live vaccines until 6 months of age.
+            </div>
+            
+            <h3>👶 Pediatric & Adolescents</h3>
+            
+            <div class="warning">
+                <strong>⚠️ Limited Options:</strong> Only 3 biologics approved for pediatric psoriasis
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug</th>
+                        <th>FDA Approval Age</th>
+                        <th>Pediatric Dosing (SubQ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Adalimumab</strong></td>
+                        <td>≥4 years</td>
+                        <td>10-15kg: 10mg EOW<br>15-30kg: 20mg EOW<br>≥30kg: 40mg EOW</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Etanercept</strong></td>
+                        <td>≥4 years</td>
+                        <td>0.8mg/kg weekly (max 50mg/week)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ustekinumab</strong></td>
+                        <td>≥6 years</td>
+                        <td>&lt;60kg: 0.75mg/kg<br>≥60kg: Adult dosing<br>Same frequency as adults</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="memory-trick">
+                💡 <strong>Pediatric Memory:</strong> "4-4-6" = Adalimumab & Etanercept ≥4 years, Ustekinumab ≥6 years
+            </div>
+            
+            <h3>⚖️ Metabolic Syndrome & Obesity</h3>
+            
+            <div class="clinical-pearl">
+                <strong>Key Insight:</strong> Metabolic syndrome prevalence increases with increased BSA affected by psoriasis
+            </div>
+            
+            <div class="success">
+                <strong>Weight-Based Dosing Required:</strong>
+                <ul>
+                    <li><strong>Infliximab:</strong> 5mg/kg (can increase to 10mg/kg)</li>
+                    <li><strong>Ustekinumab:</strong> &lt;100kg = 45mg, ≥100kg = 90mg</li>
+                </ul>
+            </div>
+            
+            <h3>🎗️ Malignancy</h3>
+            
+            <div class="warning">
+                <strong>⚠️ Avoid all biologics in:</strong>
+                <ul>
+                    <li>Concurrent malignancy</li>
+                    <li>History of malignancy</li>
+                    <li>Discuss individually if cancer in previous 5 years</li>
+                </ul>
+            </div>
+            
+            <div class="board-tip">
+                Infliximab showed more malignancies in COPD patients with heavy smoking history - exercise caution in high-risk patients.
+            </div>
+            
+            <h3>🏥 Surgery</h3>
+            
+            <div class="algorithm-flow">
+                <div class="step">
+                    <strong>Elective Major Surgery:</strong> Discontinue 4-5 half-lives before surgery
+                </div>
+                <div class="step">
+                    <strong>Practical Approach:</strong>
+                    <ul>
+                        <li>Discontinue for mouth/GI surgery</li>
+                        <li>Continue for clean surgeries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🦠 Hepatitis</h3>
+            
+            <div class="warning">
+                <strong>⚠️ HBV:</strong> Do NOT initiate biologics in active hepatitis B. Risk of severe reactivation.
+            </div>
+            
+            <div class="success">
+                <strong>HCV:</strong> Lower risk than HBV. Successful treatment reports with adalimumab and etanercept.
+            </div>
+            
+            <h3>🫁 Tuberculosis</h3>
+            
+            <div class="high-yield">
+                <h3>TB Risk by Drug Class</h3>
+                <ul>
+                    <li><strong>Highest Risk:</strong> TNF inhibitors (especially monoclonal antibodies > etanercept)</li>
+                    <li><strong>Moderate Risk:</strong> Ustekinumab</li>
+                    <li><strong>Lowest Risk:</strong> IL-17 and IL-23 inhibitors (no reported cases)</li>
+                </ul>
+            </div>
+            
+            <div class="algorithm-flow">
+                <h4>LTBI Treatment Protocol</h4>
+                <div class="step">
+                    <strong>LTBI Treatment:</strong> INH 9 months OR Rifampin 4 months
+                </div>
+                <div class="step">
+                    <strong>Timing:</strong> Complete 1 month of LTBI treatment before starting biologic
+                </div>
+            </div>
+            
+            <h3>🧠 Demyelinating Diseases/MS</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug Class</th>
+                        <th>MS Recommendation</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TNF-α Inhibitors</td>
+                        <td>❌ Contraindicated</td>
+                        <td>Do not use; review alternatives if 1st degree relative has MS</td>
+                    </tr>
+                    <tr>
+                        <td>IL-12/23 Inhibitors</td>
+                        <td>✅ May be used</td>
+                        <td>Does not improve or worsen MS</td>
+                    </tr>
+                    <tr>
+                        <td>IL-17 Inhibitors</td>
+                        <td>✅ Can be used</td>
+                        <td>Some benefit in MS symptoms</td>
+                    </tr>
+                    <tr>
+                        <td>IL-23 Inhibitors</td>
+                        <td>✅ Likely safe</td>
+                        <td>Limited data, no MS worsening reports</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>❤️ Cardiovascular Disease & CHF</h3>
+            
+            <div class="success">
+                <strong>CVD:</strong> TNF-α inhibitors are PREFERRED for patients with cardiovascular risk factors
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ CHF (NYHA Class III-IV):</strong> Avoid TNF-α inhibitors. IL-12/23, IL-17, IL-23 appear safe.
+            </div>
+            
+            <h3>🠠 Inflammatory Bowel Disease</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug Class</th>
+                        <th>IBD Recommendation</th>
+                        <th>Specific Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Adalimumab, Infliximab, Certolizumab</td>
+                        <td>✅ Beneficial</td>
+                        <td>FDA-approved for IBD treatment</td>
+                    </tr>
+                    <tr>
+                        <td>Etanercept</td>
+                        <td>⚠️ Less effective</td>
+                        <td>Not as effective for Crohn's</td>
+                    </tr>
+                    <tr>
+                        <td>IL-12/23 (Ustekinumab)</td>
+                        <td>✅ Approved</td>
+                        <td>Crohn's disease only, not UC</td>
+                    </tr>
+                    <tr>
+                        <td>IL-17 Inhibitors</td>
+                        <td>⚠️ Caution</td>
+                        <td>Consult GI specialist; avoid if 1st degree relative has IBD</td>
+                    </tr>
+                    <tr>
+                        <td>IL-23 Inhibitors</td>
+                        <td>✅ Promising</td>
+                        <td>Preliminary positive results</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🦋 Lupus Erythematosus</h3>
+            
+            <div class="warning">
+                <strong>⚠️ TNF-α Inhibitors:</strong> Risk of de novo lupus or lupus flare (Anti-TNF Induced Lupus - ATIL)
+            </div>
+            
+            <div class="success">
+                <strong>✅ IL-12/23 Inhibitors:</strong> SAFEST option - may improve SLE symptoms (oral ulcers, anemia, thrombocytopenia, arthritis)
+            </div>
+            
+            <div class="memory-trick">
+                💡 <strong>Lupus Memory:</strong> "IL-12/23 = Lupus Love" (improves lupus symptoms)
+            </div>
+            
+            <div class="section-summary">
+                <strong>Section Summary:</strong> Certolizumab best for pregnancy. Only 3 biologics for pediatrics (4-4-6 rule). Avoid all biologics in malignancy. TNF inhibitors contraindicated in MS but preferred for CVD. IL-12/23 safest for lupus.
+            </div>
+            
+            <div class="high-yield">
+                <h3>🎯 Final Board Review Summary</h3>
+                <div class="board-tip">
+                    <strong>Most Tested Concepts:</strong>
+                    <ul>
+                        <li>Rule of 10s for eligibility (BSA≥10%, PASI≥10, DLQI≥10)</li>
+                        <li>Treatment goals: PASI≤3, PASI90, PGA 0-1, DLQI<5</li>
+                        <li>TB screening mandatory (TST/IGRA + CXR)</li>
+                        <li>IL-23 inhibitors most effective, best for psoriasis only</li>
+                        <li>IL-17 inhibitors best for psoriasis + psoriatic arthritis</li>
+                        <li>Certolizumab best choice in pregnancy</li>
+                        <li>TNF inhibitors contraindicated in MS, preferred for CVD</li>
+                        <li>IL-12/23 safest for lupus patients</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showSection(sectionId) {
+                // Hide all sections
+                const sections = document.querySelectorAll('.content-section');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Remove active class from all tabs
+                const tabs = document.querySelectorAll('.nav-tab');
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show selected section
+                document.getElementById(sectionId).classList.add('active');
+                
+                // Add active class to clicked tab
+                event.target.classList.add('active');
+            }
+        </script>
+    </div>
+</body>
+</html>

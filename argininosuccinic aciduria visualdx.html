@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Review: Argininosuccinic Aciduria</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Slab:wght@700&display=swap');
+
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --primary-color: #005A9C;
+            --secondary-color: #495057;
+            --highlight-bg: #fff3cd;
+            --highlight-text: #664d03;
+            --danger-color: #dc3545;
+            --success-color: #198754;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: 'Roboto Slab', serif;
+            color: var(--primary-color);
+            font-size: 2.8em;
+            margin: 0;
+        }
+
+        header h2 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+            font-weight: 400;
+            margin: 5px 0 0 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header .icon {
+            font-size: 1.2em;
+            margin-right: 12px;
+        }
+        
+        .clinical-pearl {
+            background-color: #e6f7ff;
+            border-left: 5px solid #1890ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .clinical-pearl strong {
+            color: #0056b3;
+        }
+
+        .derm-focus {
+            background-color: #fffbe6;
+            border-left: 5px solid #faad14;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .derm-focus strong {
+            color: #d46b08;
+        }
+
+        .alert {
+            background-color: #fff1f0;
+            border-left: 5px solid var(--danger-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .alert strong {
+            color: var(--danger-color);
+        }
+
+        .list-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .list-item .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        .list-item .content {
+            flex: 1;
+        }
+
+        .list-item strong {
+            color: var(--text-color);
+        }
+        
+        .list-item p {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+        
+        .highlight {
+            background-color: var(--highlight-bg);
+            color: var(--highlight-text);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .split-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .split-section h4 {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .management-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .management-step .step-number {
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Active Recall / Test Yourself Section */
+        details {
+            background: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 5px 15px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            padding: 10px 0;
+            outline: none; /* Removes the focus ring */
+            color: var(--primary-color);
+        }
+        details[open] summary {
+            border-bottom: 1px solid var(--border-color);
+        }
+        details p {
+            padding-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        
+        .codes-section {
+            background-color: #f1f3f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .codes-section h3 {
+            margin-top: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Argininosuccinic Aciduria</h1>
+            <h2>Also known as: Argininosuccinate Lyase (ASL) Deficiency</h2>
+        </header>
+
+        <div class="clinical-pearl">
+            <strong>Board Exam At-a-Glance:</strong> A baby with seizures, lethargy, and <span class="highlight">hyperammonemia</span> has a urea cycle defect. If they also have <span class="highlight">trichorrhexis nodosa</span> (brittle hair) and elevated <span class="highlight">citrulline</span>, think <strong>Argininosuccinic Aciduria</strong>.
+        </div>
+
+        <div class="grid-container">
+            <!-- Card 1: Pathophysiology & Genetics -->
+            <div class="card">
+                <h3 class="card-header"><span class="icon">🧬</span>The Core Defect</h3>
+                <p>A life-threatening <strong>urea-cycle metabolism disorder</strong>. The body cannot properly process nitrogen waste, leading to toxic buildup.</p>
+                
+                <div class="list-item">
+                    <span class="icon">➡️</span>
+                    <div class="content">
+                        <strong>Gene & Inheritance:</strong><br>
+                        Mutated <span class="highlight">ASL gene</span> inherited in an <span class="highlight">autosomal recessive</span> pattern.
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <span class="icon">🧪</span>
+                    <div class="content">
+                        <strong>Core Problem:</strong><br>
+                        Deficiency of the enzyme Argininosuccinate Lyase leads to <span class="highlight">hyperammonemia</span> (high ammonia levels).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Clinical Presentation -->
+            <div class="card">
+                <h3 class="card-header"><span class="icon">🩺</span>Clinical Presentation</h3>
+
+                <h4>Severe Neonatal-Onset Form</h4>
+                <p>Presents within days of birth. This is a medical emergency.</p>
+                <div class="alert">
+                    <strong>Warning Signs:</strong> Lethargy, somnolence, poor feeding, vomiting, hypothermia, and tachypnea. Can rapidly progress to seizures, coma, and death if untreated.
+                </div>
+
+                <div class="split-section">
+                    <h4>Milder, Late-Onset Form</h4>
+                    <p>Often triggered by metabolic stressors like infection or stress. Presents with recurring episodes.</p>
+                    <div class="list-item">
+                        <span class="icon">🧠</span>
+                        <div class="content"><strong>Neuro-Behavioral:</strong> Irritability, behavioral dysfunction, developmental delay, intellectual disability.</div>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🤢</span>
+                        <div class="content"><strong>Systemic:</strong> Vomiting, failure to thrive.</div>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🩺</span>
+                        <div class="content"><strong>Hepatic:</strong> <span class="highlight">Hepatomegaly</span>.</div>
+                    </div>
+                    <div class="derm-focus">
+                        <div class="list-item">
+                            <span class="icon">✂️</span>
+                            <div class="content">
+                                <strong>Dermatologic Hallmark:</strong><br>
+                                <span class="highlight">Trichorrhexis Nodosa</span> (dry, brittle hair that breaks easily). This is a key clue on a dermatology exam!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Diagnosis -->
+            <div class="card">
+                <h3 class="card-header"><span class="icon">🔬</span>Diagnosis & Workup</h3>
+                
+                <p>The diagnostic path often starts with newborn screening and is confirmed with specific tests.</p>
+                
+                <div class="list-item">
+                    <div class="icon" style="color: var(--danger-color);">📈</div>
+                    <div class="content">
+                        <strong>Best Initial Test (Screening):</strong><br>
+                        <span class="highlight">Elevated blood citrulline level</span> detected on newborn screen. Arginosuccinic acid will also be present.
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="icon" style="color: var(--success-color);">✅</div>
+                    <div class="content">
+                        <strong>Confirmatory Test:</strong><br>
+                        <span class="highlight">Skin biopsy</span> confirming deficiency of ASL enzyme activity in cultured fibroblasts.
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Clinical Trick:</strong> While multiple urea cycle disorders cause hyperammonemia, the combination of elevated <strong>citrulline</strong> AND the presence of <strong>arginosuccinic acid</strong> points specifically to ASL deficiency.
+                </div>
+            </div>
+
+            <!-- Card 4: Management -->
+            <div class="card">
+                <h3 class="card-header"><span class="icon">💊</span>Management Strategy</h3>
+                <p>Management focuses on treating acute hyperammonemia and preventing future episodes.</p>
+
+                <div class="management-step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>Treat Hyperammonemia:</strong><br>
+                        Provide supplemental <span class="highlight">Arginine therapy</span>. This helps promote nitrogen excretion through an alternative pathway.
+                    </div>
+                </div>
+
+                <div class="management-step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>Dietary Control:</strong><br>
+                        <span class="highlight">Reduction of oral protein</span> to limit the nitrogen load on the urea cycle.
+                    </div>
+                </div>
+
+                <div class="management-step">
+                    <div class="step-number" style="background-color: var(--danger-color);">!</div>
+                    <div>
+                        <strong>For Resistant Cases:</strong><br>
+                        In severe or refractory hyperammonemia, <span class="highlight">hemodialysis</span> may be required to rapidly clear ammonia.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Recall Section -->
+        <div class="card" style="margin-top: 30px;">
+            <h3 class="card-header"><span class="icon">🧠</span>Test Yourself: Active Recall</h3>
+            <details>
+                <summary>What is the key dermatologic finding in Argininosuccinic Aciduria?</summary>
+                <p><strong>Trichorrhexis nodosa</strong> (dry, brittle hair).</p>
+            </details>
+            <details>
+                <summary>What is the mode of inheritance and the affected gene?</summary>
+                <p><strong>Autosomal recessive</strong> inheritance of a mutated <strong>ASL gene</strong>.</p>
+            </details>
+            <details>
+                <summary>What two lab values are key for diagnosis on a newborn screen?</summary>
+                <p>1. <strong>Elevated blood citrulline</strong><br>2. Presence of <strong>arginosuccinic acid</strong>.</p>
+            </details>
+            <details>
+                <summary>What is the cornerstone of long-term management?</summary>
+                <p>A combination of <strong>arginine therapy</strong> and a <strong>low-protein diet</strong>.</p>
+            </details>
+        </div>
+
+        <footer>
+            <div class="codes-section">
+                <h3>Coding & References</h3>
+                <p><strong>ICD-10-CM:</strong> E72.22 - Arginosuccinic aciduria</p>
+                <p><strong>SNOMED-CT:</strong> 41013004 - Argininosuccinate lyase deficiency</p>
+                <details>
+                    <summary>View References</summary>
+                    <ul style="text-align: left; list-style-type: disc; margin-left: 20px;">
+                        <li>Argininosuccinic aciduria. OMIM - Online Mendelian Inheritance in Man. https:/Awww.omim.org/entry/207900. Accessed 2022 Jan 11.</li>
+                        <li>Nagamani SCS, Erez A, Lee B. Argininosuccinate lyase deficiency. GeneReviews® [Internet]. http://www.ncbi.nim.nih.gov/books/NBK51784/. Accessed 2016 Jan 04.</li>
+                        <li>Erez A. Argininosuccinic aciduria: from a monogenic to a complex disorder. Genet Med. 2013 Apr;15(4):251-7. PubMed ID: 23306800</li>
+                        <li>Nagamani SC, Lee B, Erez A. Optimizing therapy for argininosuccinic aciduria. Mol Genet Metab. 2012 Sep;107(1-2):10-4. PubMed ID: 22841516</li>
+                        <li>Haberle J, Boddaert N, Burlina A, et al. Suggested guidelines for the diagnosis and management of urea cycle disorders. Orphanet J Rare Dis. 2012;7:32. PubMed ID: 22642880</li>
+                        <li>Erez A, Nagamani SC, Lee B. Argininosuccinate lyase deficiency-argininosuccinic aciduria and beyond. Am j/ Med Genet C Semin Med Genet. 2011 Feb 15;157C(1):45-53. PubMed ID: 21312326</li>
+                    </ul>
+                </details>
+            </div>
+            <p>Last Updated: 10/06/2022 | Content from VisualDx® | Page Design by AI Clinical Educator</p>
+            <p>Copyright © 2025 VisualDx®. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

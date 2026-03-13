@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High-Yield Review: Acquired Progressive Kinking of the Hair (APKH)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+--primary-color: #2c3e50; /* Deep Blue-Gray */
+--secondary-color: #3498db; /* Bright Blue */
+--accent-color: #e74c3c; /* Red for alerts */
+--pearl-color: #27ae60; /* Green for pearls */
+--test-color: #8e44ad; /* Purple for tests */
+--bg-color: #ecf0f1; /* Light Gray */
+--card-bg: #ffffff;
+--text-color: #34495e;
+--light-text-color: #ffffff;
+--border-radius: 8px;
+--shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+Generated code
+body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+    }
+
+    .header {
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
+        padding: 25px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-family: 'Roboto Slab', serif;
+        margin: 0;
+        font-size: 2.2em;
+        letter-spacing: 1px;
+    }
+    
+    .header .subtitle {
+        font-size: 1.1em;
+        opacity: 0.8;
+        margin-top: 5px;
+    }
+
+    main {
+        padding: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card {
+        background: var(--card-bg);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        border-left: 5px solid var(--secondary-color);
+    }
+    
+    .card h2 {
+        font-family: 'Roboto Slab', serif;
+        color: var(--primary-color);
+        margin-top: 0;
+        border-bottom: 2px solid var(--bg-color);
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .card h2 .icon {
+        margin-right: 10px;
+        font-size: 0.9em;
+        color: var(--secondary-color);
+    }
+
+    .clinical-pearl, .management-pearl {
+        padding: 20px;
+        border-radius: var(--border-radius);
+        margin-top: 15px;
+        border-left: 5px solid var(--pearl-color);
+        background-color: #f0fff8;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .clinical-pearl:hover, .management-pearl:hover {
+        transform: scale(1.02);
+    }
+    
+    .pearl-title {
+        font-weight: 700;
+        color: var(--pearl-color);
+        display: flex;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    
+    .pearl-title .icon {
+        margin-right: 8px;
+        font-size: 1.2em;
+    }
+
+    .best-test {
+        padding: 20px;
+        border-radius: var(--border-radius);
+        margin-top: 15px;
+        border-left: 5px solid var(--test-color);
+        background-color: #f9f2ff;
+    }
+    
+    .test-title {
+        font-weight: 700;
+        color: var(--test-color);
+        display: flex;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    
+    .test-title .icon {
+        margin-right: 8px;
+        font-size: 1.2em;
+    }
+    
+    .microscope-findings {
+        margin-top: 10px;
+        padding-left: 20px;
+        border-left: 2px solid var(--test-color);
+    }
+
+    .differential-card {
+        border-left-color: var(--accent-color);
+    }
+    
+    .differential-card h2 .icon {
+        color: var(--accent-color);
+    }
+    
+    .diff-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .diff-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .diff-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .diff-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        color: #c0392b;
+    }
+    
+    .diff-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        background-color: #fff9f8;
+        border-radius: var(--border-radius);
+        margin-top: 10px;
+    }
+    
+    .diff-content-inner {
+        padding: 15px;
+        font-weight: 500;
+        border-left: 3px solid var(--accent-color);
+    }
+
+    .toggle-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .board-alert {
+        background-color: #fff8f8;
+        border: 2px solid var(--accent-color);
+        border-radius: var(--border-radius);
+        padding: 20px;
+    }
+    
+    .board-alert h2 {
+        color: var(--accent-color);
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .board-alert h2 .icon {
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+    
+    .board-alert .trick-title {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-top: 15px;
+    }
+    
+    .board-alert p {
+        margin-bottom: 10px;
+    }
+    
+    .board-alert strong {
+        color: var(--accent-color);
+    }
+
+    .therapy-card {
+        text-align: center;
+        border-left-color: #f39c12; /* Orange */
+        background-color: #fffaf0;
+    }
+    
+    .therapy-card .therapy-statement {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #7f8c8d;
+        background-color: var(--bg-color);
+    }
+    
+    .meta-data {
+        font-size: 0.8em;
+        color: #95a5a6;
+        background-color: #f8f9f9;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .meta-data strong { color: var(--text-color); }
+
+</style>
+Use code with caution.
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1>Acquired Progressive Kinking of the Hair (APKH)</h1>
+<p class="subtitle">A High-Yield Clinical Snapshot for the Saudi Board Exam</p>
+</header>
+Generated code
+<main>
+    <!-- Synopsis Card -->
+    <section class="card">
+        <h2><span class="icon"></span>Synopsis: The Core Concept</h2>
+        <p>
+            Acquired progressive kinking of the hair (APKH) is a rare disorder where hair in one or more scalp regions undergoes a progressive textural change.
+        </p>
+        <ul>
+            <li>Hair becomes: <strong>Dry, lusterless, wiry, and kinky.</strong></li>
+            <li>Associated changes: <strong>Decreased rate of growth</strong> and a <strong>darkening of color</strong>.</li>
+            <li>Boundaries: The transition between normal and abnormal hair is <strong>not sharply defined</strong>.</li>
+            <li>Demographics: More common in <strong>males</strong>.</li>
+            <li>Prognostic Link: In some cases, it has <strong>preceded the development of male pattern alopecia</strong>.</li>
+        </ul>
+    </section>
+    
+    <!-- Clinical Presentation Card -->
+    <section class="card">
+        <h2><span class="icon"></span>Look For: Clinical Presentation</h2>
+        <p>
+            The key finding is an <strong>acquired patch of darker hair</strong> that, on closer inspection, reveals a significant textural change. Patients often give a history that the lesion started as a small patch that gradually expanded over time.
+        </p>
+        <div class="clinical-pearl">
+            <span class="pearl-title"><span class="icon"></span>Diagnostic Pearl (High-Yield Clue)</span>
+            <p>The patient's history is crucial. Because the area of altered hair texture has a <strong>decreased rate of growth</strong>, they will report needing to <strong>cut it less frequently</strong> than the rest of their scalp hair. This is a highly specific clue.</p>
+        </div>
+    </section>
+
+    <!-- Differential Diagnosis Card -->
+    <section class="card differential-card">
+        <h2><span class="icon">⚠</span>Differential Diagnosis & Pitfalls</h2>
+        <div class="diff-list">
+            
+            <div class="diff-item">
+                <div class="diff-header" onclick="toggleDiff(this)">
+                    <span class="diff-title">Woolly Hair Nevus</span>
+                    <button class="toggle-btn">+</button>
+                </div>
+                <div class="diff-content">
+                    <div class="diff-content-inner">
+                        <strong>Key Differentiator: ONSET.</strong> Woolly hair nevus is congenital. Onset usually occurs <strong>at or soon after birth</strong>. APKH is, by definition, acquired.
+                    </div>
+                </div>
+            </div>
+
+            <div class="diff-item">
+                <div class="diff-header" onclick="toggleDiff(this)">
+                    <span class="diff-title">Whisker Hair</span>
+                    <button class="toggle-btn">+</button>
+                </div>
+                <div class="diff-content">
+                    <div class="diff-content-inner">
+                        <strong>Key Differentiator: LOCATION.</strong> This is considered a variant of APKH where the textural change is <strong>symmetrically localized to the area around the ears</strong>. APKH can affect any region of the scalp.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diff-item">
+                <div class="diff-header" onclick="toggleDiff(this)">
+                    <span class="diff-title">Therapy-Induced Kinking of Hair</span>
+                    <button class="toggle-btn">+</button>
+                </div>
+                <div class="diff-content">
+                    <div class="diff-content-inner">
+                        <strong>Key Differentiator: HISTORY.</strong> This is directly linked to a history of receiving therapy, rarely described in patients receiving <strong>etretinate</strong>.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Best Tests & Management Card -->
+    <section class="card">
+         <h2><span class="icon"></span>Confirmation & Future Course</h2>
+        <div class="best-test">
+            <span class="test-title"><span class="icon"></span>Best Tests</span>
+            <p>The definitive confirmation is through <strong>microscopic evaluation</strong> of affected hairs.</p>
+            <div class="microscope-findings">
+                <p>Hairs show kinks and twists, and are often finer or thicker than hair elsewhere on the scalp.</p>
+            </div>
+        </div>
+        <div class="management-pearl">
+            <span class="pearl-title"><span class="icon"></span>Management Pearl (Prognosis)</span>
+            <p>This is a critical point for patient counseling and exam questions. <strong>Male pattern alopecia does eventuate in the majority of cases</strong>. APKH is often a harbinger of future androgenetic alopecia.</p>
+        </div>
+    </section>
+
+    <!-- Therapy Card -->
+    <section class="card therapy-card">
+        <h2><span class="icon"></span>Therapy</h2>
+        <p class="therapy-statement">There is no specific treatment for APKH.</p>
+    </section>
+
+    <!-- Saudi Board Alert Card -->
+    <section class="board-alert">
+        <h2><span class="icon"></span>Saudi Board Exam Alert</h2>
+        
+        <p class="trick-title">1. The "Congenital vs. Acquired" Trick:</p>
+        <p>They will describe the classic hair morphology in a <strong>very young child or infant</strong>. If the onset is from birth, the answer is <strong>Woolly Hair Nevus</strong>, not APKH. The name "Acquired" is the key.</p>
+
+        <p class="trick-title">2. The "Prognosis" Trick:</p>
+        <p>They will ask for the most likely long-term outcome for a young man with APKH. The correct answer is the development of <strong>male pattern alopecia</strong>, not spontaneous resolution or a scarring process.</p>
+        
+        <p class="trick-title">3. The "Unique History" Trick:</p>
+        <p>They will test the Diagnostic Pearl. A patient reporting that a specific patch of hair <strong>grows slower and requires less frequent cutting</strong> is pathognomonic for APKH in an exam setting.</p>
+
+        <p class="trick-title">4. The "Location" Trick:</p>
+        <p>If the kinking is described as being <strong>symmetrically localized around the ears</strong>, the most specific diagnosis is <strong>Whisker Hair</strong>.</p>
+    </section>
+    
+    <!-- Metadata -->
+    <section class="card">
+        <h2><span class="icon"></span>Classification Codes</h2>
+        <div class="meta-data">
+            <p><strong>ICD10CM:</strong> L67.8 - Other hair color and hair shaft abnormalities</p>
+            <p><strong>SNOMEDCT:</strong> 77039003 - Acquired progressive kinking of hair</p>
+        </div>
+    </section>
+
+</main>
+Use code with caution.
+</div>
+<footer class="footer">
+<p>This is a high-yield summary based on the provided text. Always refer to primary literature and comprehensive textbooks for complete information.</p>
+<p>Last Updated (from source): 01/19/2015</p>
+</footer>
+<script>
+function toggleDiff(headerElement) {
+const content = headerElement.nextElementSibling;
+const button = headerElement.querySelector('.toggle-btn');
+if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+content.style.maxHeight = '0px';
+button.textContent = '+';
+button.style.transform = 'rotate(0deg)';
+} else {
+// Close all other items first
+document.querySelectorAll('.diff-content').forEach(item => {
+if(item !== content) {
+item.style.maxHeight = '0px';
+item.previousElementSibling.querySelector('.toggle-btn').textContent = '+';
+item.previousElementSibling.querySelector('.toggle-btn').style.transform = 'rotate(0deg)';
+}
+});
+// Open the clicked one
+content.style.maxHeight = content.scrollHeight + "px";
+button.textContent = '−';
+button.style.transform = 'rotate(180deg)';
+}
+}
+</script>
+</body>
+</html>

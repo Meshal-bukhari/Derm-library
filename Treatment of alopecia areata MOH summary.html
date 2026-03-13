@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alopecia Areata - Saudi Board Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: black;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            overflow-x: auto;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            white-space: nowrap;
+        }
+
+        .nav-tab.active {
+            background: #ff6b6b;
+            color: black;
+            transform: translateY(-3px);
+        }
+
+        .nav-tab:hover {
+            background: #ff8787;
+            color: black;
+        }
+
+        .content {
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .key-point h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            color: #2d3436;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #fd79a8;
+            position: relative;
+        }
+
+        .clinical-pearl::before {
+            content: "💎";
+            font-size: 1.5em;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #e84393;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .highlight-yellow {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .highlight-red {
+            background: linear-gradient(135deg, #ff7675, #fd79a8);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .highlight-blue {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .prevalence-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #2d3436;
+            box-shadow: 0 10px 30px rgba(127, 205, 205, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .pattern-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pattern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff6b6b;
+        }
+
+        .pattern-title {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .prognostic-factors {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .factor-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .factor-list li {
+            background: rgba(0,0,0,0.8);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b6b;
+            transition: all 0.3s ease;
+        }
+
+        .factor-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .age-emphasis {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: black;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            transform: scale(1.05);
+        }
+
+        .collapsible {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .collapsible-header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: black;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #5f3dc4, #9775fa);
+        }
+
+        .collapsible-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .collapsible-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { max-height: 0; opacity: 0; }
+            to { max-height: 1000px; opacity: 1; }
+        }
+
+        .memory-tip {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #e84393;
+            position: relative;
+        }
+
+        .memory-tip::before {
+            content: "🧠";
+            font-size: 1.5em;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+
+        .quiz-section {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .quiz-button {
+            background: white;
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        .emphasis-box {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: black;
+            margin: 25px 0 15px 0;
+            font-size: 1.8em;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: black;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        h4 {
+            color: black;
+            margin: 15px 0 8px 0;
+            font-size: 1.2em;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: black;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🩺 Alopecia Areata Comprehensive Guide</h1>
+            <div class="subtitle">Saudi Board Dermatology Exam Preparation</div>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">Overview</button>
+            <button class="nav-tab" onclick="showTab('clinical')">Clinical Features</button>
+            <button class="nav-tab" onclick="showTab('assessment')">Assessment</button>
+            <button class="nav-tab" onclick="showTab('prognosis')">Prognosis</button>
+            <button class="nav-tab" onclick="showTab('management')">Management</button>
+            <button class="nav-tab" onclick="showTab('special')">Special Cases</button>
+            <button class="nav-tab" onclick="showTab('algorithm')">Treatment Algorithm</button>
+            <button class="nav-tab" onclick="showTab('quiz')">Quick Quiz</button>
+            <button class="nav-tab" onclick="showTab('pearls')">High-Yield Pearls</button>
+        </nav>
+
+        <div class="content">
+            <!-- OVERVIEW TAB -->
+            <div id="overview" class="tab-content active">
+                <div class="emphasis-box">
+                    <h2>🎯 KEY EXAM POINTS - MEMORIZE THESE!</h2>
+                </div>
+
+                <div class="key-point">
+                    <h3>🔥 High-Yield Abstract Points</h3>
+                    <p>Alopecia Areata (AA) is a <span class="highlight-red">complex autoimmune disease</span> manifesting as a <span class="highlight-yellow">chronic inflammatory disease</span> characterized by <span class="highlight-blue">non-scarring patches of hair loss</span> over face, scalp, and body.</p>
+                    
+                    <div class="clinical-pearl">
+                        <strong>Board Pearl:</strong> Several treatments have been proposed for AA, but <span class="highlight-red">NONE are curative nor achieve a state of remission</span>. Remember this for true/false questions!
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <h3>📊 Success Criteria - Must Know for Exam!</h3>
+                    <p>The success of AA treatment is achieved by meeting <span class="highlight-yellow">ANY or ALL</span> of the following at <span class="highlight-red">week 24</span>:</p>
+                    <ul>
+                        <li><span class="highlight-blue">SALT 75 reduction</span></li>
+                        <li><span class="highlight-blue">SALT score 20 or less</span></li>
+                        <li><span class="highlight-blue">Achieving DLQI of 5 or less</span></li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>⚠️ Special Exception:</strong> For Janus kinase inhibitors (JAKi), success of treatment should be reached maximum by <span class="highlight-yellow">week 36</span>.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🧬 Background and Definition</h2>
+                
+                <div class="info-box">
+                    <h3>Pathophysiology - High Yield!</h3>
+                    <p>AA is a complex auto-immune disorder mediated by a <span class="highlight-yellow">local surge of interferon gamma</span> that:</p>
+                    <ol>
+                        <li>Collapses the hair follicle immune privilege</li>
+                        <li>Elicits an autoimmune response targeting exposed hair follicle autoantigens</li>
+                        <li>Activates autoreactive <span class="highlight-red">cytotoxic CD8+NKG2D+T cells</span></li>
+                    </ol>
+                </div>
+
+                <div class="prevalence-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">2.3-5.2%</span>
+                        <div>Prevalence in Saudi Arabia</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20-50</span>
+                        <div>Peak incidence age (years)</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">33-75%</span>
+                        <div>Relapse rates with corticosteroids</div>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Saudi-Specific Pearl:</strong> The prevalence of AA in Saudi Arabia (2.3%-5.2%) is <span class="highlight-red">higher than Western countries</span>, and patients present at <span class="highlight-yellow">younger ages</span> compared to Western populations.
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Tip:</strong> Remember "High, Young, Relapse" - Saudi Arabia has HIGH prevalence, YOUNG presentation, and HIGH relapse rates regardless of therapy.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🎯 Purpose and Target Population</h2>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📋 Consensus Development Process (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <p>The current consensus was developed by:</p>
+                        <ul>
+                            <li><span class="highlight-blue">Eight dermatology experts and clinical pharmacists</span></li>
+                            <li><span class="highlight-blue">Eight consensus meetings</span></li>
+                            <li>Multidisciplinary approach including <span class="highlight-yellow">six dermatologists and two clinical pharmacists</span></li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <strong>Scope Coverage:</strong>
+                            <ul>
+                                <li>Clinical and diagnostic criteria</li>
+                                <li>Disease severity assessment</li>
+                                <li>Associated comorbidities evaluation</li>
+                                <li>Treatment options (conservative to systemic)</li>
+                                <li>Treatment algorithm for clinicians</li>
+                                <li>Special considerations for pediatric population</li>
+                                <li>Other special population management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emphasis-box">
+                    This consensus statement is created for the optimal management and treatment of <span class="highlight-yellow">pediatric and adult patients with AA</span>.
+                </div>
+            </div>
+
+            <!-- CLINICAL FEATURES TAB -->
+            <div id="clinical" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>🔬 Clinical Features, Diagnosis, and Investigation</h2>
+                </div>
+
+                <h2>🎭 AA Patterns - Must Know All!</h2>
+
+                <div class="patterns-grid">
+                    <div class="pattern-card">
+                        <div class="pattern-title">Patchy Alopecia</div>
+                        <p><span class="highlight-blue">Most typical presentation</span> - single or multiple patches of localized hair loss</p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">Alopecia Totalis (AT)</div>
+                        <p><span class="highlight-red">Complete loss of scalp hair</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">Alopecia Universalis (AU)</div>
+                        <p><span class="highlight-red">Total loss of body hair and scalp terminal hair</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">Ophiasis Pattern</div>
+                        <p><span class="highlight-yellow">Band-like hair loss</span> at the periphery of the <span class="highlight-blue">occipital and temporal areas</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">Ophiasis Inversus-Sisaipho</div>
+                        <p><span class="highlight-yellow">Band-like hair loss</span> in the <span class="highlight-blue">frontoparietal area</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">AA Incognita</div>
+                        <p><span class="highlight-yellow">Diffuse hair loss and thinning</span> simulating androgenetic alopecia and telogen effluvium</p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">Peri Nevoid AA</div>
+                        <p><span class="highlight-red">Very rare variant</span> - hair loss surrounding a pigmented nevus</p>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Board Pearl:</strong> AA can present with signs localized to specific hairy regions outside the scalp, such as the <span class="highlight-blue">beard, eyelashes, and eyebrows</span>.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🩺 Clinical Symptoms and Signs</h2>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💭 Associated Symptoms (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="info-box">
+                            <p>Patients with AA <span class="highlight-red">do not usually report other associated symptoms</span>. However, they may experience:</p>
+                            <ul>
+                                <li><span class="highlight-yellow">Cutaneous dysesthesia</span> - may precede or be associated with hair loss and is a <span class="highlight-red">sign of active disease</span></li>
+                                <li><span class="highlight-blue">Scalp itching and tingling</span> at the site of hair loss</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🔍 Physical Examination Findings</h3>
+
+                <div class="key-point">
+                    <h4>Skin Appearance:</h4>
+                    <ul>
+                        <li>Underlying affected patches usually appear <span class="highlight-blue">normal and smooth</span></li>
+                        <li>May rarely exhibit <span class="highlight-yellow">pink discoloration</span></li>
+                        <li><span class="highlight-red">White hairs may initially be spared</span> in AA</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Important Clinical Signs:</h4>
+                    <ul>
+                        <li><strong>Canieties Subita:</strong> In extensive AA, sparing of white hairs leads to <span class="highlight-yellow">"sudden greying of the hair"</span></li>
+                        <li><strong>Regrowth Sign:</strong> <span class="highlight-blue">Fine white vellus hairs</span> may be a sign of hair regrowth</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🔬 Diagnosis</h2>
+
+                <div class="emphasis-box">
+                    AA diagnosis is <span class="highlight-red">mainly clinical</span> and is established through <span class="highlight-yellow">physical examination and trichoscopic findings</span>.
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🧬 Supporting Diagnostic Elements (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="info-box">
+                            <h4>Family History Support:</h4>
+                            <p>Clinical diagnosis is supported by obtaining a detailed family history for <span class="highlight-blue">autoimmune disorders</span> including but not limited to:</p>
+                            <ul>
+                                <li>Thyroid disorders</li>
+                                <li>Atopy</li>
+                                <li>Celiac disease</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="clinical-pearl">
+                            <h4>Activity Assessment:</h4>
+                            <p>The activity of hair loss can be determined by noting:</p>
+                            <ul>
+                                <li><span class="highlight-red">"Exclamation point hairs"</span> at the periphery of bald areas</li>
+                                <li>The qualitative positive AA <span class="highlight-yellow">"hair pull test"</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🚫 When NOT to Biopsy</h3>
+                <div class="warning-box">
+                    <span class="highlight-red">Scalp biopsy is NOT recommended</span> unless the diagnosis is not clear.
+                </div>
+
+                <h3>✅ Characteristic Clinical Features</h3>
+                <div class="key-point">
+                    <ol>
+                        <li><span class="highlight-blue">Intact follicular ostia</span> visualized either directly or through dermoscopy</li>
+                        <li><span class="highlight-blue">Positive pull test</span></li>
+                        <li><span class="highlight-blue">Complete loss of terminal hairs</span> in at least one patch of hair loss</li>
+                        <li><span class="highlight-blue">Absence of signs of active follicular inflammation</span> (such as perifollicular erythema, scaling, pustules, etc.)</li>
+                    </ol>
+                </div>
+
+                <h3>🔬 Supportive Dermoscopic Features</h3>
+                <div class="clinical-pearl">
+                    <ul>
+                        <li><span class="highlight-yellow">Yellow and/or black dots</span> at the ostia on dermoscopy</li>
+                        <li><span class="highlight-yellow">Trachyonychia</span></li>
+                        <li><span class="highlight-yellow">Fine pitting of the nails</span></li>
+                        <li><span class="highlight-yellow">20-nail dystrophy</span></li>
+                    </ul>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Acronym for AA Diagnosis:</strong> "IPCT" - Intact ostia, Positive pull test, Complete terminal hair loss, Total absence of inflammation.
+                </div>
+            </div>
+
+            <!-- ASSESSMENT TAB -->
+            <div id="assessment" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>📏 Assessment and Evaluation</h2>
+                </div>
+
+                <h2>🎯 Assessment Tools - High Yield!</h2>
+
+                <div class="key-point">
+                    <h3>📊 Multiple Severity Assessment Tools Available:</h3>
+                    <ul>
+                        <li><span class="highlight-red">Severity of Alopecia Tool (SALT)</span></li>
+                        <li>SALT II</li>
+                        <li>Alopecia Density and Extent (ALODEX)</li>
+                        <li>Alopecia Areata Progressive Index</li>
+                        <li>Quality-of-life measures including <span class="highlight-blue">Dermatology Life Quality Index (DLQI)</span></li>
+                        <li>Alopecia Areata Symptom Impact Scale (AASIS)</li>
+                        <li><span class="highlight-yellow">AA Scale (2022)</span> - designed specifically for clinical practice</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>🎯 Board Consensus:</strong> 
+                    <ul>
+                        <li>Use <span class="highlight-red">SALT score</span> as measure of disease severity in children and adults</li>
+                        <li>Use <span class="highlight-blue">ClinRO</span> for eyebrows and eyelashes involvement assessment</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>📐 SALT Scoring - Must Master!</h2>
+
+                <div class="info-box">
+                    <h3>SALT I Scoring History:</h3>
+                    <ul>
+                        <li>First published in <span class="highlight-yellow">1999</span></li>
+                        <li>Updated in <span class="highlight-yellow">2004</span></li>
+                        <li>Provides visual guide to estimate area of terminal hair loss</li>
+                        <li>Divides scalp into <span class="highlight-red">four quadrants</span></li>
+                        <li>Generates percentage of scalp hair loss and SALT score</li>
+                    </ul>
+                </div>
+
+                <div class="key-point">
+                    <h3>🔢 How SALT Works:</h3>
+                    <ol>
+                        <li>Estimate area of terminal hair loss in each of the <span class="highlight-blue">four quadrants</span> of the scalp</li>
+                        <li>Generate the <span class="highlight-yellow">percentage of scalp hair loss</span></li>
+                        <li>Calculate <span class="highlight-red">SALT score by adding up estimates</span> from the four quadrants</li>
+                        <li>Allows clinicians to estimate <span class="highlight-blue">total area of scalp with loss of terminal hair</span></li>
+                    </ol>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Tip:</strong> "SALT = Scalp Areas Loss Total" - Remember it measures total scalp hair loss across 4 quadrants.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🧪 Laboratory Evaluation</h2>
+
+                <div class="warning-box">
+                    <h3>⚠️ Important Principle:</h3>
+                    <p>Laboratory evaluation is warranted <span class="highlight-red">ONLY upon clinical suspicion</span> of an underlying disorder, and there is <span class="highlight-yellow">NO set of tests that is to be routinely ordered</span> for patients presenting with AA.</p>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🔬 When to Order Laboratory Tests (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <h4>Specific Clinical Scenarios:</h4>
+                        
+                        <div class="info-box">
+                            <h5>🦠 Tinea Capitis Suspicion:</h5>
+                            <p>When there are clinical signs of tinea capitis infection → <span class="highlight-blue">fungal microscopy should be performed</span></p>
+                        </div>
+
+                        <div class="info-box">
+                            <h5>🩸 Blood Tests as Needed:</h5>
+                            <p>When patients present with clinical signs and symptoms pointing towards another underlying etiology:</p>
+                            <ul>
+                                <li><span class="highlight-yellow">Complete blood cell count</span></li>
+                                <li><span class="highlight-yellow">Renal and liver function</span></li>
+                                <li>Screen for other diseases:
+                                    <ul>
+                                        <li>Autoimmune diseases</li>
+                                        <li>Connective tissue disease</li>
+                                        <li>Celiac disease</li>
+                                        <li>Pernicious anemia</li>
+                                        <li>Diabetes</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h5>🦠 Viral Serology:</h5>
+                            <p>May be useful in patients who present with clinical symptoms suggestive of a <span class="highlight-blue">triggered alopecia areata episode</span></p>
+                        </div>
+
+                        <div class="warning-box">
+                            <h5>❌ What NOT to Order:</h5>
+                            <p>Measuring <span class="highlight-red">early morning cortisol levels is NOT indicated</span> in patients who believe that stress may have triggered their current episode.</p>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h5>💊 Pre-Systemic Treatment Labs:</h5>
+                            <p>In preparation for initiation of systemic treatment for AA patients, laboratory investigations must be done and are <span class="highlight-yellow">identical to those performed in other dermatological diseases</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🧠 Psychosomatic Evaluation</h2>
+
+                <div class="key-point">
+                    <h3>🔑 Fundamental Component:</h3>
+                    <p>Identifying patients and families who need psychological support is a <span class="highlight-red">fundamental component of AA management</span>.</p>
+                </div>
+
+                <div class="patterns-grid">
+                    <div class="pattern-card">
+                        <div class="pattern-title">🧒 Children & Adolescents</div>
+                        <p>At <span class="highlight-red">increased risk</span> for psychiatric comorbidity, particularly <span class="highlight-blue">mood and anxiety disorders</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">👨‍⚕️ Adults</div>
+                        <p>Also at <span class="highlight-red">increased risk</span> for psychiatric comorbidity, especially with <span class="highlight-yellow">severe or recalcitrant disease</span></p>
+                    </div>
+                    
+                    <div class="pattern-card">
+                        <div class="pattern-title">👨‍👩‍👧‍👦 Parents</div>
+                        <p>Parents of children affected by AA may also experience <span class="highlight-blue">anxiety and depression</span></p>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <strong>Board Pearl:</strong> Psychological impact is especially significant in patients with <span class="highlight-red">severe or recalcitrant disease</span>, and extends to family members, particularly parents.
+                </div>
+            </div>
+
+            <!-- PROGNOSIS TAB -->
+            <div id="prognosis" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>🎲 Prognosis and Prognostic Indicators</h2>
+                </div>
+
+                <div class="warning-box">
+                    <h3>⚠️ Unpredictable Course:</h3>
+                    <p>AA is a <span class="highlight-red">chronic disease with an unpredictable course</span>.</p>
+                </div>
+
+                <div class="prevalence-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">70%</span>
+                        <div>Spontaneous remission of single lesion in first year</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">7%</span>
+                        <div>Progress to AT or AU</div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>📉 Poor Prognostic Indicators - High Yield!</h2>
+
+                <div class="prognostic-factors">
+                    <h3>🚨 Must Know These 8 Factors:</h3>
+                    
+                    <ul class="factor-list">
+                        <li>
+                            <strong>1. Childhood onset of AA</strong><br>
+                            Particularly those presenting at <span class="age-emphasis">less than 6 years of age</span>
+                        </li>
+                        
+                        <li>
+                            <strong>2. Severity of disease at onset in adults</strong><br>
+                            <span class="highlight-red">This is the most important negative prognostic indicator</span>
+                        </li>
+                        
+                        <li>
+                            <strong>3. Duration of active disease</strong><br>
+                            • Prognosis worse when AA persists <span class="highlight-yellow">beyond 5 years</span> (2% potential for hair regrowth)<br>
+                            • Disease can be <span class="highlight-red">irreversible if persists for 10 years</span><br>
+                            <div class="clinical-pearl">
+                                <strong>Important Note:</strong> This is NOT a contraindication for therapy trial. Successful hair regrowth cases have been seen in patients with disease duration exceeding 10 years.
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <strong>4. AA phenotype</strong><br>
+                            Especially <span class="highlight-blue">ophiasis pattern</span>
+                        </li>
+                        
+                        <li>
+                            <strong>5. Involvement of eyebrows, eyelashes, and non-scalp hair loss</strong>
+                        </li>
+                        
+                        <li>
+                            <strong>6. Nail involvement</strong><br>
+                            <span class="highlight-yellow">Nail pitting and trachonychia</span> suggest increased risk of developing AT/AU and worsen prognosis overall
+                        </li>
+                        
+                        <li>
+                            <strong>7. Prior and/or current atopic conditions</strong><br>
+                            Including: atopic dermatitis, asthma, hay fever/allergic rhinitis, and/or allergic conjunctivitis
+                        </li>
+                        
+                        <li>
+                            <strong>8. Trisomy 21 (Down syndrome)</strong><br>
+                            • Associated with increased prevalence (<span class="highlight-red">9%</span>) and severity of AA<br>
+                            • Estimated that <span class="highlight-red">40% of patients with trisomy 21</span> will develop AT/AU
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Acronym for Poor Prognosis:</strong> "CHILD-NAT" - Childhood onset, High severity, Illness duration >5yr, Long ophiasis pattern, Down syndrome, Nails involved, Atopy present, Total non-scalp involvement.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🔬 Associated Factors (Not Confirmed Poor Prognostic)</h2>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🧬 Systemic and Immunological Factors (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="info-box">
+                            <h4>May Influence AA Emergence:</h4>
+                            <ul>
+                                <li>Personal history of diabetes mellitus</li>
+                                <li>Peptic ulcer</li>
+                                <li>Bilateral oophorectomy</li>
+                                <li>Hypertension</li>
+                                <li>Atherosclerosis</li>
+                                <li>Grave's disease</li>
+                                <li>Myxedema</li>
+                            </ul>
+                            
+                            <div class="warning-box">
+                                <strong>Important:</strong> These are <span class="highlight-red">NOT confirmed to be poor prognostic factors</span>.
+                            </div>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>🧬 Genetic Associations:</h4>
+                            <p><span class="highlight-blue">Type 1 diabetes</span> and other autoimmune disorders such as <span class="highlight-blue">celiac disease and rheumatoid arthritis</span> have been shown to have a genetic association with AA, suggesting <span class="highlight-yellow">common molecular pathways in their pathogenesis</span>.</p>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>❌ Not a Poor Prognostic Indicator:</h4>
+                            <p><span class="highlight-red">Family history of AA</span> has NOT been proven to be a poor prognostic indicator.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MANAGEMENT TAB -->
+            <div id="management" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>💊 Management of Alopecia Areata</h2>
+                </div>
+
+                <h2>🎯 Treatment Goals - Memorize!</h2>
+
+                <div class="key-point">
+                    <h3>🎯 Primary Objectives:</h3>
+                    <ol>
+                        <li><span class="highlight-blue">Restore hair density</span></li>
+                        <li><span class="highlight-blue">Improve psychological wellbeing</span> of impacted patients</li>
+                    </ol>
+                </div>
+
+                <div class="emphasis-box">
+                    <h3>✅ Success Criteria at Week 24:</h3>
+                    <p>Success is reached by meeting <span class="highlight-red">ANY or ALL</span> of the following:</p>
+                    <ul>
+                        <li><span class="highlight-yellow">A) SALT 75 reduction</span></li>
+                        <li><span class="highlight-yellow">B) SALT score 20 or less</span></li>
+                        <li><span class="highlight-yellow">C) Achieving DLQI of 5 or less</span></li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ JAK Inhibitors Exception:</strong> Success should be reached maximum by <span class="highlight-red">week 36</span>.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🤲 Conservative Management</h2>
+
+                <div class="info-box">
+                    <h3>When Conservative Approach is Appropriate:</h3>
+                    <p><span class="highlight-blue">Reassurance can be enough</span> for patients with <span class="highlight-yellow">limited stable disease</span>.</p>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🎭 Cosmetic Camouflage Options (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="patterns-grid">
+                            <div class="pattern-card">
+                                <div class="pattern-title">Hair Products</div>
+                                <ul>
+                                    <li>Hair fibers</li>
+                                    <li>Sprays</li>
+                                    <li>Waxes</li>
+                                    <li>Pigmented powders (scalp and eyebrow area)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Advanced Options</div>
+                                <ul>
+                                    <li>Tattoos</li>
+                                    <li>Trichopigmentation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Prosthetic Options</div>
+                                <ul>
+                                    <li>Wigs</li>
+                                    <li>False eyelashes</li>
+                                    <li>Eyebrow prostheses</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🔬 Non-Pharmacologic Treatment</h2>
+
+                <h3>☀️ Photochemotherapy</h3>
+
+                <div class="warning-box">
+                    <h4>❌ PUVA NOT Recommended:</h4>
+                    <p><span class="highlight-red">Psoralen plus ultraviolet A (PUVA) is NOT recommended</span> due to:</p>
+                    <ul>
+                        <li>Risk of large cumulative doses of UVA long term</li>
+                        <li>AA is a chronic disease</li>
+                        <li>Increases risk of <span class="highlight-yellow">cutaneous malignancy</span></li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✅ Alternative: UVA-1</h4>
+                    <p>UVA-1, which has <span class="highlight-blue">greater penetration into the skin and is more effective</span>, may be an alternative option in AA treatment.</p>
+                </div>
+
+                <h3>🔬 Excimer Laser/Light</h3>
+
+                <div class="clinical-pearl">
+                    <h4>Mechanism and Use:</h4>
+                    <ul>
+                        <li>AA is a <span class="highlight-blue">T-cell mediated autoimmune disorder</span></li>
+                        <li><span class="highlight-yellow">308-nm excimer laser and light</span> have immunosuppressive properties by <span class="highlight-red">inducing T-cell apoptosis</span></li>
+                        <li>Can be used as <span class="highlight-blue">alternative treatment and adjuvant therapy</span> for acute/subacute resistant patches</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Side Effects:</h4>
+                    <ul>
+                        <li>Mild erythema</li>
+                        <li>Contact eczema</li>
+                        <li>Blistering</li>
+                        <li>Pruritus</li>
+                        <li>Hyperpigmentation</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>💉 Intralesional Treatment</h2>
+
+                <h3>💊 Intralesional Corticosteroid Therapy</h3>
+
+                <div class="emphasis-box">
+                    <p>Intralesional corticosteroids are the <span class="highlight-red">standard of therapy</span> for patients with clinical evidence of active inflammation.</p>
+                </div>
+
+                <div class="key-point">
+                    <h4>🔍 Indicators of Active Inflammation:</h4>
+                    <ul>
+                        <li><span class="highlight-blue">Positive pull test</span></li>
+                        <li><span class="highlight-blue">Black dots</span></li>
+                        <li><span class="highlight-blue">Exclamation point hairs</span></li>
+                    </ul>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💉 Triamcinolone Acetonide (TAC) Protocol (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-pearl">
+                            <h4>📊 Dosing and Administration:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Most commonly used corticosteroid</span>: Triamcinolone acetonide (TAC)</li>
+                                <li><span class="highlight-blue">Recommended dose for scalp patchy AA</span>: 2.5 mg/ml at higher volume of <span class="highlight-yellow">8 ml per session</span></li>
+                                <li><span class="highlight-blue">Diluted with saline</span></li>
+                                <li><span class="highlight-blue">0.05 – 0.1 mL per injection</span> into dermis or upper subcutaneous tissue</li>
+                                <li><span class="highlight-blue">Injections spaced 0.5-1 cm apart</span></li>
+                                <li><span class="highlight-blue">Time interval: 4-6 weeks</span> between sessions</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Special Precautions:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Caution required near frontal hairline</span> - higher risk of atrophy</li>
+                                <li>Lidocaine can be mixed with TAC, but some components can increase flocculation risk → more atrophy</li>
+                                <li>Apply local anesthetics, cooling, or vibration to minimize discomfort</li>
+                                <li>Needle-free devices are another option</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>🛑 When to Stop:</h4>
+                            <p>Treatment should be <span class="highlight-red">discontinued if no improvement within 6 months</span>.</p>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>🚨 Side Effects:</h4>
+                            <ul>
+                                <li>Pain, bleeding, headaches</li>
+                                <li>Systemic absorption</li>
+                                <li>Dyspigmentation</li>
+                                <li><span class="highlight-yellow">Reversible skin atrophy</span> (lasting a few months)</li>
+                                <li>Rarely: anaphylaxis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🧴 Topical Treatment</h2>
+
+                <h3>💊 Topical Corticosteroid Therapy</h3>
+
+                <div class="emphasis-box">
+                    <p>Topical corticosteroid therapy is the <span class="highlight-red">first-line topical treatment</span> for scalp AA in children and adults who refuse intralesional therapy.</p>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        👨‍⚕️ Adult vs Pediatric Recommendations (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="patterns-grid">
+                            <div class="pattern-card">
+                                <div class="pattern-title">👨 Adults</div>
+                                <p><span class="highlight-blue">Ultrapotent topical corticosteroid</span> recommended:</p>
+                                <ul>
+                                    <li>Clobetasol propionate foam</li>
+                                    <li>Cream or ointment</li>
+                                </ul>
+                                <p><span class="highlight-yellow">More effective under occlusion</span> (but also more side effects)</p>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">👶 Children < 10 years</div>
+                                <p><span class="highlight-blue">Less potent corticosteroid preferred</span>:</p>
+                                <ul>
+                                    <li>Mometasone</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="key-point">
+                            <h4>📅 Treatment Duration and Monitoring:</h4>
+                            <ul>
+                                <li><span class="highlight-blue">Apply daily for 6 weeks to 6 months</span></li>
+                                <li><span class="highlight-yellow">Complete regrowth = indication for discontinuation</span></li>
+                                <li>After regrowth: tapering based on individual situation and clinical judgment</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 Common Side Effects:</h4>
+                            <ul>
+                                <li>Folliculitis</li>
+                                <li>Acneiform eruption</li>
+                                <li>Atrophy</li>
+                                <li>Dyschromia</li>
+                                <li>Telangiectasia</li>
+                                <li>Adrenal suppression (less common)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>💊 Minoxidil</h3>
+
+                <div class="info-box">
+                    <h4>🔬 Mechanism (Still Unknown):</h4>
+                    <p>Proposed theories include:</p>
+                    <ul>
+                        <li>Vasodilation</li>
+                        <li>Potassium channel opening</li>
+                        <li>Angiogenesis</li>
+                        <li>Induction of follicular dermal papilla proliferation</li>
+                    </ul>
+                </div>
+
+                <div class="clinical-pearl">
+                    <h4>📊 Clinical Use:</h4>
+                    <ul>
+                        <li>Increases duration of <span class="highlight-blue">anagen phase</span></li>
+                        <li>Increases <span class="highlight-blue">length and thickness</span> of new hair</li>
+                        <li>In adults: <span class="highlight-red">5% Minoxidil once or twice daily</span></li>
+                        <li><span class="highlight-yellow">5% Minoxidil alone is insufficient in AA</span></li>
+                        <li>Used as <span class="highlight-blue">adjuvant therapeutic agent</span> with other treatments</li>
+                        <li>May help maintain hair growth induced by other treatments</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✅ Advantages:</h4>
+                    <ul>
+                        <li>Easy to use</li>
+                        <li>Minimal side effects (mainly mild dermatitis and itching)</li>
+                        <li>Less than 5% may grow unwanted hair</li>
+                    </ul>
+                </div>
+
+                <h3>💊 Topical Immunotherapy (TIT)</h3>
+
+                <div class="emphasis-box">
+                    <p>TIT is used in <span class="highlight-red">extensive chronic AA</span>.</p>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🧪 TIT Agents and Protocols (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-point">
+                            <h4>🔬 Available Agents:</h4>
+                            <ul>
+                                <li><span class="highlight-blue">Diphenylcyclopropenone (DPCP)</span></li>
+                                <li>Squaric acid dibutyl-ester (SADBE)</li>
+                            </ul>
+                            
+                            <p><strong>Mechanism:</strong> Not fully understood. Proposed theory is that TIT allows follicle recovery through induction of inflammatory process in a place other than the hair bulb.</p>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>💊 DPCP - Most Used TIT:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Success rate: 30-48%</span></li>
+                                <li><span class="highlight-blue">Overall response rate: 72.2%</span> across all grades</li>
+                                <li>Limited evidence for extensive resistant AA</li>
+                                <li>Only available at compounding pharmacies</li>
+                                <li>Formulated with acetone in amber bottle (light protection)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>📋 DPCP Protocol:</h4>
+                            <ol>
+                                <li><strong>Sensitization Phase:</strong>
+                                    <ul>
+                                        <li>Apply <span class="highlight-yellow">2% DPCP</span> on 4 cm diameter area (behind ear)</li>
+                                        <li>Cover scalp, avoid light and water for <span class="highlight-blue">48 hours</span></li>
+                                    </ul>
+                                </li>
+                                <li><strong>Treatment Phase:</strong>
+                                    <ul>
+                                        <li>Start with <span class="highlight-yellow">0.001% DPCP</span> one week after sensitization</li>
+                                        <li>Apply unilaterally by physician/nurse</li>
+                                        <li>Increase concentration weekly until effective concentration reached</li>
+                                        <li>Ideal concentration: mild tolerable dermatitis lasting <span class="highlight-blue">36 hours</span></li>
+                                        <li>Once response on one side → treat both sides</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Weaning Phase:</strong>
+                                    <ul>
+                                        <li>After hair regrowth: reduce frequency to biweekly → monthly → discontinue</li>
+                                        <li><span class="highlight-red">Do NOT discontinue abruptly</span> (increases relapse risk)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚫 Contraindications and Side Effects:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Contraindicated in pregnant women</span></li>
+                                <li>For DPCP failures: may try SADBE</li>
+                                <li><strong>Side Effects:</strong>
+                                    <ul>
+                                        <li>Pigmentary changes</li>
+                                        <li>Vitiligo (particularly in dark skin)</li>
+                                        <li>Severe eczema</li>
+                                        <li>Blistering</li>
+                                        <li>Lymph node enlargement</li>
+                                        <li>Flu-like symptoms</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>💊 Anthralin</h3>
+
+                <div class="info-box">
+                    <h4>🔬 Background and Mechanism:</h4>
+                    <ul>
+                        <li>Historically used for <span class="highlight-blue">psoriasis</span></li>
+                        <li>Reduces inflammation of hair follicle by <span class="highlight-yellow">diverting it from the bulb</span></li>
+                        <li>Causes <span class="highlight-blue">irritant dermatitis</span></li>
+                        <li><span class="highlight-red">No systemic side effects</span> → can be used in children</li>
+                    </ul>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📋 Anthralin Protocols (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-pearl">
+                            <h4>📊 Available Concentrations:</h4>
+                            <p>Anthralin can be found in concentrations from <span class="highlight-blue">0.5% to 2%</span></p>
+                        </div>
+
+                        <div class="key-point">
+                            <h4>🕐 Protocol 1 - Daily Application:</h4>
+                            <ol>
+                                <li>Apply daily for <span class="highlight-yellow">30 minutes</span></li>
+                                <li>Apply on affected area and up to <span class="highlight-blue">1 cm into healthy area</span></li>
+                                <li>Every 3 days: increase time by <span class="highlight-blue">15 minutes</span></li>
+                                <li>Maximum time: <span class="highlight-red">2 hours</span></li>
+                                <li>Wash area thoroughly to remove product</li>
+                                <li>Initial response expected in <span class="highlight-yellow">3 months</span></li>
+                                <li>Complete response in <span class="highlight-red">15 months</span></li>
+                            </ol>
+                        </div>
+
+                        <div class="key-point">
+                            <h4>🕐 Protocol 2 - Alternative Method:</h4>
+                            <ol>
+                                <li>Apply <span class="highlight-blue">0.5% or 1% cream</span> for 20-30 minutes daily</li>
+                                <li>Increase contact time by <span class="highlight-yellow">10 minutes biweekly</span></li>
+                                <li>Maximum: <span class="highlight-red">1 hour</span> or until mild dermatitis</li>
+                                <li>Alternative: start at <span class="highlight-blue">0.1%</span> for 10-20 minutes</li>
+                                <li>Gradually increase until overnight application tolerable</li>
+                            </ol>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>✅ Combination Therapy:</h4>
+                            <p>Combination of <span class="highlight-blue">Anthralin + DPCP</span> has been reported to be <span class="highlight-red">more effective than DPCP alone</span>.</p>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 Side Effects and Limitations:</h4>
+                            <ul>
+                                <li><span class="highlight-yellow">Follicular ostia pigmentation</span> - appears as black dots</li>
+                                <li>Can be differentiated by dermoscopy: brown pigmentation at edge of ostium (vs black dots where pigmentation is in center)</li>
+                                <li><span class="highlight-red">Lack of pigmentation = treatment failure</span></li>
+                                <li>Failure causes: inappropriate application, inadequate time, low-quality preparation</li>
+                                <li>Can stain hair, skin, and clothes (limits use in fair-haired patients)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>💊 Topical Calcineurin Inhibitors</h3>
+
+                <div class="info-box">
+                    <h4>📍 Usage:</h4>
+                    <ul>
+                        <li>Can be used to treat <span class="highlight-blue">scalp, eyebrow, or beard AA</span></li>
+                        <li><span class="highlight-red">NOT effective as monotherapy</span></li>
+                        <li>Usually used with other agents</li>
+                    </ul>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💊 Specific Agents (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="patterns-grid">
+                            <div class="pattern-card">
+                                <div class="pattern-title">Tacrolimus</div>
+                                <ul>
+                                    <li>Used for AA especially in <span class="highlight-blue">face region</span></li>
+                                    <li>Preferred in <span class="highlight-blue">pediatric population</span></li>
+                                    <li>Applied <span class="highlight-yellow">twice daily for 6 months</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Pimecrolimus</div>
+                                <ul>
+                                    <li>Cream (1%)</li>
+                                    <li><span class="highlight-red">Efficacy in AA was NOT proved</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Overall Recommendation:</h4>
+                            <p>The data available on these medications is <span class="highlight-red">lacking</span> and their <span class="highlight-yellow">routine use in AA is NOT recommended</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>💊 Systemic Treatment</h2>
+
+                <h3>✅ Eligibility Criteria - High Yield!</h3>
+
+                <div class="warning-box">
+                    <h4>⚠️ Important Note:</h4>
+                    <p>There are <span class="highlight-red">NO set universal indications</span> for initiating systemic treatment for AA.</p>
+                </div>
+
+                <div class="key-point">
+                    <h3>🎯 Possible Indications (Ages 18-50 years):</h3>
+                    <ol>
+                        <li><span class="highlight-red">Extensive disease (SALT score ≥ 50)</span></li>
+                        <li><span class="highlight-blue">SALT score < 50 AND DLQI score ≥ 10</span></li>
+                        <li><span class="highlight-yellow">Rapid progression</span> of hair loss to ≥ 50% within 4 months of disease onset</li>
+                        <li><span class="highlight-blue">All lesions that have failed a 6-month trial</span> of topical or serial intralesional corticosteroid</li>
+                        <li><span class="highlight-yellow">Large or multiple lesions</span> that cannot be easily managed with intralesional therapy due to:
+                            <ul>
+                                <li>Discomfort from number of injections required</li>
+                                <li>Dermal atrophy following intralesional corticosteroid</li>
+                                <li>Side effects from topical steroid use</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight-red">Significant facial involvement</span> (eyebrows or eyelashes) + SALT 50 or above (any age within SFDA approval)</li>
+                    </ol>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Acronym for Systemic Indications:</strong> "EXRAFF" - EXtensive (SALT≥50), RApid progression, Failed topical/intralesional, Face involvement.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>💊 Systemic Treatment Options</h3>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💊 Systemic Corticosteroids (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-pearl">
+                            <h4>🥇 Prednisolone (Preferred Choice):</h4>
+                            <ul>
+                                <li><span class="highlight-red">Preferred choice</span> when systemic corticosteroid therapy instituted</li>
+                                <li>Optimally administered <span class="highlight-blue">daily</span></li>
+                                <li>Suitable for <span class="highlight-yellow">severe AA in adolescents aged 13-18 years</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="key-point">
+                            <h4>📊 Dosing Protocol:</h4>
+                            <ul>
+                                <li>Initial dose: <span class="highlight-blue">0.4 to 0.6 mg/kg/day</span></li>
+                                <li>Gradually tapered over <span class="highlight-red">minimum 12-week duration</span> for durable remission</li>
+                                <li>Adults with extensive AA: may need <span class="highlight-yellow">longer than 12 weeks</span> tapering for durable remission</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>💊 Dexamethasone Oral Pulse:</h4>
+                            <ul>
+                                <li>For adults with extensive AA</li>
+                                <li><span class="highlight-blue">5mg/day two days a week</span> for at least 12 weeks</li>
+                                <li>Study results: <span class="highlight-yellow">63% of 30 patients had excellent response</span></li>
+                                <li>Mild side effects noted in 25% of patients</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💊 Other Systemic Agents (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="patterns-grid">
+                            <div class="pattern-card">
+                                <div class="pattern-title">Cyclosporine</div>
+                                <ul>
+                                    <li><span class="highlight-blue">Effective in adults with severe AA</span></li>
+                                    <li>Dose: <span class="highlight-yellow">3 to 5 mg/kg/day</span></li>
+                                    <li>Duration: <span class="highlight-red">does not exceed 6-12 months</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Methotrexate</div>
+                                <ul>
+                                    <li>Can be used as <span class="highlight-blue">monotherapy in severe AA</span></li>
+                                    <li>Adults: <span class="highlight-yellow">15 to 20 mg weekly</span></li>
+                                    <li>Adolescents (13-18 years): <span class="highlight-yellow">0.4 mg/kg/week</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Azathioprine</div>
+                                <ul>
+                                    <li>Start: <span class="highlight-blue">0.5-1 mg/kg daily</span></li>
+                                    <li>Gradually titrate every 4-6 weeks</li>
+                                    <li>Maximum: <span class="highlight-yellow">2-3 mg/kg</span></li>
+                                    <li>Based on response and tolerance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">Sulfasalazine</div>
+                                <ul>
+                                    <li>0.5 g twice daily for 1 month</li>
+                                    <li>→ 1 g twice daily for 1 month</li>
+                                    <li>→ <span class="highlight-yellow">1.5 g twice daily for 4 months</span></li>
+                                    <li>Relapse rate: 45.5%</li>
+                                    <li>32% suffered adverse effects</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Group Consensus:</h4>
+                            <p>Due to lower efficacy of <span class="highlight-red">sulfasalazine and azathioprine</span>, there is group consensus that these medications <span class="highlight-yellow">should NOT be used as first line</span> and are to be used only as alternative therapy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🔥 JAK Inhibitors - High Yield! (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="emphasis-box">
+                            <p>JAK inhibitors are <span class="highlight-red">small molecule drugs</span> with a few currently in the pipeline for treatment of <span class="highlight-blue">moderate to severe AA</span>.</p>
+                        </div>
+
+                        <div class="key-point">
+                            <h4>💊 Available JAK Inhibitors:</h4>
+                            
+                            <div class="patterns-grid">
+                                <div class="pattern-card">
+                                    <div class="pattern-title">Baricitinib</div>
+                                    <ul>
+                                        <li><span class="highlight-blue">JAK 1/2 inhibitor</span></li>
+                                        <li><span class="highlight-red">Recently approved by SFDA</span> for severe AA in adults</li>
+                                        <li>Dose: <span class="highlight-yellow">2 to 4 mg orally once daily</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="pattern-card">
+                                    <div class="pattern-title">Ritlecitinib</div>
+                                    <ul>
+                                        <li><span class="highlight-blue">JAK3 selective inhibitor</span></li>
+                                        <li><span class="highlight-red">Recently approved by FDA</span></li>
+                                        <li>For individuals <span class="highlight-yellow">aged 12 years and older</span></li>
+                                        <li>Dose: <span class="highlight-yellow">30mg or 50mg once daily</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="pattern-card">
+                                    <div class="pattern-title">Tofacitinib</div>
+                                    <ul>
+                                        <li><span class="highlight-blue">JAK 1/3 inhibitor</span></li>
+                                        <li>Dose: <span class="highlight-yellow">5 mg orally twice daily to 10 mg twice daily</span> in severe AA</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="pattern-card">
+                                    <div class="pattern-title">Ruxolitinib</div>
+                                    <ul>
+                                        <li><span class="highlight-blue">JAK 1/2 inhibitor</span></li>
+                                        <li>Dose: <span class="highlight-yellow">20 mg orally twice daily</span></li>
+                                        <li>Open-label pilot study: <span class="highlight-red">75% achieved ≥50% hair regrowth</span> after 3-6 months</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 JAK Inhibitor Side Effects:</h4>
+                            <ul>
+                                <li>Infections, viral reactivation</li>
+                                <li>Dyslipidemia, transaminase changes</li>
+                                <li>Leukopenia, headache</li>
+                                <li>Gastrointestinal complaints</li>
+                                <li><span class="highlight-red">Thromboembolic events in high-risk patients</span></li>
+                                <li>Fatigue, weight gain, acne</li>
+                                <li><span class="highlight-yellow">Long-term safety data still limited</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>📊 Response Characteristics:</h4>
+                            <p>Response to JAK inhibitors treatment <span class="highlight-red">does NOT correlate with disease severity nor duration</span>, and there are <span class="highlight-yellow">no predictors of response</span> up to this date.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🔄 Combination Systemic Agents (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-point">
+                            <h4>💊 Proven Combinations:</h4>
+                            
+                            <div class="clinical-pearl">
+                                <h5>1. Methotrexate + Steroids:</h5>
+                                <ul>
+                                    <li><span class="highlight-blue">Methotrexate 10-25 mg per week</span> + systemic steroids</li>
+                                    <li><span class="highlight-yellow">Clinical response rate: 63%</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="clinical-pearl">
+                                <h5>2. Cyclosporine + Low-dose Corticosteroids:</h5>
+                                <ul>
+                                    <li><span class="highlight-blue">Cyclosporine 2.5-5 mg/kg/day</span></li>
+                                    <li>+ Low-dose corticosteroids (methyl prednisolone 20 mg/day → taper to 2 mg/day)</li>
+                                    <li>Adequate efficacy and minimal toxicity</li>
+                                </ul>
+                            </div>
+
+                            <div class="clinical-pearl">
+                                <h5>3. Tofacitinib + Steroids:</h5>
+                                <ul>
+                                    <li><span class="highlight-blue">Tofacitinib 5 mg twice daily</span> + systemic steroids</li>
+                                    <li>For resistant cases of AA</li>
+                                </ul>
+                            </div>
+
+                            <div class="clinical-pearl">
+                                <h5>4. Tofacitinib + Low-dose Oral Minoxidil:</h5>
+                                <ul>
+                                    <li><span class="highlight-blue">Tofacitinib 5 mg twice daily</span></li>
+                                    <li>+ Low-dose oral minoxidil: <span class="highlight-yellow">2.5 mg once daily for women, 2.5 mg twice daily for men</span></li>
+                                    <li>Positive outcomes with low adverse effects</li>
+                                </ul>
+                            </div>
+
+                            <div class="info-box">
+                                <h5>5. Baricitinib Combinations:</h5>
+                                <p>The treating physician may consider similar combinations with <span class="highlight-blue">baricitinib</span>, however <span class="highlight-red">further evidence is necessary</span> to determine the best specific combination.</p>
+                            </div>
+
+                            <div class="info-box">
+                                <h5>6. Simvastatin + Ezetimibe:</h5>
+                                <ul>
+                                    <li><span class="highlight-blue">Simvastatin 40 mg + Ezetimibe 10 mg</span> orally daily for 3 months</li>
+                                    <li>Alternative treatment for recalcitrant AA</li>
+                                    <li><span class="highlight-yellow">Data still limited and controversial</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Memory Tip for JAK Inhibitors:</strong> "BRTR" - Baricitinib (SFDA approved), Ritlecitinib (FDA approved 12+), Tofacitinib (5mg BID), Ruxolitinib (20mg BID, 75% response).
+                </div>
+            </div>
+
+            <!-- SPECIAL CASES TAB -->
+            <div id="special" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>👶 Treatment in Special Situations</h2>
+                </div>
+
+                <h2>🧒 AA in Children</h2>
+
+                <div class="key-point">
+                    <h3>🥇 First-line Management:</h3>
+                    <p>In children with AA, <span class="highlight-red">topical corticosteroids</span> are used as the first therapeutic option:</p>
+                    <ul>
+                        <li>Preferably <span class="highlight-blue">medium to high potency</span></li>
+                        <li><span class="highlight-yellow">Mometasone 1% to Clobetasol 0.05%</span></li>
+                    </ul>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📋 Pediatric Treatment Algorithm (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="patterns-grid">
+                            <div class="pattern-card">
+                                <div class="pattern-title">🥇 First-line</div>
+                                <p><span class="highlight-blue">Topical corticosteroids</span> (medium to high potency)</p>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">🥈 Second-line</div>
+                                <p>When contraindication or lack of response to topical corticosteroids:</p>
+                                <ul>
+                                    <li>Anthralin</li>
+                                    <li>DPCP</li>
+                                    <li>Minoxidil</li>
+                                </ul>
+                                <p><span class="highlight-yellow">Combination of two or all three</span> is considered second-line management</p>
+                            </div>
+                            
+                            <div class="pattern-card">
+                                <div class="pattern-title">🥉 Third-line</div>
+                                <p><span class="highlight-red">Systemic therapy</span> is considered third-line in children <span class="highlight-blue">below age 12 years</span></p>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Important Considerations for Children <12 years:</h4>
+                            <ul>
+                                <li>In the <span class="highlight-red">absence of data confirming</span> that systemic therapy reduces risk of subsequent AT or AU development</li>
+                                <li>There is <span class="highlight-yellow">NO consensus on systemic therapy use</span> in children below 12 years</li>
+                                <li>Decision can be taken by an <span class="highlight-blue">experienced dermatologist on case-by-case basis</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>🧔 AA in the Beard Area</h2>
+
+                <div class="key-point">
+                    <h3>🎯 Treatments of Choice:</h3>
+                    <ul>
+                        <li><span class="highlight-blue">Topical corticosteroid therapy</span></li>
+                        <li><span class="highlight-blue">Intralesional corticosteroid therapy</span></li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Special Considerations:</h4>
+                    <ul>
+                        <li><span class="highlight-red">Higher risk of atrophy</span> associated with corticosteroid use in beard area</li>
+                        <li><span class="highlight-yellow">Triamcinolone 2.5mg/ml</span> is the most suitable concentration for this area</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>💊 Additional Options:</h4>
+                    <ul>
+                        <li>Topical minoxidil</li>
+                        <li>Anthralin</li>
+                    </ul>
+                    
+                    <div class="clinical-pearl">
+                        <strong>Note:</strong> There is <span class="highlight-red">NO consensus on usage of calcineurin inhibitors</span> for AA in the beard.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>👁️ AA in Eyelashes and Eyebrows</h2>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        👁️ Eyelash Hypotrichosis Treatment (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-point">
+                            <h4>🥇 Treatment of Choice:</h4>
+                            <p><span class="highlight-red">Analogues of prostaglandin F2a</span>:</p>
+                            <ul>
+                                <li><span class="highlight-blue">Latanoprost</span> in solution used once daily</li>
+                                <li><span class="highlight-blue">Bimatoprost</span> in solution used once daily</li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>⏰ Treatment Duration:</h4>
+                            <p>Should be used for a <span class="highlight-yellow">minimum of 12 months</span> to assess response.</p>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 Important Side Effects:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Eyelid hyperpigmentation</span></li>
+                                <li><span class="highlight-red">Darkening of the iris</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        🤨 Eyebrow AA Treatment (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-point">
+                            <h4>💊 Treatment Options:</h4>
+                            <ul>
+                                <li><span class="highlight-blue">Topical corticosteroid of medium potency</span> in cream</li>
+                                <li><span class="highlight-blue">Intralesional triamcinolone (2.5 mg/mL)</span></li>
+                                <li>Alternatively: <span class="highlight-yellow">0.03% bimatoprost</span></li>
+                                <li>Alternatively: <span class="highlight-yellow">Topical minoxidil</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>💊 Systemic Treatment Consideration:</h4>
+                            <p>Systemic treatment may be considered after failure of topical and intralesional modalities in case a patient reaches a <span class="highlight-red">ClinRo score of 2 or more</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>📅 Follow Up After Treatment Initiation</h2>
+
+                <div class="key-point">
+                    <h3>🕐 Follow-up Schedule by Treatment:</h3>
+                    
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <div class="pattern-title">DPCP Patients</div>
+                            <p>Assessed <span class="highlight-blue">weekly or biweekly</span></p>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">Intralesional Corticosteroids</div>
+                            <p>Follow up every <span class="highlight-blue">4-6 weeks</span></p>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">Topical Treatment</div>
+                            <p>Usually assessed every <span class="highlight-blue">2-3 months</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        💊 Systemic Treatment Follow-up (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="clinical-pearl">
+                            <h4>💊 Systemic Corticosteroids:</h4>
+                            <p>Patients should be <span class="highlight-blue">weaned over duration of at least 3 months</span>.</p>
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <h4>💊 Steroid-sparing Agents:</h4>
+                            <ul>
+                                <li>Continue treatment for <span class="highlight-yellow">3-6 months after complete remission</span></li>
+                                <li>Tapering can be attempted during that period</li>
+                                <li>Weaning helps decrease risk of relapse</li>
+                                <li><span class="highlight-red">Relapse can occur during weaning</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 Major Relapses Management:</h4>
+                            <p>Patients taking adequate dosage of systemic agents who develop <span class="highlight-red">major relapses (multiple new patches)</span>:</p>
+                            <ul>
+                                <li>Treatment should be discontinued</li>
+                                <li>Other treatment options considered</li>
+                                <li>Relapses can be treated by:
+                                    <ul>
+                                        <li>Dose escalation</li>
+                                        <li>Intralesional triamcinolone acetonide</li>
+                                        <li>Short course of systemic corticosteroids</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📊 Response Assessment Methods (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="key-point">
+                            <h4>📋 Clinical Assessment Tools:</h4>
+                            <ul>
+                                <li><span class="highlight-blue">History taking</span></li>
+                                <li><span class="highlight-blue">Assessing hair-shedding severity</span></li>
+                                <li><span class="highlight-blue">Serial photography</span> of affected areas</li>
+                                <li><span class="highlight-blue">Measuring SALT score</span></li>
+                                <li><span class="highlight-blue">Quality of life indexes</span></li>
+                                <li><span class="highlight-yellow">Dermoscopic photos</span> of affected areas (recommended)</li>
+                            </ul>
+                        </div>
+
+                        <div class="emphasis-box">
+                            <h4>🎯 Successful Treatment Goal:</h4>
+                            <p>A <span class="highlight-red">SALT reduction of 75 (75% improvement in SALT)</span> is an appropriate goal for successful treatment regimen.</p>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>🚨 Indicators of Active Disease:</h4>
+                            <ul>
+                                <li><span class="highlight-red">Increased hair shedding</span></li>
+                                <li><span class="highlight-red">Positive pull test</span> (especially at edge of patches)</li>
+                                <li><span class="highlight-red">Exclamation mark hairs</span></li>
+                                <li><span class="highlight-red">Black dots on dermoscopy</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h2>📋 Comprehensive Treatment Tables</h2>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📊 Table 1: Topical Therapies for Alopecia Areata (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="responsive-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Drug Name</th>
+                                        <th>Dosage Form</th>
+                                        <th>Strength</th>
+                                        <th>SFDA Registered</th>
+                                        <th>Authority Approval</th>
+                                        <th>Pregnancy Category</th>
+                                        <th>Black Box Warning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Clobetasol propionate</strong></td>
+                                        <td>Cream, Ointment, Cutaneous suspension</td>
+                                        <td>0.05%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dexamethasone (Desoximetasone)</strong></td>
+                                        <td>Cream</td>
+                                        <td>0.25%</td>
+                                        <td>No</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mometasone Furoate</strong></td>
+                                        <td>Cream, Ointment, Cutaneous suspension</td>
+                                        <td>0.10%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Triamcinolone acetonide</strong></td>
+                                        <td>Solution</td>
+                                        <td>10mg/ml</td>
+                                        <td>Yes</td>
+                                        <td>SFDA (Off-label), FDA, EMA</td>
+                                        <td>Category A</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Betamethasone</strong></td>
+                                        <td>Solution, Ointment, Cream</td>
+                                        <td>0.05%</td>
+                                        <td>No</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Betamethasone valerate Scalp Application</strong></td>
+                                        <td>Lotion</td>
+                                        <td>0.1%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tacrolimus</strong></td>
+                                        <td>Ointment</td>
+                                        <td>0.03%, 0.1%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B3</td>
+                                        <td>Malignancy warning</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pimecrolimus</strong></td>
+                                        <td>Cream</td>
+                                        <td>1%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA</td>
+                                        <td>No data</td>
+                                        <td>Malignancy warning</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Minoxidil</strong></td>
+                                        <td>Solution, Foam</td>
+                                        <td>2%, 5%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA</td>
+                                        <td>Category C</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Anthralin</strong></td>
+                                        <td>Cream</td>
+                                        <td>0.5% & 1%</td>
+                                        <td>No</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category B2</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>DPCP/SADBE</strong></td>
+                                        <td>Powder</td>
+                                        <td>2%</td>
+                                        <td>No</td>
+                                        <td>SFDA (Off-label)</td>
+                                        <td>Unknown</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bimatoprost</strong></td>
+                                        <td>Solution/Drops</td>
+                                        <td>0.1 mg/ml</td>
+                                        <td>Yes</td>
+                                        <td>FDA: Approved, EMA: Off-label</td>
+                                        <td>Category C</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Latanoprost</strong></td>
+                                        <td>Solution/Drops</td>
+                                        <td>0.005%</td>
+                                        <td>Yes</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>Category C</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ruxolitinib</strong></td>
+                                        <td>Cream</td>
+                                        <td>1.5%</td>
+                                        <td>No</td>
+                                        <td>SFDA, FDA, EMA (Off-label)</td>
+                                        <td>No adequate studies</td>
+                                        <td>None</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        📊 Table 2: Systemic Treatment Options (Click to expand)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="responsive-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Drug Name</th>
+                                        <th>Strength</th>
+                                        <th>Baseline Monitoring</th>
+                                        <th>Follow-up Monitoring</th>
+                                        <th>Pregnancy Category</th>
+                                        <th>Key Contraindications</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Cyclosporine</strong></td>
+                                        <td>25mg, 50mg, 100mg Capsules</td>
+                                        <td>CBC, LFT, RFT, TB testing, HCG, HIV, BP, UA, Lipids, Electrolytes, Uric acid</td>
+                                        <td>BP, CBC, RFT, Lipids, Electrolytes, Uric acid</td>
+                                        <td>Category C</td>
+                                        <td>Hypersensitivity, abnormal renal function, uncontrolled hypertension, malignancies</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Methotrexate</strong></td>
+                                        <td>2.5mg Tablet</td>
+                                        <td>CBC, BP, RFT, LFT, UA, Lipids, Electrolytes, TB testing, HCG</td>
+                                        <td>CBC, BP, RFT, LFT, Lipids, Electrolytes, Neurotoxicity assessment</td>
+                                        <td>Category D</td>
+                                        <td>Pregnancy, breastfeeding, excessive alcohol, liver disease, immunodeficiency, blood dyscrasias</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Azathioprine</strong></td>
+                                        <td>50mg Tablet</td>
+                                        <td>LFT, RFT, CBC, HBV/HCV, TB testing, HCG</td>
+                                        <td>LFT, RFT, TB testing, HCG</td>
+                                        <td>Category D</td>
+                                        <td>Hypersensitivity, pregnancy, previous alkylating agents</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mycophenolic acid</strong></td>
+                                        <td>250mg, 500mg, 180mg, 360mg</td>
+                                        <td>RFT, LFT, HBV/HCV, CBC, TB testing, HCG</td>
+                                        <td>LFT, RFT, CBC, TB testing, HCG</td>
+                                        <td>Category D</td>
+                                        <td>Hypersensitivity to mycophenolate compounds</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sulfasalazine</strong></td>
+                                        <td>500mg Tablet</td>
+                                        <td>CBC, LFT</td>
+                                        <td>Monitor for blood dyscrasias, photosensitivity, GI disturbance</td>
+                                        <td>Category A</td>
+                                        <td>Hypersensitivity to sulfonamides/salicylates, obstruction, porphyria</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tofacitinib citrate</strong></td>
+                                        <td>5mg Tablet</td>
+                                        <td>Hematological parameters, lipids, renal/hepatic function</td>
+                                        <td>Blood counts, avoid live vaccines</td>
+                                        <td>Category D</td>
+                                        <td>Use not recommended</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ruxolitinib phosphate</strong></td>
+                                        <td>5mg, 15mg, 20mg, 25mg Tablet</td>
+                                        <td>Hematological parameters, lipids, renal/hepatic function</td>
+                                        <td>CBCs, adjust dosage as required</td>
+                                        <td>Category C</td>
+                                        <td>Hypersensitivity, serious infections, higher cancer rates</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Baricitinib</strong></td>
+                                        <td>2mg, 4mg Tablet</td>
+                                        <td>CBC, LFT, Viral hepatitis, TB screening</td>
+                                        <td>CBC, Lipids, LFT, TB symptoms, Skin examinations</td>
+                                        <td>Category D</td>
+                                        <td>Placental transfer expected</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ritlecitinib</strong></td>
+                                        <td>10mg, 30mg, 50mg Tablet</td>
+                                        <td>CBC (baseline, q2-4 weeks), Lipids, LFT, TB screening</td>
+                                        <td>CBC, Lipids, LFT, TB symptoms, HBV viral load, renal function</td>
+                                        <td>Not recommended in pregnancy</td>
+                                        <td>Not specified</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ezetimibe/Simvastatin</strong></td>
+                                        <td>10mg/20mg, 10mg/40mg Tablet</td>
+                                        <td>Lipid panel, LFT, CPK</td>
+                                        <td>Lipid panel monitoring</td>
+                                        <td>Category D</td>
+                                        <td>Strong CYP3A4 inhibitors, active liver disease, pregnancy, breastfeeding</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Minoxidil (oral)</strong></td>
+                                        <td>2.5mg, 5mg Tablet</td>
+                                        <td>BP, cardiac assessment, fluid/electrolyte balance</td>
+                                        <td>Use not recommended</td>
+                                        <td>Category C</td>
+                                        <td>Pheochromocytoma, hypersensitivity</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Prednisone</strong></td>
+                                        <td>10mg, 20mg Tablet</td>
+                                        <td>BP, glucose, electrolytes, infections, bone density</td>
+                                        <td>BP, eye exam, growth velocity in pediatrics, HPA axis</td>
+                                        <td>Category A</td>
+                                        <td>Systemic fungal infections, live vaccines in immunosuppressed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="emphasis-box">
+                    <h2>🎯 Final Board Review</h2>
+                    <p>AA is a condition that impacts patients from all ages and can present in many ways. It is commonly encountered by general dermatologists and other healthcare providers. AA is a psychologically distressing disease and successful management is key to improve quality of life. An adequate clinical assessment and evaluation, and understanding of treatment options available, are essential for healthcare providers. An individualized plan should always be considered for patients with AA to achieve the best outcomes possible.</p>
+                </div>
+
+                <div class="memory-tip">
+                    <strong>Final Memory Check:</strong> Remember the key triad for AA success - Clinical assessment (SALT), Treatment selection (individualized), and Psychological support (fundamental component).
+                </div>
+            </div>
+
+            <!-- TREATMENT ALGORITHM TAB -->
+            <div id="algorithm" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>🗺️ Treatment Algorithm Flowchart</h2>
+                </div>
+
+                <div class="key-point">
+                    <h3>📋 Step-by-Step Treatment Approach</h3>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <div style="background: linear-gradient(135deg, #ff6b6b, #feca57); color: black; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 1.2em;">
+                                ALOPECIA AREATA PATIENT PRESENTATION
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="font-size: 2em;">⬇️</div>
+                        </div>
+
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <div style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: black; padding: 15px; border-radius: 10px; font-weight: bold;">
+                                CLINICAL ASSESSMENT & SEVERITY SCORING
+                            </div>
+                            <div style="padding: 10px; font-size: 0.9em; color: black;">
+                                • SALT Score Assessment<br>
+                                • DLQI Evaluation<br>
+                                • Pattern Recognition<br>
+                                • Active Disease Signs
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="font-size: 2em;">⬇️</div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 30px 0;">
+                            <div style="text-align: center;">
+                                <div style="background: linear-gradient(135deg, #a8e6cf, #7fcdcd); padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 10px;">
+                                    LIMITED STABLE DISEASE
+                                </div>
+                                <div style="font-size: 0.8em; color: black;">
+                                    • Few patches<br>
+                                    • No progression<br>
+                                    • Minimal impact
+                                </div>
+                                <div style="margin: 10px 0; font-size: 1.5em;">⬇️</div>
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; font-size: 0.9em;">
+                                    <strong>Conservative Management</strong><br>
+                                    • Reassurance<br>
+                                    • Cosmetic camouflage<br>
+                                    • Observation
+                                </div>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div style="background: linear-gradient(135deg, #feca57, #ff9ff3); padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 10px;">
+                                    LOCALIZED ACTIVE DISEASE
+                                </div>
+                                <div style="font-size: 0.8em; color: black;">
+                                    • Single/few patches<br>
+                                    • Active inflammation<br>
+                                    • SALT < 50
+                                </div>
+                                <div style="margin: 10px 0; font-size: 1.5em;">⬇️</div>
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; font-size: 0.9em;">
+                                    <strong>First Line:</strong><br>
+                                    • Intralesional TAC 2.5mg/ml<br>
+                                    • Topical potent steroids<br>
+                                    • Minoxidil (adjuvant)
+                                </div>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div style="background: linear-gradient(135deg, #ff7675, #fd79a8); color: black; padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 10px;">
+                                    EXTENSIVE DISEASE
+                                </div>
+                                <div style="font-size: 0.8em; color: black;">
+                                    • SALT ≥ 50<br>
+                                    • Multiple patches<br>
+                                    • AT/AU risk
+                                </div>
+                                <div style="margin: 10px 0; font-size: 1.5em;">⬇️</div>
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; font-size: 0.9em;">
+                                    <strong>Consider Systemic:</strong><br>
+                                    • JAK inhibitors<br>
+                                    • Systemic steroids<br>
+                                    • Immunosuppressants
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: black; padding: 15px; border-radius: 10px; font-weight: bold;">
+                                TREATMENT FAILURE OR CONTRAINDICATIONS
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="font-size: 2em;">⬇️</div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="text-align: center;">
+                                <div style="background: linear-gradient(135deg, #ff9a9e, #fecfef); padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 10px;">
+                                    EXTENSIVE CHRONIC AA
+                                </div>
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; font-size: 0.9em;">
+                                    <strong>Topical Immunotherapy:</strong><br>
+                                    • DPCP sensitization protocol<br>
+                                    • SADBE alternative<br>
+                                    • Anthralin option
+                                </div>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: black; padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 10px;">
+                                    SPECIAL SITUATIONS
+                                </div>
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; font-size: 0.9em;">
+                                    <strong>Site-Specific:</strong><br>
+                                    • Eyebrows: Medium potency steroids<br>
+                                    • Eyelashes: Prostaglandin analogs<br>
+                                    • Pediatric: Modified approach
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 30px 0; padding: 20px; background: linear-gradient(135deg, #00b894, #00cec9); color: black; border-radius: 10px;">
+                            <h4>⏰ SUCCESS CRITERIA MONITORING</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 15px;">
+                                <div>SALT 75 reduction</div>
+                                <div>SALT score ≤ 20</div>
+                                <div>DLQI ≤ 5</div>
+                            </div>
+                            <div style="margin-top: 10px; font-size: 0.9em;">
+                                Assessment at Week 24 (Week 36 for JAK inhibitors)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK QUIZ TAB -->
+            <div id="quiz" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>🧠 Saudi Board Quick Quiz</h2>
+                    <p>Test your knowledge with these high-yield questions!</p>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 1: Pathophysiology</h3>
+                    <p style="margin-bottom: 15px;"><strong>Which cells are primarily responsible for the autoimmune attack in alopecia areata?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q1', 'A')">A) CD4+ T cells</button>
+                    <button class="quiz-button" onclick="showAnswer('q1', 'B')">B) Cytotoxic CD8+NKG2D+ T cells</button>
+                    <button class="quiz-button" onclick="showAnswer('q1', 'C')">C) B lymphocytes</button>
+                    <button class="quiz-button" onclick="showAnswer('q1', 'D')">D) Natural killer cells</button>
+                    <div id="q1" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 2: Success Criteria</h3>
+                    <p style="margin-bottom: 15px;"><strong>For JAK inhibitors, success of treatment should be reached maximum by which week?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q2', 'A')">A) Week 24</button>
+                    <button class="quiz-button" onclick="showAnswer('q2', 'B')">B) Week 36</button>
+                    <button class="quiz-button" onclick="showAnswer('q2', 'C')">C) Week 48</button>
+                    <button class="quiz-button" onclick="showAnswer('q2', 'D')">D) Week 12</button>
+                    <div id="q2" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 3: Prognostic Factors</h3>
+                    <p style="margin-bottom: 15px;"><strong>Which is the MOST important negative prognostic indicator in adults with AA?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q3', 'A')">A) Family history of AA</button>
+                    <button class="quiz-button" onclick="showAnswer('q3', 'B')">B) Severity of disease at onset</button>
+                    <button class="quiz-button" onclick="showAnswer('q3', 'C')">C) Nail involvement</button>
+                    <button class="quiz-button" onclick="showAnswer('q3', 'D')">D) Atopic conditions</button>
+                    <div id="q3" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 4: Saudi-Specific Data</h3>
+                    <p style="margin-bottom: 15px;"><strong>What is the prevalence of AA in Saudi Arabia according to recent studies?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q4', 'A')">A) 1.0-2.0%</button>
+                    <button class="quiz-button" onclick="showAnswer('q4', 'B')">B) 2.3-5.2%</button>
+                    <button class="quiz-button" onclick="showAnswer('q4', 'C')">C) 0.5-1.5%</button>
+                    <button class="quiz-button" onclick="showAnswer('q4', 'D')">D) 5.5-8.0%</button>
+                    <div id="q4" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 5: Treatment Protocol</h3>
+                    <p style="margin-bottom: 15px;"><strong>What is the recommended dose of triamcinolone acetonide for scalp patchy AA?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q5', 'A')">A) 5.0 mg/ml</button>
+                    <button class="quiz-button" onclick="showAnswer('q5', 'B')">B) 1.0 mg/ml</button>
+                    <button class="quiz-button" onclick="showAnswer('q5', 'C')">C) 2.5 mg/ml</button>
+                    <button class="quiz-button" onclick="showAnswer('q5', 'D')">D) 10.0 mg/ml</button>
+                    <div id="q5" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 6: Systemic Treatment Eligibility</h3>
+                    <p style="margin-bottom: 15px;"><strong>Which SALT score threshold indicates extensive disease requiring systemic treatment consideration?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q6', 'A')">A) SALT ≥ 30</button>
+                    <button class="quiz-button" onclick="showAnswer('q6', 'B')">B) SALT ≥ 40</button>
+                    <button class="quiz-button" onclick="showAnswer('q6', 'C')">C) SALT ≥ 50</button>
+                    <button class="quiz-button" onclick="showAnswer('q6', 'D')">D) SALT ≥ 75</button>
+                    <div id="q6" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 7: Down Syndrome Association</h3>
+                    <p style="margin-bottom: 15px;"><strong>What percentage of patients with Trisomy 21 are estimated to develop AT/AU?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q7', 'A')">A) 20%</button>
+                    <button class="quiz-button" onclick="showAnswer('q7', 'B')">B) 30%</button>
+                    <button class="quiz-button" onclick="showAnswer('q7', 'C')">C) 40%</button>
+                    <button class="quiz-button" onclick="showAnswer('q7', 'D')">D) 50%</button>
+                    <div id="q7" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+
+                <div class="quiz-section" style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 20px;">Question 8: DPCP Protocol</h3>
+                    <p style="margin-bottom: 15px;"><strong>What is the ideal duration for mild tolerable dermatitis with DPCP treatment?</strong></p>
+                    <button class="quiz-button" onclick="showAnswer('q8', 'A')">A) 24 hours</button>
+                    <button class="quiz-button" onclick="showAnswer('q8', 'B')">B) 36 hours</button>
+                    <button class="quiz-button" onclick="showAnswer('q8', 'C')">C) 48 hours</button>
+                    <button class="quiz-button" onclick="showAnswer('q8', 'D')">D) 72 hours</button>
+                    <div id="q8" class="quiz-answer" style="display: none; margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.9); border-radius: 10px;"></div>
+                </div>
+            </div>
+
+            <!-- HIGH-YIELD PEARLS TAB -->
+            <div id="pearls" class="tab-content">
+                <div class="emphasis-box">
+                    <h2>💎 High-Yield Board Pearls</h2>
+                    <p>Essential facts for your Saudi Board exam success!</p>
+                </div>
+
+                <div class="key-point">
+                    <h3>🔥 Must-Know Facts</h3>
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <div class="pattern-title">🇸🇦 Saudi-Specific</div>
+                            <ul>
+                                <li>Prevalence: <span class="highlight-red">2.3-5.2%</span> (higher than Western countries)</li>
+                                <li>Patients present at <span class="highlight-yellow">younger ages</span></li>
+                                <li>Peak incidence: <span class="highlight-blue">20-50 years</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">🎯 Success Criteria</div>
+                            <ul>
+                                <li>Week 24: SALT 75↓, SALT ≤20, DLQI ≤5</li>
+                                <li>JAK inhibitors: <span class="highlight-red">Week 36 max</span></li>
+                                <li>Goal: <span class="highlight-blue">ANY or ALL criteria</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">🧬 Pathophysiology</div>
+                            <ul>
+                                <li>Interferon gamma surge</li>
+                                <li><span class="highlight-red">CD8+NKG2D+ T cells</span></li>
+                                <li>Hair follicle immune privilege collapse</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">⚠️ Poor Prognosis</div>
+                            <ul>
+                                <li>Childhood onset <span class="highlight-red">(<6 years)</span></li>
+                                <li><span class="highlight-yellow">Severity at onset</span> (most important)</li>
+                                <li>Duration >5 years, Ophiasis pattern</li>
+                                <li>Trisomy 21: <span class="highlight-red">40% develop AT/AU</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">💉 Intralesional TAC</div>
+                            <ul>
+                                <li>Dose: <span class="highlight-blue">2.5 mg/ml</span></li>
+                                <li>Volume: <span class="highlight-yellow">8 ml per session</span></li>
+                                <li>Interval: <span class="highlight-red">4-6 weeks</span></li>
+                                <li>Stop if no response in 6 months</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">🔬 Diagnosis</div>
+                            <ul>
+                                <li><span class="highlight-red">Mainly clinical</span></li>
+                                <li>Physical + trichoscopy</li>
+                                <li>No routine lab tests</li>
+                                <li>Biopsy only if diagnosis unclear</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-pearl">
+                    <h3>🎯 Board Trap Questions</h3>
+                    <ul>
+                        <li><strong>Q:</strong> "Are any AA treatments curative?" <strong>A:</strong> NO - this is a key trap!</li>
+                        <li><strong>Q:</strong> "Is family history a poor prognostic factor?" <strong>A:</strong> NO - it's NOT proven</li>
+                        <li><strong>Q:</strong> "Should you routinely order lab tests for AA?" <strong>A:</strong> NO - only if clinical suspicion</li>
+                        <li><strong>Q:</strong> "Is PUVA recommended for AA?" <strong>A:</strong> NO - malignancy risk</li>
+                        <li><strong>Q:</strong> "Can you use DPCP in pregnancy?" <strong>A:</strong> NO - contraindicated</li>
+                    </ul>
+                </div>
+
+                <div class="memory-tip">
+                    <h3>🧠 Memory Aids</h3>
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <div class="pattern-title">AA Diagnosis: "IPCT"</div>
+                            <p><strong>I</strong>ntact ostia<br>
+                            <strong>P</strong>ositive pull test<br>
+                            <strong>C</strong>omplete terminal hair loss<br>
+                            <strong>T</strong>otal absence of inflammation</p>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">Poor Prognosis: "CHILD-NAT"</div>
+                            <p><strong>C</strong>hildhood onset<br>
+                            <strong>H</strong>igh severity<br>
+                            <strong>I</strong>llness duration >5yr<br>
+                            <strong>L</strong>ong ophiasis pattern<br>
+                            <strong>D</strong>own syndrome<br>
+                            <strong>N</strong>ails involved<br>
+                            <strong>A</strong>topy present<br>
+                            <strong>T</strong>otal non-scalp involvement</p>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">Systemic Indications: "EXRAFF"</div>
+                            <p><strong>EX</strong>tensive (SALT≥50)<br>
+                            <strong>RA</strong>pid progression<br>
+                            <strong>F</strong>ailed topical/intralesional<br>
+                            <strong>F</strong>ace involvement</p>
+                        </div>
+                        
+                        <div class="pattern-card">
+                            <div class="pattern-title">JAK Inhibitors: "BRTR"</div>
+                            <p><strong>B</strong>aricitinib (SFDA approved)<br>
+                            <strong>R</strong>itlecitinib (FDA approved 12+)<br>
+                            <strong>T</strong>ofacitinib (5mg BID)<br>
+                            <strong>R</strong>uxolitinib (20mg BID, 75% response)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h3>⚠️ Common Board Mistakes to Avoid</h3>
+                    <ul>
+                        <li>Confusing Week 24 vs Week 36 for JAK inhibitors</li>
+                        <li>Forgetting that NO AA treatments are curative</li>
+                        <li>Thinking family history is a poor prognostic factor</li>
+                        <li>Ordering routine labs for all AA patients</li>
+                        <li>Using PUVA for AA treatment</li>
+                        <li>Confusing TAC concentrations (2.5mg/ml for scalp, not 5mg/ml)</li>
+                        <li>Missing that Saudi prevalence is HIGHER than Western countries</li>
+                        <li>Forgetting psychological support is FUNDAMENTAL</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>📚 Quick Reference Numbers</h3>
+                    <div class="prevalence-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">2.5mg/ml</span>
+                            <div>TAC concentration</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4-6 weeks</span>
+                            <div>TAC injection interval</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">≥50</span>
+                            <div>SALT for extensive disease</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">36 hours</span>
+                            <div>DPCP dermatitis duration</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">12 months</span>
+                            <div>Prostaglandin F2a minimum</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">75%</span>
+                            <div>SALT reduction goal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emphasis-box">
+                    <h3>🏆 Final Exam Strategy</h3>
+                    <p>Focus on the <span class="highlight-red">Saudi-specific data</span>, <span class="highlight-yellow">treatment success criteria</span>, and <span class="highlight-blue">poor prognostic factors</span>. Remember that AA management is individualized, no treatments are curative, and psychological support is fundamental. Master the treatment algorithm and you'll excel!</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all nav tabs
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+        }
+
+        function toggleCollapsible(element) {
+            const content = element.nextElementSibling;
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+            } else {
+                content.classList.add('active');
+            }
+        }
+
+        function showAnswer(questionId, selectedAnswer) {
+            const answerDiv = document.getElementById(questionId);
+            let answerContent = '';
+            
+            switch(questionId) {
+                case 'q1':
+                    if (selectedAnswer === 'B') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>Cytotoxic CD8+NKG2D+ T cells are activated by the autoimmune response targeting exposed hair follicle autoantigens. This is mediated by a local surge of interferon gamma that collapses the hair follicle immune privilege.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is B) Cytotoxic CD8+NKG2D+ T cells. These are the primary cells responsible for the autoimmune attack in AA.</p>';
+                    }
+                    break;
+                case 'q2':
+                    if (selectedAnswer === 'B') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>For JAK inhibitors specifically, success of treatment should be reached maximum by week 36, unlike other treatments which are assessed at week 24.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is B) Week 36. This is a special exception for JAK inhibitors only.</p>';
+                    }
+                    break;
+                case 'q3':
+                    if (selectedAnswer === 'B') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>Severity of disease at onset in adults is the MOST important negative prognostic indicator. Remember this for board exams!</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is B) Severity of disease at onset. This is explicitly stated as the most important negative prognostic indicator.</p>';
+                    }
+                    break;
+                case 'q4':
+                    if (selectedAnswer === 'B') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>The prevalence of AA in Saudi Arabia is 2.3-5.2%, which is HIGHER than Western countries. Saudi patients also present at younger ages.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is B) 2.3-5.2%. This Saudi-specific data is important for your board exam.</p>';
+                    }
+                    break;
+                case 'q5':
+                    if (selectedAnswer === 'C') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>The recommended dose for scalp patchy AA is 2.5 mg/ml at higher volume of 8 ml per session, with injections spaced 4-6 weeks apart.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is C) 2.5 mg/ml. This is the standard concentration for scalp patchy AA.</p>';
+                    }
+                    break;
+                case 'q6':
+                    if (selectedAnswer === 'C') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>Extensive disease is defined as SALT score ≥ 50, which is one of the main indications for considering systemic treatment.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is C) SALT ≥ 50. This threshold defines extensive disease requiring systemic treatment consideration.</p>';
+                    }
+                    break;
+                case 'q7':
+                    if (selectedAnswer === 'C') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>It is estimated that 40% of patients with Trisomy 21 (Down syndrome) will develop AT/AU. Down syndrome is associated with 9% prevalence of AA.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is C) 40%. This high percentage makes Trisomy 21 a significant poor prognostic factor.</p>';
+                    }
+                    break;
+                case 'q8':
+                    if (selectedAnswer === 'B') {
+                        answerContent = '<div style="color: #00b894; font-weight: bold;">✅ CORRECT!</div><p>The ideal concentration for DPCP can be identified by the presence of mild tolerable dermatitis that lasts 36 hours.</p>';
+                    } else {
+                        answerContent = '<div style="color: #000; font-weight: bold;">❌ Incorrect</div><p>The correct answer is B) 36 hours. This is the target duration for mild tolerable dermatitis with DPCP treatment.</p>';
+                    }
+                    break;
+            }
+            
+            answerDiv.innerHTML = answerContent;
+            answerDiv.style.display = 'block';
+        }
+
+        // Add interactive elements and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to interactive elements
+            const interactiveElements = document.querySelectorAll('.interactive-element');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

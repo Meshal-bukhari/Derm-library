@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morphea & Lichen Sclerosus: Interactive Board Review</title>
+  <style>
+    :root {
+      --primary: #4a6da7;
+      --secondary: #a76d4a;
+      --light-primary: #eef1f8;
+      --light-secondary: #f8f1ee;
+      --mcq-highlight: #ffeb99;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --neutral: #f5f5f5;
+      --border-radius: 8px;
+      --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--light-primary), var(--light-secondary));
+      border-radius: var(--border-radius);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin: 25px 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      margin: 20px 0 10px;
+      color: var(--secondary);
+    }
+    
+    h4 {
+      font-size: 1.2rem;
+      margin: 15px 0 8px;
+      color: #555;
+    }
+    
+    p, li {
+      margin-bottom: 10px;
+    }
+    
+    ul, ol {
+      padding-left: 25px;
+      margin-bottom: 15px;
+    }
+    
+    .tab-container {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+      font-weight: 600;
+    }
+    
+    .tab.active {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom: 1px solid #fff;
+      margin-bottom: -1px;
+    }
+    
+    .content {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 0 0 5px 5px;
+    }
+    
+    .content.active {
+      display: block;
+    }
+    
+    .mcq-point {
+      background-color: var(--mcq-highlight);
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--warning);
+      position: relative;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .mcq-point::before {
+      content: "⭐ MCQ";
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #995500;
+    }
+    
+    .clinical-pearl {
+      background-color: var(--light-primary);
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .clinical-pearl::before {
+      content: "💡 Clinical Pearl";
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .comparison-table th {
+      background-color: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 12px;
+    }
+    
+    .comparison-table td {
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .treatment-box {
+      background-color: #e8f5e9;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--success);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .pathology-box {
+      background-color: #e3f2fd;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid #2196f3;
+      box-shadow: var(--box-shadow);
+    }
+    
+    details {
+      margin: 15px 0;
+      padding: 10px 15px;
+      background-color: var(--neutral);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 5px 0;
+    }
+    
+    details[open] summary {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    
+    .two-columns {
+      display: flex;
+      gap: 20px;
+      margin: 15px 0;
+    }
+    
+    .column {
+      flex: 1;
+    }
+    
+    .quick-facts {
+      background-color: #fff8e1;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      border: 1px solid #ffe082;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .algorithm-container {
+      background-color: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: var(--border-radius);
+      border: 1px solid #ddd;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .quiz-container {
+      background-color: #f3e5f5;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .quiz-question {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .quiz-options {
+      margin-bottom: 15px;
+    }
+    
+    .quiz-option {
+      margin: 5px 0;
+      padding: 8px 10px;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .quiz-option:hover {
+      background-color: #ede7f6;
+    }
+    
+    .quiz-answer {
+      display: none;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    
+    .show-answer {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .pathogenesis-flow {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .path-step {
+      flex: 1;
+      padding: 10px;
+      margin: 0 5px;
+      background-color: #f1f8e9;
+      border-radius: var(--border-radius);
+      position: relative;
+    }
+    
+    .path-step:not(:last-child):after {
+      content: "→";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: var(--primary);
+    }
+    
+    @media print {
+      body {
+        font-size: 12px;
+        padding: 0;
+      }
+      
+      .mcq-point, .clinical-pearl, .treatment-box, .pathology-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      
+      .tab, .show-answer, .quiz-option {
+        display: none;
+      }
+      
+      .content {
+        display: block !important;
+      }
+      
+      .quiz-answer {
+        display: block !important;
+      }
+      
+      details {
+        page-break-inside: avoid;
+      }
+      
+      details[open] {
+        display: block;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .two-columns {
+        flex-direction: column;
+      }
+      
+      .comparison-table {
+        font-size: 0.9rem;
+      }
+      
+      .pathogenesis-flow {
+        flex-direction: column;
+      }
+      
+      .path-step:not(:last-child):after {
+        content: "↓";
+        position: static;
+        display: block;
+        transform: none;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Morphea & Lichen Sclerosus</h1>
+    <p>Interactive Board Review Guide</p>
+  </header>
+
+  <div class="tab-container">
+    <div class="tab active" onclick="openTab(event, 'overview')">Overview</div>
+    <div class="tab" onclick="openTab(event, 'morphea')">Morphea</div>
+    <div class="tab" onclick="openTab(event, 'lichen-sclerosus')">Lichen Sclerosus</div>
+    <div class="tab" onclick="openTab(event, 'treatment')">Treatment</div>
+    <div class="tab" onclick="openTab(event, 'mcq-review')">MCQ Review</div>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div id="overview" class="content active">
+    <div class="quick-facts">
+      <h3>Key Concepts</h3>
+      <ul>
+        <li>Morphea and Lichen Sclerosus are distinct inflammatory skin disorders that lead to fibrosis</li>
+        <li>Morphea involves the dermis and subcutaneous tissue</li>
+        <li>Lichen sclerosus involves the epidermis and upper dermis</li>
+        <li>6% of patients develop these two entities simultaneously</li>
+        <li>They may be triggered by the same mechanism</li>
+      </ul>
+    </div>
+
+    <div class="two-columns">
+      <div class="column">
+        <h3>Morphea Overview</h3>
+        <ul>
+          <li>Vascular changes, inflammatory infiltrate, and fibrosis identical to systemic sclerosis</li>
+          <li>Female:Male ratio of 2.6:1</li>
+          <li>Asymmetric distribution</li>
+          <li>Rarely involves internal organs (mainly ocular and neurological in Perry-Romberg)</li>
+          <li>Can cause significant morbidity (pain, contractures, compromised joint mobility)</li>
+          <li>Sclerosis can lead to growth retardation, and in severe cases, microamelia</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Lichen Sclerosus Overview</h3>
+        <ul>
+          <li>Inflammatory disorder primarily of the superficial dermis or submucosa</li>
+          <li>Female predominance (10:1)</li>
+          <li>Bimodal age distribution: First peak at 8-13 years, second peak at 40-50s</li>
+          <li>85% of patients have genital involvement</li>
+          <li>4-6% risk of SCC</li>
+          <li>In males, known as balanitis xerotica obliterans</li>
+          <li>Common complications: phimosis or scarring of vaginal introitus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcq-point">
+      Morphea and lichen sclerosus coexist in 6% of patients
+    </div>
+
+    <div class="clinical-pearl">
+      Although both morphea and systemic sclerosis (SSc) have similar histopathology, they are easily differentiated clinically. Morphea is asymmetric and rarely involves internal organs, while systemic sclerosis presents with Raynaud's phenomenon, digital sclerosis, and GI or lung involvement.
+    </div>
+  </div>
+
+  <!-- MORPHEA TAB -->
+  <div id="morphea" class="content">
+    <h2>Morphea (Localized Scleroderma)</h2>
+
+    <div class="mcq-point">
+      The overall most common subtype of morphea is plaque-type, followed by linear morphea
+    </div>
+
+    <div class="mcq-point">
+      The most common subtype of morphea in children is linear morphea
+    </div>
+
+    <h3>Clinical Classification</h3>
+    <div class="two-columns">
+      <div class="column">
+        <details>
+          <summary>Plaque-type Morphea</summary>
+          <ul>
+            <li>Most common variant</li>
+            <li>Erythematous-violaceous indurated plaques</li>
+            <li>Undergoes centrifugal expansion</li>
+            <li>With time, progresses into sclerotic/scar-like tissue</li>
+            <li>Mostly on the trunk, but multiple asymmetric lesions may occur</li>
+            <li>Shiny atrophy centrally with violaceous ring peripherally (lilac border)</li>
+            <li>Lilac ring is a sign of disease activity</li>
+            <li>Loss of skin appendages</li>
+            <li>Can be asymptomatic or pruritic due to xerosis</li>
+            <li>3-5 years then arrests, eventually self-resolves, with residual atrophy and dyspigmentation in most patients</li>
+          </ul>
+          <h4>Variants:</h4>
+          <ul>
+            <li>Guttate morphea: small superficial lesions</li>
+            <li>Nodular/keloidal: similar to keloids</li>
+            <li>Atrophoderma of Pasini and Pierini: very superficial hyperpigmented atrophic plaques, "Cliff-drop" border</li>
+            <li>Deep morphea: involves deep dermis, subcutis, and sometimes deeper structures; can cause dystrophic calcinosis cutis</li>
+            <li>Bullous morphea: happens due to obstruction of lymphatics</li>
+          </ul>
+        </details>
+      </div>
+      <div class="column">
+        <details>
+          <summary>Linear Morphea</summary>
+          <ul>
+            <li>2/3 of cases occur in children</li>
+            <li>Begins as small plaque-type morphea that extends longitudinally as a series of plaques that join to form a scar-like band</li>
+            <li>Most common location: lower extremities</li>
+            <li>Tends to involve underlying fascia, muscle, and tendons</li>
+            <li>Can impact mobility, especially if overlying joints</li>
+            <li>Have prolonged periods of quiescence followed by reactivation</li>
+          </ul>
+          <h4>Variants:</h4>
+          <ul>
+            <li><strong>En coup de sabre type:</strong> linear morphea of head/neck, extends from forehead into frontal scalp, unilateral, paramedian location most common, can involve brain/meninges (seizures)</li>
+            <li><strong>Hemifacial atrophy (Perry-Romberg):</strong> severe variant with trigeminal nerve involvement; children need regular ophthalmology and neurology follow-up</li>
+          </ul>
+        </details>
+        
+        <details>
+          <summary>Generalized Morphea</summary>
+          <ul>
+            <li>4 or more plaques, 3cm in diameter, 2 anatomic locations (4,3,2 rule)</li>
+            <li>Starts as common plaque-type morphea but doesn't stop expanding</li>
+            <li>Spares the nipples</li>
+            <li>Involvement of intercostal muscles can impair breathing</li>
+          </ul>
+        </details>
+        
+        <details>
+          <summary>Disabling Pansclerotic Morphea</summary>
+          <ul>
+            <li>Variant seen in children similar to generalized morphea</li>
+            <li>Can be deep enough to involve bones</li>
+            <li>Lifelong disabilities due to atrophy of underlying muscles and joint contractures</li>
+            <li>Periodontal atrophy may occur</li>
+            <li>Involvement of esophagus and lung is rarely seen</li>
+          </ul>
+          <div class="mcq-point">
+            Squamous cell carcinoma (SCC) risk due to chronic ulceration in disabling pansclerotic morphea
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>Pathogenesis</h3>
+    <div class="pathogenesis-flow">
+      <div class="path-step">
+        <strong>Trigger</strong>
+        <p>Trauma, injections, vaccinations, X-irradiation, medications</p>
+      </div>
+      <div class="path-step">
+        <strong>Vascular Dysfunction</strong>
+        <p>Reduced capillaries, tissue hypoxia</p>
+      </div>
+      <div class="path-step">
+        <strong>Immune Response</strong>
+        <p>Th2 mediated, IL-4, IL-13, TGF-β</p>
+      </div>
+      <div class="path-step">
+        <strong>Sclerosis</strong>
+        <p>Activated T cells stimulate fibroblasts to produce collagen</p>
+      </div>
+    </div>
+
+    <h3>Autoantibodies in Morphea</h3>
+    <div class="mcq-point">
+      Anti-ssDNA is associated with linear and generalized morphea
+    </div>
+    
+    <div class="mcq-point">
+      Eosinophilia may occur in morphea
+    </div>
+
+    <ul>
+      <li>Increased incidence of anti-topoisomerase IIa, -histone, -fibrillin1, and -phospholipid</li>
+      <li>ANA with high titers in linear and generalized morphea</li>
+      <li>Antibodies may correlate with disease activity</li>
+      <li>In linear morphea:
+        <ul>
+          <li>Anti-histone is associated with functional limitation</li>
+          <li>ANA is associated with extensive body involvement</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Pathology</h3>
+    <div class="pathology-box">
+      <p><strong>Note:</strong> Must take a deep biopsy</p>
+      <h4>Early Findings:</h4>
+      <ul>
+        <li>Endothelial cell swelling</li>
+        <li>Dermal lymphocytic infiltrate composed of CD4+ T cells and sometimes eosinophils, plasma cells and mast cells</li>
+        <li>The infiltrate is most prominent at the dermal-subcutis junction (deeper than SSc)</li>
+        <li>Loss of CD34+ dendritic cells</li>
+      </ul>
+      
+      <h4>Late Findings:</h4>
+      <ul>
+        <li>"Square biopsy sign"</li>
+        <li>The inflammatory infiltrate disappears</li>
+        <li>Flattened DEJ</li>
+        <li>Reduced capillaries</li>
+        <li>Homogeneous, densely packed collagen bundles</li>
+        <li>Atrophic and trapped eccrine glands</li>
+        <li>In deep morphea: replacement of involved structures (fat, fascia, muscle) with collagen bundles</li>
+      </ul>
+    </div>
+
+    <h3>Extracutaneous Manifestations</h3>
+    <ul>
+      <li>Musculoskeletal/articular is the most common (11%)</li>
+      <li>Neurological (4%)</li>
+      <li>Ocular (2%)</li>
+      <li>85% of patients with Perry-Romberg have neurological and ocular manifestations</li>
+    </ul>
+
+    <div class="clinical-pearl">
+      Melorheostosis = roughening of long bone surfaces underlying area of linear morphea (also seen in Buschke-Ollendorff syndrome) that resembles wax dripping down the side of a candle on X-ray
+    </div>
+  </div>
+
+  <!-- LICHEN SCLEROSUS TAB -->
+  <div id="lichen-sclerosus" class="content">
+    <h2>Lichen Sclerosus</h2>
+
+    <div class="quick-facts">
+      <ul>
+        <li>Inflammatory disorder primarily of the superficial dermis or submucosa</li>
+        <li>85% of patients have genital involvement</li>
+        <li>4-6% risk of SCC</li>
+        <li>Bimodal age distribution: 8-13 years first peak, 40-50s second peak</li>
+        <li>Genital lichen sclerosus in males known as balanitis xerotica obliterans</li>
+        <li>Frequently co-exists with generalized or plaque-type morphea (6%)</li>
+      </ul>
+    </div>
+
+    <div class="mcq-point">
+      Female predominance in lichen sclerosus is 10:1, but some studies found 1:1
+    </div>
+
+    <h3>Pathogenesis</h3>
+    <ul>
+      <li>Unclear etiology</li>
+      <li>Primarily a Th1 response (vs Th2 in morphea)</li>
+      <li>Associated with other autoimmune disorders, especially thyroid disease in females (15%)</li>
+      <li>Also associated with: pernicious anemia, localized scleroderma/morphea (6%), psoriasis, and vitiligo</li>
+      <li>Hormonal factors: predominance in postmenopausal women, resolution in pregnancy, and history of OCP use in patients with LS</li>
+    </ul>
+    
+    <div class="mcq-point">
+      HLA-DQ7 association with lichen sclerosus
+    </div>
+    
+    <div class="mcq-point">
+      Autoantibodies against ECM1 present in 80% of lichen sclerosus patients
+    </div>
+
+    <h3>Clinical Features</h3>
+    <div class="two-columns">
+      <div class="column">
+        <h4>Anogenital Lichen Sclerosus (85%)</h4>
+        <ul>
+          <li>Sclerotic, ivory-white, atrophic, and flat-topped papules coalescing into plaques</li>
+          <li>Figure-of-eight configuration in women</li>
+          <li>Glans penis and foreskin in men (rare to have anal involvement)</li>
+          <li>Purpura within the lesion is a helpful diagnostic sign</li>
+          <li>With time: fusion of labia minora to majora, obliteration of clitoral hood, and narrowing of vaginal introitus in women; acquired phimosis or paraphimosis in men</li>
+          <li>Eruptive melanocytic nevi can occur</li>
+        </ul>
+        <div class="mcq-point">
+          Pruritus is the most frequent symptom in anogenital lichen sclerosus
+        </div>
+        <p>Other symptoms include dysuria, dyspareunia, pain upon defecation, and constipation in children</p>
+      </div>
+      <div class="column">
+        <h4>Extragenital Lichen Sclerosus (15-20%)</h4>
+        <ul>
+          <li>Favors the trunk and proximal extremities</li>
+          <li>Predilection sites: neck, shoulders, flexor surfaces of the wrists, and sites of physical trauma or continuous pressure</li>
+          <li>Scar-like papules and plaques, usually ivory in color with a shiny/wrinkled surface</li>
+          <li>Follicular plugging more prominent compared to genital LS</li>
+          <li>Involvement of other mucosal areas is rare</li>
+          <li>In oral mucosa: bluish-white papules up to 5mm in diameter may occur on the buccal mucosa</li>
+        </ul>
+        <div class="mcq-point">
+          Extragenital lichen sclerosus is usually asymptomatic
+        </div>
+      </div>
+    </div>
+
+    <h3>Pathology</h3>
+    <div class="pathology-box">
+      <div class="mcq-point">
+        Follicular plugging is a histopathological feature of lichen sclerosus
+      </div>
+      
+      <div class="mcq-point">
+        Papillary dermal edema is a histopathological feature of lichen sclerosus
+      </div>
+      
+      <ul>
+        <li>Compact orthohyperkeratosis</li>
+        <li>Epidermal atrophy</li>
+        <li>Band-like interface dermatitis</li>
+        <li>Homogenized collagen</li>
+        <li>"Red, white, and blue sign": 
+          <ul>
+            <li>Red: pink-red orthokeratosis</li>
+            <li>White: white-pale upper dermis</li>
+            <li>Blue: band-like interface dermatitis</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h3>Differential Diagnosis</h3>
+    <ul>
+      <li>Erosive lichen planus</li>
+      <li>Vulvar eczema</li>
+      <li>Lichen simplex chronicus</li>
+      <li>Morphea</li>
+      <li>Mucous membrane pemphigoid</li>
+      <li>Child sexual abuse (in pediatric cases)</li>
+    </ul>
+  </div>
+
+  <!-- TREATMENT TAB -->
+  <div id="treatment" class="content">
+    <h2>Treatment Approaches</h2>
+
+    <div class="two-columns">
+      <div class="column">
+        <h3>Morphea Treatment</h3>
+        <div class="treatment-box">
+          <h4>Treatment Based on Subtype & Severity</h4>
+          <ul>
+            <li><strong>Superficial circumscribed lesions:</strong>
+              <ul>
+                <li>Topical steroids</li>
+                <li>Topical Vitamin D analogues</li>
+                <li>Topical retinoids</li>
+                <li>Topical calcineurin inhibitors</li>
+                <li>Imiquimod</li>
+              </ul>
+            </li>
+            <li><strong>Extensive disease without internal organ involvement:</strong>
+              <ul>
+                <li>Phototherapy: UVA1, PUVA (NB-UVB not effective)</li>
+              </ul>
+            </li>
+            <li><strong>Severe-moderate active morphea:</strong>
+              <ul>
+                <li>First line: Methotrexate</li>
+                <li>Systemic steroids for short duration to halt progression</li>
+              </ul>
+            </li>
+            <li><strong>Inactive lesions:</strong>
+              <ul>
+                <li>Referral as indicated</li>
+                <li>Local excision or fillers for atrophic areas</li>
+              </ul>
+            </li>
+            <li><strong>Other options:</strong>
+              <ul>
+                <li>Imatinib</li>
+                <li>JAK inhibitors</li>
+                <li>Penicillin</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Lichen Sclerosus Treatment</h3>
+        <div class="treatment-box">
+          <h4>First-line Therapy</h4>
+          <ul>
+            <li>Ultrapotent topical steroids
+              <ul>
+                <li>Daily application for 3 months, then decrease potency or duration</li>
+                <li>Maintenance: 2x/week</li>
+              </ul>
+            </li>
+            <li>Soap substitutes and emollients</li>
+            <li>Circumcision in men with phimosis</li>
+          </ul>
+          
+          <h4>Second-line Therapy</h4>
+          <ul>
+            <li>Topical calcineurin inhibitors
+              <ul>
+                <li>Pimecrolimus better than tacrolimus</li>
+                <li>Theoretical risk of SCC and HPV</li>
+              </ul>
+            </li>
+            <li>PUVA/UVA1 or MTX in resistant cases</li>
+            <li>Surgical correction for females with severe fibrosis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="algorithm-container">
+      <h3>Treatment Algorithm for Morphea</h3>
+      <p>Active morphea is characterized by:</p>
+      <ul>
+        <li>Erythema and edema</li>
+        <li>Peripheral induration and erythema</li>
+        <li>Lesion expansion</li>
+        <li>New lesion formation</li>
+      </ul>
+      
+      <p><strong>If any of these present:</strong></p>
+      <ul>
+        <li>Assess for functional impairment or significant disfigurement</li>
+        <li>If present: Methotrexate +/- systemic glucocorticoids and referral to physical therapy</li>
+        <li>If absent: Consider depth, extent, progression, and location</li>
+      </ul>
+      
+      <p><strong>Treatment options based on presentation:</strong></p>
+      <ul>
+        <li>Single or few dermal plaques: Topical therapies (corticosteroids, tacrolimus, vitamin D analogs, or intralesional corticosteroids)</li>
+        <li>Extensive dermal plaques: Phototherapy</li>
+        <li>Extensive or rapidly progressing deep morphea: Methotrexate +/- systemic glucocorticoids</li>
+        <li>Limited, slowly progressing deep morphea: Intralesional corticosteroids or methotrexate</li>
+      </ul>
+      
+      <p><strong>For inactive disease with damage:</strong></p>
+      <ul>
+        <li>Refer to specialists (PT/OT, orthopedics, plastic surgery) for functional or cosmetic impairment</li>
+        <li>Continue to monitor for recurrence of disease activity</li>
+      </ul>
+    </div>
+
+    <div class="clinical-pearl">
+      In linear morphea affecting the face/head, regular monitoring by ophthalmology and neurology is essential to screen for involvement. Similarly, for linear morphea of extremities, assessment of muscle involvement (MRI/US + CK/aldolase) and joint mobility is important.
+    </div>
+  </div>
+
+  <!-- MCQ REVIEW TAB -->
+  <div id="mcq-review" class="content">
+    <h2>Board Exam Review</h2>
+    <p>Focus on these high-yield MCQ points that have been tested in previous exams:</p>
+
+    <div class="quiz-container">
+      <div class="quiz-question">1. Which is the most common subtype of morphea overall?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Linear morphea</div>
+        <div class="quiz-option">B. Plaque-type morphea</div>
+        <div class="quiz-option">C. Generalized morphea</div>
+        <div class="quiz-option">D. Deep morphea</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer1')">Show Answer</button>
+      <div id="answer1" class="quiz-answer">
+        <p><strong>Answer: B. Plaque-type morphea</strong></p>
+        <p>The overall most common subtype of morphea is plaque-type, followed by linear. Linear morphea is the most common subtype in children.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">2. Which antibody is associated with linear and generalized morphea?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Anti-dsDNA</div>
+        <div class="quiz-option">B. Anti-ssDNA</div>
+        <div class="quiz-option">C. Anti-centromere</div>
+        <div class="quiz-option">D. Anti-Scl-70</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer2')">Show Answer</button>
+      <div id="answer2" class="quiz-answer">
+        <p><strong>Answer: B. Anti-ssDNA</strong></p>
+        <p>Anti-ssDNA is associated with linear and generalized morphea. Anti-histone is associated with functional limitation, and ANA is associated with extensive body involvement in linear morphea.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">3. What is the female to male ratio in lichen sclerosus?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. 1:1</div>
+        <div class="quiz-option">B. 3:1</div>
+        <div class="quiz-option">C. 5:1</div>
+        <div class="quiz-option">D. 10:1</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer3')">Show Answer</button>
+      <div id="answer3" class="quiz-answer">
+        <p><strong>Answer: D. 10:1</strong></p>
+        <p>Female predominance in lichen sclerosus is 10:1, although some studies found 1:1. This is a point specifically noted as appearing in previous MCQs.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">4. Which HLA is associated with lichen sclerosus?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. HLA-B27</div>
+        <div class="quiz-option">B. HLA-DQ7</div>
+        <div class="quiz-option">C. HLA-DR4</div>
+        <div class="quiz-option">D. HLA-A1</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer4')">Show Answer</button>
+      <div id="answer4" class="quiz-answer">
+        <p><strong>Answer: B. HLA-DQ7</strong></p>
+        <p>HLA-DQ7 is associated with lichen sclerosus according to previous board exams.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">5. What is the most frequent symptom in genital lichen sclerosus?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Pain</div>
+        <div class="quiz-option">B. Pruritus</div>
+        <div class="quiz-option">C. Dysuria</div>
+        <div class="quiz-option">D. Dyspareunia</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer5')">Show Answer</button>
+      <div id="answer5" class="quiz-answer">
+        <p><strong>Answer: B. Pruritus</strong></p>
+        <p>Pruritus is the most frequent symptom in genital lichen sclerosus. Other symptoms include dysuria, dyspareunia, and pain upon defecation.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">6. Which finding is a histopathological feature of lichen sclerosus?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Mucin deposits</div>
+        <div class="quiz-option">B. Follicular plugging</div>
+        <div class="quiz-option">C. Granulomatous inflammation</div>
+        <div class="quiz-option">D. Acantholysis</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer6')">Show Answer</button>
+      <div id="answer6" class="quiz-answer">
+        <p><strong>Answer: B. Follicular plugging</strong></p>
+        <p>Follicular plugging is a histopathological feature of lichen sclerosus, as is papillary dermal edema.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">7. Which malignancy is associated with disabling pansclerotic morphea?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Basal cell carcinoma</div>
+        <div class="quiz-option">B. Squamous cell carcinoma</div>
+        <div class="quiz-option">C. Melanoma</div>
+        <div class="quiz-option">D. Dermatofibrosarcoma protuberans</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer7')">Show Answer</button>
+      <div id="answer7" class="quiz-answer">
+        <p><strong>Answer: B. Squamous cell carcinoma</strong></p>
+        <p>Squamous cell carcinoma (SCC) due to chronic ulceration is associated with disabling pansclerotic morphea.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">8. What percentage of lichen sclerosus patients have autoantibodies against ECM1?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. 40%</div>
+        <div class="quiz-option">B. 60%</div>
+        <div class="quiz-option">C. 80%</div>
+        <div class="quiz-option">D. 100%</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer8')">Show Answer</button>
+      <div id="answer8" class="quiz-answer">
+        <p><strong>Answer: C. 80%</strong></p>
+        <p>Autoantibodies against ECM1 are present in 80% of lichen sclerosus patients.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">9. Which of these is a characteristic feature of extragenital lichen sclerosus?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Usually symptomatic with burning pain</div>
+        <div class="quiz-option">B. Usually asymptomatic</div>
+        <div class="quiz-option">C. Always accompanied by genital involvement</div>
+        <div class="quiz-option">D. Follicular plugging is less prominent than in genital LS</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer9')">Show Answer</button>
+      <div id="answer9" class="quiz-answer">
+        <p><strong>Answer: B. Usually asymptomatic</strong></p>
+        <p>Extragenital lichen sclerosus is usually asymptomatic, in contrast to genital lichen sclerosus which commonly presents with pruritus.</p>
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">10. Which laboratory finding may be present in morphea?</div>
+      <div class="quiz-options">
+        <div class="quiz-option">A. Eosinophilia</div>
+        <div class="quiz-option">B. Thrombocytopenia</div>
+        <div class="quiz-option">C. Elevated creatinine</div>
+        <div class="quiz-option">D. Hypocalcemia</div>
+      </div>
+      <button class="show-answer" onclick="toggleAnswer('answer10')">Show Answer</button>
+      <div id="answer10" class="quiz-answer">
+        <p><strong>Answer: A. Eosinophilia</strong></p>
+        <p>Eosinophilia may occur in morphea.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, content, tabs;
+      content = document.getElementsByClassName("content");
+      for (i = 0; i < content.length; i++) {
+        content[i].className = content[i].className.replace(" active", "");
+      }
+      tabs = document.getElementsByClassName("tab");
+      for (i = 0; i < tabs.length; i++) {
+        tabs[i].className = tabs[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).className += " active";
+      evt.currentTarget.className += " active";
+    }
+    
+    function toggleAnswer(answerId) {
+      var answer = document.getElementById(answerId);
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

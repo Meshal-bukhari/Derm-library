@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laugier-Hunziker Syndrome: Board Review Hub</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script> <!-- Replace with your actual FontAwesome Kit code or use a general CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: #2c3e50; /* Deep Blue-Gray */
+            color: #ecf0f1; /* Light Gray/White */
+            padding: 25px 20px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        header h2 {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #bdc3c7; /* Lighter gray for subtitle */
+        }
+
+        .quick-facts {
+            background-color: #e8f6f3; /* Light teal */
+            border-left: 5px solid #16a085; /* Teal accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .quick-facts span {
+            font-weight: 500;
+            margin: 5px 10px;
+            display: flex;
+            align-items: center;
+        }
+        .quick-facts i {
+            margin-right: 8px;
+            color: #16a085;
+        }
+
+        nav.breadcrumbs {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        nav.breadcrumbs a {
+            color: #2980b9; /* Blue link */
+            text-decoration: none;
+        }
+        nav.breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: #2c3e50; /* Deep Blue-Gray */
+            border-bottom: 2px solid #1abc9c; /* Teal underline */
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+        h4 {
+            color: #34495e; /* Darker Blue-Gray */
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fdfefe;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .card-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #16a085; /* Teal */
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .card-header i {
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        ul li::before {
+            content: "\f138"; /* FontAwesome circle-right or similar */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #1abc9c; /* Teal */
+        }
+
+        .highlight {
+            background-color: #fcf3cf; /* Light yellow */
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .critical-alert {
+            background-color: #fdd; /* Light red */
+            border: 1px solid #f55;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #c33;
+        }
+        .critical-alert i {
+            margin-right: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #eaf2f8; /* Light blue-gray */
+            color: #2c3e50;
+        }
+
+        .details-group summary {
+            font-weight: bold;
+            padding: 10px;
+            background-color: #e8f6f3; /* Light teal */
+            border: 1px solid #a2d9ce; /* Lighter teal border */
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            list-style: none; /* Remove default marker */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .details-group summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
+        .details-group summary::after {
+            content: '\f078'; /* Chevron down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            transition: transform 0.2s;
+        }
+        .details-group[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .details-content {
+            padding: 15px;
+            border: 1px solid #a2d9ce;
+            border-top: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        .details-content ul li::before { content: "\f0da"; /* caret-right */ }
+
+
+        .visual-placeholder {
+            width: 100%;
+            height: 150px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #777;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .diagnostic-pearl {
+            background-color: #fff9e6; /* Light gold */
+            border-left: 5px solid #ffc107; /* Gold */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .diagnostic-pearl i { color: #ffc107; margin-right: 8px; }
+
+        .management-pearl {
+            background-color: #e6fff3; /* Light green */
+            border-left: 5px solid #28a745; /* Green */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .management-pearl i { color: #28a745; margin-right: 8px; }
+
+        .caution-box {
+            background-color: #ffebee; /* Light pink/red */
+            border-left: 5px solid #f44336; /* Red */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .caution-box i { color: #f44336; margin-right: 8px; }
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* Space between items */
+        }
+
+        .flex-item {
+            flex: 1; /* Each item takes equal space */
+            min-width: 250px; /* Minimum width before wrapping */
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        .flex-item h5 {
+            margin-top: 0;
+            color: #16a085; /* Teal */
+        }
+        
+        .references {
+            font-size: 0.8em;
+            color: #555;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .references ul li::before { display: none; }
+        .references ul li { margin-bottom: 5px; padding-left: 0; }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #e0e0e0;
+        }
+        .logo-placeholder {
+            font-weight: bold;
+            color: #3498db; /* Blue */
+        }
+
+        /* Specific styles for Baran's classification */
+        .baran-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .baran-type {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            border: 1px solid #a2d9ce; /* Lighter teal border */
+            border-radius: 4px;
+            background-color: #f0fafa;
+        }
+        .baran-type h5 {
+            margin-top: 0;
+            color: #117a65; /* Darker Teal */
+            font-size: 1em;
+        }
+        .baran-type p {
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Laugier-Hunziker Syndrome (LHS)</h1>
+            <h2>A Comprehensive Board Review & Clinical Guide</h2>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="#synopsis">Synopsis</a> | 
+            <a href="#lookfor">Clinical Features</a> | 
+            <a href="#nails">Nail Involvement</a> | 
+            <a href="#pearls">Diagnostic Pearls</a> | 
+            <a href="#ddx">Differential Diagnosis</a> | 
+            <a href="#tests">Best Tests</a> | 
+            <a href="#management">Management</a> |
+            <a href="#takeaways">Key Takeaways</a>
+        </nav>
+
+        <div class="quick-facts">
+            <span><i class="fas fa-shield-alt"></i>Benign Condition</span>
+            <span><i class="fas fa-puzzle-piece"></i>Acquired (Generally)</span>
+            <span><i class="fas fa-palette"></i>Macular Hyperpigmentation</span>
+            <span><i class="fas fa-hand-paper"></i>Mucocutaneous & Nails</span>
+            <span><i class="fas fa-microscope"></i>Diagnosis of Exclusion</span>
+        </div>
+
+        <section id="synopsis" class="section">
+            <h3><i class="fas fa-info-circle"></i> Synopsis & Etiology</h3>
+            <p><strong>Laugier-Hunziker syndrome (LHS)</strong> is a <span class="highlight">rare, benign</span> condition characterized by macular hyperpigmentation of mucocutaneous surfaces and nails. While a few familial cases exist, it's predominantly considered an <span class="highlight">acquired condition</span> with no definitive genetic defects identified.</p>
+            
+            <h4>Epidemiology:</h4>
+            <ul>
+                <li><strong>Prevalence:</strong> Fewer than 200 reported cases.</li>
+                <li><strong>Demographics:</strong> Highest in individuals of Northern European descent.</li>
+                <li><strong>Gender:</strong> Women more frequently affected (Female to Male ratio 2:1).</li>
+                <li><strong>Onset:</strong> Typically manifests in middle-aged adults, with gradual and progressive pigmentation.</li>
+            </ul>
+
+            <h4>Etiology: The Melanocyte Activation Mystery</h4>
+            <p>The exact cause of LHS remains <span class="highlight">unclear</span>. Histopathology suggests a <span class="highlight">functional alteration of melanocytes</span>. These cells appear activated, leading to continually synthesized higher amounts of melanin chronically. However, the initial trigger for this melanocyte activation is unknown.</p>
+            <p><strong>Key Point:</strong> It's about melanocyte *activity*, not necessarily an increase in their *number* (important for histo!).</p>
+            <p><em>Recognizing LHS is crucial to differentiate it from pigmentary disorders with malignant potential or other systemic implications. As a benign entity, LHS lesions don't require therapy unless for cosmetic reasons.</em></p>
+             <div class="visual-placeholder">
+                <i class="fas fa-image fa-2x" style="margin-right:10px;"></i>
+                Concept: Images of oral brown/gray macules, pigmented nail bands. (As described in VisualDx® original text)
+            </div>
+        </section>
+
+        <section id="lookfor" class="section">
+            <h3><i class="fas fa-search"></i> Look For: Clinical Manifestations</h3>
+            <p>Macular pigmentation is the hallmark. Lesions can be <span class="highlight">gray, brown, or blue-black</span> and vary in shape (lenticular, oval, linear) and definition (well- or ill-defined borders). They can be solitary or confluent.</p>
+
+            <div class="grid-container">
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-mouth-guard"></i> Mucocutaneous Macules</div>
+                    <h5><i class="fas fa-map-marker-alt"></i> Most Common Sites:</h5>
+                    <ul>
+                        <li><strong>Lips:</strong> Especially the <span class="highlight">lower lip</span>.</li>
+                        <li><strong>Oral Cavity:</strong> Buccal mucosa and hard palate are prime spots.</li>
+                    </ul>
+                    <h5><i class="fas fa-map-pin"></i> Less Frequent Sites:</h5>
+                    <ul>
+                        <li>Tongue, gingiva</li>
+                        <li>Anogenital mucosa</li>
+                        <li>Palms and soles</li>
+                    </ul>
+                    <h5><i class="fas fa-binoculars"></i> Rare Sites of Involvement:</h5>
+                    <ul>
+                        <li>Neck, thorax, abdomen</li>
+                        <li>Conjunctiva, sclera</li>
+                        <li>Esophagus</li>
+                    </ul>
+                </div>
+
+                <div id="nails" class="card">
+                    <div class="card-header"><i class="fas fa-hand-sparkles"></i> Nail Involvement: A Key Feature</div>
+                    <p>Nails are the <span class="highlight">most commonly involved extraoral sites</span> (up to 60% of cases). Fingernails are more frequently affected than toenails.</p>
+                    
+                    <h4>Baran's Classification System for Nail Pigmentation:</h4>
+                    <div class="baran-types">
+                        <div class="baran-type">
+                            <h5>Type 1: Single Streak</h5>
+                            <p>A single longitudinal streak, 1-2 mm in diameter.</p>
+                        </div>
+                        <div class="baran-type">
+                            <h5>Type 2: Paired Streaks</h5>
+                            <p>A pair of longitudinal streaks, typically on the lateral nail plate, each 2-3 mm in diameter.</p>
+                        </div>
+                        <div class="baran-type">
+                            <h5>Type 3: Half-Nail Pigmentation</h5>
+                            <p>Uniform pigmentation of either the radial or ulnar half of the nail plate.</p>
+                        </div>
+                    </div>
+                    <p style="margin-top:10px;"><strong>Other Variants:</strong> Uniform pigmentation of the entire nail plate and irregular, stippled pigmentation have also been reported.</p>
+                     <div class="critical-alert" style="margin-top: 15px;">
+                        <i class="fas fa-exclamation-triangle"></i> Nail pigmentation may present as <span class="highlight">pseudo-Hutchinson sign</span>, warranting a diagnostic work-up to rule out melanoma!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pearls" class="section">
+            <h3><i class="fas fa-lightbulb"></i> Diagnostic Pearls</h3>
+            <div class="diagnostic-pearl">
+                <i class="fas fa-check-circle"></i> <strong>Asymptomatic Nature:</strong> Except for cosmetic concerns, LHS is not bothersome. There's an absence of local and systemic symptoms.
+            </div>
+            <div class="diagnostic-pearl">
+                <i class="fas fa-fingerprint"></i> <strong>Isolated Nail Pigmentation:</strong> While nail pigmentation is characteristic, other nail changes or deformities are <span class="highlight">NOT</span> associated with LHS. This is a key differentiator!
+            </div>
+            <div class="diagnostic-pearl">
+                <i class="fas fa-user-md"></i> <strong>Melanoma Mimic:</strong> Nail pigmentation can appear as a pseudo-Hutchinson sign. <span class="highlight critical-alert" style="padding:2px 4px; border:none; background-color: #ffe0e0;">ALWAYS consider and rule out melanoma.</span>
+            </div>
+        </section>
+
+        <section id="ddx" class="section">
+            <h3><i class="fas fa-random"></i> Differential Diagnosis & Pitfalls</h3>
+            <p>It's crucial to differentiate LHS from other pigmentary disorders. Many conditions can present with similar oral or nail findings.</p>
+
+            <details class="details-group">
+                <summary><i class="fas fa-tint"></i> Causes of Diffuse Oral Pigmentation</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Physiologic pigmentation:</strong> Diffuse, bilateral, <span class="highlight">childhood onset</span>.</li>
+                        <li><strong><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Peutz-Jeghers syndrome (PJS):</strong> Periorificial lentiginosis. Multiple diffuse, bilateral macules (lips, oral, intranasal, conjunctival, rectal mucosa). <span class="highlight">Childhood onset.</span> <strong style="color:#c0392b;">Associated with GI polyps (risk of malignancy) - may need endoscopy.</strong></li>
+                        <li><strong>Cronkhite-Canada syndrome:</strong> Nonfamilial GI polyposis with cutaneous hyperpigmented macules, <span class="highlight">onychodystrophy, and alopecia</span>.</li>
+                        <li><strong>McCune-Albright syndrome:</strong> Polyostotic fibrous dysplasia, café-au-lait spots, gonadotropin-independent <span class="highlight">precocious puberty</span>.</li>
+                        <li><strong><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Carney complex:</strong> Lentigines (lips, intraoral), <span class="highlight">myxomas (cardiac!), endocrine overactivity</span>.</li>
+                        <li><strong><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Primary hypoadrenalism (Addison disease):</strong> Diffuse blue-black streaks/patches on oral mucosa/tongue. Hyperpigmentation (sun-exposed, flexural). Systemic: fatigue, hypotension, electrolyte abnormalities. <strong style="color:#c0392b;">Palms and nails may also be affected. Check cortisol/ACTH.</strong></li>
+                        <li><strong>Other endocrine disorders:</strong> Hyperthyroidism, Cushing disease.</li>
+                        <li><strong>Drug-induced oral pigmentation:</strong> Minocycline, antimalarials, clofazimine, oral contraceptives.</li>
+                        <li><strong>Elevated heavy metal levels:</strong> Lead, bismuth, silver, mercury, gold, arsenic – classically <span class="highlight">blue-black discoloration along the gingival margin</span>.</li>
+                        <li><strong>Postinflammatory pigmentation:</strong> At sites of previous inflammation/trauma (e.g., lichen planus, pemphigus, pemphigoid).</li>
+                        <li><strong>Smoker's melanosis:</strong> Brown-black lesions on anterior labial/buccal mucosa in smokers.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-group">
+                <summary><i class="fas fa-palette" style="color:purple;"></i> Purple Macules (Mimicking Brown)</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Scurvy:</strong> Ecchymosis, dusky purple gingival discoloration, intraoral swelling/hemorrhage.</li>
+                        <li><strong>Kaposi sarcoma:</strong> HIV-positive individuals. Bilateral brown to purple plaques/nodules. Ulcerative/necrotic in advanced stages.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="details-group">
+                <summary><i class="fas fa-map-marker-alt"></i> Differential Diagnosis for Focal Pigmentation</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Melanotic macule:</strong> Usually <1 cm, well-demarcated, light/dark brown. Common in women, young adults. <span class="highlight">Though benign, consider biopsy to rule out melanoma.</span></li>
+                        <li><strong>Pigmented nevi:</strong> Brown or blue macule/papule, often on palate. <span class="highlight">Though benign, consider biopsy to rule out melanoma.</span></li>
+                        <li><strong><i class="fas fa-skull-crossbones" style="color: #c0392b;"></i> Melanoma:</strong> Brown/black patch, <span class="highlight">irregular borders, rapidly growing, ulceration</span>. Common on palate, then gingiva. <strong style="color:#c0392b;">HIGH ALERT!</strong></li>
+                        <li><strong>Hemangioma:</strong> Red-bluish/purple, flat or slightly raised, <span class="highlight">blanches with pressure</span>. Common on tongue.</li>
+                        <li><strong>Varix:</strong> Bluish/purple, irregular elevation, <span class="highlight">blanches with pressure</span> (unless thrombosed). Common on ventral tongue.</li>
+                        <li><strong>Hemorrhage:</strong> Non-blanching macule, papule, or petechiae; may be ecchymotic.</li>
+                        <li><strong>Inherited patterned lentiginosis.</strong></li>
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="details-group">
+                <summary><i class="fas fa-fingerprint"></i> Differential Diagnosis of Nail Pigmentation</summary>
+                <div class="details-content">
+                    <p>Includes <span class="highlight">all causes of longitudinal melanonychia</span>. This is a broad category itself, emphasizing the need to rule out nail melanoma if Hutchinson's sign (or pseudo-Hutchinson) is present.</p>
+                </div>
+            </details>
+        </section>
+
+        <section id="tests" class="section">
+            <h3><i class="fas fa-vial"></i> Best Tests & Histopathology</h3>
+            <p>The diagnosis of LHS is one of <span class="highlight">exclusion</span>; there is no gold standard confirmatory test.</p>
+            
+            <h4><i class="fas fa-microscope"></i> Skin Biopsy & Histopathology:</h4>
+            <p>A biopsy of representative lesions is key to facilitate the diagnostic process and rule out other conditions.</p>
+            <details class="details-group" open> <!-- Open by default -->
+                <summary>Key Histopathology Findings in LHS</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><i class="fas fa-arrow-up" style="color: #27ae60;"></i> <span class="highlight">Increased melanin deposition</span> within keratinocytes of the basal layer of the epidermis.</li>
+                        <li><i class="fas fa-tint" style="color: #8e44ad;"></i> <span class="highlight">Pigment incontinence:</span> Accumulation of melanophages in the papillary dermis.</li>
+                        <li><i class="fas fa-equals" style="color: #3498db;"></i> <span class="highlight critical-alert" style="padding:2px 4px; border:none; background-color: #e6f7ff;">NO change in the distribution, morphology, or number of melanocytes.</span> (Crucial for differentiating from melanocytic neoplasms!)</li>
+                        <li><i class="fas fa-shield-alt" style="color: #2ecc71;"></i> <span class="highlight">Intact basement membrane.</span></li>
+                        <li><i class="fas fa-layer-group" style="color: #f39c12;"></i> Acanthosis (occasionally seen).</li>
+                    </ul>
+                </div>
+            </details>
+
+            <h4><i class="fas fa-stethoscope"></i> Ruling Out Systemic Syndromes:</h4>
+            <p>Based on clinical suspicion, specific tests are warranted:</p>
+            <ul>
+                <li><strong>Peutz-Jeghers Syndrome:</strong> Gastrointestinal endoscopy.</li>
+                <li><strong>Addison Disease:</strong> Serum electrolytes, cortisol, and ACTH levels.</li>
+            </ul>
+        </section>
+
+        <section id="management" class="section">
+            <h3><i class="fas fa-medkit"></i> Management Pearls & Therapy</h3>
+            <p>Upon histopathological confirmation, LHS, as a <span class="highlight">benign entity, does not require further intervention</span> unless for cosmetic reasons.</p>
+
+            <div class="management-pearl">
+                <i class="fas fa-user-shield"></i> <strong>Patient Counseling:</strong> Reassure patients about the benign nature of the condition.
+            </div>
+            
+            <h4>Cosmetic Treatment Options:</h4>
+            <p>Patients may seek removal for cosmesis. Modalities include:</p>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h5><i class="fas fa-snowflake"></i> Cryosurgery</h5>
+                    <p>Effective but carries a risk of recurrence.</p>
+                </div>
+                <div class="flex-item">
+                    <h5><i class="fas fa-radiation"></i> Laser Ablation</h5>
+                    <p>Nd:YAG, Q-switched alexandrite, and diode lasers have been used. Also carries a risk of recurrence.</p>
+                </div>
+            </div>
+
+            <div class="caution-box" style="margin-top: 15px;">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Recurrence Risk:</strong> All cosmetic treatments carry a risk of recurrence.
+            </div>
+            
+            <div class="management-pearl">
+                <i class="fas fa-sun"></i> <strong>Post-Treatment Care:</strong> Instruct patients to <span class="highlight">minimize sun exposure</span> to treated sites to reduce recurrence risk.
+            </div>
+
+            <div class="caution-box">
+                <i class="fas fa-palette"></i> <strong>Cryotherapy in Darker Skin:</strong> <span class="highlight">Hypopigmentation</span> following cryotherapy can be more prominent, frequent, and long-lasting in darker skin types. Discuss this potential side effect thoroughly.
+            </div>
+        </section>
+
+        <section id="takeaways" class="section" style="background-color: #e8f6f3;">
+            <h3><i class="fas fa-star"></i> Key Takeaways for Boards</h3>
+            <ul>
+                <li><strong>LHS is:</strong> <span class="highlight">Benign, Acquired, Mucocutaneous & Nail Hyperpigmentation.</span></li>
+                <li><strong>Etiology Hint:</strong> Think <span class="highlight">MELANOCYTE ACTIVATION</span> (more melanin), not more melanocytes.</li>
+                <li><strong>Clinical Hotspots:</strong> Lower lip, buccal mucosa, hard palate, nails (longitudinal bands).</li>
+                <li><strong>Histopathology CRUX:</strong> Increased basal melanin, pigment incontinence, <span class="highlight critical-alert" style="padding:2px 4px; border:none; background-color: #fff0f0;">NO change in melanocyte number/morphology.</span></li>
+                <li><strong>Nail Alert:</strong> Pseudo-Hutchinson sign? <span class="highlight critical-alert" style="padding:2px 4px; border:none; background-color: #fff0f0;">RULE OUT MELANOMA.</span></li>
+                <li><strong>Systemic Rule-Outs (HIGH YIELD):</strong>
+                    <ul>
+                        <li><strong>Peutz-Jeghers:</strong> Childhood onset, GI polyps (endoscopy).</li>
+                        <li><strong>Addison's Disease:</strong> Systemic symptoms, check cortisol/ACTH.</li>
+                    </ul>
+                </li>
+                <li><strong>Management:</strong> Reassurance. Cosmetic treatment (cryo, laser) optional, risk of recurrence & hypopigmentation (esp. cryo in dark skin).</li>
+                <li><strong>Remember:</strong> Diagnosis of exclusion.</li>
+            </ul>
+        </section>
+        
+        <section class="references">
+            <h4>Codes</h4>
+            <ul>
+                <li><strong>ICD10CM:</strong> K13.70 - Unspecified lesions of oral mucosa</li>
+                <li><strong>SNOMEDCT:</strong> 238706002 - Laugier-Hunziker syndrome</li>
+            </ul>
+            <h4>References from Source Document</h4>
+            <ul>
+                <li>Kaçar N, et al. Dermatol Pract Concept. 2016. (PMID: 26937304)</li>
+                <li>Mahmood T, Menter A. Proc (Bayl Univ Med Cent). 2015. (PMID: 25552795)</li>
+                <li>Nikitakis NG, Koumaki D. Oral Surg Oral Med Oral Pathol Oral Radiol. 2013. (PMID: 23562360)</li>
+                <li>Wang WM, et al. Int J Oral Sci. 2012. (PMID: 23174847)</li>
+                <li>Nayak RS, et al. J Oral Maxillofac Pathol. 2012. (PMID: 22923898)</li>
+                <li>Jabbari A, et al. Dermatol Online J. 2010. (PMID: 21163174)</li>
+                <li>Rangwala S, et al. Dermatol Online J. 2010. (PMID: 21199635)</li>
+                <li>Mignogna MD, et al. Oral Dis. 1999. (PMID: 10218046)</li>
+                <li>Mowad CM, et al. Cutis. 1997. (PMID: 9252732)</li>
+                <li>Veraldi S, et al. J Am Acad Dermatol. 1991. (PMID: 1791220)</li>
+            </ul>
+            <p><em>Contributors (from original text): Chase W. Kwon MD, Susan Burgin MD</em></p>
+            <p><em>Last Reviewed (original text): 02/26/2017 | Last Updated (original text): 10/05/2021</em></p>
+        </section>
+
+        <footer class="footer-info">
+            <p>This page is an educational resource based on the provided "Laugier-Hunziker syndrome.txt" document, designed for dermatology board exam preparation. It is not a substitute for clinical judgment or comprehensive medical textbooks.</p>
+            <p>Copyright © 2025 <span class="logo-placeholder">VisualDx®</span>. All rights reserved. (As per original document)</p>
+        </footer>
+
+    </div>
+    <script>
+        // Simple script for accordion behavior if needed, though <details> is native
+        // Example: Could be used to ensure only one <details> is open at a time in a group
+    </script>
+</body>
+</html>

@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melanoma - Saudi Dermatology Board Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .nav-menu a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            padding: 20px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .section-header:hover {
+            transform: translateX(5px);
+        }
+
+        .section-header::after {
+            content: '▼';
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            padding: 30px;
+            display: block;
+        }
+
+        .section-content.hidden {
+            display: none;
+        }
+
+        /* Color coding for different sections */
+        .intro .section-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .pathogenesis .section-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .epidemiology .section-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .clinical .section-header { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .diagnosis .section-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .staging .section-header { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; }
+        .management .section-header { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333; }
+        .molecular .section-header { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+
+        .high-yield {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border-left: 5px solid #e17055;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .high-yield::before {
+            content: "⚡ HIGH-YIELD: ";
+            color: #d63031;
+            font-weight: bold;
+        }
+
+        .clinical-pearl {
+            background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+            border-left: 5px solid #0984e3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .clinical-pearl::before {
+            content: "💎 CLINICAL PEARL: ";
+            font-weight: bold;
+        }
+
+        .mcq-focus {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            border-left: 5px solid #e84393;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .mcq-focus::before {
+            content: "📝 MCQ FOCUS: ";
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+            transform: scale(1.02);
+            transition: all 0.2s ease;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .algorithm-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .algorithm-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #ffeaa7;
+        }
+
+        .genetics-box {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .risk-factor {
+            display: inline-block;
+            background: #ff7675;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .prognosis-indicator {
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .good-prognosis {
+            background: #00b894;
+            color: white;
+        }
+
+        .poor-prognosis {
+            background: #e17055;
+            color: white;
+        }
+
+        .neutral-prognosis {
+            background: #fdcb6e;
+            color: #333;
+        }
+
+        .dosage-table {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .molecular-target {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .side-effect {
+            background: #fab1a0;
+            color: #2d3436;
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin: 3px;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 2000px;
+        }
+
+        .melanoma-type {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .melanoma-type-header {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .melanoma-type-header:hover {
+            background: #5a67d8;
+        }
+
+        .melanoma-type-content {
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .percentage {
+            background: #667eea;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .age-group {
+            background: #74b9ff;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 0 5px;
+        }
+
+        .location {
+            background: #00cec9;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 MELANOMA</h1>
+            <p>Saudi Dermatology Board - Comprehensive Study Guide</p>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#pathogenesis">Pathogenesis</a></li>
+                <li><a href="#epidemiology">Epidemiology</a></li>
+                <li><a href="#clinical">Clinical Types</a></li>
+                <li><a href="#diagnosis">Diagnosis</a></li>
+                <li><a href="#staging">Staging</a></li>
+                <li><a href="#management">Management</a></li>
+                <li><a href="#molecular">Molecular Therapy</a></li>
+            </ul>
+        </nav>
+
+        <!-- INTRODUCTION SECTION -->
+        <div class="section intro" id="intro">
+            <div class="section-header" onclick="toggleSection('intro-content')">
+                📊 Introduction & Key Statistics
+            </div>
+            <div class="section-content" id="intro-content">
+                <div class="high-yield">
+                    90% of skin cancer deaths are due to melanoma despite being only a small percentage of skin cancers
+                </div>
+
+                <div class="mcq-focus">
+                    Risk hierarchy: White male > White female > Black male > Black female (lowest risk)
+                </div>
+
+                <div class="clinical-pearl">
+                    Age pattern reversal: More common in females <40 years, males >40 years (same pattern as NMSC)
+                </div>
+
+                <div class="two-column">
+                    <div>
+                        <h3>📈 Epidemiology Pearls</h3>
+                        <ul>
+                            <li><strong>Incidence:</strong> ↑ high in Caucasians, low in dark-skinned people</li>
+                            <li><strong>Origin:</strong> <span class="percentage">70% de novo</span>, <span class="percentage">30% from precursor</span></li>
+                            <li><strong>Recurrence:</strong> <span class="percentage">90%</span> of recurrences in first 5 years</li>
+                            <li><strong>Second primary:</strong> 3.5-4.5% risk of second cutaneous melanoma</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>⚠️ Critical Facts</h3>
+                        <div class="algorithm-box">
+                            <div class="step">Sunblock does NOT protect from melanoma and SCC</div>
+                            <div class="step">BCC: little to no effect from sunblock</div>
+                            <div class="step">Type of melanoma does NOT predict prognosis - all have same prognosis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PATHOGENESIS SECTION -->
+        <div class="section pathogenesis" id="pathogenesis">
+            <div class="section-header" onclick="toggleSection('pathogenesis-content')">
+                🧬 Genetic Overview & Pathogenesis
+            </div>
+            <div class="section-content" id="pathogenesis-content">
+                <div class="genetics-box">
+                    <h3>🧬 Genetic Classification</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Non-CSD (Chronic Sun Damage)</h4>
+                            <p><strong>BRAF, NRAS</strong> (same as Congenital melanocytic nevus and NF)</p>
+                        </div>
+                        <div>
+                            <h4>CSD, Acral, Mucosal</h4>
+                            <p><strong>KIT > BRAF, NRAS</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mcq-focus">
+                    BRAF can regulate MITF expression to ensure protein levels compatible with proliferation and survival of melanoma cells
+                </div>
+
+                <h3>🔄 Signaling Pathways</h3>
+
+                <div class="algorithm-box">
+                    <h4>MAPK Pathway</h4>
+                    <div class="step">Receptor KIT → phosphorylation → BRAF, MEK, ERK activation</div>
+                    <div class="step">→ bind to Cyclin D1 → phosphorylate Rb (Retinoblastoma)</div>
+                    <div class="step">→ release E2F from Rb-E2F → E2F works as transcription factor</div>
+                    <div class="step">P16 inhibits Cyclin D1, prevents Rb-E2F release</div>
+                </div>
+
+                <div class="high-yield">
+                    CSD, Acral, Mucosal: (20-40%) KIT, (15-20%) NRAS<br>
+                    Non-CSD: (60%) BRAF (B600V Type)
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>PI3K Pathway</h4>
+                    <div class="step">Activated by KIT → phosphorylation PIP2→PIP3</div>
+                    <div class="step">→ activate AKT → inhibits apoptosis + accelerates cell growth via mTOR</div>
+                </div>
+
+                <div class="clinical-pearl">
+                    WNT signaling: Can promote OR inhibit tumor growth. Inhibits β-Catenin (β-Catenin and APC mutations are rare in melanoma)
+                </div>
+
+                <h3>🛡️ Immune Pathways</h3>
+                <div class="mcq-focus">
+                    MC1R: Activated by melanocortins (ACTH, α-MSH)<br>
+                    Defect in T Cell Signaling: CTLA-4 → inhibitory of CD28<br>
+                    Both CTLA-4 and PD1 inhibit CD28 on cytotoxic T-cells
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Immune Evasion Mechanism</h4>
+                    <div class="step">CD8+ cytotoxic cells need connection with APC</div>
+                    <div class="step">→ go to lymph node → activate more T-cells</div>
+                    <div class="step">CTLA-4 and PD-1 inhibit this process</div>
+                    <div class="step">Treatment: Anti-CTLA-4 and Anti-PD1 to allow self-defense</div>
+                </div>
+
+                <div class="high-yield">
+                    Melanoma produces IL-10 and TGF-β for immunoinhibitory effect → survival<br>
+                    CTLA4 + PD1 are immunoinhibitory → promote melanoma survival
+                </div>
+            </div>
+        </div>
+
+        <!-- EPIDEMIOLOGY & RISK FACTORS -->
+        <div class="section epidemiology" id="epidemiology">
+            <div class="section-header" onclick="toggleSection('epidemiology-content')">
+                📊 Risk Factors & Epidemiology
+            </div>
+            <div class="section-content" id="epidemiology-content">
+                <div class="high-yield">
+                    Number of melanocytic nevi is MORE important than UV exposure in melanoma development
+                </div>
+
+                <h3>⚠️ Risk Factors Hierarchy</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Risk Factor</th>
+                            <th>Relative Risk</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>10 Atypical Nevus</strong></td>
+                            <td><span class="poor-prognosis">32-fold</span></td>
+                            <td>Highest risk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>100 Acquired Nevus</strong></td>
+                            <td><span class="poor-prognosis">8-10 fold</span></td>
+                            <td>>100 adults, >50 pediatric</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5 Atypical Nevus</strong></td>
+                            <td><span class="neutral-prognosis">4-6 fold</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple Solar Lentigo</strong></td>
+                            <td><span class="neutral-prognosis">3-4 fold</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>MC1R Mutation</strong></td>
+                            <td><span class="good-prognosis">1.5-3 fold</span></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    Relative risks are multiplicative: Person with >100 MN + >5 AMN + multiple SL = 10 × 5 × 3 = 150-fold risk
+                </div>
+
+                <h3>🧬 Familial Melanoma Syndromes</h3>
+                <div class="genetics-box">
+                    <div class="two-column">
+                        <div>
+                            <h4>CDKN2A (p16)</h4>
+                            <p>→ Pancreatic cancer</p>
+                            <h4>CDKN2A (p14)</h4>
+                            <p>→ Neural tumor</p>
+                            <h4>MITF</h4>
+                            <p>→ Renal cell carcinoma</p>
+                        </div>
+                        <div>
+                            <h4>POT1</h4>
+                            <p>→ Glioma</p>
+                            <h4>BAP1</h4>
+                            <p>→ Uveal melanoma, Mesothelioma, RCC, Malignant blue nevus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>📋 Atypical Melanocytic Nevus (AMN) Diagnosis</h3>
+                <div class="clinical-pearl">
+                    Requires at least 3 of these criteria:
+                </div>
+                <div class="algorithm-box">
+                    <div class="step">1. Diameter >5 mm</div>
+                    <div class="step">2. Ill-defined borders</div>
+                    <div class="step">3. Irregular margin</div>
+                    <div class="step">4. Color variation</div>
+                    <div class="step">5. Papular + macular components</div>
+                </div>
+
+                <h3>🌍 Environmental & Other Risk Factors</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Genetic Factors</h4>
+                        <div class="risk-factor">Family history</div>
+                        <div class="risk-factor">Light skin</div>
+                        <div class="risk-factor">Red hair</div>
+                        <div class="risk-factor">DNA repair defects</div>
+                        <div class="risk-factor">Tendency to burn</div>
+                    </div>
+                    <div>
+                        <h4>Environmental Factors</h4>
+                        <div class="risk-factor">Intense intermittent sun exposure</div>
+                        <div class="risk-factor">Chronic sun exposure</div>
+                        <div class="risk-factor">Equatorial residence</div>
+                        <div class="risk-factor">PUVA (possible)</div>
+                        <div class="risk-factor">Tanning bed <35 years</div>
+                        <div class="risk-factor">Immunosuppression</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLINICAL TYPES -->
+        <div class="section clinical" id="clinical">
+            <div class="section-header" onclick="toggleSection('clinical-content')">
+                🔍 Clinical Types of Melanoma
+            </div>
+            <div class="section-content" id="clinical-content">
+                <div class="high-yield">
+                    Important: Number of melanocytic nevi is the key risk factor for Superficial Spreading and Nodular melanoma. Skin type and hair color are important for Lentigo Maligna.
+                </div>
+
+                <!-- Superficial Spreading Melanoma -->
+                <div class="melanoma-type">
+                    <div class="melanoma-type-header" onclick="toggleMelanomaType('ssm')">
+                        Superficial Spreading Melanoma (SSM) - <span class="percentage">60%</span> <span class="age-group">50s</span>
+                    </div>
+                    <div class="melanoma-type-content collapsible-content" id="ssm">
+                        <div class="clinical-pearl">
+                            Most common type, youngest age group (50s)
+                        </div>
+                        <div class="two-column">
+                            <div>
+                                <h4>📍 Location</h4>
+                                <div class="location">Trunk - men</div>
+                                <div class="location">Legs - women</div>
+                                <div class="location">Upper back - men</div>
+                            </div>
+                            <div>
+                                <h4>📏 Characteristics</h4>
+                                <ul>
+                                    <li>50% associated with pre-existing lesions</li>
+                                    <li>SSM diameter ≤5 mm</li>
+                                    <li>Horizontal growth pattern initially</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nodular Melanoma -->
+                <div class="melanoma-type">
+                    <div class="melanoma-type-header" onclick="toggleMelanomaType('nodular')">
+                        Nodular Melanoma - <span class="percentage">2nd most common</span> <span class="age-group">6th decade</span>
+                    </div>
+                    <div class="melanoma-type-content collapsible-content" id="nodular">
+                        <div class="mcq-focus">
+                            Thick melanomas (>3mm) were predominantly nodular type
+                        </div>
+                        <div class="two-column">
+                            <div>
+                                <h4>📍 Location</h4>
+                                <div class="location">Trunk</div>
+                                <div class="location">Head and neck</div>
+                                <p><strong>M > F</strong></p>
+                            </div>
+                            <div>
+                                <h4>👥 Demographics</h4>
+                                <ul>
+                                    <li>Older men</li>
+                                    <li>Mostly head and neck</li>
+                                    <li>Associated with fewer nevi</li>
+                                    <li>Vertical growth pattern</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lentigo Maligna Melanoma -->
+                <div class="melanoma-type">
+                    <div class="melanoma-type-header" onclick="toggleMelanomaType('lmm')">
+                        Lentigo Maligna Melanoma (LMM) - <span class="age-group">7th decade</span>
+                    </div>
+                    <div class="melanoma-type-content collapsible-content" id="lmm">
+                        <div class="high-yield">
+                            5% of lentigo maligna lesions progress to lentigo maligna melanoma
+                        </div>
+                        <div class="clinical-pearl">
+                            Here, skin type and hair color are important risk factors (vs. nevus count for SSM/Nodular)
+                        </div>
+                        <div class="two-column">
+                            <div>
+                                <h4>📍 Location</h4>
+                                <div class="location">Face (most common)</div>
+                                <div class="location">Cheeks and nose</div>
+                                <p>Chronically sun-damaged areas</p>
+                            </div>
+                            <div>
+                                <h4>🔬 Dermoscopy Features</h4>
+                                <div class="mcq-focus">
+                                    <strong>Circle in circle:</strong> Hyperpigmented follicular openings<br>
+                                    <strong>Annular granular pattern:</strong> Irregular pigmented dots around follicles<br>
+                                    <strong>Rhomboidal structures:</strong> Do not respect openings
+                                </div>
+                            </div>
+                        </div>
+                        <div class="algorithm-box">
+                            <h4>Dermoscopy Criteria (89% sensitivity, 96% specificity)</h4>
+                            <div class="step">Asymmetric pigmented follicular openings</div>
+                            <div class="step">Dark rhomboidal structures</div>
+                            <div class="step">Slate-gray dots</div>
+                            <div class="step">Slate-gray globules</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acral Lentiginous Melanoma -->
+                <div class="melanoma-type">
+                    <div class="melanoma-type-header" onclick="toggleMelanomaType('alm')">
+                        Acral Lentiginous Melanoma (ALM) - <span class="age-group">7th decade</span>
+                    </div>
+                    <div class="melanoma-type-content collapsible-content" id="alm">
+                        <div class="mcq-focus">
+                            70% of melanoma in Blacks, 45% in Asians. Usually diagnosed at advanced stage. M = F
+                        </div>
+                        <div class="molecular-target">
+                            Due to KIT activation → Treat with KIT inhibitor (Imatinib)
+                            <br>Exons: 11, 13, 17
+                        </div>
+                        <div class="clinical-pearl">
+                            Sole is most common location
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🔬 Special Variants</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="algorithm-box">
+                            <h4>Amelanotic Melanoma</h4>
+                            <div class="step">All types can be amelanotic</div>
+                            <div class="step">No difference in diagnosis and treatment</div>
+                            <div class="step">No difference in prognosis</div>
+                            <div class="step">35% of mucosal melanomas are amelanotic</div>
+                        </div>
+
+                        <div class="algorithm-box">
+                            <h4>Spitzoid Melanoma</h4>
+                            <div class="step">Symmetrical dermal nodule</div>
+                            <div class="step">Do not mature + atypical melanocytes</div>
+                            <div class="step">FISH and CGH to differentiate from Spitz nevus</div>
+                            <div class="step">P16: preserved in Spitz, lost in melanoma</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="algorithm-box">
+                            <h4>Desmoplastic Melanoma</h4>
+                            <div class="step">Sun-exposed areas</div>
+                            <div class="step">Associated with lentigo maligna</div>
+                            <div class="step">Mistaken as fibrosis or scar</div>
+                            <div class="step">Highly infiltrative but does not metastasize</div>
+                        </div>
+
+                        <div class="genetics-box">
+                            <h4>Other Variants</h4>
+                            <p><strong>Clear Cell Sarcoma:</strong> Distal extremities, adolescents, tendons. t(12;22)(q13;q12) EWS-ATF1 fusion</p>
+                            <p><strong>Malignant Blue Nevus:</strong> Scalp, >1cm, atypical spindle cells, necrosis. BAP-1 loss = poor prognosis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>👁️ Ocular & Mucosal Melanoma</h3>
+                <div class="mcq-focus">
+                    Ocular melanoma: Associated with GNAQ > GNA11 (same as nevus of Ota, blue nevus)
+                    <br>Divided into conjunctival and uveal
+                    <br>BAP-1 loss in uveal melanoma = increased metastasis risk and death
+                </div>
+
+                <div class="molecular-target">
+                    Mucosal melanoma: 35% amelanotic, KIT activating mutation, Treat with Imatinib
+                    <br>Occur near mucocutaneous junctions, ~1% of melanomas
+                    <br>Oral: hard palate most common
+                </div>
+
+                <h3>🤰 Special Situations</h3>
+                <div class="clinical-pearl">
+                    Melanoma and pregnancy: No increased risk, only darkening of melanocytic nevi during pregnancy (10% of women experience this)
+                </div>
+
+                <div class="high-yield">
+                    High-risk melanoma in women: Wait 2 years after diagnosis before pregnancy (2/3 of recurrences occur within this period)
+                </div>
+
+                <div class="mcq-focus">
+                    Childhood melanoma: Melanoma with spitzoid features is most common
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAGNOSIS SECTION -->
+        <div class="section diagnosis" id="diagnosis">
+            <div class="section-header" onclick="toggleSection('diagnosis-content')">
+                🔬 Diagnosis & Investigation
+            </div>
+            <div class="section-content" id="diagnosis-content">
+                <div class="high-yield">
+                    "Little Red Riding Hood" sign → redness around mole = risk of melanoma
+                </div>
+
+                <div class="clinical-pearl">
+                    History of change in shape, size, and color is the MOST SENSITIVE clinical sign of melanoma
+                </div>
+
+                <h3>🔍 Clinical Diagnosis</h3>
+                <div class="algorithm-box">
+                    <h4>ABCDE Criteria</h4>
+                    <div class="step">A - Asymmetry</div>
+                    <div class="step">B - Border irregularity</div>
+                    <div class="step">C - Color variation</div>
+                    <div class="step">D - Diameter >6mm</div>
+                    <div class="step">E - Evolution (change)</div>
+                </div>
+
+                <div class="mcq-focus">
+                    Suspect melanoma if >5mm diameter
+                </div>
+
+                <h3>🔬 Dermoscopy (x10 magnification)</h3>
+                <div class="algorithm-box">
+                    <h4>2-Step Dermoscopy Process</h4>
+                    <div class="step">1. Determine if melanocytic in origin or not</div>
+                    <div class="step">2. Look for: pigment network, streaks, aggregated globules, homogeneous blue pigment, parallel pattern (acral lesions)</div>
+                </div>
+
+                <h3>🩸 Vascular Structures by Dermoscopy</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Vessel Type</th>
+                            <th>Associated Lesion</th>
+                            <th>Clinical Significance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Comma-like vessels</strong></td>
+                            <td>Benign melanocytic lesion</td>
+                            <td class="good-prognosis">Benign</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arborizing vessels</strong></td>
+                            <td>Basal cell carcinoma</td>
+                            <td class="neutral-prognosis">BCC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hairpin vessels</strong></td>
+                            <td>Seborrheic keratosis</td>
+                            <td class="good-prognosis">Benign</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dotted/irregular vessels</strong></td>
+                            <td><strong>MELANOMA</strong></td>
+                            <td class="poor-prognosis">Malignant</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Crown vessels</strong></td>
+                            <td>Sebaceous hyperplasia</td>
+                            <td class="good-prognosis">Benign</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Glomerular vessels</strong></td>
+                            <td>Bowen's disease</td>
+                            <td class="poor-prognosis">Malignant</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🎯 Melanoma-Specific Dermoscopy Patterns</h3>
+                <div class="mcq-focus">
+                    Most common patterns in melanoma:
+                    <br>• Multicomponent pattern
+                    <br>• Asymmetric starburst pattern  
+                    <br>• Nonspecific pattern
+                    <br>Plus: atypical network, streaks, atypical dots/globules, irregular blood vessels, regression structures, blue-white veil, radial streaming, pseudopods
+                </div>
+
+                <h3>🔬 Histopathology</h3>
+                <div class="high-yield">
+                    Melanoma follows 2 growth patterns:
+                    <br>• Horizontal (radial) → NO risk of metastases
+                    <br>• Vertical → RISK of metastases
+                </div>
+
+                <h4>📏 Microstaging</h4>
+                <div class="clinical-pearl">
+                    Breslow depth: Measured from top of granular cell layer to deepest point of tumor
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Key Histologic Features</h4>
+                    <div class="step">Breslow depth (most important)</div>
+                    <div class="step">Ulceration</div>
+                    <div class="step">Mitosis/cm²</div>
+                    <div class="step">Surgical margins</div>
+                </div>
+
+                <h3>🧪 Immunohistopathology</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Marker</th>
+                            <th>Use</th>
+                            <th>Special Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>S100</strong></td>
+                            <td>Most reliable in spindle cell pattern lesions</td>
+                            <td>Useful in all types except desmoplastic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HMB-45 (PMEL17/gp100)</strong></td>
+                            <td>Stains melanosomes</td>
+                            <td>Standard melanoma marker</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SOX-10</strong></td>
+                            <td>Helpful in desmoplastic melanoma</td>
+                            <td>When other markers fail</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MITF</strong></td>
+                            <td>Differentiate solar lentigo from lentigo maligna</td>
+                            <td>Stains melanocytes only</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    Desmoplastic melanoma: S100, SOX10, PMEL17 positive; HMB-45, MITF negative
+                </div>
+
+                <h3>🧬 Molecular Analysis</h3>
+                <div class="genetics-box">
+                    <h4>Spitz Nevus vs. Spitzoid Melanoma</h4>
+                    <div class="two-column">
+                        <div>
+                            <h5>CGH (Comparative Genomic Hybridization)</h5>
+                            <p>20% of Spitz nevus show ↑ chromosome 11q → NOT in melanoma</p>
+                        </div>
+                        <div>
+                            <h5>FISH</h5>
+                            <p>Chromosome 6 differentiates benign nevus from melanoma</p>
+                            <p>Loss of p16 → melanoma (vs Spitz nevus)</p>
+                            <p>Spitzoid melanoma with loss of 9p21 → poor prognosis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="high-yield">
+                    Gene Expression Profiling (GEP): Applied to cutaneous melanomas to predict risk of metastasis
+                </div>
+
+                <h3>🧪 Laboratory Workup</h3>
+                <div class="clinical-pearl">
+                    Excisional biopsy with narrow 1-2mm margins is the preferred method for suspected lesions
+                </div>
+
+                <h4>📊 Serum Markers</h4>
+                <div class="molecular-target">
+                    S100B: Most sensitive test to detect melanoma metastatic risk!
+                    <br>Also: MIA (melanoma inhibitory activity)
+                    <br>S100A: Used in Spitz nevus
+                </div>
+
+                <h4>🔍 Workup by Stage</h4>
+                <div class="algorithm-box">
+                    <h4>Stage I, II</h4>
+                    <div class="step">Lymph node ultrasound</div>
+                    <div class="step">Blood workup</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Stage III, IV</h4>
+                    <div class="step">CT PAN (whole body)</div>
+                    <div class="step">S100B levels</div>
+                </div>
+
+                <div class="mcq-focus">
+                    CT: Most sensitive for lung metastases
+                    <br>MRI: Better for intra-abdominal and soft tissue metastases
+                    <br>WHOLE BODY PET-CT: Most sensitive for melanoma metastasis detection
+                </div>
+
+                <h3>📋 Other Diagnostic Methods</h3>
+                <div class="clinical-pearl">
+                    Reflectance Confocal Microscopy (RCM): Advanced diagnostic technique
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGING SECTION -->
+        <div class="section staging" id="staging">
+            <div class="section-header" onclick="toggleSection('staging-content')">
+                📊 TNM Staging & Prognosis
+            </div>
+            <div class="section-content" id="staging-content">
+                <div class="high-yield">
+                    Staging depends on: thickness >1mm, ulceration, mitotic rate >1/mm², age (older), sex (male), site (trunk, head/neck = poor; extremities = good), number of lymph nodes, site of distant metastases
+                </div>
+
+                <h3>📏 T-Stage (Tumor - by 40x microscopy)</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>T-Stage</th>
+                            <th>Thickness</th>
+                            <th>Subcategory</th>
+                            <th>Criteria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tis</strong></td>
+                            <td>In situ</td>
+                            <td>-</td>
+                            <td>Melanoma in situ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T1</strong></td>
+                            <td><1mm</td>
+                            <td>T1a</td>
+                            <td>No ulceration AND mitosis <1/mm²</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>T1b</td>
+                            <td>With ulceration OR mitosis ≥1/mm²</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T2</strong></td>
+                            <td>1-2mm</td>
+                            <td>T2a</td>
+                            <td>No ulceration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>T2b</td>
+                            <td>With ulceration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T3</strong></td>
+                            <td>2-4mm</td>
+                            <td>T3a</td>
+                            <td>No ulceration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>T3b</td>
+                            <td>With ulceration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T4</strong></td>
+                            <td>>4mm</td>
+                            <td>T4a/T4b</td>
+                            <td>Same ulceration criteria</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    Special rule: If thickness 0.8-1mm (even without ulceration) = T1b
+                </div>
+
+                <h3>🔗 N-Stage (Regional Lymph Nodes)</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>N-Stage</th>
+                            <th>Number of Nodes</th>
+                            <th>Subcategory</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>N0</strong></td>
+                            <td>0</td>
+                            <td>-</td>
+                            <td>No regional lymph node metastases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N1</strong></td>
+                            <td>1 node</td>
+                            <td>N1a</td>
+                            <td>Micrometastases</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>N1b</td>
+                            <td>Macrometastases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N2</strong></td>
+                            <td>2-3 nodes</td>
+                            <td>N2a</td>
+                            <td>Micrometastases</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>N2b</td>
+                            <td>Macrometastases</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>N2c</td>
+                            <td>In-transit/satellite metastases without nodal involvement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N3</strong></td>
+                            <td>4 or more</td>
+                            <td>-</td>
+                            <td>4+ regional lymph nodes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🌍 M-Stage (Distant Metastases)</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>M-Stage</th>
+                            <th>Site</th>
+                            <th>LDH Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>M0</strong></td>
+                            <td>No distant metastases</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M1a</strong></td>
+                            <td>Distant skin, subcutaneous, or nodal</td>
+                            <td>Normal LDH</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M1b</strong></td>
+                            <td>Lung metastases</td>
+                            <td>Normal LDH</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M1c</strong></td>
+                            <td>All other visceral sites</td>
+                            <td>↑ Lactate Dehydrogenase</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M1d</strong></td>
+                            <td>CNS metastases</td>
+                            <td>Any LDH</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📊 Overall Staging</h3>
+                <div class="algorithm-box">
+                    <h4>Stage Groups</h4>
+                    <div class="step">Stage 0: Melanoma in situ</div>
+                    <div class="step">Stage I: T1a (IA), T1b/T2a (IB) - Localized</div>
+                    <div class="step">Stage II: T2b (IIA), T3a/T3b/T4a (IIB), T4b (IIC) - Localized</div>
+                    <div class="step">Stage III: Any N1-N3 - Regional lymph nodes</div>
+                    <div class="step">Stage IV: M1 - Distant metastases</div>
+                </div>
+
+                <div class="mcq-focus">
+                    Quick reference: IA/T1a, IB/T1b+T2a, IIA/T2b, IV/M1, III/N1+
+                </div>
+
+                <h3>📈 Survival Rates (10-year)</h3>
+                <div class="two-column">
+                    <div class="algorithm-box">
+                        <h4>By T-Stage</h4>
+                        <div class="step">T1a = <span class="good-prognosis">95%</span></div>
+                        <div class="step">T4a = <span class="poor-prognosis">50%</span> (still Stage IIB/C)</div>
+                    </div>
+                    <div class="high-yield">
+                        Local recurrence is NOT an independent prognostic indicator of survival
+                    </div>
+                </div>
+
+                <h3>🎯 Prognostic Factors</h3>
+                <div class="two-column">
+                    <div>
+                        <h4>Poor Prognosis</h4>
+                        <div class="prognosis-indicator poor-prognosis">Thickness >1mm</div>
+                        <div class="prognosis-indicator poor-prognosis">Ulceration</div>
+                        <div class="prognosis-indicator poor-prognosis">Mitotic rate >1/mm²</div>
+                        <div class="prognosis-indicator poor-prognosis">Older age</div>
+                        <div class="prognosis-indicator poor-prognosis">Male sex</div>
+                        <div class="prognosis-indicator poor-prognosis">Trunk location</div>
+                        <div class="prognosis-indicator poor-prognosis">Head and neck</div>
+                        <div class="prognosis-indicator poor-prognosis">More lymph nodes</div>
+                    </div>
+                    <div>
+                        <h4>Good Prognosis</h4>
+                        <div class="prognosis-indicator good-prognosis">Extremity location</div>
+                        <div class="prognosis-indicator good-prognosis">Normal serum LDH</div>
+                        <div class="prognosis-indicator good-prognosis">Younger age</div>
+                        <div class="prognosis-indicator good-prognosis">Female sex</div>
+                    </div>
+                </div>
+
+                <div class="molecular-target">
+                    Serum S100B is the MOST SENSITIVE test to detect melanoma metastatic risk!
+                    <br>(Also Gene Expression Profiling - GEP)
+                </div>
+            </div>
+        </div>
+
+        <!-- MANAGEMENT SECTION -->
+        <div class="section management" id="management">
+            <div class="section-header" onclick="toggleSection('management-content')">
+                💊 Management & Treatment
+            </div>
+            <div class="section-content" id="management-content">
+                <h3>🔪 Surgical Management by Stage</h3>
+
+                <h4>📏 Stage I & II - Re-excision Margins by Breslow Depth</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Breslow Depth</th>
+                            <th>Surgical Margin</th>
+                            <th>Special Considerations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>In situ</strong></td>
+                            <td>0.5cm (5mm)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lentigo maligna (face)</strong></td>
+                            <td>1cm (10mm)</td>
+                            <td>Use radiation + imiquimod</td>
+                        </tr>
+                        <tr>
+                            <td><strong><1mm</strong></td>
+                            <td>1cm (10mm)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1.01-2mm</strong></td>
+                            <td>2cm (20mm)</td>
+                            <td>Use Mohs for facial/acral lesions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>>2mm</strong></td>
+                            <td>2cm (20mm)</td>
+                            <td>Use Mohs for facial/acral lesions</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    Local recurrence: Any recurrence within 2cm from scar, risk is 4%
+                </div>
+
+                <div class="high-yield">
+                    Nowadays: Do SLNB (NOT ultrasound) if >1mm Breslow depth because 20% have lymph node metastases
+                </div>
+
+                <h4>🔍 Sentinel Lymph Node Biopsy (SLNB)</h4>
+                <div class="algorithm-box">
+                    <h4>SLNB Indications</h4>
+                    <div class="step">Must be done in ALL melanomas >1mm</div>
+                    <div class="step">If positive → complete lymph node dissection</div>
+                    <div class="step">If palpable lymph nodes → direct dissection (already metastatic)</div>
+                </div>
+
+                <div class="clinical-pearl">
+                    If you palpate lymph nodes during examination → Do dissection (means it already metastasized)
+                    <br>Positive lymph node = Stage III → WHOLE BODY PET-CT needed + S100B
+                </div>
+
+                <h3>🎯 Stage III - Regional Metastatic Disease</h3>
+
+                <h4>🔪 Management Options</h4>
+                <div class="algorithm-box">
+                    <h4>Skin Metastases</h4>
+                    <div class="step">Surgery: Primary option</div>
+                    <div class="step">Multiple on one limb: Melphalan infusion</div>
+                    <div class="step">Others: Cryotherapy, laser, intralesional IL-2, interferon, imiquimod</div>
+                </div>
+
+                <div class="high-yield">
+                    Skin satellite and in-transit metastases: Melanoma spread through lymph vessel before reaching lymph nodes
+                    <br>Treatment of choice: Surgical
+                    <br>Alternative: Isolated limb perfusion with melphalan, intralesional IL-2
+                </div>
+
+                <h4>💉 Adjuvant Therapy (Stage II, III)</h4>
+                <div class="clinical-pearl">
+                    Goal: Eliminate micrometastases in high-risk patients
+                </div>
+
+                <div class="dosage-table">
+                    <h4>📋 Interferon-α Dosage Schedules</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Schedule</th>
+                                <th>Dose</th>
+                                <th>Frequency</th>
+                                <th>Duration</th>
+                                <th>Indication</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Low-dose</strong></td>
+                                <td>3 million IU SC</td>
+                                <td>Days 1,3,5 every week</td>
+                                <td>18 months</td>
+                                <td>Stage II-III</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High-dose Initiation</strong></td>
+                                <td>20 million IU/m² IV</td>
+                                <td>Days 1-5 every week</td>
+                                <td>4 weeks</td>
+                                <td>Stage III</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High-dose Maintenance</strong></td>
+                                <td>10 million IU/m² SC</td>
+                                <td>Days 1,3,5 every week</td>
+                                <td>11 months</td>
+                                <td>Stage III</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pegylated Initiation</strong></td>
+                                <td>6 mcg/kg SC</td>
+                                <td>Day 1 every week</td>
+                                <td>8 weeks</td>
+                                <td>Stage III</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pegylated Maintenance</strong></td>
+                                <td>3 mcg/kg SC</td>
+                                <td>Day 1 every week</td>
+                                <td>Total 5 years</td>
+                                <td>Stage III</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="side-effect">
+                    Side Effects: Flu-like symptoms, depression, suicide risk
+                </div>
+
+                <div class="mcq-focus">
+                    Currently, Interferon-α and Pegylated Interferon are the only FDA-approved adjuvant therapies
+                </div>
+
+                <h3>🌍 Stage IV - Distant Metastatic Disease</h3>
+                <div class="high-yield">
+                    Median survival: 9 months. ↑ LDH = poor prognosis
+                </div>
+
+                <h4>🔪 Treatment Modalities</h4>
+                <div class="algorithm-box">
+                    <h4>Surgery</h4>
+                    <div class="step">Palliative resection if feasible</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Radiation Therapy</h4>
+                    <div class="step">Treatment of choice for cerebral metastases</div>
+                    <div class="step">Whole brain radiotherapy + surgical resection (standard)</div>
+                    <div class="step">Other uses: pain control, spinal cord compression, bone metastases, local cutaneous control</div>
+                </div>
+
+                <h4>💊 Systemic Therapy</h4>
+                <div class="molecular-target">
+                    Systemic therapy is the MAINSTAY treatment for Stage IV disease
+                </div>
+
+                <h5>🧪 Chemotherapy</h5>
+                <div class="algorithm-box">
+                    <h4>DTIC (Dacarbazine)</h4>
+                    <div class="step">Most widely used chemotherapy</div>
+                    <div class="step">FDA approved</div>
+                    <div class="step">~10-15% response rate</div>
+                </div>
+
+                <h5>🛡️ Immunotherapy</h5>
+                <div class="algorithm-box">
+                    <h4>High-dose IL-2</h4>
+                    <div class="step">FDA approved: 600,000 IU/kg every 8 hours for 16 doses</div>
+                    <div class="step">High toxicity → needs admission</div>
+                    <div class="step">Low benefit overall</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>CTLA-4 Blockade</h4>
+                    <div class="step">Activate T cells (CD8), activate CD28</div>
+                    <div class="step">Agents: Tremelimumab, Ipilimumab (FDA approved)</div>
+                    <div class="step">Side Effects: Autoimmune complications</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Cancer Vaccines</h4>
+                    <div class="step">Triple peptide: gp100, MART-1/Melan-A, tyrosinase HLA-A2 epitopes</div>
+                    <div class="step">Enhance T-cell production of IFN-γ</div>
+                </div>
+
+                <h4>🦠 Oncolytic Virus Therapy</h4>
+                <div class="molecular-target">
+                    Talimogene laherparepvec (2015 FDA/EMA approved)
+                    <br>Genetically modified live oncolytic herpes virus
+                    <br>For melanoma metastatic to skin and lymph nodes
+                    <br>Injected intralesionally
+                </div>
+
+                <div class="side-effect">Side Effects: Cellulitis</div>
+                <div class="side-effect">Contraindications: Immunosuppressed and pregnant patients</div>
+
+                <h3>📊 Treatment Approach by Stage</h3>
+                <div class="algorithm-box">
+                    <h4>Stage 1A (Thickness <1mm)</h4>
+                    <div class="step">Nothing additional ± ultrasound lymph nodes</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Stage 1B (Thickness ≥1mm)</h4>
+                    <div class="step">Sentinel lymph node biopsy</div>
+                    <div class="step">If positive → lymph node dissection</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Stage III (Positive lymph nodes)</h4>
+                    <div class="step">WHOLE BODY PET-CT + S100B</div>
+                    <div class="step">Adjuvant treatment recommended: Ipilimumab and IFN-α (FDA approved)</div>
+                </div>
+
+                <div class="algorithm-box">
+                    <h4>Stage IV (Visceral involvement on PET-CT)</h4>
+                    <div class="step">Check LDH levels</div>
+                    <div class="step">Surgery if feasible</div>
+                    <div class="step">Radiation for cerebral metastases</div>
+                    <div class="step">Systemic therapy (mainstay)</div>
+                </div>
+
+                <h3>📈 Follow-up Protocol</h3>
+                <div class="high-yield">
+                    90% of all recurrences occur during the first 5 years
+                    <br>Follow-up: 1-4 times per year for 2 years, then every 6-12 months for life
+                    <br>Significant risk of second primary cutaneous melanomas: 3.5-4.5%
+                </div>
+            </div>
+        </div>
+
+        <!-- MOLECULAR TARGETED THERAPY -->
+        <div class="section molecular" id="molecular">
+            <div class="section-header" onclick="toggleSection('molecular-content')">
+                🎯 Molecular Targeted Therapy & Immunotherapy
+            </div>
+            <div class="section-content" id="molecular-content">
+                <h3>🧬 MAPK Pathway Targeting</h3>
+
+                <h4>🎯 BRAF Inhibitors</h4>
+                <div class="molecular-target">
+                    FDA Approved: Dabrafenib, Encorafenib, Vemurafenib
+                    <br>Target: Melanomas with BRAF V600E, V600D, V600K mutations
+                    <br>Dosing: Vemurafenib 960mg
+                </div>
+
+                <div class="side-effect">Side Effects: ↑ UVA sensitivity (vemurafenib), SCCs and keratoacanthomas (25%)</div>
+
+                <div class="mcq-focus">
+                    BRAF + MEK inhibitors → decreased SCC risk (combination reduces side effects)
+                </div>
+
+                <h4>🎯 MEK Inhibitors</h4>
+                <div class="molecular-target">
+                    FDA Approved: Binimetinib, Cobimetinib, Trametinib
+                    <br>Used: Combined with BRAF for better response and lower side effects
+                    <br>Alone: When NRAS mutation detected
+                </div>
+
+                <h4>🎯 c-KIT Inhibitors</h4>
+                <div class="molecular-target">
+                    Agents: Imatinib, Nilotinib, Dasatinib
+                    <br>Good for: Acral melanoma and mucosal melanoma
+                    <br>Target: KIT mutations (exons 11, 13, 17)
+                </div>
+
+                <h3>🛡️ Immune Checkpoint Inhibitors</h3>
+
+                <h4>🔗 Anti-CTLA-4 Antibodies</h4>
+                <div class="molecular-target">
+                    Agents: Ipilimumab (FDA approved), Tremelimumab
+                    <br>Mechanism: Block CTLA-4 to activate T cells
+                </div>
+
+                <h4>🔗 Anti-PD-1 Antibodies</h4>
+                <div class="molecular-target">
+                    Agents: Nivolumab, Pembrolizumab (FDA approved), Pidilizumab
+                    <br>More effective than Anti-CTLA-4 when used alone
+                </div>
+
+                <h4>🔗 Anti-PD-L1 Antibodies</h4>
+                <div class="molecular-target">
+                    Agents: Atezolizumab, Avelumab, Durvalumab
+                    <br>Approved for other cancers (lung, bladder, Merkel cell)
+                </div>
+
+                <div class="clinical-pearl">
+                    Anti-CTLA-4 and Anti-PD-1 are considered FIRST-LINE therapy in Stage IV patients who lack activating BRAF mutation
+                </div>
+
+                <div class="high-yield">
+                    Good response indicator: Development of leukoderma at melanoma site or other skin areas
+                </div>
+
+                <h3>📊 Treatment Selection Algorithm</h3>
+                <div class="algorithm-box">
+                    <h4>Stage IV Treatment Selection</h4>
+                    <div class="step">If BRAF mutation → BRAF + MEK inhibitors</div>
+                    <div class="step">If NRAS mutation → MEK inhibitors alone</div>
+                    <div class="step">If KIT mutation (acral/mucosal) → c-KIT inhibitors</div>
+                    <div class="step">If no targetable mutation → Checkpoint inhibitors (Anti-PD-1 preferred)</div>
+                </div>
+
+                <h3>🧪 Other Novel Therapies</h3>
+
+                <h4>🔬 Adoptive Cell Therapy</h4>
+                <div class="molecular-target">
+                    Goal: Enhance immunity
+                    <br>Ideal number for adoptive transfer: >10¹¹ cells
+                </div>
+
+                <h4>💉 High-dose Interleukin-2</h4>
+                <div class="algorithm-box">
+                    <div class="step">FDA approved but low benefit</div>
+                    <div class="step">High toxicity profile</div>
+                    <div class="step">Requires inpatient administration</div>
+                </div>
+
+                <h4>💉 Cancer Vaccines</h4>
+                <div class="algorithm-box">
+                    <div class="step">Enhance T-cell production of IFN-γ</div>
+                    <div class="step">Multiple antigen targets</div>
+                </div>
+
+                <h4>🦠 Intralesional Oncolytic Virus</h4>
+                <div class="molecular-target">
+                    Talimogene laherparepvec (Herpes virus therapy)
+                    <br>FDA approved for melanoma metastatic to skin and lymph nodes
+                    <br>Contraindicated in immunosuppression and pregnancy
+                </div>
+
+                <h3>📋 Complete FDA-Approved Targeted Therapies</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Agent</th>
+                            <th>Target/Mechanism</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3"><strong>BRAF Inhibitors</strong></td>
+                            <td>Dabrafenib ✓</td>
+                            <td>BRAF V600E/D/K</td>
+                            <td>Selective inhibitor</td>
+                        </tr>
+                        <tr>
+                            <td>Encorafenib</td>
+                            <td>BRAF V600E/D/K</td>
+                            <td>Newer agent</td>
+                        </tr>
+                        <tr>
+                            <td>Vemurafenib ✓</td>
+                            <td>BRAF V600E/D/K</td>
+                            <td>High UVA sensitivity</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><strong>MEK Inhibitors</strong></td>
+                            <td>Binimetinib</td>
+                            <td>MEK1/2</td>
+                            <td>Combination therapy</td>
+                        </tr>
+                        <tr>
+                            <td>Cobimetinib ✓</td>
+                            <td>MEK1/2</td>
+                            <td>With BRAF inhibitors</td>
+                        </tr>
+                        <tr>
+                            <td>Trametinib ✓</td>
+                            <td>MEK1/2</td>
+                            <td>NRAS mutations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anti-CTLA-4</strong></td>
+                            <td>Ipilimumab ✓</td>
+                            <td>CTLA-4 checkpoint</td>
+                            <td>First-line option</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>Anti-PD-1</strong></td>
+                            <td>Nivolumab ✓</td>
+                            <td>PD-1 checkpoint</td>
+                            <td>More effective than CTLA-4</td>
+                        </tr>
+                        <tr>
+                            <td>Pembrolizumab ✓</td>
+                            <td>PD-1 checkpoint</td>
+                            <td>First-line option</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    Memory aid: "Drive a van to a zoo"
+                    <br>Durvalumab, Avelumab, Atezolizumab (PD-L1 inhibitors)
+                </div>
+            </div>
+        </div>
+
+        <!-- REFERENCE TABLES SECTION -->
+        <div class="section" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+            <div class="section-header" onclick="toggleSection('reference-content')" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+                📚 Quick Reference Tables & Criteria
+            </div>
+            <div class="section-content" id="reference-content">
+                <div class="two-column">
+                    <div>
+                        <h3>⚠️ Risk Factors Summary</h3>
+                        <div class="genetics-box">
+                            <h4>Genetic Factors</h4>
+                            <ul>
+                                <li>Family history of cutaneous melanoma</li>
+                                <li>Lightly pigmented skin</li>
+                                <li>Tendency to burn, inability to tan</li>
+                                <li>Red hair color</li>
+                                <li>DNA repair defects (xeroderma pigmentosum)</li>
+                            </ul>
+                        </div>
+
+                        <div class="genetics-box">
+                            <h4>Environmental Factors</h4>
+                            <ul>
+                                <li>Intense intermittent sun exposure</li>
+                                <li>Chronic sun exposure</li>
+                                <li>Residence in equatorial latitudes</li>
+                                <li>PUVA (possible)</li>
+                                <li>Tanning bed use, especially under 35 years</li>
+                                <li>Iatrogenic or acquired immunosuppression</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>📊 Phenotypic Risk Factors</h3>
+                        <div class="algorithm-box">
+                            <h4>Melanocytic Nevi Risk</h4>
+                            <div class="step">100+ MN: ~8-10-fold ↑ risk</div>
+                            <div class="step">5+ AMN: ~4-6-fold ↑ risk</div>
+                            <div class="step">Multiple SL: ~3-4-fold ↑ risk</div>
+                        </div>
+
+                        <div class="high-yield">
+                            Relative risks are multiplicative!
+                            <br>Example: >100 MN + >5 AMN + multiple SL = 10 × 5 × 3 = 150-fold relative risk
+                        </div>
+
+                        <div class="clinical-pearl">
+                            Personal history of cutaneous melanoma significantly increases risk of second primary
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🔬 Histopathologic Diagnosis Criteria</h3>
+                <div class="dosage-table">
+                    <h4>Architectural Pattern</h4>
+                    <div class="two-column">
+                        <div>
+                            <ul>
+                                <li>Asymmetry</li>
+                                <li>Poor circumscription of intraepidermal melanocytic component</li>
+                                <li>Silhouette of tumor base is uneven (except nevoid melanoma)</li>
+                                <li>No maturation of melanocytes with progressive descent</li>
+                                <li>Nests not equidistant from one another</li>
+                                <li>Nests vary in size and shape</li>
+                                <li>Some nests become confluent</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Scatter of melanocytes above dermal-epidermal junction</li>
+                                <li>Solitary units predominate over nests within epidermis</li>
+                                <li>Melanocytes in nests are not cohesive</li>
+                                <li>Melanocytes extend down adnexal epithelium</li>
+                                <li>Sheets of melanocytes within dermis</li>
+                                <li>Large nests at base of lesions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Cytomorphology & Other Features</h4>
+                    <div class="two-column">
+                        <div>
+                            <h5>Cytomorphology</h5>
+                            <ul>
+                                <li>Atypical melanocytes (pleomorphic nuclei)</li>
+                                <li>Mitotic figures</li>
+                                <li>Necrotic melanocytes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Other Features</h5>
+                            <ul>
+                                <li>Signs of regression</li>
+                                <li>Actinic elastosis</li>
+                                <li>"Dusty" melanin within tumor cells</li>
+                                <li>Non-uniform melanin distribution</li>
+                                <li>Plasma cells at base of lesion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🧬 Molecular Diagnostics Comparison</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Detects</th>
+                            <th>Advantages</th>
+                            <th>Disadvantages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CGH</strong></td>
+                            <td>Chromosomal gains/losses</td>
+                            <td>Genome-wide screening without prior knowledge</td>
+                            <td>No mutations, small gains/deletions, balanced translocations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FISH</strong></td>
+                            <td>Deletions, amplifications, translocations</td>
+                            <td>Individual cell evaluation, works with low neoplastic cell %</td>
+                            <td>No mutations, limited chromosomal loci (4-6), poor reproducibility</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GEP</strong></td>
+                            <td>Gene expression levels (20-30 genes)</td>
+                            <td>May predict metastasis risk, distinguish benign from malignant</td>
+                            <td>No genomic aberration info, 80-90% sensitivity/specificity</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mcq-focus">
+                    GEP currently used to predict metastatic risk in uveal melanomas
+                </div>
+
+                <h3>💊 Complete Treatment Reference</h3>
+
+                <h4>📋 Dosage Schedules - Interferon-α</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Schedule</th>
+                            <th>Dose</th>
+                            <th>Frequency</th>
+                            <th>Duration</th>
+                            <th>Indication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Low-dose</strong></td>
+                            <td>3 million IU SC</td>
+                            <td>Days 1, 3 & 5 every week</td>
+                            <td>18 months</td>
+                            <td>Stage II-III</td>
+                        </tr>
+                        <tr>
+                            <td><strong>High-dose Initiation</strong></td>
+                            <td>20 million IU/m² IV rapid infusion</td>
+                            <td>Days 1-5 every week</td>
+                            <td>4 weeks</td>
+                            <td>Stage III (12 months total)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>High-dose Maintenance</strong></td>
+                            <td>10 million IU/m² SC</td>
+                            <td>Days 1, 3 & 5 every week</td>
+                            <td>11 months</td>
+                            <td>Stage III</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pegylated Initiation</strong></td>
+                            <td>6 mcg/kg body weight SC</td>
+                            <td>Day 1 every week</td>
+                            <td>8 weeks</td>
+                            <td>Stage III</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pegylated Maintenance</strong></td>
+                            <td>3 mcg/kg body weight SC</td>
+                            <td>Day 1 every week</td>
+                            <td>Total 5 years</td>
+                            <td>Stage III</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>🎯 Targeted Therapies & Checkpoint Inhibitors</h4>
+                <div class="dosage-table">
+                    <h5>MAPK Pathway Targeting (FDA approved as of July 2017)</h5>
+                    <div class="two-column">
+                        <div>
+                            <h6>BRAF Inhibitors (selective)</h6>
+                            <div class="molecular-target">Dabrafenib ✓</div>
+                            <div class="molecular-target">Encorafenib</div>
+                            <div class="molecular-target">Vemurafenib ✓</div>
+                        </div>
+                        <div>
+                            <h6>MEK Inhibitors</h6>
+                            <div class="molecular-target">Binimetinib</div>
+                            <div class="molecular-target">Cobimetinib ✓</div>
+                            <div class="molecular-target">Trametinib ✓</div>
+                        </div>
+                    </div>
+
+                    <h5>Immune Checkpoint Inhibitors</h5>
+                    <div class="two-column">
+                        <div>
+                            <h6>Anti-CTLA-4 Antibody</h6>
+                            <div class="molecular-target">Ipilimumab ✓</div>
+                            <div class="molecular-target">Tremelimumab</div>
+                            
+                            <h6>Anti-PD-1 Antibody</h6>
+                            <div class="molecular-target">Nivolumab ✓</div>
+                            <div class="molecular-target">Pembrolizumab ✓</div>
+                            <div class="molecular-target">Pidilizumab</div>
+                        </div>
+                        <div>
+                            <h6>Anti-PD-L1 Antibodies</h6>
+                            <div class="molecular-target">Atezolizumab</div>
+                            <p><small>Approved for non-small cell lung cancer and urothelial carcinoma</small></p>
+                            <div class="molecular-target">Avelumab</div>
+                            <p><small>Approved for metastatic Merkel cell carcinoma</small></p>
+                            <div class="molecular-target">Durvalumab</div>
+                            <p><small>Approved for bladder cancer (PD-L1-positive)</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="high-yield">
+                    Target melanomas with specific amino acid substitutions at position 600 in BRAF, most commonly V600E and less often V600D or V600K
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER SUMMARY -->
+        <div class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="section-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                🎯 FINAL HIGH-YIELD SUMMARY
+            </div>
+            <div class="section-content">
+                <div class="two-column">
+                    <div>
+                        <div class="high-yield">
+                            <strong>Key Statistics:</strong>
+                            <br>• 90% skin cancer deaths from melanoma
+                            <br>• 70% de novo, 30% from precursor
+                            <br>• 90% recurrences in first 5 years
+                            <br>• 3.5-4.5% second primary risk
+                        </div>
+
+                        <div class="mcq-focus">
+                            <strong>Critical MCQ Facts:</strong>
+                            <br>• Nevus count > UV exposure for risk
+                            <br>• BRAF (60%) in non-CSD melanoma
+                            <br>• KIT mutations in acral/mucosal
+                            <br>• S100B most sensitive for metastasis
+                        </div>
+
+                        <div class="clinical-pearl">
+                            <strong>Treatment Pearls:</strong>
+                            <br>• SLNB for all >1mm thickness
+                            <br>• Anti-PD-1 > Anti-CTLA-4 efficacy
+                            <br>• BRAF+MEK combo reduces SCC risk
+                            <br>• Whole brain RT + surgery for CNS mets
+                        </div>
+                    </div>
+                    <div>
+                        <div class="algorithm-box" style="background: rgba(255,255,255,0.1);">
+                            <h4>Stage-Based Management</h4>
+                            <div class="step">Stage I: Margins based on thickness</div>
+                            <div class="step">Stage II: Same + consider adjuvant</div>
+                            <div class="step">Stage III: SLNB + adjuvant therapy</div>
+                            <div class="step">Stage IV: Systemic therapy mainstay</div>
+                        </div>
+
+                        <div class="genetics-box" style="background: rgba(255,255,255,0.1);">
+                            <h4>Genetic Syndromes</h4>
+                            <div class="step">CDKN2A → Pancreatic cancer</div>
+                            <div class="step">BAP1 → Uveal, mesothelioma, RCC</div>
+                            <div class="step">MITF → Renal cell carcinoma</div>
+                            <div class="step">POT1 → Glioma</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                    <h3 style="color: white; margin-bottom: 15px;">🌟 GOOD LUCK ON YOUR SAUDI DERMATOLOGY BOARD EXAM! 🌟</h3>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1em;">You've got this! All the essential melanoma knowledge is now organized and ready for your success.</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleSection(sectionId) {
+                const content = document.getElementById(sectionId);
+                const header = content.previousElementSibling;
+                
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    header.classList.remove('collapsed');
+                } else {
+                    content.style.display = 'none';
+                    header.classList.add('collapsed');
+                }
+            }
+
+            function toggleMelanomaType(typeId) {
+                const content = document.getElementById(typeId);
+                
+                if (content.classList.contains('active')) {
+                    content.classList.remove('active');
+                } else {
+                    // Close other open sections
+                    document.querySelectorAll('.collapsible-content').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    content.classList.add('active');
+                }
+            }
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('.nav-menu a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

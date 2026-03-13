@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grover Disease - Board Review</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --main-text-color: #212529;
+            --primary-color: #005a9c; /* A professional blue */
+            --secondary-color: #495057;
+            --accent-color: #ffc107; /* A warm yellow for pearls */
+            --alert-color: #dc3545; /* A distinct red for alerts */
+            --success-color: #28a745; /* Green for treatment */
+            --card-bg: #ffffff;
+            --card-border: #dee2e6;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--main-text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: var(--card-bg);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.8em;
+            margin-bottom: 5px;
+        }
+        header .subtitle {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: #fdfdfd;
+            border: 1px solid var(--card-border);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .pearl-box, .alert-box {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left-width: 8px;
+            border-left-style: solid;
+        }
+        .pearl-box {
+            background-color: #fff9e6;
+            border-color: var(--accent-color);
+        }
+        .alert-box {
+            background-color: #fbebeb;
+            border-color: var(--alert-color);
+        }
+        .pearl-box h3, .alert-box h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .pearl-box h3::before, .alert-box h3::before {
+            font-size: 1.5em;
+            margin-right: 10px;
+            font-weight: 900;
+        }
+        .pearl-box h3::before {
+            content: '💡';
+        }
+        .alert-box h3::before {
+            content: '🚨';
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .drug-list, .histo-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .drug-list li, .histo-list li {
+            padding: 10px;
+            background-color: #f1f3f5;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .histo-list li::before {
+            content: '🔬';
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .treatment-ladder {
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .treatment-step {
+            padding: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .treatment-step:last-child {
+            border-bottom: none;
+        }
+        .treatment-step h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: var(--success-color);
+            display: flex;
+            align-items: center;
+        }
+        .treatment-step h4 .step-number {
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .ddx-card {
+            padding: 15px;
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .ddx-card h4 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .ddx-card ul {
+            padding-left: 15px;
+            margin-bottom: 0;
+        }
+        .ddx-card ul li {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+        .high-yield-ddx {
+            border-left: 4px solid var(--alert-color);
+            background: #fbebeb;
+        }
+        .drug-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .drug-table th, .drug-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .drug-table th {
+            background-color: #e9ecef;
+            color: var(--secondary-color);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.8em;
+            color: #6c757d;
+        }
+        .code-box {
+            background: #e9ecef;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        strong {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Grover Disease</h1>
+            <p class="subtitle">Transient Acantholytic Dermatosis: The Itchy Truncal Mimicker</p>
+        </header>
+
+        <!-- Clinical Snapshot -->
+        <div class="card">
+            <h2>🔎 Clinical Snapshot: At a Glance</h2>
+            <ul>
+                <li><strong>What is it?</strong> An acquired, pruritic, papulovesicular eruption.</li>
+                <li><strong>Who gets it?</strong> Primarily <strong>White men > 30 years old</strong>. (M:F ratio 1.8-7:1)</li>
+                <li><strong>What does it look like?</strong> Discrete, red, scaly papules and papulovesicles.</li>
+                <li><strong>Where is it?</strong> Primarily on the <strong>trunk</strong> (especially the back). Spares palms, soles, genitals.</li>
+                <li><strong>Key Symptom:</strong> Usually <strong>intensely pruritic</strong>, but can be asymptomatic.</li>
+                <li><strong>The Course:</strong> Can be self-resolving, wax and wane for years, or persist.</li>
+            </ul>
+            <div class="code-box">
+                <strong>ICD10CM:</strong> L11.1 - Transient acantholytic dermatosis [Grover]<br>
+                <strong>SNOMEDCT:</strong> 17796002 - Transient acantholytic dermatosis
+            </div>
+        </div>
+
+        <!-- Triggers and Associations -->
+        <h2 class="section-title">🔥 Triggers & Associations</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Common Triggers</h4>
+                <ul>
+                    <li>☀️ Excessive sun exposure</li>
+                    <li>🥵 Heat and sweating (Miliaria-like)</li>
+                    <li>🌵 Dry skin (Xerosis) - linked to winter predominance</li>
+                    <li>🛌 Prolonged bed rest (e.g., hospitalized patients)</li>
+                    <li>☢️ Ionizing radiation</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Associated Conditions</h4>
+                <ul>
+                    <li>Maligancies</li>
+                    <li>Renal failure (acute & chronic)</li>
+                    <li>Atopic dermatitis</li>
+                    <li>Transplantation</li>
+                </ul>
+            </div>
+   
+            </div>
+        </div>
+        
+        <!-- Clinical Presentation & Pearls -->
+        <h2 class="section-title">👀 Clinical Presentation & Diagnostic Pearls</h2>
+        <div class="card">
+            <h3>Look For</h3>
+            <ul>
+                <li><strong>Primary Lesions:</strong> Discrete red papules and papulovesicles on the trunk.</li>
+                <li><strong>Secondary Lesions:</strong> May be excoriated, crusted, or eroded due to intense pruritus.</li>
+                <li><strong>Less Common:</strong> Pustules or vesicles may be seen.</li>
+                <li><strong>Distribution:</strong> Primarily truncal. Proximal extremities and neck can be affected.</li>
+                <li><strong>Negative Finding:</strong> Palms, soles, and genitals are spared.</li>
+            </ul>
+        </div>
+
+        <div class="pearl-box">
+            <h3>💡 Diagnostic Pearl: Impact of Skin Color</h3>
+            <p>This is a key clinical point. The presentation varies:</p>
+            <ul>
+                <li>In <strong>lighter skin</strong>, papules are pink or red.</li>
+                <li>In <strong>darker skin</strong>, papules may appear <strong>violaceous or brown</strong>.</li>
+            </ul>
+        </div>
+        
+        <div class="pearl-box">
+            <h3>💡 Diagnostic Pearl: Dermoscopy</h3>
+            <p>Dermoscopic findings can be a clue: look for <strong>brown, star-like, central patterns with linear vessels surrounded by white halos</strong>.</p>
+        </div>
+
+        <!-- Differential Diagnosis -->
+        <h2 class="section-title">🤔 Differential Diagnosis & Pitfalls</h2>
+        <p>Grover's is a "great mimicker." Organize your DDx by category to avoid being tricked.</p>
+        <div class="card-grid">
+            <div class="ddx-card">
+                <h4>Common Inflammatory</h4>
+                <ul>
+                    <li>Papular Eczema / Atopic Dermatitis</li>
+                    <li>Pityriasis Rosea</li>
+                    <li>Seborrheic Dermatitis</li>
+                    <li>Pityriasis Lichenoides Chronica</li>
+                    <li>Irritant Contact Dermatitis</li>
+                    <li>Urticaria</li>
+                    <li>Secondary Syphilis</li>
+                </ul>
+            </div>
+            <div class="ddx-card">
+                <h4>Follicular / Vesicular</h4>
+                <ul>
+                    <li>Bacterial Folliculitis</li>
+                    <li>Pityrosporum Folliculitis</li>
+                    <li>Acne Vulgaris</li>
+                    <li>Miliaria Rubra</li>
+                    <li>Nonbullous Impetigo</li>
+                    <li>Cutaneous Candidiasis</li>
+                    <li>Scabies / Arthropod Bites</li>
+                </ul>
+            </div>
+            <div class="ddx-card high-yield-ddx">
+                <h4>🚨 Acantholytic Imposters (HIGH YIELD)</h4>
+                <ul>
+                    <li><strong>Pemphigus Foliaceus</strong></li>
+                    <li><strong>Pemphigus Vulgaris</strong></li>
+                    <li><strong>Darier Disease</strong></li>
+                    <li><strong>Hailey-Hailey Disease</strong></li>
+                    <li>Galli-Galli Disease</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Best Tests -->
+        <h2 class="section-title">🔬 Best Tests: The Biopsy Story</h2>
+        <p>A skin biopsy confirms the diagnosis. The key finding is <strong>focal acantholysis</strong>. However, the histologic pattern is variable and can mimic other serious diseases.</p>
+        <div class="alert-box">
+            <h3>🚨 BOARD ALERT: Histology is the Key... and the Trap!</h3>
+            <p>The histologic findings can resemble other major acantholytic disorders. <strong>Clinical correlation is essential.</strong> The pathologist needs the clinical picture to make the right call.</p>
+        </div>
+        
+        <div class="card">
+            <h3>5 Main Histologic Patterns of Acantholysis</h3>
+            <ul class="histo-list">
+                <li><strong>Pemphigus vulgaris-like:</strong> Suprabasilar acantholysis. <strong>(Most common)</strong></li>
+                <li><strong>Darier disease-like:</strong> Focal suprabasilar acantholysis with dyskeratosis. <strong>(Most common)</strong></li>
+                <li><strong>Pemphigus foliaceus-like:</strong> Acantholysis in the upper epidermis.</li>
+                <li><strong>Hailey-Hailey disease-like:</strong> Full-thickness acantholysis ("dilapidated brick wall").</li>
+                <li><strong>Spongiotic:</strong> Acantholysis combined with spongiosis.</li>
+            </ul>
+            <p><strong>Other findings:</strong> Mild superficial perivascular infiltrate with lymphocytes, histiocytes, and scattered eosinophils. Hyperkeratosis and parakeratosis can be present.</p>
+        </div>
+        
+        <div class="pearl-box">
+            <h3>💡 Key Distinguishing Feature</h3>
+            <p><strong>Immunofluorescent studies are NEGATIVE.</strong> This is crucial for differentiating Grover's from true autoimmune blistering diseases like Pemphigus, which will have positive DIF.</p>
+        </div>
+
+        <!-- Management -->
+        <h2 class="section-title">✅ Management Pearls & Therapy</h2>
+        <p>The goal is <strong>symptom control</strong>, as the disease is benign and there is no cure. Many asymptomatic patients desire no treatment. Spontaneous remission can occur.</p>
+        <div class="treatment-ladder">
+            <div class="treatment-step">
+                <h4><span class="step-number">1</span>Patient Counseling & Lifestyle (Foundation)</h4>
+                <ul>
+                    <li>Avoid triggers: excessive heat and sweating.</li>
+                    <li>Gentle skin care to prevent xerosis (dry skin).</li>
+                    <li>Use of emollients and anti-pruritic lotions (pramoxine, menthol).</li>
+                </ul>
+            </div>
+            <div class="treatment-step">
+                <h4><span class="step-number">2</span>First-Line: Topical Corticosteroids</h4>
+                <p><strong>Mid- to high-potency</strong> topical corticosteroids are first-line for pruritus. Use creams over ointments (less occlusive).</p>
+                <ul>
+                    <li><strong>High Potency (Class 1-2):</strong> Clobetasol, Halobetasol, Fluocinonide.</li>
+                    <li><strong>Mid Potency (Class 3-4):</strong> Triamcinolone, Mometasone, Fluocinolone.</li>
+                    <li><strong>Instructions:</strong> Apply BID for limited periods. Avoid face, folds, genitals.</li>
+                </ul>
+            </div>
+            <div class="treatment-step">
+                <h4><span class="step-number">3</span>Adjunctive & Second-Line Therapy</h4>
+                <ul>
+                    <li><strong>Vitamin D Analogs:</strong> Calcipotriene cream, alone or rotated with steroids (e.g., calcipotriene on weekdays, steroids on weekends).</li>
+                    <li><strong>Antihistamines:</strong> Oral antihistamines (fexofenadine, hydroxyzine) for pruritus control.</li>
+                </ul>
+            </div>
+            <div class="treatment-step">
+                <h4><span class="step-number">4</span>Severe or Recalcitrant Disease (Systemic Options)</h4>
+                <p><em>Note: No controlled trials exist for these, based on case reports/series.</em></p>
+                <ul>
+                    <li><strong>Retinoids:</strong> Isotretinoin (0.5-1 mg/kg/day) or Acitretin (0.5 mg/kg/day).</li>
+                    <li><strong>Systemic Corticosteroids:</strong> Prednisone (e.g., 10-60 mg/day) with a taper.</li>
+                    <li><strong>Phototherapy:</strong> Psoralen plus UVA (PUVA).</li>
+                    <li><strong>Other reported options:</strong> Vitamin A, Dupilumab.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Drug Reaction Data -->
+        <h2 class="section-title">💊 Drug Reaction Data</h2>
+        <p>Below is a list of drugs with literature evidence of an adverse association with Grover Disease.</p>
+        <table class="drug-table">
+            <thead>
+                <tr>
+                    <th>Medication / Class</th>
+                    <th>Citations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>anastrozole</td><td>2</td></tr>
+                <tr><td>Antimalarials</td><td>1</td></tr>
+                <tr><td>Antimetabolite (cytarabine)</td><td>2</td></tr>
+                <tr><td>Antineoplastic antibiotic (daunorubicin)</td><td>2</td></tr>
+                <tr><td>Antineoplastic antimicrotubular (docetaxel)</td><td>1</td></tr>
+                <tr><td>Antiparasitic (sulfadoxine + pyrimethamine)</td><td>1</td></tr>
+                <tr><td>Antiviral (ribavirin)</td><td>1</td></tr>
+                <tr><td>Aromatase inhibitor</td><td>2</td></tr>
+                <tr><td>BRAF kinase inhibitor (dabrafenib, vemurafenib)</td><td>3</td></tr>
+                <tr><td>cetuximab (EGFR monoclonal antibody)</td><td>2</td></tr>
+                <tr><td>Chelating agents (penicillamine)</td><td>2</td></tr>
+                <tr><td>Monoclonal antibody (ipilimumab, nivolumab)</td><td>4</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="footer">
+            <p>Content adapted from VisualDx source file. This educational summary is designed for board preparation and clinical recall.</p>
+            <p>Contributors: Ruth X. Wang MD, PhD, Elizabeth B. Wallace MD, Susan Burgin MD</p>
+            <p>Source Last Reviewed: 11/01/2022 | Source Last Updated: 12/23/2024</p>
+            <p>Copyright © 2025 VisualDx®. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

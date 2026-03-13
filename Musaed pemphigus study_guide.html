@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemphigus - Saudi Board Exam Preparation</title>
+    <style>
+        :root {
+            --primary: #3949ab;
+            --secondary: #1e88e5;
+            --accent: #ff6e40;
+            --success: #43a047;
+            --warning: #ffa000;
+            --danger: #e53935;
+            --light: #f5f5f5;
+            --dark: #212121;
+            --pv-color: #7986cb; /* Pemphigus vulgaris */
+            --pf-color: #4fc3f7; /* Pemphigus foliaceus */
+            --pp-color: #ff8a65; /* Paraneoplastic pemphigus */
+            --iga-color: #9ccc65; /* IgA pemphigus */
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subheading {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 15px 0;
+        }
+        
+        h4 {
+            margin-top: 15px;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .definition-card {
+            background-color: #e8eaf6;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .key-point {
+            background-color: #fffde7;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .key-point h4 {
+            color: var(--warning);
+            margin-top: 0;
+        }
+        
+        .mcq-point {
+            background-color: #ffebee;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .mcq-point h4 {
+            color: var(--danger);
+            margin-top: 0;
+        }
+        
+        .pemphigus-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .pemphigus-type-card {
+            flex: 1 1 300px;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pemphigus-type-card h3 {
+            margin-top: 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .pv-card {
+            background-color: rgba(121, 134, 203, 0.1);
+            border-top: 3px solid var(--pv-color);
+        }
+        
+        .pv-card h3 {
+            color: var(--pv-color);
+        }
+        
+        .pf-card {
+            background-color: rgba(79, 195, 247, 0.1);
+            border-top: 3px solid var(--pf-color);
+        }
+        
+        .pf-card h3 {
+            color: var(--pf-color);
+        }
+        
+        .pp-card {
+            background-color: rgba(255, 138, 101, 0.1);
+            border-top: 3px solid var(--pp-color);
+        }
+        
+        .pp-card h3 {
+            color: var(--pp-color);
+        }
+        
+        .iga-card {
+            background-color: rgba(156, 204, 101, 0.1);
+            border-top: 3px solid var(--iga-color);
+        }
+        
+        .iga-card h3 {
+            color: var(--iga-color);
+        }
+        
+        .tab-container {
+            margin-bottom: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: var(--light);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .memory-aid {
+            background-color: #e1f5fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .memory-aid h4 {
+            color: var(--secondary);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .treatment-algorithm {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .treatment-algorithm h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--success);
+        }
+        
+        .pdai-levels {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .pdai-level {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .pdai-moderate {
+            background-color: #c8e6c9;
+            border: 1px solid #a5d6a7;
+        }
+        
+        .pdai-significant {
+            background-color: #fff9c4;
+            border: 1px solid #fff59d;
+        }
+        
+        .pdai-extensive {
+            background-color: #ffccbc;
+            border: 1px solid #ffab91;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            margin-bottom: 20px;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .flashcard-front {
+            background-color: #e8eaf6;
+            border: 1px solid #c5cae9;
+        }
+        
+        .flashcard-back {
+            background-color: #e1f5fe;
+            border: 1px solid #b3e5fc;
+            transform: rotateY(180deg);
+        }
+        
+        .toggle-answer {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle-answer:hover {
+            background-color: var(--secondary);
+        }
+        
+        .hidden-answer {
+            display: none;
+            background-color: #f1f8e9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #757575;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pemphigus-types {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                border-radius: 4px;
+            }
+        }
+
+        /* Quiz styles */
+        .quiz-container {
+            margin-bottom: 30px;
+        }
+        
+        .quiz-question {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .quiz-options {
+            list-style-type: none;
+            margin-left: 0;
+        }
+        
+        .quiz-option {
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .quiz-option.selected {
+            background-color: #e3f2fd;
+            border-color: var(--secondary);
+        }
+        
+        .quiz-option.correct {
+            background-color: #e8f5e9;
+            border-color: var(--success);
+        }
+        
+        .quiz-option.incorrect {
+            background-color: #ffebee;
+            border-color: var(--danger);
+        }
+        
+        .quiz-feedback {
+            display: none;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: #e8f5e9;
+            color: var(--success);
+            display: block;
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: #ffebee;
+            color: var(--danger);
+            display: block;
+        }
+
+        /* Compare table */
+        .compare-table th {
+            background-color: #e8eaf6;
+        }
+        
+        .compare-table th:first-child {
+            width: 20%;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--secondary);
+            cursor: help;
+        }
+        
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chapter 29: Pemphigus</h1>
+            <div class="subheading">Saudi Board Exam Preparation | High-Yield Content</div>
+        </div>
+        
+        <section id="introduction">
+            <h2>Definition & Overview</h2>
+            <div class="definition-card card">
+                <h4>Pemphigus</h4>
+                <p>A group of disorders characterized by <strong>intraepidermal blistering</strong> and <strong>antibodies against cell surface of keratinocytes (KCs)</strong>.</p>
+            </div>
+            
+            <h3>Epidemiology</h3>
+            <ul>
+                <li><strong>Male:Female ratio:</strong> Equal</li>
+                <li><strong>Mean age:</strong> 50-60s</li>
+                <li><strong>Ethnic predisposition:</strong> More common in Jews</li>
+                <li><strong>Geographic distribution:</strong> PV more common than PF except in Tunisia, Finland, and Brazil (1:17 ratio in Brazil)</li>
+            </ul>
+            
+            <div class="mcq-point">
+                <h4>MCQ Alert!</h4>
+                <p>Pay attention to these geographic variations. The 1:17 ratio of PV:PF in Brazil is a high-yield fact for board exams.</p>
+            </div>
+        </section>
+        
+        <section id="pathogenesis">
+            <h2>Pathogenesis</h2>
+            <div class="key-point">
+                <h4>Key Mechanism</h4>
+                <p>Autoantibodies against desmosomal cadherins lead to loss of cell-cell adhesion → blister formation</p>
+            </div>
+            
+            <h3>Molecular Basis</h3>
+            <ul>
+                <li><strong>Cadherins:</strong> Divided into classic adherens (E-, P-, N-cadherins) and desmosomal cadherins (desmogliens and desmocollins)</li>
+                <li><strong>Binding:</strong> Cadherins bind to plaque proteins (α-catenin, β-catenin and plakoglobin)</li>
+                <li><strong>Structure:</strong> Plaque proteins bind to the cell cytoskeleton</li>
+                <li><strong>Autoantibodies:</strong> IgG against DSG1 (160kDa), DSG3 (130kDa), or both are present in pemphigus</li>
+            </ul>
+            
+            <div class="memory-aid">
+                <h4>Memory Aid: Desmoglein Distribution</h4>
+                <ul>
+                    <li><strong>DSG1:</strong> Primarily in superficial epidermis</li>
+                    <li><strong>DSG3:</strong> Primarily in lower epidermis and mucosa</li>
+                    <li><strong>DSG2:</strong> Present in the heart</li>
+                    <li><strong>DSG4:</strong> Present in the hair follicle (mutation leads to autosomal recessive localized hypotrichosis)</li>
+                </ul>
+            </div>
+            
+            <div class="mcq-point">
+                <h4>MCQ Alert!</h4>
+                <ul>
+                    <li>DSG2 is present in the heart</li>
+                    <li>DSG4 is present in the hair follicle, and its mutation leads to autosomal recessive localized hypotrichosis</li>
+                    <li>Armadillo proteins include plakoglobin, plakophilin, and β-catenin</li>
+                </ul>
+            </div>
+            
+            <h3>Compensation Theory</h3>
+            <p>Understanding the compensation theory explains the different clinical manifestations:</p>
+            <ul>
+                <li>In the skin, both DSG1 and DSG3 are present, with DSG1 more in the superficial layers and DSG3 more in the deeper layers</li>
+                <li>In mucosal surfaces, predominantly DSG3 is present</li>
+                <li>In PV (anti-DSG3): Causes mucosal lesions because no DSG1 to compensate in mucosa</li>
+                <li>In PF (anti-DSG1): No mucosal involvement because DSG3 compensates in mucosa, but superficial skin blisters occur</li>
+            </ul>
+        </section>
+        
+        <section id="clinical-features">
+            <h2>Clinical Features</h2>
+            
+            <div class="pemphigus-types">
+                <div class="pemphigus-type-card pv-card">
+                    <h3>Pemphigus Vulgaris (PV)</h3>
+                    <ul>
+                        <li><strong>Mucosal involvement:</strong> 100%</li>
+                        <li><strong>Cutaneous involvement:</strong> 50%</li>
+                        <li><strong>Subgroups:</strong> Mucocutaneous and mucosal-dominant</li>
+                        <li><strong>Lesions:</strong> Flaccid bullae and vesicles with erosions and hemorrhagic crust</li>
+                        <li><strong>Throat involvement:</strong> Hoarseness and difficulty swallowing</li>
+                        <li><strong>Other sites:</strong> Esophagus can also be involved</li>
+                        <li><strong>Signs:</strong> +ve Nikolsky and Asboe-Hansen signs</li>
+                    </ul>
+                    <h4>Unusual Presentations</h4>
+                    <ul>
+                        <li>Paronychia/onychomadesis</li>
+                        <li>Dyshidrotic eczema</li>
+                        <li>Macroglossia</li>
+                        <li>Foot ulcers</li>
+                        <li>Crusted plaques on the face</li>
+                    </ul>
+                    <h4>Associations</h4>
+                    <ul>
+                        <li>Autoimmune thyroiditis</li>
+                        <li>Myasthenia gravis</li>
+                        <li>Thymoma</li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card pv-card">
+                    <h3>Pemphigus Vegetans</h3>
+                    <p>Vegetative variant of vulgaris</p>
+                    <ul>
+                        <li><strong>Mechanism:</strong> Reactive vegetation</li>
+                        <li><strong>Evolution:</strong> Starts as flaccid bullae that rupture and form a fungoid vegetation</li>
+                        <li><strong>Distribution:</strong> Affects the intertriginous areas and the scalp/face</li>
+                        <li><strong>Oral finding:</strong> The tongue may show cereberiform appearance</li>
+                        <li><strong>Types:</strong> Neumann (severe) and Hallopeau (mild)</li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card pf-card">
+                    <h3>Pemphigus Foliaceus (PF)</h3>
+                    <ul>
+                        <li><strong>Lesions:</strong> Scaly crusted erosions on an erythematous base</li>
+                        <li><strong>Mucosal involvement:</strong> None</li>
+                        <li><strong>Distribution:</strong> Seborrheic (face, scalp, upper chest and back)</li>
+                        <li><strong>Notable feature:</strong> Most common vesiculobullous disease to cause erythroderma</li>
+                        <li><strong>Signs:</strong> +ve Nikolsky</li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card pf-card">
+                    <h3>Pemphigus Erythematosus</h3>
+                    <p>Also known as Senear-Usher syndrome</p>
+                    <ul>
+                        <li><strong>Classification:</strong> Localized variant of PF</li>
+                        <li><strong>Distribution:</strong> Involves the malar region of the face</li>
+                        <li><strong>Immunopathology:</strong> Deposition of IgGs within the cell surface of KCs (PF) as well as the basement membrane (lupus, hence pemphigus erythematosus)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pemphigus-types">
+                <div class="pemphigus-type-card pf-card">
+                    <h3>Herpetiform Pemphigus</h3>
+                    <ul>
+                        <li><strong>Variant of:</strong> Can be a variant of PV or PF (PF > PV)</li>
+                        <li><strong>Appearance:</strong> Herpetiform arrangement of vesicles</li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card pf-card">
+                    <h3>Drug-Induced Pemphigus</h3>
+                    <ul>
+                        <li><strong>Common drugs:</strong> Penicillamine and captopril</li>
+                        <li><strong>Ratio:</strong> PF:PV = 4:1</li>
+                        <li><strong>Mechanisms:</strong>
+                            <ul>
+                                <li><strong>Immunologic:</strong> Drugs lead to autoantibody production</li>
+                                <li><strong>Non-immunologic:</strong> Drugs contain sulfhydryl groups that directly interact with DSG sulfhydryl groups → loss of adhesion</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card pp-card">
+                    <h3>Paraneoplastic Pemphigus (PNP)</h3>
+                    <ul>
+                        <li><strong>Associated with:</strong> Both malignant and benign neoplasms</li>
+                        <li><strong>Common associations:</strong>
+                            <ul>
+                                <li>Non-Hodgkin's lymphoma (38%)</li>
+                                <li>CLL (18%)</li>
+                                <li>Castleman tumor (18%)</li>
+                            </ul>
+                        </li>
+                        <li><strong>In children:</strong> Castleman tumor (86%)</li>
+                        <li><strong>Hallmark:</strong> Painful erosive stomatitis</li>
+                        <li><strong>Severity:</strong> Typically severe and resistant to treatment</li>
+                        <li><strong>Mucosal involvement:</strong> Other mucosal surfaces may be involved, leading to scarring and morbidity</li>
+                        <li><strong>Cutaneous features:</strong> Polymorphic, ranging from flaccid or tense bullae to lichenoid papules and plaques</li>
+                        <li><strong>Major complication:</strong> Bronchiolitis obliterans, which can be fatal due to respiratory failure (MCC of death excluding underlying malignancy)</li>
+                    </ul>
+                </div>
+                
+                <div class="pemphigus-type-card iga-card">
+                    <h3>IgA Pemphigus</h3>
+                    <ul>
+                        <li><strong>Antibodies:</strong> IgAs and no IgGs</li>
+                        <li><strong>Subtypes:</strong>
+                            <ul>
+                                <li>Intraepidermal</li>
+                                <li>Subcorneal (subcorneal pustular dermatosis of IgA pemphigus)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Appearance:</strong> Sterile pustules that coalesce to form rings → "Sunflower-like"</li>
+                        <li><strong>Common location:</strong> Axilla and groin</li>
+                        <li><strong>Mucosal involvement:</strong> Rare</li>
+                        <li><strong>Similar to:</strong> Histologically and clinically resembles Sneddon-Wilkinson syndrome, the only way to differentiate between them is by DIF</li>
+                        <li><strong>Target antigens:</strong> The target in the subcorneal subtype is desmocollin 1, while it is unknown in the intraepidermal subtype</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="key-point">
+                <h4>Clinical Pearl: Pemphigus vs. Pemphigoid</h4>
+                <p>Remember the key differences:</p>
+                <ul>
+                    <li><strong>Pemphigus:</strong> Intraepidermal, autoantibodies against desmogleins, flaccid blisters</li>
+                    <li><strong>Pemphigoid:</strong> Subepidermal, autoantibodies against hemidesmosomal proteins, tense blisters</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="pathology">
+            <h2>Pathology</h2>
+            
+            <h3>Biopsy Technique</h3>
+            <ul>
+                <li>Biopsy from early lesion</li>
+                <li>Edge of the bulla including the inflammatory rim for H&E</li>
+                <li>Perilesional for DIF</li>
+            </ul>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab active" onclick="openTab(event, 'path-pv')">Vulgaris</div>
+                    <div class="tab" onclick="openTab(event, 'path-pf')">Foliaceus</div>
+                    <div class="tab" onclick="openTab(event, 'path-pnp')">Paraneoplastic</div>
+                    <div class="tab" onclick="openTab(event, 'path-iga')">IgA Pemphigus</div>
+                </div>
+                
+                <div id="path-pv" class="tab-content active">
+                    <h4>Pemphigus Vulgaris Histopathology</h4>
+                    <ul>
+                        <li><strong>Level of blister:</strong> Suprabasal blister with acantholysis</li>
+                        <li><strong>Characteristic feature:</strong> "Row of tombstone" appearance of the basal cell layer</li>
+                        <li><strong>Infiltrate:</strong> Eosinophilic infiltrate</li>
+                    </ul>
+                    <h4>Pemphigus Vegetans Histopathology</h4>
+                    <p>Same as PV plus:</p>
+                    <ul>
+                        <li>Papillomatosis</li>
+                        <li>Acanthosis</li>
+                        <li>Eosinophilic microabscesses</li>
+                    </ul>
+                </div>
+                
+                <div id="path-pf" class="tab-content">
+                    <h4>Pemphigus Foliaceus Histopathology</h4>
+                    <ul>
+                        <li><strong>Level of blister:</strong> Subcorneal blister with acantholysis</li>
+                        <li><strong>Infiltrate:</strong> Mixed eosinophilic neutrophilic infiltrate</li>
+                    </ul>
+                </div>
+                
+                <div id="path-pnp" class="tab-content">
+                    <h4>Paraneoplastic Pemphigus Histopathology</h4>
+                    <p><strong>Variable presentation:</strong></p>
+                    <ul>
+                        <li>PV-like</li>
+                        <li>EM-like</li>
+                        <li>LP-like</li>
+                    </ul>
+                    <p>Histology depends on the lesion clinically</p>
+                </div>
+                
+                <div id="path-iga" class="tab-content">
+                    <h4>IgA Pemphigus Histopathology</h4>
+                    <ul>
+                        <li><strong>Level of pustule:</strong> Intraepidermal pustules (suprabasal or subcorneal)</li>
+                        <li><strong>Content:</strong> Content of the pustule is primarily neutrophils</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="memory-aid">
+                <h4>Memory Aid: Blister Levels</h4>
+                <ul>
+                    <li><strong>Pemphigus Vulgaris:</strong> SUPRA-basal (deeper in epidermis)</li>
+                    <li><strong>Pemphigus Foliaceus:</strong> SUB-corneal (more superficial)</li>
+                    <li>Remember: Vulgaris goes deeper, Foliaceus stays superficial</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="diagnosis">
+            <h2>Diagnosis</h2>
+            
+            <div class="key-point">
+                <h4>Gold Standard</h4>
+                <p>Identification of autoantibodies through immunological techniques</p>
+            </div>
+            
+            <h3>Diagnostic Techniques</h3>
+            <ul>
+                <li><strong>DIF:</strong> Most reliable and sensitive diagnostic test for all forms of pemphigus</li>
+                <li><strong>IIF:</strong> Detects circulating autoantibodies</li>
+                <li><strong>ELISA:</strong> Can be used to monitor activity and treatment response</li>
+                <li><strong>Other techniques:</strong> Immunoblotting, immunoprecipitation</li>
+            </ul>
+            
+            <div class="mcq-point">
+                <h4>DIF Patterns - High-Yield for Exams!</h4>
+                <p>Remember the pattern for each pemphigus type:</p>
+                <ul>
+                    <li><strong>PV & PF:</strong> IgG deposition in intercellular spaces ("chicken wire", "fishnet", or "honeycomb" pattern)</li>
+                    <li><strong>Pemphigus Erythematosus:</strong> IgG deposition both intercellularly and at basement membrane zone (lupus-like)</li>
+                    <li><strong>Paraneoplastic Pemphigus:</strong> IgG deposition both intercellularly and along basement membrane</li>
+                    <li><strong>IgA Pemphigus:</strong> IgA (not IgG) deposition in intercellular spaces</li>
+                </ul>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h4>What is the key feature that differentiates Sneddon-Wilkinson syndrome from IgA Pemphigus?</h4>
+                        <p>(Click to reveal answer)</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Direct Immunofluorescence (DIF) findings. Both conditions have similar clinical and histological features, but IgA Pemphigus shows intercellular IgA deposition on DIF.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="scoring">
+            <h2>Scoring System</h2>
+            
+            <h3>Pemphigus Disease Area Index (PDAI)</h3>
+            <ul>
+                <li>Ranges from 0-263</li>
+            </ul>
+            
+            <div class="pdai-levels">
+                <div class="pdai-level pdai-moderate">
+                    <h4>Moderate</h4>
+                    <p>14 or lower</p>
+                </div>
+                <div class="pdai-level pdai-significant">
+                    <h4>Significant</h4>
+                    <p>15-44</p>
+                </div>
+                <div class="pdai-level pdai-extensive">
+                    <h4>Extensive</h4>
+                    <p>45 or more</p>
+                </div>
+            </div>
+            
+            <div class="key-point">
+                <h4>Clinical Pearl</h4>
+                <p>The PDAI score is crucial for determining treatment approach. Memorize these thresholds as they dictate first-line therapy choices.</p>
+            </div>
+        </section>
+        
+        <section id="treatment">
+            <h2>Treatment</h2>
+            
+            <div class="treatment-algorithm">
+                <h3>Pemphigus Vulgaris & Foliaceus Treatment</h3>
+                
+                <h4>Based on PDAI Score:</h4>
+                
+                <div class="tab-container">
+                    <div class="tabs">
+                        <div class="tab active" onclick="openTab(event, 'treat-sig')">Significant/Extensive</div>
+                        <div class="tab" onclick="openTab(event, 'treat-mod')">Moderate</div>
+                    </div>
+                    
+                    <div id="treat-sig" class="tab-content active">
+                        <h4>For Significant or Extensive Disease (PDAI 15 or more)</h4>
+                        <h5>First Line</h5>
+                        <ul>
+                            <li><strong>Rituximab + Oral Steroids</strong>
+                                <ul>
+                                    <li>Rituximab dose: 1g 2 weeks apart, then 0.5-1g q6-12 months</li>
+                                    <li>Steroids dose:
+                                        <ul>
+                                            <li>For significant disease: 0.5mg/kg tapered over 3 months</li>
+                                            <li>For extensive disease: 1mg/kg tapered over 6 months</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h5>Second Line</h5>
+                        <ul>
+                            <li>Other steroid sparing agents:
+                                <ul>
+                                    <li>Azathioprine</li>
+                                    <li>Mycophenolate mofetil (MMF)</li>
+                                    <li>IVIG</li>
+                                    <li>Cyclophosphamide</li>
+                                    <li>Plasmapheresis</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h5>Third Line</h5>
+                        <ul>
+                            <li>Dapsone</li>
+                            <li>Tetracyclines</li>
+                            <li>Methotrexate (MTX)</li>
+                            <li>Cyclosporine</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="treat-mod" class="tab-content">
+                        <h4>For Moderate Disease (PDAI 14 or less)</h4>
+                        <h5>First Line</h5>
+                        <ul>
+                            <li><strong>Oral steroids 0.5mg/kg + Dapsone/Tetracycline</strong></li>
+                        </ul>
+                        
+                        <h5>Second Line</h5>
+                        <ul>
+                            <li>Azathioprine</li>
+                            <li>Mycophenolate mofetil (MMF)</li>
+                        </ul>
+                        
+                        <h5>For Recalcitrant Cases</h5>
+                        <ul>
+                            <li>Rituximab</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="treatment-algorithm">
+                <h3>Other Pemphigus Types</h3>
+                
+                <div class="tab-container">
+                    <div class="tabs">
+                        <div class="tab active" onclick="openTab(event, 'treat-iga')">IgA Pemphigus</div>
+                        <div class="tab" onclick="openTab(event, 'treat-pnp')">Paraneoplastic</div>
+                    </div>
+                    
+                    <div id="treat-iga" class="tab-content active">
+                        <h4>IgA Pemphigus Treatment</h4>
+                        <ul>
+                            <li><strong>First Line:</strong> Dapsone</li>
+                            <li><strong>For Recalcitrant Cases:</strong> Oral steroids</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="treat-pnp" class="tab-content">
+                        <h4>Paraneoplastic Pemphigus Treatment</h4>
+                        <ul>
+                            <li><strong>Primary approach:</strong> Treat the underlying malignancy</li>
+                            <li><strong>Supportive therapy:</strong> Systemic steroids</li>
+                            <li><strong>For hematological malignancies:</strong> Rituximab</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mcq-point">
+                <h4>Treatment Algorithm Summary for Exams</h4>
+                <ul>
+                    <li><strong>PV/PF (PDAI ≥15):</strong> Rituximab + Steroids (dose based on severity)</li>
+                    <li><strong>PV/PF (PDAI ≤14):</strong> Steroids + Dapsone/Tetracycline</li>
+                    <li><strong>IgA Pemphigus:</strong> Dapsone first line</li>
+                    <li><strong>PNP:</strong> Treat underlying malignancy first</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="comparison">
+            <h2>Comparison Tables</h2>
+            
+            <h3>Pemphigus Types</h3>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Pemphigus Vulgaris</th>
+                        <th>Pemphigus Foliaceus</th>
+                        <th>Paraneoplastic</th>
+                        <th>IgA Pemphigus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Antigen</td>
+                        <td>DSG3 ± DSG1</td>
+                        <td>DSG1</td>
+                        <td>Multiple (DSG1, DSG3, desmoplakins, etc.)</td>
+                        <td>Desmocollin 1 (subcorneal)</td>
+                    </tr>
+                    <tr>
+                        <td>Mucosal involvement</td>
+                        <td>100%</td>
+                        <td>No</td>
+                        <td>Yes (severe)</td>
+                        <td>Rare</td>
+                    </tr>
+                    <tr>
+                        <td>Blister level</td>
+                        <td>Suprabasal</td>
+                        <td>Subcorneal</td>
+                        <td>Variable</td>
+                        <td>Subcorneal or intraepidermal</td>
+                    </tr>
+                    <tr>
+                        <td>DIF pattern</td>
+                        <td>Intercellular IgG</td>
+                        <td>Intercellular IgG</td>
+                        <td>Intercellular + BMZ IgG</td>
+                        <td>Intercellular IgA</td>
+                    </tr>
+                    <tr>
+                        <td>First-line treatment</td>
+                        <td>Rituximab + Steroids (PDAI ≥15)<br>Steroids + Dapsone/Tetracycline (PDAI ≤14)</td>
+                        <td>Same as PV</td>
+                        <td>Treat malignancy</td>
+                        <td>Dapsone</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Pathology Features</h3>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Blister Level</th>
+                        <th>Key Histological Features</th>
+                        <th>Infiltrate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pemphigus Vulgaris</td>
+                        <td>Suprabasal</td>
+                        <td>"Row of tombstone" appearance</td>
+                        <td>Eosinophilic</td>
+                    </tr>
+                    <tr>
+                        <td>Pemphigus Vegetans</td>
+                        <td>Suprabasal</td>
+                        <td>Papillomatosis, acanthosis, eosinophilic microabscesses</td>
+                        <td>Eosinophilic</td>
+                    </tr>
+                    <tr>
+                        <td>Pemphigus Foliaceus</td>
+                        <td>Subcorneal</td>
+                        <td>Superficial acantholysis</td>
+                        <td>Mixed eosinophilic and neutrophilic</td>
+                    </tr>
+                    <tr>
+                        <td>Paraneoplastic Pemphigus</td>
+                        <td>Variable</td>
+                        <td>PV-like, EM-like, or LP-like</td>
+                        <td>Variable</td>
+                    </tr>
+                    <tr>
+                        <td>IgA Pemphigus</td>
+                        <td>Intraepidermal (subcorneal or suprabasal)</td>
+                        <td>Pustules</td>
+                        <td>Neutrophilic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="quiz">
+            <h2>Self-Assessment Quiz</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p><strong>Question 1:</strong> A 55-year-old man presents with painful oral erosions that have been present for 2 months, followed by the development of flaccid blisters on the trunk. Nikolsky sign is positive. Which pemphigus type is most likely?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="true" onclick="selectOption(this)">Pemphigus vulgaris</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus foliaceus</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus erythematosus</li>
+                        <li class="quiz-option" onclick="selectOption(this)">IgA pemphigus</li>
+                    </ul>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Question 2:</strong> A 60-year-old woman with history of non-Hodgkin's lymphoma presents with severe painful oral erosions, conjunctival inflammation, and polymorphic cutaneous lesions including tense bullae and lichenoid papules. What is the most likely diagnosis?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus vulgaris</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Bullous pemphigoid</li>
+                        <li class="quiz-option" data-correct="true" onclick="selectOption(this)">Paraneoplastic pemphigus</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Erythema multiforme</li>
+                    </ul>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Question 3:</strong> A patient with pemphigus vulgaris has a PDAI score of 50. What is the appropriate first-line treatment?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this)">Oral steroids 0.5mg/kg + dapsone</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Azathioprine monotherapy</li>
+                        <li class="quiz-option" data-correct="true" onclick="selectOption(this)">Rituximab 1g 2 weeks apart + oral steroids 1mg/kg tapered over 6 months</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Dapsone monotherapy</li>
+                    </ul>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Question 4:</strong> Which pemphigus type shows subcorneal pustules with neutrophilic infiltrate histologically and is best treated with dapsone as first-line therapy?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus foliaceus</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus vegetans</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Pemphigus erythematosus</li>
+                        <li class="quiz-option" data-correct="true" onclick="selectOption(this)">IgA pemphigus</li>
+                    </ul>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Question 5:</strong> What is the most common malignancy associated with paraneoplastic pemphigus?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option" data-correct="true" onclick="selectOption(this)">Non-Hodgkin's lymphoma</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Chronic lymphocytic leukemia</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Castleman tumor</li>
+                        <li class="quiz-option" onclick="selectOption(this)">Thymoma</li>
+                    </ul>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Prepared by: Musaed Alsebayel - 2024 | Saudi Board Examination Preparation</p>
+            <p>Material from Chapter 29: Pemphigus</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Tab functionality
+        function openTab(evt, tabId) {
+            var i, tabContent, tabLinks;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            tabLinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Flashcard functionality
+        var flashcards = document.getElementsByClassName("flashcard");
+        for (var i = 0; i < flashcards.length; i++) {
+            flashcards[i].addEventListener("click", function() {
+                this.classList.toggle("flipped");
+            });
+        }
+        
+        // Quiz functionality
+        function selectOption(option) {
+            var options = option.parentElement.getElementsByClassName("quiz-option");
+            for (var i = 0; i < options.length; i++) {
+                options[i].classList.remove("selected");
+                options[i].classList.remove("correct");
+                options[i].classList.remove("incorrect");
+            }
+            
+            option.classList.add("selected");
+            
+            var feedback = option.parentElement.nextElementSibling;
+            
+            if (option.getAttribute("data-correct") === "true") {
+                option.classList.add("correct");
+                feedback.classList.add("correct");
+                feedback.classList.remove("incorrect");
+                feedback.innerHTML = "Correct! Well done.";
+            } else {
+                option.classList.add("incorrect");
+                feedback.classList.add("incorrect");
+                feedback.classList.remove("correct");
+                feedback.innerHTML = "Incorrect. Try again.";
+            }
+        }
+        
+        // Toggle answer functionality
+        function toggleAnswer(button) {
+            var answer = button.nextElementSibling;
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                button.innerHTML = "Show Answer";
+            } else {
+                answer.style.display = "block";
+                button.innerHTML = "Hide Answer";
+            }
+        }
+    </script>
+</body>
+</html>

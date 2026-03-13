@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazex-Dupré-Christol Syndrome: Board Review</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #1abc9c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 25px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px 5px 0 0;
+            margin: -20px -20px 15px -20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .high-yield {
+            background-color: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .high-yield::before {
+            content: "HIGH YIELD";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: var(--warning);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        
+        .examtip {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .examtip::before {
+            content: "EXAM TIP";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: var(--success);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        
+        .clinical-pearl {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .clinical-pearl::before {
+            content: "CLINICAL PEARL";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        
+        .mnemonic {
+            background-color: rgba(155, 89, 182, 0.1);
+            border: 2px dashed #9b59b6;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .mnemonic h4 {
+            color: #9b59b6;
+            margin-top: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            margin: 20px 0;
+            height: 200px;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .flashcard-front {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: var(--light);
+            color: var(--dark);
+            transform: rotateY(180deg);
+        }
+        
+        .quiz-container {
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            margin-left: 20px;
+        }
+        
+        .quiz-option {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f2f2f2;
+        }
+        
+        .quiz-feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .correct {
+            background-color: rgba(46, 204, 113, 0.2);
+            border: 1px solid var(--success);
+        }
+        
+        .incorrect {
+            background-color: rgba(231, 76, 60, 0.2);
+            border: 1px solid var(--accent);
+        }
+        
+        .hide-content {
+            position: relative;
+            padding: 10px;
+            margin: 15px 0;
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .content-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .content-cover:hover {
+            opacity: 0.9;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .flex-item {
+                min-width: 100%;
+            }
+        }
+        
+        /* Toggle switches */
+        .toggle-container {
+            margin: 20px 0;
+        }
+        
+        .toggle-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .toggle-content {
+            display: none;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Progress tracker */
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: var(--success);
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            transition: width 0.5s ease;
+        }
+        
+        /* Image styles */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .medical-image {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        /* Diagram styles */
+        .diagram {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .triad-diagram {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .triad-item {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .triad-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .triad-item-1 {
+            background-color: var(--secondary);
+        }
+        
+        .triad-item-2 {
+            background-color: var(--accent);
+        }
+        
+        .triad-item-3 {
+            background-color: var(--success);
+        }
+        
+        /* Memory aid sections */
+        .memory-aid {
+            background-color: rgba(26, 188, 156, 0.1);
+            border: 2px solid var(--info);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .memory-aid h4 {
+            color: var(--info);
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bazex-Dupré-Christol Syndrome</h1>
+            <div class="subtitle">Follicular Atrophoderma and Basal Cell Epitheliomata</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-bar" id="readingProgress">0%</div>
+        </div>
+        
+        <div class="high-yield">
+            <p><strong>Saudi Board Exam High-Yield Facts:</strong> BDCS is an X-linked dominant disorder with the classic triad of basal cell carcinoma, follicular atrophoderma, and hypotrichosis. The onset of these signs is not simultaneous, and there is significant variable expression both inter- and intrafamilially.</p>
+        </div>
+        
+        <section id="overview">
+            <h2>Syndrome Overview</h2>
+            
+            <div class="card">
+                <div class="card-header">Definition & Epidemiology</div>
+                <p>Follicular atrophoderma and basal cell epitheliomata, also known as <strong>Bazex-Dupré-Christol syndrome (BDCS)</strong>, is an exceedingly rare genodermatosis characterized by the triad of basal cell carcinoma (BCC), follicular atrophoderma, and hypotrichosis.</p>
+                
+                <ul>
+                    <li>First described in 1964</li>
+                    <li>Fewer than 200 cases reported</li>
+                    <li>No sex predilection</li>
+                    <li>Most cases in patients of European descent</li>
+                </ul>
+            </div>
+            
+            <div class="mnemonic">
+                <h4>Memory Aid: "BFH" for BDCS</h4>
+                <p><strong>B</strong>asal cell carcinoma<br>
+                <strong>F</strong>ollicular atrophoderma<br>
+                <strong>H</strong>ypotrichosis</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Genetics</div>
+                <p>BDCS is an <strong>X-linked dominant disorder</strong> caused by mutations in an unknown gene on an 11.4 Mb interval on chromosome Xq25-27.1. Two sporadic cases have also been documented in the literature.</p>
+                <p>The condition is hypothesized to be a disorder of the hair follicle.</p>
+            </div>
+            
+            <div class="clinical-pearl">
+                <p>When evaluating a patient with multiple BCCs at a young age, especially with concomitant hair abnormalities, always consider BDCS as a diagnosis, even if the classic triad is not fully present initially.</p>
+            </div>
+        </section>
+        
+        <section id="clinical-features">
+            <h2>Clinical Manifestations</h2>
+            
+            <div class="triad-diagram">
+                <div class="triad-item triad-item-1">
+                    Basal Cell Carcinoma<br>
+                    <small>Manifest in 2nd-3rd decade, aggressive course</small>
+                </div>
+                <div class="triad-item triad-item-2">
+                    Follicular Atrophoderma<br>
+                    <small>Follicularly based dells devoid of hair</small>
+                </div>
+                <div class="triad-item triad-item-3">
+                    Hypotrichosis<br>
+                    <small>Typically congenital, improves with age</small>
+                </div>
+            </div>
+            
+            <div class="examtip">
+                <p>For the Saudi Board Exam: Remember that the diagnosis of BDCS can be challenging because the onset of signs is not simultaneous, each sign is not specific to the disorder if it presents alone, and there is significant variable expression both inter- and intrafamilially.</p>
+            </div>
+            
+            <div class="flex-container">
+                <div class="flex-item card">
+                    <div class="card-header">Basal Cell Carcinoma (BCC)</div>
+                    <ul>
+                        <li>Manifest during second and third decade of life</li>
+                        <li>Onset in first decade has been reported</li>
+                        <li>Typically localized to sun-exposed areas, particularly the face</li>
+                        <li>Aggressive course with common relapses</li>
+                        <li>Appearance depends on BCC subtype:
+                            <ul>
+                                <li>Nodular</li>
+                                <li>Infiltrating</li>
+                                <li>Pigmented</li>
+                                <li>Superficial</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item card">
+                    <div class="card-header">Follicular Atrophoderma</div>
+                    <ul>
+                        <li>Due to poor follicle unit development</li>
+                        <li>Subsequent dilatation and deepening of follicular ostia</li>
+                        <li>Present at birth or develops early in life</li>
+                        <li>Manifests as follicularly based dells devoid of hair</li>
+                        <li>Locations:
+                            <ul>
+                                <li>Typically on extensor surfaces of upper and lower extremities</li>
+                                <li>Particularly dorsa of hands, elbows, and knees</li>
+                                <li>Any hair-bearing area can be involved</li>
+                            </ul>
+                        </li>
+                        <li>Classically described as "ice-pick markings"</li>
+                    </ul>
+                </div>
+                
+                <div class="flex-item card">
+                    <div class="card-header">Hypotrichosis</div>
+                    <ul>
+                        <li>Typically congenital</li>
+                        <li>Occurs in 85% of cases</li>
+                        <li>Improves with age</li>
+                        <li>Involvement patterns:
+                            <ul>
+                                <li>Usually widespread</li>
+                                <li>Can be limited to scalp, eyebrows, and eyelashes</li>
+                            </ul>
+                        </li>
+                        <li>Hair shaft abnormalities:
+                            <ul>
+                                <li>Pili bifurcati (hair shafts that split into two)</li>
+                                <li>Pili torti (twisted hair)</li>
+                                <li>Trichorrhexis nodosa (hair shaft breakage with node-like swellings)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Less Common Manifestations</div>
+                <ul>
+                    <li>Milia</li>
+                    <li>Hypohidrosis</li>
+                    <li>Facial hyperpigmentation</li>
+                    <li>Trichoepitheliomas</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="diagnosis">
+            <h2>Diagnosis</h2>
+            
+            <div class="card">
+                <div class="card-header">Diagnostic Pearls</div>
+                <p>The triad of <strong>basal cell carcinoma, follicular atrophoderma, and hypotrichosis</strong> is classic for BDCS. However, diagnosis can be challenging because:</p>
+                <ul>
+                    <li>The onset of these signs is not simultaneous</li>
+                    <li>Each sign is not specific to the disorder if it presents alone</li>
+                    <li>There is significant variable expression at inter- and intrafamilial levels</li>
+                </ul>
+                <p>Thus, careful observation for development of signs of BDCS over time may be necessary to make the diagnosis.</p>
+            </div>
+            
+            <div class="high-yield">
+                <p>In the exam, you may be presented with a case featuring a young patient with multiple BCCs and either hypotrichosis or follicular atrophoderma. Consider BDCS in your differential, even if the full triad is not yet present.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Best Tests</div>
+                <p>BDCS is a <strong>clinical diagnosis</strong>. Skin biopsy should be used to identify BCCs.</p>
+            </div>
+            
+            <div class="hide-content">
+                <div class="content-cover" onclick="this.style.display='none';">Click to reveal - Test Yourself</div>
+                <p><strong>Question:</strong> A 15-year-old patient presents with multiple basal cell carcinomas on the face and congenital hypotrichosis. What genetic inheritance pattern would you suspect for BDCS?</p>
+                <p><strong>Answer:</strong> X-linked dominant inheritance.</p>
+            </div>
+        </section>
+        
+        <section id="differential">
+            <h2>Differential Diagnosis</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Key Distinguishing Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rombo syndrome</td>
+                            <td>Features vermiculate atrophoderma, milia, trichoepitheliomas, BCCs, hypotrichosis, and peripheral vasodilation</td>
+                        </tr>
+                        <tr>
+                            <td>Basal cell nevus syndrome (Gorlin syndrome)</td>
+                            <td>Multiple BCCs, odontogenic keratocysts, palmar/plantar pits, ectopic calcifications, skeletal anomalies</td>
+                        </tr>
+                        <tr>
+                            <td>Schöpf-Schulz-Passarge syndrome</td>
+                            <td>Palmoplantar keratoderma, eyelid cysts, hypodontia, hypotrichosis, and susceptibility to skin tumors</td>
+                        </tr>
+                        <tr>
+                            <td>Generalized basaloid follicular hamartoma</td>
+                            <td>Multiple skin-colored papules distributed symmetrically on the face, scalp, and trunk</td>
+                        </tr>
+                        <tr>
+                            <td>Oley syndrome</td>
+                            <td>Hypotrichosis, hypohidrosis, and palmoplantar hyperkeratosis</td>
+                        </tr>
+                        <tr>
+                            <td>X-linked dominant chondrodysplasia punctata</td>
+                            <td>Skeletal abnormalities, cataracts, ichthyosis, and hair abnormalities</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="memory-aid">
+                <h4>Differential Diagnosis Memory Aid: "BROSGOX"</h4>
+                <ul>
+                    <li><strong>B</strong>azex-Dupré-Christol syndrome</li>
+                    <li><strong>R</strong>ombo syndrome</li>
+                    <li><strong>O</strong>ley syndrome</li>
+                    <li><strong>S</strong>chöpf-Schulz-Passarge syndrome</li>
+                    <li><strong>G</strong>orlin syndrome (Basal cell nevus syndrome)</li>
+                    <li><strong>O</strong>ther - Generalized basaloid follicular hamartoma</li>
+                    <li><strong>X</strong>-linked dominant chondrodysplasia punctata</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="management">
+            <h2>Management</h2>
+            
+            <div class="card">
+                <div class="card-header">Management Pearls</div>
+                <ul>
+                    <li>A consultation with a dermatologist is appropriate for diagnosis and management</li>
+                    <li>A consultation with genetics is also appropriate</li>
+                    <li>Screening for BCCs by a dermatologist should be initiated during the first decade of life</li>
+                    <li>BCC screening should be continued 1-2 times per year</li>
+                    <li>Advise sun avoidance and sun-protection measures:
+                        <ul>
+                            <li>Using sunscreen</li>
+                            <li>Wearing protective clothing</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="clinical-pearl">
+                <p>Early and regular screening for BCCs is critical in BDCS patients, starting in the first decade of life, as tumors can appear early and follow an aggressive course.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Therapy</div>
+                <p>There is no therapy for the underlying genetic defect.</p>
+                <p>Treatment for all BCCs should be individualized for the patient, taking into account:</p>
+                <ul>
+                    <li>Site</li>
+                    <li>Size</li>
+                    <li>Histologic subtype</li>
+                    <li>Cosmesis</li>
+                    <li>Wound healing</li>
+                    <li>Cost</li>
+                    <li>Other circumstances</li>
+                </ul>
+                <p>Treatment options include:</p>
+                <ul>
+                    <li>Electrodessication and curettage</li>
+                    <li>Excision</li>
+                    <li>Cryosurgery</li>
+                    <li>Radiation</li>
+                    <li>Mohs surgery</li>
+                    <li>Oral smoothened inhibitors</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="coding">
+            <h2>Coding Information</h2>
+            
+            <div class="card">
+                <div class="card-header">ICD-10-CM</div>
+                <p><strong>L73.8</strong> - Other specified follicular disorders</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">SNOMED CT</div>
+                <p><strong>254820002</strong> - Follicular atrophoderma and basal cell epitheliomata</p>
+            </div>
+        </section>
+        
+        <section id="quiz">
+            <h2>Self-Assessment Quiz</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p><strong>1. What is the classic triad of Bazex-Dupré-Christol syndrome?</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="showFeedback(this, true)">Basal cell carcinoma, follicular atrophoderma, and hypotrichosis</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Basal cell carcinoma, palmoplantar keratoderma, and alopecia</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Trichoepithelioma, follicular atrophoderma, and hypohidrosis</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Basal cell carcinoma, facial hyperpigmentation, and milia</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>2. What is the inheritance pattern of BDCS?</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Autosomal dominant</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Autosomal recessive</div>
+                        <div class="quiz-option" onclick="showFeedback(this, true)">X-linked dominant</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">X-linked recessive</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>3. When should BCC screening be initiated in BDCS patients?</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="showFeedback(this, true)">During the first decade of life</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">After puberty</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">During the second decade of life</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Only after the first BCC is diagnosed</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>4. Which of the following is NOT a common feature of follicular atrophoderma in BDCS?</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Widened follicular ostia</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Dells devoid of hair</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Involvement of extensor surfaces</div>
+                        <div class="quiz-option" onclick="showFeedback(this, true)">Hyperpigmentation of affected follicles</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>5. Which condition is NOT in the differential diagnosis for BDCS?</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Rombo syndrome</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Gorlin syndrome</div>
+                        <div class="quiz-option" onclick="showFeedback(this, true)">Darier disease</div>
+                        <div class="quiz-option" onclick="showFeedback(this, false)">Schöpf-Schulz-Passarge syndrome</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="flashcards">
+            <h2>Quick Review Flashcards</h2>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is the genetic inheritance pattern of BDCS?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>X-linked dominant inheritance</p>
+                        <p>Mutations in an unknown gene on chromosome Xq25-27.1</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>List the classic triad of BDCS</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>1. Basal cell carcinoma (BCC)<br>
+                        2. Follicular atrophoderma<br>
+                        3. Hypotrichosis</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What are the typical locations for follicular atrophoderma in BDCS?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Extensor surfaces of upper and lower extremities, particularly:</p>
+                        <p>- Dorsa of hands<br>
+                        - Elbows<br>
+                        - Knees</p>
+                        <p>However, any hair-bearing area can be involved.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is the recommended screening frequency for BCCs in BDCS patients?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>1-2 times per year, starting in the first decade of life</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="key-takeaways">
+            <h2>Key Points for Saudi Board Exam</h2>
+            
+            <div class="card">
+                <div class="card-header">High-Yield Summary</div>
+                <ol>
+                    <li>BDCS is characterized by the triad of basal cell carcinoma, follicular atrophoderma, and hypotrichosis</li>
+                    <li>It is an X-linked dominant disorder with mutations on chromosome Xq25-27.1</li>
+                    <li>BCCs typically appear in the second to third decade but can occur in the first decade</li>
+                    <li>Follicular atrophoderma manifests as ice-pick markings devoid of hair</li>
+                    <li>Hypotrichosis is congenital in 85% of cases and improves with age</li>
+                    <li>The onset of signs is not simultaneous, and diagnosis requires careful observation over time</li>
+                    <li>Treatment focuses on BCC management and sun protection</li>
+                    <li>Screening should begin in the first decade and continue 1-2 times yearly</li>
+                    <li>There is no therapy for the underlying genetic defect</li>
+                    <li>Differential diagnosis includes Rombo syndrome, Gorlin syndrome, and others</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section id="references">
+            <h2>References</h2>
+            
+            <div class="card">
+                <div class="card-header">Key Literature</div>
+                <ul>
+                    <li>Bazex syndrome. OMIM - Online Mendelian Inheritance in Man. https://www.omim.org/entry/301845</li>
+                    <li>AlSabbagh MM, Baqi MA. Bazex-Dupré-Christol syndrome: review of clinical and molecular aspects. Int J Dermatol. 2018 Sep;57(9):1102-1106.</li>
+                    <li>Abuzahra F, Parren LJ, Frank J. Multiple familial and pigmented basal cell carcinomas in early childhood - Bazex-Dupré-Christol syndrome. J Eur Acad Dermatol Venereol. 2012 Jan;26(1):117-21.</li>
+                    <li>Parren LJ, Abuzahra F, Wagenvoort T, et al. Linkage refinement of Bazex-Dupré-Christol syndrome to an 11·4-Mb interval on chromosome Xq25-27.1. Br J Dermatol. 2011 Jul;165(1):201-3.</li>
+                    <li>Barcelos AC, Nico MM. Bazex-Dupré-Christol syndrome in a 1-year-old boy and his mother. Pediatr Dermatol. 2008 Jan-Feb;25(1):112-3.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2025 | Saudi Board Dermatology Exam Preparation</p>
+        <p>Last Updated: May 19, 2025</p>
+    </footer>
+    
+    <script>
+        // Track reading progress
+        window.addEventListener('scroll', function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgress").style.width = scrolled + "%";
+            document.getElementById("readingProgress").innerText = Math.round(scrolled) + "%";
+        });
+        
+        // Show feedback for quiz options
+        function showFeedback(element, isCorrect) {
+            // Clear all previous feedback in this question
+            var questionDiv = element.parentElement.parentElement;
+            var options = questionDiv.getElementsByClassName('quiz-option');
+            for (var i = 0; i < options.length; i++) {
+                options[i].style.backgroundColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.style.backgroundColor = 'rgba(46, 204, 113, 0.2)';
+                questionDiv.getElementsByClassName('quiz-feedback')[0].innerHTML = '<div class="correct">Correct! Well done!</div>';
+            } else {
+                element.style.backgroundColor = 'rgba(231, 76, 60, 0.2)';
+                questionDiv.getElementsByClassName('quiz-feedback')[0].innerHTML = '<div class="incorrect">Incorrect. Try again!</div>';
+            }
+            
+            questionDiv.getElementsByClassName('quiz-feedback')[0].style.display = 'block';
+        }
+    </script>
+</body>
+</html>

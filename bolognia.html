@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolognia 5th Edition – Dr. Meshal Bukhari</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pdf-accent: #8B2020;
+    --pdf-dark: #5a0a0a;
+    --pdf-mid: #3d1010;
+    --gold: #B8962E;
+    --gold-light: #d4b054;
+    --cream: #FAFAF7;
+    --cream-2: #fdf5f5;
+    --text: #1C2B3A;
+    --text-muted: #6B7A8D;
+    --border: #e8d5d5;
+    --white: #FFFFFF;
+    --card-shadow: 0 2px 12px rgba(139,32,32,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  header { background: var(--pdf-dark); color: #fff; padding: 0; position: relative; overflow: hidden; }
+  header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 340px; height: 340px; border-radius: 50%; border: 60px solid rgba(184,150,46,0.08); pointer-events: none; }
+  header::after { content: ''; position: absolute; bottom: -40px; left: 60px; width: 200px; height: 200px; border-radius: 50%; border: 40px solid rgba(255,255,255,0.03); pointer-events: none; }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 48px 32px 40px; position: relative; z-index: 1; }
+  .header-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .header-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 42px); font-weight: 600; line-height: 1.18; margin-bottom: 10px; color: #fff; }
+  .header-sub { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+  .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-light); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.15s; }
+  .back-btn:hover { color: #fff; }
+
+  .search-section { background: var(--pdf-mid); border-top: 1px solid rgba(255,255,255,0.06); }
+  .search-inner { max-width: 1100px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .search-wrap { position: relative; flex: 1; min-width: 260px; }
+  .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.35); pointer-events: none; }
+  #searchInput { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 12px 16px 12px 46px; outline: none; transition: border-color 0.2s, background 0.2s; }
+  #searchInput::placeholder { color: rgba(255,255,255,0.35); }
+  #searchInput:focus { border-color: var(--gold); background: rgba(255,255,255,0.12); }
+  #clearBtn { display: none; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 18px; line-height: 1; padding: 2px; }
+  #clearBtn:hover { color: #fff; }
+  #searchCount { font-size: 13px; color: rgba(255,255,255,0.45); white-space: nowrap; min-width: 90px; }
+
+  .alpha-bar { background: var(--cream-2); border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+  .alpha-bar::-webkit-scrollbar { display: none; }
+  .alpha-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; display: flex; gap: 2px; align-items: center; }
+  .alpha-btn { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; padding: 11px 9px; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+  .alpha-btn:hover { color: var(--pdf-accent); }
+  .alpha-btn.active { color: var(--pdf-accent); border-bottom-color: var(--pdf-accent); font-weight: 600; }
+  .alpha-btn.empty { opacity: 0.3; cursor: default; pointer-events: none; }
+  .alpha-all { margin-right: 8px; padding-right: 14px; border-right: 1px solid var(--border); }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 28px 32px 60px; }
+  .no-results { display: none; text-align: center; padding: 60px 20px; color: var(--text-muted); }
+  .letter-section { margin-bottom: 36px; }
+  .letter-section.hidden { display: none; }
+  .letter-header { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .letter-char { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--pdf-accent); line-height: 1; width: 36px; flex-shrink: 0; }
+  .letter-line { flex: 1; height: 1px; background: var(--border); }
+  .letter-count { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+  .chapter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; }
+  .chapter-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; text-decoration: none; color: var(--text); transition: border-color 0.18s, box-shadow 0.18s, background 0.18s, transform 0.15s; box-shadow: var(--card-shadow); position: relative; overflow: hidden; }
+  .chapter-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--pdf-accent); transform: scaleY(0); transform-origin: bottom; transition: transform 0.2s ease; }
+  .chapter-card:hover { border-color: var(--pdf-accent); box-shadow: 0 4px 20px rgba(139,32,32,0.13); transform: translateY(-1px); background: #fff8f8; }
+  .chapter-card:hover::before { transform: scaleY(1); }
+  .chapter-card.hidden { display: none; }
+  .card-icon { width: 34px; height: 34px; border-radius: 8px; background: #fde8e8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--pdf-accent); transition: background 0.18s; }
+  .chapter-card:hover .card-icon { background: var(--pdf-accent); color: #fff; }
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-size: 14px; font-weight: 500; line-height: 1.4; color: var(--text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .chapter-card:hover .card-title { color: var(--pdf-accent); }
+  .card-arrow { color: var(--border); flex-shrink: 0; transition: color 0.18s, transform 0.18s; margin-top: 2px; }
+  .chapter-card:hover .card-arrow { color: var(--pdf-accent); transform: translateX(3px); }
+
+  footer { text-align: center; padding: 24px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 32px 16px 28px; }
+    .search-inner, .alpha-inner { padding-left: 16px; padding-right: 16px; }
+    main { padding: 20px 16px 48px; }
+    .chapter-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow">Dermatology Reference Library</div>
+    <h1>📕 Bolognia 5th Edition</h1>
+ 
+    <a href="index.html" class="back-btn">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Main Library
+    </a>
+  </div>
+</header>
+
+<div class="search-section">
+  <div class="search-inner">
+    <div class="search-wrap">
+      <svg class="search-icon" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search Bolognia chapters…" autocomplete="off" spellcheck="false">
+      <button id="clearBtn">✕</button>
+    </div>
+    <span id="searchCount"></span>
+  </div>
+</div>
+
+<div class="alpha-bar"><div class="alpha-inner" id="alphaBar"></div></div>
+
+<main>
+  <div class="no-results" id="noResults"><p>No chapters match your search.</p></div>
+  <div id="chaptersContainer"></div>
+</main>
+
+<footer>&copy; Dr. Meshal Bukhari · Bolognia 5th Edition Library · All rights reserved</footer>
+
+<script>
+const chapters = [
+  { title: "Acne Vulgaris", file: "Acne vulgaris bolongia .pdf" },
+  { title: "Adnexal Tumors", file: "adnexal tumors_compressed.pdf" },
+  { title: "Allergic Contact Dermatitis", file: "allergic contact dermatitis .pdf" },
+  { title: "Amyloidosis", file: "amyloidosis.pdf" },
+  { title: "Anesthesia", file: "Anesthesia .pdf" },
+  { title: "Anogenital (Non-Venereal) Diseases", file: "Anogenital (Non-venereal) Diseases.pdf" },
+  { title: "Atopic Dermatitis", file: "Atopic dermatitis .pdf" },
+  { title: "Autoantibodies in Autoimmune Connective Tissue Diseases", file: "Autoantibodies Encountered in Patients with Autoimmune Connective Tissue Diseases.pdf" },
+  { title: "B-Cell Lymphoma", file: "b cell lymphoma .pdf" },
+  { title: "Bacterial Infections", file: "Bacterial infections.pdf" },
+  { title: "Basement Membrane Biology", file: "basement membrane biology.pdf" },
+  { title: "Basic Principles of Dermatology", file: "Basic Principles of Dermatology.pdf" },
+  { title: "BCC, SCC & Actinic Keratosis", file: "BCC SCC AK.pdf" },
+  { title: "Benign Epidermal Tumors & Proliferations", file: "Benign Epidermal Tumors and Proliferations.pdf" },
+  { title: "Benign Melanocytic Neoplasms & Melanotic Lesions", file: "Benign Melanocytic Neoplasms and Melanotic Lesions.pdf" },
+  { title: "Biology of Hair and Nail", file: "biology of the hair and nail .pdf" },
+  { title: "Botulinum Toxin", file: "botulinum toxin chapter bolongia .pdf" },
+  { title: "Calcifying & Ossifying Disorders of the Skin", file: "Calcifying and Ossifying Disorders of the Skin calssification .pdf" },
+  { title: "Other Vesiculopustular Eruptions in Neonates", file: "chapter 34 other vesicupustular in neonates .pdf" },
+  { title: "Lupus Erythematosus – Bolognia", file: "chapter 41 lupus erythematous bolongia.pdf" },
+  { title: "Systemic Sclerosis – Bolognia", file: "chapter 43 systemic sclerosis.pdf" },
+  { title: "Other Rheumatic Diseases & Autoinflammatory Syndromes", file: "chapter 45 other rheuma disease and Autoinflammatory.pdf" },
+  { title: "Non-Infectious Granuloma", file: "chapter 93 non-infectious Granuloma.pdf" },
+  { title: "Foreign Body Granuloma", file: "Forigen body Granuloma chapter 94.pdf" },
+  { title: "Perforating Dermatosis", file: "perforating dermatosis chapter 96.pdf" },
+  { title: "Heritable Disorders of Connective Tissue", file: "bolongia chapter 97 heritabl disorder of connective tissue disease.pdf" },
+  { title: "Dermal Hypertrophies", file: "chapter 98 dermal hypertrohpies .pdf" },
+  { title: "Atrophies of Connective Tissue", file: "Chapter 99 Atrophies of connective tissue bolongia.pdf" },
+  { title: "Lipodystrophies", file: "chapter 101 lipodystrohpies .pdf" },
+  { title: "Hemangioma – Bolognia", file: "chapter 103 hemagnioma.pdf" },
+  { title: "Cutaneous T-Cell Lymphoma (CTCL)", file: "chapter 120 bolongia CTCL.pdf" },
+  { title: "Chemical Peeling & Resurfacing", file: "chemical peeling peels and other resurfacing methoeds .pdf" },
+  { title: "Cutaneous Manifestation of Systemic Disease", file: "Cutaenous manifestation of systemic disease .pdf" },
+  { title: "Cutaneous Manifestations of Microvascular Occlusion Syndromes", file: "Cutaneous Manifestations of Microvascular Occlusion Syndromes.pdf" },
+  { title: "Cutaneous Metastasis", file: "cutaneous metastasis .pdf" },
+  { title: "Cutaneous T-Cell Lymphoma", file: "Cutaneous T Cell Lymphoma.pdf" },
+  { title: "Cutaneous Vasculitis", file: "Cutaneous Vasculitis.pdf" },
+  { title: "Cryosurgery", file: "Cyrosurgery .pdf" },
+  { title: "Cysts", file: "CYSTs.pdf" },
+  { title: "Darier Disease & Hailey-Hailey Disease", file: "Darier disease Hailey Hailey disease Bolongia .pdf" },
+  { title: "Dermal Hypertrophy", file: "Dermal hypertrophy .pdf" },
+  { title: "Dermatitis Herpetiformis & Linear IgA Bullous Dermatosis", file: "dermatitis herpetiformis and linear igA bullous dermatosis .pdf" },
+  { title: "Dermatomyositis", file: "Dermatomyositis bolongia .pdf" },
+  { title: "Depositional Diseases", file: "Depostional chapter bolongia.pdf" },
+  { title: "Developmental Anomalies", file: "Developmental Anomalies.pdf" },
+  { title: "Diseases of the Eccrine & Apocrine Sweat Glands", file: "Diseases of the Eccrine and Apocrine Sweat Glands.pdf" },
+  { title: "Disorder of Hyperpigmentation", file: "Disorder of hyperpigmentation .pdf" },
+  { title: "Dressing", file: "Dressing .pdf" },
+  { title: "Drug Reactions", file: "Drug Reactions .pdf" },
+  { title: "Electrosurgery", file: "Electrosurgery .pdf" },
+  { title: "Environmental & Sports Related Dermatology", file: "Environmental and Sports Related.pdf" },
+  { title: "Eosinophilic Dermatitis", file: "Eosinophilia associated dermatitis eosinophilic dermatitis .pdf" },
+  { title: "Epidermolysis Bullosa", file: "epidermolysis bullosa .pdf" },
+  { title: "Erythroderma", file: "erythroderma.pdf" },
+  { title: "Facial Anatomy", file: "FAcial ANATOMY .pdf" },
+  { title: "Fibroblastic & Fibrohistiocytic Proliferations", file: "fibroblastic, Myofibroblastic, and “Fibrohistiocytic” Proliferations and Neoplasms of the Skin dermaofibroma .pdf" },
+  { title: "Figurate Erythemas", file: "Figurate Erythemas.pdf" },
+  { title: "Flaps", file: "Flaps.pdf" },
+  { title: "Folliculitis & Follicular Disorders", file: "Folliculitis  Follicular disorder bolognia.pdf" },
+  { title: "Fungal Infection", file: "fungal infection.pdf" },
+  { title: "Genetic Basis of Cutaneous Diseases (Genodermatosis)", file: "Genetic Basis of Cutaneous Diseases genodermatosis .pdf" },
+  { title: "Grafts", file: "GRAFTs.pdf" },
+  { title: "GVHD", file: "GVHD.pdf" },
+  { title: "HHV (Human Herpesvirus)", file: "HHV.pdf" },
+  { title: "Histiocytosis", file: "histiocytosis.pdf" },
+  { title: "Human Herpesvirus & Herpes", file: "human herpesvirus herpes .pdf" },
+  { title: "Human Papilloma Virus", file: "Human papiloma virus .pdf" },
+  { title: "Hypertrichosis & Hirsutism", file: "Hypertrichosis and hirsutism.pdf" },
+  { title: "Ichthyoses, Erythrokeratoderma & Related Disorders", file: "bolognia icthyoses erythrokeratoderma and related disorders.pdf" },
+  { title: "Infestation", file: "infestation .pdf" },
+  { title: "Injectable Filler & Soft Tissue Injection", file: "injectable filer soft tissue injection Chapter filler .pdf" },
+  { title: "Irritant Contact Dermatitis", file: "irritant contact dermatitis.pdf" },
+  { title: "Laser & Energy-Based Devices", file: "Laser and other energy based devices .pdf" },
+  { title: "Laser Therapy & Devices", file: "Laser therapy and devices .pdf" },
+  { title: "Lichen Planus & Lichenoid Dermatosis", file: "Lichen planus and lichenoid dermatosis .pdf" },
+  { title: "Liposuction & Body Contouring", file: "Liposuction body conturing .pdf" },
+  { title: "Lupus Erythematosus", file: "lupus erythematous .pdf" },
+  { title: "Mastocytosis", file: "Mastocytosis bolongia .pdf" },
+  { title: "Melanoma", file: "mELANOMA BOLONGIA .pdf" },
+  { title: "Mohs Surgery", file: "Mohs bolongia.pdf" },
+  { title: "Morphea & Lichen Sclerosis", file: "Morphea and lichen sclerosis.pdf" },
+  { title: "Mosaicism & Linear Lesions", file: "Mosaicism and Linear Lesions.pdf" },
+  { title: "Mucinosis", file: "Mucinosis.pdf" },
+  { title: "Mycobacterium", file: "Mycobacterium.pdf" },
+  { title: "Nail Disorder", file: "Nail disorder .pdf" },
+  { title: "Neural & Neuroendocrine Neoplasms", file: "Neural and Neuroendocrine Neoplasms (Other than Neurofibromatosis).pdf" },
+  { title: "Neurofibroma & Tuberous Sclerosis", file: "neurofibroma tuberous sclerosis chapter 61.pdf" },
+  { title: "Neutrophilic Dermatosis", file: "Neutrophilic dermatosis .pdf" },
+  { title: "Nutritional Disease", file: "Nutritional disease .pdf" },
+  { title: "Occupational Dermatosis", file: "occupational dermatosis.pdf" },
+  { title: "Oral Mucosa", file: "oral mucosa .pdf" },
+  { title: "Other Eczematous Eruption", file: "other eczematous eruption.pdf" },
+  { title: "Other Genodermatosis", file: "other genodermatosis .pdf" },
+  { title: "Other Lymphoproliferative & Myeloproliferative Diseases", file: "Other Lymphoproliferative and Myeloproliferative Diseases.pdf" },
+  { title: "Other Papulosquamous Disease", file: "other papulosquamous disease .pdf" },
+  { title: "Other Topical Medications", file: "other topical medications .pdf" },
+  { title: "Other Vascular Disorders", file: "Other Vascular Disorders.pdf" },
+  { title: "Other Vesiculobullous & Bullous Dermatosis", file: "other vesiculobullous other bollous dermatosis .pdf" },
+  { title: "Other Viral Infection", file: "other viral infection.pdf" },
+  { title: "Panniculitis", file: "Panniculitis bolongia.pdf" },
+  { title: "Pemphigoid Group", file: "Pemphigoid group .pdf" },
+  { title: "Pemphigus", file: "pemphigus .pdf" },
+  { title: "Photodermatological Disorders", file: "photodermatological disorders.pdf" },
+  { title: "Photodynamic Therapy (PDT)", file: "Photodynamic therapy PDT .pdf" },
+  { title: "Plant Dermatosis", file: "Plant dermatosis.pdf" },
+  { title: "Porphyria", file: "Porphyria .pdf" },
+  { title: "PPK – Palmoplantar Keratoderma", file: "PPK Plamoplantar keratoderma.pdf" },
+  { title: "Pregnancy Dermatosis", file: "Pregnancy dermatosis.pdf" },
+  { title: "Primary Immunodeficiency", file: "Primary immunodeficiency.pdf" },
+  { title: "Protozoa & Parasites", file: "Protozoa and parasites.pdf" },
+  { title: "Pruritus & Dysesthesia", file: "pruritus and Dysesthesia.pdf" },
+  { title: "Psoriasis", file: "Psoriasis chapter bolongia .pdf" },
+  { title: "Purpura – Mechanism & Differential Diagnosis", file: "pupura mechanism and diffential diagnosis .pdf" },
+  { title: "Retinoids", file: "Retinoinds .pdf" },
+  { title: "Rocky Mountain Spotted Fever & Rickettsial", file: "Rocky Mountain Spotted Fever Rickettsial .pdf" },
+  { title: "Rosacea", file: "Rosacea Bolongia .pdf" },
+  { title: "Scleroderma", file: "Scleroderma.pdf" },
+  { title: "Sexually Transmitted Diseases (STDs)", file: "Sexually transmitted disease STDs.pdf" },
+  { title: "SJS & TEN – Erythema Multiforme", file: "SJS TEN  erythema multiform chapter .pdf" },
+  { title: "Smooth Muscle, Adipose & Cartilage Neoplasms", file: "Smooth Muscle, Adipose, and Cartilage Neoplasms.pdf" },
+  { title: "Surgical Anatomy of the Head & Neck", file: "Surgical anatomy of the head and neck .pdf" },
+  { title: "Surgical Complication & Outcome", file: "Surgical complication and outcome .pdf" },
+  { title: "Systemic Antifungal Pharmacology", file: "systemic antifungal pharma .pdf" },
+  { title: "Ultraviolet Therapy (NB-UVB & UVA)", file: "ultraviolet therapy photohterapy NBUVb UVA.pdf" },
+  { title: "Urticaria & Angioedema", file: "urticaria and angioedema bolongia.pdf" },
+  { title: "Vascular Malformation", file: "Vascular malformation .pdf" },
+  { title: "Vascular Proliferation & Neoplasm", file: "Vascular proliferation neoplasm .pdf" },
+  { title: "Vascular Tumor – Histopathology", file: "Vascular tumor hitsopath.pdf" },
+  { title: "Vitiligo & Hypopigmented Disorders", file: "Vitiligo and hypopigmented disorders.pdf" },
+  { title: "Vitiligo & Other Disorders of Hypopigmentation", file: "Vitiligo and Other Disorders of Hypopigmentation.pdf" },
+  { title: "Wound Closure, Sutures & Instruments", file: "Wound closure material sutures instruments.pdf" },
+  { title: "Xanthomas", file: "Xanthomas.pdf" },
+];
+
+chapters.sort((a, b) => a.title.localeCompare(b.title));
+const grouped = {};
+chapters.forEach(ch => { const l = ch.title[0].toUpperCase(); if (!grouped[l]) grouped[l] = []; grouped[l].push(ch); });
+const letters = Object.keys(grouped).sort();
+
+const alphaBar = document.getElementById('alphaBar');
+const allBtn = document.createElement('button');
+allBtn.className = 'alpha-btn alpha-all active'; allBtn.textContent = 'All'; allBtn.dataset.letter = 'ALL';
+alphaBar.appendChild(allBtn);
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => {
+  const b = document.createElement('button');
+  b.className = 'alpha-btn' + (grouped[l] ? '' : ' empty'); b.textContent = l; b.dataset.letter = l;
+  alphaBar.appendChild(b);
+});
+
+const container = document.getElementById('chaptersContainer');
+const sectionMap = {};
+letters.forEach(letter => {
+  const sec = document.createElement('div');
+  sec.className = 'letter-section'; sec.id = 'sec-' + letter;
+  sec.innerHTML = `<div class="letter-header"><span class="letter-char">${letter}</span><div class="letter-line"></div><span class="letter-count">${grouped[letter].length} chapter${grouped[letter].length > 1 ? 's' : ''}</span></div><div class="chapter-grid" id="g-${letter}"></div>`;
+  container.appendChild(sec); sectionMap[letter] = sec;
+  const grid = sec.querySelector(`#g-${letter}`);
+  grouped[letter].forEach(ch => {
+    const card = document.createElement('a');
+    card.className = 'chapter-card'; card.href = ch.file; card.target = '_blank'; card.rel = 'noopener noreferrer'; card.dataset.title = ch.title.toLowerCase();
+    card.innerHTML = `<div class="card-icon"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div><div class="card-body"><div class="card-title">${ch.title}</div></div><svg class="card-arrow" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>`;
+    grid.appendChild(card);
+  });
+});
+
+let activeFilter = 'ALL';
+alphaBar.addEventListener('click', e => {
+  const btn = e.target.closest('.alpha-btn');
+  if (!btn || btn.classList.contains('empty')) return;
+  alphaBar.querySelectorAll('.alpha-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
+  activeFilter = btn.dataset.letter;
+  letters.forEach(l => sectionMap[l].classList.toggle('hidden', activeFilter !== 'ALL' && l !== activeFilter));
+  if (activeFilter !== 'ALL' && sectionMap[activeFilter]) sectionMap[activeFilter].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  doSearch();
+});
+
+const searchInput = document.getElementById('searchInput');
+const clearBtn = document.getElementById('clearBtn');
+const searchCount = document.getElementById('searchCount');
+const noResults = document.getElementById('noResults');
+
+function doSearch() {
+  const q = searchInput.value.trim().toLowerCase();
+  clearBtn.style.display = q ? 'block' : 'none';
+  let total = 0;
+  letters.forEach(l => {
+    const sec = sectionMap[l];
+    if (activeFilter !== 'ALL' && l !== activeFilter) { sec.classList.add('hidden'); return; }
+    let vis = 0;
+    sec.querySelectorAll('.chapter-card').forEach(card => { const ok = !q || card.dataset.title.includes(q); card.classList.toggle('hidden', !ok); if (ok) vis++; });
+    sec.classList.toggle('hidden', vis === 0); total += vis;
+  });
+  noResults.style.display = total === 0 ? 'block' : 'none';
+  searchCount.textContent = q ? `${total} result${total !== 1 ? 's' : ''}` : `${chapters.length} chapters`;
+}
+
+searchInput.addEventListener('input', doSearch);
+clearBtn.addEventListener('click', () => { searchInput.value = ''; searchInput.focus(); doSearch(); });
+searchCount.textContent = `${chapters.length} chapters`;
+</script>
+</body>
+</html>

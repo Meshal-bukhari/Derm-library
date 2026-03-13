@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrophies of Connective Tissue - Saudi Board Exam Prep</title>
+    <style>
+        :root {
+            --primary: #3d5a80;
+            --secondary: #98c1d9;
+            --accent: #ee6c4d;
+            --light: #e0fbfc;
+            --dark: #293241;
+            --success: #43aa8b;
+            --warning: #f8961e;
+            --danger: #ef476f;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 20px 0 10px;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin: 15px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--warning);
+        }
+        
+        .board-alert {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--danger);
+        }
+        
+        .clinical-pearl {
+            background-color: #d1e7dd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--success);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        
+        .accordion {
+            margin: 20px 0;
+        }
+        
+        .accordion-header {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-content {
+            background-color: white;
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-header:after {
+            content: '+';
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .active .accordion-header:after {
+            content: '-';
+        }
+        
+        .active .accordion-content {
+            max-height: 5000px;
+            padding: 15px;
+            border: 1px solid var(--secondary);
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .tabs {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #e9ecef;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .tab-button:first-child {
+            border-top-left-radius: 5px;
+        }
+        
+        .tab-button:last-child {
+            border-top-right-radius: 5px;
+        }
+        
+        .tab-button.active {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid var(--secondary);
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 20px;
+        }
+        
+        .comparison-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-item h4 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            margin: 20px 0;
+            height: 200px;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flashcard-front {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: bold;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            text-align: left;
+        }
+        
+        .mnemonic {
+            display: flex;
+            margin: 20px 0;
+        }
+        
+        .mnemonic-letter {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .mnemonic-content {
+            flex: 1;
+        }
+        
+        .diagram {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #f1f1f1;
+            z-index: 999;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: var(--accent);
+            width: 0%;
+        }
+        
+        .anchor-link {
+            display: block;
+            position: relative;
+            top: -80px;
+            visibility: hidden;
+        }
+        
+        .toc {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .toc-sticky {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 250px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 100;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            transform: translateX(-280px);
+        }
+        
+        .toc-sticky.visible {
+            transform: translateX(0);
+        }
+        
+        .toc-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 101;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--accent);
+        }
+        
+        .top-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        
+        .top-button:hover {
+            background-color: var(--accent);
+        }
+        
+        .image-placeholder {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                flex-direction: column;
+            }
+            
+            .comparison-item {
+                width: 100%;
+            }
+            
+            .tab-button {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <h1>Atrophies of Connective Tissue</h1>
+            <p>A comprehensive guide for Saudi Board Exam preparation</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <p>This chapter covers various disorders characterized by atrophy of dermal connective tissue components (collagen and/or elastic fibers). These conditions range from extensive involvement as seen in mid-dermal elastolysis to punctate lesions as in follicular atrophoderma. Mastering the clinical features, histopathology, and differential diagnosis of these conditions is essential for your Saudi Board Exam.</p>
+        </div>
+        
+        <div class="toc" id="mainToc">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#overview">Overview of Connective Tissue Atrophies</a></li>
+                <li><a href="#mid-dermal-elastolysis">Mid-dermal Elastolysis</a></li>
+                <li><a href="#anetoderma">Anetoderma</a></li>
+                <li><a href="#striae">Striae</a></li>
+                <li><a href="#atrophoderma-pp">Atrophoderma of Pasini and Pierini</a></li>
+                <li><a href="#follicular-atrophoderma">Follicular Atrophoderma</a></li>
+                <li><a href="#atrophoderma-vermiculatum">Atrophoderma Vermiculatum</a></li>
+                <li><a href="#amvc">Atrophia Maculosa Varioliformis Cutis</a></li>
+                <li><a href="#piezogenic">Piezogenic Pedal Papules</a></li>
+                <li><a href="#differential-diagnosis">Comparative Differential Diagnosis</a></li>
+                <li><a href="#quick-review">Quick Review & High-Yield Points</a></li>
+            </ul>
+        </div>
+        
+        <button id="toc-toggle" class="toc-toggle">≡</button>
+        <div class="toc-sticky" id="stickyToc">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#mid-dermal-elastolysis">Mid-dermal Elastolysis</a></li>
+                <li><a href="#anetoderma">Anetoderma</a></li>
+                <li><a href="#striae">Striae</a></li>
+                <li><a href="#atrophoderma-pp">Atrophoderma of P&P</a></li>
+                <li><a href="#follicular-atrophoderma">Follicular Atrophoderma</a></li>
+                <li><a href="#atrophoderma-vermiculatum">Atrophoderma Vermiculatum</a></li>
+                <li><a href="#amvc">AMVC</a></li>
+                <li><a href="#piezogenic">Piezogenic Papules</a></li>
+                <li><a href="#differential-diagnosis">Differential Diagnosis</a></li>
+                <li><a href="#quick-review">Quick Review</a></li>
+            </ul>
+        </div>
+        
+        <span class="anchor-link" id="overview"></span>
+        <div class="card">
+            <h2>Overview of Connective Tissue Atrophies</h2>
+            <p>Atrophies of the skin occur due to diminution or loss of collagen and/or elastic fibers in the dermis. Understanding their characteristic presentations, distributions, and histologic findings is crucial for diagnosis.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Disorder</th>
+                            <th>Key Clinical Features</th>
+                            <th>Predilection Sites</th>
+                            <th>Histopathology</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mid-dermal elastolysis</td>
+                            <td>Fine wrinkling (type I), perifollicular papules (type II), reticulated erythema (type III)</td>
+                            <td>Trunk, arms, lateral neck</td>
+                            <td>Selective loss of elastic fibers in the mid dermis in a band-like pattern</td>
+                        </tr>
+                        <tr>
+                            <td>Anetoderma</td>
+                            <td>Circumscribed areas of flaccid skin (elevated, macular, or depressed)</td>
+                            <td>Usually trunk</td>
+                            <td>Focal or complete loss of elastic tissue in papillary/reticular dermis</td>
+                        </tr>
+                        <tr>
+                            <td>Striae</td>
+                            <td>Linear atrophic depressions</td>
+                            <td>Abdomen, thighs, breasts, buttocks</td>
+                            <td>Decreased collagen, thinned epidermis, fragmented elastic fibers</td>
+                        </tr>
+                        <tr>
+                            <td>Atrophoderma of Pasini and Pierini</td>
+                            <td>Depressed brown patches with "cliff-drop" borders</td>
+                            <td>Back, trunk</td>
+                            <td>Reduced dermal thickness, variable elastic fiber changes</td>
+                        </tr>
+                        <tr>
+                            <td>Follicular atrophoderma</td>
+                            <td>Follicular ice-pick depressions</td>
+                            <td>Dorsal hands/feet, cheeks</td>
+                            <td>Variable, sometimes with dilated follicles</td>
+                        </tr>
+                        <tr>
+                            <td>Atrophia maculosa varioliformis cutis</td>
+                            <td>Small "varioliform" and linear facial depressions</td>
+                            <td>Cheeks, forehead, chin</td>
+                            <td>Depression of epidermis, decreased elastic fibers</td>
+                        </tr>
+                        <tr>
+                            <td>Piezogenic pedal papules</td>
+                            <td>Skin-colored papules/nodules induced by weight-bearing</td>
+                            <td>Sides of heels</td>
+                            <td>Herniation of fat through dermis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <span class="anchor-link" id="mid-dermal-elastolysis"></span>
+        <div class="card">
+            <h2>Mid-dermal Elastolysis</h2>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Rare acquired disorder of elastic tissue (~100 reported cases)</li>
+                    <li>Primarily affects White middle-aged women (30-50 years)</li>
+                    <li>Histologically characterized by a selective band-like loss of elastic fibers in the mid dermis</li>
+                    <li>Three clinical types: type I (fine wrinkling), type II (perifollicular papules), type III (reticulated erythema)</li>
+                </ul>
+            </div>
+            
+            <h3>Introduction & History</h3>
+            <p>Mid-dermal elastolysis (MDE) is a rare, acquired disorder of elastic tissue characterized by diffuse fine wrinkling on the trunk, shoulders, neck, and arms. First described by Shelley and Wood in 1977 as "wrinkles due to idiopathic loss of mid-dermal elastic tissue."</p>
+            
+            <h3>Pathogenesis</h3>
+            <p>The cause remains unclear, but several factors may contribute:</p>
+            <ul>
+                <li>UV light exposure (sunlight, UVA from tanning salons, narrowband UVB)</li>
+                <li>Defects in elastic fiber synthesis</li>
+                <li>Autoimmunity against elastic fibers</li>
+                <li>Elastase release from inflammatory cells or fibroblasts</li>
+                <li>Imbalance between matrix metalloproteinases (MMPs) and tissue inhibitors of metalloproteinases (TIMPs)</li>
+                <li>Role of CD34+ dendritic fibroblasts</li>
+                <li>Decrease in lysyl oxidase-like 2 (LOXL2) expression affecting elastin renewal</li>
+                <li>Decrease in dermal fibulin-4 and -5, suggesting altered re-assembly of elastic fibers</li>
+            </ul>
+            <p>Has been observed in the setting of immune reconstitution inflammatory syndrome (IRIS).</p>
+            
+            <h3>Clinical Features</h3>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="openTab(event, 'mde-type1')">Type I</button>
+                    <button class="tab-button" onclick="openTab(event, 'mde-type2')">Type II</button>
+                    <button class="tab-button" onclick="openTab(event, 'mde-type3')">Type III</button>
+                </div>
+                <div id="mde-type1" class="tab-content active">
+                    <p><strong>Fine Wrinkling Pattern</strong> - Most common type</p>
+                    <ul>
+                        <li>Well-circumscribed to large diffuse areas of fine wrinkling</li>
+                        <li>Usually in a symmetric distribution</li>
+                        <li>Wrinkles tend to follow cleavage lines</li>
+                    </ul>
+                    <img src="https://i.ibb.co/7dxj6rf8/mid-dermal-elastolysis-type-1.jpg" alt="Type I MDE showing fine wrinkling pattern" class="image-placeholder" />
+                </div>
+                <div id="mde-type2" class="tab-content">
+                    <p><strong>Perifollicular Papular Pattern</strong></p>
+                    <ul>
+                        <li>Discrete perifollicular papules</li>
+                        <li>Central hair follicle appears indented</li>
+                        <li>Due to preservation of elastic tissue around hair follicles</li>
+                    </ul>
+                    <img src="https://i.postimg.cc/d1XgdzrS/mid-dermal-elastolysis-type-2.jpg" alt="Type II MDE showing perifollicular papules" class="image-placeholder" />
+                </div>
+                <div id="mde-type3" class="tab-content">
+                    <p><strong>Reticular Erythema Pattern</strong></p>
+                    <ul>
+                        <li>Erythematous patches</li>
+                        <li>Telangiectasias</li>
+                        <li>Reticulated erythema</li>
+                    </ul>
+                    <img src="https://i.postimg.cc/fyHrfpG9/image.png" alt="Type III MDE showing reticulated erythema" class="image-placeholder" />
+                </div>
+            </div>
+            
+            <div class="clinical-pearl">
+                <h4>💎 Clinical Pearls</h4>
+                <ul>
+                    <li>Most patients have no history of prior inflammatory dermatosis, but some report previous mild to moderate erythema</li>
+                    <li>Rarely, elastolysis is preceded by urticarial lesions or granuloma annulare</li>
+                    <li>Predilection sites: trunk, lateral neck, upper extremities</li>
+                    <li>Lesions are typically asymptomatic and give the skin a prematurely aged appearance</li>
+                    <li>Normal pigmentation without scaling, induration, or herniation</li>
+                    <li>Usually no family history or systemic involvement (unless linked to autoimmune disorders)</li>
+                </ul>
+            </div>
+            
+            <h3>Histopathology</h3>
+            <p>The key diagnostic feature is a clear band of elastolysis with loss of elastic fibers in the mid dermis.</p>
+            <img src="https://i.postimg.cc/6phYrDC5/image.png" alt="Histopathology - mid dermal elastolysis" class="image-placeholder" />
+
+            <ul>
+                <li>Epidermis is normal</li>
+                <li>Elastic tissue stains (Verhoeff-van Gieson , orcein. or Weigert's) reveal selective loss of elastic fibers in the mid dermis</li>
+                <li>Normal elastic tissue preserved in superficial papillary dermis above, reticular dermis below, and along adjacent hair follicles</li>
+                <li>Preservation of elastic tissue around hair follicles explains perifollicular papules in type II</li>
+                <li>Electron microscopy may show phagocytosis of normal and degenerated elastic fiber tissue by macrophages</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <p>Must be differentiated from other elastic tissue disorders:</p>
+            <ul>
+                <li><strong>Anetoderma</strong>: Characterized by soft macules/papules that herniate upon palpation (vs. diffuse wrinkling in MDE)</li>
+                <li><strong>Cutis laxa</strong>: Loose, redundant skin hanging in folds; histologically shows reduced and fragmented elastic fibers throughout the entire dermis</li>
+                <li><strong>Solar elastosis</strong>: Affects older age groups, restricted to sun-exposed areas, yellow color, coarser wrinkling; histologically shows hyperplasia of abnormal elastic fibers</li>
+                <li><strong>Perifollicular elastolysis</strong>: Associated with acne vulgaris; selective loss of elastic fibers that surround hair follicles</li>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <p>Currently, no effective treatment exists. The following have been tried without success:</p>
+            <ul>
+                <li>Sunscreens</li>
+                <li>Colchicine</li>
+                <li>Chloroquine</li>
+                <li>Vitamin E</li>
+                <li>Topical agents (retinoic acid, corticosteroids)</li>
+            </ul>
+            <p>Potential future therapies include topical soybean extract and eicosapentanoic acid. Oral mycophenolate mofetil may be beneficial in some cases.</p>
+        </div>
+        
+        <span class="anchor-link" id="anetoderma"></span>
+        <div class="card">
+            <h2>Anetoderma</h2>
+            <p><em>Synonyms: Macular atrophy, Anetoderma maculosa, Anetoderma maculosa cutis, Atrophia maculosa cutis</em></p>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Elastolytic disorder characterized by localized areas of flaccid skin</li>
+                    <li>Primary anetoderma: no underlying associated disorder</li>
+                    <li>Secondary anetoderma: associated with inflammatory disorders, infections, tumors, or systemic diseases</li>
+                    <li>Histologically shows focal or complete loss of elastic tissue in papillary/reticular dermis</li>
+                    <li>Classic "buttonhole" sign on palpation is pathognomonic</li>
+                    
+                    <li>Antiphospholipid antibodies can be associated with anetoderma</li>
+                    <li>Always remember to evaluate for antiphospholipid antibodies in patients with idiopathic anetoderma before labeling them as having primary anetoderma. This association is increasingly recognized and may appear on exams!</li>
+                </ul>
+            </div>
+            
+            <h3>Classification</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Characteristics</th>
+                    </tr>
+                    <tr>
+                        <td>Primary anetoderma</td>
+                        <td>
+                            <ul>
+                                <li>Jadassohn-Pellizzari type: with preceding inflammatory lesions</li>
+                                <li>Schweninger-Buzzi type: without preceding inflammatory lesions</li>
+                                <li>Note: Both types can coexist in the same patient; distinction is mainly of historical interest</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Secondary anetoderma</td>
+                        <td>
+                            <ul>
+                                <li>Associated with a primary dermatosis or cutaneous tumor</li>
+                                <li>Associated with a systemic disease (autoimmune, antiphospholipid syndrome, infectious) or drug</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Familial anetoderma</td>
+                        <td>
+                            <ul>
+                                <li>Both autosomal dominant and autosomal recessive forms</li>
+                                <li>Usually develops in first decade of life</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Anetoderma of prematurity</td>
+                        <td>
+                            <ul>
+                                <li>Occurs in extremely premature infants</li>
+                                <li>At sites of monitoring leads or adhesives</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Epidemiology</h3>
+            <p>Primary anetoderma favors young adults between 15 and 25 years of age and occurs more frequently in women than men.</p>
+            
+            <h3>Pathogenesis</h3>
+            <p>The exact mechanism is unknown, but several factors may contribute:</p>
+            <ul>
+                <li>Impaired turnover of elastin (increased destruction or decreased synthesis)</li>
+                <li>Release of elastase from inflammatory cells</li>
+                <li>Release of cytokines (e.g., interleukin-6)</li>
+                <li>Increased production of progelatinases A and B</li>
+                <li>Phagocytosis of elastic fibers by macrophages</li>
+                <li>Decrease in fibulin protein expression (affecting elastic fiber reassembly)</li>
+                <li>Immunologic mechanisms (explaining associated findings like antiphospholipid antibodies)</li>
+                <li>Possible link to mutations in genes encoding enzymes in the citric acid cycle</li>
+            </ul>
+            
+            <h3>Clinical Features</h3>
+            <p>The characteristic lesions are flaccid, circumscribed areas of slack skin that reflect a marked reduction or absence of dermal elastic fibers:</p>
+            <ul>
+                <li>Can appear as depressions, wrinkles, or sac-like protrusions</li>
+                <li>Number ranges from a few to hundreds</li>
+                <li>Typically measure 1-2 cm in diameter</li>
+                <li>Skin-colored to bluish-white in color</li>
+                <li>Surface can be normal or wrinkled, sometimes with a central depression</li>
+                <li>Smaller lesions may coalesce into larger herniations</li>
+                <li>Pathognomonic "buttonhole" sign: examining finger sinks into a distinct pit with sharp borders; bulge reappears when pressure is released (similar to neurofibromas)</li>
+                <li>Predilection sites: chest, back, neck, upper extremities</li>
+                <li>Asymptomatic lesions</li>
+            </ul>
+
+            <img src="https://i.postimg.cc/0yc5Typg/image.png" alt="Anetoderma clinical features" class="image-placeholder" style="display:block; margin: 20px auto; width:100%; max-width:600px; height:auto;" />
+            
+            <div class="clinical-pearl">
+                <h4>💎 Clinical Pearls</h4>
+                <ul>
+                    <li>Primary anetoderma develops in young adults; new lesions often continue to form for many years</li>
+                    <li>Secondary anetoderma develops at the site of a previous specific skin lesion (e.g., varicella, leprosy)</li>
+                    <li>Evaluation for antiphospholipid antibodies should be performed in patients with idiopathic anetoderma</li>
+                    <li>Anetoderma of prematurity appears to be related to monitoring leads/adhesives and extreme prematurity</li>
+                    <li>Various systemic abnormalities have been reported but are likely coincidental</li>
+                </ul>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Secondary Anetoderma - Associated Conditions</div>
+                <div class="accordion-content">
+                    
+                    <h4>Infectious Causes</h4>
+                    <ul>
+                        <li>Folliculitis</li>
+                        <li>Varicella</li>
+                        <li>Lepromatous leprosy</li>
+                        <li>Syphilis (cutaneous)</li>
+                        <li>Molluscum contagiosum</li>
+                        <li>Tuberculosis (cutaneous)</li>
+                        <li>HIV infection</li>
+                        <li>Acrodermatitis chronica atrophicans</li>
+                        <li>Post-hepatitis B immunization</li>
+                    </ul>
+                    
+                    <h4>Drugs</h4>
+                    <ul>
+                        <li>Penicillamine</li>
+                        <li>Cabiralizumab (CSF1 receptor antagonist) plus nivolumab</li>
+                    </ul>
+                    
+                    <h4>Inflammatory Conditions</h4>
+                    <ul>
+                        <li>Acne vulgaris</li>
+                        <li>Lichen planus</li>
+                        <li>Neutrophilic dermatoses (Sweet syndrome, pyoderma gangrenosum)</li>
+                        <li>Granuloma annulare</li>
+                        <li>Cutaneous sarcoidosis</li>
+                        <li>Juvenile xanthogranuloma</li>
+                        <li>Cutaneous lymphoid hyperplasia (lymphocytoma cutis)</li>
+                        <li>Insect bites</li>
+                        <li>Prurigo nodularis</li>
+                    </ul>
+                    
+                    <h4>Autoimmune Conditions</h4>
+                    <ul>
+                        <li>Cutaneous (e.g., discoid, panniculitis) and systemic lupus erythematosus</li>
+                        <li>Antiphospholipid syndrome</li>
+                        <li>Primary Sjögren syndrome</li>
+                        <li>Addison disease</li>
+                        <li>Graves disease</li>
+                    </ul>
+                    
+                    <h4>Tumors and Depositions</h4>
+                    <ul>
+                        <li>Involuted infantile hemangioma</li>
+                        <li>Pilomatricoma</li>
+                        <li>Melanocytic nevus</li>
+                        <li>Schwannoma</li>
+                        <li>Dermatofibroma</li>
+                        <li>Dermatofibrosarcoma protuberans</li>
+                        <li>Primary cutaneous marginal zone B cell lymphoproliferative disorder</li>
+                        <li>Mycosis fungoides</li>
+                        <li>Mastocytosis</li>
+                        <li>Nodular amyloidosis</li>
+                        <li>Xanthoma</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Histopathology</h3>
+            <ul>
+                <li>Collagen appears normal in routinely stained sections</li>
+                <li>Perivascular lymphocytes (primarily T helper cells) may be present</li>
+                <li>Elastic tissue stains show focal, partial or complete loss of elastic tissue in papillary and/or reticular dermis</li>
+                <li>Residual abnormal, irregular, and fragmented elastic fibers are usually present</li>
+                <li>Plasma cells, histiocytes with phagocytized elastic fibers, and occasional granuloma formation may be seen</li>
+                <li>Direct immunofluorescence sometimes shows linear or granular deposits of immunoglobulins and complement along the dermal-epidermal junction or around dermal blood vessels</li>
+                <li>Electron microscopy reveals fragmented and irregular elastic fibers, sometimes engulfed by macrophages</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <p>Key conditions to differentiate from anetoderma include:</p>
+            <ul>
+                <li><strong>Mid-dermal elastolysis</strong>: Diffuse fine wrinkling rather than discrete lesions</li>
+                <li><strong>Post-traumatic scars</strong>: History of trauma, different histologic features</li>
+                <li><strong>Papular elastorrhexis</strong>: Firm, white, non-follicular papules, non-compressible (unlike the "buttonhole" sign of anetoderma)</li>
+                <li><strong>Perifollicular elastolysis</strong>: Associated with acne, affects elastic fibers around hair follicles</li>
+                <li><strong>Nevus lipomatosus</strong>: Clustered soft, skin-colored to yellow nodules, histologically showing ectopic mature lipocytes in dermis</li>
+                <li><strong>Goltz syndrome</strong>: Linear array of lesions along Blaschko lines,GOLTZ </li>
+                <!-- GOLTZ Memory Anchor Mnemonic -->
+                <div style="background: #eaf7fa; border-radius: 8px; margin: 18px 0; padding: 18px 18px 10px 18px; border-left: 5px solid #009999; max-width: 700px;">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #007575; margin-bottom: 8px;">Memory Anchor: <span style="color: #008080;">"GOLTZ"</span></div>
+                    <div style="font-style: italic; font-size: 1.05rem;">
+                        <div style="margin-bottom: 4px;"><b>G</b>aps in skin (Atrophy, Hypoplasia, Aplasia Cutis)</div>
+                        <div style="margin-bottom: 4px;"><b>O</b>cular findings (Coloboma, Microphthalmia)</div>
+                        <div style="margin-bottom: 4px;"><b>L</b>imbs &amp; Lines (Syndactyly, Osteopathia Striata; Blaschko Lines)</div>
+                        <div style="margin-bottom: 4px;"><b>T</b>elangiectasias &amp; Fat Hernia<b>T</b>ions (Red-yellow nodules)</div>
+                    </div>
+                </div>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <p>Limited treatment options with variable efficacy:</p>
+            <ul>
+                <li>Hydroxychloroquine has shown improvement in some cases</li>
+                <li>Surgical excision may be helpful for limited lesions (with informed consent regarding scar formation risk)</li>
+                <li>Soft tissue fillers have inconclusive results</li>
+                <li>Fractionated ablative and non-ablative lasers may be beneficial (based on case reports)</li>
+                <li>Ineffective therapies: triamcinolone, aspirin, dapsone, phenytoin, penicillin G, vitamin E, inositol niacinate</li>
+            </ul>
+        </div>
+        
+        <span class="anchor-link" id="striae"></span>
+        <div class="card">
+            <h2>Striae</h2>
+            <p><em>Synonyms: Striae distensae, Striae atrophicans, "Stretch marks", Striae gravidarum</em></p>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Very common condition in various age groups (5-50 years)</li>
+                    <li>Linear atrophic depressions from dermal damage due to skin stretching</li>
+                    <li>Associated with puberty, pregnancy, rapid growth, weight changes, obesity, hypercortisolism</li>
+                    <li>Initial red-violaceous lesions (striae rubrae) fade to white atrophic lesions (striae albae)</li>
+                    <li>More common in females (2:1 ratio compared to males)</li>
+                    <li>Predilection for different sites based on context (puberty vs. pregnancy vs. Cushing's)</li>
+                </ul>
+            </div>
+            
+            <h3>Epidemiology</h3>
+            <ul>
+                <li>Very common between ages 5-50 years</li>
+                <li>More common in White individuals</li>
+                <li>Females affected twice as often as males</li>
+                <li>Puberty: up to 35% affected</li>
+                <li>Pregnancy: 75% develop striae; more common in:
+                    <ul>
+                        <li>Younger primigravidas</li>
+                        <li>Those who gain more weight during pregnancy</li>
+                        <li>Those who deliver babies with higher birth weight</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Pathogenesis</h3>
+            <p>Striae reflect "breaks" in connective tissue leading to dermal atrophy. Contributing factors include:</p>
+            <ul>
+                <li>Hormonal influences (particularly corticosteroids)</li>
+                <li>Mechanical stress</li>
+                <li>Genetic predisposition</li>
+            </ul>
+            <p>Bevacizumab (anti-VEGF antibody) has been associated with severe ulcerations of corticosteroid-induced striae due to its negative effect on wound healing.</p>
+            
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Multiple, symmetric, well-defined, linear atrophic lesions following cleavage lines</li>
+                <li>Evolution:
+                    <ul>
+                        <li><strong>Striae rubrae</strong>: Initial red-to-violaceous elevated lines, sometimes mildly pruritic</li>
+                        <li><strong>Striae albae</strong>: Later stage with faded color, atrophic appearance, fine wrinkling; usually permanent but may fade somewhat over time</li>
+                    </ul>
+                </li>
+                <li>Several centimeters in length, few millimeters to few centimeters in width</li>
+                <li>Site distribution varies by context:
+                    <ul>
+                        <li><strong>Puberty in girls</strong>: Thighs, hips, buttocks, breasts</li>
+                        <li><strong>Puberty in boys</strong>: Shoulders, thighs, buttocks, lumbosacral region</li>
+                        <li><strong>Pregnancy</strong>: Abdomen, breasts, thighs</li>
+                        <li><strong>Corticosteroid therapy/Cushing syndrome</strong>: More widely distributed, often larger</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="clinical-pearl">
+                <h4>💎 Clinical Pearls</h4>
+                <ul>
+                    <li>Development of striae gravidarum is associated with increased risk of laceration during vaginal delivery and subsequent pelvic relaxation/prolapse</li>
+                    <li>Flexural and intertriginous areas are at higher risk for striae from potent topical corticosteroids</li>
+                    <li>Atrophic striae may become elevated and "worm-like" in the setting of severe edema or lymphedema</li>
+                    <li>In polymorphic eruption of pregnancy, initial lesions often arise within striae gravidarum</li>
+                </ul>
+            </div>
+              <figure style="text-align:center; margin: 24px 0;">
+  <img src="https://i.imgur.com/iVcsXfC.png" alt="Common anatomic sites of striae and linear focal elastosis" style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px #bbb;">
+  <figcaption style="margin-top: 8px; font-size: 1rem; color: #444;">Common anatomic sites of striae and linear focal elastosis. <span style='display:inline-block;width:16px;height:12px;background:#39bfa7;margin-right:4px;vertical-align:middle;'></span>Pregnancy-related striae <span style='display:inline-block;width:16px;height:12px;background:#40e0d0;margin-right:4px;vertical-align:middle;'></span>Striae and linear focal elastosis <span style='display:inline-block;width:16px;height:12px;background:#ea6ba6;margin-right:4px;vertical-align:middle;'></span>Other striae (e.g., puberty-related)</figcaption>
+</figure>
+          
+            
+            <h3>Histopathology</h3>
+            <p>Findings similar to scars, varying with the stage of evolution:</p>
+            <ul>
+                <li>Epidermis: Normal in early stages, eventually becomes atrophic with blunted rete ridges</li>
+                <li>Dermis: Decreased thickness and reduced collagen in upper dermis</li>
+                <li>Collagen bundles lie parallel to the epidermis</li>
+                <li>Elastic fibers: Variable alterations, may be fragmented with marked reduction compared to adjacent normal dermis</li>
+                <li>Absence of hair follicles and other adnexal structures</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <p>The main differential diagnosis is <strong>linear focal elastosis</strong> (elastotic striae):</p>
+            <ul>
+                <li>Rows of yellow, palpable, striae-like bands on the lower back</li>
+                <li>Unlike striae, lesions are raised and yellow (not depressed and white)</li>
+                <li>Most commonly affects elderly men</li>
+                <li>Histologically shows focal increase in elongated/fragmented elastic fibers and thickened dermis</li>
+                <li>May represent excessive regenerative process of elastic fibers (keloidal repair of striae distensae)</li>
+            </ul>
+            <p><strong>Linear lumbar localized elastolysis</strong>: Occurs in young men; linear, raised, skin-colored bands with elastolysis in mid dermis.</p>
+            
+            <h3>Treatment</h3>
+            <p>Striae tend to improve spontaneously over time, but various treatments may help:</p>
+            <ul>
+                <li><strong>For early-stage striae (striae rubrae):</strong>
+                    <ul>
+                        <li>Tretinoin 0.1% cream (can improve appearance, decrease length and width)</li>
+                        <li>20% glycolic acid with either 0.05% tretinoin or 10% L-ascorbic acid</li>
+                        <li>585 nm pulsed dye laser</li>
+                    </ul>
+                </li>
+                <li><strong>For late-stage striae (striae albae):</strong>
+                    <ul>
+                        <li>Fractionated non-ablative lasers (via neocollagenesis)</li>
+                        <li>308 nm excimer laser (improves leukoderma but requires maintenance)</li>
+                        <li>Radiofrequency and pulsed magnetic fields</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Currently, no specific therapy results in complete response. Evidence for other topical treatments (either prevention or treatment) is inconclusive.</p>
+        </div>
+        
+        <span class="anchor-link" id="atrophoderma-pp"></span>
+        <div class="card">
+            <h2>Atrophoderma of Pasini and Pierini</h2>
+            <p><em>Synonyms: Idiopathic atrophoderma of Pasini and Pierini, Atrophoderma, Sclérodermie atrophique d'emblée, Morphea plana atrophica</em></p>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Form of dermal atrophy with sharply demarcated depressed patches</li>
+                    <li>Characteristic "cliff-drop" border between normal and affected skin</li>
+                    <li>More common in women (6:1 ratio) in second/third decade</li>
+                    <li>Debate whether it represents an atypical, primarily atrophic form of morphea or a distinct entity</li>
+                    <li>Borrelia burgdorferi infection may play a role in some cases</li>
+                    <li>Benign course lasting 10-20 years, often self-healing</li>
+                </ul>
+            </div>
+            
+            <h3>History & Epidemiology</h3>
+            <p>First described by Pasini in 1923 as "progressive idiopathic atrophoderma" and further studied by Pierini. Affects women more than men (6:1 ratio in adults) and typically starts in the second or third decade of life, although cases in children under 13 and rare congenital cases have been reported.</p>
+            
+            <h3>Pathogenesis</h3>
+            <p>Etiology remains unknown. Borrelia burgdorferi infection has been suggested as a possible factor, with positive serology in up to 40-50% of European patients (though false positives can occur). Given overlap with morphea, insights into morphea pathogenesis may provide clues.</p>
+            
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Distribution:
+                    <ul>
+                        <li>Most common on trunk, especially back and lumbosacral region</li>
+                        <li>Also on chest, arms, and abdomen</li>
+                        <li>Face, hands, and feet usually spared</li>
+                        <li>Often symmetric and bilateral</li>
+                        <li>Rarely, linear pattern along Blaschko lines (atrophoderma of Moulin)</li>
+                    </ul>
+                </li>
+                <li>Lesions:
+                    <ul>
+                        <li>Single or multiple round/ovoid patches</li>
+                        <li>Size varies from few centimeters to large areas of trunk</li>
+                        <li>Usually asymptomatic without inflammation</li>
+                        <li>May coalesce into large irregular patches</li>
+                        <li>Usually brown in color, sometimes blue to violet or hypopigmented</li>
+                        <li>Normal skin surface and consistency upon palpation</li>
+                        <li>Lack of cutaneous induration or sclerosis</li>
+                    </ul>
+                </li>
+                <li>Characteristic "cliff-drop" borders:
+                    <ul>
+                        <li>Sharply defined edges</li>
+                        <li>Depth ranges from 1-8 mm</li>
+                        <li>Creates appearance of "inverted plateaus" or "Swiss cheese" if multiple</li>
+                        <li>More apparent on back due to thicker dermis</li>
+                        <li>Dermal blood vessels sometimes visible within depressed patches</li>
+                        <div style="display: flex; justify-content: space-around; align-items: center;">
+                            <img src="https://i.postimg.cc/XJjYXWJw/image.png" alt="Atrophoderma of Pasini and Pierini clinical features" class="image-placeholder" style="width:100%; max-width:300px; height:auto;" />
+                            <img src="https://i.postimg.cc/x87fsbPR/image.png" alt="Atrophoderma of Pasini and Pierini clinical features" class="image-placeholder" style="width:100%; max-width:300px; height:auto;" />
+                        </div>
+
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="clinical-pearl">
+                <h4>💎 Clinical Pearls</h4>
+                <ul>
+                    <li>No erythema or lilac ring as seen in morphea</li>
+                    <li>Morphea, lichen sclerosus(Morphea and lichen sclerosus coexist in 6% of patients) , and atrophoderma can occur simultaneously in the same patient (but in different areas)</li>
+                    <li>Sclerodermatous changes can occasionally appear years later in the center of depressed lesions</li>
+                    <li>Progressive course with lesions continuing to appear for decades before stabilizing</li>
+                    <li>Transformation to generalized morphea has not been observed</li>
+                </ul>
+            </div>
+            
+            <h3>Histopathology</h3>
+            <p>Diagnosis is primarily clinical as histology is not diagnostic:</p>
+            <ul>
+                <li>Epidermis is normal or slightly atrophic</li>
+                <li>Basal layer pigmentation may be increased</li>
+                <li>Perivascular infiltrate of T cells and histiocytes may be present</li>
+                <li>Collagen bundles in reticular dermis show varying degrees of homogenization and clumping</li>
+                <li>Reduced dermal thickness compared to adjacent normal skin</li>
+                <li>Most studies show no abnormality with elastic tissue stains, but some report diminution and fragmentation</li>
+                <li>Adnexal structures usually preserved</li>
+                <li>Multiphoton microscopy suggests changes in collagen and elastic fiber organization rather than content</li>
+                <li>Direct immunofluorescence may show nonspecific IgM and C3 staining in dermal papillary blood vessels or at dermal-epidermal junction</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <p>The main differential is with morphea:</p>
+            <ul>
+                <li><strong>Morphea</strong>: Active lesions present as indurated, often hyperpigmented plaques with characteristic peripheral lilac rim</li>
+                <li>Atrophoderma of Pasini and Pierini lacks sclerosis, but similarities to atrophy in regressing morphea plaques suggest a relationship</li>
+                <li><strong>Anetoderma</strong>: Easily differentiated by palpation ("buttonhole" sign) and histology (loss of elastic fibers rather than collagen)</li>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <ul>
+                <li>Natural course is protracted (10-20 years) but self-healing</li>
+                <li>No proven effective treatment</li>
+                <li>Penicillin and doxycycline have been tried with variable results (due to possible Borrelia infection)</li>
+                <li>Dramatic response to oral hydroxychloroquine reported in one patient</li>
+                <li>Q-switched alexandrite laser may diminish associated hyperpigmentation</li>
+            </ul>
+        </div>
+        
+        <span class="anchor-link" id="follicular-atrophoderma"></span>
+        <div class="card">
+            <h2>Follicular Atrophoderma</h2>
+            
+            <h3>Introduction</h3>
+            <p>Follicular atrophoderma refers to dimple-like depressions at follicular orifices that can occur:</p>
+            <ul>
+                <li>As an isolated defect of limited extent</li>
+                <li>In association with disorders where hair follicles are plugged with keratin</li>
+                <li>With rare genodermatoses</li>
+            </ul>
+            <p>First described by Miescher in 1944 in a patient with atypical chondrodystrophy.</p>
+            
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Distinctive follicular ice-pick depressions</li>
+                <li>Most commonly on back of hands and feet or on cheeks</li>
+                <li>Pitted scars often present at birth or appear during childhood</li>
+                <li>Family history may be present</li>
+                <li>Associated syndromes:
+                    <ul>
+                        <li><strong>Bazex-Dupré-Christol syndrome</strong>:Lesions primarily on dorsal hands. BDCS is an X-linked dominant disorder with the classic triad of basal cell carcinoma, follicular atrophoderma, and hypotrichosis.</li>
+                        <li><strong>Conradi-Hünermann-Happle syndrome</strong>: X-linked dominant chondrodysplasia punctata</li>
+                       <span class="mnemonic">CONRADI</span> Features:
+                            <ul>
+                                <li>C: Cataracts (sectorial, unilateral)</li>
+                                <li>O: Osseous abnormalities (epiphyseal stippling)</li>
+                                <li>N: Nail changes</li>
+                                <li>R: Rhizomelic limb shortening</li>
+                                <li>A: Alopecia (scarring)</li>
+                                <li>D: Dominant X-linked inheritance</li>
+                                <li>I: Ichthyosis along Blaschko lines</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>When limited to cheeks, termed "atrophoderma vermiculatum"</li>
+            </ul>
+        </div>
+
+        <h3>Related Syndromes</h3>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Bazex-Dupré-Christol Syndrome</div>
+                <div class="accordion-content">
+                    <p>Not to be confused with Bazex syndrome (acrokeratosis paraneoplastica)</p>
+                    <ul>
+                        <li>Characterized by:
+                            <ul>
+                                <li>Follicular atrophoderma</li>
+                                <li>Milia</li>
+                                <li>Multiple basal cell carcinomas</li>
+                                <li>Hypotrichosis</li>
+                                <li>Localized hypohidrosis (above the neck)</li>
+                            </ul>
+                        </li>
+                        <li>X-linked dominant inheritance (Xq24-q27 linkage)</li>
+                        <li>Additional findings: facial hyperpigmentation, hair shaft anomalies, trichoepitheliomas</li>
+                        <li>No systemic manifestations</li>
+                        <li>May be better classified as an ectodermal dysplasia</li>
+                        <li>Follicular atrophoderma described as ice-pick marks or patulous follicles:
+                            <ul>
+                                <li>Most common on dorsal hands</li>
+                                <li>Also on feet, lower back, elbows, and rarely face</li>
+                                <li>May be present at birth or appear later in childhood</li>
+                            </ul>
+                        </li>
+                        <li>Term "follicular atrophoderma" is a misnomer: no abnormalities of elastic fibers or atrophy found</li>
+                        <li>Basal cell carcinomas develop in about 40% of patients, primarily on the face, from age 9-50 years</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Conradi-Hünermann-Happle Syndrome</div>
+                <div class="accordion-content">
+                    <p>X-linked dominant chondrodysplasia punctata (CDPX2)</p>
+                    <ul>
+                        <li>Occurs almost exclusively in girls (lethal in hemizygous males)</li>
+                        <li>Mutations in X chromosome gene encoding emopamil-binding protein</li>
+                        <li>Clinical manifestations:
+                            <ul>
+                                <li>Ichthyosiform streaks along Blaschko lines (resolve in first year, replaced by follicular atrophoderma)</li>
+                                <li>Hyperpigmentation</li>
+                                <li>Cataracts</li>
+                                <li>Scarring alopecia</li>
+                                <li>Saddle-nose deformity</li>
+                                <li>Asymmetric limb reduction defects</li>
+                                <li>Stippled calcifications of epiphyses</li>
+                            </ul>
+                        </li>
+                        <li>Distinctive histopathology in ichthyosiform areas: keratotic follicular plugs containing dystrophic calcification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <span class="anchor-link" id="atrophoderma-vermiculatum"></span>
+        <div class="card">
+            <h2>Atrophoderma Vermiculatum</h2>
+            <p><em>Other names: Ulerythema acneiforme, acne vermoulante, atrophoderma reticulata symmetrica faciei, folliculitis ulerythema reticulata, folliculitis ulerythemosa, honeycomb atrophy</em></p>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Facial disorder with inflammatory papules followed by pitted, atrophic scars in a honeycomb pattern</li>
+                    <li>May be sporadic, autosomal dominant, part of keratosis pilaris atrophicans group, or associated with syndromes</li>
+                    <li>Onset usually in childhood or around puberty</li>
+                    <li>Pathogenesis involves abnormal follicular hyperkeratinization leading to obstruction and inflammation</li>
+                    <li>Associated syndromes include Rombo syndrome and Loeys-Dietz syndrome</li>
+                </ul>
+            </div>
+            
+            <h3>Clinical Presentation</h3>
+            <ul>
+                <li>Multiple symmetric inflammatory papules on cheeks, presumably centered on hair follicles</li>
+                <li>Papules progress to pitted, atrophic, depressed scars in a reticulated or honeycomb pattern</li>
+                <li>Variable erythema, milia, and horny follicular plugs</li>
+                <li>Can extend to forehead and preauricular regions</li>
+                <li>Onset usually in childhood or around puberty</li>
+                <li>Both sexes equally affected</li>
+                <li>Slowly progressive course</li>
+                <img src="https://i.postimg.cc/9M38dnBx/image.png" alt="Atrophoderma Vermiculatum clinical features" class="image-placeholder" style="display:block; margin: 40px auto; width:100%; max-width:500px; height:auto;" />
+
+            </ul>
+            
+            <h3>Keratosis Pilaris Atrophicans Group</h3>
+            <p>Atrophoderma vermiculatum can be associated with a group of related disorders characterized by keratotic follicular papules, variable inflammation, and secondary atrophic scarring:</p>
+            <ul>
+                <li><strong>Ulerythema ophryogenes</strong> (keratosis pilaris atrophicans faciei):
+                    <ul>
+                        <li>Affects primarily lateral eyebrows</li>
+                        <li>Manifests as erythema, follicular papules, and alopecia</li>
+                        <li>Autosomal dominant inheritance with incomplete penetrance</li>
+                        <li>Progression usually ceases after puberty</li>
+                        <img src="https://i.postimg.cc/3JLtSRB0/image.png" alt="Ulerythema ophryogenes clinical features" class="image-placeholder" style="display:block; margin: 20px auto; width:100%; max-width:400px; height:auto;" />
+                        <div style="display: flex; justify-content: center;">
+                            <figcaption>Sparse eyebrow hair and tiny whitish, follicular, scaly papules on the forehead, medial cheeks, and within the eyebrows.</figcaption>
+                        </div>
+                        <img src="https://i.postimg.cc/05nnjQhX/image.png" alt="Ulerythema ophryogenes histopathology" class="image-placeholder" style="display:block; margin: 40px auto; width:100%; max-width:400px; height:auto;" />
+                        <div style="display: flex; justify-content: center;">
+                          
+
+
+                    </ul>
+                </li>
+                <li><strong>Keratosis follicularis spinulosa decalvans</strong>:
+                    <ul>
+                        <li>Begins in childhood with keratotic follicular papules on malar area</li>
+                        <li>Progresses to involve eyebrows, scalp, extremities</li>
+                        <li>Associated scarring alopecia</li>
+                        <li>X-linked recessive inheritance</li>
+                        <div style="display: flex; justify-content: center;">
+                            <img src="https://i.postimg.cc/9Q6tKqq0/image.png" alt="Keratosis follicularis spinulosa decalvans clinical features" class="image-placeholder" style="display:inline-block; margin: 20px 10px; width:100%; max-width:200px; height:auto;" />
+                            <img src="https://i.postimg.cc/V619LQgc/image.png" alt="Keratosis follicularis spinulosa decalvans clinical features" class="image-placeholder" style="display:inline-block; margin: 20px 10px; width:100%; max-width:200px; height:auto;" />
+                            <img src="https://i.postimg.cc/W3nGdWYq/image.png" alt="Keratosis follicularis spinulosa decalvans clinical features" class="image-placeholder" style="display:inline-block; margin: 20px 10px; width:100%; max-width:200px; height:auto;" />
+                            <img src="https://i.postimg.cc/y6LhBGSw/image.png" alt="Keratosis follicularis spinulosa decalvans clinical features" class="image-placeholder" style="display:inline-block; margin: 20px 10px; width:100%; max-width:200px; height:auto;" />
+                        </div>
+
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Pathogenesis</h3>
+            <p>The underlying mechanism appears to be abnormal follicular hyperkeratinization in the upper third of the hair follicle, leading to:</p>
+            <ul>
+                <li>Obstruction of the growing hair shaft</li>
+                <li>Production of chronic inflammation</li>
+                <li>Scarring below the level of obstruction</li>
+            </ul>
+            
+            <h3>Associated Syndromes</h3>
+            <ul>
+                <li><strong>Rombo syndrome</strong>: Milia, telangiectasias, basal cell carcinomas, hypotrichosis, acrocyanosis, and occasionally trichoepitheliomas</li>
+                <li><strong>Nicolau-Balus syndrome</strong>: Syringomas and milia</li>
+                <li><strong>Loeys-Dietz syndrome</strong>: Connective tissue disorder with vascular, skeletal, and craniofacial findings</li>
+                <li>Reported association with ipsilateral congenital cataract</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li><strong>Atrophia maculosa varioliformis cutis</strong>: Small round facial depressions without preceding inflammatory papules</li>
+                <li><strong>Keratosis pilaris rubra of the cheeks</strong>: Follicular keratotic papules with erythema but minimal to no atrophy</li>
+                <li><strong>Erythromelanosis faciei</strong>: In older adults; erythema, pigmentation, and follicular plugging</li>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <p>Primarily a cosmetic problem with limited effective treatments:</p>
+            <ul>
+                <li>Topical treatments (emollients, corticosteroids, tretinoin, keratolytics) show no consistent benefit</li>
+                <li>Systemic isotretinoin may stop progression and induce remission in some cases</li>
+                <li>Physical modalities for improving atrophic scars:
+                    <ul>
+                        <li>Dermabrasion</li>
+                        <li>Laser therapy (CO2, 585 nm pulsed dye)</li>
+                        <li>Fillers (hyaluronic acid, autologous fat)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            
+        
+        <span class="anchor-link" id="amvc"></span>
+        <div class="card">
+            <h2>Atrophia Maculosa Varioliformis Cutis</h2>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Small round "varioliform" and linear facial depressions</li>
+                    <li>Occurs spontaneously without preceding trauma, acne, or inflammation</li>
+                    <li>Affects cheeks primarily, sometimes forehead or chin</li>
+                    <li>Gradual increase in lesion number</li>
+                    <li>Familial variant has been described</li>
+                </ul>
+            </div>
+            
+            <h3>Introduction & Clinical Features</h3>
+            <p>First described by Heidingsfeld in 1918, likely more common than the number of published cases suggests. Key characteristics:</p>
+            <ul>
+                <li>Small round "varioliform" and linear facial depressions</li>
+                <li>Asymptomatic lesions</li>
+                <li>Occurs spontaneously on cheeks, occasionally forehead or chin</li>
+                <li>Gradual increase in number of lesions</li>
+                <li>No history of preceding trauma, acne, or inflammatory lesions</li>
+                <li>Familial variant described</li>
+                <li>Reported associations with pachydermodactyly and extrahepatic biliary atresia (likely coincidental)</li>
+                <li>Pathogenesis unknown</li>
+            </ul>
+            
+            <h3>Histopathology</h3>
+            <ul>
+                <li>Depression of the epidermis</li>
+                <li>Normal collagen fibers</li>
+                <li>Slightly decreased number of elastic fibers</li>
+                <li>Little or no inflammation</li>
+            </ul>
+            
+            <h3>Differential Diagnosis</h3>
+            <ul>
+                <li><strong>Simple scars</strong>: Distinguished by history and presence of dermal fibrosis histologically</li>
+                <li><strong>Atrophoderma vermiculatum</strong>: Harder to differentiate but typically presents with:
+                    <ul>
+                        <li>Initial inflammatory papules followed by pitted scars</li>
+                        <li>Honeycomb pattern rather than sharply linear</li>
+                        <li>Usually centered on hair follicles</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <p>No known treatment to prevent occurrence of these lesions.</p>
+        </div>
+        
+        <span class="anchor-link" id="piezogenic"></span>
+        <div class="card">
+            <h2>Piezogenic Pedal Papules (Piezogenic Papules)</h2>
+            
+            <div class="board-alert">
+                <h4>🔍 High-Yield Board Points</h4>
+                <ul>
+                    <li>Skin-colored papules/nodules on sides of heels</li>
+                    <li>Induced by weight-bearing, disappear when leg is raised</li>
+                    <li>Result from herniation of fat through connective tissue in dermis</li>
+                    <li>Common enough to be considered normal in general population</li>
+                    <li>Associated with Ehlers-Danlos syndrome and Prader-Willi syndrome</li>
+                </ul>
+            </div>
+            
+            <h3>Introduction & Clinical Features</h3>
+            <p>First described by Shelley and Rawnsley in 1968. The term is somewhat of a misnomer as "piezogenic" means "producing pressure," when these lesions are actually produced by pressure.</p>
+            <ul>
+                <li>Skin-colored papules and nodules on sides of heels</li>
+                <li>Induced by weight-bearing</li>
+                <li>Disappear when leg is raised</li>
+                <li>Usually asymptomatic, but pain during weight-bearing has been described</li>
+                <li>Similar lesions reported on wrists</li>
+            </ul>
+            
+            <h3>Pathogenesis</h3>
+            <p>Pressure induces herniation of fat through connective tissue in the dermis of the heels.</p>
+            
+            <h3>Associations</h3>
+            <ul>
+                <li>Common enough in the general population to be considered normal</li>
+                <li>Associated with:
+                    <ul>
+                        <li>Ehlers-Danlos syndrome</li>
+                        <li>Prader-Willi syndrome</li>
+                        <li>GATA2 deficiency</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Variants</h3>
+            <p><strong>Infantile variant (pedal papules of infancy or precalcaneal congenital fibrolipomatous hamartoma):</strong></p>
+            <ul>
+                <li>Larger nodules on medial aspect of heel</li>
+                <li>Present without weight-bearing</li>
+                <li>When unilateral, must be distinguished from juvenile aponeurotic fibroma (which can calcify)</li>
+            </ul>
+            
+            <h3>Treatment</h3>
+            <ul>
+                <li>Usually no treatment required</li>
+                <li>For painful lesions during weight-bearing: orthopedic shoes or surgical excision may help</li>
+            </ul>
+        </div>
+        
+        <span class="anchor-link" id="differential-diagnosis"></span>
+        <div class="card">
+            <h2>Comparative Differential Diagnosis</h2>
+            
+            <h3>Comparing Disorders of Elastic Tissue</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Mid-dermal Elastolysis</th>
+                        <th>Anetoderma</th>
+                        <th>Atrophoderma of P&P</th>
+                    </tr>
+                    <tr>
+                        <td>Primary Lesion</td>
+                        <td>Fine wrinkling, perifollicular papules</td>
+                        <td>Flaccid skin that may be elevated or depressed</td>
+                        <td>Depressed brown patches</td>
+                    </tr>
+                    <tr>
+                        <td>Distribution</td>
+                        <td>Trunk, arms, lateral neck</td>
+                        <td>Trunk, especially chest, back</td>
+                        <td>Back, lumbosacral region, trunk</td>
+                    </tr>
+                    <tr>
+                        <td>Histopathology</td>
+                        <td>Band-like loss of elastic fibers in mid dermis</td>
+                        <td>Focal loss of elastic tissue in papillary/reticular dermis</td>
+                        <td>Reduced dermal thickness, variable elastic fiber changes</td>
+                    </tr>
+                    <tr>
+                        <td>Characteristic Sign</td>
+                        <td>Diffuse fine wrinkling</td>
+                        <td>"Buttonhole" sign on palpation</td>
+                        <td>"Cliff-drop" borders</td>
+                    </tr>
+                    <tr>
+                        <td>Demographics</td>
+                        <td>White women, 30-50 years</td>
+                        <td>Young adults, 15-25 years, F>M</td>
+                        <td>Young adults, 20-30 years, F>M (6:1)</td>
+                    </tr>
+                    <tr>
+                        <td>Associations</td>
+                        <td>Rarely with autoimmune disorders</td>
+                        <td>Sometimes with antiphospholipid antibodies</td>
+                        <td>Possibly Borrelia infection in some cases</td>
+                    </tr>
+                    <tr>
+                        <td>Treatment</td>
+                        <td>No effective treatment</td>
+                        <td>Hydroxychloroquine in some cases</td>
+                        <td>Antibiotics or hydroxychloroquine (variable results)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Comparing Follicular Atrophy Disorders</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Follicular Atrophoderma</th>
+                        <th>Atrophoderma Vermiculatum</th>
+                        <th>Keratosis Pilaris Atrophicans Faciei</th>
+                    </tr>
+                    <tr>
+                        <td>Clinical Appearance</td>
+                        <td>Follicular ice-pick depressions</td>
+                        <td>Honeycomb pattern of pitted scars</td>
+                        <td>Follicular papules with scarring alopecia of eyebrows</td>
+                    </tr>
+                    <tr>
+                        <td>Distribution</td>
+                        <td>Dorsal hands/feet</td>
+                        <td>Cheeks, preauricular region</td>
+                        <td>Eyebrows (particularly lateral third)</td>
+                    </tr>
+                    <tr>
+                        <td>Preceding Lesions</td>
+                        <td>Variable</td>
+                        <td>Inflammatory papules</td>
+                        <td>Erythematous follicular papules</td>
+                    </tr>
+                    <tr>
+                        <td>Syndromes</td>
+                        <td>Bazex-Dupré-Christol, Conradi-Hünermann-Happle</td>
+                        <td>Rombo syndrome, Loeys-Dietz syndrome</td>
+                        <td>Noonan syndrome, cardio-facio-cutaneous syndrome</td>
+                    </tr>
+                    <tr>
+                        <td>Treatment</td>
+                        <td>Limited options</td>
+                        <td>Isotretinoin may help in some cases</td>
+                        <td>Topical treatments with limited benefit</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Differentiating Striae from Similar Conditions</h3>
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h4>Striae Distensae</h4>
+                    <ul>
+                        <li>Linear atrophic depressions</li>
+                        <li>Initially red-purple (striae rubrae)</li>
+                        <li>Later white and atrophic (striae albae)</li>
+                        <li>Follow lines of cleavage</li>
+                        <li>Associated with rapid growth, pregnancy, corticosteroids</li>
+                        <li>Decreased collagen and fragmented elastic fibers histologically</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Linear Focal Elastosis</h4>
+                    <ul>
+                        <li>Rows of yellow, palpable, striae-like bands</li>
+                        <li>Primarily on lower back</li>
+                        <li>Raised rather than depressed</li>
+                        <li>Yellow rather than white</li>
+                        <li>Primarily affects elderly men</li>
+                        <li>Increased elastic fibers histologically</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Linear Lumbar Localized Elastolysis</h4>
+                    <ul>
+                        <li>Linear, raised bands</li>
+                        <li>Skin-colored (not red or white)</li>
+                        <li>Occurs most often in young men</li>
+                        <li>Elastolysis within the mid dermis histologically</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <span class="anchor-link" id="quick-review"></span>
+        <div class="card">
+            <h2>Quick Review & High-Yield Points</h2>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What is the pathognomonic physical finding in anetoderma?</div>
+                    <div class="flashcard-back">
+                        <p>The "buttonhole" sign: When palpated, the examining finger sinks into a distinct pit with sharp borders as if into a hernia ring. The bulge reappears when pressure is released.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What are the three clinical types of mid-dermal elastolysis?</div>
+                    <div class="flashcard-back">
+                        <p>Type I: Fine wrinkling (most common)<br>
+                        Type II: Perifollicular papules<br>
+                        Type III: Reticulated erythema</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What is the "cliff-drop" sign and which condition is it associated with?</div>
+                    <div class="flashcard-back">
+                        <p>The "cliff-drop" sign refers to the abrupt transition (like a cliff) from normal to diseased skin seen in atrophoderma of Pasini and Pierini. The borders are sharply defined with a depth ranging from 1-8 mm.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What is the difference between striae rubrae and striae albae?</div>
+                    <div class="flashcard-back">
+                        <p><strong>Striae rubrae</strong>: Initial stage of striae - red to violaceous elevated lines that can be mildly pruritic<br><br>
+                        <strong>Striae albae</strong>: Later stage - color gradually fades, lesions become atrophic with fine wrinkled appearance; usually permanent but may fade somewhat over time</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What syndrome features follicular atrophoderma, multiple basal cell carcinomas, and hypotrichosis?</div>
+                    <div class="flashcard-back">
+                        <p>Bazex-Dupré-Christol syndrome:<br>
+                        - X-linked dominant inheritance<br>
+                        - Follicular atrophoderma (especially on dorsal hands)<br>
+                        - Multiple basal cell carcinomas<br>
+                        - Hypotrichosis<br>
+                        - Localized hypohidrosis (above the neck)<br>
+                        - Milia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What is the histologic finding in mid-dermal elastolysis?</div>
+                    <div class="flashcard-back">
+                        <p>A selective loss of elastic fibers in the mid dermis in a band-like pattern, with normal elastic tissue preserved in the superficial papillary dermis above, reticular dermis below, and along adjacent hair follicles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What are piezogenic pedal papules and when are they visible?</div>
+                    <div class="flashcard-back">
+                        <p>Skin-colored papules and nodules on the sides of the heels that are induced by weight-bearing and disappear when the leg is raised. They represent herniation of fat through connective tissue in the dermis.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">What is the clinical appearance of atrophoderma vermiculatum?</div>
+                    <div class="flashcard-back">
+                        <p>Pitted, atrophic, depressed scars in a reticulated or honeycomb pattern ("worm-eaten" appearance) on the cheeks, following initial inflammatory papules centered around hair follicles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Key Points for Exam Success</h3>
+            <div class="clinical-pearl">
+                <h4>💎 High-Yield Clinical Pearls</h4>
+                <ol>
+                    <li>Associate each disorder with its characteristic morphology:
+                        <ul>
+                            <li>Mid-dermal elastolysis → fine wrinkling or perifollicular papules</li>
+                            <li>Anetoderma → "buttonhole" sign</li>
+                            <li>Atrophoderma of Pasini and Pierini → "cliff-drop" borders</li>
+                            <li>Atrophoderma vermiculatum → "worm-eaten" or honeycomb pattern</li>
+                            <li>Piezogenic papules → weight-bearing induced, disappear when leg raised</li>
+                        </ul>
+                    </li>
+                    <li>Know the histologic distinguishing features:
+                        <ul>
+                            <li>Mid-dermal elastolysis → band-like loss of elastic fibers in mid dermis</li>
+                            <li>Anetoderma → focal loss of elastic tissue</li>
+                            <li>Striae → decreased collagen, parallel to epidermis</li>
+                            <li>Atrophoderma of P&P → reduced dermal thickness</li>
+                        </ul>
+                    </li>
+                    <li>Understand the demographic patterns:
+                        <ul>
+                            <li>Mid-dermal elastolysis → White middle-aged women</li>
+                            <li>Anetoderma → young adults (15-25 years), F>M</li>
+                            <li>Atrophoderma of P&P → young adults (20-30 years), F>M (6:1)</li>
+                            <li>Atrophoderma vermiculatum → childhood onset</li>
+                        </ul>
+                    </li>
+                    <li>Remember key associations:
+                        <ul>
+                            <li>Anetoderma → antiphospholipid antibodies</li>
+                            <li>Atrophoderma of P&P → possible Borrelia infection</li>
+                            <li>Follicular atrophoderma → Bazex-Dupré-Christol syndrome</li>
+                            <li>Atrophoderma vermiculatum → Rombo syndrome, Loeys-Dietz syndrome</li>
+                            <li>Piezogenic pedal papules → Ehlers-Danlos syndrome, Prader-Willi syndrome</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <button id="top-button" class="top-button" onclick="scrollToTop()">↑</button>
+    
+    <script>
+        // Progress bar
+        window.onscroll = function() {
+            updateProgressBar();
+            showTopButton();
+        };
+        
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+        
+        // Top button
+        function showTopButton() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("top-button").style.display = "flex";
+            } else {
+                document.getElementById("top-button").style.display = "none";
+            }
+        }
+        
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        
+        // Tabs
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Accordions
+        function toggleAccordion(element) {
+            element.parentElement.classList.toggle("active");
+        }
+        
+        // Flashcards
+        const flashcards = document.getElementsByClassName("flashcard");
+        for (let i = 0; i < flashcards.length; i++) {
+            flashcards[i].addEventListener("click", function() {
+                this.classList.toggle("flipped");
+            });
+        }
+        
+        // TOC Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocToggle = document.getElementById('toc-toggle');
+            const stickyToc = document.getElementById('stickyToc');
+            
+            // Hide initial main TOC after scrolling past it
+            const mainToc = document.getElementById('mainToc');
+            const mainTocPosition = mainToc.getBoundingClientRect().top + window.pageYOffset;
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > mainTocPosition + 100) {
+                    tocToggle.style.display = 'flex';
+                } else {
+                    tocToggle.style.display = 'none';
+                    stickyToc.classList.remove('visible');
+                }
+            });
+            
+            tocToggle.addEventListener('click', function() {
+                stickyToc.classList.toggle('visible');
+                tocToggle.textContent = stickyToc.classList.contains('visible') ? '×' : '≡';
+            });
+            
+            // Close TOC when clicking on a link
+            const tocLinks = stickyToc.querySelectorAll('a');
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    stickyToc.classList.remove('visible');
+                    tocToggle.textContent = '≡';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

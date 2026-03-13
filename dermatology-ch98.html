@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 98: Dermal Hypertrophy - Interactive Study Guide</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --mcq: #8e44ad;
+            --mcq-light: #f5eef8;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        h1 {
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        h2 {
+            border-left: 5px solid var(--secondary);
+            padding-left: 10px;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            border-bottom: 1px dashed var(--secondary);
+            padding-bottom: 5px;
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box {
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .mcq-point {
+            background-color: var(--mcq-light);
+            border: 1px solid var(--mcq);
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .mcq-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background-color: var(--mcq);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        
+        th {
+            background-color: var(--secondary);
+            color: white;
+            text-align: left;
+            padding: 10px;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .flashcard {
+            background-color: white;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .flashcard-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .flashcard-content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .active .flashcard-content {
+            padding: 15px;
+            max-height: 1000px;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .tab-button {
+            background-color: var(--light);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            flex-grow: 1;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .tab-button.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            width: 100%;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .highlight {
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .vs-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .collapsible {
+            background-color: var(--secondary);
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-weight: bold;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1px;
+        }
+        
+        .collapsible:after {
+            content: "➕";
+            font-size: 13px;
+        }
+        
+        .active-collapse:after {
+            content: "➖";
+        }
+        
+        .collapse-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: white;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .clinical-pearl {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1e88e5;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .clinical-pearl:before {
+            content: "💡 Clinical Pearl: ";
+            font-weight: bold;
+            color: #1565c0;
+        }
+        
+        .recall-box {
+            background-color: #e8f5e9;
+            border: 1px solid #66bb6a;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .recall-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+        
+        .recall-answer {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #66bb6a;
+        }
+        
+        .recall-toggle {
+            background-color: #66bb6a;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .columns {
+                flex-direction: column;
+            }
+            
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chapter 98: Dermal Hypertrophy</h1>
+            <p style="color: white;">Interactive Study Guide for Saudi Board Exam Preparation</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Quick Navigation -->
+        <div class="card">
+            <h3>Chapter Quick Navigation</h3>
+            <ul style="list-style-type: none; margin-left: 0;">
+                <li><a href="#scars">🔗 Hypertrophic Scars and Keloids</a></li>
+                <li><a href="#dupuytren">🔗 Dupuytren Disease</a></li>
+                <li><a href="#cutis">🔗 Cutis Vertices Gyrata</a></li>
+                <li><a href="#hyaline">🔗 Hyaline Fibromatosis Syndromes</a></li>
+                <li><a href="#elastic">🔗 Disorders with Increased Elastic Tissue</a></li>
+            </ul>
+        </div>
+        
+        <!-- High Yield Summary -->
+        <div class="card">
+            <h3>High-Yield Board Facts</h3>
+            <div class="mcq-point">
+                <span class="mcq-badge">MCQ FOCUS</span>
+                <p><strong>Hyaline fibromatosis syndromes:</strong> Mutation in <u>anthrax toxin receptor 2 (ANTXR2)</u></p>
+            </div>
+            <div class="mcq-point">
+                <span class="mcq-badge">MCQ FOCUS</span>
+                <p><strong>Inheritance pattern:</strong> <u>Autosomal recessive</u></p>
+            </div>
+            <div class="mcq-point">
+                <span class="mcq-badge">MCQ FOCUS</span>
+                <p><strong>Classic presentation location:</strong> <u>Firm papules and nodules on the perinasal area</u></p>
+            </div>
+            <div class="clinical-pearl">Remember the key differences between hypertrophic scars (stay within wound margin, parallel collagen) and keloids (extend beyond wound margin, haphazard collagen).</div>
+        </div>
+        
+        <!-- Hypertrophic Scars and Keloids Section -->
+        <section id="scars">
+            <h2>Hypertrophic Scars and Keloids</h2>
+            
+            <div class="info-box">
+                <p><strong>Core Concept:</strong> Both conditions result from abnormal wound healing with excessive collagen production by fibroblasts due to an imbalance between collagen synthesis and degradation.</p>
+            </div>
+            
+            <!-- Epidemiology -->
+            <h3>Epidemiology</h3>
+            <ul>
+                <li>Others > Caucasians</li>
+                <li>Hypertrophic scars > keloids in frequency</li>
+                <li>Most common in 10-30 years of age</li>
+            </ul>
+            
+            <!-- Pathogenesis -->
+            <h3>Pathogenesis</h3>
+            <button class="collapsible">Wound Healing Process</button>
+            <div class="collapse-content">
+                <ul>
+                    <li><strong>Fetal life:</strong> Healing occurs without scarring (regenerative healing)</li>
+                    <li><strong>Adult life:</strong> Healing occurs in three consecutive steps:
+                        <ol>
+                            <li><strong>Inflammatory phase:</strong> Aims to contain injury and prevent infection</li>
+                            <li><strong>Proliferative phase:</strong> Formation of granulation tissue</li>
+                            <li><strong>Remodeling phase:</strong> Collagen synthesis and degradation</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            
+            <button class="collapsible">Pathogenesis of Abnormal Scarring</button>
+            <div class="collapse-content">
+                <ul>
+                    <li>In keloids and hypertrophic scars, collagen synthesis is markedly increased in relation to collagen degradation</li>
+                    <li>High levels of TGF-β → leads to fibrosis</li>
+                    <li>Fundamentally an imbalance between collagen production and collagen degradation</li>
+                </ul>
+            </div>
+            
+            <!-- Syndromes with Keloids -->
+            <div class="info-box">
+                <p><strong>Syndromes associated with spontaneous keloids:</strong></p>
+                <ul>
+                    <li>Goeminne syndrome</li>
+                    <li>Bethlem myopathy syndrome</li>
+                    <li>Rubinstein-Taybi syndrome</li>
+                </ul>
+            </div>
+            
+            <!-- Comparative Table -->
+            <h3>Clinical Features Comparison</h3>
+            <div class="tab-content active">
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Conventional Scar</th>
+                            <th>Hypertrophic Scar</th>
+                            <th>Keloid</th>
+                        </tr>
+                        <tr>
+                            <td>Preceded by injury</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Not always</td>
+                        </tr>
+                        <tr>
+                            <td>Onset</td>
+                            <td>Immediate</td>
+                            <td>Immediate</td>
+                            <td>Delayed</td>
+                        </tr>
+                        <tr>
+                            <td>Erythema</td>
+                            <td>Temporary</td>
+                            <td>Prominent</td>
+                            <td>Varies</td>
+                        </tr>
+                        <tr>
+                            <td>Profile</td>
+                            <td>Flat</td>
+                            <td>Raised</td>
+                            <td>Raised</td>
+                        </tr>
+                        <tr>
+                            <td>Symptomatic</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Confined to wound margin</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Spontaneous resolution</td>
+                            <td>N/A</td>
+                            <td>Possible, gradual</td>
+                            <td>Rare</td>
+                        </tr>
+                        <tr>
+                            <td>Treatment response</td>
+                            <td>N/A</td>
+                            <td>Good</td>
+                            <td>Poor</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Clinical Features -->
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Smooth firm nodules and plaques</li>
+                <li>May be pruritic or painful</li>
+                <li>Develop within a few weeks to months after wounding</li>
+                <li>Hypertrophic scars flatten within 1-2 years; keloids do not</li>
+                <li>Favor sites with increased skin tensions (upper trunk, shoulder, upper outer arm)</li>
+                <li>Keloids like the ear, despite minimal skin tension</li>
+            </ul>
+            
+            <!-- Pathology -->
+            <h3>Pathology</h3>
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <h4>Hypertrophic Scars</h4>
+                        <ul>
+                            <li>Increased fibroblasts and density of collagen fibers within dermis</li>
+                            <li>Collagen fibers oriented <strong>parallel</strong> to the skin surface</li>
+                            <li>Flattened epidermis</li>
+                            <li>Fibrotic papillary dermis</li>
+                            <li>Elastic fibers diminished or absent</li>
+                            <li>Increased dermal blood vessels oriented vertically</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <h4>Keloids</h4>
+                        <ul>
+                            <li>Strikingly thick, glassy, homogeneous collagen bundles</li>
+                            <li>Collagen fibers oriented <strong>haphazardly</strong> throughout dermis (keloidal collagen)</li>
+                            <li>Epidermis not involved</li>
+                            <li>Papillary dermis not involved</li>
+                            <li>Fibroblasts not increased</li>
+                            <li>Increased elastic fibers within deep dermis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Histopathologic Features Table -->
+            <h3>Histopathologic Features Comparison</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Hypertrophic Scar</th>
+                        <th>Keloid</th>
+                    </tr>
+                    <tr>
+                        <td>Epidermis</td>
+                        <td>Flattened</td>
+                        <td>Not involved</td>
+                    </tr>
+                    <tr>
+                        <td>Papillary dermis</td>
+                        <td>Fibrotic</td>
+                        <td>Not involved</td>
+                    </tr>
+                    <tr>
+                        <td>Fibroblasts</td>
+                        <td>Increased</td>
+                        <td>Not increased</td>
+                    </tr>
+                    <tr>
+                        <td>Collagen bundles</td>
+                        <td>Fine, wavy; orientation is parallel to the epidermis</td>
+                        <td>Large, thick, closely packed; orientation is random relative to the epidermis</td>
+                    </tr>
+                    <tr>
+                        <td>Elastic fibers</td>
+                        <td>Diminished or absent</td>
+                        <td>Increased within the deep dermis</td>
+                    </tr>
+                    <tr>
+                        <td>Dermal mucin</td>
+                        <td>Not increased</td>
+                        <td>Increased</td>
+                    </tr>
+                    <tr>
+                        <td>Dermal blood vessels</td>
+                        <td>Increased; oriented vertically, perpendicular to the epidermis</td>
+                        <td>Not increased; few, if any, vertically oriented vessels</td>
+                    </tr>
+                    <tr>
+                        <td>Inflammatory infiltrate</td>
+                        <td>Sparse, perivascular</td>
+                        <td>Sparse, perivascular</td>
+                    </tr>
+                    <tr>
+                        <td>Mast cells</td>
+                        <td>Increased</td>
+                        <td>Increased</td>
+                    </tr>
+                    <tr>
+                        <td>Adnexal structures within the reticular dermis</td>
+                        <td>Absent</td>
+                        <td>Absent</td>
+                    </tr>
+                    <tr>
+                        <td>Myofibroblasts</td>
+                        <td>+++</td>
+                        <td>++</td>
+                    </tr>
+                    <tr>
+                        <td>COX-1 expression</td>
+                        <td>+</td>
+                        <td>+++</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Interactive Recall Box -->
+            <div class="recall-box">
+                <div class="recall-question">What is the key histopathological difference in collagen arrangement between hypertrophic scars and keloids?</div>
+                <button class="recall-toggle">Show Answer</button>
+                <div class="recall-answer">
+                    <p>Hypertrophic scars have fine, wavy collagen oriented <strong>parallel</strong> to the epidermis, while keloids have thick, glassy collagen bundles oriented <strong>haphazardly/randomly</strong> throughout the dermis (keloidal collagen).</p>
+                </div>
+            </div>
+            
+            <!-- Treatment -->
+            <h3>Treatment</h3>
+            <ul>
+                <li><strong>First-line therapy:</strong> Intralesional triamcinolone (10-40 mg/ml)</li>
+                <li>Clobetasol propionate 0.05% cream under silicone dressing occlusion (for needle-phobic patients)</li>
+                <li>Intralesional 5-fluorouracil (can be combined with steroids)</li>
+                <li><strong>Intralesional Bleomycin (Level 2):</strong> <br>
+                    <em>Mechanism:</em> Inhibits fibroblast proliferation.<br>
+                    <em>Use:</em> Comparable improvement to triamcinolone; consider in patients at risk for steroid-induced hypopigmentation.<br>
+                    <em>Dose:</em> 1.5 IU/ml, multiple puncture, max 2ml/cm², 10 IU/session, monthly.
+                </li>
+                <li>PDL "Can start day of suture removal, repeated every 3-4 weeks. Used for postsurgical scar reduction."  and cryotherapy can also be combined with steroids</li>
+                <li>Scar revision (risk of recurrence)</li>
+                
+                <li>Radiation therapy (last option)</li>
+            </ul>
+        </section>
+        
+        <!-- Dupuytren Disease Section -->
+        <section id="dupuytren">
+            <h2>Dupuytren Disease</h2>
+            
+            <div class="info-box">
+                <p><strong>Core Concept:</strong> A fibromatosis affecting the palmar and digital fascia leading to flexion contractures.</p>
+            </div>
+            
+            <!-- Epidemiology -->
+            <h3>Epidemiology</h3>
+            <ul>
+                <li>Common in Caucasians</li>
+                <li>Rare in dark skin types</li>
+                <li>Most common in older men</li>
+                <li>Associated with other fibromatoses (see chapter 116)</li>
+                <li>Also associated with diabetes, alcoholism, and cigarette smoking</li>
+                <li>Vemurafenib may cause worsening or even new-onset disease</li>
+            </ul>
+            
+            <!-- Pathogenesis -->
+            <h3>Pathogenesis</h3>
+            <ul>
+                <li>Fibrotic cytokines (TGF-β1/2) are involved</li>
+                <li>Leads to thickening of palmar and digital fascia</li>
+            </ul>
+            
+            <!-- Clinical Features -->
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Usually presents late</li>
+                <li>Flexion contractures of the affected digits</li>
+                <li>Ring finger is most commonly affected</li>
+                <li>Disease progression:
+                    <ol>
+                        <li>Begins as a nodule in the fascia of the palm</li>
+                        <li>Grows to produce a cord</li>
+                        <li>Cord contracts → flexion contracture</li>
+                    </ol>
+                </li>
+            </ul>
+            
+            <!-- Pathology -->
+            <h3>Pathology</h3>
+            <ul>
+                <li>Proliferation of myofibroblasts which align along lines of tension</li>
+                <li>Smooth muscle actin (SMA) positive</li>
+                <li>Thick collagen</li>
+            </ul>
+            
+            <!-- Treatment -->
+            <h3>Treatment</h3>
+            <ul>
+                <li>Fasciectomy</li>
+                <li>Collagenase injection</li>
+            </ul>
+            
+            <!-- Interactive Recall Box -->
+            <div class="recall-box">
+                <div class="recall-question">Which finger is most commonly affected in Dupuytren disease?</div>
+                <button class="recall-toggle">Show Answer</button>
+                <div class="recall-answer">
+                    <p>The ring finger is most commonly affected in Dupuytren disease.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cutis Vertices Gyrata Section -->
+        <section id="cutis">
+            <h2>Cutis Vertices Gyrata</h2>
+            
+            <div class="info-box">
+                <p><strong>Core Concept:</strong> Overgrowth of the scalp producing symmetric gyrate or cerebriform folding of the skin.</p>
+            </div>
+            
+            <!-- Clinical Features -->
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Overgrowth of the scalp</li>
+                <li>Progresses to make symmetric gyrate or cerebriform folding of the skin</li>
+                <li>Soft to spongy on palpation</li>
+                <li>Affects the crown and vertex</li>
+                <li>Hair loss in the folds, but not the furrows</li>
+                <li>Can be isolated or associated with neurological or ophthalmological manifestations</li>
+            </ul>
+            
+            <!-- Treatment -->
+            <h3>Treatment</h3>
+            <ul>
+                <li>Asymptomatic, requires no treatment</li>
+                <li>Surgical excision is occasionally performed</li>
+            </ul>
+            
+            <!-- Disease Associations -->
+            <h3>Disease Associations</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th colspan="2">Cutis Verticis Gyrata - Disease Associations</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary isolated</strong></td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary with associated anomalies</strong></td>
+                        <td>
+                            <ul>
+                                <li>Neurologic (e.g., intellectual disability, seizures)</li>
+                                <li>Ophthalmologic (e.g., cataracts, optic atrophy)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secondary</strong></td>
+                        <td>
+                            <ul>
+                                <li>Acromegaly, pseudoacromegaly</li>
+                                <li>Myxedema (including cretinism)*</li>
+                                <li>Insulin resistance ^ and HIV-related lipodystrophy with insulin resistance*</li>
+                                <li>Graves disease*</li>
+                                <li>Turner and Noonan syndromes (following resolution of intrauterine lymphedema)*</li>
+                                <li>Fragile X syndrome</li>
+                                <li>Klinefelter syndrome</li>
+                                <li>Hereditary neuralgic amyotrophy</li>
+                                <li>Tuberous sclerosis complex</li>
+                                <li>Hyper-IgE syndrome, autosomal dominant</li>
+                                <li>Rosenthal-Kloepfer syndrome (acromegaloid changes, corneal leukoma)</li>
+                                <li>Vemurafenib (selective BRAF inhibitor) + radiotherapy**</li>
+                                <li>Paraneoplastic due to metastatic carcinoma</li>
+                            </ul>
+                            <p>*Increased dermal mucin may also be observed.</p>
+                            <p>**Due to multiple follicular cysts and milia.</p>
+                            <p>^May also have acanthosis nigricans.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Hyaline Fibromatosis Syndromes Section -->
+        <section id="hyaline">
+            <h2>Hyaline Fibromatosis Syndromes</h2>
+            
+            <div class="mcq-point">
+                <span class="mcq-badge">MCQ FOCUS</span>
+                <p>Includes juvenile hyaline fibromatosis and infantile systemic hyalinosis, which are on a spectrum with <strong>mutation in anthrax toxin receptor 2 (ANTXR2)</strong> and <strong>autosomal recessive</strong> inheritance.</p>
+            </div>
+            
+            <div class="info-box">
+                <p><strong>Core Concept:</strong> Rare genodermatoses characterized by hyaline accumulation in the dermis, with a spectrum of severity.</p>
+            </div>
+            
+            <!-- General Characteristics -->
+            <h3>General Characteristics</h3>
+            <ul>
+                <li>Includes juvenile hyaline fibromatosis and infantile systemic hyalinosis</li>
+                <li>Rare genodermatoses</li>
+                <li>Characterized by hyaline accumulation in the dermis</li>
+                <li>They have the same mutation</li>
+                <li>They are on a spectrum</li>
+            </ul>
+            
+            <div class="mcq-point">
+                <span class="mcq-badge">MCQ FOCUS</span>
+                <p><strong>Genetics:</strong></p>
+                <ul>
+                    <li>Mutation in anthrax toxin receptor 2 (ANTXR2)</li>
+                    <li>Autosomal recessive inheritance</li>
+                </ul>
+            </div>
+            
+            <!-- Clinical Features -->
+            <h3>Clinical Features</h3>
+            <ul>
+                <li>Firm papules and nodules</li>
+                <li class="highlight">Typical case is on the perinasal area (Board exam focus)</li>
+                <li>Scalp, ear, neck, and hands can be involved</li>
+                <li>Severe physical limitations due to contractures</li>
+            </ul>
+            
+            <!-- Clinical Features Comparison -->
+            <h3>Clinical Features Comparison</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Good Prognosis (Classic Juvenile Hyaline Fibromatosis)</th>
+                        <th>Poor Prognosis (Classic Infantile Systemic Hyalinosis)</th>
+                    </tr>
+                    <tr>
+                        <td>Onset during childhood (<5 years old) and survival into adulthood</td>
+                        <td>Onset during infancy</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Firm, pearly papules (favoring the perinasal area and ears)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Verrucous perianal nodules</td>
+                    </tr>
+                    <tr>
+                        <td>Firm nodules/tumors favoring the scalp, neck, hands, and trunk</td>
+                        <td>Reddish-blue to brown plaques overlying extensor surfaces of joints</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Diffusely thickened skin</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Gingival hypertrophy</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Joint contractures</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Osteopenia and osteolytic lesions due to hyaline deposits</td>
+                    </tr>
+                    <tr>
+                        <td>No visceral involvement</td>
+                        <td>
+                            <ul>
+                                <li>Persistent diarrhea</li>
+                                <li>Recurrent infections</li>
+                                <li>Visceral involvement</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; background-color: #e3f2fd;"><strong>Features common to both:</strong> Normal mental development</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Pathology -->
+            <h3>Pathology</h3>
+            <ul>
+                <li>Ill-defined nodules of hyaline collagen</li>
+                <li>Periodic acid–Schiff (PAS) positive</li>
+            </ul>
+            
+            <!-- Treatment -->
+            <h3>Treatment</h3>
+            <ul>
+                <li>Limited options</li>
+                <li>Surgical excision of nodules and gingival hypertrophy</li>
+                <li>Release of contractures can be performed</li>
+                <li>Lesions often recur</li>
+                <li>Physiotherapy</li>
+            </ul>
+            
+            <!-- Interactive Recall Box -->
+            <div class="recall-box">
+                <div class="recall-question">What is the characteristic location for hyaline fibromatosis syndrome lesions that is often tested on exams?</div>
+                <button class="recall-toggle">Show Answer</button>
+                <div class="recall-answer">
+                    <p>The perinasal area is the characteristic location for hyaline fibromatosis syndrome lesions that is often tested on exams.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Disorders with Increased Elastic Tissue Section -->
+        <section id="elastic">
+            <h2>Disorders Characterized by Increased Elastic Tissue Fibers</h2>
+            
+            <div class="info-box">
+                <p><strong>Note:</strong> This section presents a comprehensive table of disorders characterized by increased elastic tissue fibers. Refer to the book for complete descriptions of each entity.</p>
+            </div>
+            
+            
+            <p>Key disorders included in the table:</p>
+            <table class="elastic-disorders-table" border="1" style="border-collapse:collapse;width:100%;">
+                <thead>
+                    <tr>
+                        <th>Disorder</th>
+                        <th>Clinical Features</th>
+                        <th>Histopathologic Features</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Late-onset focal dermal elastosis</td>
+                        <td>Multiple 1-3 mm yellow papules that may coalesce. Favors the neck, axillae, groin, antecubital and popliteal fossae.</td>
+                        <td>Increased normal-appearing elastic fibers in the mid and deep reticular dermis.</td>
+                        <td>Lacks the systemic features of PXE (see Ch. 97).</td>
+                    </tr>
+                    <tr>
+                        <td>Linear focal elastosis (elastotic striae)</td>
+                        <td>Multiple yellow, palpable, striae-like bands of the lumbosacral region.</td>
+                        <td>Focal increase in number of elongated or fragmented elastic fibers (thickened &gt; thinned) within the mid dermis; the ends of the elastic fibers may be split with a "paintbrush" appearance. Early lesions may have inflammation and elastolysis.</td>
+                        <td>May represent an excessive regenerative process of elastic fibers, perhaps to repair striae distensae (see Ch. 99).</td>
+                    </tr>
+                    <tr>
+                        <td>Elastoderma</td>
+                        <td>Localized areas of lax, pendulous skin; neck, trunk, arm.</td>
+                        <td>Increased normal- and abnormal-appearing elastic fibers throughout the dermis and subcutis.</td>
+                        <td>Lacks the systemic features of PXE (see Ch. 97).</td>
+                    </tr>
+                    <tr>
+                        <td>Elastofibroma dorsi</td>
+                        <td>Large mass in the deep subcutaneous tissue of the infrascapular area.</td>
+                        <td>Arises within the fascia. Increased elastic fibers with a globular and beaded morphology admixed with plump collagen bundles, fibroblasts, and mature fat cells (Fig. 98.11).</td>
+                        <td>Favors older women &gt; men and Japanese. Possibly related to chronic mechanical stress.</td>
+                    </tr>
+                    <tr>
+                        <td>Elastoma (nevus elasticus)</td>
+                        <td>Firm, skin-colored to yellowish papule(s) which may be clustered. Favors the trunk.</td>
+                        <td>Accumulation of thick, tortuous, branching elastic fibers within the reticular dermis.</td>
+                        <td>Type of connective tissue nevus (see Ch. 116). Associated with Buschke-Ollendorf syndrome.</td>
+                    </tr>
+                    <tr>
+                        <td>Elastosis perforans serpiginosa</td>
+                        <td>Annular and polycyclic plaques composed of keratotic papules. Favors the neck, face, antecubital fossae and other flexural areas.</td>
+                        <td>Transepidermal or perifollicular channels that contain fragments of elastotic material. Increased number of coarse elastic fibers in the superficial dermis. No secondary calcium deposition on elastic fibers.</td>
+                        <td>Associated with penicillamine (lumpy-bumpy fibers*). Down syndrome and connective tissue disorders (e.g. Ehlers-Danlos syndrome, Marfan syndrome; see Ch. 96).</td>
+                    </tr>
+                    <tr>
+                        <td>Pseudoxanthoma elasticum (PXE)</td>
+                        <td>Yellowish skin papules and "cobblestoned" plaques; redundant folds. Favors flexural sites, especially the neck and axillae, and periumbilical region.</td>
+                        <td>Distorted and fragmented elastic fibers in mid and deep reticular dermis. Calcium deposition on altered elastic fibers.</td>
+                        <td>Angioid streaks, GI hemorrhage, atherosclerotic cardiovascular disease (see Ch. 97).</td>
+                    </tr>
+                    <tr>
+                        <td>Actinic or solar elastosis (including cutis rhomboidalis nuchae, solar elastotic bands, elastotic nodules of the ear)</td>
+                        <td>Yellow to yellow-white, thickened, coarsely wrinkled skin that favors the lateral forehead, malar region, posterolateral neck, mid extensor arms. Bands – forearms. Nodules – antihelix &gt; helix.</td>
+                        <td>Bluish-grey elastotic material composed of degenerated elastic fibers within the upper and mid dermis. In more advanced phases, the elastotic material may aggregate into dense amorphous masses ("actinic elastoma").</td>
+                        <td>Photodamage may be accelerated by medications, e.g. voriconazole (see Ch. 87).</td>
+                    </tr>
+                    <tr>
+                        <td>Favré-Racouchot syndrome (nodular elastosis with cysts and comedones)</td>
+                        <td>Bilateral, clustered, open &gt; closed comedones within thickened skin. Favors malar prominence and lateral periorbital region.</td>
+                        <td>Severe solar elastosis with follicular distention and cystic structures filled with compact keratin.</td>
+                        <td>See Ch. 87.</td>
+                    </tr>
+                    <tr>
+                        <td>Acrokeratoelastoidosis</td>
+                        <td>Bands of waxy or translucent papules and plaques. Favors ulnar side of thumb and radial side of forefinger.</td>
+                        <td>Shallow depression of the epidermis. Usually a decrease in thin and partially fragmented elastic fibers in the mid and deep reticular dermis. In some cases, elastic fibers are increased, coarse, and aggregated.</td>
+                        <td>Also an inherited form that can involve non-sun-exposed sites of the hands and/or feet (see Ch. 58).</td>
+                    </tr>
+                    <tr>
+                        <td>Elastoma of Dubreuilh</td>
+                        <td>Yellow to yellow-brown papules or plaques. Favor forehead, cheeks, lateral neck.</td>
+                        <td>Amorphous masses composed of aggregated elastotic material in the upper dermis.</td>
+                        <td>See Ch. 87.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </section>
+        
+        <!-- Quick Test Section -->
+        <div class="card">
+            <h3>Quick Self-Assessment</h3>
+            
+            <div class="flashcard">
+                <div class="flashcard-header">
+                    <span>What is the major first-line therapy for hypertrophic scars and keloids?</span>
+                    <span>⬇️</span>
+                </div>
+                <div class="flashcard-content">
+                    <p>Intralesional triamcinolone is the major first-line therapy.</p>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-header">
+                    <span>What are the key differences in collagen orientation between hypertrophic scars and keloids?</span>
+                    <span>⬇️</span>
+                </div>
+                <div class="flashcard-content">
+                    <p>In hypertrophic scars, collagen fibers are oriented parallel to the skin surface, while in keloids, collagen bundles are oriented haphazardly throughout the dermis (keloidal collagen).</p>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-header">
+                    <span>What is the genetic mutation in hyaline fibromatosis syndromes?</span>
+                    <span>⬇️</span>
+                </div>
+                <div class="flashcard-content">
+                    <p>Mutation in anthrax toxin receptor 2 (ANTXR2) with autosomal recessive inheritance.</p>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-header">
+                    <span>Which finger is most commonly affected in Dupuytren disease?</span>
+                    <span>⬇️</span>
+                </div>
+                <div class="flashcard-content">
+                    <p>The ring finger is most commonly affected.</p>
+                </div>
+            </div>
+            
+            <div class="flashcard">
+                <div class="flashcard-header">
+                    <span>What is the typical case presentation of hyaline fibromatosis syndrome that is important for board exams?</span>
+                    <span>⬇️</span>
+                </div>
+                <div class="flashcard-content">
+                    <p>Firm papules and nodules on the perinasal area.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Collapsible sections
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active-collapse");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+        
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Flashcard functionality
+        var flashcards = document.getElementsByClassName("flashcard-header");
+        for (var i = 0; i < flashcards.length; i++) {
+            flashcards[i].addEventListener("click", function() {
+                this.parentElement.classList.toggle("active");
+            });
+        }
+        
+        // Recall box functionality
+        var recallToggles = document.getElementsByClassName("recall-toggle");
+        for (var i = 0; i < recallToggles.length; i++) {
+            recallToggles[i].addEventListener("click", function() {
+                var answer = this.nextElementSibling;
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                    this.textContent = "Show Answer";
+                } else {
+                    answer.style.display = "block";
+                    this.textContent = "Hide Answer";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

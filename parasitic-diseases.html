@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasitic Diseases Study Guide</title>
+    <style>
+        :root {
+            --protozoa-color: #6a5acd;
+            --protozoa-light: #e6e4f9;
+            --worms-color: #228b22;
+            --worms-light: #e6f9e6;
+            --header-color: #333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--protozoa-color), var(--worms-color));
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/800/600') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 10px;
+        }
+        
+        .tabs li button {
+            background-color: #f1f1f1;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .tabs li button:hover {
+            background-color: #e1e1e1;
+        }
+        
+        .tabs li button.active-protozoa {
+            background-color: var(--protozoa-color);
+            color: white;
+        }
+        
+        .tabs li button.active-worms {
+            background-color: var(--worms-color);
+            color: white;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .protozoa-section {
+            background-color: var(--protozoa-light);
+            border-left: 5px solid var(--protozoa-color);
+        }
+        
+        .worms-section {
+            background-color: var(--worms-light);
+            border-left: 5px solid var(--worms-color);
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .disease-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .protozoa-card {
+            border-top: 3px solid var(--protozoa-color);
+        }
+        
+        .worms-card {
+            border-top: 3px solid var(--worms-color);
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .disease-card h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .disease-card .vector-badge {
+            font-size: 0.8rem;
+            background-color: #f1f1f1;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+        
+        .key-points {
+            margin-top: 10px;
+        }
+        
+        .key-points h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: #444;
+        }
+        
+        .key-points ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .key-points ul li {
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .key-points ul li:before {
+            content: "•";
+            color: var(--protozoa-color);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .worms-section .key-points ul li:before {
+            color: var(--worms-color);
+        }
+        
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .expanded .card-content {
+            max-height: 1000px;
+        }
+        
+        .expand-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .expanded .expand-icon {
+            transform: rotate(45deg);
+        }
+        
+        .mnemonic-box {
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border: 1px dashed #aaa;
+        }
+        
+        .protozoa-section .mnemonic-box {
+            border-left: 4px solid var(--protozoa-color);
+        }
+        
+        .worms-section .mnemonic-box {
+            border-left: 4px solid var(--worms-color);
+        }
+        
+        .mnemonic-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .treatment-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffd700;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+        
+        .diagnosis-box {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1e90ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Parasitic Diseases Study Guide</h1>
+        <p>Interactive guide for memorizing key parasitic infections</p>
+    </header>
+    
+    <nav>
+        <ul class="tabs">
+            <li><button onclick="showSection('protozoa')" class="active-protozoa">PROTOZOA</button></li>
+            <li><button onclick="showSection('worms')" class="">WORMS (HELMINTHS)</button></li>
+        </ul>
+    </nav>
+    
+    <div class="main-container">
+        <!-- PROTOZOA SECTION -->
+        <div id="protozoa-section" class="section protozoa-section active">
+            <div class="mnemonic-box">
+                <div class="mnemonic-title">PROTOZOA MNEMONIC: "LTBT" - "Let The Bugs Thrive"</div>
+                <p><strong>L</strong>eishmaniasis - Old/New World, in phagolysosomes<br>
+                <strong>T</strong>rypanosomiasis - Chagas (reduviid bug) & African (tsetse fly)<br>
+                <strong>B</strong>alamuthia - Free-living ameba, granulomatous<br>
+                <strong>T</strong>oxoplasmosis - Cats, congenital, usually asymptomatic</p>
+            </div>
+            
+            <!-- Leishmaniasis -->
+            <div class="disease-card protozoa-card" onclick="toggleCard(this)">
+                <h3>A. Leishmaniasis <span class="vector-badge">Vector: Sandfly</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Chronic parasitic infection affecting skin, mucosa, and viscera. Leishmania organisms reside within phagolysosomes of mononuclear phagocytes.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Old World</strong>: L. major, L. tropica, L. aethiopica (oriental sore, Delhi boil)</li>
+                            <li><strong>New World</strong>: L. mexicana, L. braziliensis (chiclero ulcer, uta, espundia)</li>
+                            <li><strong>Sandfly Vector</strong>: Phlebotomus (Old World), Lutzomyia (New World)</li>
+                            <li><strong>Amastigotes</strong>: Intracellular form (diagnostic!)</li>
+                            <li><strong>Clinical Forms</strong>: Cutaneous, Mucocutaneous, Diffuse Cutaneous, Visceral</li>
+                        </ul>
+                        
+                        <h4>High-Yield Distinctions:</h4>
+                        <ul>
+                            <li><strong>L. major</strong>: Zoonotic/rural, moist, early ulcerative, rapid</li>
+                            <li><strong>L. tropica</strong>: Anthroponotic/urban, dry, late ulcerative, chronic</li>
+                            <li><strong>L. braziliensis</strong>: Mucocutaneous (nasal septum, palate)</li>
+                            <li><strong>Visceral (Kala-Azar)</strong>: Fever, hepatosplenomegaly, pancytopenia</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Gold Standard: Demonstration of amastigotes (biopsy, smear)</li>
+                                <li>PCR: Most sensitive and specific</li>
+                                <li>Culture: NNN media</li>
+                                <li>Montenegro Skin Test: Delayed hypersensitivity. Positive in cutaneous and Mucocutaneous , 90% if done in lesions more than 3 months . Negative in diffuse and visceral </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li><strong>Pentavalent antimonials</strong> (sodium stibogluconate, meglumine antimoniate) or <strong>miltefosine</strong>.
+
+                                    <strong>Miltefosine</strong> is oral, but teratogenic.
+                                    
+                                    <strong>pentavelant antimonial</strong> therapy related toxicity: ECG abnormalities</li>
+                                <li>Visceral: Liposomal amphotericin B. best option in pregnancy</li>
+                                <li>Simple cutaneous: May observe in endemic areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cutaneous Amebiasis -->
+            <div class="disease-card protozoa-card" onclick="toggleCard(this)">
+                <h3>B. Cutaneous Amebiasis <span class="vector-badge">GI Extension</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Usually gastrointestinal infection, but rare cutaneous involvement via extension or inoculation.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Painful ulcers</strong>: Often perianal/genital, with ragged edges, gray-white necrotic base</li>
+                            <li><strong>Trophozoites in tissue</strong>: Amebas with ingested RBCs are diagnostic</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Wet mount or histology: Amebas with ingested RBCs</li>
+                                <li>Skin biopsy will look for trophozoites, which appear as ovoid or round unicellular basophilic structures often surrounded by a clear halo.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Metronidazole</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Balamuthia -->
+            <div class="disease-card protozoa-card" onclick="toggleCard(this)">
+                <h3>C. Balamuthia mandrillaris <span class="vector-badge">Free-living ameba</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Free-living ameba causing fatal granulomatous encephalitis, but can have preceding skin lesion.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Indurated plaque, central face</strong>: Slowly growing</li>
+                            <li><strong>Immunocompetent hosts</strong>: Unlike Acanthamoeba</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Biopsy: Mixed granulomatous infiltrate, few amebas</li>
+                                <li>PCR, specialized culture</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Multiagent therapy (miltefosine plus others)</li>
+                                <li>Poor prognosis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trypanosomiasis -->
+            <div class="disease-card protozoa-card" onclick="toggleCard(this)">
+                <h3>D. Trypanosomiasis <span class="vector-badge">Reduviid bug/Tsetse fly</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Types:</h4>
+                        
+                        <h4>1. Chagas Disease (American Trypanosomiasis)</h4>
+                        <ul>
+                            <li><strong>Vector</strong>: Reduviid (kissing) bugs</li>
+                            <li><strong>Chagoma</strong>: Localized swelling at bite site</li>
+                            <li><strong>Romaña sign</strong>: Unilateral periorbital edema</li>
+                            <li><strong>Phases</strong>: Acute, Indeterminate, Chronic (heart, GI)</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <p><strong>Diagnosis</strong>: Trypomastigotes in blood, PCR, Serology, Xenodiagnosis</p>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <p><strong>Treatment</strong>: Benznidazole or nifurtimox</p>
+                        </div>
+                        
+                        <h4>2. African Trypanosomiasis (Sleeping Sickness)</h4>
+                        <ul>
+                            <li><strong>Vector</strong>: Tsetse flies</li>
+                            <li><strong>Trypanosomal chancre</strong>: Painful, indurated lesion</li>
+                            <li><strong>West African (T.b. gambiense)</strong>: Chronic, neurologic</li>
+                            <li><strong>East African (T.b. rhodesiense)</strong>: Acute, often fatal</li>
+                            <li><strong>Trypanids</strong>: Annular erythematous eruption</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <p><strong>Diagnosis</strong>: Trypanosomes in skin, blood, lymph node, CSF</p>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <p><strong>Treatment</strong>: Oral fexinidazole (first line for gambiense), NECT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Toxoplasmosis -->
+            <div class="disease-card protozoa-card" onclick="toggleCard(this)">
+                <h3>E. Toxoplasmosis <span class="vector-badge">Cats</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Toxoplasma gondii, a coccidian parasite. Cats are definitive hosts. Infection can be acquired or congenital.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Usually asymptomatic</strong> in immunocompetent</li>
+                            <li><strong>Congenital</strong>: Chorioretinitis, deafness, intracranial calcifications</li>
+                            <li><strong>Cutaneous</strong>: Rare. Hemorrhagic/necrotic papules in congenital</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Serology (IgM, IgG), PCR</li>
+                                <li>Biopsy: Trophozoites within macrophages (not always seen)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Pyrimethamine + sulfadiazine + folinic acid</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WORMS SECTION -->
+        <div id="worms-section" class="section worms-section">
+            <div class="mnemonic-box">
+                <div class="mnemonic-title">WORMS MNEMONIC: "COGFS" - "Crawling Organisms Generate Frightening Symptoms"</div>
+                <p><strong>C</strong>utaneous Larva Migrans - Hookworm larvae, creeping eruption<br>
+                <strong>O</strong>nchocerciasis - Black flies, river blindness<br>
+                <strong>G</strong>nathostomiasis - Raw fish, migratory panniculitis<br>
+                <strong>F</strong>ilariasis - Mosquitoes, lymphatic obstruction<br>
+                <strong>S</strong>chistosomiasis - Snails, cercarial dermatitis</p>
+            </div>
+            
+            <!-- Cutaneous Larva Migrans -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>A. Cutaneous Larva Migrans <span class="vector-badge">Animal hookworms</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Animal hookworm larvae penetrate skin and migrate within the epidermis.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Creeping eruption</strong>: Serpiginous, pruritic tracts (1-2 cm/day)</li>
+                            <li><strong>Self-limited</strong>: Larvae can't complete life cycle in humans</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Clinical (biopsy rarely shows larva)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Ivermectin (single dose) or albendazole</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gnathostomiasis -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>B. Gnathostomiasis <span class="vector-badge">Raw freshwater fish</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Larvae of Gnathostoma nematodes. Acquired by eating raw freshwater fish.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Migratory panniculitis</strong>: Deep, tender, pruritic nodules that move</li>
+                            <li><strong>Superficial form</strong>: Mimics cutaneous larva migrans</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>History, eosinophilia</li>
+                                <li>Biopsy (may see larva), Serology</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Albendazole or ivermectin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Onchocerciasis -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>C. Onchocerciasis (River Blindness) <span class="vector-badge">Black flies</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Onchocerca volvulus, transmitted by black flies. Primarily in Africa.</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Onchocercomas</strong>: Subcutaneous nodules with adult worms</li>
+                            <li><strong>Microfilariae</strong>: In skin and eyes, cause blindness</li>
+                            <li><strong>"Leopard skin"</strong>: Depigmentation (shins)</li>
+                            <li><strong>"Hanging groin"</strong>: Lymphatic obstruction</li>
+                            <li><strong>Sowda</strong>: Lichenification onchocercal</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Skin snip (microfilariae)</li>
+                                <li>Slit-lamp exam (eyes)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Ivermectin (repeat dosing), Moxidectin</li>
+                                <li>Doxycycline (targets Wolbachia endosymbionts)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filariasis -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>D. Filariasis (Lymphatic) <span class="vector-badge">Mosquitoes</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Infection of lymphatics by filarial nematodes (Wuchereria bancrofti, Brugia malayi, B. timori).</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Acute</strong>: Lymphangitis, orchitis</li>
+                            <li><strong>Chronic</strong>: Lymphedema, elephantiasis, hydroceles</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Microfilariae in blood (nocturnal periodicity)</li>
+                                <li>Circulating filarial antigen (for W. bancrofti)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Diethylcarbamazine (DEC) + Albendazole</li>
+                                <li>Doxycycline (targets Wolbachia)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Schistosomiasis -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>E. Schistosomiasis <span class="vector-badge">Snails</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Big Picture:</h4>
+                        <p>Trematode (fluke) infection. S. haematobium (urinary), S. japonicum, S. mansoni (GI).</p>
+                        
+                        <h4>Key Buzzwords:</h4>
+                        <ul>
+                            <li><strong>Cercarial dermatitis</strong>: Pruritic papules at penetration</li>
+                            <li><strong>Katayama fever</strong>: Acute reaction (fever, urticaria)</li>
+                            <li><strong>Chronic</strong>: Fibro-occlusive disease of liver, intestine, bladder</li>
+                            <li><strong>Swimmer's Itch</strong>: Transient dermatitis from animal schistosomes</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <h4>Diagnosis:</h4>
+                            <ul>
+                                <li>Eggs in urine or feces</li>
+                                <li>Biopsy, Serology</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <h4>Treatment:</h4>
+                            <ul>
+                                <li>Praziquantel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cysticercosis and Echinococcosis -->
+            <div class="disease-card worms-card" onclick="toggleCard(this)">
+                <h3>F. Cysticercosis & Echinococcosis <span class="vector-badge">Tapeworm larvae</span></h3>
+                <div class="expand-icon">+</div>
+                <div class="card-content">
+                    <div class="key-points">
+                        <h4>Cysticercosis:</h4>
+                        <ul>
+                            <li><strong>Cause</strong>: Larval stage of Taenia solium (pork tapeworm)</li>
+                            <li><strong>Key features</strong>: Subcutaneous nodules, neurocysticercosis</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <p><strong>Diagnosis</strong>: Imaging (calcified cysts), serology, biopsy</p>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <p><strong>Treatment</strong>: Albendazole or praziquantel</p>
+                        </div>
+                        
+                        <h4>Echinococcosis (Hydatid Disease):</h4>
+                        <ul>
+                            <li><strong>Cause</strong>: Larval stage of Echinococcus granulosus</li>
+                            <li><strong>Key features</strong>: Hydatid cysts (liver and lungs most common)</li>
+                        </ul>
+                        
+                        <div class="diagnosis-box">
+                            <p><strong>Diagnosis</strong>: Imaging, serology</p>
+                        </div>
+                        
+                        <div class="treatment-box">
+                            <p><strong>Treatment</strong>: Surgery, albendazole</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        Interactive Parasitic Diseases Study Guide | Created for easy memorization
+    </footer>
+    
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(elem => {
+                elem.classList.remove('active');
+            });
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.tabs button').forEach(btn => {
+                btn.classList.remove('active-protozoa');
+                btn.classList.remove('active-worms');
+            });
+            
+            // Show selected section
+            if (section === 'protozoa') {
+                document.getElementById('protozoa-section').classList.add('active');
+                document.querySelector('.tabs button:first-child').classList.add('active-protozoa');
+            } else {
+                document.getElementById('worms-section').classList.add('active');
+                document.querySelector('.tabs button:last-child').classList.add('active-worms');
+            }
+        }
+        
+        function toggleCard(card) {
+            card.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

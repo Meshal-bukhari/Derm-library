@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haber Syndrome: Dermatology Board Review</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f8;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 0.9em;
+            margin-top: 5px;
+            color: #bdc3c7;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #fdfdfd;
+        }
+        .section h2 {
+            color: #3498db; /* Blue for section titles */
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .section h3 {
+            color: #2980b9; /* Darker blue for sub-titles */
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+        .highlight-box {
+            background-color: #e8f6fd; /* Light blue highlight */
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .pearl-box {
+            background-color: #e6ffed; /* Light green for pearls */
+            border-left: 5px solid #2ecc71;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .pearl-box strong {
+            color: #27ae60; /* Darker green */
+        }
+        .alert-box {
+            background-color: #fff0f0; /* Light red for alerts/cautions */
+            border-left: 5px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .alert-box strong {
+            color: #c0392b; /* Darker red */
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233498db" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .key-feature {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .distribution-list li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e67e22" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>') no-repeat left center;
+        }
+        .timeline-item {
+            margin-bottom:10px;
+            padding-left: 20px;
+            position:relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+        }
+        .differentiator {
+            color: #e74c3c; /* Red for important differentiators */
+            font-weight: bold;
+        }
+        .therapy-caution {
+            color: #f39c12; /* Orange for cautions */
+            font-weight: bold;
+        }
+        .text-muted {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .contributors {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 10px;
+            text-align: right;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #e0e0e0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f5f9;
+            color: #333;
+        }
+        .comparison-table .yes { color: green; font-weight: bold; }
+        .comparison-table .no { color: red; font-weight: bold; }
+        .comparison-table .variable { color: orange; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Haber Syndrome</h1>
+            <p>A Comprehensive Board Review for Dermatology Residents</p>
+            <div class="contributors">Contributors: Raj Singh, Casey P. Schukow DO, Susan Burgin MD</div>
+        </header>
+
+        <section id="synopsis-quick-facts">
+            <h2><span style="color:#e74c3c;">🚨</span> At a Glance: Haber Syndrome Essentials</h2>
+            <div class="highlight-box">
+                <p><span class="key-feature">Core Nature:</span> Extremely rarely reported, <span class="key-feature">autosomal-dominant</span> genodermatosis.</p>
+                <p><span class="key-feature">The Classic Triad (Remember This!):</span></p>
+                <ul>
+                    <li><span class="key-feature">Photosensitivity</span> + <span class="key-feature">Rosacea-like facial lesions:</span> Early-onset, persistent.</li>
+                    <li><span class="key-feature">Dark brown, seborrheic keratosis-like papules:</span> Multiple.</li>
+                    <li><span class="key-feature">Characteristic Distribution of Papules:</span>
+                        <ul class="distribution-list">
+                            <li>Flexural areas (axillae, neck)</li>
+                            <li>Intertriginous areas</li>
+                            <li>Trunk (more diffusely in severe cases)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><span class="key-feature">Primarily Affects:</span> Those of <span style="text-decoration: underline; color: #2980b9;">Asian and Middle Eastern descent</span>. (High relevance for Saudi Board!)</p>
+            </div>
+        </section>
+
+        <section id="clinical-deep-dive">
+            <h2>Clinical Presentation: Unpacking the Features</h2>
+            <p>Haber syndrome typically unfolds in stages:</p>
+            <div class="timeline-item">
+                <strong>Adolescence: The Facial Debut</strong>
+                <p>Initial presentation involves <span class="key-feature">rosacea-like facial lesions</span>. Expect to see:</p>
+                <ul>
+                    <li>Erythema</li>
+                    <li>Telangiectasia</li>
+                    <li>Papules</li>
+                    <li>Pustules</li>
+                </ul>
+                <p>This is accompanied by significant <span class="key-feature" style="color: #e67e22;">PHOTOSENSITIVITY</span> – a crucial early clue.</p>
+            </div>
+            <div class="timeline-item">
+                <strong>Third Decade of Life: The Papular Eruption</strong>
+                <p>Multiple <span class="key-feature">dark brown or blackish, keratotic papules</span> begin to appear and continually develop. Key locations include:</p>
+                <ul class="distribution-list">
+                    <li>Flexures (axillae, neck primarily)</li>
+                    <li>Trunk</li>
+                </ul>
+            </div>
+
+            <h3>Additional (Inconsistently Reported) Clinical Findings:</h3>
+            <p>While not always present, be aware of these potential associated features:</p>
+            <ul>
+                <li>Small facial pitted scars</li>
+                <li>Prominent follicular openings</li>
+                <li>Reticulate pigmentation</li>
+                <li>Palmoplantar keratoderma</li>
+            </ul>
+
+            <div class="highlight-box" style="border-left-color: #9b59b6;">
+                <h3 style="color: #9b59b6;">Impact of Skin Color on Clinical Presentation:</h3>
+                <p>Erythema may be subtle or may appear <span style="font-weight:bold;">pink or violaceous</span> in darker skin colors. (Critical for accurate diagnosis in your patient population!)</p>
+            </div>
+        </section>
+
+        <section id="genetics-pathophysiology">
+            <h2>Genetics & The Dowling-Degos Connection (and Disconnection!)</h2>
+            <p>While some authors have postulated that Haber syndrome is a variant of Dowling-Degos disease (DDD), this is a key area for board exam differentiation:</p>
+            <div class="alert-box">
+                <strong>Key Genetic Differentiator:</strong>
+                <p>Few genetic studies have been performed on reported cases of Haber syndrome. Crucially, <span class="differentiator">NO KRT5 (keratin 5), POGLUT1 (protein O-glucosyltransferase 1), POFUT1 (protein O-fucosyltransferase 1), or PSENEN (presenilin enhancer protein 2) mutations have been found to date in Haber Syndrome.</span></p>
+                <p>These mutations <span style="font-weight:bold;">ARE SEEN</span> in Dowling-Degos disease. This lack of shared mutation is a strong point against them being simple variants of each other, despite some clinical overlap.</p>
+            </div>
+            <p><em>Think of it this way: Similar clinical picture, different genetic story (so far!).</em></p>
+        </section>
+
+        <section id="diagnostic-approach">
+            <h2>Making the Diagnosis: Clinical Clues & Tests</h2>
+            <div class="pearl-box">
+                <strong>Diagnostic Pearls (Lock These In!):</strong>
+                <ul>
+                    <li>Consider Haber syndrome in the differential diagnosis of <span style="font-weight:bold;">early-onset rosacea-like facial eruptions</span>.</li>
+                    <li>Think Haber syndrome with <span style="font-weight:bold;">early-onset facial photosensitivity</span>.</li>
+                </ul>
+                <p>If both are present, Haber syndrome should be high on your list!</p>
+            </div>
+
+            <h3>Best Tests:</h3>
+            <ul>
+                <li><span class="key-feature">Diagnosis is primarily clinical.</span> A thorough history and examination are paramount.</li>
+                <li><span class="key-feature">Family history may be helpful</span> (due to autosomal dominant inheritance).</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>When to Order Further Investigations:</strong>
+                <p>In cases with <span style="text-decoration:underline;">prominent photosensitivity</span> or <span style="text-decoration:underline;">prominent erythema and telangiectasias</span>, consider performing the following to rule out other photosensitivity disorders:</p>
+                <ul>
+                    <li>Antinuclear antibody (ANA)</li>
+                    <li>Anti-Ro (SSA)</li>
+                    <li>Porphyria studies</li>
+                </ul>
+                <p class="text-muted">(This is a classic "what's your next step to exclude mimics?" board question scenario.)</p>
+            </div>
+        </section>
+
+        <section id="differential-diagnosis">
+            <h2>Differential Diagnosis & Potential Pitfalls</h2>
+            <p>Haber syndrome can mimic several other conditions. Being able to differentiate is key for exams and clinical practice.</p>
+            <h3>Key Differentials to Consider:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Key Overlap with Haber's</th>
+                        <th>Key Differentiators from Haber's</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rosacea</strong></td>
+                        <td>Facial erythema, papules, pustules, telangiectasias</td>
+                        <td>Lacks SK-like papules in flexures, often later onset, photosensitivity may be less defining feature.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Systemic Lupus Erythematosus (SLE)</strong></td>
+                        <td>Photosensitivity, facial erythema (malar rash)</td>
+                        <td>Systemic symptoms, specific autoantibodies (anti-dsDNA, anti-Sm), lacks SK-like papules typically.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Discoid Lupus Erythematosus (DLE)</strong></td>
+                        <td>Photosensitive facial lesions, potential scarring</td>
+                        <td>Well-demarcated, scaly plaques; follicular plugging; atrophy. Typically lacks widespread SK-like papules.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Porphyria (e.g., PCT)</strong></td>
+                        <td>Photosensitivity, skin fragility</td>
+                        <td>Blisters, milia, hypertrichosis, scarring on sun-exposed areas. Elevated porphyrins. No SK-like papules.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sarcoidosis (cutaneous)</strong></td>
+                        <td>Facial papules (e.g., lupus pernio)</td>
+                        <td>Specific morphology (apple-jelly nodules), systemic involvement, non-caseating granulomas on biopsy.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dowling-Degos Disease (DDD)</strong></td>
+                        <td>Reticulate hyperpigmentation in flexures, comedo-like lesions, pitted scars</td>
+                        <td><span class="differentiator">Genetic mutations (KRT5, etc.) present.</span> Rosacea-like eruption and prominent photosensitivity are NOT typical core features of DDD. SK-like papules may differ in morphology/prominence.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Naegeli-Franceschetti-Jadassohn Syndrome</strong></td>
+                        <td>Reticulate pigmentation, palmoplantar keratoderma, dental anomalies, decreased sweating</td>
+                        <td>Lacks rosacea-like eruption and SK-like papules. Has distinct features like absent dermatoglyphics.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dermatopathia Pigmentosa Reticularis</strong></td>
+                        <td>Triad: reticulate hyperpigmentation, noncicatricial alopecia, onychodystrophy</td>
+                        <td>Distinct triad. Lacks prominent rosacea-like changes or SK-like papules of Haber.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Dyskeratosis Congenita</strong></td>
+                        <td>Reticulate skin pigmentation, nail dystrophy, oral leukoplakia</td>
+                        <td>Bone marrow failure, predisposition to malignancy. Different skin manifestations overall.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Seborrheic Keratosis (multiple, eruptive)</strong></td>
+                        <td>Morphology of individual dark papules</td>
+                        <td>Usually later onset, no preceding rosacea-like eruption or prominent photosensitivity. Leser-Trélat sign (if eruptive and associated with malignancy) has different context.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Verrucae (Warts)</strong></td>
+                        <td>Keratotic papules</td>
+                        <td>Viral etiology, different morphology (verrucous surface, thrombosed capillaries), often different distribution.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Epidermodysplasia Verruciformis</strong></td>
+                        <td>Multiple flat, wart-like lesions, photosensitivity, risk of SCC</td>
+                        <td>HPV-related, distinct flat "pityriasis versicolor-like" macules and papules, high SCC risk. No rosacea-like component.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-muted">To perform a comparison, select diagnoses from the classic differential (as listed in the source material).</p>
+        </section>
+
+        <section id="management-therapy">
+            <h2>Management & Therapy: What Can We Offer?</h2>
+            <div class="pearl-box">
+                <strong>Management Pearls:</strong>
+                <ul>
+                    <li><span style="font-weight:bold;">Refer patients to a dermatologist</span> to address facial erythema and other associated skin manifestations.</li>
+                    <li><span style="font-weight:bold; color: #c0392b;">STRICT PHOTOPROTECTION</span> is paramount due to photosensitivity. This includes:
+                        <ul>
+                            <li>High sun protection factor (SPF)</li>
+                            <li>Broad-spectrum sunscreen</li>
+                            <li>Protective clothing</li>
+                            <li>Hat</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Therapy: Limited Evidence, Cautious Approach</h3>
+            <p>Therapeutic recommendations in the published literature are <span class="key-feature">scant</span>, and <span class="key-feature">no treatment guidelines exist</span>.</p>
+            <p>Reported approaches (anecdotal):</p>
+            <ul>
+                <li>A <span class="key-feature">short course of a topical steroid</span> relieved facial burning in one case.
+                    <br><span class="therapy-caution">CAUTION: Authors warn against prolonged use of topical steroids in any rosacea-like eruptions due to risks of steroid-induced rosacea, atrophy, etc.</span></li>
+                <li>Another case responded well to the use of <span class="key-feature">minocycline (100 mg)</span> and <span class="key-feature">metronidazole gel (0.75%)</span>. (Reminiscent of standard rosacea treatments).</li>
+            </ul>
+        </section>
+
+        <section id="board-blitz-summary">
+            <h2><span style="color:#e74c3c;">⚡</span> Board Exam Blitz: Haber Syndrome High-Yield Takeaways</h2>
+            <div class="alert-box" style="border-left-color: #f39c12; background-color: #fff9e6;">
+                <strong style="color: #d35400;">Nail These for the Exam:</strong>
+                <ol>
+                    <li><strong>Core Triad:</strong> 1) Early-onset, photosensitive, rosacea-like face; 2) Dark SK-like papules; 3) Flexural/intertriginous distribution.</li>
+                    <li><strong>Inheritance:</strong> Autosomal Dominant.</li>
+                    <li><strong>Demographics:</strong> Asian & Middle Eastern descent (remember this for Saudi context!).</li>
+                    <li><strong>Key Negative Finding (vs. DDD):</strong> <span class="differentiator">NO KRT5, POGLUT1, POFUT1, PSENEN mutations</span> typically found in Dowling-Degos disease. This is a critical distinction.</li>
+                    <li><strong>Diagnostic Clue:</strong> Think Haber's with unexplained <span style="text-decoration:underline">early-onset rosacea + photosensitivity</span>.</li>
+                    <li><strong>Management Cornerstone:</strong> <span style="text-decoration:underline">Strict photoprotection</span>.</li>
+                    <li><strong>Skin of Color:</strong> Erythema can be subtle, pink, or <span style="text-decoration:underline">violaceous</span>.</li>
+                </ol>
+            </div>
+        </section>
+
+        <footer>
+            Copyright © 2025 VisualDx®. All rights reserved.
+            <p class="text-muted">This educational summary is based on the provided text "haber syndrome isualdx.txt" for board exam preparation.</p>
+        </footer>
+    </div>
+</body>
+</html>
